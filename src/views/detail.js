@@ -103,20 +103,27 @@ export async function renderDetail(root, id) {
     mapWrap.replaceWith(el('div', { class: 'empty' }, '정상 좌표 정보를 준비 중입니다.'));
   }
 
-  // ---- trails ----
+  // ---- trails (난이도·시간: 웹조사 + codex + agy 교차검증) ----
   if (m.trails?.length) {
+    const VBADGE = { verified: ['codex·agy 교차검증', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
     const grid = el('div', { class: 'trail-grid' });
     m.trails.forEach((t) => {
+      const vb = t.verify && VBADGE[t.verify.level];
       const facts = el('div', { class: 't-facts' },
         t.start ? factSpan('들머리', t.start) : null,
         t.distance_km ? factSpan('거리', `${t.distance_km}km`) : null,
-        t.duration ? factSpan('소요', t.duration) : null,
-        t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null);
+        t.ascent_hours ? factSpan('오름(편도)', `${t.ascent_hours}시간`) : null,
+        t.round_trip_hours ? factSpan('왕복', `${t.round_trip_hours}시간`) : (t.duration && !t.ascent_hours ? factSpan('소요', t.duration) : null),
+        t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null,
+        vb ? el('span', { class: 'vbadge ' + vb[1], title: verifyTitle(t.verify) }, vb[0]) : null);
       grid.append(el('div', { class: 'trail-card' },
         el('div', { class: 't-name' }, t.name || '주요 코스'), facts,
         t.note ? el('div', { class: 't-note' }, t.note) : null));
     });
-    page.append(el('div', { class: 'section' }, el('h3', {}, '주요 등산로'), grid));
+    page.append(el('div', { class: 'section' },
+      el('h3', {}, '주요 등산로'),
+      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 codex·agy를 교차검증한 값입니다.'),
+      grid));
   }
 
   // ---- transport ----
@@ -148,6 +155,12 @@ export async function renderDetail(root, id) {
 
 function factSpan(label, val) {
   return el('span', {}, `${label} `, el('b', {}, val));
+}
+
+function verifyTitle(v) {
+  const d = v.difficulties || {};
+  const parts = [d.enrichment && `조사:${d.enrichment}`, d.codex && `codex:${d.codex}`, d.agy && `agy:${d.agy}`].filter(Boolean);
+  return parts.length ? `출처별 난이도 — ${parts.join(' · ')}` : '';
 }
 
 async function tryLoadCuratedGPX(id, view, elevBox, note) {

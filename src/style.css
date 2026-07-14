@@ -227,6 +227,12 @@ button { font-family: inherit; cursor: pointer; }
 .trail-card .t-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 13px; color: var(--text-soft); }
 .trail-card .t-facts b { color: var(--text); font-variant-numeric: tabular-nums; }
 .trail-card .t-note { margin-top: 8px; font-size: 13.5px; color: var(--text-soft); }
+.vbadge { font-size: 11px; font-weight: 750; padding: 3px 8px; border-radius: 999px; white-space: nowrap; cursor: help; }
+.vbadge.v-ok { background: #e3f0e6; color: #2c7a45; }
+.vbadge.v-mixed { background: #fdf0d8; color: #a5720d; }
+.vbadge.v-single { background: var(--bg-soft); color: var(--text-faint); }
+:root[data-theme="dark"] .vbadge.v-ok { background: #1e3527; color: #79cf98; }
+:root[data-theme="dark"] .vbadge.v-mixed { background: #3a2f12; color: #e3b855; }
 .diff { font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px; }
 .diff.d1 { background: #e3f0e6; color: #2c7a45; }
 .diff.d2 { background: #fdf0d8; color: #a5720d; }

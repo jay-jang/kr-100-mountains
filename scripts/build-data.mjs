@@ -12,10 +12,13 @@ const ROOT = join(__dirname, '..');
 const registry = JSON.parse(readFileSync(join(ROOT, 'data', 'registry.json'), 'utf8'));
 
 // enrichment: { results: [ {id, lat, lon, coord_confidence, summary, trails, transport, features, best_season, sources, elevation_m} ] }
+// Prefer the codex/agy cross-verified courses if present (data/enrichment.verified.json).
 let enrichment = { results: [] };
-const enrichPath = join(ROOT, 'data', 'enrichment.json');
+const verifiedPath = join(ROOT, 'data', 'enrichment.verified.json');
+const enrichPath = existsSync(verifiedPath) ? verifiedPath : join(ROOT, 'data', 'enrichment.json');
 if (existsSync(enrichPath)) {
   enrichment = JSON.parse(readFileSync(enrichPath, 'utf8'));
+  console.log(`using ${enrichPath.split('/').pop()}`);
 }
 const byId = new Map(enrichment.results.map(r => [r.id, r]));
 
@@ -91,13 +94,18 @@ for (const m of mountains) {
     ` · ${[m.lists.sanlim && '산림청 100대 명산', m.lists.bac && '블랙야크 명산100'].filter(Boolean).join(' / ')}`, '');
   if (m.summary) body.push('## 개요', '', m.summary, '');
   if (m.trails && m.trails.length) {
+    const vmark = { verified: 'codex·agy 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };
     body.push('## 주요 등산로', '');
-    body.push('| 코스 | 들머리 | 거리 | 소요시간 | 난이도 |', '| --- | --- | --- | --- | --- |');
+    body.push('| 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |',
+      '| --- | --- | --- | --- | --- | --- |');
     for (const t of m.trails) {
-      body.push(`| ${t.name || '-'} | ${t.start || '-'} | ${t.distance_km ? t.distance_km + 'km' : '-'} | ${t.duration || '-'} | ${t.difficulty || '-'} |`);
+      const a = t.ascent_hours ? `${t.ascent_hours}시간` : '-';
+      const r = t.round_trip_hours ? `${t.round_trip_hours}시간` : (t.duration || '-');
+      const v = t.verify ? (vmark[t.verify.level] || '') : '';
+      body.push(`| ${t.name || '-'} | ${t.distance_km ? t.distance_km + 'km' : '-'} | ${a} | ${r} | ${t.difficulty || '-'} | ${v} |`);
     }
     body.push('');
-    for (const t of m.trails) if (t.note) body.push(`- **${t.name}**: ${t.note}`);
+    for (const t of m.trails) if (t.start || t.note) body.push(`- **${t.name}** — ${[t.start && '들머리: ' + t.start, t.note].filter(Boolean).join(' · ')}`);
     body.push('');
   }
   if (m.transport) body.push('## 교통', '', m.transport, '');
