@@ -99,6 +99,8 @@ function statCard(label, done, total) {
   return el('div', { class: 'stat-card' },
     el('div', { class: 'label' }, label),
     el('div', { class: 'big' }, String(done), el('small', {}, ` / ${total}`)),
-    el('div', { class: 'progress' }, el('span', { style: `width:${pct}%` })),
+    el('div', { class: 'progress', role: 'progressbar', 'aria-label': `${label} 진행률`,
+      'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(done) },
+      el('span', { style: `width:${pct}%` })),
     el('div', { class: 'num', style: 'margin-top:6px;font-size:12px;color:var(--text-faint)' }, `${pct}% 완료`));
 }

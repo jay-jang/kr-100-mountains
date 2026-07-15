@@ -10,10 +10,10 @@ initTheme();
 const appRoot = document.getElementById('app');
 
 // ---- header ----
-const nav = el('nav', { class: 'nav' },
+const nav = el('nav', { class: 'nav', 'aria-label': '주요 메뉴' },
   el('a', { href: '#/', dataset: { route: 'home' } }, '지도'),
   el('a', { href: '#/stats', dataset: { route: 'stats' } }, '나의 기록'),
-  el('a', { href: 'https://ko.wikipedia.org/wiki/대한민국_100대_명산_목록', target: '_blank', rel: 'noopener' }, '원자료 ↗'));
+  el('a', { class: 'external-nav', href: 'https://ko.wikipedia.org/wiki/대한민국_100대_명산_목록', target: '_blank', rel: 'noopener' }, '원자료 ↗'));
 
 const themeBtn = el('button', { class: 'icon-btn', title: '테마 전환', 'aria-label': '테마 전환' }, '◐');
 themeBtn.addEventListener('click', () => { toggleTheme(); window.dispatchEvent(new Event('kr100:theme')); });
@@ -57,8 +57,11 @@ async function route() {
   }
 }
 function markActiveNav(route) {
-  [...nav.querySelectorAll('a[data-route]')].forEach((a) =>
-    a.classList.toggle('active', a.dataset.route === route));
+  [...nav.querySelectorAll('a[data-route]')].forEach((a) => {
+    const on = a.dataset.route === route;
+    a.classList.toggle('active', on);
+    if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
 }
 
 window.addEventListener('hashchange', route);

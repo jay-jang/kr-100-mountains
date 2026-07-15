@@ -29,6 +29,7 @@ export async function renderDetail(root, id) {
     const on = isHiked(m.id);
     hikeBtn.className = 'hike-btn' + (on ? ' done' : '');
     hikeBtn.textContent = on ? '★ 등정 완료' : '☆ 등정 기록';
+    hikeBtn.setAttribute('aria-pressed', String(on));
   };
   paintHike();
   hikeBtn.addEventListener('click', () => { toggleHiked(m.id); paintHike(); });
@@ -56,10 +57,10 @@ export async function renderDetail(root, id) {
 
   // ---- location map ----
   const mapNode = el('div', { id: 'detail-map' });
-  const trailBtn = el('button', {}, '🥾 등산로 표시');
-  const fileInput = el('input', { type: 'file', accept: '.gpx' });
-  const fileLabel = el('label', {}, '📈 GPX 불러오기', fileInput);
-  const tools = el('div', { class: 'map-tools' }, trailBtn, fileLabel);
+  const trailBtn = el('button', { type: 'button' }, '🥾 등산로 표시');
+  const fileInput = el('input', { type: 'file', accept: '.gpx', style: 'display:none' });
+  const fileBtn = el('button', { type: 'button', onClick: () => fileInput.click() }, '📈 GPX 불러오기');
+  const tools = el('div', { class: 'map-tools' }, trailBtn, fileBtn, fileInput);
   const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools);
   const elevBox = el('div', { class: 'elev-profile' });
   const gpxNote = el('div', { class: 'conf-note' });

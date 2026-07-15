@@ -6,7 +6,7 @@ import { getMapType, setMapType } from './store.js';
 const TYPES = [['default', '일반지도'], ['terrain', '지형도'], ['satellite', '스카이뷰']];
 
 export function mapControls(view, fullscreenTarget) {
-  const seg = el('div', { class: 'map-type-seg' });
+  const seg = el('div', { class: 'map-type-seg', role: 'group', 'aria-label': '지도 종류' });
   const cur = getMapType();
   view.setBaseType(cur);
   TYPES.forEach(([v, label]) => {
@@ -30,6 +30,7 @@ export function mapControls(view, fullscreenTarget) {
     const on = document.fullscreenElement === fullscreenTarget;
     fsBtn.textContent = on ? '✕' : '⛶';
     fsBtn.title = on ? '전체화면 종료' : '전체화면';
+    fsBtn.setAttribute('aria-label', on ? '전체화면 종료' : '전체화면');
     setTimeout(() => { try { view.relayout(); } catch {} }, 130);
   };
   document.addEventListener('fullscreenchange', onFsChange);
