@@ -29,6 +29,9 @@ jobs:
       - run: npm run build
         env:
           VITE_KAKAO_KEY: ${{ secrets.VITE_KAKAO_KEY }}
+          # 아래 두 시크릿이 있으면 클라우드 로그인/동기화 활성화, 없으면 브라우저 저장만
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

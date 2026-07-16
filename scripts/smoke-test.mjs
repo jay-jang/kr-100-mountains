@@ -40,11 +40,24 @@ const check = (name, cond, detail = '') => results.push({ name, ok: !!cond, deta
 try {
   await mkdir(SHOTS, { recursive: true });
 
-  // ---- home ----
+  // ---- home dashboard ----
   await page.goto(base + '/#/', { waitUntil: 'networkidle', timeout: 30000 });
+  await page.waitForSelector('.dash-hero', { timeout: 10000 });
+  const dashSections = await page.$$eval('.dash-section', (n) => n.length);
+  check('home: dashboard sections render', dashSections >= 3, `${dashSections} sections`);
+  const regionCards = await page.$$eval('.region-card', (n) => n.length);
+  check('home: region quick-explore', regionCards === 6, `${regionCards} regions`);
+  await page.fill('.dash-search', '설악');
+  await page.waitForTimeout(250);
+  const suggest = await page.$$eval('.dash-suggest-item', (n) => n.length);
+  check('home: search suggestions', suggest >= 1, `${suggest} for "설악"`);
+  await page.screenshot({ path: join(SHOTS, 'home.png') });
+
+  // ---- map explore ----
+  await page.goto(base + '/#/map', { waitUntil: 'networkidle', timeout: 30000 });
   await page.waitForSelector('.mtn-item', { timeout: 10000 });
   const listCount = await page.$$eval('.mtn-item', (n) => n.length);
-  check('home: mountain list renders', listCount > 100, `${listCount} items`);
+  check('map: mountain list renders', listCount > 100, `${listCount} items`);
   await page.waitForTimeout(800);
   const mapMarkers = await page.$$eval('#map path.leaflet-interactive, #map .leaflet-marker-icon', (n) => n.length);
   check('home: map markers render', mapMarkers > 100, `${mapMarkers} markers`);

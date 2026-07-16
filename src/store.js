@@ -12,6 +12,12 @@ function read() {
 }
 function write(obj) { localStorage.setItem(HIKED_KEY, JSON.stringify(obj)); emit(); }
 
+// 클라우드 동기화 훅: 로그인 시 sync 모듈이 등록. write 시 델타를 전달('set'|'del').
+let syncHook = null;
+export function setHikedSyncHook(fn) { syncHook = fn; }
+// 클라우드 병합 결과로 로컬 전체를 교체(동기화 훅은 호출하지 않음).
+export function replaceHiked(obj) { write({ ...obj }); }
+
 export function isHiked(id) { return id in read(); }
 export function hikedMap() { return read(); }
 export function hikedCount() { return Object.keys(read()).length; }
@@ -21,13 +27,15 @@ export function toggleHiked(id, on) {
   const next = on === undefined ? !(id in obj) : on;
   if (next) obj[id] = obj[id] || new Date().toISOString().slice(0, 10);
   else delete obj[id];
+  const date = obj[id];
   write(obj);
+  syncHook?.(next ? 'set' : 'del', id, date);
   return next;
 }
 
 export function setHikedDate(id, date) {
   const obj = read();
-  if (id in obj) { obj[id] = date; write(obj); }
+  if (id in obj) { obj[id] = date; write(obj); syncHook?.('set', id, date); }
 }
 
 export function exportHiked() {
@@ -39,8 +47,9 @@ export function importHiked(json) {
   const obj = read();
   for (const [id, date] of Object.entries(incoming)) obj[id] = date || obj[id] || '1970-01-01';
   write(obj);
+  syncHook?.('bulk');
 }
-export function clearHiked() { write({}); }
+export function clearHiked() { write({}); syncHook?.('clear'); }
 
 /* ---- 최근 본 산 (홈 추천·이어서 보기용) ---- */
 const RECENT_KEY = 'kr100:recent';   // [id, ...] 최신순, 최대 12

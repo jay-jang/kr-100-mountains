@@ -5,8 +5,10 @@ import { renderHome } from './views/home.js';
 import { renderExplore } from './views/explore.js';
 import { renderDetail } from './views/detail.js';
 import { renderStats } from './views/stats.js';
+import { initSync } from './sync.js';
 
 initTheme();
+initSync(); // 클라우드 동기화(설정된 경우) — 실패해도 앱은 로컬로 동작
 
 const appRoot = document.getElementById('app');
 

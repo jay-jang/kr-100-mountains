@@ -1,5 +1,6 @@
 import { loadData, REGION_COLORS, LIST_KEYS, LIST_META } from '../data.js';
 import { hikedMap, hikedCount, toggleHiked, exportHiked, importHiked, clearHiked, onChange } from '../store.js';
+import { CLOUD_ENABLED, currentUser, onAuthChange, signInWithEmail, signInWithGoogle, signOut } from '../auth.js';
 import { el, clear } from '../dom.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
@@ -9,12 +10,17 @@ export async function renderStats(root) {
   const page = el('div', { class: 'page' });
   root.append(page);
 
+  const authBox = el('div', { class: 'auth-box' });
   const body = el('div');
   page.append(
     el('div', { class: 'crumb' }, el('a', { href: '#/' }, '← 홈으로')),
-    el('h2', { style: 'margin:.1em 0 .4em;letter-spacing:-.03em' }, '나의 등정 기록'),
-    el('p', { class: 'prose muted', style: 'margin-top:0' }, '기록은 이 브라우저에만 저장됩니다 (localStorage).'),
-    body);
+    el('h2', { style: 'margin:.1em 0 .4em;letter-spacing:-.03em' }, '내 등정 기록'),
+    el('p', { class: 'prose muted', style: 'margin-top:0' },
+      CLOUD_ENABLED ? '로그인하면 여러 기기에서 기록이 동기화됩니다.' : '기록은 이 브라우저에 저장됩니다 (내보내기/가져오기로 이전 가능).'),
+    authBox, body);
+
+  drawAuth(authBox);
+  const offAuth = onAuthChange(() => drawAuth(authBox));
 
   function draw() {
     clear(body);
@@ -89,7 +95,39 @@ export async function renderStats(root) {
 
   draw();
   const off = onChange(draw);
-  return () => off();
+  return () => { off(); offAuth(); };
+}
+
+// 로그인/동기화 UI (CLOUD_ENABLED 일 때만 표시)
+function drawAuth(box) {
+  clear(box);
+  if (!CLOUD_ENABLED) return; // 미설정 배포: 로컬 저장만 (아래 내보내기/가져오기 사용)
+  const user = currentUser();
+  if (user) {
+    box.append(el('div', { class: 'auth-signed' },
+      el('span', { class: 'auth-badge' }, '✓ 동기화됨'),
+      el('span', { class: 'auth-email' }, user.email || user.user_metadata?.name || '로그인됨'),
+      el('button', { class: 'btn', onClick: () => signOut() }, '로그아웃')));
+    return;
+  }
+  const email = el('input', { class: 'auth-input', type: 'email', placeholder: '이메일 주소', 'aria-label': '이메일' });
+  const msg = el('span', { class: 'auth-msg' });
+  const mailBtn = el('button', { class: 'btn primary', onClick: async () => {
+    const v = email.value.trim();
+    if (!/.+@.+\..+/.test(v)) { msg.textContent = '올바른 이메일을 입력하세요.'; return; }
+    mailBtn.disabled = true; msg.textContent = '전송 중…';
+    try { await signInWithEmail(v); msg.textContent = '로그인 링크를 메일로 보냈습니다. 메일함을 확인하세요.'; }
+    catch (e) { msg.textContent = '전송 실패: ' + (e.message || e); }
+    finally { mailBtn.disabled = false; }
+  } }, '메일로 로그인 링크 받기');
+  const googleBtn = el('button', { class: 'btn', onClick: async () => {
+    try { await signInWithGoogle(); } catch (e) { msg.textContent = '구글 로그인 실패: ' + (e.message || e); }
+  } }, 'Google로 로그인');
+
+  box.append(el('div', { class: 'auth-signin' },
+    el('div', { class: 'auth-row' }, email, mailBtn),
+    el('div', { class: 'auth-row' }, googleBtn),
+    msg));
 }
 
 function statCard(label, done, total, cls = '') {
