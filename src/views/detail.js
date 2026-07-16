@@ -1,7 +1,7 @@
 import { loadData, DIFF_CLASS, regionColor, LIST_KEYS, LIST_META } from '../data.js';
 import { createMapView, fetchTrails } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
-import { isHiked, toggleHiked, onChange } from '../store.js';
+import { isHiked, toggleHiked, onChange, recordView } from '../store.js';
 import { parseGPX, drawTrack, elevationSVG } from '../gpx.js';
 import { el, esc } from '../dom.js';
 
@@ -10,18 +10,19 @@ export async function renderDetail(root, id) {
   const m = data.byId.get(id);
   if (!m) {
     root.append(el('div', { class: 'page' },
-      el('p', { class: 'crumb' }, el('a', { href: '#/' }, '← 지도로')),
+      el('p', { class: 'crumb' }, el('a', { href: '#/map' }, '← 지도로')),
       el('div', { class: 'empty' }, '산을 찾을 수 없습니다.')));
     return () => {};
   }
+  recordView(m.id);
 
   const page = el('div', { class: 'page' });
   root.append(page);
 
   // ---- breadcrumb ----
   page.append(el('div', { class: 'crumb' },
-    el('a', { href: '#/' }, '지도'), ' / ',
-    el('a', { href: `#/?focus=${m.id}` }, m.region), ' / ', m.name_full));
+    el('a', { href: '#/map' }, '지도'), ' / ',
+    el('a', { href: `#/map?focus=${m.id}` }, m.region), ' / ', m.name_full));
 
   // ---- hero ----
   const hikeBtn = el('button', { class: 'hike-btn' + (isHiked(m.id) ? ' done' : '') });

@@ -42,6 +42,19 @@ export function importHiked(json) {
 }
 export function clearHiked() { write({}); }
 
+/* ---- 최근 본 산 (홈 추천·이어서 보기용) ---- */
+const RECENT_KEY = 'kr100:recent';   // [id, ...] 최신순, 최대 12
+export function recentViews() {
+  try { return JSON.parse(localStorage.getItem(RECENT_KEY)) || []; }
+  catch { return []; }
+}
+export function recordView(id) {
+  if (!id) return;
+  const next = [id, ...recentViews().filter((x) => x !== id)].slice(0, 12);
+  localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+  emit();
+}
+
 /* ---- map base type (일반/지형도/스카이뷰) ---- */
 const MAPTYPE_KEY = 'kr100:maptype';
 export function getMapType() { return localStorage.getItem(MAPTYPE_KEY) || 'default'; }

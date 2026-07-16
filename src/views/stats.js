@@ -11,7 +11,7 @@ export async function renderStats(root) {
 
   const body = el('div');
   page.append(
-    el('div', { class: 'crumb' }, el('a', { href: '#/' }, '← 지도로')),
+    el('div', { class: 'crumb' }, el('a', { href: '#/' }, '← 홈으로')),
     el('h2', { style: 'margin:.1em 0 .4em;letter-spacing:-.03em' }, '나의 등정 기록'),
     el('p', { class: 'prose muted', style: 'margin-top:0' }, '기록은 이 브라우저에만 저장됩니다 (localStorage).'),
     body);

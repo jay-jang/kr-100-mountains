@@ -2,6 +2,7 @@ import './style.css';
 import { el, clear } from './dom.js';
 import { initTheme, toggleTheme } from './store.js';
 import { renderHome } from './views/home.js';
+import { renderExplore } from './views/explore.js';
 import { renderDetail } from './views/detail.js';
 import { renderStats } from './views/stats.js';
 
@@ -11,8 +12,9 @@ const appRoot = document.getElementById('app');
 
 // ---- header ----
 const nav = el('nav', { class: 'nav', 'aria-label': '주요 메뉴' },
-  el('a', { href: '#/', dataset: { route: 'home' } }, '지도'),
-  el('a', { href: '#/stats', dataset: { route: 'stats' } }, '나의 기록'),
+  el('a', { href: '#/', dataset: { route: 'home' } }, '홈'),
+  el('a', { href: '#/map', dataset: { route: 'map' } }, '지도'),
+  el('a', { href: '#/track', dataset: { route: 'track' } }, '내 기록'),
   el('a', { class: 'external-nav', href: 'https://ko.wikipedia.org/wiki/대한민국_100대_명산_목록', target: '_blank', rel: 'noopener' }, '원자료 ↗'));
 
 const themeBtn = el('button', { class: 'icon-btn', title: '테마 전환', 'aria-label': '테마 전환' }, '◐');
@@ -36,18 +38,23 @@ async function route() {
   main.className = '';
   const hash = location.hash.replace(/^#/, '') || '/';
   const [path] = hash.split('?');
-  const parts = path.split('/').filter(Boolean); // [] | ['m', id] | ['stats']
+  const parts = path.split('/').filter(Boolean); // [] | ['map'] | ['m', id] | ['track']
 
-  markActiveNav(parts[0] === 'stats' ? 'stats' : 'home');
+  const navKey = parts[0] === 'map' ? 'map' : (parts[0] === 'track' || parts[0] === 'stats') ? 'track' : parts[0] === 'm' ? '' : 'home';
+  markActiveNav(navKey);
 
   try {
     if (parts[0] === 'm' && parts[1]) {
+      main.className = '';
       cleanup = await renderDetail(main, decodeURIComponent(parts[1]));
-    } else if (parts[0] === 'stats') {
+    } else if (parts[0] === 'map') {
+      main.className = 'home-mode';
+      cleanup = await renderExplore(main);
+    } else if (parts[0] === 'track' || parts[0] === 'stats') {
       main.className = '';
       cleanup = await renderStats(main);
     } else {
-      main.className = 'home-mode';
+      main.className = '';
       cleanup = await renderHome(main);
     }
   } catch (e) {
