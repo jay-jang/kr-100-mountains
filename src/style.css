@@ -104,12 +104,10 @@ button { font-family: inherit; cursor: pointer; }
 /* ============ home layout ============ */
 .home { flex: 1; display: grid; grid-template-columns: 380px 1fr; grid-template-rows: minmax(0, 1fr); min-height: 0; }
 
-/* 큰 화면: 첫 화면을 뷰포트에 고정 — 지도는 고정, 스크롤은 산 목록(.mtn-list) 안에서만.
+/* 첫 화면을 뷰포트에 고정 — 지도는 고정, 스크롤은 산 목록(.mtn-list) 안에서만 (모바일 포함).
    (상세·통계 페이지는 home-mode가 아니므로 기존처럼 문서 스크롤 유지) */
-@media (min-width: 861px) {
-  #app:has(> #view.home-mode) { height: 100dvh; }
-  #view.home-mode { overflow: hidden; }
-}
+#app:has(> #view.home-mode) { height: 100dvh; }
+#view.home-mode { overflow: hidden; }
 .panel {
   display: flex; flex-direction: column; min-height: 0;
   border-right: 1px solid var(--border); background: var(--bg-elev);
@@ -349,13 +347,14 @@ button { font-family: inherit; cursor: pointer; }
   .nav a { padding: 9px 11px; font-size: 13px; min-height: 42px; }
   .icon-btn { width: 42px; height: 42px; }
 
-  /* home: 목록/지도 단일 뷰 전환 */
-  .home { display: block; position: relative; }
-  .home .panel, .home .map-wrap { height: 100%; }
-  .panel { border-right: 0; max-height: none; }
-  .home[data-view="list"] .map-wrap { display: none; }
-  .home[data-view="map"] .panel { display: none; }
-  .view-toggle { display: inline-flex; }
+  /* home: 지도 고정(상단) + 그 아래 필터·목록이 스크롤되는 스택 레이아웃.
+     좁은 화면에선 필터가 커서 목록만 따로 고정하면 목록이 너무 좁아지므로,
+     지도만 고정하고 필터+목록을 함께 스크롤(패널 스크롤)한다. */
+  .home { display: flex; flex-direction: column; }
+  .map-wrap { order: -1; flex: none; height: 34vh; min-height: 180px; }
+  .panel { border-right: 0; flex: 1; min-height: 0; overflow-y: auto; }
+  .mtn-list { flex: none; overflow: visible; }
+  .view-toggle { display: none; }
 
   /* touch targets */
   .chip { min-height: 40px; padding: 8px 13px; font-size: 13px; }
