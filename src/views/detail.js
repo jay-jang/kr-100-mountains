@@ -44,7 +44,11 @@ export async function renderDetail(root, id) {
       el('h2', {}, m.name, m.disambig ? el('span', { class: 'han' }, `(${m.disambig})`) : null),
       sub),
     el('div', { class: 'hero-badges' },
-      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => el('span', { class: `pill p-${k}` }, LIST_META[k].full))),
+      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) =>
+        (k === 'hansanha' && m.hansanha_rank)
+          ? el('span', { class: 'pill p-hansanha ranked', title: '한국의 산하(koreasanha.net) 인기명산 100 접속순위' },
+              rankMedal(m.hansanha_rank), '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`))
+          : el('span', { class: `pill p-${k}` }, LIST_META[k].full))),
     hikeBtn));
 
   // ---- summary ----
@@ -143,6 +147,7 @@ export async function renderDetail(root, id) {
 
   page.append(el('div', { class: 'disclaimer' },
     'ⓘ 이 문서는 산림청 100대 명산·블랙야크 명산100·한국의산하 인기명산 100·월간산 100대 명산 공개 목록과 웹 조사를 바탕으로 자동 정리되었습니다. ' +
+    (m.hansanha_rank ? '한국의산하 인기명산 순위는 koreasanha.net 접속순위 집계(2003~2004년 기준 아카이브)입니다. ' : '') +
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
     '지도의 등산로 선은 OpenStreetMap 데이터이며, GPX는 실제 기록 파일만 표시합니다.'));
 
@@ -155,6 +160,12 @@ export async function renderDetail(root, id) {
 
 function factSpan(label, val) {
   return el('span', {}, `${label} `, el('b', {}, val));
+}
+
+// 한국의산하 인기명산 순위 메달 (상위권 강조)
+function rankMedal(rank) {
+  const m = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank <= 10 ? '🏅' : '';
+  return m ? el('span', { class: 'medal', 'aria-hidden': 'true' }, m + ' ') : null;
 }
 
 function verifyTitle(v) {

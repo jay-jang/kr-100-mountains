@@ -229,6 +229,11 @@ button { font-family: inherit; cursor: pointer; }
 :root[data-theme="dark"] .pill.p-bac { color: #a9c0f5; border-color: #2a3b63; background: #171f33; }
 :root[data-theme="dark"] .pill.p-hansanha { color: #eab873; border-color: #4a3820; background: #2a1f12; }
 :root[data-theme="dark"] .pill.p-wolgansan { color: #c9a9ef; border-color: #3f2d5c; background: #201733; }
+.pill.p-hansanha.ranked { border-color: #d99a2b; background: #fbf0d9; }
+:root[data-theme="dark"] .pill.p-hansanha.ranked { border-color: #7a5a1e; background: #322412; }
+.pill .pill-rank { font-weight: 850; color: #9a5a12; }
+:root[data-theme="dark"] .pill .pill-rank { color: #f0c070; }
+.pill .medal { font-weight: 400; }
 .hike-btn {
   margin-left: auto; padding: 10px 16px; border-radius: 11px; font-weight: 750; font-size: 14px;
   border: 1.5px solid var(--border-strong); background: var(--bg-elev); color: var(--text);

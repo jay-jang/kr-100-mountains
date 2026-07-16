@@ -395,6 +395,20 @@ const registry = {
   mountains,
 };
 
+// ---- 한국의산하 인기명산 순위 주입 (data/sources/hansanha_ranking.json) ----
+// 출처: koreasanha.net "인기명산 100" 접속순위 (Wayback 아카이브). hansanha 소속 산에만 순위 기록.
+try {
+  const rankSrc = JSON.parse(readFileSync(join(ROOT, 'data', 'sources', 'hansanha_ranking.json'), 'utf8'));
+  const id2rank = new Map(rankSrc.ranking.filter((e) => e.id).map((e) => [e.id, e.rank]));
+  let ranked = 0;
+  for (const m of mountains) {
+    if (m.lists.hansanha && id2rank.has(m.id)) { m.hansanha_rank = id2rank.get(m.id); ranked++; }
+  }
+  console.log(`한국의산하 인기명산 순위 주입: ${ranked}개`);
+} catch (e) {
+  console.log('ℹ️ hansanha_ranking.json 없음 — 순위 미주입');
+}
+
 mkdirSync(join(ROOT, 'data'), { recursive: true });
 writeFileSync(join(ROOT, 'data', 'registry.json'), JSON.stringify(registry, null, 2) + '\n');
 
