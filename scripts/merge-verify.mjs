@@ -1,6 +1,6 @@
-// Reconciles course data from 3 independent sources — existing enrichment (web research),
-// codex, and agy — into a verified per-course list with difficulty + climbing times and an
-// agreement flag. Writes data/enrichment.verified.json (consumed by build-data.mjs).
+// Reconciles course data from 3 independent sources — web research (survey) plus two
+// independent cross-checks — into a verified per-course list with difficulty + climbing
+// times and an agreement flag. Writes data/enrichment.verified.json (consumed by build-data.mjs).
 // Run: node scripts/merge-verify.mjs
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -88,7 +88,7 @@ function consensusDiff(vals) {
   return DNAME[Math.max(...modes)]; // tie → 더 어려운 쪽(보수적)
 }
 
-// ---- korean duration text → hours (fallback when codex/agy 미커버) ----
+// ---- korean duration text → hours (fallback when 교차검증 자료 미커버) ----
 function parseDur(text) {
   if (!text) return {};
   const hm = (seg) => { const h = seg.match(/(\d+(?:\.\d+)?)\s*시간/); const min = seg.match(/(\d+)\s*분/);
@@ -114,7 +114,7 @@ function buildCourse(base, cx, ay) {
   const ascent = rHalf(avg(cx?.ascent_hours, ay?.ascent_hours) ?? fromDur.ascent_hours);
   const round = rHalf(avg(cx?.round_trip_hours, ay?.round_trip_hours) ?? fromDur.round_trip_hours);
   const diffs = [base?.difficulty, cx?.difficulty, ay?.difficulty].filter(Boolean);
-  const sources = [base && 'enrichment', cx && 'codex', ay && 'agy'].filter(Boolean);
+  const sources = [base && 'survey', cx && 'crosscheck1', ay && 'crosscheck2'].filter(Boolean);
   let level = 'unverified';
   if (cx && ay) level = cx.difficulty === ay.difficulty ? 'verified' : 'mixed';
   else if (cx || ay) level = 'single';
@@ -130,8 +130,8 @@ function buildCourse(base, cx, ay) {
     verify: {
       sources,
       difficulty_agree: cx && ay ? cx.difficulty === ay.difficulty : null,
-      level, // verified(codex·agy 일치) / mixed(상이) / single(한쪽만) / unverified
-      difficulties: { enrichment: base?.difficulty || null, codex: cx?.difficulty || null, agy: ay?.difficulty || null },
+      level, // verified(교차검증 일치) / mixed(상이) / single(한쪽만) / unverified
+      difficulties: { survey: base?.difficulty || null, crosscheck1: cx?.difficulty || null, crosscheck2: ay?.difficulty || null },
     },
   };
 }
@@ -156,7 +156,7 @@ function reconcile(trails, codexC, agyC) {
 const enrichment = JSON.parse(readFileSync(join(ROOT, 'data', 'enrichment.json'), 'utf8'));
 const codex = loadSource('codex_');
 const agy = loadSource('agy_');
-console.log(`sources: codex ${codex.size} mtns · agy ${agy.size} mtns · enrichment ${enrichment.results.length}`);
+console.log(`sources: crosscheck1 ${codex.size} mtns · crosscheck2 ${agy.size} mtns · survey ${enrichment.results.length}`);
 
 let stat = { verified: 0, mixed: 0, single: 0, unverified: 0, courses: 0, mtns_both: 0 };
 for (const m of enrichment.results) {
@@ -170,5 +170,5 @@ for (const m of enrichment.results) {
 
 writeFileSync(join(ROOT, 'data', 'enrichment.verified.json'), JSON.stringify(enrichment, null, 2) + '\n');
 console.log('enrichment.verified.json written');
-console.log(`mountains cross-checked by BOTH codex+agy: ${stat.mtns_both}/${enrichment.results.length}`);
-console.log(`courses: ${stat.courses} | verified(codex·agy 일치) ${stat.verified} · mixed(상이) ${stat.mixed} · single ${stat.single} · unverified ${stat.unverified}`);
+console.log(`mountains cross-checked by BOTH independent sources: ${stat.mtns_both}/${enrichment.results.length}`);
+console.log(`courses: ${stat.courses} | verified(교차검증 일치) ${stat.verified} · mixed(상이) ${stat.mixed} · single ${stat.single} · unverified ${stat.unverified}`);

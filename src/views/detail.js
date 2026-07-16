@@ -113,9 +113,9 @@ export async function renderDetail(root, id) {
     mapWrap.replaceWith(el('div', { class: 'empty' }, '정상 좌표 정보를 준비 중입니다.'));
   }
 
-  // ---- trails (난이도·시간: 웹조사 + codex + agy 교차검증) ----
+  // ---- trails (난이도·시간: 웹 조사 + 복수 자료 교차검증) ----
   if (m.trails?.length) {
-    const VBADGE = { verified: ['codex·agy 교차검증', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
+    const VBADGE = { verified: ['교차검증 일치', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
     const grid = el('div', { class: 'trail-grid' });
     m.trails.forEach((t) => {
       const vb = t.verify && VBADGE[t.verify.level];
@@ -132,7 +132,7 @@ export async function renderDetail(root, id) {
     });
     page.append(el('div', { class: 'section' },
       el('h3', {}, '주요 등산로'),
-      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 codex·agy를 교차검증한 값입니다.'),
+      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다.'),
       grid));
   }
 
@@ -191,7 +191,7 @@ function listPill(k, m) {
 
 function verifyTitle(v) {
   const d = v.difficulties || {};
-  const parts = [d.enrichment && `조사:${d.enrichment}`, d.codex && `codex:${d.codex}`, d.agy && `agy:${d.agy}`].filter(Boolean);
+  const parts = [d.survey && `웹조사:${d.survey}`, d.crosscheck1 && `교차검증①:${d.crosscheck1}`, d.crosscheck2 && `교차검증②:${d.crosscheck2}`].filter(Boolean);
   return parts.length ? `출처별 난이도 — ${parts.join(' · ')}` : '';
 }
 

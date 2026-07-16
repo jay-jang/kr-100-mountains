@@ -102,7 +102,14 @@ button { font-family: inherit; cursor: pointer; }
 .icon-btn:hover { border-color: var(--border-strong); }
 
 /* ============ home layout ============ */
-.home { flex: 1; display: grid; grid-template-columns: 380px 1fr; min-height: 0; }
+.home { flex: 1; display: grid; grid-template-columns: 380px 1fr; grid-template-rows: minmax(0, 1fr); min-height: 0; }
+
+/* 큰 화면: 첫 화면을 뷰포트에 고정 — 지도는 고정, 스크롤은 산 목록(.mtn-list) 안에서만.
+   (상세·통계 페이지는 home-mode가 아니므로 기존처럼 문서 스크롤 유지) */
+@media (min-width: 861px) {
+  #app:has(> #view.home-mode) { height: 100dvh; }
+  #view.home-mode { overflow: hidden; }
+}
 .panel {
   display: flex; flex-direction: column; min-height: 0;
   border-right: 1px solid var(--border); background: var(--bg-elev);
@@ -135,7 +142,7 @@ button { font-family: inherit; cursor: pointer; }
 .filters-foot button { border: 0; background: none; color: var(--accent-ink); font-weight: 650; font-size: 12px; }
 
 /* list */
-.mtn-list { overflow-y: auto; flex: 1; padding: 6px; }
+.mtn-list { overflow-y: auto; flex: 1; min-height: 0; padding: 6px; }
 .mtn-item {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 10px; align-items: center;
   padding: 9px 6px 9px 10px; border-radius: 11px; cursor: pointer; border: 1px solid transparent;

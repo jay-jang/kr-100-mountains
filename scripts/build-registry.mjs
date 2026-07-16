@@ -2,7 +2,7 @@
 // Sources:
 //  - 산림청(Korea Forest Service) 100대 명산: names/elevation/location from ko.wikipedia
 //    "대한민국 100대 명산 목록" (survey-grade elevations).
-//  - 블랙야크(BAC) 명산100: membership cross-verified via codex agent against namu.wiki
+//  - 블랙야크(BAC) 명산100: membership cross-verified against public sources
 //    comparison table (data/sources/bac_resolution.json). 79 overlap, 21 BAC-only,
 //    21 산림청-only. 천마산(남양주)=BAC, 명성산=산림청-only.
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';

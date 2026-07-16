@@ -1,5 +1,6 @@
-// Cross-verifies each mountain's courses (난이도 + 등반시간) via codex AND agy.
-// Batched, concurrent, resumable. Writes raw JSON per batch to data/verify/{codex,agy}_<i>.json.
+// Cross-verifies each mountain's courses (난이도 + 등반시간) via two independent
+// command-line research tools. Batched, concurrent, resumable. Writes raw JSON per batch
+// to data/verify/ (one file per tool per batch, reconciled by merge-verify.mjs).
 // Run: node scripts/verify-trails.mjs   (env: CONC=4 BATCH=5 TIMEOUT=360)
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { spawn } from 'node:child_process';
@@ -112,7 +113,7 @@ async function doBatch(i) {
     doSource('agy', prompt, join(VDIR, `agy_${TAG}${i}.json`), ids),
   ]);
   done++;
-  console.log(`[batch ${i + 1}/${batches.length}] ${ids.join(',')} → codex:${cx ? 'ok' : 'MISS'} agy:${ay ? 'ok' : 'MISS'}  (${done}/${batches.length} done)`);
+  console.log(`[batch ${i + 1}/${batches.length}] ${ids.join(',')} → src1:${cx ? 'ok' : 'MISS'} src2:${ay ? 'ok' : 'MISS'}  (${done}/${batches.length} done)`);
 }
 
 let next = 0;

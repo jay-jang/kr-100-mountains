@@ -12,7 +12,7 @@ const ROOT = join(__dirname, '..');
 const registry = JSON.parse(readFileSync(join(ROOT, 'data', 'registry.json'), 'utf8'));
 
 // enrichment: { results: [ {id, lat, lon, coord_confidence, summary, trails, transport, features, best_season, sources, elevation_m} ] }
-// Prefer the codex/agy cross-verified courses if present (data/enrichment.verified.json).
+// Prefer the cross-verified courses if present (data/enrichment.verified.json).
 let enrichment = { results: [] };
 const verifiedPath = join(ROOT, 'data', 'enrichment.verified.json');
 const enrichPath = existsSync(verifiedPath) ? verifiedPath : join(ROOT, 'data', 'enrichment.json');
@@ -95,7 +95,7 @@ for (const m of mountains) {
     ` · ${['sanlim', 'bac', 'hansanha', 'wolgansan'].filter((k) => m.lists[k]).map((k) => LIST_LABEL[k]).join(' / ')}`, '');
   if (m.summary) body.push('## 개요', '', m.summary, '');
   if (m.trails && m.trails.length) {
-    const vmark = { verified: 'codex·agy 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };
+    const vmark = { verified: '교차검증 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };
     body.push('## 주요 등산로', '');
     body.push('| 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |',
       '| --- | --- | --- | --- | --- | --- |');
