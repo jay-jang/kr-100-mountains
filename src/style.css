@@ -234,6 +234,15 @@ button { font-family: inherit; cursor: pointer; }
 .pill .pill-rank { font-weight: 850; color: #9a5a12; }
 :root[data-theme="dark"] .pill .pill-rank { color: #f0c070; }
 .pill .medal { font-weight: 400; }
+.pill.p-wolgansan.scored { border-color: #9b6fd0; background: #f2e9fb; }
+:root[data-theme="dark"] .pill.p-wolgansan.scored { border-color: #5a3f88; background: #241733; }
+.pill.p-wolgansan.scored .pill-rank { color: #6b3aa0; }
+:root[data-theme="dark"] .pill.p-wolgansan.scored .pill-rank { color: #c9a9ef; }
+/* 월간산 선정기준 섹션 */
+.crit-count { font-size: 14px; font-weight: 800; color: #6b3aa0; vertical-align: middle; }
+:root[data-theme="dark"] .crit-count { color: #c9a9ef; }
+.crit-tags .tag.crit { background: #f2e9fb; color: #6b3aa0; border: 1px solid #d8c4f0; font-weight: 700; }
+:root[data-theme="dark"] .crit-tags .tag.crit { background: #241733; color: #c9a9ef; border: 1px solid #3f2d5c; }
 .hike-btn {
   margin-left: auto; padding: 10px 16px; border-radius: 11px; font-weight: 750; font-size: 14px;
   border: 1.5px solid var(--border-strong); background: var(--bg-elev); color: var(--text);

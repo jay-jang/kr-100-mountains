@@ -409,6 +409,53 @@ try {
   console.log('ℹ️ hansanha_ranking.json 없음 — 순위 미주입');
 }
 
+// ---- 월간산 선정기준 충족 개수 주입 (data/sources/wolgansan_criteria.json) ----
+// 월간산 2018 '한국의 100대 명산'은 공식 순위가 없다. 대신 11개 세부 선정기준 표에서
+// 각 산이 직접 등장한 세부기준 수를 재집계해 wolgansan_criteria(개수 + 부문 목록)로 기록.
+try {
+  const critSrc = JSON.parse(readFileSync(join(ROOT, 'data', 'sources', 'wolgansan_criteria.json'), 'utf8'));
+  const wolIds = new Set(mountains.filter((m) => m.lists.wolgansan).map((m) => m.id));
+  const byName = new Map();
+  for (const m of mountains) { if (!byName.has(m.name)) byName.set(m.name, []); byName.get(m.name).push(m); }
+  const GLABEL = { '오악': '오악', '조선 사고지': '사고지', '십승지': '십승지', '산신제': '산신제',
+    '야생화': '야생화', '생태': '생태', '조망': '조망', '발원지': '발원지', '지형지질': '지형·지질',
+    '많이 찾는 산': '대중성', '지정 자연공원': '자연공원' };
+  const findId = (entry) => {
+    const mo = entry.match(/^(.+?)\((.+?)\)$/);
+    const nm = mo ? mo[1] : entry, hint = mo ? mo[2] : null;
+    const cands = byName.get(nm) || [];
+    if (cands.length === 1) return cands[0].id;
+    if (hint) {
+      const pm = cands.filter((c) => c.location.includes(hint) || (c.disambig || '').includes(hint));
+      if (pm.length === 1) return pm[0].id;
+    }
+    const main = cands.filter((c) => !(c.disambig || '') && wolIds.has(c.id));
+    if (main.length === 1) return main[0].id;
+    const wf = cands.filter((c) => wolIds.has(c.id));
+    if (wf.length === 1) return wf[0].id;
+    return null;
+  };
+  const critOf = new Map();
+  for (const c of critSrc.criteria) {
+    const seen = new Set();
+    for (const e of c.mountains) {
+      const id = findId(e);
+      if (id && wolIds.has(id) && !seen.has(id)) { seen.add(id); (critOf.get(id) || critOf.set(id, []).get(id)).push(GLABEL[c.key] || c.key); }
+    }
+  }
+  let injected = 0;
+  for (const m of mountains) {
+    if (m.lists.wolgansan && critOf.has(m.id)) {
+      const cs = critOf.get(m.id);
+      m.wolgansan_criteria = { count: cs.length, groups: cs };
+      injected++;
+    }
+  }
+  console.log(`월간산 선정기준 충족 개수 주입: ${injected}개`);
+} catch (e) {
+  console.log('ℹ️ wolgansan_criteria.json 없음 — 기준 개수 미주입', e.message);
+}
+
 mkdirSync(join(ROOT, 'data'), { recursive: true });
 writeFileSync(join(ROOT, 'data', 'registry.json'), JSON.stringify(registry, null, 2) + '\n');
 

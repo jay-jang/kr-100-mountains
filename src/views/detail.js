@@ -44,11 +44,7 @@ export async function renderDetail(root, id) {
       el('h2', {}, m.name, m.disambig ? el('span', { class: 'han' }, `(${m.disambig})`) : null),
       sub),
     el('div', { class: 'hero-badges' },
-      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) =>
-        (k === 'hansanha' && m.hansanha_rank)
-          ? el('span', { class: 'pill p-hansanha ranked', title: '한국의 산하(koreasanha.net) 인기명산 100 접속순위' },
-              rankMedal(m.hansanha_rank), '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`))
-          : el('span', { class: `pill p-${k}` }, LIST_META[k].full))),
+      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => listPill(k, m))),
     hikeBtn));
 
   // ---- summary ----
@@ -57,6 +53,16 @@ export async function renderDetail(root, id) {
     m.summary
       ? el('p', { class: 'prose' }, m.summary)
       : el('p', { class: 'prose muted' }, '개요 정보를 준비 중입니다.')));
+
+  // ---- 월간산 선정기준 (공식 순위 대신 11개 세부기준 중 해당 부문) ----
+  if (m.wolgansan_criteria) {
+    const wc = m.wolgansan_criteria;
+    page.append(el('div', { class: 'section' },
+      el('h3', {}, '월간산 선정기준 ', el('span', { class: 'crit-count' }, `${wc.count}개 부문`)),
+      el('div', { class: 'tags crit-tags' }, ...wc.groups.map((g) => el('span', { class: 'tag crit' }, g))),
+      el('p', { class: 'conf-note', style: 'margin-top:10px' },
+        '월간산 「한국의 100대 명산」(2018)은 공식 순위·점수를 발표하지 않았습니다. 위 부문은 월간산이 제시한 5대·11개 세부 선정기준 표에서 이 산이 직접 언급된 항목을 재집계한 것입니다.')));
+  }
 
   // ---- location map ----
   const mapNode = el('div', { id: 'detail-map' });
@@ -148,6 +154,7 @@ export async function renderDetail(root, id) {
   page.append(el('div', { class: 'disclaimer' },
     'ⓘ 이 문서는 산림청 100대 명산·블랙야크 명산100·한국의산하 인기명산 100·월간산 100대 명산 공개 목록과 웹 조사를 바탕으로 자동 정리되었습니다. ' +
     (m.hansanha_rank ? '한국의산하 인기명산 순위는 koreasanha.net 접속순위 집계(2003~2004년 기준 아카이브)입니다. ' : '') +
+    (m.wolgansan_criteria ? '월간산 선정기준 부문 수는 2018년 선정기준 표를 재집계한 값으로, 월간산 자체 집계(연봉 포함)와 다를 수 있습니다. ' : '') +
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
     '지도의 등산로 선은 OpenStreetMap 데이터이며, GPX는 실제 기록 파일만 표시합니다.'));
 
@@ -166,6 +173,20 @@ function factSpan(label, val) {
 function rankMedal(rank) {
   const m = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank <= 10 ? '🏅' : '';
   return m ? el('span', { class: 'medal', 'aria-hidden': 'true' }, m + ' ') : null;
+}
+
+// 리스트 pill — 한국의산하는 인기명산 순위, 월간산은 선정기준 충족 개수를 함께 표시
+function listPill(k, m) {
+  if (k === 'hansanha' && m.hansanha_rank) {
+    return el('span', { class: 'pill p-hansanha ranked', title: '한국의 산하(koreasanha.net) 인기명산 100 접속순위' },
+      rankMedal(m.hansanha_rank), '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`));
+  }
+  if (k === 'wolgansan' && m.wolgansan_criteria) {
+    const wc = m.wolgansan_criteria;
+    return el('span', { class: 'pill p-wolgansan scored', title: `월간산 11개 세부 선정기준 중 해당 부문: ${wc.groups.join(' · ')}` },
+      '월간산 선정기준', el('b', { class: 'pill-rank' }, ` ${wc.count}개 부문`));
+  }
+  return el('span', { class: `pill p-${k}` }, LIST_META[k].full);
 }
 
 function verifyTitle(v) {
