@@ -14,11 +14,19 @@ const BATCH = Number(process.env.BATCH || 5);
 const CONC = Number(process.env.CONC || 4);
 const TIMEOUT = Number(process.env.TIMEOUT || 360) * 1000;
 
+// TAG: batch filename suffix tag so a focused re-run (e.g. new mountains) doesn't clobber
+//      the original codex_<i>/agy_<i> files. merge-verify matches any codex_*/agy_* by id.
+// ONLY: path to a JSON array of ids — restrict verification to just those mountains.
+const TAG = process.env.TAG || '';
+const ONLY = process.env.ONLY ? new Set(JSON.parse(readFileSync(process.env.ONLY, 'utf8'))) : null;
+
 const mountains = JSON.parse(readFileSync(join(ROOT, 'public', 'data', 'mountains.json'), 'utf8')).mountains;
-const items = mountains.map((m) => ({
-  id: m.id, name: m.name_full, elev: m.elevation_m, loc: m.location,
-  cur_courses: (m.trails || []).map((t) => t.name),
-}));
+const items = mountains
+  .filter((m) => !ONLY || ONLY.has(m.id))
+  .map((m) => ({
+    id: m.id, name: m.name_full, elev: m.elevation_m, loc: m.location,
+    cur_courses: (m.trails || []).map((t) => t.name),
+  }));
 const batches = [];
 for (let i = 0; i < items.length; i += BATCH) batches.push(items.slice(i, i + BATCH));
 
@@ -100,8 +108,8 @@ async function doBatch(i) {
   const ids = batch.map((b) => b.id);
   const prompt = PROMPT(batch);
   const [cx, ay] = await Promise.all([
-    doSource('codex', prompt, join(VDIR, `codex_${i}.json`), ids),
-    doSource('agy', prompt, join(VDIR, `agy_${i}.json`), ids),
+    doSource('codex', prompt, join(VDIR, `codex_${TAG}${i}.json`), ids),
+    doSource('agy', prompt, join(VDIR, `agy_${TAG}${i}.json`), ids),
   ]);
   done++;
   console.log(`[batch ${i + 1}/${batches.length}] ${ids.join(',')} → codex:${cx ? 'ok' : 'MISS'} agy:${ay ? 'ok' : 'MISS'}  (${done}/${batches.length} done)`);
