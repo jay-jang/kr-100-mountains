@@ -6,7 +6,7 @@ elevation_m: 777.9
 region: 강원
 province: 강원
 location: "강원특별자치도 춘천시·화천군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [38.0008, 127.8061]
 coord_confidence: high
 features: ["100대 명산", "암릉", "소양호", "사찰(청평사)", "폭포", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 오봉산
 
-> 강원 · 강원특별자치도 춘천시·화천군 · 해발 777.9m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 춘천시·화천군 · 해발 777.9m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

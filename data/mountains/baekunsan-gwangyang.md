@@ -6,7 +6,7 @@ elevation_m: 1222.2
 region: 전라
 province: 전남
 location: "전라남도 광양시·구례군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.1123, 127.6203]
 coord_confidence: medium
 features: ["호남정맥 최고봉", "원시림", "고로쇠약수", "능선", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄 고로쇠"
 
 # 백운산(광양)
 
-> 전라 · 전라남도 광양시·구례군 · 해발 1222.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 광양시·구례군 · 해발 1222.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

@@ -6,7 +6,7 @@ elevation_m: 516
 region: 전라
 province: 전남
 location: "전라남도 영광군·함평군"
-lists: [bac]
+lists: [bac, wolgansan]
 coordinates: [35.211, 126.594]
 coord_confidence: medium
 features: ["도립공원", "꽃무릇", "상사화", "단풍", "불갑사", "억새"]
@@ -15,7 +15,7 @@ best_season: "가을(9월 중순 꽃무릇, 10~11월 단풍)"
 
 # 불갑산(영광)
 
-> 전라 · 전라남도 영광군·함평군 · 해발 516m · 블랙야크 명산100
+> 전라 · 전라남도 영광군·함평군 · 해발 516m · 블랙야크 명산100 / 월간산 100대 명산
 
 ## 개요
 

@@ -1,4 +1,4 @@
-import { loadData, REGION_COLORS } from '../data.js';
+import { loadData, REGION_COLORS, LIST_KEYS, LIST_META } from '../data.js';
 import { hikedMap, hikedCount, toggleHiked, exportHiked, importHiked, clearHiked, onChange } from '../store.js';
 import { el, clear } from '../dom.js';
 
@@ -21,16 +21,14 @@ export async function renderStats(root) {
     const hiked = hikedMap();
     const ids = new Set(Object.keys(hiked));
     const all = data.mountains;
-    const sanlim = all.filter((m) => m.lists.sanlim);
-    const bac = all.filter((m) => m.lists.bac);
-    const cS = sanlim.filter((m) => ids.has(m.id)).length;
-    const cB = bac.filter((m) => ids.has(m.id)).length;
-    const cAll = all.filter((m) => ids.has(m.id)).length;
+    const cards = LIST_KEYS.map((k) => {
+      const inList = all.filter((m) => m.lists[k]);
+      const done = inList.filter((m) => ids.has(m.id)).length;
+      return statCard(LIST_META[k].full, done, inList.length, `card-${k}`);
+    });
+    cards.push(statCard('전체 명산', all.filter((m) => ids.has(m.id)).length, all.length));
 
-    body.append(el('div', { class: 'stat-grid' },
-      statCard('산림청 100대 명산', cS, sanlim.length),
-      statCard('블랙야크 명산100', cB, bac.length),
-      statCard('전체 명산', cAll, all.length)));
+    body.append(el('div', { class: 'stat-grid' }, ...cards));
 
     // region breakdown
     const bars = el('div', { class: 'region-bars' });
@@ -94,9 +92,9 @@ export async function renderStats(root) {
   return () => off();
 }
 
-function statCard(label, done, total) {
+function statCard(label, done, total, cls = '') {
   const pct = total ? Math.round((done / total) * 100) : 0;
-  return el('div', { class: 'stat-card' },
+  return el('div', { class: 'stat-card' + (cls ? ' ' + cls : '') },
     el('div', { class: 'label' }, label),
     el('div', { class: 'big' }, String(done), el('small', {}, ` / ${total}`)),
     el('div', { class: 'progress', role: 'progressbar', 'aria-label': `${label} 진행률`,

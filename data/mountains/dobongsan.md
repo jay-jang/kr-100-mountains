@@ -6,7 +6,7 @@ elevation_m: 740.2
 region: 수도권
 province: 서울
 location: "서울특별시 도봉구, 경기도 의정부시·양주시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.6986, 127.0156]
 coord_confidence: high
 features: ["국립공원", "암릉", "기암괴석", "일출", "도심근교"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 사계절"
 
 # 도봉산
 
-> 수도권 · 서울특별시 도봉구, 경기도 의정부시·양주시 · 해발 740.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 서울특별시 도봉구, 경기도 의정부시·양주시 · 해발 740.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

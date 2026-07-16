@@ -6,7 +6,7 @@ elevation_m: 1312.6
 region: 강원
 province: 강원
 location: "강원특별자치도 양구군·인제군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [38.2083, 128.1303]
 coord_confidence: medium
 features: ["100대명산", "용늪", "람사르습지", "천연보호구역", "고층습원", "예약탐방", "펀치볼"]
@@ -15,7 +15,7 @@ best_season: "여름~가을(6~10월) 용늪 탐방 기간, 가을 단풍"
 
 # 대암산
 
-> 강원 · 강원특별자치도 양구군·인제군 · 해발 1312.6m · 산림청 100대 명산
+> 강원 · 강원특별자치도 양구군·인제군 · 해발 1312.6m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

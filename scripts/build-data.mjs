@@ -80,7 +80,7 @@ for (const m of mountains) {
     `region: ${m.region}`,
     `province: ${m.province}`,
     `location: ${JSON.stringify(m.location)}`,
-    `lists: [${[m.lists.sanlim && 'sanlim', m.lists.bac && 'bac'].filter(Boolean).join(', ')}]`,
+    `lists: [${['sanlim', 'bac', 'hansanha', 'wolgansan'].filter((k) => m.lists[k]).join(', ')}]`,
     `coordinates: ${m.lat != null ? `[${m.lat}, ${m.lon}]` : 'null'}`,
     `coord_confidence: ${m.coord_confidence || 'none'}`,
     `features: ${yamlList(m.features)}`,
@@ -90,8 +90,9 @@ for (const m of mountains) {
 
   const body = [];
   body.push(`# ${m.name_full}`, '');
+  const LIST_LABEL = { sanlim: '산림청 100대 명산', bac: '블랙야크 명산100', hansanha: '한국의산하 인기명산 100', wolgansan: '월간산 100대 명산' };
   body.push(`> ${m.region} · ${m.location} · 해발 ${m.elevation_m}m` +
-    ` · ${[m.lists.sanlim && '산림청 100대 명산', m.lists.bac && '블랙야크 명산100'].filter(Boolean).join(' / ')}`, '');
+    ` · ${['sanlim', 'bac', 'hansanha', 'wolgansan'].filter((k) => m.lists[k]).map((k) => LIST_LABEL[k]).join(' / ')}`, '');
   if (m.summary) body.push('## 개요', '', m.summary, '');
   if (m.trails && m.trails.length) {
     const vmark = { verified: 'codex·agy 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };

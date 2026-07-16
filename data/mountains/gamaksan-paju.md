@@ -6,7 +6,7 @@ elevation_m: 674.9
 region: 수도권
 province: 경기
 location: "경기도 파주시·양주시·연천군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.9436, 126.9636]
 coord_confidence: medium
 features: ["경기5악", "출렁다리", "암릉", "일출", "역사유적"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄"
 
 # 감악산(파주)
 
-> 수도권 · 경기도 파주시·양주시·연천군 · 해발 674.9m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 파주시·양주시·연천군 · 해발 674.9m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

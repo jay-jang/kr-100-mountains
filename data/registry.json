@@ -1,17 +1,30 @@
 {
   "meta": {
     "title": "대한민국 100대 명산 위키",
-    "description": "산림청 100대 명산 + 블랙야크(BAC) 명산100 통합 데이터셋",
+    "description": "산림청·블랙야크(BAC)·한국의산하·월간산 100대 명산 통합 데이터셋",
     "lists": {
       "sanlim": {
         "label": "산림청 100대 명산",
+        "short": "산림청",
         "year": 2002,
         "source": "ko.wikipedia 대한민국 100대 명산 목록"
       },
       "bac": {
         "label": "블랙야크 명산100",
+        "short": "BAC",
         "org": "BLACKYAK ALPINE CLUB",
         "since": 2013
+      },
+      "hansanha": {
+        "label": "한국의산하 인기명산 100",
+        "short": "한국의산하",
+        "source": "koreasanha 인기명산 100 (조회수 기반)"
+      },
+      "wolgansan": {
+        "label": "월간산 100대 명산",
+        "short": "월간산",
+        "year": 2018,
+        "source": "월간山 창간 49주년 선정"
       }
     },
     "region_order": [
@@ -23,36 +36,54 @@
       "제주"
     ],
     "counts": {
-      "total": 121,
+      "total": 149,
       "sanlim": 100,
       "bac": 100,
-      "both": 79,
-      "sanlim_only": 21,
-      "bac_only": 21,
+      "hansanha": 100,
+      "wolgansan": 100,
+      "all_four": 58,
       "by_region": [
         [
           "수도권",
-          17
+          24
         ],
         [
           "강원",
-          25
-        ],
-        [
-          "충청",
-          15
-        ],
-        [
-          "전라",
           30
         ],
         [
+          "충청",
+          16
+        ],
+        [
+          "전라",
+          37
+        ],
+        [
           "경상",
-          33
+          41
         ],
         [
           "제주",
           1
+        ]
+      ],
+      "by_list_membership": [
+        [
+          "1개 리스트",
+          38
+        ],
+        [
+          "2개 리스트",
+          29
+        ],
+        [
+          "3개 리스트",
+          24
+        ],
+        [
+          "4개 리스트",
+          58
         ]
       ]
     }
@@ -73,7 +104,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -97,7 +130,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -121,7 +156,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -145,7 +182,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -169,7 +208,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -194,7 +235,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -218,7 +261,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -242,7 +287,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -266,7 +313,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "seorisan",
+      "name": "서리산",
+      "disambig": "",
+      "name_full": "서리산",
+      "elevation_m": 832,
+      "location": "경기도 남양주시·가평군",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -290,7 +365,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -314,7 +391,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -338,7 +417,36 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "geomdansan",
+      "name": "검단산",
+      "disambig": "",
+      "name_full": "검단산",
+      "elevation_m": 657,
+      "location": "경기도 하남시·광주시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권",
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -362,7 +470,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -386,7 +496,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -410,7 +522,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -434,7 +548,114 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "gwanggyosan",
+      "name": "광교산",
+      "disambig": "",
+      "name_full": "광교산",
+      "elevation_m": 582,
+      "location": "경기도 수원시·용인시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "namhansan",
+      "name": "남한산",
+      "disambig": "",
+      "name_full": "남한산",
+      "elevation_m": 522,
+      "location": "경기도 광주시·성남시·하남시, 서울특별시 송파구",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권",
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "bulamsan",
+      "name": "불암산",
+      "disambig": "",
+      "name_full": "불암산",
+      "elevation_m": 508,
+      "location": "서울특별시 노원구, 경기도 남양주시",
+      "province": "서울",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "surisan",
+      "name": "수리산",
+      "disambig": "",
+      "name_full": "수리산",
+      "elevation_m": 475,
+      "location": "경기도 안양시·군포시·안산시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -458,7 +679,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "goryeosan",
+      "name": "고려산",
+      "disambig": "",
+      "name_full": "고려산",
+      "elevation_m": 436,
+      "location": "인천광역시 강화군",
+      "province": "인천",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -482,7 +731,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -506,7 +757,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -530,7 +783,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -555,7 +810,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -579,7 +836,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -603,7 +862,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -627,7 +888,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -651,7 +914,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "geumdaebong",
+      "name": "금대봉",
+      "disambig": "",
+      "name_full": "금대봉",
+      "elevation_m": 1418,
+      "location": "강원특별자치도 태백시·정선군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -675,7 +966,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -699,7 +992,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -723,7 +1018,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -747,7 +1044,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -771,7 +1070,87 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "seonjaryeong",
+      "name": "선자령",
+      "disambig": "",
+      "name_full": "선자령",
+      "elevation_m": 1157,
+      "location": "강원특별자치도 평창군·강릉시",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "munamsan",
+      "name": "문암산",
+      "disambig": "",
+      "name_full": "문암산",
+      "elevation_m": 1146,
+      "location": "강원특별자치도 인제군·홍천군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "mindungsan",
+      "name": "민둥산",
+      "disambig": "",
+      "name_full": "민둥산",
+      "elevation_m": 1119,
+      "location": "강원특별자치도 정선군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -795,7 +1174,36 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "madaesan",
+      "name": "마대산",
+      "disambig": "",
+      "name_full": "마대산",
+      "elevation_m": 1052,
+      "location": "강원특별자치도 영월군, 충청북도 단양군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원",
+        "충청"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -819,7 +1227,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -844,7 +1254,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -869,7 +1281,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -894,7 +1308,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -919,7 +1335,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -943,7 +1361,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -967,7 +1387,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -991,7 +1413,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1015,7 +1439,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1039,7 +1465,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1063,7 +1491,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1089,7 +1519,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1113,7 +1545,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1137,7 +1571,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1161,7 +1597,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1185,7 +1623,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1210,7 +1650,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1234,7 +1676,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1258,7 +1702,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1282,7 +1728,35 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "jinaksan",
+      "name": "진악산",
+      "disambig": "",
+      "name_full": "진악산",
+      "elevation_m": 732,
+      "location": "충청남도 금산군",
+      "province": "충남",
+      "region": "충청",
+      "regions": [
+        "충청"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1306,7 +1780,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1330,7 +1806,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1354,7 +1832,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1378,7 +1858,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1402,7 +1884,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1426,7 +1910,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1451,7 +1937,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1475,7 +1963,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1500,7 +1990,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "baekunsan-jangsu",
+      "name": "백운산",
+      "disambig": "장수",
+      "name_full": "백운산(장수)",
+      "elevation_m": 1279,
+      "location": "전북특별자치도 장수군·진안군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1524,7 +2042,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1548,7 +2068,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1572,7 +2094,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1596,7 +2120,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1620,7 +2146,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "cheonsangdemi",
+      "name": "천상데미",
+      "disambig": "",
+      "name_full": "천상데미",
+      "elevation_m": 1080,
+      "location": "전북특별자치도 진안군·장수군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1644,7 +2198,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1668,7 +2224,61 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "manhaengsan",
+      "name": "만행산",
+      "disambig": "",
+      "name_full": "만행산",
+      "elevation_m": 910,
+      "location": "전북특별자치도 남원시",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "sinmusan",
+      "name": "신무산",
+      "disambig": "",
+      "name_full": "신무산",
+      "elevation_m": 897,
+      "location": "전북특별자치도 장수군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1692,7 +2302,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "byeongpungsan",
+      "name": "병풍산",
+      "disambig": "",
+      "name_full": "병풍산",
+      "elevation_m": 822,
+      "location": "전라남도 담양군·장성군",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1716,7 +2354,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "jeamsan",
+      "name": "제암산",
+      "disambig": "",
+      "name_full": "제암산",
+      "elevation_m": 807,
+      "location": "전라남도 보성군·장흥군",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1740,7 +2406,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1764,7 +2432,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1788,7 +2458,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1812,7 +2484,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1836,7 +2510,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1860,7 +2536,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1884,7 +2562,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1908,7 +2588,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1932,7 +2614,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -1956,7 +2640,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -1980,7 +2666,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2004,7 +2692,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2028,7 +2718,35 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "yeongchwisan",
+      "name": "영취산",
+      "disambig": "",
+      "name_full": "영취산",
+      "elevation_m": 510,
+      "location": "전라남도 여수시",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2052,7 +2770,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2076,7 +2796,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2100,7 +2822,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2124,7 +2848,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2148,7 +2874,36 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "namdeokyusan",
+      "name": "남덕유산",
+      "disambig": "",
+      "name_full": "남덕유산",
+      "elevation_m": 1507,
+      "location": "경상남도 함양군·거창군, 전북특별자치도 장수군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "전라",
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2173,7 +2928,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2197,7 +2954,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2221,7 +2980,61 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "ilwolsan",
+      "name": "일월산",
+      "disambig": "",
+      "name_full": "일월산",
+      "elevation_m": 1219,
+      "location": "경상북도 영양군·봉화군",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "munsusan",
+      "name": "문수산",
+      "disambig": "",
+      "name_full": "문수산",
+      "elevation_m": 1207,
+      "location": "경상북도 봉화군",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2245,7 +3058,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2269,7 +3084,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2293,7 +3110,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "cheonhwangsan",
+      "name": "천황산",
+      "disambig": "",
+      "name_full": "천황산",
+      "elevation_m": 1189,
+      "location": "경상남도 밀양시, 울산광역시 울주군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2317,7 +3162,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2341,7 +3188,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2365,7 +3214,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2389,7 +3240,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2413,7 +3266,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2437,7 +3292,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2461,7 +3318,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2486,7 +3345,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "namsanjeilbong",
+      "name": "남산제일봉",
+      "disambig": "",
+      "name_full": "남산제일봉",
+      "elevation_m": 1054,
+      "location": "경상남도 합천군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2511,7 +3398,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2536,7 +3425,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2560,7 +3451,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2585,7 +3478,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2609,7 +3504,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2634,7 +3531,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2658,7 +3557,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2683,7 +3584,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2707,7 +3610,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2731,7 +3636,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2755,7 +3662,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2779,7 +3688,35 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "tohamsan",
+      "name": "토함산",
+      "disambig": "",
+      "name_full": "토함산",
+      "elevation_m": 745,
+      "location": "경상북도 경주시",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2803,7 +3740,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2827,7 +3766,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2851,7 +3792,61 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "cheonjusan",
+      "name": "천주산",
+      "disambig": "",
+      "name_full": "천주산",
+      "elevation_m": 639,
+      "location": "경상남도 창원시·함안군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": null,
+      "lon": null,
+      "summary": null,
+      "trails": [],
+      "transport": null,
+      "features": [],
+      "sources": []
+    },
+    {
+      "id": "gyeryongsan-geoje",
+      "name": "계룡산",
+      "disambig": "거제",
+      "name_full": "계룡산(거제)",
+      "elevation_m": 566,
+      "location": "경상남도 거제시",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2875,7 +3870,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2899,7 +3896,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2923,7 +3922,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": null,
       "lon": null,
@@ -2947,7 +3948,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,
@@ -2971,7 +3974,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": null,
       "lon": null,

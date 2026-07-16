@@ -1,4 +1,4 @@
-import { loadData, filterMountains, REGION_COLORS, regionColor } from '../data.js';
+import { loadData, filterMountains, REGION_COLORS, regionColor, LIST_KEYS, LIST_META } from '../data.js';
 import { createMapView, popupContent } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, toggleHiked, onChange } from '../store.js';
@@ -8,12 +8,13 @@ const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 
 export async function renderHome(root) {
   const data = await loadData();
-  const state = { q: '', regions: new Set(), list: 'all', hikedOnly: false, activeId: null };
+  const state = { q: '', regions: new Set(), lists: new Set(), allFour: false, hikedOnly: false, activeId: null };
 
   // ---- layout ----
   const search = el('input', { class: 'search', type: 'search', 'aria-label': '산 이름 또는 지역 검색', placeholder: '산 이름·지역 검색 (예: 설악, 지리, 경남)' });
   const regionChips = el('div', { class: 'chips' });
-  const listSeg = el('div', { class: 'seg' });
+  const listChips = el('div', { class: 'chips', 'aria-label': '명산 리스트' });
+  const allFourChip = el('button', { class: 'chip', 'aria-pressed': 'false', title: '4개 리스트 모두에 든 산' }, '★ 4대 공통');
   const hikedChip = el('button', { class: 'chip', 'aria-pressed': 'false' }, '⛰ 등정한 산만');
   const countEl = el('span', { 'aria-live': 'polite' });
   const resetBtn = el('button', {}, '필터 초기화');
@@ -31,16 +32,21 @@ export async function renderHome(root) {
     regionChips.append(chip);
   });
 
-  [['all', '전체'], ['both', '공통'], ['sanlim', '산림청'], ['bac', 'BAC']].forEach(([v, label]) => {
-    const b = el('button', { 'aria-pressed': String(v === 'all'), dataset: { list: v } }, label);
-    b.addEventListener('click', () => {
-      state.list = v;
-      [...listSeg.children].forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.list === v)));
+  LIST_KEYS.forEach((k) => {
+    const chip = el('button', { class: `chip list-${k}`, 'aria-pressed': 'false', dataset: { list: k } }, LIST_META[k].chip);
+    chip.addEventListener('click', () => {
+      state.lists.has(k) ? state.lists.delete(k) : state.lists.add(k);
+      chip.setAttribute('aria-pressed', String(state.lists.has(k)));
       update();
     });
-    listSeg.append(b);
+    listChips.append(chip);
   });
 
+  allFourChip.addEventListener('click', () => {
+    state.allFour = !state.allFour;
+    allFourChip.setAttribute('aria-pressed', String(state.allFour));
+    update();
+  });
   hikedChip.addEventListener('click', () => {
     state.hikedOnly = !state.hikedOnly;
     hikedChip.setAttribute('aria-pressed', String(state.hikedOnly));
@@ -48,17 +54,17 @@ export async function renderHome(root) {
   });
   search.addEventListener('input', () => { state.q = search.value; update(); });
   resetBtn.addEventListener('click', () => {
-    state.q = ''; state.regions.clear(); state.list = 'all'; state.hikedOnly = false;
+    state.q = ''; state.regions.clear(); state.lists.clear(); state.allFour = false; state.hikedOnly = false;
     search.value = '';
-    [...regionChips.children].forEach((c) => c.setAttribute('aria-pressed', 'false'));
-    [...listSeg.children].forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.list === 'all')));
+    [...regionChips.children, ...listChips.children].forEach((c) => c.setAttribute('aria-pressed', 'false'));
+    allFourChip.setAttribute('aria-pressed', 'false');
     hikedChip.setAttribute('aria-pressed', 'false');
     update();
   });
 
   const panel = el('aside', { class: 'panel' },
-    el('div', { class: 'filters' }, search, regionChips, listSeg,
-      el('div', { style: 'margin-top:10px' }, hikedChip),
+    el('div', { class: 'filters' }, search, regionChips, listChips,
+      el('div', { class: 'chips', style: 'margin-top:8px' }, allFourChip, hikedChip),
       el('div', { class: 'filters-foot' }, countEl, resetBtn)),
     listEl);
 
@@ -129,8 +135,8 @@ export async function renderHome(root) {
             el('span', {}, `${Math.round(m.elevation_m)}m`),
             el('span', {}, m.province))),
         el('div', { class: 'mtn-badges' },
-          m.lists.sanlim ? el('span', { class: 'badge sanlim' }, '산림청') : null,
-          m.lists.bac ? el('span', { class: 'badge bac' }, 'BAC') : null),
+          ...LIST_KEYS.filter((k) => m.lists[k]).map((k) =>
+            el('span', { class: `badge b-${k}`, title: LIST_META[k].full }, LIST_META[k].badge))),
         el('span', { class: 'mtn-go', 'aria-hidden': 'true' }, '›'));
       // 넓은 화면: 마우스 오버 시 지도에서 위치 미리보기(내비게이션은 클릭=상세).
       if (!mq.matches) item.addEventListener('mouseenter', () => focus(m, { scroll: false }));

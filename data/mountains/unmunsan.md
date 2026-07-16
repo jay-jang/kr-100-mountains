@@ -6,7 +6,7 @@ elevation_m: 1195.1
 region: 경상
 province: 경북
 location: "경상북도 청도군, 경상남도 밀양시"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [35.6317, 128.9628]
 coord_confidence: medium
 features: ["영남알프스", "암릉", "계곡", "단풍", "사리암", "능선조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 운문산
 
-> 경상 · 경상북도 청도군, 경상남도 밀양시 · 해발 1195.1m · 산림청 100대 명산
+> 경상 · 경상북도 청도군, 경상남도 밀양시 · 해발 1195.1m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

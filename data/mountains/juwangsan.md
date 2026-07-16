@@ -6,7 +6,7 @@ elevation_m: 722.1
 region: 경상
 province: 경북
 location: "경상북도 청송군·영덕군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.4003, 129.1486]
 coord_confidence: high
 features: ["국립공원", "세계지질공원", "암릉", "기암", "폭포", "단풍", "계곡"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 늦가을 주산지 물안개"
 
 # 주왕산
 
-> 경상 · 경상북도 청송군·영덕군 · 해발 722.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 청송군·영덕군 · 해발 722.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

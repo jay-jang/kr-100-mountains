@@ -22,7 +22,7 @@ const header = el('header', { class: 'app-header' },
   el('a', { class: 'brand', href: '#/', style: 'color:inherit' },
     el('span', { class: 'logo' }, '⛰️'),
     el('div', {}, el('h1', {}, '대한민국 100대 명산'),
-      el('small', {}, '산림청 · 블랙야크(BAC) 통합 위키'))),
+      el('small', {}, '산림청 · 블랙야크 · 한국의산하 · 월간산 통합 위키'))),
   nav, themeBtn);
 
 const main = el('main', { id: 'view' });

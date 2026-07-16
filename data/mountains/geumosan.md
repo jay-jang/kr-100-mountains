@@ -6,7 +6,7 @@ elevation_m: 976.5
 region: 경상
 province: 경북
 location: "경상북도 구미시·칠곡군·김천시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.0219, 128.1606]
 coord_confidence: high
 features: ["도립공원", "케이블카", "폭포", "암릉", "단풍", "일출"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 금오산
 
-> 경상 · 경상북도 구미시·칠곡군·김천시 · 해발 976.5m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 구미시·칠곡군·김천시 · 해발 976.5m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

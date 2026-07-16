@@ -6,7 +6,7 @@ elevation_m: 922
 region: 강원
 province: 강원
 location: "강원특별자치도 철원군, 경기도 포천시"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [38.0883, 127.3222]
 coord_confidence: medium
 features: ["억새", "폭포(등룡폭포)", "산정호수", "단풍", "화강암"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 억새"
 
 # 명성산
 
-> 강원 · 강원특별자치도 철원군, 경기도 포천시 · 해발 922m · 산림청 100대 명산
+> 강원 · 강원특별자치도 철원군, 경기도 포천시 · 해발 922m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

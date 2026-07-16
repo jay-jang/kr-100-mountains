@@ -6,7 +6,7 @@ elevation_m: 1439.7
 region: 경상
 province: 경북
 location: "경상북도 영주시, 충청북도 단양군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.9578, 128.4859]
 coord_confidence: medium
 features: ["국립공원", "백두대간", "철쭉", "억새", "설경", "주목군락", "일출"]
@@ -15,7 +15,7 @@ best_season: "봄(5~6월) 철쭉, 겨울(12~2월) 설경"
 
 # 소백산
 
-> 경상 · 경상북도 영주시, 충청북도 단양군 · 해발 1439.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 영주시, 충청북도 단양군 · 해발 1439.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

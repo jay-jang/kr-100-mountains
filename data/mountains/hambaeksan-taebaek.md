@@ -6,7 +6,7 @@ elevation_m: 1572.9
 region: 강원
 province: 강원
 location: "강원특별자치도 태백시·정선군"
-lists: [bac]
+lists: [bac, wolgansan]
 coordinates: [37.1602, 128.9147]
 coord_confidence: medium
 features: ["백두대간", "주목군락", "야생화", "눈꽃", "고원트레킹", "능선조망"]
@@ -15,7 +15,7 @@ best_season: "여름(7~8월) 야생화·겨울(1~2월) 눈꽃"
 
 # 함백산(태백)
 
-> 강원 · 강원특별자치도 태백시·정선군 · 해발 1572.9m · 블랙야크 명산100
+> 강원 · 강원특별자치도 태백시·정선군 · 해발 1572.9m · 블랙야크 명산100 / 월간산 100대 명산
 
 ## 개요
 

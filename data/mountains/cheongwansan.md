@@ -6,7 +6,7 @@ elevation_m: 724.3
 region: 전라
 province: 전남
 location: "전라남도 장흥군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [34.528, 126.902]
 coord_confidence: medium
 features: ["도립공원", "억새", "기암괴석", "암릉", "일출", "다도해 조망", "호남 5대 명산"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새"
 
 # 천관산
 
-> 전라 · 전라남도 장흥군 · 해발 724.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 장흥군 · 해발 724.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

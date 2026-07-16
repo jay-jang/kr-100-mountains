@@ -6,7 +6,7 @@ elevation_m: 1119.1
 region: 경상
 province: 경남
 location: "경상남도 밀양시, 울산광역시 울주군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.54666667, 128.98055556]
 coord_confidence: high
 features: ["억새", "단풍", "영남알프스", "폭포", "케이블카", "사찰"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새·단풍"
 
 # 재약산
 
-> 경상 · 경상남도 밀양시, 울산광역시 울주군 · 해발 1119.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상남도 밀양시, 울산광역시 울주군 · 해발 1119.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

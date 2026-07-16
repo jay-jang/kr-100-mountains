@@ -6,7 +6,7 @@ elevation_m: 887.3
 region: 전라
 province: 전남
 location: "전라남도 순천시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.0025921, 127.3135542]
 coord_confidence: high
 features: ["도립공원", "사찰(선암사·송광사)", "단풍", "벚꽃", "호남정맥", "편백"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
 
 # 조계산
 
-> 전라 · 전라남도 순천시 · 해발 887.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 순천시 · 해발 887.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

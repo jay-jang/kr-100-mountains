@@ -5,7 +5,7 @@
 //  - 블랙야크(BAC) 명산100: membership cross-verified via codex agent against namu.wiki
 //    comparison table (data/sources/bac_resolution.json). 79 overlap, 21 BAC-only,
 //    21 산림청-only. 천마산(남양주)=BAC, 명성산=산림청-only.
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -248,7 +248,7 @@ SANLIM.forEach(([name, elev, loc], i) => {
     province: provinceShort(loc),
     region: primaryRegion(loc),
     regions: regionsOf(loc),
-    lists: { sanlim: true, bac: inBac },
+    lists: { sanlim: true, bac: inBac, hansanha: false, wolgansan: false },
     lat: null, lon: null,
     // enrichment fields (filled by research step)
     summary: null, trails: [], transport: null, features: [], sources: [],
@@ -266,11 +266,99 @@ BAC_ONLY.forEach(([name, elev, loc, disambig]) => {
     province: provinceShort(loc),
     region: primaryRegion(loc),
     regions: regionsOf(loc),
-    lists: { sanlim: false, bac: true },
+    lists: { sanlim: false, bac: true, hansanha: false, wolgansan: false },
     lat: null, lon: null,
     summary: null, trails: [], transport: null, features: [], sources: [],
   });
 });
+
+/* ------------------------------------------------------------------ *
+ * Merge 한국의산하(인기명산 100) + 월간산(100대 명산)                  *
+ * 산림청/블랙야크 컬럼은 위 검증 데이터를 우선하고, 비교표에서         *
+ * 한국의산하/월간산 멤버십만 취한다. 매칭 안 되는 행 = 신규 산.        *
+ * ------------------------------------------------------------------ */
+const PFULL = { 서울: '서울특별시', 인천: '인천광역시', 경기: '경기도', 강원: '강원특별자치도',
+  대전: '대전광역시', 세종: '세종특별자치시', 충북: '충청북도', 충남: '충청남도',
+  광주: '광주광역시', 전북: '전북특별자치도', 전남: '전라남도', 부산: '부산광역시',
+  대구: '대구광역시', 울산: '울산광역시', 경북: '경상북도', 경남: '경상남도', 제주: '제주특별자치도' };
+function regionOfProvince(p) {
+  if (['서울', '인천', '경기'].includes(p)) return '수도권';
+  if (p === '강원') return '강원';
+  if (['대전', '세종', '충북', '충남'].includes(p)) return '충청';
+  if (['광주', '전북', '전남'].includes(p)) return '전라';
+  if (['부산', '대구', '울산', '경북', '경남'].includes(p)) return '경상';
+  if (p === '제주') return '제주';
+  return '기타';
+}
+// 신규 산의 해발/소재지/식별자 (좌표·정밀 해발은 이후 enrichment가 검증)
+const NEW_INFO = {
+  '불암산|서울': { elev: 508, loc: '서울특별시 노원구, 경기도 남양주시' },
+  '고려산|인천': { elev: 436, loc: '인천광역시 강화군' },
+  '남한산|경기': { elev: 522, loc: '경기도 광주시·성남시·하남시, 서울특별시 송파구' },
+  '서리산|경기': { elev: 832, loc: '경기도 남양주시·가평군' },
+  '광교산|경기': { elev: 582, loc: '경기도 수원시·용인시' },
+  '수리산|경기': { elev: 475, loc: '경기도 안양시·군포시·안산시' },
+  '검단산|경기': { elev: 657, loc: '경기도 하남시·광주시' },
+  '마대산|강원': { elev: 1052, loc: '강원특별자치도 영월군, 충청북도 단양군' },
+  '민둥산|강원': { elev: 1119, loc: '강원특별자치도 정선군' },
+  '금대봉|강원': { elev: 1418, loc: '강원특별자치도 태백시·정선군' },
+  '선자령|강원': { elev: 1157, loc: '강원특별자치도 평창군·강릉시' },
+  '문암산|강원': { elev: 1146, loc: '강원특별자치도 인제군·홍천군' },
+  '진악산|충남': { elev: 732, loc: '충청남도 금산군' },
+  '만행산|전북': { elev: 910, loc: '전북특별자치도 남원시' },
+  '신무산|전북': { elev: 897, loc: '전북특별자치도 장수군' },
+  '백운산|전북': { elev: 1279, loc: '전북특별자치도 장수군·진안군', disambig: '장수' },
+  '천상데미|전북': { elev: 1080, loc: '전북특별자치도 진안군·장수군' },
+  '병풍산|전남': { elev: 822, loc: '전라남도 담양군·장성군' },
+  '제암산|전남': { elev: 807, loc: '전라남도 보성군·장흥군' },
+  '영취산|전남': { elev: 510, loc: '전라남도 여수시' },
+  '토함산|경북': { elev: 745, loc: '경상북도 경주시' },
+  '문수산|경북': { elev: 1207, loc: '경상북도 봉화군' },
+  '일월산|경북': { elev: 1219, loc: '경상북도 영양군·봉화군' },
+  '천주산|경남': { elev: 639, loc: '경상남도 창원시·함안군' },
+  '천황산|경남': { elev: 1189, loc: '경상남도 밀양시, 울산광역시 울주군' },
+  '남덕유산|경남': { elev: 1507, loc: '경상남도 함양군·거창군, 전북특별자치도 장수군' },
+  '남산제일봉|경남': { elev: 1054, loc: '경상남도 합천군' },
+  '계룡산|경남': { elev: 566, loc: '경상남도 거제시', disambig: '거제' },
+};
+
+const tableRows = readFileSync(join(ROOT, 'data', 'sources', 'four_lists.txt'), 'utf8')
+  .split('\n').filter((l) => l.trim() && !l.startsWith('#'))
+  .map((l) => {
+    const [name, region, flags] = l.split('|').map((s) => s.trim());
+    const [, , hansanha, wolgansan] = flags.split(/\s+/);
+    return { name, region, hansanha: hansanha === 'O', wolgansan: wolgansan === 'O' };
+  });
+
+const byName = new Map();
+for (const m of mountains) { (byName.get(m.name) || byName.set(m.name, []).get(m.name)).push(m); }
+const matchedSet = new Set();
+const newRows = [];
+const listWarnings = [];
+for (const row of tableRows) {
+  const cands = (byName.get(row.name) || []).filter((c) => !matchedSet.has(c));
+  const m = cands.find((c) => c.province === row.region)
+    || cands.find((c) => c.location.includes(PFULL[row.region]));
+  if (m) { m.lists.hansanha = row.hansanha; m.lists.wolgansan = row.wolgansan; matchedSet.add(m); }
+  else newRows.push(row);
+}
+for (const row of newRows) {
+  const key = `${row.name}|${row.region}`;
+  const info = NEW_INFO[key];
+  if (!info) { listWarnings.push(`신규 산 정보 없음: ${key}`); continue; }
+  const loc = info.loc;
+  mountains.push({
+    id: makeSlug(row.name, info.disambig || ''),
+    name: row.name, disambig: info.disambig || '',
+    name_full: info.disambig ? `${row.name}(${info.disambig})` : row.name,
+    elevation_m: info.elev, location: loc, province: provinceShort(loc),
+    region: regionOfProvince(row.region), regions: regionsOf(loc),
+    lists: { sanlim: false, bac: false, hansanha: row.hansanha, wolgansan: row.wolgansan },
+    lat: null, lon: null, summary: null, trails: [], transport: null, features: [], sources: [],
+  });
+}
+// 기존 산(산림청/블랙야크) 중 비교표에서 매칭 안 된 경우 = 두 새 리스트에 모두 없음(플래그 false 유지). 참고 로그.
+const unmatchedBase = mountains.filter((m) => (m.lists.sanlim || m.lists.bac) && !matchedSet.has(m));
 
 // sort: region order, then elevation desc
 mountains.sort((a, b) => {
@@ -279,23 +367,27 @@ mountains.sort((a, b) => {
   return b.elevation_m - a.elevation_m;
 });
 
+const nList = (k) => mountains.filter((m) => m.lists[k]).length;
 const counts = {
   total: mountains.length,
-  sanlim: mountains.filter(m => m.lists.sanlim).length,
-  bac: mountains.filter(m => m.lists.bac).length,
-  both: mountains.filter(m => m.lists.sanlim && m.lists.bac).length,
-  sanlim_only: mountains.filter(m => m.lists.sanlim && !m.lists.bac).length,
-  bac_only: mountains.filter(m => !m.lists.sanlim && m.lists.bac).length,
-  by_region: REGION_ORDER.map(r => [r, mountains.filter(m => m.region === r).length]),
+  sanlim: nList('sanlim'),
+  bac: nList('bac'),
+  hansanha: nList('hansanha'),
+  wolgansan: nList('wolgansan'),
+  all_four: mountains.filter((m) => m.lists.sanlim && m.lists.bac && m.lists.hansanha && m.lists.wolgansan).length,
+  by_region: REGION_ORDER.map((r) => [r, mountains.filter((m) => m.region === r).length]),
+  by_list_membership: [1, 2, 3, 4].map((n) => [`${n}개 리스트`, mountains.filter((m) => [m.lists.sanlim, m.lists.bac, m.lists.hansanha, m.lists.wolgansan].filter(Boolean).length === n).length]),
 };
 
 const registry = {
   meta: {
     title: '대한민국 100대 명산 위키',
-    description: '산림청 100대 명산 + 블랙야크(BAC) 명산100 통합 데이터셋',
+    description: '산림청·블랙야크(BAC)·한국의산하·월간산 100대 명산 통합 데이터셋',
     lists: {
-      sanlim: { label: '산림청 100대 명산', year: 2002, source: 'ko.wikipedia 대한민국 100대 명산 목록' },
-      bac: { label: '블랙야크 명산100', org: 'BLACKYAK ALPINE CLUB', since: 2013 },
+      sanlim: { label: '산림청 100대 명산', short: '산림청', year: 2002, source: 'ko.wikipedia 대한민국 100대 명산 목록' },
+      bac: { label: '블랙야크 명산100', short: 'BAC', org: 'BLACKYAK ALPINE CLUB', since: 2013 },
+      hansanha: { label: '한국의산하 인기명산 100', short: '한국의산하', source: 'koreasanha 인기명산 100 (조회수 기반)' },
+      wolgansan: { label: '월간산 100대 명산', short: '월간산', year: 2018, source: '월간山 창간 49주년 선정' },
     },
     region_order: REGION_ORDER,
     counts,
@@ -308,6 +400,10 @@ writeFileSync(join(ROOT, 'data', 'registry.json'), JSON.stringify(registry, null
 
 console.log('registry.json written');
 console.log(counts);
+console.log(`신규 산 추가: ${newRows.filter((r) => NEW_INFO[`${r.name}|${r.region}`]).length}개`);
+if (listWarnings.length) console.log('⚠️ 경고:', listWarnings);
+if (unmatchedBase.length) console.log(`ℹ️ 비교표 미매칭 기존 산 ${unmatchedBase.length}개(한국의산하·월간산 모두 미포함):`,
+  unmatchedBase.map((m) => m.name_full).join(', '));
 // slug sanity
 const dup = mountains.map(m => m.id).filter((v, i, a) => a.indexOf(v) !== i);
 if (dup.length) console.error('DUPLICATE SLUGS:', dup);

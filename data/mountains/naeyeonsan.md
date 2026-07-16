@@ -6,7 +6,7 @@ elevation_m: 711.3
 region: 경상
 province: 경북
 location: "경상북도 포항시·영덕군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.1975, 129.2836]
 coord_confidence: medium
 features: ["군립공원", "국가지질공원", "폭포", "계곡", "단풍", "암벽"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 내연산
 
-> 경상 · 경상북도 포항시·영덕군 · 해발 711.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 포항시·영덕군 · 해발 711.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

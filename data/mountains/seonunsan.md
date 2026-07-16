@@ -6,7 +6,7 @@ elevation_m: 334.7
 region: 전라
 province: 전북
 location: "전북특별자치도 고창군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.4998, 126.5772]
 coord_confidence: medium
 features: ["도립공원", "단풍", "꽃무릇", "동백", "고찰", "낙조"]
@@ -15,7 +15,7 @@ best_season: "가을(9월 꽃무릇, 10~11월 단풍), 봄 동백"
 
 # 선운산
 
-> 전라 · 전북특별자치도 고창군 · 해발 334.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전북특별자치도 고창군 · 해발 334.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

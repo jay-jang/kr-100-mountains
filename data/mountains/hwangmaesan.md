@@ -6,7 +6,7 @@ elevation_m: 1113.1
 region: 경상
 province: 경남
 location: "경상남도 합천군·산청군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.49638889, 127.97444444]
 coord_confidence: high
 features: ["철쭉", "억새", "군립공원", "일출", "야간 별관측", "암릉"]
@@ -15,7 +15,7 @@ best_season: "봄(5월 초·중순) 철쭉, 가을(10~11월) 억새"
 
 # 황매산
 
-> 경상 · 경상남도 합천군·산청군 · 해발 1113.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상남도 합천군·산청군 · 해발 1113.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

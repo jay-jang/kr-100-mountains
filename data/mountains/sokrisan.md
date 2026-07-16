@@ -6,7 +6,7 @@ elevation_m: 1058.4
 region: 경상
 province: 경북
 location: "경상북도 상주시, 충청북도 보은군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.5419, 127.8206]
 coord_confidence: medium
 features: ["국립공원", "단풍", "암릉", "기암괴석", "사찰", "백두대간"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 속리산
 
-> 경상 · 경상북도 상주시, 충청북도 보은군 · 해발 1058.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 상주시, 충청북도 보은군 · 해발 1058.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

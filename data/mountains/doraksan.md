@@ -6,7 +6,7 @@ elevation_m: 965.3
 region: 충청
 province: 충북
 location: "충청북도 단양군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [36.8556, 128.2861]
 coord_confidence: medium
 features: ["국립공원", "월악산국립공원", "암릉", "기암괴석", "단풍", "단양팔경"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍과 암릉"
 
 # 도락산
 
-> 충청 · 충청북도 단양군 · 해발 965.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 충청 · 충청북도 단양군 · 해발 965.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

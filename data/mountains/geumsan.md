@@ -6,7 +6,7 @@ elevation_m: 704.9
 region: 경상
 province: 경남
 location: "경상남도 남해군"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [34.7407, 127.9836]
 coord_confidence: medium
 features: ["국립공원", "한려해상", "기암", "일출", "보리암", "봉수대", "다도해조망"]
@@ -15,7 +15,7 @@ best_season: "사철 좋음, 일출은 연중(특히 봄·가을), 가을 조망
 
 # 금산
 
-> 경상 · 경상남도 남해군 · 해발 704.9m · 산림청 100대 명산
+> 경상 · 경상남도 남해군 · 해발 704.9m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

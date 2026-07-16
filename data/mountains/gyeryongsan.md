@@ -6,7 +6,7 @@ elevation_m: 846.5
 region: 충청
 province: 대전
 location: "대전광역시, 충청남도 공주시·논산시·계룡시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.342, 127.213]
 coord_confidence: medium
 features: ["국립공원", "단풍", "벚꽃", "암릉", "사찰", "일출"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
 
 # 계룡산
 
-> 충청 · 대전광역시, 충청남도 공주시·논산시·계룡시 · 해발 846.5m · 산림청 100대 명산 / 블랙야크 명산100
+> 충청 · 대전광역시, 충청남도 공주시·논산시·계룡시 · 해발 846.5m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

@@ -6,7 +6,7 @@ elevation_m: 800.8
 region: 경상
 province: 부산
 location: "부산광역시 금정구·북구, 경상남도 양산시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.2836, 129.0447]
 coord_confidence: medium
 features: ["금정산성", "범어사", "케이블코스", "도심근교", "능선조망", "일출"]
@@ -15,7 +15,7 @@ best_season: "봄(4~5월)·가을(10~11월)"
 
 # 금정산
 
-> 경상 · 부산광역시 금정구·북구, 경상남도 양산시 · 해발 800.8m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 부산광역시 금정구·북구, 경상남도 양산시 · 해발 800.8m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

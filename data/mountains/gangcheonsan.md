@@ -6,7 +6,7 @@ elevation_m: 583.7
 region: 전라
 province: 전북
 location: "전북특별자치도 순창군, 전라남도 담양군"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [35.352, 127.0555]
 coord_confidence: medium
 features: ["군립공원", "단풍", "계곡", "구름다리", "폭포", "호남정맥"]
@@ -15,7 +15,7 @@ best_season: "가을(10월 하순~11월) 단풍"
 
 # 강천산
 
-> 전라 · 전북특별자치도 순창군, 전라남도 담양군 · 해발 583.7m · 산림청 100대 명산
+> 전라 · 전북특별자치도 순창군, 전라남도 담양군 · 해발 583.7m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

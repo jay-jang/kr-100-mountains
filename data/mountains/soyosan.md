@@ -6,7 +6,7 @@ elevation_m: 587.5
 region: 수도권
 province: 경기
 location: "경기도 동두천시·포천시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.9485, 127.0875]
 coord_confidence: medium
 features: ["단풍", "국민관광지", "폭포", "자재암", "능선 종주", "100대 명산", "지하철 접근"]
@@ -15,7 +15,7 @@ best_season: "가을(10월 하순~11월 초) 단풍"
 
 # 소요산
 
-> 수도권 · 경기도 동두천시·포천시 · 해발 587.5m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 동두천시·포천시 · 해발 587.5m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

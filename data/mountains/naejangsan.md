@@ -6,7 +6,7 @@ elevation_m: 763.5
 region: 전라
 province: 전북
 location: "전북특별자치도 정읍시·순창군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.4833, 126.8833]
 coord_confidence: high
 features: ["국립공원", "단풍", "케이블카", "암릉", "내장사"]
@@ -15,7 +15,7 @@ best_season: "가을(10월 말~11월 초) 단풍 절정"
 
 # 내장산
 
-> 전라 · 전북특별자치도 정읍시·순창군 · 해발 763.5m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전북특별자치도 정읍시·순창군 · 해발 763.5m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

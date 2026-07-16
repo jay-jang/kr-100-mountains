@@ -1,17 +1,30 @@
 {
   "meta": {
     "title": "대한민국 100대 명산 위키",
-    "description": "산림청 100대 명산 + 블랙야크(BAC) 명산100 통합 데이터셋",
+    "description": "산림청·블랙야크(BAC)·한국의산하·월간산 100대 명산 통합 데이터셋",
     "lists": {
       "sanlim": {
         "label": "산림청 100대 명산",
+        "short": "산림청",
         "year": 2002,
         "source": "ko.wikipedia 대한민국 100대 명산 목록"
       },
       "bac": {
         "label": "블랙야크 명산100",
+        "short": "BAC",
         "org": "BLACKYAK ALPINE CLUB",
         "since": 2013
+      },
+      "hansanha": {
+        "label": "한국의산하 인기명산 100",
+        "short": "한국의산하",
+        "source": "koreasanha 인기명산 100 (조회수 기반)"
+      },
+      "wolgansan": {
+        "label": "월간산 100대 명산",
+        "short": "월간산",
+        "year": 2018,
+        "source": "월간山 창간 49주년 선정"
       }
     },
     "region_order": [
@@ -23,42 +36,60 @@
       "제주"
     ],
     "counts": {
-      "total": 121,
+      "total": 149,
       "sanlim": 100,
       "bac": 100,
-      "both": 79,
-      "sanlim_only": 21,
-      "bac_only": 21,
+      "hansanha": 100,
+      "wolgansan": 100,
+      "all_four": 58,
       "by_region": [
         [
           "수도권",
-          17
+          24
         ],
         [
           "강원",
-          25
-        ],
-        [
-          "충청",
-          15
-        ],
-        [
-          "전라",
           30
         ],
         [
+          "충청",
+          16
+        ],
+        [
+          "전라",
+          37
+        ],
+        [
           "경상",
-          33
+          41
         ],
         [
           "제주",
           1
         ]
+      ],
+      "by_list_membership": [
+        [
+          "1개 리스트",
+          38
+        ],
+        [
+          "2개 리스트",
+          29
+        ],
+        [
+          "3개 리스트",
+          24
+        ],
+        [
+          "4개 리스트",
+          58
+        ]
       ]
     },
     "generated": "build-data.mjs",
-    "enriched": 121,
-    "with_coords": 121
+    "enriched": 149,
+    "with_coords": 149
   },
   "mountains": [
     {
@@ -76,7 +107,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.9950113,
       "lon": 127.5030992,
@@ -163,7 +196,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.932903,
       "lon": 127.430799,
@@ -293,7 +328,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.5622059,
       "lon": 127.5518564,
@@ -422,7 +459,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.8994444,
       "lon": 127.4144444,
@@ -532,7 +571,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 37.9857,
       "lon": 127.3489,
@@ -685,7 +726,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 38.0847,
       "lon": 127.4547,
@@ -771,7 +814,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 37.7697,
       "lon": 127.3336,
@@ -900,7 +945,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 37.6294,
       "lon": 127.4783,
@@ -1009,7 +1056,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.6588,
       "lon": 126.9877,
@@ -1103,6 +1152,62 @@
       "coord_source": "백운대 정상 위치(한국어 위키백과·지형도 기준)"
     },
     {
+      "id": "seorisan",
+      "name": "서리산",
+      "disambig": "",
+      "name_full": "서리산",
+      "elevation_m": 832,
+      "location": "경기도 남양주시·가평군",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 37.7539,
+      "lon": 127.3128,
+      "summary": "서리산은 경기도 남양주시 수동면과 가평군 상면 경계에 솟은 해발 832m의 산으로, 이웃한 축령산과 능선으로 이어져 있다. 북서쪽 급경사에 내린 서리가 응달로 잘 녹지 않아 늘 서리가 있는 듯 보인다 하여 서리산이라는 이름이 붙었다. 정상 아래 능선에 자생하는 대규모 철쭉 군락지가 유명해 매년 5월이면 연분홍 철쭉이 터널을 이루는 '철쭉동산'으로 많은 등산객이 찾는다.",
+      "trails": [
+        {
+          "name": "축령산자연휴양림-철쭉동산-서리산 정상 코스",
+          "start": "축령산자연휴양림 제2주차장",
+          "distance_km": 4.5,
+          "duration": "왕복 약 3시간",
+          "difficulty": "보통",
+          "note": "화채봉삼거리를 지나 철쭉동산을 거쳐 정상에 오르는 가장 대중적인 코스"
+        },
+        {
+          "name": "축령산-서리산 연계 종주 코스",
+          "start": "축령산자연휴양림",
+          "distance_km": 6.9,
+          "duration": "약 3시간 30분",
+          "difficulty": "보통",
+          "note": "축령산 정상을 먼저 오른 뒤 능선을 따라 서리산으로 이어지는 종주"
+        }
+      ],
+      "transport": "대중교통은 다소 불편하다. 경춘선 마석역이나 대성리역에서 남양주 시내버스(수동면 방면)를 이용하거나 택시로 축령산자연휴양림 입구까지 접근한다. 자가용 이용 시 축령산자연휴양림 주차장을 이용하는 것이 편리하다.",
+      "features": [
+        "철쭉",
+        "100대 명산",
+        "자연휴양림",
+        "능선",
+        "봄꽃"
+      ],
+      "sources": [
+        "https://namu.wiki/w/%EC%84%9C%EB%A6%AC%EC%82%B0",
+        "https://namyangju.grandculture.net/namyangju/toc/GC08900037",
+        "https://www.gagopatour.com/mountain/view.php?idx=32&area_cd=KK"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "봄(5월) 철쭉 군락",
+      "coord_source": "축령산 한국어 위키백과 좌표(37.7529, 127.3330) 기준, 서쪽으로 인접한 서리산 정상 위치 추정"
+    },
+    {
       "id": "cheonmasan",
       "name": "천마산",
       "disambig": "",
@@ -1116,7 +1221,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.6807,
       "lon": 127.2713,
@@ -1246,7 +1353,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.6986,
       "lon": 127.0156,
@@ -1375,7 +1484,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.9436,
       "lon": 126.9636,
@@ -1512,6 +1623,63 @@
       "coord_source": "감악산 정상 인근 지도 좌표 및 등산정보"
     },
     {
+      "id": "geomdansan",
+      "name": "검단산",
+      "disambig": "",
+      "name_full": "검단산",
+      "elevation_m": 657,
+      "location": "경기도 하남시·광주시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권",
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 37.520891,
+      "lon": 127.247086,
+      "summary": "검단산은 경기도 하남시 하산곡동과 광주시 남종면에 걸쳐 있는 해발 657m의 산으로, 하남시의 진산으로 꼽힌다. 백제 때 검단선사가 은거했다는 데서 이름이 유래했다고 전한다. 정상에 서면 한강과 팔당호, 두물머리 일대가 시원하게 조망되어 수도권 근교 산행지이자 겨울 해맞이 명소로 인기가 높다.",
+      "trails": [
+        {
+          "name": "창우동(등산로 입구)-정상 코스",
+          "start": "하남 검단산 등산로 입구(창우동)",
+          "distance_km": 6,
+          "duration": "왕복 약 3시간",
+          "difficulty": "보통",
+          "note": "가장 많이 이용되는 대표 코스로 정상에서 한강·팔당호 조망"
+        },
+        {
+          "name": "산곡초등학교-정상 코스",
+          "start": "산곡초등학교",
+          "distance_km": 5.5,
+          "duration": "왕복 약 3시간",
+          "difficulty": "보통",
+          "note": "능선을 따라 오르는 코스"
+        }
+      ],
+      "transport": "수도권 전철 5호선 하남검단산역에서 하차 후 도보 또는 마을버스로 등산로 입구까지 접근 가능하다. 하남 시내버스가 창우동 검단산 입구를 경유한다. 자가용은 검단산 입구 인근 공영주차장을 이용한다.",
+      "features": [
+        "한강 조망",
+        "팔당호",
+        "일출",
+        "수도권 근교",
+        "단풍"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/%EA%B2%80%EB%8B%A8%EC%82%B0_(%ED%95%98%EB%82%A8/%EA%B4%91%EC%A3%BC)",
+        "https://www.hanam.go.kr/www/contents.do?key=3336",
+        "https://namu.wiki/w/%EA%B2%80%EB%8B%A8%EC%82%B0(%ED%95%98%EB%82%A8%C2%B7%EA%B4%91%EC%A3%BC)"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍, 겨울 해맞이",
+      "coord_source": "한국어 위키백과 '검단산 (하남/광주)' 문서 infobox 좌표"
+    },
+    {
       "id": "suraksan-seoul",
       "name": "수락산",
       "disambig": "서울",
@@ -1525,7 +1693,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.6875,
       "lon": 127.0817,
@@ -1635,7 +1805,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.4447,
       "lon": 126.9645,
@@ -1767,7 +1939,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.4177,
       "lon": 127.0533,
@@ -1875,7 +2049,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.9485,
       "lon": 127.0875,
@@ -1971,6 +2147,246 @@
       "coord_source": "나무위키·등산 정보 사이트 및 지도 서비스 의상대 정상 위치 대조"
     },
     {
+      "id": "gwanggyosan",
+      "name": "광교산",
+      "disambig": "",
+      "name_full": "광교산",
+      "elevation_m": 582,
+      "location": "경기도 수원시·용인시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 37.343004,
+      "lon": 127.028003,
+      "summary": "광교산은 경기도 수원시와 용인시 경계에 걸쳐 있는 해발 582m의 산으로, 최고봉은 시루봉이다. 예로부터 수원의 진산으로 여겨졌으며 산세가 부드럽고 숲이 울창하다. 형제봉·비로봉 등 여러 봉우리와 광교저수지, 계곡을 끼고 있어 수원·용인 시민들이 즐겨 찾는 도심 근교 명산이다.",
+      "trails": [
+        {
+          "name": "경기대-형제봉-시루봉 코스",
+          "start": "경기대학교 후문(반딧불이화장실)",
+          "distance_km": 7,
+          "duration": "왕복 약 4시간",
+          "difficulty": "보통",
+          "note": "형제봉을 거쳐 시루봉 정상에 오르는 대표 종주 코스"
+        },
+        {
+          "name": "상광교 종점-시루봉 코스",
+          "start": "상광교버스종점",
+          "distance_km": 5,
+          "duration": "왕복 약 3시간",
+          "difficulty": "쉬움",
+          "note": "계곡을 따라 비교적 완만하게 오르는 코스"
+        }
+      ],
+      "transport": "수원 시내버스를 이용해 경기대학교나 상광교버스종점(광교종점)에서 하차해 산행을 시작한다. 신분당선 광교중앙역·경기대입구역에서 버스 환승으로 접근할 수 있다. 자가용은 반딧불이화장실 인근 주차 공간을 이용한다.",
+      "features": [
+        "수원 진산",
+        "단풍",
+        "계곡",
+        "저수지",
+        "도심 근교"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/%EA%B4%91%EA%B5%90%EC%82%B0",
+        "https://namu.wiki/w/%EA%B4%91%EA%B5%90%EC%82%B0"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍",
+      "coord_source": "한국어 위키백과 '광교산' 문서 infobox 좌표(최고봉 시루봉)"
+    },
+    {
+      "id": "namhansan",
+      "name": "남한산",
+      "disambig": "",
+      "name_full": "남한산",
+      "elevation_m": 522,
+      "location": "경기도 광주시·성남시·하남시, 서울특별시 송파구",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권",
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": 37.471043,
+      "lon": 127.182112,
+      "summary": "남한산은 경기도 광주시 남한산성면과 성남시·하남시, 서울특별시 송파구에 걸쳐 있는 해발 522m의 산으로, 유네스코 세계문화유산이자 사적으로 지정된 남한산성이 자리한 곳이다. 지형도상 남한산성 일대 최고봉으로 수어장대가 있는 청량산보다 높다. 성곽길을 따라 걷는 역사 탐방과 함께 수도권 남부의 대표적 해맞이 장소로 사랑받는다.",
+      "trails": [
+        {
+          "name": "산성종로-북문-남한산 성곽 코스",
+          "start": "남한산성 로터리(산성종로)",
+          "distance_km": 7.7,
+          "duration": "약 3시간 30분",
+          "difficulty": "보통",
+          "note": "남한산성 성곽을 따라 도는 순환 코스로 역사 유적을 함께 둘러봄"
+        },
+        {
+          "name": "마천역-서문 코스",
+          "start": "지하철 5호선 마천역",
+          "distance_km": 4,
+          "duration": "왕복 약 2시간 30분",
+          "difficulty": "보통",
+          "note": "서문(우익문)을 통해 산성에 오르는 서울 방면 접근 코스"
+        }
+      ],
+      "transport": "지하철 8호선 산성역에서 남한산성 방면 버스(9번 등)로 환승해 남한산성입구까지 접근한다. 서울 방면에서는 5호선 마천역에서 도보로 서문 코스를 이용할 수 있다. 자가용은 남한산성도립공원 공영주차장을 이용한다.",
+      "features": [
+        "세계문화유산",
+        "남한산성",
+        "역사",
+        "일출",
+        "성곽길"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%9C%EC%82%B0",
+        "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%9C%EC%82%B0%EC%84%B1",
+        "https://namu.wiki/w/%EB%82%A8%ED%95%9C%EC%82%B0"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍, 겨울 해맞이",
+      "coord_source": "한국어 위키백과 '남한산' 문서 infobox 좌표(최고봉)"
+    },
+    {
+      "id": "bulamsan",
+      "name": "불암산",
+      "disambig": "",
+      "name_full": "불암산",
+      "elevation_m": 508,
+      "location": "서울특별시 노원구, 경기도 남양주시",
+      "province": "서울",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 37.6432,
+      "lon": 127.0958,
+      "summary": "불암산(佛巖山)은 서울특별시 노원구와 경기도 남양주시 별내동에 걸쳐 있는 높이 508m의 화강암 바위산이다. '부처바위'라는 이름처럼 정상부가 거대한 불상을 앉혀 놓은 듯한 기암으로 이어지며, 북한산과 함께 수도권의 대표적인 암릉·암벽 훈련 코스로 꼽힌다. 도심에서 가까워 접근성이 좋고, 정상에서는 수락산·북한산과 서울 시가지가 시원하게 조망된다.",
+      "trails": [
+        {
+          "name": "상계역 코스",
+          "start": "지하철 4호선 상계역",
+          "distance_km": 2.6,
+          "duration": "편도 1시간 30분",
+          "difficulty": "보통",
+          "note": "가장 대중적이고 빠른 정상 접근 코스"
+        },
+        {
+          "name": "공릉(백세문) 코스",
+          "start": "7호선 공릉역·백세문",
+          "distance_km": 7,
+          "duration": "약 3시간",
+          "difficulty": "보통",
+          "note": "백세문~삼육대 갈림길~깔딱고개~정상~정암사 하산, 대중교통 접근성 우수"
+        },
+        {
+          "name": "중계동 능선(암릉) 코스",
+          "start": "중계동 주거지",
+          "distance_km": 5.5,
+          "duration": "약 2시간 30분",
+          "difficulty": "어려움",
+          "note": "암릉 구간이 있어 산행 재미가 큰 편"
+        }
+      ],
+      "transport": "지하철 4호선 상계역·당고개역, 7호선 공릉역에서 도보로 들머리 접근이 가능하다. 상계역 인근 공영주차장(유료)이 있으나 주말 혼잡으로 대중교통 이용이 권장된다.",
+      "features": [
+        "암릉",
+        "암벽",
+        "바위산",
+        "도심근교",
+        "일출",
+        "야경"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/불암산",
+        "https://namu.wiki/w/불암산",
+        "https://gil.seoul.go.kr/gil/view.do?key=2406040002&sc_gilNo=3"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "가을(10~11월) 조망·단풍, 봄철 진달래",
+      "coord_source": "한국어 위키백과 '불암산'(높이 508m, 노원구·남양주 경계 서술) 및 지도상 정상부 위치 대조. 위키 인포박스에 십진수 좌표 미표기라 지형 대조로 산정."
+    },
+    {
+      "id": "surisan",
+      "name": "수리산",
+      "disambig": "",
+      "name_full": "수리산",
+      "elevation_m": 475,
+      "location": "경기도 안양시·군포시·안산시",
+      "province": "경기",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 37.3722,
+      "lon": 126.9297,
+      "summary": "수리산은 경기도 안양시 만안구·군포시·안산시 상록구·시흥시 경계에 걸쳐 있는 산으로, 최고봉인 태을봉(489.2m)을 중심으로 슬기봉·관모봉·수암봉 등 여러 봉우리가 이어진다. 수도권 남부의 대표적인 근교 산으로 도립공원으로 지정되어 있으며, 봄철 병풍바위 능선의 진달래와 울창한 숲길이 볼거리다. 지하철로 접근이 편해 사철 등산객이 많이 찾는다.",
+      "trails": [
+        {
+          "name": "4봉 종주(관모봉~태을봉~슬기봉~수암봉)",
+          "start": "수리산역 또는 안양 병목안 방면",
+          "distance_km": 9,
+          "duration": "약 5시간",
+          "difficulty": "어려움",
+          "note": "능선을 따라 네 봉우리를 잇는 대표 종주 코스"
+        },
+        {
+          "name": "태을봉 병풍바위 코스",
+          "start": "안양 병목안 시민공원",
+          "distance_km": 5,
+          "duration": "왕복 3시간",
+          "difficulty": "보통",
+          "note": "병풍바위 능선 조망이 좋은 인기 코스"
+        },
+        {
+          "name": "수암봉 코스",
+          "start": "안산 수리사 방면",
+          "distance_km": 4,
+          "duration": "왕복 2시간 30분",
+          "difficulty": "보통"
+        }
+      ],
+      "transport": "지하철 4호선 수리산역·대야미역, 1호선 명학역 등에서 시내버스로 병목안 시민공원 등 들머리 접근이 가능하다. 병목안 시민공원 등 주요 들머리에 주차장이 마련되어 있다.",
+      "features": [
+        "도립공원",
+        "진달래",
+        "능선종주",
+        "병풍바위",
+        "도심근교"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/수리산",
+        "https://encykorea.aks.ac.kr/Article/E0031349",
+        "https://namu.wiki/w/수리산"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "봄(4월) 진달래, 가을(10~11월) 단풍",
+      "coord_source": "한국어 위키백과 '수리산'(최고봉 태을봉 489.2m, 북위 37°20′~37°24′·동경 126°50′~126°55′ 범위) 서술과 지도 대조. 인포박스 십진수 좌표 미표기."
+    },
+    {
       "id": "manisan",
       "name": "마니산",
       "disambig": "",
@@ -1984,7 +2400,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.6114,
       "lon": 126.4405,
@@ -2102,6 +2520,70 @@
       "coord_source": "강화군 관광자료 및 참성단 위치(마니산 정상부) 기준 십진수 좌표"
     },
     {
+      "id": "goryeosan",
+      "name": "고려산",
+      "disambig": "",
+      "name_full": "고려산",
+      "elevation_m": 436,
+      "location": "인천광역시 강화군",
+      "province": "인천",
+      "region": "수도권",
+      "regions": [
+        "수도권"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 37.7686,
+      "lon": 126.4172,
+      "summary": "고려산(高麗山)은 인천광역시 강화군 하점면·내가면·강화읍에 걸쳐 있는 해발 436.3m의 산이다. 4월 중순이면 정상 능선 일대가 진달래로 뒤덮여 국내 최북단 진달래 군락지 중 하나로 유명하며, 매년 진달래 축제가 열린다. 정상에서는 강화 내륙과 서해, 맑은 날엔 교동도·석모도까지 조망되고 산자락의 고인돌 유적과 고구려·고려 관련 전설도 볼거리다.",
+      "trails": [
+        {
+          "name": "백련사 코스",
+          "start": "백련사 주차장",
+          "distance_km": 2.5,
+          "duration": "왕복 1시간 30분",
+          "difficulty": "쉬움",
+          "note": "정상 진달래 군락까지 가장 짧고 완만한 코스"
+        },
+        {
+          "name": "고인돌광장 코스",
+          "start": "강화 부근리 고인돌광장",
+          "distance_km": 4,
+          "duration": "왕복 2시간 30분",
+          "difficulty": "보통",
+          "note": "고인돌 유적과 진달래 군락을 함께 즐기는 코스"
+        },
+        {
+          "name": "청련사 코스",
+          "start": "청련사",
+          "distance_km": 3,
+          "duration": "왕복 2시간",
+          "difficulty": "쉬움"
+        }
+      ],
+      "transport": "강화버스터미널에서 하점면·백련사·고인돌광장 방면 강화군 농어촌버스를 이용해 들머리로 접근한다. 백련사·청련사·고인돌광장에 주차장이 있으며 진달래 축제 기간에는 임시주차장과 셔틀이 운영된다.",
+      "features": [
+        "진달래",
+        "봄꽃",
+        "고인돌",
+        "역사유적",
+        "서해조망",
+        "능선"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/고려산",
+        "https://namu.wiki/w/고려산",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=9264a1ca-938e-49bb-ab39-80789fadba7f"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "봄(4월 중순) 진달래",
+      "coord_source": "한국어 위키백과 '고려산'(인천 강화군 하점면, 해발 436.3m) 서술과 지도상 정상부 위치 대조. 인포박스 십진수 좌표 미표기."
+    },
+    {
       "id": "seolaksan",
       "name": "설악산",
       "disambig": "",
@@ -2115,7 +2597,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 38.119546,
       "lon": 128.465551,
@@ -2227,7 +2711,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.7315,
       "lon": 128.4571,
@@ -2336,7 +2822,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 37.1602,
       "lon": 128.9147,
@@ -2446,7 +2934,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.09583,
       "lon": 128.91528,
@@ -2579,7 +3069,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.79806,
       "lon": 128.54306,
@@ -2690,7 +3182,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.461267,
       "lon": 128.56334,
@@ -2798,7 +3292,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 37.888066,
       "lon": 128.389968,
@@ -2885,7 +3381,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 38.0447,
       "lon": 128.4236,
@@ -2980,6 +3478,71 @@
       "coord_source": "한국어 위키백과(점봉산) 위치 및 지도 기반, 등산정보 종합"
     },
     {
+      "id": "geumdaebong",
+      "name": "금대봉",
+      "disambig": "",
+      "name_full": "금대봉",
+      "elevation_m": 1418,
+      "location": "강원특별자치도 태백시·정선군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 37.2115,
+      "lon": 128.9183,
+      "summary": "금대봉(金臺峰)은 강원특별자치도 태백시 창죽동과 정선군 고한읍에 걸친 해발 1,418m의 백두대간 봉우리다. 동쪽 매봉산, 남쪽 함백산, 북쪽 대덕산으로 둘러싸여 있으며, 일대는 1993년 환경부가 자연생태계 보호지역(천상의 화원)으로 지정해 야생화 군락으로 이름높다. 봉우리 북쪽 자락 800m 고지에는 한강의 발원지인 검룡소와 고목나무샘이 있다.",
+      "trails": [
+        {
+          "name": "두문동재~금대봉~대덕산 트레킹",
+          "start": "두문동재(싸리재)",
+          "distance_km": 7,
+          "duration": "약 4시간",
+          "difficulty": "보통",
+          "note": "완만한 능선의 야생화 트레킹, 생태보호구역 사전 예약 탐방"
+        },
+        {
+          "name": "두문동재~금대봉~비단봉~매봉산 백두대간 코스",
+          "start": "두문동재",
+          "distance_km": 10,
+          "duration": "약 5시간",
+          "difficulty": "보통",
+          "note": "삼수령 방면으로 이어지는 백두대간 능선 종주"
+        },
+        {
+          "name": "검룡소~금대봉 코스",
+          "start": "검룡소 주차장",
+          "distance_km": 6,
+          "duration": "왕복 3시간 30분",
+          "difficulty": "보통",
+          "note": "한강 발원지 검룡소를 거쳐 오르는 코스"
+        }
+      ],
+      "transport": "태백역·태백버스터미널에서 두문동재·검룡소 방면 시내버스를 이용하거나 택시로 접근한다. 두문동재 쉼터와 검룡소 입구에 주차장이 있으며, 금대봉 생태경관보전지역은 국립공원·환경청 탐방 예약제로 운영되므로 사전 신청이 필요하다.",
+      "features": [
+        "백두대간",
+        "야생화",
+        "천상의화원",
+        "생태보호구역",
+        "한강발원지",
+        "고산"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/금대봉",
+        "https://ko.wikipedia.org/wiki/검룡소",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=697c06e4-7006-41df-8276-4ffa61a43238"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "여름(6~8월) 야생화, 가을(9~10월) 단풍",
+      "coord_source": "한국어 위키백과 '금대봉'(태백시 창죽동·정선군 고한읍, 1418m). 위키 인포박스 좌표(37.12, 128.55)는 실제 두문동재~매봉산 백두대간 능선 위치(약 128.9E)와 크게 어긋나 오류로 판단, 두문동재(1.2km 거리)·매봉산 인접 지형에 근거해 보정."
+    },
+    {
       "id": "dutasan",
       "name": "두타산",
       "disambig": "",
@@ -2993,7 +3556,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.4372,
       "lon": 129.0169,
@@ -3124,7 +3689,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 37.3372,
       "lon": 128.3436,
@@ -3253,7 +3820,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 37.7897,
       "lon": 128.6083,
@@ -3383,7 +3952,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 38.2083,
       "lon": 128.1303,
@@ -3493,7 +4064,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.3717,
       "lon": 128.0531,
@@ -3589,6 +4162,176 @@
       "coord_source": "한국어 위키백과 등산로 좌표 및 치악산국립공원 비로봉 위치 기반"
     },
     {
+      "id": "seonjaryeong",
+      "name": "선자령",
+      "disambig": "",
+      "name_full": "선자령",
+      "elevation_m": 1157,
+      "location": "강원특별자치도 평창군·강릉시",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 37.7225,
+      "lon": 128.745,
+      "summary": "선자령은 강원특별자치도 평창군 대관령면과 강릉시 경계의 백두대간 능선에 자리한 해발 1,157m의 고개이자 봉우리다. 대관령에서 이어지는 완만한 능선길로 초보자와 가족 산행객에게 인기가 높으며, 능선 곳곳에 대규모 풍력발전기가 늘어서 이국적인 풍광을 자아낸다. 특히 겨울철 설경과 눈꽃, 광활한 초원 능선에서 바라보는 동해와 강릉 시가지 조망이 백미다.",
+      "trails": [
+        {
+          "name": "대관령휴게소-선자령 왕복 코스",
+          "start": "구 대관령휴게소(국사성황사 방면)",
+          "distance_km": 11.4,
+          "duration": "왕복 4~5시간",
+          "difficulty": "쉬움",
+          "note": "완만한 능선길로 사계절 인기, 겨울 설경 산행지로 유명"
+        },
+        {
+          "name": "대관령마을-선자령 원점회귀",
+          "start": "대관령 양떼목장 인근",
+          "distance_km": 12,
+          "duration": "왕복 5시간",
+          "difficulty": "보통",
+          "note": "풍력발전단지와 초원 능선 조망"
+        }
+      ],
+      "transport": "KTX 진부역 또는 강릉역에서 대관령 방면 버스/택시 이용. 강릉·횡계 시외버스로 횡계 하차 후 대관령휴게소까지 택시 접근이 편리하다. 자가용은 구 대관령휴게소(선자령 등산로 입구) 주차장 이용.",
+      "features": [
+        "백두대간",
+        "설경",
+        "풍력발전단지",
+        "초원능선",
+        "가족산행",
+        "겨울산행"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/선자령",
+        "https://namu.wiki/w/선자령",
+        "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=aff51055-ceb3-49cf-89fb-d0fa203467bc"
+      ],
+      "coord_confidence": "high",
+      "best_season": "겨울(12~2월) 설경·눈꽃, 여름 초원 능선",
+      "coord_source": "한국어 위키백과 선자령 문서 infobox 좌표 (북위 37° 43′ 21″ 동경 128° 44′ 42″)"
+    },
+    {
+      "id": "munamsan",
+      "name": "문암산",
+      "disambig": "",
+      "name_full": "문암산",
+      "elevation_m": 1146,
+      "location": "강원특별자치도 인제군·홍천군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 37.7986,
+      "lon": 128.4283,
+      "summary": "문암산은 강원특별자치도 홍천군 내면 창촌리 일원(인제군 경계)에 위치한 해발 1,146m의 산으로, 현재는 '석화산(石花山)'이라는 이름으로 더 알려져 있다. '바위꽃이 피는 산'이라는 뜻처럼 기암괴석과 암릉이 발달했고, 월간산 선정 100대 명산에 포함된 명산이다. 봄 진달래와 가을 단풍이 설악을 방불케 하며, 해발 600m 고원 산촌 창촌리를 감싸고 있다.",
+      "trails": [
+        {
+          "name": "창촌리-문암재-문암산-석화산-백성동 종주",
+          "start": "창촌리 승지골(면소재지)",
+          "distance_km": 6.9,
+          "duration": "약 3시간 30분",
+          "difficulty": "보통",
+          "note": "동능선-북능선을 잇는 대표 종주 코스"
+        },
+        {
+          "name": "창촌리-석화산-짝바위-백성동 코스",
+          "start": "창촌리",
+          "distance_km": 4,
+          "duration": "약 2시간",
+          "difficulty": "보통",
+          "note": "짝바위 암릉 조망이 좋은 최단 코스"
+        }
+      ],
+      "transport": "동서울종합터미널에서 현리(상남) 또는 창촌 방면 버스 이용 후 내면 창촌리 하차. 자가용은 홍천군 내면 창촌리 1417-1(백성동길 37) 주차장 이용.",
+      "features": [
+        "100대명산",
+        "암릉",
+        "기암괴석",
+        "단풍",
+        "진달래",
+        "야생화"
+      ],
+      "sources": [
+        "https://www.hongcheon.go.kr/tour/selectTourCntntsWebView.do?tourNo=2028&key=2036&ctgry=7",
+        "https://namu.wiki/w/석화산(문암산)",
+        "https://encykorea.aks.ac.kr/Article/E0019576"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "가을(10~11월) 단풍, 봄(4~5월) 진달래",
+      "coord_source": "홍천군 문화관광포털·나무위키 기반 위치 추정(내면 창촌리, 인제군 경계). 위키백과 좌표 미기재로 지명 기반 추정"
+    },
+    {
+      "id": "mindungsan",
+      "name": "민둥산",
+      "disambig": "",
+      "name_full": "민둥산",
+      "elevation_m": 1119,
+      "location": "강원특별자치도 정선군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
+      },
+      "lat": 37.27361,
+      "lon": 128.775,
+      "summary": "민둥산은 강원특별자치도 정선군 남면에 위치한 해발 1,119m(1,118.8m)의 산으로, 정상 부근에 나무가 없고 억새만 자라 '민둥산'이라 불린다. 울산 신불산, 포천 명성산, 보령 오서산, 장흥 천관산과 함께 우리나라 5대 억새 군락지로 꼽히며, 약 20만 평의 은빛 억새밭이 장관을 이룬다. 정상 주변에는 석회암이 녹아 형성된 돌리네(움푹 팬 웅덩이) 지형이 발달해 지질학적으로도 주목받는다.",
+      "trails": [
+        {
+          "name": "증산초교-발구덕-정상 코스",
+          "start": "증산초등학교(민둥산역 인근)",
+          "distance_km": 3,
+          "duration": "편도 약 1시간 30분",
+          "difficulty": "보통",
+          "note": "돌리네 지형(발구덕 마을)을 지나는 완만한 대표 코스"
+        },
+        {
+          "name": "능전마을-정상 코스",
+          "start": "능전 삼거리",
+          "distance_km": 2.7,
+          "duration": "편도 약 1시간 20분",
+          "difficulty": "보통",
+          "note": "억새밭을 최단으로 오르는 코스"
+        }
+      ],
+      "transport": "정선선 민둥산역(구 증산역)에서 도보/택시로 등산로 입구 접근. 청량리역에서 무궁화호 이용 가능. 자가용은 증산초교·능전마을 주차장 이용, 억새꽃축제 기간에는 임시주차장 운영.",
+      "features": [
+        "억새",
+        "5대억새군락지",
+        "돌리네",
+        "석회암",
+        "억새꽃축제"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/민둥산_(강원)",
+        "https://namu.wiki/w/민둥산(정선)",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ac801993-6103-4690-a736-8914b9164965"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10월 초~11월 초) 억새",
+      "coord_source": "한국어 위키백과 민둥산(강원) 문서 infobox 좌표 (북위 37° 16′ 25″ 동경 128° 46′ 30″)"
+    },
+    {
       "id": "deokhangsan",
       "name": "덕항산",
       "disambig": "",
@@ -3602,7 +4345,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 37.2833,
       "lon": 129.0167,
@@ -3697,6 +4442,63 @@
       "coord_source": "나무위키·KoreaHike 및 지도 서비스 덕항산(환선굴 인근) 정상 위치 기반 추정"
     },
     {
+      "id": "madaesan",
+      "name": "마대산",
+      "disambig": "",
+      "name_full": "마대산",
+      "elevation_m": 1052,
+      "location": "강원특별자치도 영월군, 충청북도 단양군",
+      "province": "강원",
+      "region": "강원",
+      "regions": [
+        "강원",
+        "충청"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 37.0517,
+      "lon": 128.4772,
+      "summary": "마대산(馬垈山)은 강원특별자치도 영월군 김삿갓면과 충청북도 단양군 경계에 걸쳐 있는 해발 1,052m의 산이다. 산 아래 노루목에는 방랑시인 김삿갓(김병연)의 생가터와 묘역, 김삿갓문학관 등 유적지가 자리해 문학 탐방과 산행을 함께 즐길 수 있다. 정상에서는 우거진 소나무 숲과 계곡의 단풍, 동강 방면 조망이 아름답다.",
+      "trails": [
+        {
+          "name": "김삿갓유적지 원점회귀 코스",
+          "start": "김삿갓문학관(노루목)",
+          "distance_km": 8,
+          "duration": "약 4시간",
+          "difficulty": "보통",
+          "note": "김삿갓 생가터·묘역을 거쳐 정상을 오른 뒤 되돌아오는 원점회귀"
+        },
+        {
+          "name": "김삿갓 생가-정상 최단 코스",
+          "start": "김삿갓 생가터",
+          "distance_km": 4.4,
+          "duration": "편도 약 2시간",
+          "difficulty": "보통",
+          "note": "정상까지 오르는 최단 코스"
+        }
+      ],
+      "transport": "영월시외버스터미널에서 김삿갓면(와석리) 방면 농어촌버스 이용 후 김삿갓유적지 하차. 자가용은 영월군 김삿갓면 김삿갓로 216-22 김삿갓유적지 주차장 이용.",
+      "features": [
+        "김삿갓유적지",
+        "단풍",
+        "소나무숲",
+        "문학탐방",
+        "계곡"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/마대산",
+        "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20221020.22012002905",
+        "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0ff6198e-e06f-4317-b232-3baaf7506a16"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "가을(10~11월) 단풍",
+      "coord_source": "위키백과·영월군 관광정보 기반 위치 추정(김삿갓면 노루목 남쪽, 단양 영춘면 경계). 위키백과 좌표 미기재로 지명 기반 추정"
+    },
+    {
       "id": "garisan",
       "name": "가리산",
       "disambig": "",
@@ -3710,7 +4512,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.8583,
       "lon": 127.9833,
@@ -3819,7 +4623,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 37.0836,
       "lon": 128.3819,
@@ -3929,7 +4735,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.0454,
       "lon": 129.3477,
@@ -4038,7 +4846,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 37.1981,
       "lon": 128.1083,
@@ -4168,7 +4978,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 38.0883,
       "lon": 127.3222,
@@ -4275,7 +5087,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 37.7035,
       "lon": 127.9748,
@@ -4383,7 +5197,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 37.2835,
       "lon": 128.6035,
@@ -4494,7 +5310,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 38.0225,
       "lon": 127.7685,
@@ -4626,7 +5444,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 38.0008,
       "lon": 127.8061,
@@ -4735,7 +5555,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.83861,
       "lon": 127.66389,
@@ -4866,7 +5688,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 37.69834,
       "lon": 127.69922,
@@ -4974,7 +5798,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.04,
       "lon": 127.84917,
@@ -5148,7 +5974,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.8858,
       "lon": 128.106,
@@ -5282,7 +6110,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.9808,
       "lon": 128.2492,
@@ -5392,7 +6222,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.8556,
       "lon": 128.2861,
@@ -5501,7 +6333,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.2789,
       "lon": 127.5539,
@@ -5611,7 +6445,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.1358,
       "lon": 127.3085,
@@ -5744,7 +6580,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.342,
       "lon": 127.213,
@@ -5875,7 +6713,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.411,
       "lon": 126.677,
@@ -5983,7 +6823,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.7,
       "lon": 127.955,
@@ -6076,6 +6918,62 @@
       "coord_source": "나무위키 칠보산(충북) 및 산악투어 자료(쌍곡계곡 정상 위치 대조)"
     },
     {
+      "id": "jinaksan",
+      "name": "진악산",
+      "disambig": "",
+      "name_full": "진악산",
+      "elevation_m": 732,
+      "location": "충청남도 금산군",
+      "province": "충남",
+      "region": "충청",
+      "regions": [
+        "충청"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 36.081,
+      "lon": 127.451,
+      "summary": "진악산(進樂山)은 충청남도 금산군 금산읍과 남이면에 걸쳐 있는 높이 732m의 산으로, 서대산·계룡산에 이어 충청남도에서 세 번째로 높다. 금산읍 서남부를 병풍처럼 감싸며 산림청 선정 100대 명산에 든다. 정상부에는 강우레이더 관측소가 있고, 남동쪽 기슭에는 신라 때 창건된 보석사가 자리한다. 개삼저수지·수리넘어재 일대의 등산로와 가을 단풍, 관음굴·도구통바위 등 볼거리가 있다.",
+      "trails": [
+        {
+          "name": "개삼터공원-정상 코스",
+          "start": "개삼터공원(인삼약초시장 인근)",
+          "distance_km": 5.5,
+          "duration": "왕복 4시간",
+          "difficulty": "보통",
+          "note": "인삼의 유래지 개삼터에서 출발해 관음봉·정상을 거치는 대표 코스"
+        },
+        {
+          "name": "수리넘어재-정상 코스",
+          "start": "수리넘어재 광장(금산읍 양지리)",
+          "distance_km": 4,
+          "duration": "왕복 3시간",
+          "difficulty": "보통",
+          "note": "고도가 높은 임도 기점에서 시작해 비교적 완만"
+        }
+      ],
+      "transport": "대중교통은 금산시외버스터미널 이용 후 시내버스로 개삼터공원·보석사 방면 접근. 자가용은 개삼터공원 주차장 또는 수리넘어재 광장 주차장을 이용한다.",
+      "features": [
+        "100대명산",
+        "단풍",
+        "보석사",
+        "암릉",
+        "조망"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/진악산",
+        "https://www.geumsan.go.kr/tour/html/sub02/020417.html",
+        "https://peakvisor.com/adm/geumsan-gun.html"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "가을(10~11월) 단풍",
+      "coord_source": "한국어 위키백과/디지털금산문화대전 위치 서술 및 PeakVisor(732m, 금산군 3위봉) 기반 추정 좌표"
+    },
+    {
       "id": "cheontaesan",
       "name": "천태산",
       "disambig": "",
@@ -6089,7 +6987,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.185,
       "lon": 127.7,
@@ -6197,7 +7097,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 36.7192,
       "lon": 127.0308,
@@ -6307,7 +7209,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.6931,
       "lon": 126.6339,
@@ -6438,7 +7342,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.4275,
       "lon": 126.8858,
@@ -6548,7 +7454,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.6742,
       "lon": 126.6231,
@@ -6634,7 +7542,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.6198,
       "lon": 126.6717,
@@ -6742,7 +7652,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.33694,
       "lon": 127.73056,
@@ -6874,7 +7786,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.2989,
       "lon": 127.5556,
@@ -6960,7 +7874,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.85944,
       "lon": 127.74722,
@@ -7099,6 +8015,62 @@
       "coord_source": "한국어 위키백과 덕유산 향적봉 좌표(북위 35°51′34″ 동경 127°44′50″)"
     },
     {
+      "id": "baekunsan-jangsu",
+      "name": "백운산",
+      "disambig": "장수",
+      "name_full": "백운산(장수)",
+      "elevation_m": 1279,
+      "location": "전북특별자치도 장수군·진안군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.618333,
+      "lon": 127.635066,
+      "summary": "백운산(白雲山)은 전북특별자치도 장수군 번암면과 경상남도 함양군 경계에 걸친 높이 1,279m의 백두대간 상 명산이다. 덕유산과 지리산 사이에 위치하며 산림청 선정 100대 명산에 든다. 정상은 중봉·끝봉과 함께 삼형제봉을 이루며, 사방으로 지리산·덕유산 등 백두대간 마루금 조망이 뛰어나다. 무령고개-영취산에서 이어지는 능선길과 상연대·묵계암 등 볼거리가 있다.",
+      "trails": [
+        {
+          "name": "무령고개-영취산-백운산 코스",
+          "start": "무령고개(장수 번암·장계 경계)",
+          "distance_km": 7,
+          "duration": "편도 3시간 30분",
+          "difficulty": "보통",
+          "note": "영취산을 거쳐 남쪽 능선으로 정상까지, 백두대간 조망 코스"
+        },
+        {
+          "name": "신촌마을-상연대-정상 코스",
+          "start": "함양 백전면 백운리 신촌마을",
+          "distance_km": 5.5,
+          "duration": "왕복 4시간 30분",
+          "difficulty": "어려움",
+          "note": "묵계암·상연대를 거쳐 오르는 급경사 남사면 코스"
+        }
+      ],
+      "transport": "대중교통은 장수공용버스터미널에서 번암·장계 방면 군내버스 이용 후 무령고개 접근(편수 적음). 자가용은 무령고개 주차장 이용이 편리하다.",
+      "features": [
+        "백두대간",
+        "100대명산",
+        "억새",
+        "조망",
+        "야생화"
+      ],
+      "sources": [
+        "https://peakvisor.com/peak/baegunsan-2674km.html",
+        "https://namu.wiki/w/백운산(함양·장수)",
+        "https://encykorea.aks.ac.kr/Article/E0022254"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍·억새, 여름 야생화",
+      "coord_source": "PeakVisor 백운산(장수) 정상 좌표 35.618333N 127.635066E"
+    },
+    {
       "id": "jangansan",
       "name": "장안산",
       "disambig": "",
@@ -7112,7 +8084,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.5837,
       "lon": 127.5619,
@@ -7219,7 +8193,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.1123,
       "lon": 127.6203,
@@ -7370,7 +8346,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.1342,
       "lon": 126.9885,
@@ -7479,7 +8457,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 35.3742,
       "lon": 127.5589,
@@ -7585,7 +8565,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.9109537,
       "lon": 127.3572836,
@@ -7681,6 +8663,62 @@
       "coord_source": "한국어 위키백과 산 정보 인포박스 좌표(운장산 최고봉/운장대)"
     },
     {
+      "id": "cheonsangdemi",
+      "name": "천상데미",
+      "disambig": "",
+      "name_full": "천상데미",
+      "elevation_m": 1080,
+      "location": "전북특별자치도 진안군·장수군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.69,
+      "lon": 127.45,
+      "summary": "천상데미는 전북특별자치도 진안군 백운면과 장수군 천천면 경계, 금남호남정맥 상에 있는 높이 약 1,080m의 봉우리이다. '데미'는 봉우리를 뜻하는 전라도 사투리로 '천상으로 올라가는 봉우리'라는 뜻이며, 팔공산(1,151m)과 선각산(1,142m) 사이에 솟아 있다. 서쪽 기슭 상추막이골에는 섬진강 발원지인 데미샘이 자리해 발원지 탐방과 능선 종주 산행지로 알려져 있다.",
+      "trails": [
+        {
+          "name": "데미샘자연휴양림-데미샘-천상데미 코스",
+          "start": "데미샘자연휴양림(진안 백운면 신암리)",
+          "distance_km": 6,
+          "duration": "왕복 4시간",
+          "difficulty": "보통",
+          "note": "섬진강 발원지 데미샘을 거쳐 천상데미 정상에 오르는 코스"
+        },
+        {
+          "name": "팔공산-천상데미-선각산 종주",
+          "start": "자고개(진안 백운면)",
+          "distance_km": 9.5,
+          "duration": "편도 4~5시간",
+          "difficulty": "어려움",
+          "note": "팔공산·서구이재·천상데미·오계치를 잇는 금남호남정맥 종주"
+        }
+      ],
+      "transport": "대중교통은 진안공용버스터미널 또는 장수터미널에서 백운면 방면 군내버스 이용(편수 적음). 자가용은 데미샘자연휴양림 주차장을 이용한다.",
+      "features": [
+        "금남호남정맥",
+        "섬진강발원지",
+        "데미샘",
+        "단풍",
+        "자연휴양림"
+      ],
+      "sources": [
+        "https://jinan.grandculture.net/jinan/toc/GC05800163",
+        "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20191031.22017012504",
+        "https://blog.daum.net/bok-hyun/771"
+      ],
+      "coord_confidence": "low",
+      "best_season": "가을(10~11월) 단풍",
+      "coord_source": "디지털진안문화대전·국제신문 등산기록(팔공산~천상데미~선각산 능선) 기반 추정 좌표"
+    },
+    {
       "id": "jeoksangsan",
       "name": "적상산",
       "disambig": "",
@@ -7694,7 +8732,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 35.9477263,
       "lon": 127.69115,
@@ -7824,7 +8864,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.9167,
       "lon": 127.4167,
@@ -7941,6 +8983,111 @@
       "coord_source": "디지털진안문화대전 경위도(북위 35°55′, 동경 127°25′) 십진 환산"
     },
     {
+      "id": "manhaengsan",
+      "name": "만행산",
+      "disambig": "",
+      "name_full": "만행산",
+      "elevation_m": 910,
+      "location": "전북특별자치도 남원시",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.585,
+      "lon": 127.465,
+      "summary": "만행산(萬行山)은 전북특별자치도 남원시 보절면과 산동면 경계에 있는 높이 약 910m(천황봉 909.6m)의 산으로, 산림청 선정 100대 명산 플러스에 든다. 주봉인 천황봉 정상에는 오석 표지석이 서 있으며, 동쪽으로 지리산 능선과 정령치·백운산·덕유산, 남쪽으로 교룡산·문덕봉·고리봉 조망이 시원하다. 용평제 저수지와 상사바위 등 볼거리가 있다.",
+      "trails": [
+        {
+          "name": "용평제-작은천황봉-천황봉 원점회귀",
+          "start": "용평제 주차장(남원 보절면)",
+          "distance_km": 7,
+          "duration": "왕복 4시간",
+          "difficulty": "보통",
+          "note": "작은천황봉을 거쳐 정상에 오른 뒤 큰재로 하산하는 원점회귀 코스"
+        },
+        {
+          "name": "보현사-천황봉 코스",
+          "start": "보현사(산동면)",
+          "distance_km": 4.5,
+          "duration": "왕복 3시간",
+          "difficulty": "보통",
+          "note": "보현사에서 능선으로 곧장 정상에 붙는 최단 코스"
+        }
+      ],
+      "transport": "대중교통은 남원공용버스터미널에서 보절·산동 방면 시내버스 이용 후 용평제·보현사 방면 접근. 자가용은 용평제 주차장을 이용한다.",
+      "features": [
+        "100대명산플러스",
+        "조망",
+        "암릉",
+        "일출",
+        "단풍"
+      ],
+      "sources": [
+        "http://www.koreasanha.net/san/manhaengsan_namwon.htm",
+        "https://namu.wiki/w/만행산",
+        "https://peakvisor.com/adm/namwon-si.html"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "가을(10~11월) 단풍, 봄 철쭉",
+      "coord_source": "PeakVisor(만행산 910m, prom 362m)·나무위키 위치 서술 기반 추정 좌표"
+    },
+    {
+      "id": "sinmusan",
+      "name": "신무산",
+      "disambig": "",
+      "name_full": "신무산",
+      "elevation_m": 897,
+      "location": "전북특별자치도 장수군",
+      "province": "전북",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.588,
+      "lon": 127.483,
+      "summary": "신무산은 전북특별자치도 장수군 장수읍에 있는 해발 897m(896.8m)의 산으로, 장수읍 용계리·수분리·식천리 경계에 솟아 있다. 동쪽 사면 해발 약 790m 지점에 금강의 발원지인 뜬봉샘이 있어 금강 발원지 산으로 널리 알려져 있으며, 조선을 세운 이성계가 이곳에서 백일기도 끝에 봉황이 날아오르는 꿈을 꾸었다는 전설이 전한다. 뜬봉샘생태공원과 자작나무 힐링숲, 봄철 진달래가 어우러진 걷기 좋은 코스로 인기가 있다.",
+      "trails": [
+        {
+          "name": "뜬봉샘생태공원 순환코스",
+          "start": "뜬봉샘생태공원 주차장(수분마을)",
+          "distance_km": 5.2,
+          "duration": "약 2시간 30분",
+          "difficulty": "보통",
+          "note": "생태공원~뜬봉샘~신무산 정상~자작나무 힐링숲~주차장 원점회귀"
+        }
+      ],
+      "transport": "대중교통은 장수공용버스터미널에서 수분리(수분마을)행 군내버스를 이용해 뜬봉샘생태공원 입구에서 하차한다. 자가용은 뜬봉샘생태공원 주차장(장수읍 수분리) 이용이 편리하다.",
+      "features": [
+        "금강 발원지",
+        "뜬봉샘",
+        "진달래",
+        "자작나무숲",
+        "고원지대",
+        "걷기좋은숲길"
+      ],
+      "sources": [
+        "https://blog.daum.net/hidalmuri/2771",
+        "https://www.jangsu.go.kr/tour/index.jangsu?menuCd=DOM_000000401001002002",
+        "https://jangsuculture.or.kr/jangsu/mountains/"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "봄(4월) 진달래, 가을 단풍",
+      "coord_source": "금강 발원지 뜬봉샘 좌표(35°35′32″N 127°29′17″E, 신무산 동쪽 사면 790m 지점)를 기준으로 정상 위치 보정"
+    },
+    {
       "id": "jogyesan",
       "name": "조계산",
       "disambig": "",
@@ -7954,7 +9101,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.0025921,
       "lon": 127.3135542,
@@ -8049,6 +9198,54 @@
       "coord_source": "한국어 위키백과 산 정보 인포박스 좌표(조계산 최고봉/장군봉)"
     },
     {
+      "id": "byeongpungsan",
+      "name": "병풍산",
+      "disambig": "",
+      "name_full": "병풍산",
+      "elevation_m": 822,
+      "location": "전라남도 담양군·장성군",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.316733,
+      "lon": 126.895162,
+      "summary": "병풍산은 전라남도 담양군 대전면·수북면·월산면과 장성군 북하면 경계에 걸쳐 있는 해발 822m의 산으로, 용구산이라고도 불린다. 산세가 병풍을 두른 듯하다 하여 병풍산이라는 이름이 붙었으며, 금학봉·천정봉·깃대봉·신선봉·투구봉 등 기암 봉우리가 이어진다. 정상에 오르면 나주평야와 담양 일대가 시원하게 조망되어 호남의 조망 명산으로 꼽힌다.",
+      "trails": [
+        {
+          "name": "대방저수지-정상 순환코스",
+          "start": "대방저수지·성암야영장(수북면 대방리)",
+          "distance_km": 6.5,
+          "duration": "약 3시간 30분",
+          "difficulty": "보통",
+          "note": "저수지~야영장 뒤 계곡~동봉~정상~용구샘 하산"
+        }
+      ],
+      "transport": "대중교통은 담양공용버스터미널에서 수북면 대방리 방면 군내버스를 이용하며, 광주 버스와 연계가 편리하다. 자가용은 대방저수지·성암야영장 주변 주차장을 이용한다.",
+      "features": [
+        "암릉",
+        "기암괴석",
+        "조망",
+        "나주평야조망",
+        "용구산"
+      ],
+      "sources": [
+        "https://landyplay.com/%EB%8B%B4%EC%96%91-%EB%B3%91%ED%92%8D%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%B9%84%EC%98%A8-%ED%9B%84-%EC%98%A4%EB%A6%AC%EB%AC%B4%EC%A4%91-%EC%82%B0%ED%96%89/",
+        "https://dh.aks.ac.kr/Edu/wiki/index.php/%EB%B3%91%ED%92%8D%EC%82%B0_KU",
+        "http://maisondeprovence.co.kr/dayangtravel/843"
+      ],
+      "coord_confidence": "high",
+      "best_season": "봄 신록, 가을(10~11월) 단풍",
+      "coord_source": "담양 병풍산 등산정보(대방리 정상 좌표 35.316733 / 126.895162)"
+    },
+    {
       "id": "wolchulsan",
       "name": "월출산",
       "disambig": "",
@@ -8062,7 +9259,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 34.7678,
       "lon": 126.7044,
@@ -8182,6 +9381,63 @@
       "coord_source": "Wikidata Q482741 (월출산 천황봉) P625 좌표"
     },
     {
+      "id": "jeamsan",
+      "name": "제암산",
+      "disambig": "",
+      "name_full": "제암산",
+      "elevation_m": 807,
+      "location": "전라남도 보성군·장흥군",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 34.7386,
+      "lon": 126.9906,
+      "summary": "제암산은 전라남도 장흥군 장흥읍·장동면·안양면과 보성군 웅치면에 걸쳐 있는 해발 807m의 산으로, 대한민국 100대 명산이자 호남정맥의 전망대로 불린다. 정상에는 예로부터 기우제를 지내던 제암단과 임금바위가 있으며, 무등산·월출산·천관산과 남해가 조망된다. 남쪽 사자산(666m)과의 사이 능선을 뒤덮는 철쭉 군락이 유명해 1991년부터 매년 5월 제암철쭉제가 열린다.",
+      "trails": [
+        {
+          "name": "제암산-사자산 철쭉 능선코스",
+          "start": "제암산자연휴양림(장흥군 안양면)",
+          "distance_km": 9,
+          "duration": "약 4시간 30분",
+          "difficulty": "보통",
+          "note": "휴양림~제암산 정상~곰재~간재~사자산 철쭉평원 종주"
+        },
+        {
+          "name": "곰재 최단코스",
+          "start": "제암산휴양림 상부 주차장",
+          "distance_km": 4.5,
+          "duration": "왕복 약 3시간",
+          "difficulty": "보통",
+          "note": "제암단·임금바위 조망 위주"
+        }
+      ],
+      "transport": "대중교통은 장흥공용버스터미널 또는 보성버스터미널에서 안양면·웅치면 방면 군내버스를 이용한다. 자가용은 제암산자연휴양림 주차장 이용이 편리하다.",
+      "features": [
+        "100대 명산",
+        "철쭉",
+        "호남정맥",
+        "조망",
+        "일출",
+        "제암단"
+      ],
+      "sources": [
+        "https://namu.wiki/w/%EC%A0%9C%EC%95%94%EC%82%B0",
+        "https://www.jangheung.go.kr/tour/attractions/mountain?mode=view&idx=373",
+        "http://www.sanaktour.com/mobile/mountain_infor.asp?catid=04&mtn_code=75"
+      ],
+      "coord_confidence": "medium",
+      "best_season": "봄(5월) 철쭉",
+      "coord_source": "장흥·보성 경계 제암산 정상(임금바위/제암단) 위치 기반, 지도 확인 좌표"
+    },
+    {
       "id": "moaksan",
       "name": "모악산",
       "disambig": "",
@@ -8195,7 +9451,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.7292,
       "lon": 127.0853,
@@ -8349,7 +9607,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.4833,
       "lon": 126.8833,
@@ -8522,7 +9782,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.4736,
       "lon": 126.8547,
@@ -8653,7 +9915,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.2985,
       "lon": 127.2635,
@@ -8763,7 +10027,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.4175,
       "lon": 126.7555,
@@ -8893,7 +10159,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 35.4165,
       "lon": 126.9855,
@@ -9002,7 +10270,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 34.528,
       "lon": 126.902,
@@ -9135,7 +10405,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 34.4736,
       "lon": 126.6178,
@@ -9245,7 +10517,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.7619,
       "lon": 127.4047,
@@ -9354,7 +10628,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.4283,
       "lon": 126.8742,
@@ -9462,7 +10738,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 34.6258,
       "lon": 127.3528,
@@ -9571,7 +10849,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.352,
       "lon": 127.0555,
@@ -9680,7 +10960,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 35.211,
       "lon": 126.594,
@@ -9796,6 +11078,64 @@
       "coord_source": "나무위키·등산정보(연실봉) 위치 기술 및 지도 대조 추정"
     },
     {
+      "id": "yeongchwisan",
+      "name": "영취산",
+      "disambig": "",
+      "name_full": "영취산",
+      "elevation_m": 510,
+      "location": "전라남도 여수시",
+      "province": "전남",
+      "region": "전라",
+      "regions": [
+        "전라"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 34.8261,
+      "lon": 127.7183,
+      "summary": "영취산은 전라남도 여수시 상암동·삼일동에 걸쳐 있는 해발 510m의 산으로, 주봉은 진례봉(진례산)이다. 경남 창녕 화왕산, 마산 무학산과 더불어 전국 3대 진달래 군락지로 꼽히며, 산 중턱부터 정상까지 약 33만㎡에 걸쳐 30~40년생 진달래 수만 그루가 군락을 이룬다. 매년 봄이면 전국에서 가장 이른 진달래가 온 산을 붉게 물들여 여수영취산진달래축제가 열린다.",
+      "trails": [
+        {
+          "name": "상암초교-정상-흥국사 종주코스",
+          "start": "상암초등학교",
+          "distance_km": 5.5,
+          "duration": "약 3시간 30분",
+          "difficulty": "보통",
+          "note": "상암초교~450m봉~정상(진례봉)~봉우재~흥국사 진달래 능선"
+        },
+        {
+          "name": "흥국사 코스",
+          "start": "흥국사 주차장",
+          "distance_km": 2.2,
+          "duration": "편도 약 1시간 40분",
+          "difficulty": "보통",
+          "note": "흥국사에서 정상으로 오르는 코스"
+        }
+      ],
+      "transport": "대중교통은 여수시외버스터미널·여수엑스포역에서 시내버스를 이용해 흥국사 또는 상암동 방면으로 접근한다. 진달래축제 기간에는 흥국사 주차장이 붐비므로 셔틀버스 이용이 권장된다.",
+      "features": [
+        "진달래",
+        "3대 진달래군락지",
+        "축제",
+        "조망",
+        "여수산단 야경",
+        "트레일레이스"
+      ],
+      "sources": [
+        "https://yeosu.go.kr/tour/leisure/hiking/yeongchwisan_course",
+        "http://yeosu.grandculture.net/yeosu/toc/GC01331160",
+        "https://namu.wiki/w/%EC%98%81%EC%B7%A8%EC%82%B0",
+        "https://yeosu.go.kr/tour/culture_festa/jindalae"
+      ],
+      "coord_confidence": "high",
+      "best_season": "봄(3월 말~4월 초) 진달래",
+      "coord_source": "디지털여수문화대전 진례산(영취산 주봉) 좌표 34°49′34″N 127°43′06″E"
+    },
+    {
       "id": "dalmasan-haenam",
       "name": "달마산",
       "disambig": "해남",
@@ -9809,7 +11149,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 34.421,
       "lon": 126.602,
@@ -9942,7 +11284,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.626,
       "lon": 126.545,
@@ -10051,7 +11395,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 34.5622,
       "lon": 126.7042,
@@ -10201,7 +11547,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 34.6897,
       "lon": 125.2016,
@@ -10285,7 +11633,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.4998,
       "lon": 126.5772,
@@ -10380,6 +11730,64 @@
       "coord_source": "한국민족문화대백과 선운산(북위 35°30′, 동경 126°35′) 및 지형 기반 수리봉 정점 추정"
     },
     {
+      "id": "namdeokyusan",
+      "name": "남덕유산",
+      "disambig": "",
+      "name_full": "남덕유산",
+      "elevation_m": 1507,
+      "location": "경상남도 함양군·거창군, 전북특별자치도 장수군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "전라",
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 35.7675,
+      "lon": 127.6795,
+      "summary": "남덕유산은 덕유산국립공원의 남쪽 주봉으로 경상남도 함양군·거창군과 전북특별자치도 장수군의 경계에 솟아 있다. 북쪽의 향적봉(1614m)과 함께 덕유 주능선 종주의 남쪽 기점이 되며, 바로 서쪽의 서봉(장수덕유산)과 능선으로 이어진다. 사방으로 트인 조망이 뛰어나고 겨울철 상고대와 설경이 특히 유명하다.",
+      "trails": [
+        {
+          "name": "영각사 코스",
+          "start": "영각탐방지원센터",
+          "distance_km": 3.6,
+          "duration": "왕복 약 5시간",
+          "difficulty": "보통",
+          "note": "정상 직전 급경사 계단 구간, 최단 정상 코스"
+        },
+        {
+          "name": "육십령 능선 코스",
+          "start": "육십령휴게소",
+          "distance_km": 5.5,
+          "duration": "편도 3~4시간",
+          "difficulty": "어려움",
+          "note": "백두대간 능선을 따라 서봉을 거쳐 정상으로"
+        }
+      ],
+      "transport": "대중교통은 함양시외버스터미널 또는 서상시외버스터미널에서 영각사 방면 군내버스를 이용한다. 서울·대전에서 장수·함양행 고속·시외버스로 접근 가능. 자가용은 영각사 주차장 또는 육십령휴게소 주차장을 이용한다.",
+      "features": [
+        "국립공원",
+        "능선종주",
+        "상고대",
+        "설경",
+        "조망",
+        "일출"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/덕유산",
+        "https://www.openstreetmap.org/node/7972724191",
+        "https://knps.or.kr"
+      ],
+      "coord_confidence": "high",
+      "best_season": "겨울(12~2월) 상고대·설경, 봄(5~6월) 철쭉",
+      "coord_source": "OpenStreetMap 정상 peak 노드(osm_id 7972724191, 함양군), 웹검색 교차확인"
+    },
+    {
       "id": "sobaeksan",
       "name": "소백산",
       "disambig": "",
@@ -10394,7 +11802,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.9578,
       "lon": 128.4859,
@@ -10505,7 +11915,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.8253,
       "lon": 128.1197,
@@ -10617,7 +12029,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.6203,
       "lon": 129.0029,
@@ -10713,6 +12127,118 @@
       "coord_source": "등산 정보 사이트 확인 좌표(35.62027422, 129.00293919)"
     },
     {
+      "id": "ilwolsan",
+      "name": "일월산",
+      "disambig": "",
+      "name_full": "일월산",
+      "elevation_m": 1219,
+      "location": "경상북도 영양군·봉화군",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 36.8033,
+      "lon": 129.1029,
+      "summary": "일월산은 경상북도 영양군 일월면과 청기면에 걸친 영양의 진산으로 태백산맥 줄기에 속한다. 정상은 일자봉(1219m)과 월자봉(1205m) 두 봉우리로 이루어져 있으며, 산이 높아 동해에서 뜨는 해와 달을 볼 수 있다 하여 일월산이라 불린다. 산세가 험하지 않고 완만해 '순한 산'으로 통하며 정상부에는 방송·통신 중계소가 있고 산기슭에 자생화공원이 조성돼 있다.",
+      "trails": [
+        {
+          "name": "윗대티 원점회귀 코스",
+          "start": "윗대티(큰골) 주차장",
+          "distance_km": 10.2,
+          "duration": "약 4~6시간",
+          "difficulty": "보통",
+          "note": "뿌리샘-월자봉-쿵쿵목이-일자봉 순환"
+        },
+        {
+          "name": "자생화공원 코스",
+          "start": "일월산자생화공원",
+          "distance_km": 9.5,
+          "duration": "약 5시간",
+          "difficulty": "보통",
+          "note": "야생화공원에서 일자봉으로 오르는 코스"
+        }
+      ],
+      "transport": "영양버스터미널에서 일월·봉화 방면 농어촌버스를 이용하나 배차가 드물다. 대구북부정류장에서 안동을 거쳐 영양행 직행버스로 접근한다. 자가용은 윗대티 무료주차장 또는 일월산농특산물직판장·자생화공원 주차장을 이용한다.",
+      "features": [
+        "일출",
+        "야생화",
+        "단풍",
+        "완만",
+        "방송중계소"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/일월산",
+        "https://encykorea.aks.ac.kr/Article/E0047300",
+        "https://www.openstreetmap.org/node/7972724238"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍, 여름 야생화",
+      "coord_source": "OpenStreetMap 정상 peak 노드(osm_id 7972724238, 영양군 일월면), photon/OSM 확인"
+    },
+    {
+      "id": "munsusan",
+      "name": "문수산",
+      "disambig": "",
+      "name_full": "문수산",
+      "elevation_m": 1207,
+      "location": "경상북도 봉화군",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 36.981,
+      "lon": 128.8111,
+      "summary": "문수산은 경상북도 봉화군 물야면·춘양면·봉성면 경계에 솟은 봉화의 진산으로 태백산맥 줄기에 속한다. 남쪽 기슭에는 신라 문무왕 때 의상대사가 창건했다는 천년고찰 축서사가 자리한다. 완만한 육산에 진달래 능선이 이어져 봄 산행지로 인기가 높으며 월간산 선정 명산에 든다.",
+      "trails": [
+        {
+          "name": "축서사 원점회귀 코스",
+          "start": "축서사 주차장",
+          "distance_km": 5.5,
+          "duration": "왕복 약 2시간 30분",
+          "difficulty": "보통",
+          "note": "주실령 갈림길을 거쳐 정상, 진달래능선으로 하산"
+        },
+        {
+          "name": "주실령 능선 코스",
+          "start": "주실령",
+          "distance_km": 5,
+          "duration": "편도 약 2시간",
+          "difficulty": "보통",
+          "note": "능선 종주자들이 많이 이용"
+        }
+      ],
+      "transport": "봉화공용버스터미널에서 물야·춘양 방면 농어촌버스를 이용하거나 영주역·봉화역에서 택시로 접근한다. 자가용은 축서사 무료주차장을 들머리로 이용하는 것이 편하다.",
+      "features": [
+        "천년고찰",
+        "진달래",
+        "육산",
+        "단풍",
+        "조망"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/문수산_(봉화)",
+        "http://koreasanha.net/san/munsusan-bonghwa.htm",
+        "https://www.openstreetmap.org/node/7972724218"
+      ],
+      "coord_confidence": "high",
+      "best_season": "봄(4~5월) 진달래, 가을(10~11월) 단풍",
+      "coord_source": "OpenStreetMap 정상 peak 노드(osm_id 7972724218, 봉화군), 웹검색 교차확인"
+    },
+    {
       "id": "unmunsan",
       "name": "운문산",
       "disambig": "",
@@ -10726,7 +12252,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.6317,
       "lon": 128.9628,
@@ -10856,7 +12384,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.6558,
       "lon": 127.7669,
@@ -10988,7 +12518,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.0151,
       "lon": 128.69977,
@@ -11087,6 +12619,63 @@
       "coord_source": "위키데이터 P625 (한국어 위키백과 연계), Q624313"
     },
     {
+      "id": "cheonhwangsan",
+      "name": "천황산",
+      "disambig": "",
+      "name_full": "천황산",
+      "elevation_m": 1189,
+      "location": "경상남도 밀양시, 울산광역시 울주군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.5579,
+      "lon": 128.9722,
+      "summary": "천황산은 영남알프스의 중심을 이루는 산으로 경상남도 밀양시와 울산광역시 울주군의 경계에 있으며 정상은 사자봉(1189m)이다. 남쪽의 재약산(수미봉)과 능선으로 이어지고 그 사이 사자평은 광활한 억새 평원으로 유명하다. 밀양 얼음골 케이블카를 이용하면 손쉽게 정상부에 오를 수 있고 산기슭에 표충사가 있다.",
+      "trails": [
+        {
+          "name": "얼음골 케이블카 코스",
+          "start": "얼음골 케이블카 상부승강장",
+          "distance_km": 2,
+          "duration": "왕복 약 2시간",
+          "difficulty": "쉬움",
+          "note": "천황재를 거쳐 사자봉 정상, 초보자도 가능"
+        },
+        {
+          "name": "표충사 코스",
+          "start": "표충사 주차장",
+          "distance_km": 9.5,
+          "duration": "약 5시간",
+          "difficulty": "어려움",
+          "note": "사자평 억새밭과 재약산을 연계하는 종주 코스"
+        }
+      ],
+      "transport": "밀양역·밀양시외버스터미널에서 얼음골 또는 표충사행 시내버스를 이용한다. 자가용은 얼음골 케이블카 주차장 또는 표충사 주차장을 이용한다.",
+      "features": [
+        "영남알프스",
+        "억새",
+        "케이블카",
+        "사자평",
+        "조망",
+        "단풍"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/천황산_(경남/울산)",
+        "https://miryang.grandculture.net/miryang/toc/GC08700143",
+        "https://www.openstreetmap.org/node/6471732105"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 억새·단풍",
+      "coord_source": "OpenStreetMap 정상 peak 노드(osm_id 6471732105, 사자봉) 및 웹검색값 35.55792/128.97224 일치"
+    },
+    {
       "id": "sinbulsan",
       "name": "신불산",
       "disambig": "",
@@ -11100,7 +12689,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.54,
       "lon": 129.056,
@@ -11252,7 +12843,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.54666667,
       "lon": 128.98055556,
@@ -11384,7 +12977,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.49638889,
       "lon": 127.97444444,
@@ -11537,7 +13132,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.1194,
       "lon": 127.9714,
@@ -11666,7 +13263,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.772,
       "lon": 128.086,
@@ -11818,7 +13417,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.7183,
       "lon": 128.5236,
@@ -11928,7 +13529,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 36.7936,
       "lon": 128.2247,
@@ -12058,7 +13661,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.5419,
       "lon": 127.8206,
@@ -12156,6 +13761,63 @@
       "coord_source": "천왕봉(주봉) 위치. 영문 위키백과 infobox는 36.533°N 127.900°E(분 단위 저정밀)로 표기되나 실제 천왕봉은 경도 127.82 부근으로 보정"
     },
     {
+      "id": "namsanjeilbong",
+      "name": "남산제일봉",
+      "disambig": "",
+      "name_full": "남산제일봉",
+      "elevation_m": 1054,
+      "location": "경상남도 합천군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
+      },
+      "lat": 35.77278,
+      "lon": 128.09561,
+      "summary": "남산제일봉은 경상남도 합천군 가야면에 있는 가야산국립공원 남쪽 능선의 봉우리로, 매화산(梅花山)으로도 불린다. 정상부에 금관바위·곰바위 등 7개의 암봉이 늘어서 기암괴석이 마치 매화가 만개한 듯하여 이런 이름이 붙었으며 합천8경 중 하나로 꼽힌다. 해인사와 청량사를 품은 산으로 짜릿한 암릉과 가을 단풍이 볼거리다.",
+      "trails": [
+        {
+          "name": "청량사-남산제일봉 코스",
+          "start": "청량사",
+          "distance_km": 2.5,
+          "duration": "편도 약 2시간",
+          "difficulty": "어려움",
+          "note": "철계단과 암릉 구간이 많은 급경사 코스"
+        },
+        {
+          "name": "치인리(해인사 관광단지)-남산제일봉 코스",
+          "start": "치인주차장",
+          "distance_km": 3,
+          "duration": "편도 약 2시간 30분",
+          "difficulty": "어려움",
+          "note": "가야산국립공원 주능선 조망"
+        }
+      ],
+      "transport": "대구 서부정류장(서부시외버스터미널)에서 해인사행 직행버스 이용, 또는 합천버스터미널에서 해인사행 버스. 해인사 관광단지·치인 공영주차장 이용 가능.",
+      "features": [
+        "국립공원",
+        "가야산국립공원",
+        "암릉",
+        "기암괴석",
+        "단풍",
+        "조망"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/남산제일봉",
+        "https://www.hc.go.kr/06571/06779/06782.web?amode=view&idx=55",
+        "https://namu.wiki/w/남산제일봉"
+      ],
+      "coord_confidence": "high",
+      "best_season": "가을(10~11월) 단풍, 봄 신록",
+      "coord_source": "OSM 정상 peak node 9220547984 + codex 웹검색 교차확인"
+    },
+    {
       "id": "joryeongsan-mungyeong",
       "name": "조령산",
       "disambig": "문경",
@@ -12170,7 +13832,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.76667,
       "lon": 128.05,
@@ -12299,7 +13963,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 36.716,
       "lon": 128.005,
@@ -12385,7 +14051,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 37.50333,
       "lon": 130.86611,
@@ -12515,7 +14183,9 @@
       ],
       "lists": {
         "sanlim": false,
-        "bac": true
+        "bac": true,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 36.5719,
       "lon": 127.9836,
@@ -12646,7 +14316,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.0219,
       "lon": 128.1606,
@@ -12756,7 +14428,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.6706,
       "lon": 127.9325,
@@ -12864,7 +14538,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 35.4203,
       "lon": 129.1122,
@@ -12974,7 +14650,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 36.4703,
       "lon": 127.8631,
@@ -13082,7 +14760,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.7975,
       "lon": 128.9139,
@@ -13192,7 +14872,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.2836,
       "lon": 129.0447,
@@ -13300,7 +14982,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": false
       },
       "lat": 35.1961,
       "lon": 128.535,
@@ -13407,7 +15091,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.5286,
       "lon": 128.5303,
@@ -13502,6 +15188,64 @@
       "coord_source": "한국어 위키백과/나무위키 문서 및 지도 대조 (정상 화왕산성 일대)"
     },
     {
+      "id": "tohamsan",
+      "name": "토함산",
+      "disambig": "",
+      "name_full": "토함산",
+      "elevation_m": 745,
+      "location": "경상북도 경주시",
+      "province": "경북",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.80177,
+      "lon": 129.34521,
+      "summary": "토함산은 경상북도 경주시에 있는 해발 745m의 산으로, 경주국립공원에 속하며 단석산에 이어 경주에서 두 번째로 높다. 신라인이 신성시한 오악(五岳)의 하나로, 동해에서 밀려오는 안개를 마시고 토해내는 듯하다 하여 토함산이라 불린다. 세계유산 석굴암과 불국사를 품고 있으며 정상에서 맞는 동해 일출이 특히 유명하다.",
+      "trails": [
+        {
+          "name": "석굴암-토함산 정상 단축코스",
+          "start": "석굴암 주차장",
+          "distance_km": 1.4,
+          "duration": "편도 25~30분",
+          "difficulty": "쉬움",
+          "note": "야자매트가 깔린 완만한 산책로"
+        },
+        {
+          "name": "불국사-석굴암-토함산 정상 코스",
+          "start": "불국사",
+          "distance_km": 3.6,
+          "duration": "편도 약 1시간 30분",
+          "difficulty": "보통",
+          "note": "석굴암을 거쳐 오르는 대표 코스"
+        }
+      ],
+      "transport": "신경주역(KTX)·경주역에서 시내버스 이용, 경주시외버스터미널에서 불국사·석굴암행 10·11번, 석굴암행 12번 버스. 석굴암 공영주차장(유료) 이용, 주말 오전에는 조기 만차 주의.",
+      "features": [
+        "국립공원",
+        "경주국립공원",
+        "일출",
+        "석굴암",
+        "불국사",
+        "세계유산",
+        "신라오악"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/토함산",
+        "https://en.wikipedia.org/wiki/Tohamsan",
+        "https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2293&area_uid=375"
+      ],
+      "coord_confidence": "high",
+      "best_season": "사계절(가을 단풍·정상 일출 명소)",
+      "coord_source": "OSM 정상 peak node(ele 745); 위키 인포박스 좌표는 정상에서 ~5km 벗어나 부정확"
+    },
+    {
       "id": "juwangsan",
       "name": "주왕산",
       "disambig": "",
@@ -13515,7 +15259,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.4003,
       "lon": 129.1486,
@@ -13668,7 +15414,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 36.1975,
       "lon": 129.2836,
@@ -13778,7 +15526,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 34.7407,
       "lon": 127.9836,
@@ -13896,6 +15646,119 @@
       "coord_source": "한국어 위키백과 보리암 문서 및 등산정보/지도 대조 (정상 봉수대 기준)"
     },
     {
+      "id": "cheonjusan",
+      "name": "천주산",
+      "disambig": "",
+      "name_full": "천주산",
+      "elevation_m": 639,
+      "location": "경상남도 창원시·함안군",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 35.27152,
+      "lon": 128.59124,
+      "summary": "천주산은 경상남도 창원시와 함안군 경계에 걸쳐 있는 해발 약 639m의 산으로 대한민국 100대 명산에 선정되었다. 주봉은 용지봉(龍池峰)이며 정상 부근에 전국적으로 이름난 광활한 진달래 군락이 펼쳐진다. 봄이면 '고향의 봄 천주산 진달래축제'가 열릴 만큼 진달래 명산으로 유명하다.",
+      "trails": [
+        {
+          "name": "굴현고개-용지봉 코스",
+          "start": "굴현고개",
+          "distance_km": 4,
+          "duration": "편도 약 2시간 30분",
+          "difficulty": "보통",
+          "note": "만남의광장을 거치는 완만한 능선길"
+        },
+        {
+          "name": "달천계곡 원점회귀 코스",
+          "start": "달천계곡 주차장",
+          "distance_km": 9,
+          "duration": "약 5시간",
+          "difficulty": "보통",
+          "note": "천주봉-용지봉-상봉(농바위) 종주형 원점회귀"
+        }
+      ],
+      "transport": "창원중앙역·마산역에서 접근, 마산시외버스터미널에서 북면 방면 시내버스 이용. 달천계곡 주차장 또는 굴현고개 인근 주차 가능.",
+      "features": [
+        "진달래",
+        "100대 명산",
+        "진달래축제",
+        "억새",
+        "조망"
+      ],
+      "sources": [
+        "https://namu.wiki/w/천주산",
+        "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20220414.22013003647",
+        "https://changwon.go.kr/tour/index.do"
+      ],
+      "coord_confidence": "high",
+      "best_season": "봄(4월) 진달래",
+      "coord_source": "OSM 용지봉 정상 node 1906091858 + codex 교차확인"
+    },
+    {
+      "id": "gyeryongsan-geoje",
+      "name": "계룡산",
+      "disambig": "거제",
+      "name_full": "계룡산(거제)",
+      "elevation_m": 566,
+      "location": "경상남도 거제시",
+      "province": "경남",
+      "region": "경상",
+      "regions": [
+        "경상"
+      ],
+      "lists": {
+        "sanlim": false,
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
+      },
+      "lat": 34.87109,
+      "lon": 128.60759,
+      "summary": "계룡산은 경상남도 거제시 중앙에 우뚝 솟은 해발 566m의 산으로 대한민국 100대 명산에 선정되었다. 산의 형상이 닭과 용을 닮았다 하여 계룡산이라 불리며, 최고봉 아래에 신라 의상대사가 수도했다는 의상대 터가 남아 있다. 정상에서는 다도해와 거제 시가지가 한눈에 펼쳐지고, 포로수용소 유적공원에서 정상까지 관광모노레일이 운행한다.",
+      "trails": [
+        {
+          "name": "거제공설운동장-계룡산 정상 코스",
+          "start": "거제공설운동장 주차장",
+          "distance_km": 3.5,
+          "duration": "편도 약 2시간",
+          "difficulty": "보통",
+          "note": "김실령고개·암봉을 거쳐 정상에 오르는 대표 코스"
+        },
+        {
+          "name": "포로수용소 유적공원 모노레일 연계 코스",
+          "start": "포로수용소 유적공원",
+          "distance_km": 2,
+          "duration": "왕복 약 3시간(도보)",
+          "difficulty": "보통",
+          "note": "정상까지 관광모노레일 이용 가능"
+        }
+      ],
+      "transport": "거제 고현버스터미널에서 시내버스 이용, 포로수용소 유적공원(모노레일 하부승강장) 인접. 거제공설운동장·유적공원 주차장 이용 가능.",
+      "features": [
+        "100대 명산",
+        "다도해 조망",
+        "암릉",
+        "모노레일",
+        "포로수용소 유적",
+        "일출"
+      ],
+      "sources": [
+        "https://ko.wikipedia.org/wiki/계룡산_(경남)",
+        "https://www.100mountain.co.kr/2026/02/geoje-gyeryongsan.html",
+        "https://tour.geoje.go.kr/user/smarttour/view.geoje?basicSid=48"
+      ],
+      "coord_confidence": "high",
+      "best_season": "봄·가을(정상 다도해 조망)",
+      "coord_source": "OSM 정상 peak node(ele 570) + 위키백과 계룡산(경남) 교차확인"
+    },
+    {
       "id": "yeonhwasan",
       "name": "연화산",
       "disambig": "",
@@ -13909,7 +15772,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": false,
+        "wolgansan": true
       },
       "lat": 35.0783,
       "lon": 128.2739,
@@ -14038,7 +15903,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 35.7686,
       "lon": 129.2196,
@@ -14125,7 +15992,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": false
       },
       "lat": 34.8231,
       "lon": 128.4258,
@@ -14255,7 +16124,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": false
+        "bac": false,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 34.8475,
       "lon": 128.2222,
@@ -14364,7 +16235,9 @@
       ],
       "lists": {
         "sanlim": true,
-        "bac": true
+        "bac": true,
+        "hansanha": true,
+        "wolgansan": true
       },
       "lat": 33.36167,
       "lon": 126.52917,

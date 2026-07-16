@@ -6,7 +6,7 @@ elevation_m: 606.9
 region: 전라
 province: 전남
 location: "전라남도 고흥군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [34.6258, 127.3528]
 coord_confidence: medium
 features: ["국립공원", "다도해해상국립공원", "암릉", "일출", "다도해 조망", "사찰"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍·조망, 봄 진달래"
 
 # 팔영산
 
-> 전라 · 전라남도 고흥군 · 해발 606.9m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 고흥군 · 해발 606.9m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

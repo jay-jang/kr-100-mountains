@@ -6,7 +6,7 @@ elevation_m: 1030.6
 region: 전라
 province: 전북
 location: "전북특별자치도 무주군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [35.9477263, 127.69115]
 coord_confidence: high
 features: ["국립공원", "단풍", "적상산성", "사찰(안국사)", "기암", "적상호"]
@@ -15,7 +15,7 @@ best_season: "가을(10월 하순~11월) 적상 단풍"
 
 # 적상산
 
-> 전라 · 전북특별자치도 무주군 · 해발 1030.6m · 산림청 100대 명산
+> 전라 · 전북특별자치도 무주군 · 해발 1030.6m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

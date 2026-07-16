@@ -6,7 +6,7 @@ elevation_m: 934.7
 region: 수도권
 province: 경기
 location: "경기도 가평군·포천시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [37.9857, 127.3489]
 coord_confidence: medium
 features: ["암릉", "단풍", "출렁다리", "현등사", "기암괴석", "경기5악"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 운악산
 
-> 수도권 · 경기도 가평군·포천시 · 해발 934.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 가평군·포천시 · 해발 934.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

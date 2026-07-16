@@ -6,7 +6,7 @@ elevation_m: 887.1
 region: 수도권
 province: 경기
 location: "경기도 남양주시·가평군"
-lists: [sanlim]
+lists: [sanlim, hansanha]
 coordinates: [37.7697, 127.3336]
 coord_confidence: medium
 features: ["잣나무숲", "자연휴양림", "삼림욕", "철쭉", "단풍", "암릉"]
@@ -15,7 +15,7 @@ best_season: "봄(5월 서리산 철쭉)·가을(10월) 단풍"
 
 # 축령산(남양주)
 
-> 수도권 · 경기도 남양주시·가평군 · 해발 887.1m · 산림청 100대 명산
+> 수도권 · 경기도 남양주시·가평군 · 해발 887.1m · 산림청 100대 명산 / 한국의산하 인기명산 100
 
 ## 개요
 

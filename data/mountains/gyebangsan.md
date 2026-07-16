@@ -6,7 +6,7 @@ elevation_m: 1579.1
 region: 강원
 province: 강원
 location: "강원특별자치도 홍천군·평창군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.7315, 128.4571]
 coord_confidence: medium
 features: ["주목군락", "철쭉", "눈꽃", "상고대", "고산조망", "원시림"]
@@ -15,7 +15,7 @@ best_season: "겨울(1~2월) 눈꽃·상고대"
 
 # 계방산
 
-> 강원 · 강원특별자치도 홍천군·평창군 · 해발 1579.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 홍천군·평창군 · 해발 1579.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

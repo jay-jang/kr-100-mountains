@@ -6,7 +6,7 @@ elevation_m: 458.4
 region: 경상
 province: 경남
 location: "경상남도 통영시"
-lists: [sanlim]
+lists: [sanlim, hansanha]
 coordinates: [34.8231, 128.4258]
 coord_confidence: medium
 features: ["100대 명산", "한려해상국립공원", "케이블카", "바다조망", "일출", "섬"]
@@ -15,7 +15,7 @@ best_season: "사계절(봄 신록·가을 조망, 겨울 일출)"
 
 # 미륵산
 
-> 경상 · 경상남도 통영시 · 해발 458.4m · 산림청 100대 명산
+> 경상 · 경상남도 통영시 · 해발 458.4m · 산림청 100대 명산 / 한국의산하 인기명산 100
 
 ## 개요
 

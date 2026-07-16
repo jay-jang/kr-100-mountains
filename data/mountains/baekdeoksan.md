@@ -6,7 +6,7 @@ elevation_m: 1350.1
 region: 강원
 province: 강원
 location: "강원특별자치도 평창군·횡성군·영월군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, wolgansan]
 coordinates: [37.3372, 128.3436]
 coord_confidence: medium
 features: ["100대 명산", "단풍", "설경", "암릉", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 단풍, 겨울(12~2월) 설경"
 
 # 백덕산
 
-> 강원 · 강원특별자치도 평창군·횡성군·영월군 · 해발 1350.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 평창군·횡성군·영월군 · 해발 1350.1m · 산림청 100대 명산 / 블랙야크 명산100 / 월간산 100대 명산
 
 ## 개요
 

@@ -6,7 +6,7 @@ elevation_m: 1432.6
 region: 경상
 province: 경남
 location: "경상남도 합천군·거창군, 경상북도 성주군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.8253, 128.1197]
 coord_confidence: medium
 features: ["국립공원", "단풍", "암릉", "기암괴석", "해인사", "불교성지", "일출"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 가야산(합천)
 
-> 경상 · 경상남도 합천군·거창군, 경상북도 성주군 · 해발 1432.6m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상남도 합천군·거창군, 경상북도 성주군 · 해발 1432.6m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

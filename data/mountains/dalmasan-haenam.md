@@ -6,7 +6,7 @@ elevation_m: 489
 region: 전라
 province: 전남
 location: "전라남도 해남군"
-lists: [bac]
+lists: [bac, hansanha]
 coordinates: [34.421, 126.602]
 coord_confidence: medium
 features: ["암릉", "기암괴석", "일출", "다도해 조망", "미황사", "달마고도", "억새"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍·억새, 사계절"
 
 # 달마산(해남)
 
-> 전라 · 전라남도 해남군 · 해발 489m · 블랙야크 명산100
+> 전라 · 전라남도 해남군 · 해발 489m · 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

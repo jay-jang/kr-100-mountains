@@ -6,7 +6,7 @@ elevation_m: 1237.4
 region: 전라
 province: 전북
 location: "전북특별자치도 장수군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.5837, 127.5619]
 coord_confidence: medium
 features: ["군립공원", "억새", "단풍", "능선", "금남호남정맥"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새·단풍"
 
 # 장안산
 
-> 전라 · 전북특별자치도 장수군 · 해발 1237.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전북특별자치도 장수군 · 해발 1237.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

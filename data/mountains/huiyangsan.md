@@ -6,7 +6,7 @@ elevation_m: 996.4
 region: 경상
 province: 경북
 location: "경상북도 문경시, 충청북도 괴산군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [36.716, 128.005]
 coord_confidence: high
 features: ["백두대간", "암릉", "화강암슬랩", "봉암사", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄·가을 산행"
 
 # 희양산
 
-> 경상 · 경상북도 문경시, 충청북도 괴산군 · 해발 996.4m · 산림청 100대 명산
+> 경상 · 경상북도 문경시, 충청북도 괴산군 · 해발 996.4m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

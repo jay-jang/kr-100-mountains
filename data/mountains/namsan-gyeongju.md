@@ -6,7 +6,7 @@ elevation_m: 495.1
 region: 경상
 province: 경북
 location: "경상북도 경주시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.7686, 129.2196]
 coord_confidence: medium
 features: ["국립공원", "세계유산", "불교유적", "마애불", "암릉", "역사탐방"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍과 답사"
 
 # 남산(경주)
 
-> 경상 · 경상북도 경주시 · 해발 495.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 경주시 · 해발 495.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

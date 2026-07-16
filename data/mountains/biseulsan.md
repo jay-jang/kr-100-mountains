@@ -6,7 +6,7 @@ elevation_m: 1083.4
 region: 경상
 province: 대구
 location: "대구광역시 달성군, 경상북도 청도군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.7183, 128.5236]
 coord_confidence: medium
 features: ["군립공원", "참꽃", "진달래", "억새", "암괴류", "대견사", "100대 명산"]
@@ -15,7 +15,7 @@ best_season: "봄(4월 중하순) 참꽃, 가을(10월) 억새"
 
 # 비슬산
 
-> 경상 · 대구광역시 달성군, 경상북도 청도군 · 해발 1083.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 대구광역시 달성군, 경상북도 청도군 · 해발 1083.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

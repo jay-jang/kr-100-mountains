@@ -6,7 +6,7 @@ elevation_m: 869.7
 region: 경상
 province: 경북
 location: "경상북도 봉화군·안동시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.7975, 128.9139]
 coord_confidence: medium
 features: ["도립공원", "단풍", "암릉", "기암절벽", "낙동강 조망", "하늘다리", "사찰"]
@@ -15,7 +15,7 @@ best_season: "가을(10월 말~11월 초) 단풍"
 
 # 청량산
 
-> 경상 · 경상북도 봉화군·안동시 · 해발 869.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 봉화군·안동시 · 해발 869.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

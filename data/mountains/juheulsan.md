@@ -6,7 +6,7 @@ elevation_m: 1108.4
 region: 경상
 province: 경북
 location: "경상북도 문경시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [36.772, 128.086]
 coord_confidence: medium
 features: ["백두대간", "문경새재", "단풍", "여궁폭포", "암봉", "100대 명산"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 주흘산
 
-> 경상 · 경상북도 문경시 · 해발 1108.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 문경시 · 해발 1108.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

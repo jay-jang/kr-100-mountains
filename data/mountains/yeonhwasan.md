@@ -6,7 +6,7 @@ elevation_m: 524
 region: 경상
 province: 경남
 location: "경상남도 고성군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [35.0783, 128.2739]
 coord_confidence: medium
 features: ["도립공원", "옥천사", "사찰", "단풍", "가족산행"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 연화산
 
-> 경상 · 경상남도 고성군 · 해발 524m · 산림청 100대 명산
+> 경상 · 경상남도 고성군 · 해발 524m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

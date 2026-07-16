@@ -6,7 +6,7 @@ elevation_m: 381
 region: 충청
 province: 충남
 location: "충청남도 홍성군·예산군"
-lists: [bac]
+lists: [bac, hansanha]
 coordinates: [36.6198, 126.6717]
 coord_confidence: medium
 features: ["암릉", "기암괴석", "충남의 금강산", "조망", "가족산행"]
@@ -15,7 +15,7 @@ best_season: "봄(4~5월) 진달래·신록, 가을(10~11월) 단풍"
 
 # 용봉산(홍성)
 
-> 충청 · 충청남도 홍성군·예산군 · 해발 381m · 블랙야크 명산100
+> 충청 · 충청남도 홍성군·예산군 · 해발 381m · 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

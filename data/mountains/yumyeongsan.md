@@ -6,7 +6,7 @@ elevation_m: 864
 region: 수도권
 province: 경기
 location: "경기도 가평군·양평군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [37.6294, 127.4783]
 coord_confidence: medium
 features: ["100대 명산", "억새", "자연휴양림", "계곡", "패러글라이딩", "초원"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 억새·단풍, 여름 계곡"
 
 # 유명산
 
-> 수도권 · 경기도 가평군·양평군 · 해발 864m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 가평군·양평군 · 해발 864m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

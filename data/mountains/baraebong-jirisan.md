@@ -6,7 +6,7 @@ elevation_m: 1165
 region: 전라
 province: 전북
 location: "전북특별자치도 남원시"
-lists: [bac]
+lists: [bac, hansanha]
 coordinates: [35.3742, 127.5589]
 coord_confidence: medium
 features: ["국립공원", "철쭉", "억새", "초원능선", "조망"]
@@ -15,7 +15,7 @@ best_season: "봄(5월) 철쭉, 가을 억새"
 
 # 바래봉(지리산)
 
-> 전라 · 전북특별자치도 남원시 · 해발 1165m · 블랙야크 명산100
+> 전라 · 전북특별자치도 남원시 · 해발 1165m · 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

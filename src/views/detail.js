@@ -1,4 +1,4 @@
-import { loadData, DIFF_CLASS, regionColor } from '../data.js';
+import { loadData, DIFF_CLASS, regionColor, LIST_KEYS, LIST_META } from '../data.js';
 import { createMapView, fetchTrails } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, toggleHiked, onChange } from '../store.js';
@@ -44,8 +44,7 @@ export async function renderDetail(root, id) {
       el('h2', {}, m.name, m.disambig ? el('span', { class: 'han' }, `(${m.disambig})`) : null),
       sub),
     el('div', { class: 'hero-badges' },
-      m.lists.sanlim ? el('span', { class: 'pill sanlim' }, '산림청 100대 명산') : null,
-      m.lists.bac ? el('span', { class: 'pill bac' }, '블랙야크 명산100') : null),
+      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => el('span', { class: `pill p-${k}` }, LIST_META[k].full))),
     hikeBtn));
 
   // ---- summary ----
@@ -143,7 +142,7 @@ export async function renderDetail(root, id) {
         el('li', {}, el('a', { href: s, target: '_blank', rel: 'noopener' }, s))))));
 
   page.append(el('div', { class: 'disclaimer' },
-    'ⓘ 이 문서는 산림청 100대 명산·블랙야크 명산100 공개 목록과 웹 조사를 바탕으로 자동 정리되었습니다. ' +
+    'ⓘ 이 문서는 산림청 100대 명산·블랙야크 명산100·한국의산하 인기명산 100·월간산 100대 명산 공개 목록과 웹 조사를 바탕으로 자동 정리되었습니다. ' +
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
     '지도의 등산로 선은 OpenStreetMap 데이터이며, GPX는 실제 기록 파일만 표시합니다.'));
 

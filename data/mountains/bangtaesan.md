@@ -6,7 +6,7 @@ elevation_m: 1445.7
 region: 강원
 province: 강원
 location: "강원특별자치도 인제군·홍천군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [37.888066, 128.389968]
 coord_confidence: medium
 features: ["자연휴양림", "단풍", "폭포", "계곡", "원시림", "오지"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 단풍, 여름(7~8월) 계곡"
 
 # 방태산
 
-> 강원 · 강원특별자치도 인제군·홍천군 · 해발 1445.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 인제군·홍천군 · 해발 1445.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

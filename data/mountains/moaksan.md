@@ -6,7 +6,7 @@ elevation_m: 795.2
 region: 전라
 province: 전북
 location: "전북특별자치도 김제시·전주시·완주군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.7292, 127.0853]
 coord_confidence: high
 features: ["도립공원", "금산사", "단풍", "종교유적", "근교산"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄철 벚꽃"
 
 # 모악산
 
-> 전라 · 전북특별자치도 김제시·전주시·완주군 · 해발 795.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전북특별자치도 김제시·전주시·완주군 · 해발 795.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

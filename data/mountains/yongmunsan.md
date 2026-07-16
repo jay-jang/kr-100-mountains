@@ -6,7 +6,7 @@ elevation_m: 1157.1
 region: 수도권
 province: 경기
 location: "경기도 양평군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.5622059, 127.5518564]
 coord_confidence: high
 features: ["100대 명산", "암릉", "단풍", "용문사 은행나무", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 용문산
 
-> 수도권 · 경기도 양평군 · 해발 1157.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 양평군 · 해발 1157.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

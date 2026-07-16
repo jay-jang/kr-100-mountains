@@ -6,7 +6,7 @@ elevation_m: 810.3
 region: 수도권
 province: 경기
 location: "경기도 남양주시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.6807, 127.2713]
 coord_confidence: medium
 features: ["군립공원", "야생화", "암릉", "스키장", "일출"]
@@ -15,7 +15,7 @@ best_season: "봄(4월) 야생화, 가을 단풍"
 
 # 천마산
 
-> 수도권 · 경기도 남양주시 · 해발 810.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 남양주시 · 해발 810.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

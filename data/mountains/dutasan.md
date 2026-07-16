@@ -6,7 +6,7 @@ elevation_m: 1357
 region: 강원
 province: 강원
 location: "강원특별자치도 동해시·삼척시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.4372, 129.0169]
 coord_confidence: medium
 features: ["암릉", "무릉계곡", "폭포", "명승", "두타산성", "단풍"]
@@ -15,7 +15,7 @@ best_season: "여름(7~8월) 계곡, 가을(10월) 단풍"
 
 # 두타산
 
-> 강원 · 강원특별자치도 동해시·삼척시 · 해발 1357m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 동해시·삼척시 · 해발 1357m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

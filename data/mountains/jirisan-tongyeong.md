@@ -6,7 +6,7 @@ elevation_m: 399.3
 region: 경상
 province: 경남
 location: "경상남도 통영시"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [34.8475, 128.2222]
 coord_confidence: low
 features: ["100대 명산", "섬", "암릉", "출렁다리", "바다조망", "종주"]
@@ -15,7 +15,7 @@ best_season: "봄(4~5월)과 가을(10~11월)"
 
 # 지리산(통영)
 
-> 경상 · 경상남도 통영시 · 해발 399.3m · 산림청 100대 명산
+> 경상 · 경상남도 통영시 · 해발 399.3m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

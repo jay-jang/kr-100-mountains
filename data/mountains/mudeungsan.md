@@ -6,7 +6,7 @@ elevation_m: 1186.8
 region: 전라
 province: 광주
 location: "광주광역시 동구, 전라남도 담양군·화순군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.1342, 126.9885]
 coord_confidence: medium
 features: ["국립공원", "주상절리", "억새", "상고대", "일출", "천연기념물"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새·단풍, 겨울 설경"
 
 # 무등산
 
-> 전라 · 광주광역시 동구, 전라남도 담양군·화순군 · 해발 1186.8m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 광주광역시 동구, 전라남도 담양군·화순군 · 해발 1186.8m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

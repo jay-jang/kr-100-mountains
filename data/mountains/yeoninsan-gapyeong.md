@@ -6,7 +6,7 @@ elevation_m: 1068.2
 region: 수도권
 province: 경기
 location: "경기도 가평군"
-lists: [bac]
+lists: [bac, hansanha, wolgansan]
 coordinates: [37.8994444, 127.4144444]
 coord_confidence: high
 features: ["100대 명산", "경기도립공원", "철쭉", "억새", "계곡", "정상 초원"]
@@ -15,7 +15,7 @@ best_season: "봄(5월) 철쭉, 가을(10월) 억새·단풍"
 
 # 연인산(가평)
 
-> 수도권 · 경기도 가평군 · 해발 1068.2m · 블랙야크 명산100
+> 수도권 · 경기도 가평군 · 해발 1068.2m · 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

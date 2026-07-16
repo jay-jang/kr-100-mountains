@@ -6,7 +6,7 @@ elevation_m: 904.1
 region: 충청
 province: 충남
 location: "충청남도 금산군, 충청북도 옥천군"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [36.2789, 127.5539]
 coord_confidence: medium
 features: ["100대명산", "충남최고봉", "암릉", "기암괴석", "구름다리", "단풍"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 서대산
 
-> 충청 · 충청남도 금산군, 충청북도 옥천군 · 해발 904.1m · 산림청 100대 명산
+> 충청 · 충청남도 금산군, 충청북도 옥천군 · 해발 904.1m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

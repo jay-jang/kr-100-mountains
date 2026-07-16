@@ -120,8 +120,11 @@ button { font-family: inherit; cursor: pointer; }
   display: inline-flex; align-items: center; gap: 6px;
 }
 .chip .dot { width: 9px; height: 9px; border-radius: 50%; }
-.chip[aria-pressed="true"] { color: #fff; border-color: transparent; }
-.chip.list[aria-pressed="true"] { background: var(--accent); }
+.chip[aria-pressed="true"] { color: #fff; border-color: transparent; background: var(--accent); }
+.chip.list-sanlim[aria-pressed="true"] { background: #2f8a52; }
+.chip.list-bac[aria-pressed="true"] { background: #3a5fc4; }
+.chip.list-hansanha[aria-pressed="true"] { background: #c07a1e; }
+.chip.list-wolgansan[aria-pressed="true"] { background: #7d47c0; }
 .seg { display: flex; gap: 4px; margin-top: 10px; background: var(--bg-soft); padding: 3px; border-radius: 10px; }
 .seg button {
   flex: 1; border: 0; background: transparent; color: var(--text-soft); font-weight: 650;
@@ -149,14 +152,18 @@ button { font-family: inherit; cursor: pointer; }
 .mtn-name { font-weight: 700; font-size: 14.5px; letter-spacing: -.01em; display: flex; align-items: center; gap: 6px; }
 .mtn-name .disambig { color: var(--text-faint); font-weight: 600; font-size: 12px; }
 .mtn-meta { font-size: 12px; color: var(--text-soft); display: flex; gap: 8px; margin-top: 1px; }
-.mtn-badges { display: flex; gap: 4px; flex-shrink: 0; }
+.mtn-badges { display: flex; gap: 4px; flex-shrink: 0; flex-wrap: wrap; max-width: 96px; justify-content: flex-end; }
 .badge {
   font-size: 10px; font-weight: 800; padding: 3px 6px; border-radius: 6px; letter-spacing: .02em;
 }
-.badge.sanlim { background: #e3efe7; color: #1f6b3c; }
-.badge.bac { background: #e6ecfa; color: #274b9b; }
-:root[data-theme="dark"] .badge.sanlim { background: #1c3527; color: #7fd6a0; }
-:root[data-theme="dark"] .badge.bac { background: #1e2a4a; color: #9cb6f2; }
+.badge.b-sanlim { background: #e3efe7; color: #1f6b3c; }
+.badge.b-bac { background: #e6ecfa; color: #274b9b; }
+.badge.b-hansanha { background: #fbeede; color: #9a5a12; }
+.badge.b-wolgansan { background: #efe6fa; color: #6b3aa0; }
+:root[data-theme="dark"] .badge.b-sanlim { background: #1c3527; color: #7fd6a0; }
+:root[data-theme="dark"] .badge.b-bac { background: #1e2a4a; color: #9cb6f2; }
+:root[data-theme="dark"] .badge.b-hansanha { background: #382712; color: #eab873; }
+:root[data-theme="dark"] .badge.b-wolgansan { background: #2c1f42; color: #c9a9ef; }
 .hiked-star { color: var(--gold); font-size: 15px; }
 
 /* map */
@@ -212,12 +219,16 @@ button { font-family: inherit; cursor: pointer; }
 .hero .han { color: var(--text-faint); font-weight: 600; font-size: 18px; margin-left: 6px; }
 .hero .sub { color: var(--text-soft); margin-top: 4px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
 .hero .elev { font-weight: 800; color: var(--accent-ink); }
-.hero-badges { display: flex; gap: 8px; }
+.hero-badges { display: flex; gap: 8px; flex-wrap: wrap; }
 .pill { padding: 5px 11px; border-radius: 999px; font-weight: 750; font-size: 12.5px; border: 1.5px solid; }
-.pill.sanlim { color: #1f6b3c; border-color: #bfe0cb; background: #eef7f1; }
-.pill.bac { color: #274b9b; border-color: #c4d3f5; background: #eef2fc; }
-:root[data-theme="dark"] .pill.sanlim { color: #8fe0ac; border-color: #2b4a37; background: #17251c; }
-:root[data-theme="dark"] .pill.bac { color: #a9c0f5; border-color: #2a3b63; background: #171f33; }
+.pill.p-sanlim { color: #1f6b3c; border-color: #bfe0cb; background: #eef7f1; }
+.pill.p-bac { color: #274b9b; border-color: #c4d3f5; background: #eef2fc; }
+.pill.p-hansanha { color: #9a5a12; border-color: #ecd3ac; background: #fbf3e6; }
+.pill.p-wolgansan { color: #6b3aa0; border-color: #d8c4f0; background: #f5eefc; }
+:root[data-theme="dark"] .pill.p-sanlim { color: #8fe0ac; border-color: #2b4a37; background: #17251c; }
+:root[data-theme="dark"] .pill.p-bac { color: #a9c0f5; border-color: #2a3b63; background: #171f33; }
+:root[data-theme="dark"] .pill.p-hansanha { color: #eab873; border-color: #4a3820; background: #2a1f12; }
+:root[data-theme="dark"] .pill.p-wolgansan { color: #c9a9ef; border-color: #3f2d5c; background: #201733; }
 .hike-btn {
   margin-left: auto; padding: 10px 16px; border-radius: 11px; font-weight: 750; font-size: 14px;
   border: 1.5px solid var(--border-strong); background: var(--bg-elev); color: var(--text);
@@ -283,6 +294,10 @@ button { font-family: inherit; cursor: pointer; }
 .stat-card .big small { font-size: 16px; color: var(--text-faint); font-weight: 700; }
 .progress { height: 9px; border-radius: 999px; background: var(--bg-soft); overflow: hidden; }
 .progress > span { display: block; height: 100%; border-radius: 999px; background: var(--accent); transition: width .5s ease; }
+.stat-card.card-sanlim .progress > span { background: #2f8a52; }
+.stat-card.card-bac .progress > span { background: #3a5fc4; }
+.stat-card.card-hansanha .progress > span { background: #c07a1e; }
+.stat-card.card-wolgansan .progress > span { background: #7d47c0; }
 .region-bars { display: grid; gap: 10px; margin-top: 6px; }
 .region-bar { display: grid; grid-template-columns: 64px 1fr auto; gap: 10px; align-items: center; font-size: 13px; }
 .region-bar .track { height: 8px; border-radius: 999px; background: var(--bg-soft); overflow: hidden; }

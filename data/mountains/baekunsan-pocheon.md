@@ -6,7 +6,7 @@ elevation_m: 903
 region: 수도권
 province: 경기
 location: "경기도 포천시, 강원특별자치도 화천군"
-lists: [sanlim]
+lists: [sanlim, hansanha]
 coordinates: [38.0847, 127.4547]
 coord_confidence: medium
 features: ["100대 명산", "계곡", "단풍", "능선종주", "단애"]
@@ -15,7 +15,7 @@ best_season: "여름(계곡)·가을(10월) 단풍"
 
 # 백운산(포천)
 
-> 수도권 · 경기도 포천시, 강원특별자치도 화천군 · 해발 903m · 산림청 100대 명산
+> 수도권 · 경기도 포천시, 강원특별자치도 화천군 · 해발 903m · 산림청 100대 명산 / 한국의산하 인기명산 100
 
 ## 개요
 

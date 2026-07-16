@@ -6,7 +6,7 @@ elevation_m: 999.7
 region: 강원
 province: 강원
 location: "강원특별자치도 삼척시, 경상북도 울진군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.0454, 129.3477]
 coord_confidence: medium
 features: ["100대 명산", "온천(덕구온천)", "단풍", "계곡", "원시림"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 단풍"
 
 # 응봉산
 
-> 강원 · 강원특별자치도 삼척시, 경상북도 울진군 · 해발 999.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 삼척시, 경상북도 울진군 · 해발 999.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

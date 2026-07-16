@@ -6,7 +6,7 @@ elevation_m: 986.5
 region: 경상
 province: 경북
 location: "경상북도 울릉군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [37.50333, 130.86611]
 coord_confidence: high
 features: ["원시림", "천연기념물", "일출", "일몰", "억새", "화산섬"]
@@ -15,7 +15,7 @@ best_season: "여름·가을(6~10월), 봄 신록"
 
 # 성인봉
 
-> 경상 · 경상북도 울릉군 · 해발 986.5m · 산림청 100대 명산
+> 경상 · 경상북도 울릉군 · 해발 986.5m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

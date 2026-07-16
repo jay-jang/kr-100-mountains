@@ -6,7 +6,7 @@ elevation_m: 810.7
 region: 전라
 province: 전남
 location: "전라남도 영암군·강진군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [34.7678, 126.7044]
 coord_confidence: high
 features: ["국립공원", "암릉", "구름다리", "단풍", "일출", "기암괴석"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄(4~5월) 진달래"
 
 # 월출산
 
-> 전라 · 전라남도 영암군·강진군 · 해발 810.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 영암군·강진군 · 해발 810.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

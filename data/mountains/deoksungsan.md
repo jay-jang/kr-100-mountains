@@ -6,7 +6,7 @@ elevation_m: 495.2
 region: 충청
 province: 충남
 location: "충청남도 예산군"
-lists: [sanlim]
+lists: [sanlim, hansanha, wolgansan]
 coordinates: [36.6742, 126.6231]
 coord_confidence: medium
 features: ["도립공원", "수덕사", "사면석불", "돌계단", "온천"]
@@ -15,7 +15,7 @@ best_season: "봄(4~5월)·가을(10~11월)"
 
 # 덕숭산
 
-> 충청 · 충청남도 예산군 · 해발 495.2m · 산림청 100대 명산
+> 충청 · 충청남도 예산군 · 해발 495.2m · 산림청 100대 명산 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

@@ -6,7 +6,7 @@ elevation_m: 731.2
 region: 전라
 province: 전남
 location: "전라남도 담양군, 전북특별자치도 순창군"
-lists: [sanlim]
+lists: [sanlim, hansanha]
 coordinates: [35.4165, 126.9855]
 coord_confidence: medium
 features: ["100대 명산", "도립공원(전남 기념물)", "담양호 조망", "보리암", "단풍", "암벽"]
@@ -15,7 +15,7 @@ best_season: "가을(11월) 단풍"
 
 # 추월산
 
-> 전라 · 전라남도 담양군, 전북특별자치도 순창군 · 해발 731.2m · 산림청 100대 명산
+> 전라 · 전라남도 담양군, 전북특별자치도 순창군 · 해발 731.2m · 산림청 100대 명산 / 한국의산하 인기명산 100
 
 ## 개요
 

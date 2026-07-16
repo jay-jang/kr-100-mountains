@@ -6,7 +6,7 @@ elevation_m: 1426
 region: 강원
 province: 강원
 location: "강원특별자치도 양양군·인제군"
-lists: [sanlim]
+lists: [sanlim, wolgansan]
 coordinates: [38.0447, 128.4236]
 coord_confidence: medium
 features: ["산림유전자원보호구역", "생물권보전지역", "야생화", "곰배령", "원시림", "단풍"]
@@ -15,7 +15,7 @@ best_season: "여름(6~8월) 야생화, 가을(10월) 단풍"
 
 # 점봉산
 
-> 강원 · 강원특별자치도 양양군·인제군 · 해발 1426m · 산림청 100대 명산
+> 강원 · 강원특별자치도 양양군·인제군 · 해발 1426m · 산림청 100대 명산 / 월간산 100대 명산
 
 ## 개요
 

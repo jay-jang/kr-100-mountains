@@ -6,7 +6,7 @@ elevation_m: 757.7
 region: 경상
 province: 경남
 location: "경상남도 창녕군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [35.5286, 128.5303]
 coord_confidence: medium
 features: ["군립공원", "억새", "진달래", "산성", "분화구", "가을단풍"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새, 봄(4월) 진달래"
 
 # 화왕산
 
-> 경상 · 경상남도 창녕군 · 해발 757.7m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상남도 창녕군 · 해발 757.7m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

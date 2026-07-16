@@ -6,7 +6,7 @@ elevation_m: 790.7
 region: 충청
 province: 충남
 location: "충청남도 보령시·홍성군"
-lists: [bac]
+lists: [bac, hansanha]
 coordinates: [36.411, 126.677]
 coord_confidence: medium
 features: ["억새", "일몰", "서해조망", "100대명산", "금북정맥"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 억새"
 
 # 오서산(보령)
 
-> 충청 · 충청남도 보령시·홍성군 · 해발 790.7m · 블랙야크 명산100
+> 충청 · 충청남도 보령시·홍성군 · 해발 790.7m · 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

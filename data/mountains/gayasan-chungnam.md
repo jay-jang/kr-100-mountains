@@ -6,7 +6,7 @@ elevation_m: 678
 region: 충청
 province: 충남
 location: "충청남도 예산군·서산시"
-lists: [bac]
+lists: [bac, hansanha]
 coordinates: [36.6931, 126.6339]
 coord_confidence: medium
 features: ["도립공원", "능선조망", "마애삼존불", "개심사", "암릉"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍·능선 조망"
 
 # 가야산(충남)
 
-> 충청 · 충청남도 예산군·서산시 · 해발 678m · 블랙야크 명산100
+> 충청 · 충청남도 예산군·서산시 · 해발 678m · 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

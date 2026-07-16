@@ -6,7 +6,7 @@ elevation_m: 328.2
 region: 강원
 province: 강원
 location: "강원특별자치도 홍천군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.69834, 127.69922]
 coord_confidence: medium
 features: ["암릉", "홍천강", "밧줄구간", "100대명산", "강변"]
@@ -15,7 +15,7 @@ best_season: "봄(4~5월) 신록, 가을(10월) 단풍"
 
 # 팔봉산
 
-> 강원 · 강원특별자치도 홍천군 · 해발 328.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 홍천군 · 해발 328.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

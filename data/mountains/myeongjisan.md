@@ -6,7 +6,7 @@ elevation_m: 1252.3
 region: 수도권
 province: 경기
 location: "경기도 가평군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.932903, 127.430799]
 coord_confidence: high
 features: ["경기도립공원", "철쭉", "단풍", "계곡", "폭포", "능선종주"]
@@ -15,7 +15,7 @@ best_season: "봄(5월) 철쭉, 가을(10월) 단풍"
 
 # 명지산
 
-> 수도권 · 경기도 가평군 · 해발 1252.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 경기도 가평군 · 해발 1252.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

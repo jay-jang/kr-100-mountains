@@ -6,7 +6,7 @@ elevation_m: 931
 region: 경상
 province: 경북
 location: "경상북도 문경시, 충청북도 괴산군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [36.6706, 127.9325]
 coord_confidence: high
 features: ["국립공원", "백두대간", "계곡", "폭포", "암릉", "100대명산"]
@@ -15,7 +15,7 @@ best_season: "여름 계곡 및 가을(10~11월) 단풍"
 
 # 대야산
 
-> 경상 · 경상북도 문경시, 충청북도 괴산군 · 해발 931m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 문경시, 충청북도 괴산군 · 해발 931m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

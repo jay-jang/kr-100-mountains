@@ -6,7 +6,7 @@ elevation_m: 1947.3
 region: 제주
 province: 제주
 location: "제주특별자치도"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [33.36167, 126.52917]
 coord_confidence: high
 features: ["국립공원", "세계자연유산", "화산호(백록담)", "단풍", "설경", "진달래", "구상나무", "일출"]
@@ -15,7 +15,7 @@ best_season: "봄(5~6월) 진달래·철쭉 및 가을(10~11월) 단풍, 겨울 
 
 # 한라산
 
-> 제주 · 제주특별자치도 · 해발 1947.3m · 산림청 100대 명산 / 블랙야크 명산100
+> 제주 · 제주특별자치도 · 해발 1947.3m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

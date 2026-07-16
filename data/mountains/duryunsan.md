@@ -6,7 +6,7 @@ elevation_m: 700
 region: 전라
 province: 전남
 location: "전라남도 해남군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [34.4736, 126.6178]
 coord_confidence: medium
 features: ["도립공원", "단풍", "암릉", "케이블카", "사찰", "다도해 조망", "상록활엽수림"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 두륜산
 
-> 전라 · 전라남도 해남군 · 해발 700m · 산림청 100대 명산 / 블랙야크 명산100
+> 전라 · 전라남도 해남군 · 해발 700m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

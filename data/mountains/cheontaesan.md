@@ -6,7 +6,7 @@ elevation_m: 715.2
 region: 충청
 province: 충북
 location: "충청북도 영동군, 충청남도 금산군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [36.185, 127.7]
 coord_confidence: medium
 features: ["암릉", "사찰", "은행나무", "조망", "단풍"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍"
 
 # 천태산
 
-> 충청 · 충청북도 영동군, 충청남도 금산군 · 해발 715.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 충청 · 충청북도 영동군, 충청남도 금산군 · 해발 715.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

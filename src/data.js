@@ -31,14 +31,22 @@ export function regionColor(region) {
 
 export const DIFF_CLASS = { '쉬움': 'd1', '보통': 'd2', '어려움': 'd3', '매우 어려움': 'd4' };
 
-// filter predicate factory
-export function filterMountains(mountains, { q, regions, list, hikedOnly, isHiked }) {
+// 4개 리스트 메타 (필터 칩 라벨 / 리스트 배지 / 상세 풀네임)
+export const LIST_KEYS = ['sanlim', 'bac', 'hansanha', 'wolgansan'];
+export const LIST_META = {
+  sanlim:    { chip: '산림청',    badge: '산림',  full: '산림청 100대 명산' },
+  bac:       { chip: 'BAC',       badge: 'BAC',  full: '블랙야크 명산100' },
+  hansanha:  { chip: '한국의산하', badge: '산하',  full: '한국의산하 인기명산 100' },
+  wolgansan: { chip: '월간산',    badge: '월간',  full: '월간산 100대 명산' },
+};
+
+// filter predicate factory. `lists` = Set of selected list keys (union: 하나라도 속하면 통과). `allFour` = 4개 공통만.
+export function filterMountains(mountains, { q, regions, lists, allFour, hikedOnly, isHiked }) {
   const query = (q || '').trim().toLowerCase();
   return mountains.filter((m) => {
     if (regions && regions.size && !regions.has(m.region)) return false;
-    if (list === 'sanlim' && !m.lists.sanlim) return false;
-    if (list === 'bac' && !m.lists.bac) return false;
-    if (list === 'both' && !(m.lists.sanlim && m.lists.bac)) return false;
+    if (allFour && !(m.lists.sanlim && m.lists.bac && m.lists.hansanha && m.lists.wolgansan)) return false;
+    if (lists && lists.size && ![...lists].some((k) => m.lists[k])) return false;
     if (hikedOnly && !isHiked(m.id)) return false;
     if (query) {
       const hay = `${m.name} ${m.name_full} ${m.province} ${m.location} ${m.id}`.toLowerCase();

@@ -55,9 +55,10 @@ export function markerHTML(color, star) {
 }
 
 export function popupContent(m) {
-  const badges = [m.lists.sanlim && '산림청', m.lists.bac && 'BAC'].filter(Boolean).join(' · ');
+  const badges = [m.lists.sanlim && '산림청', m.lists.bac && 'BAC', m.lists.hansanha && '한국의산하', m.lists.wolgansan && '월간산']
+    .filter(Boolean).join(' · ');
   return `<div class="pop-title">${m.name_full}</div>
-    <div class="pop-meta">${m.region} · ${m.province} · ${Math.round(m.elevation_m)}m${badges ? ' · ' + badges : ''}</div>
+    <div class="pop-meta">${m.region} · ${m.province} · ${Math.round(m.elevation_m)}m${badges ? '<br>' + badges : ''}</div>
     <a class="pop-link" href="#/m/${m.id}">자세히 보기 →</a>`;
 }
 

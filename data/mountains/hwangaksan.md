@@ -6,7 +6,7 @@ elevation_m: 1111.4
 region: 경상
 province: 경북
 location: "경상북도 김천시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [36.1194, 127.9714]
 coord_confidence: high
 features: ["백두대간", "단풍", "철쭉", "직지사", "흙산", "100대 명산"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 봄(4~5월) 철쭉"
 
 # 황악산
 
-> 경상 · 경상북도 김천시 · 해발 1111.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상북도 김천시 · 해발 1111.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

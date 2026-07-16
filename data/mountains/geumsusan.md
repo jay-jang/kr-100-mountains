@@ -6,7 +6,7 @@ elevation_m: 1015.8
 region: 충청
 province: 충북
 location: "충청북도 제천시·단양군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [36.9808, 128.2492]
 coord_confidence: medium
 features: ["국립공원", "월악산국립공원", "청풍호 조망", "암릉", "단풍", "얼음골"]
@@ -15,7 +15,7 @@ best_season: "가을(10~11월) 단풍, 여름 얼음골"
 
 # 금수산
 
-> 충청 · 충청북도 제천시·단양군 · 해발 1015.8m · 산림청 100대 명산 / 블랙야크 명산100
+> 충청 · 충청북도 제천시·단양군 · 해발 1015.8m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

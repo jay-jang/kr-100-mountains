@@ -6,7 +6,7 @@ elevation_m: 1338
 region: 강원
 province: 강원
 location: "강원특별자치도 강릉시·평창군"
-lists: [bac]
+lists: [bac, wolgansan]
 coordinates: [37.7897, 128.6083]
 coord_confidence: medium
 features: ["국립공원", "소금강", "단풍", "폭포", "명승", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 단풍, 여름(7~8월) 계곡"
 
 # 노인봉(오대산)
 
-> 강원 · 강원특별자치도 강릉시·평창군 · 해발 1338m · 블랙야크 명산100
+> 강원 · 강원특별자치도 강릉시·평창군 · 해발 1338m · 블랙야크 명산100 / 월간산 100대 명산
 
 ## 개요
 

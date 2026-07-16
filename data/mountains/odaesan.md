@@ -6,7 +6,7 @@ elevation_m: 1565.4
 region: 강원
 province: 강원
 location: "강원특별자치도 평창군·홍천군·강릉시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.79806, 128.54306]
 coord_confidence: high
 features: ["국립공원", "단풍", "설경", "전나무숲", "사찰", "원시림"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 단풍, 겨울(12~2월) 설경"
 
 # 오대산
 
-> 강원 · 강원특별자치도 평창군·홍천군·강릉시 · 해발 1565.4m · 산림청 100대 명산 / 블랙야크 명산100
+> 강원 · 강원특별자치도 평창군·홍천군·강릉시 · 해발 1565.4m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 

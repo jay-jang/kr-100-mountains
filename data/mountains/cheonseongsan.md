@@ -6,7 +6,7 @@ elevation_m: 920.2
 region: 경상
 province: 경남
 location: "경상남도 양산시"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha]
 coordinates: [35.4203, 129.1122]
 coord_confidence: high
 features: ["낙동정맥", "억새", "고산습지", "폭포", "일출", "조망"]
@@ -15,7 +15,7 @@ best_season: "가을(10월) 억새"
 
 # 천성산
 
-> 경상 · 경상남도 양산시 · 해발 920.2m · 산림청 100대 명산 / 블랙야크 명산100
+> 경상 · 경상남도 양산시 · 해발 920.2m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100
 
 ## 개요
 

@@ -6,7 +6,7 @@ elevation_m: 472.1
 region: 수도권
 province: 인천
 location: "인천광역시 강화군"
-lists: [sanlim, bac]
+lists: [sanlim, bac, hansanha, wolgansan]
 coordinates: [37.6114, 126.4405]
 coord_confidence: medium
 features: ["참성단", "사적", "서해조망", "일출", "계단", "역사문화"]
@@ -15,7 +15,7 @@ best_season: "봄(진달래)·가을(단풍) 및 개천절 전후"
 
 # 마니산
 
-> 수도권 · 인천광역시 강화군 · 해발 472.1m · 산림청 100대 명산 / 블랙야크 명산100
+> 수도권 · 인천광역시 강화군 · 해발 472.1m · 산림청 100대 명산 / 블랙야크 명산100 / 한국의산하 인기명산 100 / 월간산 100대 명산
 
 ## 개요
 
