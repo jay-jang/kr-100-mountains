@@ -82,6 +82,23 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
       if (title) el.title = title;
       return { remove() { ov.setMap(null); } };
     },
+    // 현재 위치용 갱신 가능한 레이어(파란 점 + 정확도 원)
+    locate() {
+      let ov = null, circle = null;
+      return {
+        set({ lat, lng, accuracy = 0 }) {
+          const pos = ll(lat, lng);
+          if (!ov) {
+            const el = document.createElement('div');
+            el.className = 'geo-dot';
+            ov = new kakao.maps.CustomOverlay({ position: pos, content: el, xAnchor: 0.5, yAnchor: 0.5, zIndex: 5 });
+            ov.setMap(map);
+            circle = new kakao.maps.Circle({ map, center: pos, radius: accuracy, strokeWeight: 1, strokeColor: '#1a73e8', strokeOpacity: 0.5, fillColor: '#1a73e8', fillOpacity: 0.12 });
+          } else { ov.setPosition(pos); circle.setPosition(pos); circle.setRadius(accuracy); }
+        },
+        remove() { if (ov) ov.setMap(null); if (circle) circle.setMap(null); ov = circle = null; },
+      };
+    },
     addPolyline(latlngs, { color = '#d1495b', weight = 4, opacity = 0.95, outline = false } = {}) {
       const path = latlngs.map(([a, b]) => ll(a, b));
       const lines = [];

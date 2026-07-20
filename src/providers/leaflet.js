@@ -53,6 +53,20 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
       if (title) mk.bindTooltip(title);
       return { remove() { map.removeLayer(mk); } };
     },
+    // 현재 위치용 갱신 가능한 레이어(파란 점 + 정확도 원)
+    locate() {
+      let dot = null, ring = null;
+      return {
+        set({ lat, lng, accuracy = 0 }) {
+          const p = [lat, lng];
+          if (!dot) {
+            ring = L.circle(p, { radius: accuracy, color: '#1a73e8', weight: 1, opacity: 0.5, fillColor: '#1a73e8', fillOpacity: 0.12 }).addTo(map);
+            dot = L.circleMarker(p, { radius: 7, color: '#fff', weight: 3, fillColor: '#1a73e8', fillOpacity: 1 }).addTo(map);
+          } else { dot.setLatLng(p); ring.setLatLng(p); ring.setRadius(accuracy); }
+        },
+        remove() { if (dot) map.removeLayer(dot); if (ring) map.removeLayer(ring); dot = ring = null; },
+      };
+    },
     addPolyline(latlngs, { color = '#d1495b', weight = 4, opacity = 0.95, outline = false } = {}) {
       const g = L.layerGroup().addTo(map);
       if (outline) L.polyline(latlngs, { color: '#fff', weight: weight + 3, opacity: 0.85, lineCap: 'round' }).addTo(g);

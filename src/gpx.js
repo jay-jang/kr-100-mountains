@@ -35,11 +35,57 @@ export function parseGPX(text) {
   };
 }
 
-function haversine(la1, lo1, la2, lo2) {
+export function haversine(la1, lo1, la2, lo2) {
   const R = 6371000, toRad = (d) => (d * Math.PI) / 180;
   const dLa = toRad(la2 - la1), dLo = toRad(lo2 - lo1);
   const a = Math.sin(dLa / 2) ** 2 + Math.cos(toRad(la1)) * Math.cos(toRad(la2)) * Math.sin(dLo / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(a));
+}
+
+// 트랙 상 현재 위치 내비게이션 정보.
+// 현재 위치를 트랙에 수직 투영해 경로 이탈거리·진행률·정상까지 남은 거리를 계산.
+// 정상 = 최고 고도 지점(고도 없으면 트랙 끝).
+export function navInfo(track, pos) {
+  const pts = track.points;
+  if (!pts || pts.length < 2) return null;
+  const cum = track._cum || (track._cum = (() => {
+    const c = [0];
+    for (let i = 1; i < pts.length; i++) c[i] = c[i - 1] + haversine(pts[i - 1].lat, pts[i - 1].lon, pts[i].lat, pts[i].lon);
+    return c;
+  })());
+  if (track._summitIdx == null) {
+    let idx = pts.length - 1;
+    if (track.hasEle) { let mx = -Infinity; pts.forEach((p, i) => { if (Number.isFinite(p.ele) && p.ele > mx) { mx = p.ele; idx = i; } }); }
+    track._summitIdx = idx;
+  }
+  // 로컬 평면 근사(위도 기준 미터 좌표)로 각 선분에 수직 투영
+  const mLat = 111320, mLon = 111320 * Math.cos((pos.lat * Math.PI) / 180);
+  const Px = pos.lng * mLon, Py = pos.lat * mLat;
+  let best = { d2: Infinity, along: 0, lat: pts[0].lat, lon: pts[0].lon };
+  for (let i = 0; i < pts.length - 1; i++) {
+    const Ax = pts[i].lon * mLon, Ay = pts[i].lat * mLat;
+    const Bx = pts[i + 1].lon * mLon, By = pts[i + 1].lat * mLat;
+    const ABx = Bx - Ax, ABy = By - Ay;
+    const ab2 = ABx * ABx + ABy * ABy || 1;
+    let t = ((Px - Ax) * ABx + (Py - Ay) * ABy) / ab2;
+    t = t < 0 ? 0 : t > 1 ? 1 : t;
+    const qx = Ax + t * ABx, qy = Ay + t * ABy;
+    const d2 = (Px - qx) ** 2 + (Py - qy) ** 2;
+    if (d2 < best.d2) {
+      best = {
+        d2, along: cum[i] + t * (cum[i + 1] - cum[i]),
+        lat: pts[i].lat + t * (pts[i + 1].lat - pts[i].lat),
+        lon: pts[i].lon + t * (pts[i + 1].lon - pts[i].lon),
+      };
+    }
+  }
+  const total = cum[cum.length - 1];
+  return {
+    offRoute_m: Math.sqrt(best.d2),
+    remaining_m: Math.abs(cum[track._summitIdx] - best.along),
+    progress: total ? Math.min(1, best.along / total) : 0,
+    snap: [best.lat, best.lon],
+  };
 }
 
 // Draw a track on a provider-agnostic MapView. Returns a token array for removeLayer().

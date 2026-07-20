@@ -2,6 +2,7 @@ import { loadData, filterMountains, REGION_COLORS, regionColor, LIST_KEYS, LIST_
 import { createMapView, popupContent } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, toggleHiked, onChange } from '../store.js';
+import { watchPosition } from '../geo.js';
 import { el, clear, esc } from '../dom.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
@@ -101,26 +102,25 @@ export async function renderExplore(root) {
   const controls = mapControls(view, mapWrap);
   mapWrap.append(controls);
   const markers = new Map();
-  let locDot = null;
 
-  // ---- 현재 위치 (Geolocation) ----
+  // ---- 현재 위치 실시간 추적 (Geolocation watchPosition) ----
+  const locLayer = view.locate();
+  let stopWatch = null, firstFix = true;
   locateBtn.addEventListener('click', () => {
-    if (!navigator.geolocation) { locateBtn.textContent = '⚠️'; setTimeout(() => (locateBtn.textContent = '📍'), 1500); return; }
+    if (stopWatch) { stopWatch(); stopWatch = null; locLayer.remove(); firstFix = true; locateBtn.classList.remove('active'); locateBtn.textContent = '📍'; return; }
     locateBtn.classList.add('loading'); locateBtn.textContent = '⏳';
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude: lat, longitude: lng } = pos.coords;
-        if (locDot) view.removeLayer(locDot);
-        locDot = view.addDot({ lat, lng, color: '#1a73e8', title: '현재 위치' });
-        view.flyTo ? view.flyTo([lat, lng], 11) : view.setView([lat, lng], 11);
-        locateBtn.classList.remove('loading'); locateBtn.textContent = '📍';
+    stopWatch = watchPosition(
+      (p) => {
+        locLayer.set(p);
+        if (firstFix) { firstFix = false; (view.flyTo ? view.flyTo : view.setView).call(view, [p.lat, p.lng], 13); }
+        locateBtn.classList.remove('loading'); locateBtn.classList.add('active'); locateBtn.textContent = '🎯';
       },
       (err) => {
-        locateBtn.classList.remove('loading');
-        locateBtn.textContent = err.code === err.PERMISSION_DENIED ? '🚫' : '⚠️';
+        if (stopWatch) { stopWatch(); stopWatch = null; }
+        locLayer.remove(); locateBtn.classList.remove('loading', 'active');
+        locateBtn.textContent = err.code === 1 ? '🚫' : '⚠️';
         setTimeout(() => (locateBtn.textContent = '📍'), 1800);
       },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
     );
   });
 
@@ -187,5 +187,5 @@ export async function renderExplore(root) {
   // deep-link ?focus=id
   if (init.focus && data.byId.has(init.focus)) setTimeout(() => focus(data.byId.get(init.focus)), 100);
 
-  return () => { offStore(); window.removeEventListener('kr100:theme', onTheme); controls.cleanup?.(); view.destroy(); };
+  return () => { if (stopWatch) stopWatch(); offStore(); window.removeEventListener('kr100:theme', onTheme); controls.cleanup?.(); view.destroy(); };
 }

@@ -2,8 +2,9 @@ import { loadData, DIFF_CLASS, regionColor, LIST_KEYS, LIST_META } from '../data
 import { createMapView, fetchTrails } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, toggleHiked, onChange, recordView } from '../store.js';
-import { parseGPX, drawTrack, elevationSVG } from '../gpx.js';
-import { el, esc } from '../dom.js';
+import { parseGPX, drawTrack, elevationSVG, navInfo } from '../gpx.js';
+import { watchPosition, fmtDist, directionsLinks } from '../geo.js';
+import { el, esc, clear } from '../dom.js';
 
 export async function renderDetail(root, id) {
   const data = await loadData();
@@ -65,28 +66,46 @@ export async function renderDetail(root, id) {
         '월간산 「한국의 100대 명산」(2018)은 공식 순위·점수를 발표하지 않았습니다. 위 부문은 월간산이 제시한 5대·11개 세부 선정기준 표에서 이 산이 직접 언급된 항목을 재집계한 것입니다.')));
   }
 
-  // ---- location map ----
+  // ---- location · route · navigation ----
   const mapNode = el('div', { id: 'detail-map' });
   const trailBtn = el('button', { type: 'button' }, '🥾 등산로 표시');
   const fileInput = el('input', { type: 'file', accept: '.gpx', style: 'display:none' });
   const fileBtn = el('button', { type: 'button', onClick: () => fileInput.click() }, '📈 GPX 불러오기');
-  const tools = el('div', { class: 'map-tools' }, trailBtn, fileBtn, fileInput);
-  const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools);
+  const locateBtn = el('button', { type: 'button', title: '내 위치 실시간 표시' }, '📍 내 위치');
+  const dirBtn = el('button', { type: 'button', title: '외부 지도 길찾기' }, '🧭 길찾기');
+  const followBtn = el('button', { type: 'button', disabled: true, title: 'GPX 경로를 따라 실시간 안내' }, '➡️ 경로 따라가기');
+  const dirMenu = el('div', { class: 'dir-menu', hidden: true });
+  const tools = el('div', { class: 'map-tools' }, locateBtn, dirBtn, trailBtn, fileBtn, followBtn, fileInput);
+  const navPanel = el('div', { class: 'nav-panel', hidden: true });
+  const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools, dirMenu);
   const elevBox = el('div', { class: 'elev-profile' });
   const gpxNote = el('div', { class: 'conf-note' });
-  page.append(el('div', { class: 'section' }, el('h3', {}, '위치 · 경로'), mapWrap, elevBox, gpxNote));
+  page.append(el('div', { class: 'section' }, el('h3', {}, '위치 · 경로 · 내비게이션'), mapWrap, navPanel, elevBox, gpxNote));
 
-  let view, controls, trailLayer = null, gpxLayer = null;
+  let view, controls, trailLayer = null, gpxLayer = null, navTrack = null, locLayer = null;
+  let stopWatch = null, locateOn = false, following = false, firstFix = false, lastPos = null;
+
   if (m.lat != null) {
     view = await createMapView(mapNode, { center: [m.lat, m.lon], zoom: 13 });
     controls = mapControls(view, mapWrap);
     mapWrap.append(controls);
     view.addDot({ lat: m.lat, lng: m.lon, color: regionColor(m.region), title: `${m.name} 정상 ${m.elevation_m}m` });
+    locLayer = view.locate();
     if (m.coord_confidence && m.coord_confidence !== 'high')
       gpxNote.textContent = `※ 정상 좌표는 근사값일 수 있습니다 (신뢰도: ${m.coord_confidence}).`;
 
-    // auto-load curated GPX if present
-    tryLoadCuratedGPX(m.id, view, elevBox, gpxNote).then((token) => { if (token) gpxLayer = token; });
+    // 외부 지도 길찾기 (목적지=정상)
+    const links = directionsLinks(m.name_full, m.lat, m.lon);
+    dirMenu.append(
+      el('a', { href: links.kakao, target: '_blank', rel: 'noopener' }, '카카오맵 길찾기'),
+      el('a', { href: links.google, target: '_blank', rel: 'noopener' }, '구글 지도 길찾기'));
+    dirBtn.addEventListener('click', () => { dirMenu.hidden = !dirMenu.hidden; });
+
+    // 수록 GPX 자동 로드
+    tryLoadCuratedGPX(m.id, view, elevBox, gpxNote).then((res) => { if (res) { gpxLayer = res.token; setNavTrack(res.track); } });
+
+    locateBtn.addEventListener('click', toggleLocate);
+    followBtn.addEventListener('click', toggleFollow);
 
     trailBtn.addEventListener('click', async () => {
       if (trailLayer) { view.removeLayer(trailLayer); trailLayer = null; trailBtn.textContent = '🥾 등산로 표시'; return; }
@@ -108,10 +127,58 @@ export async function renderDetail(root, id) {
         elevBox.innerHTML = elevationSVG(track);
         gpxNote.textContent = `${track.name || f.name} · 거리 ${track.distance_km}km` +
           (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
+        setNavTrack(track);
       } catch (err) { gpxNote.textContent = 'GPX 오류: ' + err.message; }
     });
   } else {
     mapWrap.replaceWith(el('div', { class: 'empty' }, '정상 좌표 정보를 준비 중입니다.'));
+  }
+
+  function setNavTrack(track) { navTrack = track; followBtn.disabled = !track; }
+
+  function onPos(p) {
+    lastPos = p;
+    locLayer.set(p);
+    if (firstFix) { firstFix = false; (view.flyTo ? view.flyTo : view.setView).call(view, [p.lat, p.lng], 14); }
+    locateBtn.classList.remove('loading'); locateOn && (locateBtn.textContent = '🎯 위치 추적중');
+    if (following && navTrack) updateNav(p);
+  }
+  function onGeoErr(err) {
+    if (stopWatch) { stopWatch(); stopWatch = null; }
+    locLayer.remove(); locateOn = false; following = false; navPanel.hidden = true;
+    locateBtn.classList.remove('loading', 'active'); locateBtn.textContent = err.code === 1 ? '🚫 권한 거부' : '⚠️ 위치 실패';
+    followBtn.classList.remove('active'); followBtn.textContent = '➡️ 경로 따라가기';
+    setTimeout(() => { locateBtn.textContent = '📍 내 위치'; }, 2200);
+  }
+  function ensureWatch() { if (!stopWatch) { firstFix = true; stopWatch = watchPosition(onPos, onGeoErr); } }
+  function maybeStopWatch() { if (!locateOn && !following && stopWatch) { stopWatch(); stopWatch = null; locLayer.remove(); } }
+
+  function toggleLocate() {
+    if (locateOn) { locateOn = false; locateBtn.classList.remove('active'); locateBtn.textContent = '📍 내 위치'; maybeStopWatch(); return; }
+    locateOn = true; locateBtn.classList.add('active', 'loading'); locateBtn.textContent = '⏳'; ensureWatch();
+  }
+  function toggleFollow() {
+    if (!navTrack) return;
+    if (following) {
+      following = false; navPanel.hidden = true; followBtn.classList.remove('active'); followBtn.textContent = '➡️ 경로 따라가기'; maybeStopWatch(); return;
+    }
+    following = true; followBtn.classList.add('active'); followBtn.textContent = '⏹ 안내 중지'; navPanel.hidden = false;
+    navPanel.textContent = '위치 확인 중…'; ensureWatch();
+    if (lastPos) updateNav(lastPos); // 정지 상태에서도 즉시 안내(다음 이동 이벤트를 기다리지 않음)
+  }
+  function updateNav(p) {
+    const info = navInfo(navTrack, p); if (!info) return;
+    const off = info.offRoute_m;
+    const offEl = off > 40
+      ? el('div', { class: 'nav-off warn' }, `⚠ 경로에서 ${fmtDist(off)} 벗어남`)
+      : el('div', { class: 'nav-off ok' }, `✓ 경로 위 (±${fmtDist(off)})`);
+    clear(navPanel);
+    navPanel.append(
+      el('div', { class: 'nav-row' },
+        el('div', { class: 'nav-stat' }, el('b', {}, fmtDist(info.remaining_m)), el('span', {}, '정상까지(경로상)')),
+        el('div', { class: 'nav-stat' }, el('b', {}, `${Math.round(info.progress * 100)}%`), el('span', {}, '진행률')),
+        el('div', { class: 'nav-stat' }, el('b', {}, p.altitude != null ? `${Math.round(p.altitude)}m` : '—'), el('span', {}, '현재 고도'))),
+      offEl);
   }
 
   // ---- trails (난이도·시간: 웹 조사 + 복수 자료 교차검증) ----
@@ -163,7 +230,7 @@ export async function renderDetail(root, id) {
   const onTheme = () => view && view.refreshTheme();
   window.addEventListener('kr100:theme', onTheme);
   window.scrollTo(0, 0);
-  return () => { off(); window.removeEventListener('kr100:theme', onTheme); controls?.cleanup?.(); view?.destroy(); };
+  return () => { if (stopWatch) stopWatch(); off(); window.removeEventListener('kr100:theme', onTheme); controls?.cleanup?.(); view?.destroy(); };
 }
 
 function factSpan(label, val) {
@@ -208,6 +275,6 @@ async function tryLoadCuratedGPX(id, view, elevBox, note) {
     elevBox.innerHTML = elevationSVG(track);
     note.textContent = `수록 경로: ${track.name || id} · 거리 ${track.distance_km}km` +
       (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
-    return token;
+    return { token, track };
   } catch { return null; }
 }
