@@ -1,6 +1,6 @@
 import { loadData, REGION_COLORS, LIST_KEYS, LIST_META } from '../data.js';
 import { hikedMap, hikedCount, toggleHiked, exportHiked, importHiked, clearHiked, onChange } from '../store.js';
-import { CLOUD_ENABLED, currentUser, onAuthChange, signInWithEmail, signInWithGoogle, signOut } from '../auth.js';
+import { CLOUD_ENABLED, currentUser, onAuthChange, authProviders, signInWithEmail, signInWithGoogle, signOut } from '../auth.js';
 import { el, clear } from '../dom.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
@@ -19,8 +19,9 @@ export async function renderStats(root) {
       CLOUD_ENABLED ? '로그인하면 여러 기기에서 기록이 동기화됩니다.' : '기록은 이 브라우저에 저장됩니다 (내보내기/가져오기로 이전 가능).'),
     authBox, body);
 
-  drawAuth(authBox);
-  const offAuth = onAuthChange(() => drawAuth(authBox));
+  const providers = CLOUD_ENABLED ? await authProviders() : {};
+  drawAuth(authBox, providers);
+  const offAuth = onAuthChange(() => drawAuth(authBox, providers));
 
   function draw() {
     clear(body);
@@ -98,8 +99,8 @@ export async function renderStats(root) {
   return () => { off(); offAuth(); };
 }
 
-// 로그인/동기화 UI (CLOUD_ENABLED 일 때만 표시)
-function drawAuth(box) {
+// 로그인/동기화 UI (CLOUD_ENABLED 일 때만 표시). providers = 활성화된 외부 제공자.
+function drawAuth(box, providers = {}) {
   clear(box);
   if (!CLOUD_ENABLED) return; // 미설정 배포: 로컬 저장만 (아래 내보내기/가져오기 사용)
   const user = currentUser();
@@ -126,7 +127,7 @@ function drawAuth(box) {
 
   box.append(el('div', { class: 'auth-signin' },
     el('div', { class: 'auth-row' }, email, mailBtn),
-    el('div', { class: 'auth-row' }, googleBtn),
+    providers.google ? el('div', { class: 'auth-row' }, googleBtn) : null,
     msg));
 }
 

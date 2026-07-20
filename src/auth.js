@@ -31,6 +31,18 @@ export async function initAuth() {
   return _user;
 }
 
+// Supabase에서 활성화된 외부 로그인 제공자 목록(예: {email:true, google:true}).
+// 활성화된 버튼만 UI에 노출하기 위함.
+export async function authProviders() {
+  if (!CLOUD_ENABLED) return {};
+  try {
+    const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/auth/v1/settings`,
+      { headers: { apikey: import.meta.env.VITE_SUPABASE_ANON_KEY } });
+    const d = await res.json();
+    return d.external || {};
+  } catch { return {}; }
+}
+
 export async function signInWithEmail(email) {
   const c = await client();
   return c.auth.signInWithOtp({ email, options: { emailRedirectTo: REDIRECT } });
