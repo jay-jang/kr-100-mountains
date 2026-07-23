@@ -127,6 +127,7 @@ export async function renderDetail(root, id) {
     clear(elevChartBox);
     if (r.profile) elevChartBox.append(elevationChart(r.profile), profileStats(r.profile));
     else elevChartBox.append(el('div', { class: 'conf-note' }, '이 등산로의 고도 데이터를 만들 수 없습니다.'));
+    showOnMapChk.checked = true; // 선택할 때마다 지도에 보이도록
     drawActiveRoute();
     setNavTrack(r.track || null);
   }
@@ -179,6 +180,10 @@ export async function renderDetail(root, id) {
       const lines = await fetchTrails(m.lat, m.lon, 2500);
       const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 4);
       if (!top.length) { elevNote.textContent = '인근에서 표시할 등산로를 찾지 못했습니다.'; return; }
+      // 이전에 불러온 OSM 등산로는 교체(다시 눌러도 계속 누적되지 않도록). GPX·코스 경로는 유지.
+      if (activeRouteLayer && view) { view.removeLayer(activeRouteLayer); activeRouteLayer = null; }
+      for (let i = routes.length - 1; i >= 0; i--) if (routes[i].kind === 'osm') routes.splice(i, 1);
+      activeRoute = -1;
       const base = routes.length;
       let n = 0;
       for (const { l, len } of top) {
@@ -189,7 +194,7 @@ export async function renderDetail(root, id) {
       selectRoute(base); // 첫 신규 등산로 선택
       elevNote.textContent = '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.';
     } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
-    finally { loadTrailsBtn.disabled = false; loadTrailsBtn.textContent = orig; renderRouteList(); }
+    finally { loadTrailsBtn.disabled = false; loadTrailsBtn.textContent = routes.some((r) => r.kind === 'osm') ? '🗻 실제 등산로 다시 불러오기' : orig; renderRouteList(); }
   });
   renderRouteList();
 
