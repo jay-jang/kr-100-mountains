@@ -84,7 +84,8 @@ export function elevationChart(profile) {
     </g>
   </svg>`;
 
-  const readout = el('div', { class: 'elev-readout' }, '그래프에 마우스를 올리면 지점별 거리·고도가 표시됩니다');
+  const HINT = '그래프를 누르거나 마우스를 올리면 지점별 거리·고도가 표시됩니다';
+  const readout = el('div', { class: 'elev-readout' }, HINT);
   const wrap = el('div', { class: 'elev-chart' });
   wrap.innerHTML = svg;
   wrap.append(readout);
@@ -106,8 +107,11 @@ export function elevationChart(profile) {
     cDot.setAttribute('cx', X(p.d)); cDot.setAttribute('cy', Y(p.ele));
     readout.innerHTML = `거리 <b>${fmtKm(p.d)}</b> · 고도 <b>${Math.round(p.ele)}m</b>`;
   }
-  svgEl.addEventListener('pointermove', (e) => move(e.clientX));
-  svgEl.addEventListener('pointerleave', () => { cursor.style.display = 'none'; readout.innerHTML = '그래프에 마우스를 올리면 지점별 거리·고도가 표시됩니다'; });
+  const onPointer = (e) => { move(e.clientX); if (e.pointerType !== 'mouse') e.preventDefault(); };
+  svgEl.addEventListener('pointerdown', onPointer);   // 터치 탭도 지점 표시
+  svgEl.addEventListener('pointermove', onPointer);
+  // 마우스가 벗어나면 초기화, 터치는 마지막 지점 유지(손을 떼도 값이 남도록)
+  svgEl.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { cursor.style.display = 'none'; readout.innerHTML = HINT; } });
   return wrap;
 }
 
