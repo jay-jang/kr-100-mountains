@@ -65,12 +65,9 @@ export function popupContent(m) {
 
 // Overpass hiking-path overlay (real OSM data) — returns array of [ [lat,lng], ... ] lines
 export async function fetchTrails(lat, lon, radius = 3000) {
+  const { overpassFetch } = await import('./osm.js');
   const q = `[out:json][timeout:25];(way["highway"~"path|footway|track|steps"](around:${radius},${lat},${lon}););out geom;`;
-  const res = await fetch('https://overpass-api.de/api/interpreter', {
-    method: 'POST', body: 'data=' + encodeURIComponent(q),
-  });
-  if (!res.ok) throw new Error('등산로 데이터를 불러오지 못했습니다');
-  const json = await res.json();
+  const json = await overpassFetch(q);
   return (json.elements || [])
     .filter((e) => e.geometry?.length)
     .map((e) => e.geometry.map((g) => [g.lat, g.lon]));

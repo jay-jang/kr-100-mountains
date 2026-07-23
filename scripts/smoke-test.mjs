@@ -102,6 +102,8 @@ try {
   check('detail: 등산로별 고도 section (지도와 별도)', hasElevSection);
   const noTrailOverlayBtn = await page.$$eval('.map-tools button', (n) => !n.some((b) => b.textContent.includes('등산로 표시')));
   check('detail: 지도 등산로 오버레이 버튼 제거됨', noTrailOverlayBtn);
+  const courseRouteBtns = await page.$$eval('.course-route-btn', (n) => n.length);
+  check('detail: 코스→등산로 연결 버튼(들머리 검증)', courseRouteBtns >= 1, `${courseRouteBtns} buttons`);
   const hasNavTools = await page.$$eval('.map-tools button', (n) => n.some((b) => b.textContent.includes('길찾기')) && n.some((b) => b.textContent.includes('경로 따라가기')));
   check('detail: 내비게이션 도구(길찾기·경로 따라가기)', hasNavTools);
   await page.waitForTimeout(800);

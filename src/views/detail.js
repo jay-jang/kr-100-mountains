@@ -5,6 +5,7 @@ import { isHiked, toggleHiked, onChange, recordView } from '../store.js';
 import { parseGPX, drawTrack, navInfo, haversine } from '../gpx.js';
 import { watchPosition, fmtDist, directionsLinks } from '../geo.js';
 import { fetchElevations, resample, buildProfile, profileFromTrack, elevationChart, profileStats } from '../elevation.js';
+import { routeTrailheadToSummit } from '../routing.js';
 import { el, esc, clear } from '../dom.js';
 
 export async function renderDetail(root, id) {
@@ -142,6 +143,34 @@ export async function renderDetail(root, id) {
       .catch(() => { finish(null); elevNote.textContent = '고도 조회 실패(경로는 지도에 표시됩니다).'; });
   }
   const lineLen = (l) => { let d = 0; for (let i = 1; i < l.length; i++) d += haversine(l[i - 1][0], l[i - 1][1], l[i][0], l[i][1]); return d; };
+
+  // 주요 등산로 코스 → 들머리(codex·agy 검증)에서 정상까지 실제 경로 + 고도로 연결
+  const scrollToRoutes = () => routeList.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  async function showCourseRoute(t, btn) {
+    if (!t.trailhead || m.lat == null) return;
+    const idx = routes.findIndex((r) => r.courseName === t.name);
+    if (idx >= 0) { selectRoute(idx); scrollToRoutes(); return; }
+    const orig = btn ? btn.textContent : ''; if (btn) { btn.disabled = true; btn.textContent = '경로 찾는 중…'; }
+    elevNote.textContent = `“${t.name}” 실제 등산로 경로를 찾는 중입니다…`; scrollToRoutes();
+    try {
+      let route = null;
+      try { route = await routeTrailheadToSummit(t.trailhead, [m.lat, m.lon]); } catch {}
+      if (route && route.latlngs.length > 3) {
+        const sampled = resample(route.latlngs, 90);
+        const prof = buildProfile(sampled, await fetchElevations(sampled));
+        addRoute({ label: t.name, courseName: t.name, latlngs: route.latlngs, profile: prof, track: null, kind: 'course' });
+        elevNote.textContent = '※ 들머리(codex·agy 검증)에서 정상까지 실제 등산로 경로와 고도(open-meteo)입니다.';
+      } else {
+        const N = 30, a = t.trailhead, b = [m.lat, m.lon], line = [];
+        for (let i = 0; i <= N; i++) { const f = i / N; line.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
+        const prof = buildProfile(line, await fetchElevations(line));
+        addRoute({ label: `${t.name} (직선참고)`, courseName: t.name, latlngs: [a, b], profile: prof, track: null, kind: 'course' });
+        elevNote.textContent = '※ 실제 등산로 연결을 확인하지 못해 들머리→정상 직선 기준 지형 고도를 표시합니다.';
+      }
+    } catch (e) { elevNote.textContent = '경로 불러오기 실패: ' + (e.message || e); }
+    finally { if (btn) { btn.disabled = false; btn.textContent = orig; } }
+  }
+
   loadTrailsBtn.addEventListener('click', async () => {
     if (m.lat == null) { elevNote.textContent = '정상 좌표가 없어 불러올 수 없습니다.'; return; }
     loadTrailsBtn.disabled = true; const orig = loadTrailsBtn.textContent; loadTrailsBtn.textContent = '불러오는 중…';
@@ -262,13 +291,17 @@ export async function renderDetail(root, id) {
         t.round_trip_hours ? factSpan('왕복', `${t.round_trip_hours}시간`) : (t.duration && !t.ascent_hours ? factSpan('소요', t.duration) : null),
         t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null,
         vb ? el('span', { class: 'vbadge ' + vb[1], title: verifyTitle(t.verify) }, vb[0]) : null);
+      const routeBtn = t.trailhead
+        ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '🗻 지도·고도')
+        : null;
+      if (routeBtn) routeBtn.addEventListener('click', () => showCourseRoute(t, routeBtn));
       grid.append(el('div', { class: 'trail-card' },
-        el('div', { class: 't-name' }, t.name || '주요 코스'), facts,
+        el('div', { class: 't-name' }, t.name || '주요 코스', routeBtn), facts,
         t.note ? el('div', { class: 't-note' }, t.note) : null));
     });
     page.append(el('div', { class: 'section' },
       el('h3', {}, '주요 등산로'),
-      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다.'),
+      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다. “🗻 지도·고도”로 각 코스의 실제 경로와 고도를 볼 수 있습니다.'),
       grid));
   }
 
