@@ -12,6 +12,9 @@ class MinHeap {
 }
 
 export async function routeTrailheadToSummit(trailhead, summit) {
+  // 너무 긴 코스(종주 등)는 탐색 영역이 방대해 서버 부하·타임아웃(504)을 유발하므로
+  // 무거운 쿼리를 보내지 않고 직선 폴백을 쓰도록 null 반환.
+  if (haversine(trailhead[0], trailhead[1], summit[0], summit[1]) > 15000) return null;
   const pad = 0.008;
   const s = Math.min(trailhead[0], summit[0]) - pad, n = Math.max(trailhead[0], summit[0]) + pad;
   const w = Math.min(trailhead[1], summit[1]) - pad, e = Math.max(trailhead[1], summit[1]) + pad;
