@@ -98,8 +98,10 @@ try {
   check('detail: summary present', summary > 30, `${summary} chars`);
   const hasTrails = await page.$$eval('.trail-card', (n) => n.length);
   check('detail: trail cards render', hasTrails >= 1, `${hasTrails} trails`);
-  const hasElevSection = await page.$$eval('h3', (hs) => hs.some((h) => h.textContent.includes('고도 프로파일')));
-  check('detail: 고도 프로파일 section (지도와 별도)', hasElevSection);
+  const hasElevSection = await page.$$eval('h3', (hs) => hs.some((h) => h.textContent.includes('등산로별 고도')));
+  check('detail: 등산로별 고도 section (지도와 별도)', hasElevSection);
+  const noTrailOverlayBtn = await page.$$eval('.map-tools button', (n) => !n.some((b) => b.textContent.includes('등산로 표시')));
+  check('detail: 지도 등산로 오버레이 버튼 제거됨', noTrailOverlayBtn);
   const hasNavTools = await page.$$eval('.map-tools button', (n) => n.some((b) => b.textContent.includes('길찾기')) && n.some((b) => b.textContent.includes('경로 따라가기')));
   check('detail: 내비게이션 도구(길찾기·경로 따라가기)', hasNavTools);
   await page.waitForTimeout(800);

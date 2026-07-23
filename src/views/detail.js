@@ -69,81 +69,102 @@ export async function renderDetail(root, id) {
 
   // ---- location · route · navigation ----
   const mapNode = el('div', { id: 'detail-map' });
-  const trailBtn = el('button', { type: 'button' }, '🥾 등산로 표시');
   const fileInput = el('input', { type: 'file', accept: '.gpx', style: 'display:none' });
   const fileBtn = el('button', { type: 'button', onClick: () => fileInput.click() }, '📈 GPX 불러오기');
   const locateBtn = el('button', { type: 'button', title: '내 위치 실시간 표시' }, '📍 내 위치');
   const dirBtn = el('button', { type: 'button', title: '외부 지도 길찾기' }, '🧭 길찾기');
   const followBtn = el('button', { type: 'button', disabled: true, title: 'GPX 경로를 따라 실시간 안내' }, '➡️ 경로 따라가기');
   const dirMenu = el('div', { class: 'dir-menu', hidden: true });
-  const tools = el('div', { class: 'map-tools' }, locateBtn, dirBtn, trailBtn, fileBtn, followBtn, fileInput);
+  const tools = el('div', { class: 'map-tools' }, locateBtn, dirBtn, fileBtn, followBtn, fileInput);
   const navPanel = el('div', { class: 'nav-panel', hidden: true });
   const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools, dirMenu);
   const gpxNote = el('div', { class: 'conf-note' });
   page.append(el('div', { class: 'section' }, el('h3', {}, '위치 · 경로 · 내비게이션'), mapWrap, navPanel, gpxNote));
 
-  // ---- 고도 프로파일 (지도와 별도 뷰, 경로별 선택) ----
-  const elevRoutes = el('div', { class: 'chips elev-routes' });
+  // ---- 등산로별 고도 (등산로 선택 → 그 경로만 지도 표시 + 고도 프로파일) ----
+  const OSM_COLORS = ['#1a73e8', '#e2872a', '#8e44ad', '#16a085', '#c0392b'];
+  const routeColor = (r, i) => (r.kind === 'gpx' ? '#d1495b' : OSM_COLORS[i % OSM_COLORS.length]);
+
+  const routeList = el('div', { class: 'route-list' });
+  const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '🗻 실제 등산로 불러오기');
+  const showOnMapChk = el('input', { type: 'checkbox', id: 'route-showmap', checked: true });
+  const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 선택 등산로 지도 표시');
   const elevChartBox = el('div', { class: 'elev-chart-box' });
-  const osmElevBtn = el('button', { class: 'btn', type: 'button' }, '🗻 실제 등산로 고도 불러오기');
   const elevNote = el('div', { class: 'conf-note', style: 'margin-top:8px' });
   page.append(el('div', { class: 'section' },
-    el('h3', {}, '고도 프로파일'),
+    el('h3', {}, '등산로별 고도'),
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
-      '경로별 고도 단면을 지도와 별도로 확인하세요. GPX 파일 또는 OpenStreetMap 실제 등산로의 고도(open-meteo 지형데이터) 기반입니다.'),
-    elevRoutes, el('div', { style: 'margin:8px 0' }, osmElevBtn), elevChartBox, elevNote));
+      '등산로를 선택하면 그 경로만 지도에 표시되고 아래에 고도 단면이 나타납니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반입니다.'),
+    el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
+    routeList, elevChartBox, elevNote));
 
-  const elevProfiles = [];
-  let activeElev = -1;
-  function renderElevChips() {
-    clear(elevRoutes);
-    if (!elevProfiles.length) { elevRoutes.append(el('span', { class: 'conf-note' }, 'GPX를 불러오거나 아래 버튼으로 실제 등산로 고도를 불러오세요.')); return; }
-    elevProfiles.forEach((r, i) => {
-      const chip = el('button', { class: 'chip' + (i === activeElev ? ' active' : ''), type: 'button' }, r.label);
-      chip.addEventListener('click', () => selectElev(i));
-      elevRoutes.append(chip);
+  const routes = [];             // { label, latlngs, profile, track|null, kind }
+  let activeRoute = -1, activeRouteLayer = null;
+
+  function renderRouteList() {
+    clear(routeList);
+    if (!routes.length) { routeList.append(el('div', { class: 'conf-note' }, 'GPX를 불러오거나 “실제 등산로 불러오기”로 등산로를 추가하세요.')); return; }
+    routes.forEach((r, i) => {
+      const item = el('button', { class: 'route-item' + (i === activeRoute ? ' active' : ''), type: 'button' },
+        el('span', { class: 'route-swatch', style: `background:${routeColor(r, i)}` }),
+        el('span', { class: 'route-label' }, r.label),
+        r.profile ? el('span', { class: 'route-meta' }, `↑${r.profile.gain_m}m · ${fmtDist(r.profile.dist_m)}`) : null);
+      item.addEventListener('click', () => selectRoute(i));
+      routeList.append(item);
     });
   }
-  function selectElev(i) {
-    activeElev = i; renderElevChips();
+  function drawActiveRoute() {
+    if (activeRouteLayer && view) { view.removeLayer(activeRouteLayer); }
+    activeRouteLayer = null;
+    if (!view || activeRoute < 0 || !showOnMapChk.checked) return;
+    const r = routes[activeRoute];
+    activeRouteLayer = drawTrack(view, { latlngs: r.latlngs }, routeColor(r, activeRoute));
+  }
+  function selectRoute(i) {
+    activeRoute = i; renderRouteList();
+    const r = routes[i];
     clear(elevChartBox);
-    elevChartBox.append(elevationChart(elevProfiles[i].profile), profileStats(elevProfiles[i].profile));
+    if (r.profile) elevChartBox.append(elevationChart(r.profile), profileStats(r.profile));
+    else elevChartBox.append(el('div', { class: 'conf-note' }, '이 등산로의 고도 데이터를 만들 수 없습니다.'));
+    drawActiveRoute();
+    setNavTrack(r.track || null);
   }
-  function addElev(label, profile) {
-    if (!profile) return false;
-    elevProfiles.push({ label, profile }); selectElev(elevProfiles.length - 1); return true;
-  }
-  function addGpxProfile(track, label) {
+  showOnMapChk.addEventListener('change', drawActiveRoute);
+  function addRoute(route) { routes.push(route); selectRoute(routes.length - 1); }
+
+  function addGpxRoute(track, label) {
+    const finish = (profile, note) => { addRoute({ label, latlngs: track.latlngs, profile, track, kind: 'gpx' }); if (note) elevNote.textContent = note; };
     const direct = profileFromTrack(track);
-    if (direct) { addElev(label, direct); return; }
+    if (direct) { finish(direct); return; }
     elevNote.textContent = 'GPX에 고도가 없어 지형 고도를 조회하는 중…';
     const line = resample(track.latlngs, 80);
-    fetchElevations(line)
-      .then((eles) => { elevNote.textContent = addElev(label, buildProfile(line, eles)) ? '※ 고도는 open-meteo 지형 데이터로 보완했습니다.' : '고도 데이터를 만들 수 없습니다.'; })
-      .catch(() => { elevNote.textContent = '고도 조회 실패.'; });
+    fetchElevations(line).then((eles) => finish(buildProfile(line, eles), '※ 고도는 open-meteo 지형 데이터로 보완했습니다.'))
+      .catch(() => { finish(null); elevNote.textContent = '고도 조회 실패(경로는 지도에 표시됩니다).'; });
   }
   const lineLen = (l) => { let d = 0; for (let i = 1; i < l.length; i++) d += haversine(l[i - 1][0], l[i - 1][1], l[i][0], l[i][1]); return d; };
-  osmElevBtn.addEventListener('click', async () => {
+  loadTrailsBtn.addEventListener('click', async () => {
     if (m.lat == null) { elevNote.textContent = '정상 좌표가 없어 불러올 수 없습니다.'; return; }
-    osmElevBtn.disabled = true; const orig = osmElevBtn.textContent; osmElevBtn.textContent = '불러오는 중…';
+    loadTrailsBtn.disabled = true; const orig = loadTrailsBtn.textContent; loadTrailsBtn.textContent = '불러오는 중…';
     elevNote.textContent = '실제 등산로와 고도를 불러오는 중입니다… (최대 수십 초 걸릴 수 있어요)';
     try {
       const lines = await fetchTrails(m.lat, m.lon, 2500);
-      const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 3);
+      const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 4);
       if (!top.length) { elevNote.textContent = '인근에서 표시할 등산로를 찾지 못했습니다.'; return; }
+      const base = routes.length;
       let n = 0;
       for (const { l, len } of top) {
         const line = resample(l, 55);
-        const prof = buildProfile(line, await fetchElevations(line));
-        if (prof) { n++; addElev(`OSM 등산로 ${n} (${(len / 1000).toFixed(1)}km)`, prof); }
+        let prof = null; try { prof = buildProfile(line, await fetchElevations(line)); } catch {}
+        n++; routes.push({ label: `OSM 등산로 ${n} (${(len / 1000).toFixed(1)}km)`, latlngs: line, profile: prof, track: null, kind: 'osm' });
       }
-      elevNote.textContent = n ? '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.' : '고도 프로파일을 만들지 못했습니다.';
+      selectRoute(base); // 첫 신규 등산로 선택
+      elevNote.textContent = '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.';
     } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
-    finally { osmElevBtn.disabled = false; osmElevBtn.textContent = orig; }
+    finally { loadTrailsBtn.disabled = false; loadTrailsBtn.textContent = orig; renderRouteList(); }
   });
-  renderElevChips();
+  renderRouteList();
 
-  let view, controls, trailLayer = null, gpxLayer = null, navTrack = null, locLayer = null;
+  let view, controls, navTrack = null, locLayer = null;
   let stopWatch = null, locateOn = false, following = false, firstFix = false, lastPos = null;
 
   if (m.lat != null) {
@@ -162,33 +183,19 @@ export async function renderDetail(root, id) {
       el('a', { href: links.google, target: '_blank', rel: 'noopener' }, '구글 지도 길찾기'));
     dirBtn.addEventListener('click', () => { dirMenu.hidden = !dirMenu.hidden; });
 
-    // 수록 GPX 자동 로드
-    tryLoadCuratedGPX(m.id, view, gpxNote).then((res) => { if (res) { gpxLayer = res.token; setNavTrack(res.track); addGpxProfile(res.track, `수록 경로${res.track.name ? ': ' + res.track.name : ''}`); } });
+    // 수록 GPX 자동 로드 → 등산로 목록에 추가(선택 시 지도 표시)
+    tryLoadCuratedGPX(m.id, gpxNote).then((res) => { if (res) addGpxRoute(res.track, `수록 경로${res.track.name ? ': ' + res.track.name : ''}`); });
 
     locateBtn.addEventListener('click', toggleLocate);
     followBtn.addEventListener('click', toggleFollow);
-
-    trailBtn.addEventListener('click', async () => {
-      if (trailLayer) { view.removeLayer(trailLayer); trailLayer = null; trailBtn.textContent = '🥾 등산로 표시'; return; }
-      trailBtn.textContent = '불러오는 중…'; trailBtn.disabled = true;
-      try {
-        const lines = await fetchTrails(m.lat, m.lon);
-        trailLayer = view.addPolylines(lines, { color: '#e2872a', weight: 2.2, opacity: 0.8 });
-        trailBtn.textContent = `🥾 등산로 숨기기 (${lines.length})`;
-      } catch (e) { trailBtn.textContent = '실패 — 다시'; }
-      finally { trailBtn.disabled = false; }
-    });
 
     fileInput.addEventListener('change', async (e) => {
       const f = e.target.files?.[0]; if (!f) return;
       try {
         const track = parseGPX(await f.text());
-        if (gpxLayer) view.removeLayer(gpxLayer);
-        gpxLayer = drawTrack(view, track, '#d1495b');
         gpxNote.textContent = `${track.name || f.name} · 거리 ${track.distance_km}km` +
           (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
-        setNavTrack(track);
-        addGpxProfile(track, `GPX: ${track.name || f.name}`);
+        addGpxRoute(track, `GPX: ${track.name || f.name}`);
       } catch (err) { gpxNote.textContent = 'GPX 오류: ' + err.message; }
     });
   } else {
@@ -324,7 +331,7 @@ function verifyTitle(v) {
   return parts.length ? `출처별 난이도 — ${parts.join(' · ')}` : '';
 }
 
-async function tryLoadCuratedGPX(id, view, note) {
+async function tryLoadCuratedGPX(id, note) {
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}gpx/${id}.gpx`);
     if (!res.ok) return null;
@@ -332,9 +339,8 @@ async function tryLoadCuratedGPX(id, view, note) {
     const text = await res.text();
     if (ct.includes('html') || text.trimStart().startsWith('<!')) return null; // dev server 200-fallback
     const track = parseGPX(text);
-    const token = drawTrack(view, track, '#d1495b');
     note.textContent = `수록 경로: ${track.name || id} · 거리 ${track.distance_km}km` +
       (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
-    return { token, track };
+    return { track };
   } catch { return null; }
 }
