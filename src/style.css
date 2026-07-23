@@ -489,6 +489,16 @@ button { font-family: inherit; cursor: pointer; }
 .route-label { flex: 1; min-width: 0; font-weight: 700; font-size: 14px; }
 .route-meta { font-size: 12px; color: var(--text-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
+/* 로딩 표시(실제 등산로/코스 불러오기) */
+.spinner { display: inline-block; width: 15px; height: 15px; border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-top-color: currentColor; border-radius: 50%; animation: kr-spin .75s linear infinite; vertical-align: -3px; }
+@keyframes kr-spin { to { transform: rotate(360deg); } }
+.route-loading { display: flex; align-items: center; gap: 10px; padding: 12px 14px; margin: 2px 0 10px;
+  background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-radius: 11px; color: var(--accent-ink); font-size: 13.5px; font-weight: 650; }
+.route-loading[hidden] { display: none; }
+.btn.loading, .course-route-btn.loading { cursor: progress; }
+
 /* 내 기록: 로그인/동기화 박스 */
 .auth-box:empty { display: none; }
 .auth-box { margin: 14px 0 18px; }

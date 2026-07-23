@@ -90,6 +90,9 @@ export async function renderDetail(root, id) {
   const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '🗻 실제 등산로 불러오기');
   const showOnMapChk = el('input', { type: 'checkbox', id: 'route-showmap', checked: true });
   const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 선택 등산로 지도 표시');
+  const routeLoading = el('div', { class: 'route-loading', hidden: true },
+    el('span', { class: 'spinner', 'aria-hidden': 'true' }),
+    el('span', {}, '실제 등산로와 고도를 불러오는 중… (최대 수십 초 걸릴 수 있어요)'));
   const elevChartBox = el('div', { class: 'elev-chart-box' });
   const elevNote = el('div', { class: 'conf-note', style: 'margin-top:8px' });
   page.append(el('div', { class: 'section' },
@@ -97,7 +100,7 @@ export async function renderDetail(root, id) {
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
       '등산로를 선택하면 그 경로만 지도에 표시되고 아래에 고도 단면이 나타납니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반입니다.'),
     el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
-    routeList, elevChartBox, elevNote));
+    routeLoading, routeList, elevChartBox, elevNote));
 
   const routes = [];             // { label, latlngs, profile, track|null, kind }
   let activeRoute = -1, activeRouteLayer = null;
@@ -151,8 +154,10 @@ export async function renderDetail(root, id) {
     if (!t.trailhead || m.lat == null) return;
     const idx = routes.findIndex((r) => r.courseName === t.name);
     if (idx >= 0) { selectRoute(idx); scrollToRoutes(); return; }
-    const orig = btn ? btn.textContent : ''; if (btn) { btn.disabled = true; btn.textContent = '경로 찾는 중…'; }
-    elevNote.textContent = `“${t.name}” 실제 등산로 경로를 찾는 중입니다…`; scrollToRoutes();
+    const orig = btn ? btn.textContent : '';
+    if (btn) setBtnLoading(btn, true, '찾는 중…');
+    routeLoading.hidden = false;
+    elevNote.textContent = ''; scrollToRoutes();
     try {
       let route = null;
       try { route = await routeTrailheadToSummit(t.trailhead, [m.lat, m.lon]); } catch {}
@@ -169,13 +174,22 @@ export async function renderDetail(root, id) {
         elevNote.textContent = '※ 실제 등산로 연결을 확인하지 못해 들머리→정상 직선 기준 지형 고도를 표시합니다.';
       }
     } catch (e) { elevNote.textContent = '경로 불러오기 실패: ' + (e.message || e); }
-    finally { if (btn) { btn.disabled = false; btn.textContent = orig; } }
+    finally { routeLoading.hidden = true; if (btn) setBtnLoading(btn, false, null, orig); }
   }
+
+  const setBtnLoading = (btn, on, loadingText, restoreText) => {
+    btn.disabled = on; btn.classList.toggle('loading', on);
+    clear(btn);
+    if (on) { btn.append(el('span', { class: 'spinner', 'aria-hidden': 'true' }), ' ' + loadingText); }
+    else { btn.textContent = restoreText; }
+  };
 
   loadTrailsBtn.addEventListener('click', async () => {
     if (m.lat == null) { elevNote.textContent = '정상 좌표가 없어 불러올 수 없습니다.'; return; }
-    loadTrailsBtn.disabled = true; const orig = loadTrailsBtn.textContent; loadTrailsBtn.textContent = '불러오는 중…';
-    elevNote.textContent = '실제 등산로와 고도를 불러오는 중입니다… (최대 수십 초 걸릴 수 있어요)';
+    const orig = loadTrailsBtn.textContent;
+    setBtnLoading(loadTrailsBtn, true, '불러오는 중…');
+    routeLoading.hidden = false;
+    elevNote.textContent = '';
     try {
       const lines = await fetchTrails(m.lat, m.lon, 2500);
       const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 4);
@@ -194,7 +208,11 @@ export async function renderDetail(root, id) {
       selectRoute(base); // 첫 신규 등산로 선택
       elevNote.textContent = '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.';
     } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
-    finally { loadTrailsBtn.disabled = false; loadTrailsBtn.textContent = routes.some((r) => r.kind === 'osm') ? '🗻 실제 등산로 다시 불러오기' : orig; renderRouteList(); }
+    finally {
+      routeLoading.hidden = true;
+      setBtnLoading(loadTrailsBtn, false, null, routes.some((r) => r.kind === 'osm') ? '🗻 실제 등산로 다시 불러오기' : orig);
+      renderRouteList();
+    }
   });
   renderRouteList();
 
