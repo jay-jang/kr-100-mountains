@@ -2,7 +2,7 @@
 //   - public/data/mountains.json  (consumed by the frontend)
 //   - data/mountains/<id>.md      (OKF-style LLM-wiki source, one per mountain)
 // Run: npm run build:data   (or node scripts/build-data.mjs)
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -64,6 +64,13 @@ const payload = {
   mountains,
 };
 writeFileSync(join(ROOT, 'public', 'data', 'mountains.json'), JSON.stringify(payload));
+
+// 수록 GPX 매니페스트 — 상세 페이지가 없는 GPX를 요청해 404를 내지 않도록 목록화
+const gpxDir = join(ROOT, 'public', 'gpx');
+const gpxIds = existsSync(gpxDir) ? readdirSync(gpxDir).filter((f) => f.endsWith('.gpx')).map((f) => f.replace(/\.gpx$/, '')) : [];
+mkdirSync(gpxDir, { recursive: true });
+writeFileSync(join(gpxDir, 'index.json'), JSON.stringify(gpxIds));
+console.log(`gpx manifest: ${gpxIds.length} curated route(s)`);
 writeFileSync(join(ROOT, 'public', 'data', 'mountains.pretty.json'), JSON.stringify(payload, null, 2) + '\n');
 
 // ---- write OKF-style wiki markdown, one per mountain ----

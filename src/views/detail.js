@@ -364,8 +364,20 @@ function verifyTitle(v) {
   return parts.length ? `출처별 난이도 — ${parts.join(' · ')}` : '';
 }
 
+// 수록 GPX 목록(gpx/index.json). 목록에 없는 산은 아예 요청하지 않아 404 콘솔 오류를 없앤다.
+let _gpxManifest;
+async function curatedGpxIds() {
+  if (_gpxManifest) return _gpxManifest;
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}gpx/index.json`);
+    _gpxManifest = new Set(res.ok ? await res.json() : []);
+  } catch { _gpxManifest = new Set(); }
+  return _gpxManifest;
+}
+
 async function tryLoadCuratedGPX(id, note) {
   try {
+    if (!(await curatedGpxIds()).has(id)) return null; // 수록 경로 없음 → 조용히 종료
     const res = await fetch(`${import.meta.env.BASE_URL}gpx/${id}.gpx`);
     if (!res.ok) return null;
     const ct = res.headers.get('content-type') || '';
