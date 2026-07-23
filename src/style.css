@@ -490,7 +490,7 @@ button { font-family: inherit; cursor: pointer; }
 .route-meta { font-size: 12px; color: var(--text-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* 로딩 표시(실제 등산로/코스 불러오기) */
-.spinner { display: inline-block; width: 15px; height: 15px; border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+.spinner { display: inline-block; flex: none; width: 15px; height: 15px; box-sizing: border-box; border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
   border-top-color: currentColor; border-radius: 50%; animation: kr-spin .75s linear infinite; vertical-align: -3px; }
 @keyframes kr-spin { to { transform: rotate(360deg); } }
 .route-loading { display: flex; align-items: center; gap: 10px; padding: 12px 14px; margin: 2px 0 10px;
