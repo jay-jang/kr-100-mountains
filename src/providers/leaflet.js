@@ -67,6 +67,12 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
         remove() { if (dot) map.removeLayer(dot); if (ring) map.removeLayer(ring); dot = ring = null; },
       };
     },
+    // 지도에 보이는 텍스트 라벨(주요 지점 이름)
+    addLabel({ lat, lng, text, kind = '' }) {
+      const tip = L.tooltip({ permanent: true, direction: 'top', className: 'map-label ' + kind, offset: [0, -3], opacity: 1 })
+        .setLatLng([lat, lng]).setContent(text).addTo(map);
+      return { remove() { map.removeLayer(tip); } };
+    },
     addPolyline(latlngs, { color = '#d1495b', weight = 4, opacity = 0.95, outline = false } = {}) {
       const g = L.layerGroup().addTo(map);
       if (outline) L.polyline(latlngs, { color: '#fff', weight: weight + 3, opacity: 0.85, lineCap: 'round' }).addTo(g);

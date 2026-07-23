@@ -42,6 +42,7 @@ function deadMapView(node, err) {
     setView: noop, panTo: noop, flyTo: noop, clearMarkers: noop,
     addMarker: () => ({ openPopup: noop, remove: noop }),
     addDot: () => token, addPolyline: () => token, addPolylines: () => token,
+    addLabel: () => token,
     locate: () => ({ set: noop, remove: noop }),
     removeLayer: noop, fitBounds: noop, setBaseType: noop, relayout: noop,
     refreshTheme: noop, destroy: noop,

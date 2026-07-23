@@ -118,11 +118,19 @@ export async function renderDetail(root, id) {
     });
   }
   function drawActiveRoute() {
-    if (activeRouteLayer && view) { view.removeLayer(activeRouteLayer); }
+    if (activeRouteLayer && view) view.removeLayer(activeRouteLayer);
     activeRouteLayer = null;
     if (!view || activeRoute < 0 || !showOnMapChk.checked) return;
     const r = routes[activeRoute];
-    activeRouteLayer = drawTrack(view, { latlngs: r.latlngs }, routeColor(r, activeRoute));
+    if (!r.latlngs) return;
+    const layers = [...drawTrack(view, { latlngs: r.latlngs }, routeColor(r, activeRoute))];
+    // 주요 지점 이름 라벨: 들머리 + 경로 주변 봉우리/고개
+    if (r.trailheadName && r.latlngs[0]) layers.push(view.addLabel({ lat: r.latlngs[0][0], lng: r.latlngs[0][1], text: r.trailheadName, kind: 'trailhead' }));
+    if (r.peaks) for (const pk of r.peaks.slice(0, 8)) {
+      if (haversine(pk.lat, pk.lon, m.lat, m.lon) < 200) continue; // 정상 라벨과 겹치는 봉우리는 생략
+      layers.push(view.addLabel({ lat: pk.lat, lng: pk.lon, text: pk.name, kind: 'peak' }));
+    }
+    activeRouteLayer = layers;
   }
   function selectRoute(i) {
     activeRoute = i; renderRouteList();
@@ -161,16 +169,18 @@ export async function renderDetail(root, id) {
     try {
       let route = null;
       try { route = await routeTrailheadToSummit(t.trailhead, [m.lat, m.lon]); } catch {}
-      if (route && route.latlngs.length > 3) {
+      const peaks = route?.peaks || null;
+      const thName = t.start ? `들머리 ${t.start}` : '들머리';
+      if (route && route.latlngs && route.latlngs.length > 3) {
         const sampled = resample(route.latlngs, 90);
         const prof = buildProfile(sampled, await fetchElevations(sampled));
-        addRoute({ label: t.name, courseName: t.name, latlngs: route.latlngs, profile: prof, track: null, kind: 'course' });
+        addRoute({ label: t.name, courseName: t.name, latlngs: route.latlngs, profile: prof, track: null, kind: 'course', trailheadName: thName, peaks });
         elevNote.textContent = '※ 들머리(codex·agy 검증)에서 정상까지 실제 등산로 경로와 고도(open-meteo)입니다.';
       } else {
         const N = 30, a = t.trailhead, b = [m.lat, m.lon], line = [];
         for (let i = 0; i <= N; i++) { const f = i / N; line.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
         const prof = buildProfile(line, await fetchElevations(line));
-        addRoute({ label: `${t.name} (직선참고)`, courseName: t.name, latlngs: [a, b], profile: prof, track: null, kind: 'course' });
+        addRoute({ label: `${t.name} (직선참고)`, courseName: t.name, latlngs: [a, b], profile: prof, track: null, kind: 'course', trailheadName: thName, peaks });
         elevNote.textContent = '※ 실제 등산로 연결을 확인하지 못해 들머리→정상 직선 기준 지형 고도를 표시합니다.';
       }
     } catch (e) { elevNote.textContent = '경로 불러오기 실패: ' + (e.message || e); }
@@ -224,6 +234,7 @@ export async function renderDetail(root, id) {
     controls = mapControls(view, mapWrap);
     mapWrap.append(controls);
     view.addDot({ lat: m.lat, lng: m.lon, color: regionColor(m.region), title: `${m.name} 정상 ${m.elevation_m}m` });
+    view.addLabel({ lat: m.lat, lng: m.lon, text: `${m.name} 정상`, kind: 'summit' }); // 주요 지점 이름(정상)
     locLayer = view.locate();
     if (m.coord_confidence && m.coord_confidence !== 'high')
       gpxNote.textContent = `※ 정상 좌표는 근사값일 수 있습니다 (신뢰도: ${m.coord_confidence}).`;

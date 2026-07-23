@@ -99,6 +99,15 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
         remove() { if (ov) ov.setMap(null); if (circle) circle.setMap(null); ov = circle = null; },
       };
     },
+    // 지도에 보이는 텍스트 라벨(주요 지점 이름)
+    addLabel({ lat, lng, text, kind = '' }) {
+      const box = document.createElement('div');
+      box.className = 'map-label ' + kind;
+      box.innerHTML = `<span>${text}</span>`;
+      const ov = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: box, yAnchor: 1.5, xAnchor: 0.5, zIndex: 4 });
+      ov.setMap(map);
+      return { remove() { ov.setMap(null); } };
+    },
     addPolyline(latlngs, { color = '#d1495b', weight = 4, opacity = 0.95, outline = false } = {}) {
       const path = latlngs.map(([a, b]) => ll(a, b));
       const lines = [];
