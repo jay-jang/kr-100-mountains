@@ -122,6 +122,55 @@ try {
   const recorded = await page.$eval('.stat-card .big', (n) => n.textContent.trim());
   check('stats: reflects hiked toggle', parseInt(recorded, 10) >= 1, `count=${recorded}`);
   await page.screenshot({ path: join(SHOTS, 'stats.png') });
+
+  // ---- 현재 위치 기준 "가까운 순" (위치를 목으로 주입한 별도 컨텍스트) ----
+  const ME = { lat: 37.5665, lng: 126.9780 };  // 서울시청
+  const hav = (la1, lo1, la2, lo2) => {
+    const R = 6371000, r = (d) => (d * Math.PI) / 180;
+    const dLa = r(la2 - la1), dLo = r(lo2 - lo1);
+    const a = Math.sin(dLa / 2) ** 2 + Math.cos(r(la1)) * Math.cos(r(la2)) * Math.sin(dLo / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(a));
+  };
+  const mountains = JSON.parse(await readFile(join(DIST, 'data/mountains.json'), 'utf8')).mountains;
+  const wantIds = mountains.map((m) => ({ id: m.id, d: hav(ME.lat, ME.lng, m.lat, m.lon), n: m.name }))
+    .sort((a, b) => (a.d - b.d) || a.n.localeCompare(b.n, 'ko')).map((x) => x.id);
+
+  const geoCtx = await browser.newContext({
+    viewport: { width: 1400, height: 900 },
+    geolocation: { latitude: ME.lat, longitude: ME.lng, accuracy: 30 },
+    permissions: ['geolocation'],
+  });
+  const geoPage = await geoCtx.newPage();
+  geoPage.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+  const idsOf = (root, sel) => root.locator(sel).evaluateAll((ns) => ns.map((n) => (n.getAttribute('href') || '').replace('#/m/', '')));
+
+  await geoPage.goto(base + '/#/', { waitUntil: 'networkidle', timeout: 30000 });
+  await geoPage.waitForSelector('.mc-reason', { timeout: 10000 }).catch(() => {});
+  const nearSec = geoPage.locator('section.dash-section').filter({ hasText: '내 주변 명산' }).first();
+  const homeIds = await idsOf(nearSec, '.mtn-card');
+  check('near: 홈 "내 주변 명산" 최근접순', JSON.stringify(homeIds) === JSON.stringify(wantIds.slice(0, 4)), homeIds.join(','));
+
+  await geoPage.goto(base + '/#/map?sort=near', { waitUntil: 'networkidle', timeout: 30000 });
+  await geoPage.waitForSelector('.mtn-rank.num', { timeout: 10000 });
+  const nearIds = await idsOf(geoPage, '.mtn-item');
+  const diff = nearIds.findIndex((v, i) => v !== wantIds[i]);
+  check('near: 지도 목록 전체가 거리 오름차순', diff === -1 && nearIds.length === wantIds.length,
+    diff === -1 ? `${nearIds.length}곳` : `idx ${diff}: ${nearIds[diff]} != ${wantIds[diff]}`);
+  check('near: 항목마다 거리 표시', (await geoPage.locator('.mtn-dist').count()) === wantIds.length);
+  await geoPage.locator('.sort-seg button', { hasText: '기본순' }).click();
+  await geoPage.waitForTimeout(250);
+  check('near: 기본순 복귀', (await geoPage.locator('.mtn-rank.num').count()) === 0);
+  await geoPage.screenshot({ path: join(SHOTS, 'near-sort.png') });
+  await geoCtx.close();
+
+  // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)
+  const denyCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const denyPage = await denyCtx.newPage();
+  denyPage.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+  await denyPage.goto(base + '/#/', { waitUntil: 'networkidle', timeout: 30000 });
+  check('near: 위치 없을 때 홈에 요청 카드', (await denyPage.locator('.near-cta').count()) === 1);
+  check('near: 위치 없을 때 자동 측정 안 함', (await denyPage.evaluate(() => localStorage.getItem('kr100:pos'))) === null);
+  await denyCtx.close();
 } catch (e) {
   errors.push('fatal: ' + e.message);
 } finally {

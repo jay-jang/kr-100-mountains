@@ -341,7 +341,9 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center; gap: 8px; min-height: 46px; }
 
 /* ============ 홈 대시보드 ============ */
-.dash { max-width: 1120px; margin: 0 auto; padding: 18px 20px 80px; }
+/* width:100% 필수 — #view가 세로 flex 컨테이너라 `margin:0 auto`가 stretch를 무력화한다.
+   (없으면 max-content 폭(≈798px)으로 부풀어 모바일에서 화면이 가로로 넘친다) */
+.dash { width: 100%; max-width: 1120px; margin: 0 auto; padding: 18px 20px 80px; }
 .dash-section { margin-top: 30px; }
 .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .sec-head h2 { font-size: 19px; letter-spacing: -.02em; }
@@ -422,6 +424,44 @@ button { font-family: inherit; cursor: pointer; }
 .eg .chip { color: var(--text-soft); }
 .curation { margin-top: 22px; }
 .dash-foot { margin-top: 34px; }
+
+/* ============ 현재 위치 기준 "가까운 순" ============ */
+/* 정렬 세그먼트 + 상태 안내 (지도 페이지 필터) */
+.sort-seg { margin-top: 10px; }
+.sort-seg button[aria-pressed="true"] { color: var(--accent-ink); }
+.sort-seg button:disabled { opacity: .6; cursor: progress; }
+.geo-note { margin-top: 8px; font-size: 12px; font-weight: 650; color: var(--text-faint); line-height: 1.45; }
+.geo-note[hidden] { display: none; }
+.geo-note.ok { color: var(--accent-ink); }
+.geo-note.busy { color: var(--text-soft); }
+.geo-note.warn { color: #b3261e; font-weight: 700; }
+:root[data-theme="dark"] .geo-note.warn { color: #f2a6a0; }
+
+/* 목록: 순위 번호 배지 + 거리 */
+.mtn-rank.num {
+  width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center;
+  color: #fff; font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em; text-shadow: 0 1px 1px rgba(0,0,0,.25);
+}
+.mtn-dist { color: var(--accent-ink); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* 홈: 내 주변 명산 */
+.near-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 18px; box-shadow: var(--shadow);
+}
+.near-cta-text { display: grid; gap: 3px; min-width: 0; }
+.near-cta-text b { font-size: 14.5px; }
+.near-cta-text span { font-size: 12.5px; color: var(--text-faint); }
+.near-cta .btn { flex: none; }
+.near-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.near-refresh { border: 0; background: none; padding: 0; color: var(--accent-ink); font-weight: 650; font-size: 12.5px; }
+.near-refresh:disabled { color: var(--text-faint); cursor: progress; }
+.near-hint { font-size: 12px; color: var(--text-faint); margin-left: auto; }
+
+/* 상세: 현재 위치에서의 거리 */
+.hero .sub .sub-dist { color: var(--accent-ink); font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* explore: 현재 위치 버튼 */
 .locate-btn { position: absolute; right: 12px; bottom: 92px; z-index: 460; width: 44px; height: 44px; border-radius: 50%;
@@ -558,6 +598,11 @@ button { font-family: inherit; cursor: pointer; }
   .chip { min-height: 40px; padding: 8px 13px; font-size: 13px; }
   .seg button { min-height: 40px; }
   .filters-foot button, .filters-foot { min-height: 32px; }
+
+  /* 내 주변: 좁은 화면에선 버튼을 전폭으로 */
+  .near-cta { flex-direction: column; align-items: stretch; }
+  .near-cta .btn { width: 100%; min-height: 46px; }
+  .near-hint { margin-left: 0; width: 100%; }
 
   /* map controls: 축소 + 상세 도구는 지도 하단으로 이동(충돌 방지) */
   .map-ctrl { left: 8px; top: 8px; gap: 6px; }

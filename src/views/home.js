@@ -1,6 +1,9 @@
 // 홈 대시보드 — 지도 우선 대신 탐색·개인화·기록으로 이어지는 랜딩.
 import { loadData, REGION_COLORS, regionColor, LIST_KEYS, LIST_META, DIFF_CLASS } from '../data.js';
 import { hikedMap, hikedCount, isHiked, recentViews, onChange } from '../store.js';
+import { cachedPosition, requestPosition, onPositionChange, permissionState, geoAvailable,
+  bearingLabel, positionAgeText, sortByDistance, FRESH_MS } from '../position.js';
+import { fmtDistFine } from '../geo.js';
 import { el, clear } from '../dom.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
@@ -30,6 +33,17 @@ export async function renderHome(root) {
   const body = el('div');
   page.append(body);
 
+  // "내 주변 명산" 상태 — 위치는 사용자가 눌렀을 때만 새로 측정한다.
+  // force=true(위치 새로고침)면 캐시를 쓰지 않고 반드시 다시 측정한다.
+  const near = { loading: false, error: null };
+  async function locateForNearby({ force = false } = {}) {
+    if (near.loading) return;
+    near.loading = true; near.error = null; draw();
+    try { await requestPosition({ maxAgeMs: force ? 0 : FRESH_MS }); }
+    catch (e) { near.error = e.message; }
+    finally { near.loading = false; draw(); }   // 성공 시엔 onPositionChange로도 갱신되지만 중복은 무해
+  }
+
   function draw() {
     clear(body);
     const hiked = hikedMap();
@@ -40,6 +54,7 @@ export async function renderHome(root) {
 
     body.append(heroSection(data, season));
     body.append(returning ? progressSection(data, hikedIds) : introSection(data));
+    body.append(nearbySection(data, near, locateForNearby));
     body.append(recommendSection(data, hikedIds, recent, season));
     body.append(quickExploreSection(data));
     body.append(curationSection(data, hikedIds, season));
@@ -48,9 +63,14 @@ export async function renderHome(root) {
   }
 
   draw();
+  // 이미 권한을 허용한 사용자는 묻지 않고 바로 내 주변을 채운다.
+  if (!cachedPosition() && geoAvailable()) {
+    permissionState().then((s) => { if (s === 'granted') locateForNearby(); });
+  }
   const off = onChange(draw);
+  const offPos = onPositionChange(draw);
   window.scrollTo(0, 0);
-  return () => off();
+  return () => { off(); offPos(); };
 }
 
 /* ---------- 섹션들 ---------- */
@@ -80,6 +100,7 @@ function heroSection(data, season) {
 
   const chips = el('div', { class: 'dash-hero-chips' },
     el('a', { class: 'hchip', href: '#/map' }, '🗺️ 지도로 탐색'),
+    el('a', { class: 'hchip', href: '#/map?sort=near' }, '📍 가까운 순'),
     el('a', { class: 'hchip', href: `#/map?q=${encodeURIComponent(season.kw[0])}` }, `${seasonEmoji(season.name)} ${season.name} 추천`),
     el('a', { class: 'hchip', href: '#/map?list=hansanha' }, '🏅 인기명산'),
     el('a', { class: 'hchip', href: '#/track' }, '⛰ 내 기록'));
@@ -139,6 +160,45 @@ function progressSection(data, hikedIds) {
       el('a', { class: 'btn', href: '#/track' }, '내 기록 보기 →')),
     el('div', { class: 'prog-overall' }, el('span', { style: `width:${pct}%` })),
     el('div', { class: 'plist' }, ...bars));
+}
+
+// 현재 위치에서 가까운 명산 — 위치를 알면 가까운 순 카드, 모르면 위치 요청 카드.
+function nearbySection(data, near, onLocate) {
+  const pos = cachedPosition();
+
+  if (!pos) {
+    const btn = el('button', { class: 'btn primary', type: 'button', disabled: near.loading });
+    if (near.loading) btn.append(el('span', { class: 'spinner', 'aria-hidden': 'true' }), ' 현재 위치 확인 중…');
+    else btn.append(near.error ? '📍 다시 시도' : '📍 내 위치로 가까운 산 찾기');
+    btn.addEventListener('click', () => onLocate());
+
+    const unsupported = !geoAvailable();
+    return el('section', { class: 'dash-section' },
+      sectionHead('내 주변 명산', '현재 위치에서 가까운 순'),
+      el('div', { class: 'near-cta' },
+        el('div', { class: 'near-cta-text' },
+          el('b', {}, '지금 있는 곳에서 가까운 명산부터 보여드려요.'),
+          el('span', {}, '위치는 이 기기에만 저장되며 어디에도 전송되지 않습니다.')),
+        unsupported
+          ? el('div', { class: 'geo-note warn' }, '이 브라우저·연결에서는 위치 기능을 사용할 수 없습니다.')
+          : btn),
+      near.error ? el('div', { class: 'geo-note warn', style: 'margin-top:10px' }, near.error) : null);
+  }
+
+  const list = sortByDistance(data.mountains.filter((m) => m.lat != null), pos).slice(0, 4);
+
+  const refresh = el('button', { class: 'near-refresh', type: 'button', disabled: near.loading },
+    near.loading ? '측정 중…' : '↻ 위치 새로고침');
+  refresh.addEventListener('click', () => onLocate({ force: true }));
+
+  return el('section', { class: 'dash-section' },
+    sectionHead('내 주변 명산', `현재 위치 기준 · ${positionAgeText(pos.ts)} 측정`, '#/map?sort=near'),
+    el('div', { class: 'card-grid' },
+      ...list.map(({ m, dist }) => mtnCard(m, `${bearingLabel(pos, m.lat, m.lon)}쪽 ${fmtDistFine(dist)}`))),
+    el('div', { class: 'near-foot' },
+      refresh,
+      near.error ? el('span', { class: 'geo-note warn' }, near.error) : null,
+      el('span', { class: 'near-hint' }, '직선거리 기준입니다.')));
 }
 
 // 규칙 기반 "다음에 오를 산" 추천

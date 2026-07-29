@@ -3,7 +3,8 @@ import { createMapView, fetchTrails } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, toggleHiked, onChange, recordView } from '../store.js';
 import { parseGPX, drawTrack, navInfo, haversine } from '../gpx.js';
-import { watchPosition, fmtDist, directionsLinks } from '../geo.js';
+import { watchPosition, fmtDist, fmtDistFine, directionsLinks } from '../geo.js';
+import { cachedPosition, notePosition, distanceTo, bearingLabel } from '../position.js';
 import { fetchElevations, resample, buildProfile, profileFromTrack, elevationChart, profileStats } from '../elevation.js';
 import { routeTrailheadToSummit } from '../routing.js';
 import { el, esc, clear } from '../dom.js';
@@ -38,9 +39,16 @@ export async function renderDetail(root, id) {
   paintHike();
   hikeBtn.addEventListener('click', () => { toggleHiked(m.id); paintHike(); });
 
+  // 현재 위치를 이미 알고 있으면(다른 화면에서 측정) 직선거리를 함께 보여준다. 새로 묻지는 않는다.
+  const myPos = cachedPosition();
+  const myDist = m.lat != null ? distanceTo(myPos, m.lat, m.lon) : Infinity;
+
   const sub = el('div', { class: 'sub' },
     el('span', {}, `${m.region} · ${m.location}`),
     el('span', { class: 'elev' }, `해발 ${m.elevation_m}m`),
+    Number.isFinite(myDist)
+      ? el('span', { class: 'sub-dist', title: '현재 위치에서의 직선거리' }, `📍 현 위치에서 ${bearingLabel(myPos, m.lat, m.lon)}쪽 ${fmtDistFine(myDist)}`)
+      : null,
     m.best_season ? el('span', {}, `🍂 ${m.best_season}`) : null);
 
   page.append(el('div', { class: 'hero' },
@@ -269,6 +277,7 @@ export async function renderDetail(root, id) {
 
   function onPos(p) {
     lastPos = p;
+    notePosition(p);     // 공유 캐시 갱신 — 홈 "내 주변"·지도 "가까운 순"이 같은 위치를 쓴다
     locLayer.set(p);
     if (firstFix) { firstFix = false; (view.flyTo ? view.flyTo : view.setView).call(view, [p.lat, p.lng], 14); }
     locateBtn.classList.remove('loading'); locateOn && (locateBtn.textContent = '🎯 위치 추적중');

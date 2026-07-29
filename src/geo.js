@@ -20,6 +20,14 @@ export function fmtDist(m) {
   return m >= 1000 ? (m / 1000).toFixed(m >= 10000 ? 0 : 1) + 'km' : Math.round(m) + 'm';
 }
 
+// 가까운 순 목록용 — 100km 미만은 항상 소수 첫째 자리까지.
+// (10km 이상을 정수로 반올림하면 "13km" 항목이 여러 개 나란히 놓여 정렬이 틀린 것처럼 보인다)
+export function fmtDistFine(m) {
+  if (m == null || !Number.isFinite(m)) return '—';
+  if (m >= 100000) return Math.round(m / 1000) + 'km';
+  return m >= 1000 ? (m / 1000).toFixed(1) + 'km' : Math.round(m) + 'm';
+}
+
 // 외부 지도 앱 길찾기 링크(목적지=정상). 카카오·구글은 웹/앱 모두 안정적.
 export function directionsLinks(name, lat, lng) {
   const n = encodeURIComponent(name || '목적지');
