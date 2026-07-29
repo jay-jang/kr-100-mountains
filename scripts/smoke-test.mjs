@@ -163,6 +163,44 @@ try {
   await geoPage.screenshot({ path: join(SHOTS, 'near-sort.png') });
   await geoCtx.close();
 
+  // ---- 지도 검색: 자동완성 → 지도에서 찾아가기 ----
+  // 지도가 실제로 이동했는지는 로드된 타일의 z/x/y를 파싱해 경계로 확인한다.
+  const mapViewport = (p) => p.evaluate(() => {
+    const t = [];
+    for (const img of document.querySelectorAll('#map img.leaflet-tile-loaded')) {
+      const m = img.src.match(/\/(\d+)\/(\d+)\/(\d+)(?:@2x)?\.png/);
+      if (m) t.push([+m[1], +m[2], +m[3]]);
+    }
+    if (!t.length) return null;
+    const z = Math.max(...t.map((a) => a[0])), at = t.filter((a) => a[0] === z), n = 2 ** z;
+    const lon = (x) => (x / n) * 360 - 180;
+    const lat = (y) => (Math.atan(Math.sinh(Math.PI * (1 - (2 * y) / n))) * 180) / Math.PI;
+    const xs = at.map((a) => a[1]), ys = at.map((a) => a[2]);
+    return { z, west: lon(Math.min(...xs)), east: lon(Math.max(...xs) + 1),
+             north: lat(Math.min(...ys)), south: lat(Math.max(...ys) + 1) };
+  });
+
+  const searchCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const sPage = await searchCtx.newPage();
+  sPage.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+  await sPage.goto(base + '/#/map', { waitUntil: 'networkidle', timeout: 30000 });
+  await sPage.waitForSelector('.mtn-item', { timeout: 10000 });
+  await sPage.mouse.move(1000, 850);              // 드롭다운이 커서 아래 떠서 hover 인덱스가 잡히지 않게
+  await sPage.fill('.search', '설악');
+  await sPage.waitForSelector('.map-suggest:not([hidden])', { timeout: 8000 });
+  const sugNames = await sPage.locator('.map-suggest-item .ms-name').allTextContents();
+  check('search: 자동완성 제안', sugNames.length > 0 && sugNames[0].startsWith('설악산'), sugNames.join(' | '));
+  await sPage.locator('.map-suggest-item').first().click();
+  await sPage.waitForTimeout(2200);
+  const seorak = mountains.find((m) => m.name === '설악산');
+  const vp = await mapViewport(sPage);
+  const onTarget = vp && seorak.lat > vp.south && seorak.lat < vp.north && seorak.lon > vp.west && seorak.lon < vp.east;
+  check('search: 선택하면 지도가 그 산으로 이동', onTarget && vp.z >= 11, `z=${vp?.z}`);
+  check('search: 목록에서 강조', (await sPage.locator('.mtn-item.active .mtn-name').textContent()).includes('설악산'));
+  check('search: 마커 팝업 열림', /설악산/.test(await sPage.locator('.leaflet-popup-content').textContent().catch(() => '')));
+  await sPage.screenshot({ path: join(SHOTS, 'map-search.png') });
+  await searchCtx.close();
+
   // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)
   const denyCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
   const denyPage = await denyCtx.newPage();

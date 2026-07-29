@@ -36,7 +36,14 @@ export async function renderExplore(root) {
   let selfRequest = false;         // 내가 요청한 측정의 emit으로 이중 렌더되지 않게
 
   // ---- layout ----
-  const search = el('input', { class: 'search', type: 'search', 'aria-label': '산 이름 또는 지역 검색', placeholder: '산 이름·지역 검색 (예: 설악, 지리, 경남)', value: state.q });
+  const search = el('input', {
+    class: 'search', type: 'search', 'aria-label': '산 이름 또는 지역 검색',
+    placeholder: '산 이름·지역 검색 (예: 설악, 지리, 경남)', value: state.q,
+    role: 'combobox', 'aria-autocomplete': 'list', 'aria-expanded': 'false',
+    'aria-controls': 'map-suggest', autocomplete: 'off',
+  });
+  const suggestBox = el('div', { class: 'map-suggest', role: 'listbox', id: 'map-suggest', 'aria-label': '검색 제안', hidden: true });
+  const searchWrap = el('div', { class: 'search-wrap' }, search, suggestBox);
   const regionChips = el('div', { class: 'chips' });
   const listChips = el('div', { class: 'chips', 'aria-label': '명산 리스트' });
   const allFourChip = el('button', { class: 'chip', 'aria-pressed': String(state.allFour), title: '4개 리스트 모두에 든 산' }, '★ 4대 공통');
@@ -83,18 +90,20 @@ export async function renderExplore(root) {
     hikedChip.setAttribute('aria-pressed', String(state.hikedOnly));
     update();
   });
-  search.addEventListener('input', () => { state.q = search.value; update(); });
-  resetBtn.addEventListener('click', () => {
-    state.q = ''; state.regions.clear(); state.lists.clear(); state.allFour = false; state.hikedOnly = false;
-    search.value = '';
+  // 지역·목록·4대공통·등정 칩만 초기화(검색어는 건드리지 않는다)
+  function resetChips() {
+    state.regions.clear(); state.lists.clear(); state.allFour = false; state.hikedOnly = false;
     [...regionChips.children, ...listChips.children].forEach((c) => c.setAttribute('aria-pressed', 'false'));
     allFourChip.setAttribute('aria-pressed', 'false');
     hikedChip.setAttribute('aria-pressed', 'false');
-    update();
+  }
+  resetBtn.addEventListener('click', () => {
+    state.q = ''; search.value = '';
+    resetChips(); closeSuggest(); update();
   });
 
   const panel = el('aside', { class: 'panel' },
-    el('div', { class: 'filters' }, search, sortSeg, geoNote, regionChips, listChips,
+    el('div', { class: 'filters' }, searchWrap, sortSeg, geoNote, regionChips, listChips,
       el('div', { class: 'chips', style: 'margin-top:8px' }, allFourChip, hikedChip),
       el('div', { class: 'filters-foot' }, countEl, resetBtn)),
     listEl);
@@ -170,6 +179,7 @@ export async function renderExplore(root) {
   // 권한 프롬프트는 캐시가 없을 때, 사용자가 직접 눌러 호출했을 때만 뜬다.
   function applyNear(p, doFit) {
     pos = p; sortAnchor = p; state.sort = 'near';
+    skipAutoFit = true;              // 아래 fitToNearest가 잡을 범위를 검색 자동맞춤이 덮어쓰지 않게
     paintSort(); showLoc(p); update();
     if (doFit) fitToNearest();
   }
@@ -228,12 +238,122 @@ export async function renderExplore(root) {
     sortAnchor = p; update(); nearStatusNote();
   });
 
-  function focus(m, { pan = true, scroll = true } = {}) {
+  /* ---- 지도에서 산 찾아가기 (검색 자동완성) ----
+     타이핑은 기존처럼 목록·마커를 필터링하고, 제안을 고르면 그 산으로 지도를 이동한다. */
+
+  // 랭킹: 이름 완전일치 > 이름 접두 > 이름 포함 > 소재지·지역 포함. -1이면 비매칭.
+  function searchRank(m, q) {
+    const name = m.name.toLowerCase(), full = m.name_full.toLowerCase();
+    if (name === q || full === q) return 0;
+    if (name.startsWith(q) || full.startsWith(q)) return 1;
+    if (name.includes(q) || full.includes(q)) return 2;
+    return `${m.province} ${m.location} ${m.id}`.toLowerCase().includes(q) ? 3 : -1;
+  }
+
+  let sug = [];          // [{ m, node }]
+  let sugIdx = -1;
+  let fitTimer = null, skipAutoFit = false;
+
+  function closeSuggest() {
+    suggestBox.hidden = true; clear(suggestBox); sug = []; sugIdx = -1;
+    search.setAttribute('aria-expanded', 'false');
+    search.removeAttribute('aria-activedescendant');
+  }
+  function highlightSug(i) {
+    sugIdx = i;
+    sug.forEach((s, k) => s.node.classList.toggle('active', k === i));
+    sug.forEach((s, k) => s.node.setAttribute('aria-selected', String(k === i)));
+    if (i >= 0) { search.setAttribute('aria-activedescendant', sug[i].node.id); sug[i].node.scrollIntoView({ block: 'nearest' }); }
+    else search.removeAttribute('aria-activedescendant');
+  }
+  function renderSuggest() {
+    const q = search.value.trim().toLowerCase();
+    clear(suggestBox); sug = []; sugIdx = -1;
+    if (!q) { closeSuggest(); return; }
+    // 제안은 필터와 무관하게 전체에서 찾는다 — 검색으로는 어떤 산이든 갈 수 있어야 하므로.
+    const hits = data.mountains
+      .map((m) => ({ m, r: searchRank(m, q) }))
+      .filter((x) => x.r >= 0)
+      .sort((a, b) => (a.r - b.r)
+        || (pos ? distanceTo(pos, a.m.lat, a.m.lon) - distanceTo(pos, b.m.lat, b.m.lon) : 0)
+        || a.m.name.localeCompare(b.m.name, 'ko'))
+      .slice(0, 8);
+    if (!hits.length) { closeSuggest(); return; }
+    hits.forEach(({ m }, i) => {
+      const d = pos ? distanceTo(pos, m.lat, m.lon) : Infinity;
+      const node = el('div', { class: 'map-suggest-item', role: 'option', id: `map-sug-${i}`, 'aria-selected': 'false' },
+        el('span', { class: 'ms-dot', style: `background:${REGION_COLORS[m.region]}` }),
+        el('span', { class: 'ms-name' }, m.name,
+          m.disambig ? el('span', { class: 'disambig' }, m.disambig) : null),
+        el('span', { class: 'ms-meta' }, `${m.province} · ${Math.round(m.elevation_m)}m`),
+        Number.isFinite(d) ? el('span', { class: 'ms-dist' }, fmtDistFine(d)) : null);
+      node.addEventListener('mousedown', (e) => { e.preventDefault(); gotoMountain(m); }); // blur보다 먼저 처리
+      node.addEventListener('mouseenter', () => highlightSug(i));
+      sug.push({ m, node });
+      suggestBox.append(node);
+    });
+    suggestBox.hidden = false;
+    search.setAttribute('aria-expanded', 'true');
+  }
+
+  // 제안 선택 → 그 산으로 지도 이동 + 목록에서 강조.
+  function gotoMountain(m) {
+    closeSuggest();
+    // 켜져 있는 칩 때문에 목록에서 빠지는 산이면 칩을 풀어 반드시 보이게 한다.
+    if (!filterMountains([m], { ...state, q: '', isHiked }).length) resetChips();
+    state.q = m.name; search.value = m.name;
+    skipAutoFit = true;                 // 아래 focus가 직접 이동하므로 자동 맞춤은 건너뛴다
+    update();
+    focus(m, { zoom: 13 });
+    search.blur();
+    if (mq.matches) mapWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); // 모바일: 지도를 보여준다
+  }
+
+  // 검색으로 결과가 좁혀지면 지도도 그 범위로 맞춘다(입력이 멈춘 뒤).
+  function scheduleAutoFit(list) {
+    clearTimeout(fitTimer);
+    if (skipAutoFit) { skipAutoFit = false; return; }
+    if (!state.q.trim()) return;
+    const pts = list.filter((m) => m.lat != null).map((m) => [m.lat, m.lon]);
+    if (!pts.length || pts.length > 12) return;
+    fitTimer = setTimeout(() => {
+      if (disposed) return;
+      if (pts.length === 1) (view.flyTo ? view.flyTo : view.setView).call(view, pts[0], 12);
+      else view.fitBounds(pts, 0.25);
+    }, 420);
+  }
+
+  const onSearchInput = () => { state.q = search.value; renderSuggest(); update(); };
+  search.addEventListener('input', onSearchInput);
+  // type=search의 네이티브 "지우기"(× 버튼 등)도 상태와 어긋나지 않게 동기화한다.
+  search.addEventListener('search', onSearchInput);
+  search.addEventListener('focus', () => { if (search.value.trim()) renderSuggest(); });
+  search.addEventListener('blur', () => setTimeout(() => { if (!disposed) closeSuggest(); }, 120));
+  search.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      if (suggestBox.hidden || !sug.length) { if (search.value.trim()) renderSuggest(); return; }
+      e.preventDefault();
+      const n = sug.length;
+      highlightSug(e.key === 'ArrowDown' ? (sugIdx + 1) % n : (sugIdx - 1 + n) % n);
+    } else if (e.key === 'Enter') {
+      if (!suggestBox.hidden && sug.length) { e.preventDefault(); gotoMountain(sug[Math.max(0, sugIdx)].m); }
+    } else if (e.key === 'Escape') {
+      // type=search는 Esc에서 브라우저가 값을 지워 버린다 → 막고 2단계(닫기 → 지우기)를 직접 처리.
+      e.preventDefault();
+      if (!suggestBox.hidden) closeSuggest();
+      else if (search.value) { search.value = ''; state.q = ''; update(); }
+    }
+  });
+
+  function focus(m, { pan = true, scroll = true, zoom = null } = {}) {
     state.activeId = m.id;
     [...listEl.querySelectorAll('.mtn-item')].forEach((n) =>
       n.classList.toggle('active', n.dataset.id === m.id));
     markers.get(m.id)?.openPopup();
-    if (pan && m.lat != null) view.panTo([m.lat, m.lon]);
+    if (pan && m.lat != null) {
+      if (zoom != null) (view.flyTo ? view.flyTo : view.setView).call(view, [m.lat, m.lon], zoom);
+      else view.panTo([m.lat, m.lon]);
+    }
     if (scroll) listEl.querySelector('.mtn-item.active')?.scrollIntoView({ block: 'nearest' });
   }
 
@@ -289,6 +409,7 @@ export async function renderExplore(root) {
     countEl.textContent = `${list.length}곳` + (state.sort === 'near' && pos ? ' · 가까운 순' : '');
     renderList(list);
     renderMarkers(list);
+    scheduleAutoFit(list);
   }
 
   paintSort();
@@ -315,6 +436,7 @@ export async function renderExplore(root) {
 
   return () => {
     disposed = true;
+    clearTimeout(fitTimer);
     if (stopWatch) stopWatch();
     offStore(); offPos();
     window.removeEventListener('kr100:theme', onTheme);
