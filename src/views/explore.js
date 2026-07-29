@@ -34,6 +34,7 @@ export async function renderExplore(root) {
   let sortAnchor = null;           // 마지막으로 정렬한 시점의 위치(이동 재정렬 판단용)
   let disposed = false;            // 라우트 이탈 뒤 늦게 resolve되는 콜백이 파괴된 지도를 건드리지 않게
   let selfRequest = false;         // 내가 요청한 측정의 emit으로 이중 렌더되지 않게
+  let mapIntent = 0;               // 지도를 옮기는 사용자 동작 일련번호(늦게 온 응답이 최신 동작을 덮어쓰지 않게)
 
   // ---- layout ----
   const search = el('input', {
@@ -185,6 +186,7 @@ export async function renderExplore(root) {
   }
   async function activateNear({ fit = true } = {}) {
     if (!geoAvailable()) { setNote('이 브라우저·연결에서는 위치 기능을 사용할 수 없습니다.', 'warn'); return; }
+    const intent = ++mapIntent;
     const cached = cachedPosition();
     if (cached) {
       applyNear(cached, fit);
@@ -198,6 +200,11 @@ export async function renderExplore(root) {
       selfRequest = true;
       const fresh = await requestPosition({ maxAgeMs: cached ? 0 : FRESH_MS });
       if (disposed) return;
+      if (intent !== mapIntent) {               // 측정 대기 중 사용자가 검색으로 다른 산에 갔다 → 지도는 두고 목록만 갱신
+        pos = fresh; sortAnchor = fresh;
+        if (state.sort === 'near') { update(); nearStatusNote(); }
+        return;
+      }
       if (state.sort === 'near' || !cached) {   // 갱신 중 사용자가 기본순으로 돌아갔으면 되살리지 않는다
         applyNear(fresh, fit && !cached);       // 캐시로 이미 맞춘 지도는 다시 움직이지 않는다
         nearStatusNote();
@@ -253,6 +260,7 @@ export async function renderExplore(root) {
   let sug = [];          // [{ m, node }]
   let sugIdx = -1;
   let fitTimer = null, skipAutoFit = false;
+  let lastFitQuery = null;         // 마지막으로 자동맞춤을 적용한 검색어
 
   function closeSuggest() {
     suggestBox.hidden = true; clear(suggestBox); sug = []; sugIdx = -1;
@@ -298,6 +306,7 @@ export async function renderExplore(root) {
 
   // 제안 선택 → 그 산으로 지도 이동 + 목록에서 강조.
   function gotoMountain(m) {
+    mapIntent++;
     closeSuggest();
     // 켜져 있는 칩 때문에 목록에서 빠지는 산이면 칩을 풀어 반드시 보이게 한다.
     if (!filterMountains([m], { ...state, q: '', isHiked }).length) resetChips();
@@ -305,17 +314,23 @@ export async function renderExplore(root) {
     skipAutoFit = true;                 // 아래 focus가 직접 이동하므로 자동 맞춤은 건너뛴다
     update();
     focus(m, { zoom: 13 });
-    search.blur();
-    if (mq.matches) mapWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); // 모바일: 지도를 보여준다
+    // 데스크톱은 포커스를 검색창에 두어 키보드 사용자가 위치를 잃지 않게 하고,
+    // 모바일은 blur로 소프트 키보드를 내린 뒤 지도를 화면에 보여준다.
+    if (mq.matches) { search.blur(); mapWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   }
 
   // 검색으로 결과가 좁혀지면 지도도 그 범위로 맞춘다(입력이 멈춘 뒤).
   function scheduleAutoFit(list) {
     clearTimeout(fitTimer);
-    if (skipAutoFit) { skipAutoFit = false; return; }
-    if (!state.q.trim()) return;
+    const q = state.q.trim();
+    if (skipAutoFit) { skipAutoFit = false; lastFitQuery = q; return; }
+    if (!q) { lastFitQuery = null; return; }
+    // 검색어가 그대로인 update(칩 토글·위치 갱신·등정 기록 등)에서는 다시 맞추지 않는다.
+    // (안 그러면 제안으로 z=13에 가 있다가 칩 하나만 눌러도 z=12로 되돌아간다)
+    if (q === lastFitQuery) return;
     const pts = list.filter((m) => m.lat != null).map((m) => [m.lat, m.lon]);
     if (!pts.length || pts.length > 12) return;
+    lastFitQuery = q;
     fitTimer = setTimeout(() => {
       if (disposed) return;
       if (pts.length === 1) (view.flyTo ? view.flyTo : view.setView).call(view, pts[0], 12);
@@ -330,6 +345,8 @@ export async function renderExplore(root) {
   search.addEventListener('focus', () => { if (search.value.trim()) renderSuggest(); });
   search.addEventListener('blur', () => setTimeout(() => { if (!disposed) closeSuggest(); }, 120));
   search.addEventListener('keydown', (e) => {
+    // 한글 IME 조합 중의 Enter는 "조합 확정"이지 제안 선택이 아니다. (조합 중 keydown은 isComposing/keyCode 229)
+    if (e.isComposing || e.keyCode === 229) return;
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       if (suggestBox.hidden || !sug.length) { if (search.value.trim()) renderSuggest(); return; }
       e.preventDefault();

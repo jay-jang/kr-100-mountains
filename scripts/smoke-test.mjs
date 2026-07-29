@@ -199,6 +199,25 @@ try {
   check('search: 목록에서 강조', (await sPage.locator('.mtn-item.active .mtn-name').textContent()).includes('설악산'));
   check('search: 마커 팝업 열림', /설악산/.test(await sPage.locator('.leaflet-popup-content').textContent().catch(() => '')));
   await sPage.screenshot({ path: join(SHOTS, 'map-search.png') });
+
+  // 칩을 눌러도(같은 검색어로 update 재발생) 자동 맞춤이 줌을 되돌리면 안 된다
+  await sPage.locator('.chip', { hasText: '강원' }).first().click();
+  await sPage.waitForTimeout(1600);
+  check('search: 칩 토글해도 선택한 산의 줌 유지', (await mapViewport(sPage))?.z === (vp?.z ?? 13), `z=${(await mapViewport(sPage))?.z}`);
+
+  // 한글 IME 조합 확정용 Enter를 제안 선택으로 오인하면 안 된다
+  await sPage.fill('.search', '한라');
+  await sPage.waitForSelector('.map-suggest:not([hidden])', { timeout: 8000 });
+  await sPage.waitForTimeout(1800);
+  await sPage.evaluate(() => {
+    const i = document.querySelector('.search');
+    i.focus();
+    i.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true, cancelable: true }));
+  });
+  await sPage.waitForTimeout(800);
+  check('search: IME 조합 중 Enter는 선택하지 않음',
+    (await sPage.inputValue('.search')) === '한라' && !(await sPage.locator('.map-suggest').isHidden()),
+    await sPage.inputValue('.search'));
   await searchCtx.close();
 
   // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)
