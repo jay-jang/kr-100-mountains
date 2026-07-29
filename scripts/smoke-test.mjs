@@ -186,11 +186,11 @@ try {
   await sPage.goto(base + '/#/map', { waitUntil: 'networkidle', timeout: 30000 });
   await sPage.waitForSelector('.mtn-item', { timeout: 10000 });
   await sPage.mouse.move(1000, 850);              // 드롭다운이 커서 아래 떠서 hover 인덱스가 잡히지 않게
-  await sPage.fill('.search', '설악');
-  await sPage.waitForSelector('.map-suggest:not([hidden])', { timeout: 8000 });
-  const sugNames = await sPage.locator('.map-suggest-item .ms-name').allTextContents();
+  await sPage.fill('.panel .search', '설악');
+  await sPage.waitForSelector('.panel .map-suggest:not([hidden])', { timeout: 8000 });
+  const sugNames = await sPage.locator('.panel .map-suggest-item .ms-name').allTextContents();
   check('search: 자동완성 제안', sugNames.length > 0 && sugNames[0].startsWith('설악산'), sugNames.join(' | '));
-  await sPage.locator('.map-suggest-item').first().click();
+  await sPage.locator('.panel .map-suggest-item').first().click();
   await sPage.waitForTimeout(2200);
   const seorak = mountains.find((m) => m.name === '설악산');
   const vp = await mapViewport(sPage);
@@ -206,19 +206,80 @@ try {
   check('search: 칩 토글해도 선택한 산의 줌 유지', (await mapViewport(sPage))?.z === (vp?.z ?? 13), `z=${(await mapViewport(sPage))?.z}`);
 
   // 한글 IME 조합 확정용 Enter를 제안 선택으로 오인하면 안 된다
-  await sPage.fill('.search', '한라');
+  await sPage.fill('.panel .search', '한라');
   await sPage.waitForSelector('.map-suggest:not([hidden])', { timeout: 8000 });
   await sPage.waitForTimeout(1800);
   await sPage.evaluate(() => {
-    const i = document.querySelector('.search');
+    const i = document.querySelector('.panel .search');
     i.focus();
     i.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true, cancelable: true }));
   });
   await sPage.waitForTimeout(800);
   check('search: IME 조합 중 Enter는 선택하지 않음',
-    (await sPage.inputValue('.search')) === '한라' && !(await sPage.locator('.map-suggest').isHidden()),
-    await sPage.inputValue('.search'));
+    (await sPage.inputValue('.panel .search')) === '한라' && !(await sPage.locator('.panel .map-suggest').isHidden()),
+    await sPage.inputValue('.panel .search'));
   await searchCtx.close();
+
+  // ---- 전체화면 공용 모듈(mapfullscreen.js) + 전체화면 산 검색 ----
+  // 필터 상태가 남지 않도록 새 페이지에서 진행한다.
+  const fsCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const sPage2 = await fsCtx.newPage();
+  sPage2.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+  await sPage2.goto(base + '/#/map', { waitUntil: 'networkidle', timeout: 30000 });
+  await sPage2.waitForSelector('.mtn-item', { timeout: 15000 });
+  check('fullscreen: 대상에 공용 .map-fs 클래스', (await sPage2.locator('.map-wrap.map-fs').count()) === 1);
+  check('fullscreen: 전체화면 전엔 검색창 숨김', !(await sPage2.locator('.map-fs-search').isVisible()));
+  await sPage2.locator('.map-fs-btn').click();               // 클릭 = 사용자 제스처(전체화면 요구조건)
+  await sPage2.waitForTimeout(900);
+  const fsOn = await sPage2.locator('.map-wrap.fs-on').count() === 1;
+  check('fullscreen: 진입 시 fs-on 클래스', fsOn);
+  if (fsOn) {
+    check('fullscreen: 검색창 노출', await sPage2.locator('.map-fs-search').isVisible());
+    await sPage2.fill('.map-fs-search .search', '한라');
+    await sPage2.waitForSelector('.map-fs-search .map-suggest:not([hidden])', { timeout: 8000 });
+    check('fullscreen: 제안 표시',
+      (await sPage2.locator('.map-fs-search .map-suggest-item .ms-name').first().textContent()).startsWith('한라산'));
+    await sPage2.locator('.map-fs-search .map-suggest-item').first().click();
+    await sPage2.waitForTimeout(2200);
+    const halla = mountains.find((m) => m.name === '한라산');
+    const hv = await mapViewport(sPage2);
+    check('fullscreen: 검색으로 지도 이동',
+      hv && halla.lat > hv.south && halla.lat < hv.north && halla.lon > hv.west && halla.lon < hv.east, `z=${hv?.z}`);
+    check('fullscreen: 선택 후에도 전체화면 유지', (await sPage2.locator('.map-wrap.fs-on').count()) === 1);
+    await sPage2.screenshot({ path: join(SHOTS, 'map-fullscreen-search.png') });
+    // Esc는 소비할 게 있을 때만 가로챈다 — 빈 상태에서 막으면 브라우저 전체화면 종료가 안 된다.
+    // (헤드리스는 Escape로 전체화면을 종료하지 않으므로 defaultPrevented로 검증)
+    const escFlags = await sPage2.evaluate(() => {
+      const i = document.querySelector('.map-fs-search .search');
+      i.value = ''; i.dispatchEvent(new Event('input', { bubbles: true }));
+      const mk = () => new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true });
+      const empty = mk(); i.dispatchEvent(empty);
+      i.value = '설악'; i.dispatchEvent(new Event('input', { bubbles: true }));
+      const busy = mk(); i.dispatchEvent(busy);
+      return { empty: empty.defaultPrevented, busy: busy.defaultPrevented };
+    });
+    check('fullscreen: 빈 Esc는 브라우저에 넘김(종료 가능)', escFlags.empty === false && escFlags.busy === true, JSON.stringify(escFlags));
+    await sPage2.locator('.map-fs-btn').click();
+    await sPage2.waitForTimeout(700);
+    check('fullscreen: 해제 시 fs-on 제거', (await sPage2.locator('.map-wrap.fs-on').count()) === 0);
+  }
+
+  // 상세 페이지 지도도 같은 모듈을 쓴다
+  await sPage2.goto(base + '/#/m/seolaksan', { waitUntil: 'networkidle', timeout: 30000 });
+  await sPage2.waitForSelector('#detail-map', { timeout: 15000 });
+  await sPage2.waitForTimeout(800);
+  check('fullscreen: 상세 지도도 .map-fs 공용', (await sPage2.locator('.detail-map-wrap.map-fs').count()) === 1);
+  check('fullscreen: 상세에도 전체화면 검색 마운트', (await sPage2.locator('.detail-map-wrap .map-fs-search').count()) === 1);
+  await sPage2.locator('.map-tools button', { hasText: '길찾기' }).click();
+  await sPage2.waitForTimeout(250);
+  await sPage2.locator('.map-fs-btn').click();
+  await sPage2.waitForTimeout(800);
+  if (await sPage2.evaluate(() => !!document.fullscreenElement)) {
+    check('fullscreen: 진입 시 길찾기 메뉴 닫힘(검색창 가림 방지)', await sPage2.locator('.dir-menu').isHidden());
+    await sPage2.locator('.map-fs-btn').click();
+    await sPage2.waitForTimeout(500);
+  }
+  await fsCtx.close();
 
   // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)
   const denyCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });

@@ -239,7 +239,20 @@ export async function renderDetail(root, id) {
 
   if (m.lat != null) {
     view = await createMapView(mapNode, { center: [m.lat, m.lon], zoom: 13 });
-    controls = mapControls(view, mapWrap);
+    // 전체화면에서는 상세 페이지에도 검색 경로가 없으므로 공용 검색을 붙인다.
+    // 다른 산을 고르면 그 산의 상세로 이동한다(라우트 정리 과정에서 전체화면도 해제된다).
+    controls = mapControls(view, mapWrap, {
+      search: {
+        mountains: data.mountains,
+        getPos: () => cachedPosition(),
+        onPick: (picked) => {
+          if (picked.id === m.id) { view.panTo([m.lat, m.lon]); return; }
+          location.hash = `#/m/${picked.id}`;
+        },
+      },
+      // 전체화면에서 길찾기 메뉴가 열린 채 남으면 검색창을 가린다(모바일에서 특히).
+      onFullscreenChange: () => { dirMenu.hidden = true; },
+    });
     mapWrap.append(controls);
     view.addDot({ lat: m.lat, lng: m.lon, color: regionColor(m.region), title: `${m.name} 정상 ${m.elevation_m}m` });
     view.addLabel({ lat: m.lat, lng: m.lon, text: `${m.name} 정상`, kind: 'summit' }); // 주요 지점 이름(정상)

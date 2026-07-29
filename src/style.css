@@ -210,8 +210,19 @@ button { font-family: inherit; cursor: pointer; }
 .map-fs-btn { width: 34px; height: 34px; flex: none; border: 1px solid var(--border); border-radius: 10px;
   background: color-mix(in srgb, var(--bg-elev) 92%, transparent); color: var(--text); font-size: 15px;
   box-shadow: var(--shadow); backdrop-filter: blur(6px); display: grid; place-items: center; }
-.map-wrap:fullscreen, .detail-map-wrap:fullscreen { width: 100%; height: 100%; border-radius: 0; border: 0; }
-.map-wrap:fullscreen #map, .detail-map-wrap:fullscreen #detail-map { height: 100%; }
+/* 전체화면 — mapfullscreen.js가 대상에 .map-fs를 붙이므로 뷰별 셀렉터가 필요 없다 */
+.map-fs:fullscreen { width: 100%; height: 100%; border-radius: 0; border: 0; }
+.map-fs:fullscreen #map, .map-fs:fullscreen #detail-map { height: 100%; }
+/* 전체화면 산 검색 (패널이 안 보이므로 지도 위에 띄운다) */
+.map-fs-search {
+  display: none; position: absolute; z-index: 480; top: 12px; left: 50%; transform: translateX(-50%);
+  width: min(440px, calc(100% - 280px));
+}
+.map-fs.fs-on .map-fs-search { display: block; }
+.map-fs-search .search {
+  background: color-mix(in srgb, var(--bg-elev) 95%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px); box-shadow: var(--shadow); border-color: var(--border-strong);
+}
 
 /* ============ generic page ============ */
 .page { flex: 1; max-width: 1080px; width: 100%; margin: 0 auto; padding: 22px 20px 60px; }
@@ -629,6 +640,8 @@ button { font-family: inherit; cursor: pointer; }
 
   /* map controls: 축소 + 상세 도구는 지도 하단으로 이동(충돌 방지) */
   .map-ctrl { left: 8px; top: 8px; gap: 6px; }
+  /* 전체화면 검색: 좁은 화면에선 지도 컨트롤 아래 전폭으로 */
+  .map-fs-search { width: calc(100% - 16px); top: 56px; }
   .map-type-seg button { padding: 10px 9px; font-size: 12px; min-height: 40px; }
   .map-fs-btn { width: 40px; height: 40px; }
   .map-tools { right: 8px; left: 8px; top: auto; bottom: 8px; flex-direction: row; flex-wrap: wrap; gap: 6px; }
