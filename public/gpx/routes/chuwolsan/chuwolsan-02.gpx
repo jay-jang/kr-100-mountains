@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>추월산 · 견양동 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:35:49.906Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>chuwolsan</k100:mountain_id>
+      <k100:mountain_name>추월산</k100:mountain_name>
+      <k100:route_id>chuwolsan-4d3b226d</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>견양동 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>5</k100:snap_trailhead_m>
+      <k100:snap_summit_m>115</k100:snap_summit_m>
+      <k100:validation_score>64</k100:validation_score>
+      <k100:validation_status>review</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>추월산 · 견양동 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="35.419513" lon="126.989458"><ele>176.0</ele></trkpt>
+      <trkpt lat="35.419412" lon="126.989653"><ele>180.1</ele></trkpt>
+      <trkpt lat="35.419292" lon="126.990612"><ele>187.4</ele></trkpt>
+      <trkpt lat="35.418926" lon="126.990297"><ele>197.2</ele></trkpt>
+      <trkpt lat="35.418532" lon="126.990066"><ele>198.4</ele></trkpt>
+      <trkpt lat="35.417903" lon="126.989936"><ele>188.3</ele></trkpt>
+      <trkpt lat="35.416010" lon="126.990219"><ele>171.3</ele></trkpt>
+      <trkpt lat="35.415298" lon="126.990470"><ele>170.2</ele></trkpt>
+      <trkpt lat="35.415020" lon="126.990616"><ele>169.2</ele></trkpt>
+      <trkpt lat="35.414492" lon="126.991007"><ele>159.3</ele></trkpt>
+      <trkpt lat="35.414358" lon="126.990876"><ele>153.9</ele></trkpt>
+      <trkpt lat="35.414370" lon="126.990470"><ele>150.5</ele></trkpt>
+      <trkpt lat="35.414319" lon="126.990237"><ele>150.0</ele></trkpt>
+      <trkpt lat="35.414201" lon="126.990028"><ele>150.1</ele></trkpt>
+      <trkpt lat="35.414354" lon="126.989449"><ele>150.7</ele></trkpt>
+      <trkpt lat="35.414369" lon="126.989159"><ele>152.5</ele></trkpt>
+      <trkpt lat="35.414542" lon="126.989197"><ele>155.5</ele></trkpt>
+      <trkpt lat="35.414665" lon="126.989288"><ele>157.8</ele></trkpt>
+      <trkpt lat="35.414861" lon="126.989143"><ele>165.1</ele></trkpt>
+      <trkpt lat="35.415084" lon="126.989154"><ele>171.2</ele></trkpt>
+      <trkpt lat="35.415215" lon="126.989084"><ele>175.4</ele></trkpt>
+      <trkpt lat="35.415368" lon="126.988907"><ele>180.6</ele></trkpt>
+      <trkpt lat="35.415447" lon="126.988580"><ele>182.9</ele></trkpt>
+      <trkpt lat="35.415543" lon="126.987845"><ele>190.6</ele></trkpt>
+      <trkpt lat="35.415556" lon="126.987271"><ele>194.6</ele></trkpt>
+      <trkpt lat="35.415487" lon="126.986820"><ele>199.7</ele></trkpt>
+      <trkpt lat="35.415360" lon="126.986638"><ele>201.6</ele></trkpt>
+      <trkpt lat="35.415452" lon="126.985366"><ele>213.2</ele></trkpt>
+      <trkpt lat="35.415596" lon="126.984894"><ele>224.4</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

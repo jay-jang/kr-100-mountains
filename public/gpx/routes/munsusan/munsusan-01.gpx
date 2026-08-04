@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>문수산 · 축서사 원점회귀 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:39:31.800Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>munsusan</k100:mountain_id>
+      <k100:mountain_name>문수산</k100:mountain_name>
+      <k100:route_id>munsusan-f2d147eb</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>축서사 원점회귀 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>33</k100:snap_trailhead_m>
+      <k100:snap_summit_m>2</k100:snap_summit_m>
+      <k100:validation_score>84</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>문수산 · 축서사 원점회귀 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.981296" lon="128.800283"><ele>704.2</ele></trkpt>
+      <trkpt lat="36.981419" lon="128.800315"><ele>706.9</ele></trkpt>
+      <trkpt lat="36.981997" lon="128.800031"><ele>708.5</ele></trkpt>
+      <trkpt lat="36.982064" lon="128.799854"><ele>709.3</ele></trkpt>
+      <trkpt lat="36.982057" lon="128.799748"><ele>708.6</ele></trkpt>
+      <trkpt lat="36.981927" lon="128.799394"><ele>701.9</ele></trkpt>
+      <trkpt lat="36.981995" lon="128.799355"><ele>704.5</ele></trkpt>
+      <trkpt lat="36.982192" lon="128.799661"><ele>713.8</ele></trkpt>
+      <trkpt lat="36.982453" lon="128.799913"><ele>730.1</ele></trkpt>
+      <trkpt lat="36.983019" lon="128.799763"><ele>755.5</ele></trkpt>
+      <trkpt lat="36.983199" lon="128.800214"><ele>765.6</ele></trkpt>
+      <trkpt lat="36.983585" lon="128.800890"><ele>794.2</ele></trkpt>
+      <trkpt lat="36.984133" lon="128.800949"><ele>815.9</ele></trkpt>
+      <trkpt lat="36.984288" lon="128.801072"><ele>830.6</ele></trkpt>
+      <trkpt lat="36.984446" lon="128.801303"><ele>848.9</ele></trkpt>
+      <trkpt lat="36.984425" lon="128.801501"><ele>851.8</ele></trkpt>
+      <trkpt lat="36.984502" lon="128.801683"><ele>859.6</ele></trkpt>
+      <trkpt lat="36.984562" lon="128.801726"><ele>863.7</ele></trkpt>
+      <trkpt lat="36.984656" lon="128.801683"><ele>868.4</ele></trkpt>
+      <trkpt lat="36.984853" lon="128.801807"><ele>882.2</ele></trkpt>
+      <trkpt lat="36.985008" lon="128.801807"><ele>892.6</ele></trkpt>
+      <trkpt lat="36.985427" lon="128.802515"><ele>932.6</ele></trkpt>
+      <trkpt lat="36.985612" lon="128.802671"><ele>948.6</ele></trkpt>
+      <trkpt lat="36.985864" lon="128.802772"><ele>964.3</ele></trkpt>
+      <trkpt lat="36.986032" lon="128.803126"><ele>981.3</ele></trkpt>
+      <trkpt lat="36.986070" lon="128.803593"><ele>999.3</ele></trkpt>
+      <trkpt lat="36.986023" lon="128.803765"><ele>1002.5</ele></trkpt>
+      <trkpt lat="36.985903" lon="128.803920"><ele>1001.7</ele></trkpt>
+      <trkpt lat="36.985946" lon="128.804113"><ele>1010.6</ele></trkpt>
+      <trkpt lat="36.985770" lon="128.804366"><ele>1014.0</ele></trkpt>
+      <trkpt lat="36.985594" lon="128.804811"><ele>1024.4</ele></trkpt>
+      <trkpt lat="36.985534" lon="128.805262"><ele>1040.0</ele></trkpt>
+      <trkpt lat="36.985727" lon="128.805599"><ele>1052.0</ele></trkpt>
+      <trkpt lat="36.985684" lon="128.805701"><ele>1054.8</ele></trkpt>
+      <trkpt lat="36.985466" lon="128.805911"><ele>1061.2</ele></trkpt>
+      <trkpt lat="36.985059" lon="128.806141"><ele>1064.1</ele></trkpt>
+      <trkpt lat="36.984911" lon="128.806415"><ele>1071.5</ele></trkpt>
+      <trkpt lat="36.984643" lon="128.806662"><ele>1083.8</ele></trkpt>
+      <trkpt lat="36.984472" lon="128.807045"><ele>1093.6</ele></trkpt>
+      <trkpt lat="36.984138" lon="128.807211"><ele>1106.5</ele></trkpt>
+      <trkpt lat="36.984018" lon="128.807332"><ele>1107.3</ele></trkpt>
+      <trkpt lat="36.983685" lon="128.807477"><ele>1110.9</ele></trkpt>
+      <trkpt lat="36.982788" lon="128.808259"><ele>1136.0</ele></trkpt>
+      <trkpt lat="36.982536" lon="128.808621"><ele>1147.3</ele></trkpt>
+      <trkpt lat="36.982201" lon="128.808834"><ele>1148.9</ele></trkpt>
+      <trkpt lat="36.982058" lon="128.809186"><ele>1147.7</ele></trkpt>
+      <trkpt lat="36.982038" lon="128.809435"><ele>1151.5</ele></trkpt>
+      <trkpt lat="36.981958" lon="128.809661"><ele>1157.9</ele></trkpt>
+      <trkpt lat="36.981849" lon="128.809801"><ele>1160.1</ele></trkpt>
+      <trkpt lat="36.981720" lon="128.810166"><ele>1168.3</ele></trkpt>
+      <trkpt lat="36.981494" lon="128.810438"><ele>1177.6</ele></trkpt>
+      <trkpt lat="36.981456" lon="128.810728"><ele>1185.3</ele></trkpt>
+      <trkpt lat="36.981299" lon="128.810970"><ele>1190.2</ele></trkpt>
+      <trkpt lat="36.981277" lon="128.811079"><ele>1191.5</ele></trkpt>
+      <trkpt lat="36.981155" lon="128.811125"><ele>1192.0</ele></trkpt>
+      <trkpt lat="36.980979" lon="128.811103"><ele>1189.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

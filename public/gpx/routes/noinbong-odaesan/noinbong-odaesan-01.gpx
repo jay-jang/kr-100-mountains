@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>노인봉 · 진고개-노인봉 왕복 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:22:19.698Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>noinbong-odaesan</k100:mountain_id>
+      <k100:mountain_name>노인봉(오대산)</k100:mountain_name>
+      <k100:route_id>noinbong-odaesan-9eb837da</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>진고개-노인봉 왕복 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>11</k100:snap_trailhead_m>
+      <k100:snap_summit_m>653</k100:snap_summit_m>
+      <k100:validation_score>65</k100:validation_score>
+      <k100:validation_status>review</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>노인봉 · 진고개-노인봉 왕복 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.766484" lon="128.610582"><ele>969.0</ele></trkpt>
+      <trkpt lat="37.765987" lon="128.611093"><ele>963.7</ele></trkpt>
+      <trkpt lat="37.765584" lon="128.611132"><ele>965.4</ele></trkpt>
+      <trkpt lat="37.765751" lon="128.610796"><ele>969.0</ele></trkpt>
+      <trkpt lat="37.765973" lon="128.610591"><ele>971.6</ele></trkpt>
+      <trkpt lat="37.766025" lon="128.610356"><ele>976.7</ele></trkpt>
+      <trkpt lat="37.766250" lon="128.609960"><ele>979.7</ele></trkpt>
+      <trkpt lat="37.766283" lon="128.609775"><ele>980.5</ele></trkpt>
+      <trkpt lat="37.766106" lon="128.609295"><ele>987.1</ele></trkpt>
+      <trkpt lat="37.766128" lon="128.609042"><ele>990.7</ele></trkpt>
+      <trkpt lat="37.766225" lon="128.608799"><ele>998.0</ele></trkpt>
+      <trkpt lat="37.766426" lon="128.608583"><ele>1009.6</ele></trkpt>
+      <trkpt lat="37.766527" lon="128.608352"><ele>1018.9</ele></trkpt>
+      <trkpt lat="37.766739" lon="128.608123"><ele>1032.5</ele></trkpt>
+      <trkpt lat="37.766888" lon="128.608006"><ele>1040.4</ele></trkpt>
+      <trkpt lat="37.767277" lon="128.607865"><ele>1056.5</ele></trkpt>
+      <trkpt lat="37.767450" lon="128.607516"><ele>1065.8</ele></trkpt>
+      <trkpt lat="37.767616" lon="128.607403"><ele>1069.4</ele></trkpt>
+      <trkpt lat="37.767868" lon="128.606909"><ele>1081.6</ele></trkpt>
+      <trkpt lat="37.767907" lon="128.605935"><ele>1098.1</ele></trkpt>
+      <trkpt lat="37.768260" lon="128.605163"><ele>1128.4</ele></trkpt>
+      <trkpt lat="37.768326" lon="128.604695"><ele>1137.0</ele></trkpt>
+      <trkpt lat="37.768541" lon="128.604259"><ele>1150.1</ele></trkpt>
+      <trkpt lat="37.768602" lon="128.603692"><ele>1165.1</ele></trkpt>
+      <trkpt lat="37.768703" lon="128.603461"><ele>1170.5</ele></trkpt>
+      <trkpt lat="37.768823" lon="128.602859"><ele>1182.5</ele></trkpt>
+      <trkpt lat="37.769180" lon="128.602428"><ele>1202.3</ele></trkpt>
+      <trkpt lat="37.769479" lon="128.601906"><ele>1216.8</ele></trkpt>
+      <trkpt lat="37.769662" lon="128.601869"><ele>1223.8</ele></trkpt>
+      <trkpt lat="37.769762" lon="128.601641"><ele>1233.0</ele></trkpt>
+      <trkpt lat="37.770049" lon="128.601440"><ele>1249.6</ele></trkpt>
+      <trkpt lat="37.770138" lon="128.601311"><ele>1254.3</ele></trkpt>
+      <trkpt lat="37.770327" lon="128.601301"><ele>1260.6</ele></trkpt>
+      <trkpt lat="37.770795" lon="128.601119"><ele>1280.0</ele></trkpt>
+      <trkpt lat="37.771014" lon="128.600846"><ele>1288.7</ele></trkpt>
+      <trkpt lat="37.771253" lon="128.600783"><ele>1296.7</ele></trkpt>
+      <trkpt lat="37.771501" lon="128.600587"><ele>1313.8</ele></trkpt>
+      <trkpt lat="37.772023" lon="128.600340"><ele>1338.2</ele></trkpt>
+      <trkpt lat="37.772265" lon="128.600311"><ele>1342.5</ele></trkpt>
+      <trkpt lat="37.772598" lon="128.600088"><ele>1358.6</ele></trkpt>
+      <trkpt lat="37.773488" lon="128.599017"><ele>1425.9</ele></trkpt>
+      <trkpt lat="37.774001" lon="128.599118"><ele>1436.4</ele></trkpt>
+      <trkpt lat="37.774455" lon="128.598820"><ele>1433.7</ele></trkpt>
+      <trkpt lat="37.774623" lon="128.598759"><ele>1427.4</ele></trkpt>
+      <trkpt lat="37.774800" lon="128.598771"><ele>1422.1</ele></trkpt>
+      <trkpt lat="37.774991" lon="128.598871"><ele>1417.2</ele></trkpt>
+      <trkpt lat="37.775272" lon="128.598918"><ele>1409.8</ele></trkpt>
+      <trkpt lat="37.775713" lon="128.599375"><ele>1401.6</ele></trkpt>
+      <trkpt lat="37.776876" lon="128.599568"><ele>1400.1</ele></trkpt>
+      <trkpt lat="37.777073" lon="128.599551"><ele>1404.4</ele></trkpt>
+      <trkpt lat="37.777432" lon="128.599737"><ele>1413.1</ele></trkpt>
+      <trkpt lat="37.777682" lon="128.599747"><ele>1416.0</ele></trkpt>
+      <trkpt lat="37.778008" lon="128.599884"><ele>1421.6</ele></trkpt>
+      <trkpt lat="37.778328" lon="128.599732"><ele>1425.1</ele></trkpt>
+      <trkpt lat="37.778408" lon="128.599745"><ele>1424.5</ele></trkpt>
+      <trkpt lat="37.778905" lon="128.600075"><ele>1413.6</ele></trkpt>
+      <trkpt lat="37.779295" lon="128.600652"><ele>1411.9</ele></trkpt>
+      <trkpt lat="37.779346" lon="128.600933"><ele>1412.0</ele></trkpt>
+      <trkpt lat="37.779687" lon="128.601654"><ele>1414.7</ele></trkpt>
+      <trkpt lat="37.779916" lon="128.601861"><ele>1411.8</ele></trkpt>
+      <trkpt lat="37.780143" lon="128.601979"><ele>1406.7</ele></trkpt>
+      <trkpt lat="37.780270" lon="128.601990"><ele>1403.4</ele></trkpt>
+      <trkpt lat="37.780346" lon="128.601896"><ele>1403.4</ele></trkpt>
+      <trkpt lat="37.780476" lon="128.601872"><ele>1400.7</ele></trkpt>
+      <trkpt lat="37.780711" lon="128.601893"><ele>1395.1</ele></trkpt>
+      <trkpt lat="37.781031" lon="128.601818"><ele>1386.6</ele></trkpt>
+      <trkpt lat="37.781430" lon="128.601662"><ele>1383.2</ele></trkpt>
+      <trkpt lat="37.781887" lon="128.601786"><ele>1388.5</ele></trkpt>
+      <trkpt lat="37.782388" lon="128.601813"><ele>1392.4</ele></trkpt>
+      <trkpt lat="37.782790" lon="128.601690"><ele>1398.0</ele></trkpt>
+      <trkpt lat="37.782990" lon="128.601521"><ele>1398.5</ele></trkpt>
+      <trkpt lat="37.783470" lon="128.601372"><ele>1397.9</ele></trkpt>
+      <trkpt lat="37.784312" lon="128.601478"><ele>1367.4</ele></trkpt>
+      <trkpt lat="37.784596" lon="128.601432"><ele>1354.3</ele></trkpt>
+      <trkpt lat="37.784760" lon="128.601499"><ele>1350.3</ele></trkpt>
+      <trkpt lat="37.784893" lon="128.601467"><ele>1347.0</ele></trkpt>
+      <trkpt lat="37.785049" lon="128.601573"><ele>1343.9</ele></trkpt>
+      <trkpt lat="37.785258" lon="128.601548"><ele>1337.6</ele></trkpt>
+      <trkpt lat="37.785419" lon="128.601598"><ele>1331.5</ele></trkpt>
+      <trkpt lat="37.785570" lon="128.601505"><ele>1324.6</ele></trkpt>
+      <trkpt lat="37.785719" lon="128.601495"><ele>1317.3</ele></trkpt>
+      <trkpt lat="37.786100" lon="128.601658"><ele>1306.2</ele></trkpt>
+      <trkpt lat="37.787037" lon="128.601530"><ele>1306.6</ele></trkpt>
+      <trkpt lat="37.787634" lon="128.601252"><ele>1310.5</ele></trkpt>
+      <trkpt lat="37.787836" lon="128.601250"><ele>1309.9</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

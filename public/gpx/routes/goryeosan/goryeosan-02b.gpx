@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>고려산 · 고인돌광장 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:19:31.254Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>goryeosan</k100:mountain_id>
+      <k100:mountain_name>고려산</k100:mountain_name>
+      <k100:route_id>goryeosan-c657c893</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>고인돌광장 코스</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>13</k100:snap_trailhead_m>
+      <k100:snap_summit_m>70</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>고려산 · 고인돌광장 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.772975" lon="126.436694"><ele>22.2</ele></trkpt>
+      <trkpt lat="37.773219" lon="126.436997"><ele>23.6</ele></trkpt>
+      <trkpt lat="37.773255" lon="126.436680"><ele>22.1</ele></trkpt>
+      <trkpt lat="37.773449" lon="126.436531"><ele>21.5</ele></trkpt>
+      <trkpt lat="37.773447" lon="126.436184"><ele>20.0</ele></trkpt>
+      <trkpt lat="37.774531" lon="126.435936"><ele>14.1</ele></trkpt>
+      <trkpt lat="37.774663" lon="126.435951"><ele>14.3</ele></trkpt>
+      <trkpt lat="37.774725" lon="126.435836"><ele>14.0</ele></trkpt>
+      <trkpt lat="37.774719" lon="126.435729"><ele>13.6</ele></trkpt>
+      <trkpt lat="37.774400" lon="126.435153"><ele>11.0</ele></trkpt>
+      <trkpt lat="37.774403" lon="126.435025"><ele>10.7</ele></trkpt>
+      <trkpt lat="37.774205" lon="126.434673"><ele>13.1</ele></trkpt>
+      <trkpt lat="37.774838" lon="126.434132"><ele>8.5</ele></trkpt>
+      <trkpt lat="37.774094" lon="126.432574"><ele>12.5</ele></trkpt>
+      <trkpt lat="37.774014" lon="126.432303"><ele>12.7</ele></trkpt>
+      <trkpt lat="37.774173" lon="126.432086"><ele>12.5</ele></trkpt>
+      <trkpt lat="37.773729" lon="126.431423"><ele>11.8</ele></trkpt>
+      <trkpt lat="37.773232" lon="126.431192"><ele>11.4</ele></trkpt>
+      <trkpt lat="37.772979" lon="126.430859"><ele>12.0</ele></trkpt>
+      <trkpt lat="37.772988" lon="126.430719"><ele>12.2</ele></trkpt>
+      <trkpt lat="37.773148" lon="126.430293"><ele>12.6</ele></trkpt>
+      <trkpt lat="37.773043" lon="126.429911"><ele>16.9</ele></trkpt>
+      <trkpt lat="37.773091" lon="126.428776"><ele>22.1</ele></trkpt>
+      <trkpt lat="37.773229" lon="126.428242"><ele>20.4</ele></trkpt>
+      <trkpt lat="37.773412" lon="126.427771"><ele>21.3</ele></trkpt>
+      <trkpt lat="37.773511" lon="126.427021"><ele>19.4</ele></trkpt>
+      <trkpt lat="37.773429" lon="126.426772"><ele>20.4</ele></trkpt>
+      <trkpt lat="37.773286" lon="126.426605"><ele>21.4</ele></trkpt>
+      <trkpt lat="37.773225" lon="126.426439"><ele>22.6</ele></trkpt>
+      <trkpt lat="37.773052" lon="126.425257"><ele>26.0</ele></trkpt>
+      <trkpt lat="37.772560" lon="126.423650"><ele>23.1</ele></trkpt>
+      <trkpt lat="37.772556" lon="126.422827"><ele>22.2</ele></trkpt>
+      <trkpt lat="37.772634" lon="126.422560"><ele>22.5</ele></trkpt>
+      <trkpt lat="37.772788" lon="126.422305"><ele>23.0</ele></trkpt>
+      <trkpt lat="37.772782" lon="126.422236"><ele>23.0</ele></trkpt>
+      <trkpt lat="37.772580" lon="126.421886"><ele>20.0</ele></trkpt>
+      <trkpt lat="37.772550" lon="126.421756"><ele>19.4</ele></trkpt>
+      <trkpt lat="37.772562" lon="126.420935"><ele>17.4</ele></trkpt>
+      <trkpt lat="37.772150" lon="126.420826"><ele>17.2</ele></trkpt>
+      <trkpt lat="37.771976" lon="126.416980"><ele>15.1</ele></trkpt>
+      <trkpt lat="37.768648" lon="126.417998"><ele>11.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

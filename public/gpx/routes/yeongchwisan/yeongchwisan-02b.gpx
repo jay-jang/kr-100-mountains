@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>영취산 · 흥국사 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:37:57.997Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>yeongchwisan</k100:mountain_id>
+      <k100:mountain_name>영취산</k100:mountain_name>
+      <k100:route_id>yeongchwisan-c63485a0</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>흥국사 코스</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>30</k100:snap_trailhead_m>
+      <k100:snap_summit_m>25</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>영취산 · 흥국사 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="34.822438" lon="127.701247"><ele>72.8</ele></trkpt>
+      <trkpt lat="34.822614" lon="127.702120"><ele>79.4</ele></trkpt>
+      <trkpt lat="34.822597" lon="127.702501"><ele>79.4</ele></trkpt>
+      <trkpt lat="34.822690" lon="127.702857"><ele>81.4</ele></trkpt>
+      <trkpt lat="34.822823" lon="127.702978"><ele>84.2</ele></trkpt>
+      <trkpt lat="34.823017" lon="127.703350"><ele>88.6</ele></trkpt>
+      <trkpt lat="34.823118" lon="127.703406"><ele>90.1</ele></trkpt>
+      <trkpt lat="34.823203" lon="127.703617"><ele>90.1</ele></trkpt>
+      <trkpt lat="34.823341" lon="127.703807"><ele>91.4</ele></trkpt>
+      <trkpt lat="34.823485" lon="127.703775"><ele>94.3</ele></trkpt>
+      <trkpt lat="34.823618" lon="127.703870"><ele>95.4</ele></trkpt>
+      <trkpt lat="34.823912" lon="127.703943"><ele>100.7</ele></trkpt>
+      <trkpt lat="34.824145" lon="127.704147"><ele>102.0</ele></trkpt>
+      <trkpt lat="34.824278" lon="127.704470"><ele>102.6</ele></trkpt>
+      <trkpt lat="34.824355" lon="127.704550"><ele>104.8</ele></trkpt>
+      <trkpt lat="34.824658" lon="127.704585"><ele>114.0</ele></trkpt>
+      <trkpt lat="34.824920" lon="127.704740"><ele>120.1</ele></trkpt>
+      <trkpt lat="34.825067" lon="127.704752"><ele>123.6</ele></trkpt>
+      <trkpt lat="34.825322" lon="127.704935"><ele>130.3</ele></trkpt>
+      <trkpt lat="34.825363" lon="127.704913"><ele>133.0</ele></trkpt>
+      <trkpt lat="34.825998" lon="127.705399"><ele>159.1</ele></trkpt>
+      <trkpt lat="34.826105" lon="127.705580"><ele>160.9</ele></trkpt>
+      <trkpt lat="34.826313" lon="127.705787"><ele>168.3</ele></trkpt>
+      <trkpt lat="34.826566" lon="127.706336"><ele>175.8</ele></trkpt>
+      <trkpt lat="34.826748" lon="127.706495"><ele>183.8</ele></trkpt>
+      <trkpt lat="34.826833" lon="127.706762"><ele>192.3</ele></trkpt>
+      <trkpt lat="34.826951" lon="127.706773"><ele>194.1</ele></trkpt>
+      <trkpt lat="34.827047" lon="127.706872"><ele>198.3</ele></trkpt>
+      <trkpt lat="34.827155" lon="127.707080"><ele>203.9</ele></trkpt>
+      <trkpt lat="34.827253" lon="127.707452"><ele>213.5</ele></trkpt>
+      <trkpt lat="34.827587" lon="127.707752"><ele>226.0</ele></trkpt>
+      <trkpt lat="34.827670" lon="127.707982"><ele>230.9</ele></trkpt>
+      <trkpt lat="34.828507" lon="127.708540"><ele>262.4</ele></trkpt>
+      <trkpt lat="34.828587" lon="127.708930"><ele>267.0</ele></trkpt>
+      <trkpt lat="34.828673" lon="127.709049"><ele>271.8</ele></trkpt>
+      <trkpt lat="34.828750" lon="127.709055"><ele>275.0</ele></trkpt>
+      <trkpt lat="34.828986" lon="127.709380"><ele>286.3</ele></trkpt>
+      <trkpt lat="34.829207" lon="127.709358"><ele>293.9</ele></trkpt>
+      <trkpt lat="34.829584" lon="127.709799"><ele>319.7</ele></trkpt>
+      <trkpt lat="34.829667" lon="127.709764"><ele>323.4</ele></trkpt>
+      <trkpt lat="34.829659" lon="127.710403"><ele>328.0</ele></trkpt>
+      <trkpt lat="34.829594" lon="127.710541"><ele>328.5</ele></trkpt>
+      <trkpt lat="34.829445" lon="127.710587"><ele>326.2</ele></trkpt>
+      <trkpt lat="34.829033" lon="127.710526"><ele>320.3</ele></trkpt>
+      <trkpt lat="34.828689" lon="127.710594"><ele>323.4</ele></trkpt>
+      <trkpt lat="34.828197" lon="127.710365"><ele>324.4</ele></trkpt>
+      <trkpt lat="34.827861" lon="127.710121"><ele>319.3</ele></trkpt>
+      <trkpt lat="34.827461" lon="127.709946"><ele>308.1</ele></trkpt>
+      <trkpt lat="34.827366" lon="127.709976"><ele>307.0</ele></trkpt>
+      <trkpt lat="34.827081" lon="127.710292"><ele>306.2</ele></trkpt>
+      <trkpt lat="34.827006" lon="127.710456"><ele>305.5</ele></trkpt>
+      <trkpt lat="34.826946" lon="127.710839"><ele>309.2</ele></trkpt>
+      <trkpt lat="34.826542" lon="127.711349"><ele>287.8</ele></trkpt>
+      <trkpt lat="34.826485" lon="127.711509"><ele>284.9</ele></trkpt>
+      <trkpt lat="34.826609" lon="127.711783"><ele>297.5</ele></trkpt>
+      <trkpt lat="34.826593" lon="127.712361"><ele>293.2</ele></trkpt>
+      <trkpt lat="34.826662" lon="127.712753"><ele>289.4</ele></trkpt>
+      <trkpt lat="34.826652" lon="127.713039"><ele>288.3</ele></trkpt>
+      <trkpt lat="34.826544" lon="127.713632"><ele>290.8</ele></trkpt>
+      <trkpt lat="34.826546" lon="127.714053"><ele>290.9</ele></trkpt>
+      <trkpt lat="34.826093" lon="127.715088"><ele>283.3</ele></trkpt>
+      <trkpt lat="34.825371" lon="127.716462"><ele>299.7</ele></trkpt>
+      <trkpt lat="34.825248" lon="127.717016"><ele>302.9</ele></trkpt>
+      <trkpt lat="34.825250" lon="127.717072"><ele>303.3</ele></trkpt>
+      <trkpt lat="34.825381" lon="127.717217"><ele>304.7</ele></trkpt>
+      <trkpt lat="34.826057" lon="127.717729"><ele>294.1</ele></trkpt>
+      <trkpt lat="34.826087" lon="127.717811"><ele>291.9</ele></trkpt>
+      <trkpt lat="34.825621" lon="127.717686"><ele>289.3</ele></trkpt>
+      <trkpt lat="34.825445" lon="127.717753"><ele>287.2</ele></trkpt>
+      <trkpt lat="34.825775" lon="127.718077"><ele>275.2</ele></trkpt>
+      <trkpt lat="34.825880" lon="127.718275"><ele>268.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

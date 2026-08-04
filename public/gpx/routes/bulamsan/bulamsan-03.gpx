@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>불암산 · 중계동 능선(암릉) 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:18:37.242Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>bulamsan</k100:mountain_id>
+      <k100:mountain_name>불암산</k100:mountain_name>
+      <k100:route_id>bulamsan-ab1c6bef</k100:route_id>
+      <k100:route_index>3</k100:route_index>
+      <k100:route_name>중계동 능선(암릉) 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>26</k100:snap_trailhead_m>
+      <k100:snap_summit_m>115</k100:snap_summit_m>
+      <k100:validation_score>82</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>불암산 · 중계동 능선(암릉) 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.648050" lon="127.079230"><ele>44.1</ele></trkpt>
+      <trkpt lat="37.648010" lon="127.080670"><ele>44.3</ele></trkpt>
+      <trkpt lat="37.648248" lon="127.080711"><ele>42.9</ele></trkpt>
+      <trkpt lat="37.647280" lon="127.081775"><ele>43.1</ele></trkpt>
+      <trkpt lat="37.646867" lon="127.081986"><ele>43.7</ele></trkpt>
+      <trkpt lat="37.646450" lon="127.082076"><ele>42.5</ele></trkpt>
+      <trkpt lat="37.646427" lon="127.081916"><ele>41.2</ele></trkpt>
+      <trkpt lat="37.646120" lon="127.082019"><ele>45.7</ele></trkpt>
+      <trkpt lat="37.645855" lon="127.081979"><ele>50.7</ele></trkpt>
+      <trkpt lat="37.645544" lon="127.082070"><ele>54.0</ele></trkpt>
+      <trkpt lat="37.646181" lon="127.083795"><ele>51.9</ele></trkpt>
+      <trkpt lat="37.646277" lon="127.084175"><ele>54.4</ele></trkpt>
+      <trkpt lat="37.645789" lon="127.084683"><ele>59.7</ele></trkpt>
+      <trkpt lat="37.645445" lon="127.085279"><ele>69.2</ele></trkpt>
+      <trkpt lat="37.645190" lon="127.085815"><ele>80.0</ele></trkpt>
+      <trkpt lat="37.645139" lon="127.086019"><ele>82.8</ele></trkpt>
+      <trkpt lat="37.645139" lon="127.086330"><ele>83.6</ele></trkpt>
+      <trkpt lat="37.645462" lon="127.088304"><ele>94.5</ele></trkpt>
+      <trkpt lat="37.645709" lon="127.088914"><ele>102.1</ele></trkpt>
+      <trkpt lat="37.645555" lon="127.089785"><ele>114.9</ele></trkpt>
+      <trkpt lat="37.645301" lon="127.090155"><ele>118.3</ele></trkpt>
+      <trkpt lat="37.645080" lon="127.090756"><ele>119.0</ele></trkpt>
+      <trkpt lat="37.644855" lon="127.090777"><ele>115.4</ele></trkpt>
+      <trkpt lat="37.644246" lon="127.091155"><ele>120.7</ele></trkpt>
+      <trkpt lat="37.643746" lon="127.091571"><ele>135.2</ele></trkpt>
+      <trkpt lat="37.643503" lon="127.091845"><ele>142.1</ele></trkpt>
+      <trkpt lat="37.643279" lon="127.091957"><ele>151.8</ele></trkpt>
+      <trkpt lat="37.643042" lon="127.091951"><ele>163.2</ele></trkpt>
+      <trkpt lat="37.642998" lon="127.091705"><ele>167.3</ele></trkpt>
+      <trkpt lat="37.642561" lon="127.091315"><ele>171.1</ele></trkpt>
+      <trkpt lat="37.642352" lon="127.091323"><ele>171.9</ele></trkpt>
+      <trkpt lat="37.642147" lon="127.091560"><ele>169.0</ele></trkpt>
+      <trkpt lat="37.642291" lon="127.091974"><ele>169.1</ele></trkpt>
+      <trkpt lat="37.642317" lon="127.092242"><ele>170.1</ele></trkpt>
+      <trkpt lat="37.642439" lon="127.092315"><ele>171.9</ele></trkpt>
+      <trkpt lat="37.642404" lon="127.092549"><ele>173.8</ele></trkpt>
+      <trkpt lat="37.642480" lon="127.092588"><ele>176.2</ele></trkpt>
+      <trkpt lat="37.642481" lon="127.092692"><ele>179.1</ele></trkpt>
+      <trkpt lat="37.642319" lon="127.092801"><ele>178.2</ele></trkpt>
+      <trkpt lat="37.642308" lon="127.093007"><ele>184.6</ele></trkpt>
+      <trkpt lat="37.642476" lon="127.093213"><ele>194.4</ele></trkpt>
+      <trkpt lat="37.642451" lon="127.093692"><ele>200.2</ele></trkpt>
+      <trkpt lat="37.642568" lon="127.093888"><ele>202.7</ele></trkpt>
+      <trkpt lat="37.642776" lon="127.094039"><ele>204.5</ele></trkpt>
+      <trkpt lat="37.642011" lon="127.094618"><ele>199.0</ele></trkpt>
+      <trkpt lat="37.642053" lon="127.094983"><ele>190.9</ele></trkpt>
+      <trkpt lat="37.642206" lon="127.095270"><ele>179.3</ele></trkpt>
+      <trkpt lat="37.642187" lon="127.095511"><ele>177.1</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

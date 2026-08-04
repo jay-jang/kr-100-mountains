@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>남한산 · 산성로터리-북문-서문-수어장대 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:18:29.534Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>namhansan</k100:mountain_id>
+      <k100:mountain_name>남한산</k100:mountain_name>
+      <k100:route_id>namhansan-02b77443</k100:route_id>
+      <k100:route_index>3</k100:route_index>
+      <k100:route_name>산성로터리-북문-서문-수어장대</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>10</k100:snap_trailhead_m>
+      <k100:snap_summit_m>14</k100:snap_summit_m>
+      <k100:validation_score>84</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>남한산 · 산성로터리-북문-서문-수어장대 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.478140" lon="127.182863"><ele>341.5</ele></trkpt>
+      <trkpt lat="37.478204" lon="127.182751"><ele>343.3</ele></trkpt>
+      <trkpt lat="37.478550" lon="127.182980"><ele>349.5</ele></trkpt>
+      <trkpt lat="37.478589" lon="127.183132"><ele>349.6</ele></trkpt>
+      <trkpt lat="37.478514" lon="127.183521"><ele>343.7</ele></trkpt>
+      <trkpt lat="37.478375" lon="127.183534"><ele>341.2</ele></trkpt>
+      <trkpt lat="37.478137" lon="127.183807"><ele>336.1</ele></trkpt>
+      <trkpt lat="37.478069" lon="127.183817"><ele>335.2</ele></trkpt>
+      <trkpt lat="37.477863" lon="127.184091"><ele>333.4</ele></trkpt>
+      <trkpt lat="37.477639" lon="127.184177"><ele>332.5</ele></trkpt>
+      <trkpt lat="37.477554" lon="127.184161"><ele>332.2</ele></trkpt>
+      <trkpt lat="37.477456" lon="127.184694"><ele>330.5</ele></trkpt>
+      <trkpt lat="37.477551" lon="127.184732"><ele>330.1</ele></trkpt>
+      <trkpt lat="37.477476" lon="127.184992"><ele>328.6</ele></trkpt>
+      <trkpt lat="37.477453" lon="127.185334"><ele>326.2</ele></trkpt>
+      <trkpt lat="37.477584" lon="127.185537"><ele>325.0</ele></trkpt>
+      <trkpt lat="37.477806" lon="127.185634"><ele>327.8</ele></trkpt>
+      <trkpt lat="37.477183" lon="127.186061"><ele>327.1</ele></trkpt>
+      <trkpt lat="37.476985" lon="127.185937"><ele>332.5</ele></trkpt>
+      <trkpt lat="37.476923" lon="127.185776"><ele>333.9</ele></trkpt>
+      <trkpt lat="37.476983" lon="127.185655"><ele>332.1</ele></trkpt>
+      <trkpt lat="37.476783" lon="127.185440"><ele>340.4</ele></trkpt>
+      <trkpt lat="37.476792" lon="127.185292"><ele>341.6</ele></trkpt>
+      <trkpt lat="37.476903" lon="127.185078"><ele>341.1</ele></trkpt>
+      <trkpt lat="37.476854" lon="127.184939"><ele>342.1</ele></trkpt>
+      <trkpt lat="37.476584" lon="127.184693"><ele>345.8</ele></trkpt>
+      <trkpt lat="37.476414" lon="127.184771"><ele>350.7</ele></trkpt>
+      <trkpt lat="37.476160" lon="127.184988"><ele>361.2</ele></trkpt>
+      <trkpt lat="37.475828" lon="127.184827"><ele>369.5</ele></trkpt>
+      <trkpt lat="37.475512" lon="127.184811"><ele>376.4</ele></trkpt>
+      <trkpt lat="37.475378" lon="127.184856"><ele>378.4</ele></trkpt>
+      <trkpt lat="37.474920" lon="127.184772"><ele>385.4</ele></trkpt>
+      <trkpt lat="37.474490" lon="127.184355"><ele>394.3</ele></trkpt>
+      <trkpt lat="37.474215" lon="127.184292"><ele>399.0</ele></trkpt>
+      <trkpt lat="37.474062" lon="127.184115"><ele>404.8</ele></trkpt>
+      <trkpt lat="37.473864" lon="127.184099"><ele>407.3</ele></trkpt>
+      <trkpt lat="37.473497" lon="127.183658"><ele>407.4</ele></trkpt>
+      <trkpt lat="37.473338" lon="127.183586"><ele>405.8</ele></trkpt>
+      <trkpt lat="37.472975" lon="127.183628"><ele>412.8</ele></trkpt>
+      <trkpt lat="37.472593" lon="127.183830"><ele>422.8</ele></trkpt>
+      <trkpt lat="37.471990" lon="127.183748"><ele>429.8</ele></trkpt>
+      <trkpt lat="37.471565" lon="127.184138"><ele>435.8</ele></trkpt>
+      <trkpt lat="37.471312" lon="127.184123"><ele>436.5</ele></trkpt>
+      <trkpt lat="37.471309" lon="127.183992"><ele>434.5</ele></trkpt>
+      <trkpt lat="37.471120" lon="127.183727"><ele>430.1</ele></trkpt>
+      <trkpt lat="37.470893" lon="127.183047"><ele>425.1</ele></trkpt>
+      <trkpt lat="37.470904" lon="127.182939"><ele>424.1</ele></trkpt>
+      <trkpt lat="37.471025" lon="127.182831"><ele>423.8</ele></trkpt>
+      <trkpt lat="37.471101" lon="127.182254"><ele>426.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>신무산 · 자고개-신무산 원점회귀 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:31:48.728Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>sinmusan</k100:mountain_id>
+      <k100:mountain_name>신무산</k100:mountain_name>
+      <k100:route_id>sinmusan-b302f80f</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>자고개-신무산 원점회귀</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>149</k100:snap_trailhead_m>
+      <k100:snap_summit_m>147</k100:snap_summit_m>
+      <k100:validation_score>89</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>신무산 · 자고개-신무산 원점회귀 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="35.584345" lon="127.476141"><ele>530.0</ele></trkpt>
+      <trkpt lat="35.583785" lon="127.476149"><ele>532.6</ele></trkpt>
+      <trkpt lat="35.583509" lon="127.476300"><ele>538.9</ele></trkpt>
+      <trkpt lat="35.583121" lon="127.476263"><ele>543.6</ele></trkpt>
+      <trkpt lat="35.582875" lon="127.476547"><ele>545.4</ele></trkpt>
+      <trkpt lat="35.582763" lon="127.476758"><ele>540.9</ele></trkpt>
+      <trkpt lat="35.582584" lon="127.476889"><ele>536.2</ele></trkpt>
+      <trkpt lat="35.582647" lon="127.477192"><ele>533.0</ele></trkpt>
+      <trkpt lat="35.582473" lon="127.477587"><ele>531.1</ele></trkpt>
+      <trkpt lat="35.582250" lon="127.477774"><ele>529.6</ele></trkpt>
+      <trkpt lat="35.582098" lon="127.477831"><ele>529.2</ele></trkpt>
+      <trkpt lat="35.581456" lon="127.477769"><ele>523.9</ele></trkpt>
+      <trkpt lat="35.581214" lon="127.477857"><ele>522.4</ele></trkpt>
+      <trkpt lat="35.580994" lon="127.478136"><ele>529.2</ele></trkpt>
+      <trkpt lat="35.580876" lon="127.478091"><ele>531.3</ele></trkpt>
+      <trkpt lat="35.580666" lon="127.477865"><ele>530.0</ele></trkpt>
+      <trkpt lat="35.580402" lon="127.477785"><ele>530.0</ele></trkpt>
+      <trkpt lat="35.580069" lon="127.477849"><ele>531.6</ele></trkpt>
+      <trkpt lat="35.579248" lon="127.478356"><ele>541.7</ele></trkpt>
+      <trkpt lat="35.578815" lon="127.478446"><ele>546.2</ele></trkpt>
+      <trkpt lat="35.578421" lon="127.478391"><ele>549.7</ele></trkpt>
+      <trkpt lat="35.578092" lon="127.478056"><ele>544.8</ele></trkpt>
+      <trkpt lat="35.577866" lon="127.478051"><ele>549.0</ele></trkpt>
+      <trkpt lat="35.577717" lon="127.477949"><ele>548.8</ele></trkpt>
+      <trkpt lat="35.577577" lon="127.477965"><ele>551.3</ele></trkpt>
+      <trkpt lat="35.577410" lon="127.478107"><ele>556.0</ele></trkpt>
+      <trkpt lat="35.577143" lon="127.478174"><ele>559.8</ele></trkpt>
+      <trkpt lat="35.577102" lon="127.478346"><ele>564.5</ele></trkpt>
+      <trkpt lat="35.577135" lon="127.478426"><ele>568.0</ele></trkpt>
+      <trkpt lat="35.577588" lon="127.478517"><ele>564.0</ele></trkpt>
+      <trkpt lat="35.577606" lon="127.478587"><ele>565.9</ele></trkpt>
+      <trkpt lat="35.577383" lon="127.478761"><ele>577.0</ele></trkpt>
+      <trkpt lat="35.577039" lon="127.478820"><ele>586.0</ele></trkpt>
+      <trkpt lat="35.576977" lon="127.479035"><ele>597.4</ele></trkpt>
+      <trkpt lat="35.577134" lon="127.479060"><ele>596.2</ele></trkpt>
+      <trkpt lat="35.577435" lon="127.479210"><ele>593.2</ele></trkpt>
+      <trkpt lat="35.577650" lon="127.479858"><ele>611.1</ele></trkpt>
+      <trkpt lat="35.577763" lon="127.480034"><ele>613.1</ele></trkpt>
+      <trkpt lat="35.577912" lon="127.480127"><ele>611.1</ele></trkpt>
+      <trkpt lat="35.578019" lon="127.480413"><ele>620.5</ele></trkpt>
+      <trkpt lat="35.578439" lon="127.480812"><ele>634.4</ele></trkpt>
+      <trkpt lat="35.578522" lon="127.480822"><ele>634.6</ele></trkpt>
+      <trkpt lat="35.578762" lon="127.480652"><ele>623.7</ele></trkpt>
+      <trkpt lat="35.579133" lon="127.481000"><ele>639.2</ele></trkpt>
+      <trkpt lat="35.579253" lon="127.481041"><ele>640.6</ele></trkpt>
+      <trkpt lat="35.579326" lon="127.480981"><ele>637.9</ele></trkpt>
+      <trkpt lat="35.579434" lon="127.480749"><ele>629.2</ele></trkpt>
+      <trkpt lat="35.579504" lon="127.480679"><ele>627.0</ele></trkpt>
+      <trkpt lat="35.579639" lon="127.480652"><ele>625.9</ele></trkpt>
+      <trkpt lat="35.579805" lon="127.480722"><ele>627.5</ele></trkpt>
+      <trkpt lat="35.580115" lon="127.480980"><ele>629.4</ele></trkpt>
+      <trkpt lat="35.580228" lon="127.481216"><ele>631.7</ele></trkpt>
+      <trkpt lat="35.580075" lon="127.481639"><ele>644.0</ele></trkpt>
+      <trkpt lat="35.580132" lon="127.481790"><ele>647.1</ele></trkpt>
+      <trkpt lat="35.580573" lon="127.482165"><ele>663.8</ele></trkpt>
+      <trkpt lat="35.580708" lon="127.482160"><ele>664.3</ele></trkpt>
+      <trkpt lat="35.581109" lon="127.481639"><ele>649.5</ele></trkpt>
+      <trkpt lat="35.581607" lon="127.481564"><ele>652.1</ele></trkpt>
+      <trkpt lat="35.581999" lon="127.481892"><ele>668.0</ele></trkpt>
+      <trkpt lat="35.582196" lon="127.481983"><ele>670.6</ele></trkpt>
+      <trkpt lat="35.582497" lon="127.481972"><ele>666.1</ele></trkpt>
+      <trkpt lat="35.582963" lon="127.482342"><ele>681.7</ele></trkpt>
+      <trkpt lat="35.583112" lon="127.482331"><ele>680.7</ele></trkpt>
+      <trkpt lat="35.583343" lon="127.482133"><ele>672.1</ele></trkpt>
+      <trkpt lat="35.583487" lon="127.482160"><ele>673.1</ele></trkpt>
+      <trkpt lat="35.583581" lon="127.482283"><ele>678.2</ele></trkpt>
+      <trkpt lat="35.584266" lon="127.482766"><ele>687.0</ele></trkpt>
+      <trkpt lat="35.584729" lon="127.482837"><ele>690.6</ele></trkpt>
+      <trkpt lat="35.585270" lon="127.482719"><ele>690.4</ele></trkpt>
+      <trkpt lat="35.585583" lon="127.482498"><ele>692.8</ele></trkpt>
+      <trkpt lat="35.585645" lon="127.482015"><ele>685.4</ele></trkpt>
+      <trkpt lat="35.586015" lon="127.481752"><ele>682.6</ele></trkpt>
+      <trkpt lat="35.586191" lon="127.481705"><ele>681.9</ele></trkpt>
+      <trkpt lat="35.586430" lon="127.481859"><ele>684.2</ele></trkpt>
+      <trkpt lat="35.586574" lon="127.481886"><ele>684.0</ele></trkpt>
+      <trkpt lat="35.587460" lon="127.481490"><ele>669.8</ele></trkpt>
+      <trkpt lat="35.587808" lon="127.481393"><ele>670.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

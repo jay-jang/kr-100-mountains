@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>화왕산 · 자하곡 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:46:43.972Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>hwawangsan</k100:mountain_id>
+      <k100:mountain_name>화왕산</k100:mountain_name>
+      <k100:route_id>hwawangsan-f2cc5ee4</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>자하곡 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>20</k100:snap_trailhead_m>
+      <k100:snap_summit_m>219</k100:snap_summit_m>
+      <k100:validation_score>89</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>화왕산 · 자하곡 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="35.540563" lon="128.507596"><ele>141.5</ele></trkpt>
+      <trkpt lat="35.540535" lon="128.508117"><ele>140.5</ele></trkpt>
+      <trkpt lat="35.540731" lon="128.508782"><ele>146.7</ele></trkpt>
+      <trkpt lat="35.540733" lon="128.508964"><ele>148.9</ele></trkpt>
+      <trkpt lat="35.540365" lon="128.509740"><ele>160.2</ele></trkpt>
+      <trkpt lat="35.540279" lon="128.510018"><ele>168.3</ele></trkpt>
+      <trkpt lat="35.540294" lon="128.510252"><ele>172.8</ele></trkpt>
+      <trkpt lat="35.540470" lon="128.511043"><ele>181.7</ele></trkpt>
+      <trkpt lat="35.540850" lon="128.511868"><ele>189.9</ele></trkpt>
+      <trkpt lat="35.540932" lon="128.512158"><ele>193.3</ele></trkpt>
+      <trkpt lat="35.541148" lon="128.513725"><ele>214.0</ele></trkpt>
+      <trkpt lat="35.541249" lon="128.514090"><ele>219.2</ele></trkpt>
+      <trkpt lat="35.541277" lon="128.514618"><ele>227.3</ele></trkpt>
+      <trkpt lat="35.541338" lon="128.514793"><ele>229.5</ele></trkpt>
+      <trkpt lat="35.541485" lon="128.514970"><ele>228.8</ele></trkpt>
+      <trkpt lat="35.541777" lon="128.515669"><ele>231.4</ele></trkpt>
+      <trkpt lat="35.541836" lon="128.515910"><ele>233.8</ele></trkpt>
+      <trkpt lat="35.541749" lon="128.516293"><ele>242.4</ele></trkpt>
+      <trkpt lat="35.541836" lon="128.516621"><ele>243.7</ele></trkpt>
+      <trkpt lat="35.541806" lon="128.517836"><ele>258.2</ele></trkpt>
+      <trkpt lat="35.541750" lon="128.518344"><ele>261.6</ele></trkpt>
+      <trkpt lat="35.541681" lon="128.518412"><ele>263.4</ele></trkpt>
+      <trkpt lat="35.541577" lon="128.518375"><ele>267.4</ele></trkpt>
+      <trkpt lat="35.541524" lon="128.518608"><ele>270.6</ele></trkpt>
+      <trkpt lat="35.541293" lon="128.518951"><ele>281.8</ele></trkpt>
+      <trkpt lat="35.541162" lon="128.519386"><ele>287.6</ele></trkpt>
+      <trkpt lat="35.540734" lon="128.519853"><ele>304.7</ele></trkpt>
+      <trkpt lat="35.540416" lon="128.520019"><ele>315.9</ele></trkpt>
+      <trkpt lat="35.540376" lon="128.520319"><ele>315.5</ele></trkpt>
+      <trkpt lat="35.540280" lon="128.520432"><ele>318.9</ele></trkpt>
+      <trkpt lat="35.540158" lon="128.520759"><ele>328.5</ele></trkpt>
+      <trkpt lat="35.539656" lon="128.521119"><ele>351.2</ele></trkpt>
+      <trkpt lat="35.539508" lon="128.521280"><ele>357.8</ele></trkpt>
+      <trkpt lat="35.539333" lon="128.521349"><ele>363.7</ele></trkpt>
+      <trkpt lat="35.539193" lon="128.521505"><ele>371.1</ele></trkpt>
+      <trkpt lat="35.538704" lon="128.521752"><ele>383.6</ele></trkpt>
+      <trkpt lat="35.537783" lon="128.522025"><ele>413.6</ele></trkpt>
+      <trkpt lat="35.537578" lon="128.521988"><ele>420.0</ele></trkpt>
+      <trkpt lat="35.537482" lon="128.522041"><ele>424.4</ele></trkpt>
+      <trkpt lat="35.537150" lon="128.522074"><ele>437.3</ele></trkpt>
+      <trkpt lat="35.536845" lon="128.522267"><ele>451.7</ele></trkpt>
+      <trkpt lat="35.536539" lon="128.522294"><ele>463.4</ele></trkpt>
+      <trkpt lat="35.536434" lon="128.522377"><ele>467.7</ele></trkpt>
+      <trkpt lat="35.536033" lon="128.522412"><ele>483.3</ele></trkpt>
+      <trkpt lat="35.535679" lon="128.522508"><ele>495.3</ele></trkpt>
+      <trkpt lat="35.535548" lon="128.522621"><ele>497.9</ele></trkpt>
+      <trkpt lat="35.535418" lon="128.522631"><ele>496.5</ele></trkpt>
+      <trkpt lat="35.535378" lon="128.523254"><ele>498.4</ele></trkpt>
+      <trkpt lat="35.535199" lon="128.523817"><ele>507.5</ele></trkpt>
+      <trkpt lat="35.535247" lon="128.524096"><ele>512.9</ele></trkpt>
+      <trkpt lat="35.535208" lon="128.524525"><ele>527.6</ele></trkpt>
+      <trkpt lat="35.535286" lon="128.525035"><ele>547.7</ele></trkpt>
+      <trkpt lat="35.535409" lon="128.525378"><ele>557.8</ele></trkpt>
+      <trkpt lat="35.535640" lon="128.525727"><ele>571.8</ele></trkpt>
+      <trkpt lat="35.535714" lon="128.525984"><ele>578.5</ele></trkpt>
+      <trkpt lat="35.535836" lon="128.527738"><ele>618.6</ele></trkpt>
+      <trkpt lat="35.535893" lon="128.527958"><ele>620.2</ele></trkpt>
+      <trkpt lat="35.535841" lon="128.528951"><ele>637.9</ele></trkpt>
+      <trkpt lat="35.535653" lon="128.529434"><ele>649.9</ele></trkpt>
+      <trkpt lat="35.535382" lon="128.529884"><ele>666.7</ele></trkpt>
+      <trkpt lat="35.535059" lon="128.530120"><ele>679.8</ele></trkpt>
+      <trkpt lat="35.535038" lon="128.530217"><ele>682.8</ele></trkpt>
+      <trkpt lat="35.535059" lon="128.530394"><ele>683.5</ele></trkpt>
+      <trkpt lat="35.535330" lon="128.530887"><ele>689.9</ele></trkpt>
+      <trkpt lat="35.535395" lon="128.531177"><ele>697.7</ele></trkpt>
+      <trkpt lat="35.535474" lon="128.532068"><ele>725.4</ele></trkpt>
+      <trkpt lat="35.535377" lon="128.532472"><ele>726.8</ele></trkpt>
+      <trkpt lat="35.535093" lon="128.532511"><ele>714.0</ele></trkpt>
+      <trkpt lat="35.534960" lon="128.532581"><ele>707.6</ele></trkpt>
+      <trkpt lat="35.534774" lon="128.532508"><ele>699.3</ele></trkpt>
+      <trkpt lat="35.534616" lon="128.532552"><ele>691.7</ele></trkpt>
+      <trkpt lat="35.534349" lon="128.532498"><ele>679.2</ele></trkpt>
+      <trkpt lat="35.533982" lon="128.532711"><ele>664.7</ele></trkpt>
+      <trkpt lat="35.533530" lon="128.532630"><ele>667.8</ele></trkpt>
+      <trkpt lat="35.533435" lon="128.532732"><ele>668.2</ele></trkpt>
+      <trkpt lat="35.533131" lon="128.532823"><ele>674.0</ele></trkpt>
+      <trkpt lat="35.533001" lon="128.533011"><ele>676.0</ele></trkpt>
+      <trkpt lat="35.532818" lon="128.533146"><ele>678.8</ele></trkpt>
+      <trkpt lat="35.532583" lon="128.533218"><ele>687.5</ele></trkpt>
+      <trkpt lat="35.532038" lon="128.533218"><ele>689.1</ele></trkpt>
+      <trkpt lat="35.531416" lon="128.533075"><ele>702.8</ele></trkpt>
+      <trkpt lat="35.531121" lon="128.533176"><ele>712.6</ele></trkpt>
+      <trkpt lat="35.530789" lon="128.532768"><ele>704.5</ele></trkpt>
+      <trkpt lat="35.530256" lon="128.532790"><ele>687.8</ele></trkpt>
+      <trkpt lat="35.530029" lon="128.532984"><ele>675.0</ele></trkpt>
+      <trkpt lat="35.529316" lon="128.532848"><ele>655.4</ele></trkpt>
+      <trkpt lat="35.529049" lon="128.532676"><ele>654.8</ele></trkpt>
+      <trkpt lat="35.528874" lon="128.532701"><ele>656.9</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -281,6 +281,43 @@ try {
   }
   await fsCtx.close();
 
+  // ---- 코스별 경로 GPX 내려받기 ----
+  const man = await page.evaluate(async (b) => {
+    const r = await fetch(b + '/gpx/routes/index.json');
+    return r.ok ? r.json() : null;
+  }, base);
+  check('gpx: routes 매니페스트 로드', !!man && man.schema_version === 1, man ? `산 ${man.stats.mountains} · 파일 ${man.stats.routed_files}` : 'none');
+  check('gpx: 매니페스트가 실측 아님을 명시', !!man && /실측/.test(man.what_this_is || ''));
+  check('gpx: 출처·라이선스 기록', !!man?.sources?.some((s) => /ODbL/.test(s.license || '')));
+
+  const listed = man?.mountains?.find((e) => e.tracks > 0);
+  const sample = listed && await page.evaluate(async (u) => {
+    const r = await fetch(u); return r.ok ? r.json() : null;
+  }, `${base}/gpx/routes/m/${listed.mountain_id}.json`);
+  check('gpx: 산별 상세 파일 분리', !!sample?.tracks?.length, listed ? `${listed.mountain_id} ${listed.tracks}건` : 'none');
+  if (sample) {
+    await page.goto(`${base}/#/m/${sample.mountain_id}`, { waitUntil: 'networkidle', timeout: 30000 });
+    await page.waitForSelector('.gpxdl-item', { timeout: 10000 });
+    const rows = await page.$$eval('.gpxdl-item', (n) => n.length);
+    check('gpx: 상세 페이지에 코스별 내려받기 목록', rows >= sample.tracks.length, `${sample.mountain_id} ${rows}건`);
+    const secText = await page.$eval('.gpxdl-list', (n) => n.closest('.section').textContent);
+    check('gpx: 계산 경로임을 화면에 고지', /실측 GPS 기록이 아닙니다/.test(secText));
+    check('gpx: 출처 표기 노출', /OpenStreetMap contributors/.test(secText));
+
+    const href = await page.$eval('.gpxdl-item', (a) => a.getAttribute('href'));
+    const body = await page.evaluate(async (u) => {
+      const r = await fetch(u); return r.ok ? r.text() : null;
+    }, new URL(href, base + '/').toString());
+    check('gpx: 링크가 실제 GPX 파일을 반환', !!body && body.startsWith('<?xml') && body.includes('<trkpt'));
+    check('gpx: 파일에 실측 아님·출처 각인', !!body && body.includes('not_a_recorded_track')
+      && body.includes('osm-routed') && body.includes('OpenStreetMap'));
+    // 계산 경로는 지도에 자동으로 그리지 않는다 — 지도 경로 목록에 섞이면 안 된다.
+    const routeLabels = await page.$$eval('.route-item .route-label', (n) => n.map((x) => x.textContent));
+    check('gpx: 계산 경로가 지도 목록에 섞이지 않음', !routeLabels.some((t) => /OSM 계산 경로/.test(t)), `${routeLabels.length} route items`);
+  } else {
+    check('gpx: 수집된 코스 경로 존재', false, '매니페스트에 트랙 없음');
+  }
+
   // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)
   const denyCtx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
   const denyPage = await denyCtx.newPage();

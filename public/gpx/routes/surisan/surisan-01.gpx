@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>수리산 · 4봉 종주(관모봉~태을봉~슬기봉~수암봉) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:18:43.581Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>surisan</k100:mountain_id>
+      <k100:mountain_name>수리산</k100:mountain_name>
+      <k100:route_id>surisan-68cb3a6f</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>4봉 종주(관모봉~태을봉~슬기봉~수암봉)</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>16</k100:snap_trailhead_m>
+      <k100:snap_summit_m>31</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>수리산 · 4봉 종주(관모봉~태을봉~슬기봉~수암봉) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.349111" lon="126.925550"><ele>78.2</ele></trkpt>
+      <trkpt lat="37.349487" lon="126.925666"><ele>78.2</ele></trkpt>
+      <trkpt lat="37.349619" lon="126.925064"><ele>83.2</ele></trkpt>
+      <trkpt lat="37.350795" lon="126.925419"><ele>76.2</ele></trkpt>
+      <trkpt lat="37.351706" lon="126.925443"><ele>75.6</ele></trkpt>
+      <trkpt lat="37.351873" lon="126.925706"><ele>74.3</ele></trkpt>
+      <trkpt lat="37.352146" lon="126.925761"><ele>72.5</ele></trkpt>
+      <trkpt lat="37.352447" lon="126.925909"><ele>70.2</ele></trkpt>
+      <trkpt lat="37.353024" lon="126.925959"><ele>70.8</ele></trkpt>
+      <trkpt lat="37.353405" lon="126.926132"><ele>70.6</ele></trkpt>
+      <trkpt lat="37.353550" lon="126.926256"><ele>70.1</ele></trkpt>
+      <trkpt lat="37.353633" lon="126.926270"><ele>69.3</ele></trkpt>
+      <trkpt lat="37.353757" lon="126.926165"><ele>67.2</ele></trkpt>
+      <trkpt lat="37.353878" lon="126.926185"><ele>65.7</ele></trkpt>
+      <trkpt lat="37.354050" lon="126.926520"><ele>68.5</ele></trkpt>
+      <trkpt lat="37.354329" lon="126.926724"><ele>66.9</ele></trkpt>
+      <trkpt lat="37.355283" lon="126.927781"><ele>71.1</ele></trkpt>
+      <trkpt lat="37.355512" lon="126.927953"><ele>78.0</ele></trkpt>
+      <trkpt lat="37.355818" lon="126.928046"><ele>81.8</ele></trkpt>
+      <trkpt lat="37.355948" lon="126.928433"><ele>80.9</ele></trkpt>
+      <trkpt lat="37.356005" lon="126.928772"><ele>76.7</ele></trkpt>
+      <trkpt lat="37.356125" lon="126.928968"><ele>74.2</ele></trkpt>
+      <trkpt lat="37.356278" lon="126.929110"><ele>73.1</ele></trkpt>
+      <trkpt lat="37.356675" lon="126.929876"><ele>74.4</ele></trkpt>
+      <trkpt lat="37.356826" lon="126.929815"><ele>73.9</ele></trkpt>
+      <trkpt lat="37.356883" lon="126.929872"><ele>73.3</ele></trkpt>
+      <trkpt lat="37.357822" lon="126.929012"><ele>71.7</ele></trkpt>
+      <trkpt lat="37.358607" lon="126.930495"><ele>64.2</ele></trkpt>
+      <trkpt lat="37.358855" lon="126.930614"><ele>64.9</ele></trkpt>
+      <trkpt lat="37.358995" lon="126.930869"><ele>65.9</ele></trkpt>
+      <trkpt lat="37.359189" lon="126.930708"><ele>67.2</ele></trkpt>
+      <trkpt lat="37.359647" lon="126.931563"><ele>67.4</ele></trkpt>
+      <trkpt lat="37.359808" lon="126.931607"><ele>67.5</ele></trkpt>
+      <trkpt lat="37.361322" lon="126.930327"><ele>56.2</ele></trkpt>
+      <trkpt lat="37.361476" lon="126.930351"><ele>55.9</ele></trkpt>
+      <trkpt lat="37.361812" lon="126.930984"><ele>56.5</ele></trkpt>
+      <trkpt lat="37.361901" lon="126.931021"><ele>54.6</ele></trkpt>
+      <trkpt lat="37.362169" lon="126.930974"><ele>53.8</ele></trkpt>
+      <trkpt lat="37.362610" lon="126.930729"><ele>54.8</ele></trkpt>
+      <trkpt lat="37.362952" lon="126.930433"><ele>57.2</ele></trkpt>
+      <trkpt lat="37.363191" lon="126.930880"><ele>69.2</ele></trkpt>
+      <trkpt lat="37.363285" lon="126.930525"><ele>65.7</ele></trkpt>
+      <trkpt lat="37.365486" lon="126.928692"><ele>65.3</ele></trkpt>
+      <trkpt lat="37.365506" lon="126.928520"><ele>64.7</ele></trkpt>
+      <trkpt lat="37.365569" lon="126.928440"><ele>64.3</ele></trkpt>
+      <trkpt lat="37.365965" lon="126.928559"><ele>64.8</ele></trkpt>
+      <trkpt lat="37.366286" lon="126.928209"><ele>66.3</ele></trkpt>
+      <trkpt lat="37.366544" lon="126.928147"><ele>68.9</ele></trkpt>
+      <trkpt lat="37.366655" lon="126.928309"><ele>70.8</ele></trkpt>
+      <trkpt lat="37.366863" lon="126.928138"><ele>73.6</ele></trkpt>
+      <trkpt lat="37.367141" lon="126.928407"><ele>77.9</ele></trkpt>
+      <trkpt lat="37.367282" lon="126.928304"><ele>79.9</ele></trkpt>
+      <trkpt lat="37.367442" lon="126.928475"><ele>83.7</ele></trkpt>
+      <trkpt lat="37.367601" lon="126.928252"><ele>83.9</ele></trkpt>
+      <trkpt lat="37.367864" lon="126.928547"><ele>88.5</ele></trkpt>
+      <trkpt lat="37.368422" lon="126.927801"><ele>73.8</ele></trkpt>
+      <trkpt lat="37.368686" lon="126.928008"><ele>72.5</ele></trkpt>
+      <trkpt lat="37.368992" lon="126.928068"><ele>75.9</ele></trkpt>
+      <trkpt lat="37.369297" lon="126.928276"><ele>80.2</ele></trkpt>
+      <trkpt lat="37.370027" lon="126.929290"><ele>78.1</ele></trkpt>
+      <trkpt lat="37.370177" lon="126.929154"><ele>79.4</ele></trkpt>
+      <trkpt lat="37.370875" lon="126.929994"><ele>83.7</ele></trkpt>
+      <trkpt lat="37.370977" lon="126.930197"><ele>83.0</ele></trkpt>
+      <trkpt lat="37.371316" lon="126.930485"><ele>83.1</ele></trkpt>
+      <trkpt lat="37.371597" lon="126.930600"><ele>83.1</ele></trkpt>
+      <trkpt lat="37.371612" lon="126.930270"><ele>77.6</ele></trkpt>
+      <trkpt lat="37.371493" lon="126.930112"><ele>77.9</ele></trkpt>
+      <trkpt lat="37.371649" lon="126.929668"><ele>77.3</ele></trkpt>
+      <trkpt lat="37.371940" lon="126.929819"><ele>76.3</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

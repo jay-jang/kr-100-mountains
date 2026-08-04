@@ -7,6 +7,7 @@ import { watchPosition, fmtDist, fmtDistFine, directionsLinks } from '../geo.js'
 import { cachedPosition, notePosition, distanceTo, bearingLabel } from '../position.js';
 import { fetchElevations, resample, buildProfile, profileFromTrack, elevationChart, profileStats } from '../elevation.js';
 import { routeTrailheadToSummit } from '../routing.js';
+import { routeDownloadSection } from '../routegpx.js';
 import { el, esc, clear } from '../dom.js';
 
 export async function renderDetail(root, id) {
@@ -109,6 +110,10 @@ export async function renderDetail(root, id) {
       '등산로를 선택하면 그 경로만 지도에 표시되고 아래에 고도 단면이 나타납니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반입니다.'),
     el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
     routeLoading, routeList, elevChartBox, elevNote));
+
+  // 수집해 둔 코스별 경로 GPX 내려받기(있는 산에서만 나타난다).
+  // 계산 경로이므로 지도에 자동으로 그리지 않는다 — 지도는 실측/업로드 GPX만 그린다.
+  page.append(routeDownloadSection(m.id));
 
   const routes = [];             // { label, latlngs, profile, track|null, kind }
   let activeRoute = -1, activeRouteLayer = null;

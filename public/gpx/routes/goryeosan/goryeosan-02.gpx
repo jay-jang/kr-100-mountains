@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>고려산 · 고인돌광장 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:19:31.254Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>goryeosan</k100:mountain_id>
+      <k100:mountain_name>고려산</k100:mountain_name>
+      <k100:route_id>goryeosan-c657c893</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>고인돌광장 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>13</k100:snap_trailhead_m>
+      <k100:snap_summit_m>70</k100:snap_summit_m>
+      <k100:validation_score>100</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>고려산 · 고인돌광장 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.772975" lon="126.436694"><ele>22.2</ele></trkpt>
+      <trkpt lat="37.772769" lon="126.436570"><ele>22.0</ele></trkpt>
+      <trkpt lat="37.772751" lon="126.436512"><ele>22.0</ele></trkpt>
+      <trkpt lat="37.772852" lon="126.436421"><ele>21.8</ele></trkpt>
+      <trkpt lat="37.773199" lon="126.436490"><ele>21.4</ele></trkpt>
+      <trkpt lat="37.773206" lon="126.436204"><ele>20.3</ele></trkpt>
+      <trkpt lat="37.772302" lon="126.436140"><ele>23.3</ele></trkpt>
+      <trkpt lat="37.771682" lon="126.435994"><ele>22.5</ele></trkpt>
+      <trkpt lat="37.771560" lon="126.435876"><ele>22.6</ele></trkpt>
+      <trkpt lat="37.771248" lon="126.435384"><ele>19.0</ele></trkpt>
+      <trkpt lat="37.771486" lon="126.435107"><ele>17.9</ele></trkpt>
+      <trkpt lat="37.772050" lon="126.433785"><ele>17.9</ele></trkpt>
+      <trkpt lat="37.772072" lon="126.433593"><ele>17.0</ele></trkpt>
+      <trkpt lat="37.772058" lon="126.433317"><ele>15.4</ele></trkpt>
+      <trkpt lat="37.771879" lon="126.432854"><ele>11.8</ele></trkpt>
+      <trkpt lat="37.771794" lon="126.432420"><ele>11.7</ele></trkpt>
+      <trkpt lat="37.771775" lon="126.432022"><ele>12.2</ele></trkpt>
+      <trkpt lat="37.771860" lon="126.430354"><ele>11.5</ele></trkpt>
+      <trkpt lat="37.771373" lon="126.427714"><ele>16.4</ele></trkpt>
+      <trkpt lat="37.771313" lon="126.426581"><ele>22.1</ele></trkpt>
+      <trkpt lat="37.771352" lon="126.424923"><ele>22.6</ele></trkpt>
+      <trkpt lat="37.771483" lon="126.424224"><ele>22.2</ele></trkpt>
+      <trkpt lat="37.771672" lon="126.423594"><ele>20.1</ele></trkpt>
+      <trkpt lat="37.771528" lon="126.423481"><ele>20.5</ele></trkpt>
+      <trkpt lat="37.771297" lon="126.423415"><ele>20.4</ele></trkpt>
+      <trkpt lat="37.771087" lon="126.423252"><ele>20.1</ele></trkpt>
+      <trkpt lat="37.770922" lon="126.423232"><ele>20.4</ele></trkpt>
+      <trkpt lat="37.770587" lon="126.422861"><ele>19.6</ele></trkpt>
+      <trkpt lat="37.770562" lon="126.422276"><ele>18.0</ele></trkpt>
+      <trkpt lat="37.769489" lon="126.422527"><ele>17.4</ele></trkpt>
+      <trkpt lat="37.768648" lon="126.417998"><ele>11.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>수락산 · 수락산역-도솔봉-주봉 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:54:48.311Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>suraksan-seoul</k100:mountain_id>
+      <k100:mountain_name>수락산(서울)</k100:mountain_name>
+      <k100:route_id>suraksan-seoul-eeb7bcda</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>수락산역-도솔봉-주봉 코스</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>14</k100:snap_trailhead_m>
+      <k100:snap_summit_m>33</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>수락산 · 수락산역-도솔봉-주봉 코스 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.677778" lon="127.055408"><ele>35.0</ele></trkpt>
+      <trkpt lat="37.678145" lon="127.055332"><ele>33.8</ele></trkpt>
+      <trkpt lat="37.678150" lon="127.055141"><ele>33.8</ele></trkpt>
+      <trkpt lat="37.678641" lon="127.055159"><ele>33.3</ele></trkpt>
+      <trkpt lat="37.678772" lon="127.055109"><ele>33.0</ele></trkpt>
+      <trkpt lat="37.678803" lon="127.055149"><ele>32.8</ele></trkpt>
+      <trkpt lat="37.680756" lon="127.055165"><ele>37.6</ele></trkpt>
+      <trkpt lat="37.680930" lon="127.055221"><ele>37.8</ele></trkpt>
+      <trkpt lat="37.682343" lon="127.055194"><ele>35.6</ele></trkpt>
+      <trkpt lat="37.682293" lon="127.057086"><ele>48.6</ele></trkpt>
+      <trkpt lat="37.682058" lon="127.058224"><ele>47.5</ele></trkpt>
+      <trkpt lat="37.682067" lon="127.058693"><ele>50.6</ele></trkpt>
+      <trkpt lat="37.682237" lon="127.059047"><ele>48.8</ele></trkpt>
+      <trkpt lat="37.682390" lon="127.059985"><ele>55.3</ele></trkpt>
+      <trkpt lat="37.682420" lon="127.060811"><ele>57.6</ele></trkpt>
+      <trkpt lat="37.682458" lon="127.060884"><ele>57.7</ele></trkpt>
+      <trkpt lat="37.682449" lon="127.061303"><ele>63.5</ele></trkpt>
+      <trkpt lat="37.682904" lon="127.062136"><ele>62.1</ele></trkpt>
+      <trkpt lat="37.683124" lon="127.063558"><ele>69.6</ele></trkpt>
+      <trkpt lat="37.683519" lon="127.064468"><ele>76.0</ele></trkpt>
+      <trkpt lat="37.683723" lon="127.065090"><ele>81.9</ele></trkpt>
+      <trkpt lat="37.683940" lon="127.065315"><ele>79.9</ele></trkpt>
+      <trkpt lat="37.684160" lon="127.065398"><ele>78.4</ele></trkpt>
+      <trkpt lat="37.684490" lon="127.065631"><ele>79.6</ele></trkpt>
+      <trkpt lat="37.684619" lon="127.065803"><ele>80.6</ele></trkpt>
+      <trkpt lat="37.684665" lon="127.066079"><ele>85.4</ele></trkpt>
+      <trkpt lat="37.684912" lon="127.066619"><ele>93.3</ele></trkpt>
+      <trkpt lat="37.684924" lon="127.066868"><ele>93.0</ele></trkpt>
+      <trkpt lat="37.685472" lon="127.067933"><ele>100.6</ele></trkpt>
+      <trkpt lat="37.685549" lon="127.068464"><ele>108.9</ele></trkpt>
+      <trkpt lat="37.686058" lon="127.069258"><ele>116.4</ele></trkpt>
+      <trkpt lat="37.686711" lon="127.069958"><ele>124.9</ele></trkpt>
+      <trkpt lat="37.687221" lon="127.070701"><ele>140.6</ele></trkpt>
+      <trkpt lat="37.687858" lon="127.072225"><ele>157.5</ele></trkpt>
+      <trkpt lat="37.688443" lon="127.072855"><ele>163.8</ele></trkpt>
+      <trkpt lat="37.689063" lon="127.073402"><ele>176.3</ele></trkpt>
+      <trkpt lat="37.689318" lon="127.073770"><ele>187.4</ele></trkpt>
+      <trkpt lat="37.689603" lon="127.074296"><ele>196.2</ele></trkpt>
+      <trkpt lat="37.689836" lon="127.074853"><ele>204.5</ele></trkpt>
+      <trkpt lat="37.690286" lon="127.075628"><ele>217.8</ele></trkpt>
+      <trkpt lat="37.690575" lon="127.075840"><ele>223.5</ele></trkpt>
+      <trkpt lat="37.690630" lon="127.076441"><ele>229.5</ele></trkpt>
+      <trkpt lat="37.690804" lon="127.077001"><ele>241.1</ele></trkpt>
+      <trkpt lat="37.690953" lon="127.078034"><ele>260.6</ele></trkpt>
+      <trkpt lat="37.690583" lon="127.078611"><ele>274.8</ele></trkpt>
+      <trkpt lat="37.690580" lon="127.078988"><ele>283.0</ele></trkpt>
+      <trkpt lat="37.690290" lon="127.079026"><ele>294.0</ele></trkpt>
+      <trkpt lat="37.690052" lon="127.079185"><ele>309.1</ele></trkpt>
+      <trkpt lat="37.689857" lon="127.079187"><ele>319.3</ele></trkpt>
+      <trkpt lat="37.689517" lon="127.079440"><ele>333.9</ele></trkpt>
+      <trkpt lat="37.688428" lon="127.079840"><ele>373.8</ele></trkpt>
+      <trkpt lat="37.688698" lon="127.080987"><ele>394.2</ele></trkpt>
+      <trkpt lat="37.688686" lon="127.081406"><ele>403.1</ele></trkpt>
+      <trkpt lat="37.688210" lon="127.081306"><ele>382.4</ele></trkpt>
+      <trkpt lat="37.688153" lon="127.081593"><ele>377.2</ele></trkpt>
+      <trkpt lat="37.688002" lon="127.081623"><ele>367.6</ele></trkpt>
+      <trkpt lat="37.687917" lon="127.081840"><ele>357.3</ele></trkpt>
+      <trkpt lat="37.687794" lon="127.081985"><ele>346.7</ele></trkpt>
+      <trkpt lat="37.687556" lon="127.082068"><ele>334.3</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

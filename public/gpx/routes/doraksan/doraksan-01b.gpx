@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>도락산 · 상선암-채운봉-도락산-제봉 원점회귀 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:27:05.863Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>doraksan</k100:mountain_id>
+      <k100:mountain_name>도락산</k100:mountain_name>
+      <k100:route_id>doraksan-1f195cbd</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>상선암-채운봉-도락산-제봉 원점회귀</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>4</k100:snap_trailhead_m>
+      <k100:snap_summit_m>111</k100:snap_summit_m>
+      <k100:validation_score>89</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>도락산 · 상선암-채운봉-도락산-제봉 원점회귀 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.871667" lon="128.295917"><ele>331.8</ele></trkpt>
+      <trkpt lat="36.871935" lon="128.295766"><ele>326.9</ele></trkpt>
+      <trkpt lat="36.872175" lon="128.295289"><ele>318.7</ele></trkpt>
+      <trkpt lat="36.872187" lon="128.295044"><ele>315.3</ele></trkpt>
+      <trkpt lat="36.872458" lon="128.294299"><ele>312.5</ele></trkpt>
+      <trkpt lat="36.872817" lon="128.294033"><ele>305.3</ele></trkpt>
+      <trkpt lat="36.873200" lon="128.293483"><ele>288.8</ele></trkpt>
+      <trkpt lat="36.873436" lon="128.292824"><ele>276.5</ele></trkpt>
+      <trkpt lat="36.873817" lon="128.292658"><ele>271.1</ele></trkpt>
+      <trkpt lat="36.874109" lon="128.292384"><ele>274.6</ele></trkpt>
+      <trkpt lat="36.873020" lon="128.291290"><ele>281.0</ele></trkpt>
+      <trkpt lat="36.872930" lon="128.291170"><ele>281.0</ele></trkpt>
+      <trkpt lat="36.872730" lon="128.290640"><ele>290.7</ele></trkpt>
+      <trkpt lat="36.872424" lon="128.290223"><ele>297.4</ele></trkpt>
+      <trkpt lat="36.871775" lon="128.289927"><ele>287.1</ele></trkpt>
+      <trkpt lat="36.871400" lon="128.289880"><ele>287.6</ele></trkpt>
+      <trkpt lat="36.871000" lon="128.289920"><ele>286.2</ele></trkpt>
+      <trkpt lat="36.870820" lon="128.289830"><ele>287.7</ele></trkpt>
+      <trkpt lat="36.870610" lon="128.289580"><ele>290.3</ele></trkpt>
+      <trkpt lat="36.870170" lon="128.289200"><ele>297.1</ele></trkpt>
+      <trkpt lat="36.869260" lon="128.288950"><ele>292.5</ele></trkpt>
+      <trkpt lat="36.868461" lon="128.288281"><ele>290.0</ele></trkpt>
+      <trkpt lat="36.867780" lon="128.287300"><ele>298.8</ele></trkpt>
+      <trkpt lat="36.867420" lon="128.287050"><ele>296.8</ele></trkpt>
+      <trkpt lat="36.866820" lon="128.286720"><ele>299.1</ele></trkpt>
+      <trkpt lat="36.866260" lon="128.286680"><ele>298.3</ele></trkpt>
+      <trkpt lat="36.862740" lon="128.286900"><ele>310.1</ele></trkpt>
+      <trkpt lat="36.862440" lon="128.286700"><ele>308.5</ele></trkpt>
+      <trkpt lat="36.862240" lon="128.286450"><ele>308.2</ele></trkpt>
+      <trkpt lat="36.861930" lon="128.285460"><ele>307.1</ele></trkpt>
+      <trkpt lat="36.861790" lon="128.285280"><ele>309.3</ele></trkpt>
+      <trkpt lat="36.858940" lon="128.284150"><ele>315.1</ele></trkpt>
+      <trkpt lat="36.858410" lon="128.283600"><ele>319.5</ele></trkpt>
+      <trkpt lat="36.857499" lon="128.282954"><ele>320.3</ele></trkpt>
+      <trkpt lat="36.856783" lon="128.283045"><ele>313.7</ele></trkpt>
+      <trkpt lat="36.856203" lon="128.283035"><ele>312.0</ele></trkpt>
+      <trkpt lat="36.855483" lon="128.283185"><ele>314.7</ele></trkpt>
+      <trkpt lat="36.854787" lon="128.283515"><ele>316.5</ele></trkpt>
+      <trkpt lat="36.855145" lon="128.284113"><ele>321.7</ele></trkpt>
+      <trkpt lat="36.855087" lon="128.284366"><ele>323.2</ele></trkpt>
+      <trkpt lat="36.854740" lon="128.284948"><ele>324.9</ele></trkpt>
+      <trkpt lat="36.854669" lon="128.285648"><ele>325.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

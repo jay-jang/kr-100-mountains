@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>진악산 · 수리넘어재-정상 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:29:18.753Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>jinaksan</k100:mountain_id>
+      <k100:mountain_name>진악산</k100:mountain_name>
+      <k100:route_id>jinaksan-6f4bfd9a</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>수리넘어재-정상 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>209</k100:snap_trailhead_m>
+      <k100:snap_summit_m>115</k100:snap_summit_m>
+      <k100:validation_score>58</k100:validation_score>
+      <k100:validation_status>review</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>진악산 · 수리넘어재-정상 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.086361" lon="127.451611"><ele>397.6</ele></trkpt>
+      <trkpt lat="36.086279" lon="127.451456"><ele>405.7</ele></trkpt>
+      <trkpt lat="36.086251" lon="127.451031"><ele>408.0</ele></trkpt>
+      <trkpt lat="36.085939" lon="127.450834"><ele>427.5</ele></trkpt>
+      <trkpt lat="36.085880" lon="127.450502"><ele>427.8</ele></trkpt>
+      <trkpt lat="36.085958" lon="127.450146"><ele>422.9</ele></trkpt>
+      <trkpt lat="36.085947" lon="127.449725"><ele>421.7</ele></trkpt>
+      <trkpt lat="36.085990" lon="127.449444"><ele>423.4</ele></trkpt>
+      <trkpt lat="36.086271" lon="127.449253"><ele>415.9</ele></trkpt>
+      <trkpt lat="36.086224" lon="127.449132"><ele>421.4</ele></trkpt>
+      <trkpt lat="36.086117" lon="127.449119"><ele>426.6</ele></trkpt>
+      <trkpt lat="36.085679" lon="127.449308"><ele>437.1</ele></trkpt>
+      <trkpt lat="36.085625" lon="127.449448"><ele>439.0</ele></trkpt>
+      <trkpt lat="36.085484" lon="127.449495"><ele>442.5</ele></trkpt>
+      <trkpt lat="36.085062" lon="127.450221"><ele>471.1</ele></trkpt>
+      <trkpt lat="36.084775" lon="127.450421"><ele>482.0</ele></trkpt>
+      <trkpt lat="36.084190" lon="127.450089"><ele>493.8</ele></trkpt>
+      <trkpt lat="36.083949" lon="127.450053"><ele>500.7</ele></trkpt>
+      <trkpt lat="36.083769" lon="127.450135"><ele>499.5</ele></trkpt>
+      <trkpt lat="36.083340" lon="127.450466"><ele>497.6</ele></trkpt>
+      <trkpt lat="36.083256" lon="127.450445"><ele>499.3</ele></trkpt>
+      <trkpt lat="36.083026" lon="127.450558"><ele>505.4</ele></trkpt>
+      <trkpt lat="36.082638" lon="127.450829"><ele>520.5</ele></trkpt>
+      <trkpt lat="36.082487" lon="127.450824"><ele>529.7</ele></trkpt>
+      <trkpt lat="36.082395" lon="127.450915"><ele>531.8</ele></trkpt>
+      <trkpt lat="36.082102" lon="127.451473"><ele>542.9</ele></trkpt>
+      <trkpt lat="36.082072" lon="127.451616"><ele>543.8</ele></trkpt>
+      <trkpt lat="36.081546" lon="127.452092"><ele>561.4</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

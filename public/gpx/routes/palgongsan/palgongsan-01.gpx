@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>팔공산 · 동화사-비로봉 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:40:19.330Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>palgongsan</k100:mountain_id>
+      <k100:mountain_name>팔공산</k100:mountain_name>
+      <k100:route_id>palgongsan-192e324e</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>동화사-비로봉 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>40</k100:snap_trailhead_m>
+      <k100:snap_summit_m>20</k100:snap_summit_m>
+      <k100:validation_score>84</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>팔공산 · 동화사-비로봉 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="35.996052" lon="128.694837"><ele>619.5</ele></trkpt>
+      <trkpt lat="35.996165" lon="128.694955"><ele>622.1</ele></trkpt>
+      <trkpt lat="35.996419" lon="128.694972"><ele>625.0</ele></trkpt>
+      <trkpt lat="35.996942" lon="128.694776"><ele>633.8</ele></trkpt>
+      <trkpt lat="35.997341" lon="128.694580"><ele>641.0</ele></trkpt>
+      <trkpt lat="35.997463" lon="128.694465"><ele>642.4</ele></trkpt>
+      <trkpt lat="35.997578" lon="128.694467"><ele>645.2</ele></trkpt>
+      <trkpt lat="35.997765" lon="128.694507"><ele>650.6</ele></trkpt>
+      <trkpt lat="35.997973" lon="128.694824"><ele>662.3</ele></trkpt>
+      <trkpt lat="35.998301" lon="128.694875"><ele>677.1</ele></trkpt>
+      <trkpt lat="35.998584" lon="128.694792"><ele>687.5</ele></trkpt>
+      <trkpt lat="35.998706" lon="128.694839"><ele>692.9</ele></trkpt>
+      <trkpt lat="35.999089" lon="128.694836"><ele>710.6</ele></trkpt>
+      <trkpt lat="35.999288" lon="128.694736"><ele>722.3</ele></trkpt>
+      <trkpt lat="35.999331" lon="128.694835"><ele>725.7</ele></trkpt>
+      <trkpt lat="35.999468" lon="128.694660"><ele>731.9</ele></trkpt>
+      <trkpt lat="35.999609" lon="128.694845"><ele>742.5</ele></trkpt>
+      <trkpt lat="35.999815" lon="128.694926"><ele>754.1</ele></trkpt>
+      <trkpt lat="36.000117" lon="128.694786"><ele>763.7</ele></trkpt>
+      <trkpt lat="36.000297" lon="128.694851"><ele>771.1</ele></trkpt>
+      <trkpt lat="36.000440" lon="128.694993"><ele>776.1</ele></trkpt>
+      <trkpt lat="36.000552" lon="128.694876"><ele>779.8</ele></trkpt>
+      <trkpt lat="36.000601" lon="128.694904"><ele>780.6</ele></trkpt>
+      <trkpt lat="36.000696" lon="128.694856"><ele>783.4</ele></trkpt>
+      <trkpt lat="36.000758" lon="128.694778"><ele>786.4</ele></trkpt>
+      <trkpt lat="36.000765" lon="128.694683"><ele>787.9</ele></trkpt>
+      <trkpt lat="36.001009" lon="128.694474"><ele>795.6</ele></trkpt>
+      <trkpt lat="36.001137" lon="128.694400"><ele>798.0</ele></trkpt>
+      <trkpt lat="36.001274" lon="128.694415"><ele>797.6</ele></trkpt>
+      <trkpt lat="36.001521" lon="128.694346"><ele>796.3</ele></trkpt>
+      <trkpt lat="36.001757" lon="128.694137"><ele>789.0</ele></trkpt>
+      <trkpt lat="36.002271" lon="128.694487"><ele>772.9</ele></trkpt>
+      <trkpt lat="36.002574" lon="128.694499"><ele>769.7</ele></trkpt>
+      <trkpt lat="36.002939" lon="128.694432"><ele>771.7</ele></trkpt>
+      <trkpt lat="36.003325" lon="128.694638"><ele>771.1</ele></trkpt>
+      <trkpt lat="36.003547" lon="128.694658"><ele>777.3</ele></trkpt>
+      <trkpt lat="36.003845" lon="128.694799"><ele>791.7</ele></trkpt>
+      <trkpt lat="36.004033" lon="128.694962"><ele>804.1</ele></trkpt>
+      <trkpt lat="36.004175" lon="128.695010"><ele>811.7</ele></trkpt>
+      <trkpt lat="36.004400" lon="128.694958"><ele>824.9</ele></trkpt>
+      <trkpt lat="36.004503" lon="128.695171"><ele>830.8</ele></trkpt>
+      <trkpt lat="36.004525" lon="128.695097"><ele>832.1</ele></trkpt>
+      <trkpt lat="36.004679" lon="128.695141"><ele>838.2</ele></trkpt>
+      <trkpt lat="36.004945" lon="128.694925"><ele>853.7</ele></trkpt>
+      <trkpt lat="36.005065" lon="128.694874"><ele>858.3</ele></trkpt>
+      <trkpt lat="36.005127" lon="128.694905"><ele>859.0</ele></trkpt>
+      <trkpt lat="36.005215" lon="128.694833"><ele>862.8</ele></trkpt>
+      <trkpt lat="36.005450" lon="128.694442"><ele>881.4</ele></trkpt>
+      <trkpt lat="36.005637" lon="128.694403"><ele>887.2</ele></trkpt>
+      <trkpt lat="36.005868" lon="128.694235"><ele>892.8</ele></trkpt>
+      <trkpt lat="36.005975" lon="128.694255"><ele>891.7</ele></trkpt>
+      <trkpt lat="36.006143" lon="128.694190"><ele>891.8</ele></trkpt>
+      <trkpt lat="36.006319" lon="128.693913"><ele>893.1</ele></trkpt>
+      <trkpt lat="36.006459" lon="128.693848"><ele>891.4</ele></trkpt>
+      <trkpt lat="36.006607" lon="128.693882"><ele>889.8</ele></trkpt>
+      <trkpt lat="36.006849" lon="128.694039"><ele>889.7</ele></trkpt>
+      <trkpt lat="36.006959" lon="128.693868"><ele>892.8</ele></trkpt>
+      <trkpt lat="36.007098" lon="128.693794"><ele>892.0</ele></trkpt>
+      <trkpt lat="36.007257" lon="128.693794"><ele>891.9</ele></trkpt>
+      <trkpt lat="36.007403" lon="128.693715"><ele>894.9</ele></trkpt>
+      <trkpt lat="36.007497" lon="128.693739"><ele>895.3</ele></trkpt>
+      <trkpt lat="36.007803" lon="128.693578"><ele>909.1</ele></trkpt>
+      <trkpt lat="36.008013" lon="128.693563"><ele>912.0</ele></trkpt>
+      <trkpt lat="36.008330" lon="128.693568"><ele>914.0</ele></trkpt>
+      <trkpt lat="36.008639" lon="128.693771"><ele>917.4</ele></trkpt>
+      <trkpt lat="36.009330" lon="128.693798"><ele>932.5</ele></trkpt>
+      <trkpt lat="36.009592" lon="128.693675"><ele>937.0</ele></trkpt>
+      <trkpt lat="36.009795" lon="128.693715"><ele>939.9</ele></trkpt>
+      <trkpt lat="36.010260" lon="128.693970"><ele>942.8</ele></trkpt>
+      <trkpt lat="36.010638" lon="128.694454"><ele>950.2</ele></trkpt>
+      <trkpt lat="36.010874" lon="128.694596"><ele>953.7</ele></trkpt>
+      <trkpt lat="36.011098" lon="128.694569"><ele>960.9</ele></trkpt>
+      <trkpt lat="36.011173" lon="128.694661"><ele>964.1</ele></trkpt>
+      <trkpt lat="36.011456" lon="128.694758"><ele>976.7</ele></trkpt>
+      <trkpt lat="36.011702" lon="128.694914"><ele>996.8</ele></trkpt>
+      <trkpt lat="36.011734" lon="128.695005"><ele>1001.8</ele></trkpt>
+      <trkpt lat="36.011977" lon="128.694991"><ele>1008.2</ele></trkpt>
+      <trkpt lat="36.012023" lon="128.695064"><ele>1014.1</ele></trkpt>
+      <trkpt lat="36.011964" lon="128.695137"><ele>1014.5</ele></trkpt>
+      <trkpt lat="36.011980" lon="128.695265"><ele>1021.5</ele></trkpt>
+      <trkpt lat="36.012084" lon="128.695335"><ele>1029.4</ele></trkpt>
+      <trkpt lat="36.012105" lon="128.695425"><ele>1033.0</ele></trkpt>
+      <trkpt lat="36.012877" lon="128.695932"><ele>1081.2</ele></trkpt>
+      <trkpt lat="36.013222" lon="128.696356"><ele>1113.8</ele></trkpt>
+      <trkpt lat="36.013491" lon="128.696782"><ele>1130.0</ele></trkpt>
+      <trkpt lat="36.014004" lon="128.696816"><ele>1114.3</ele></trkpt>
+      <trkpt lat="36.014112" lon="128.696635"><ele>1112.9</ele></trkpt>
+      <trkpt lat="36.014500" lon="128.696610"><ele>1116.0</ele></trkpt>
+      <trkpt lat="36.014563" lon="128.696948"><ele>1107.9</ele></trkpt>
+      <trkpt lat="36.014815" lon="128.697635"><ele>1085.0</ele></trkpt>
+      <trkpt lat="36.014815" lon="128.697984"><ele>1074.0</ele></trkpt>
+      <trkpt lat="36.014763" lon="128.698268"><ele>1066.1</ele></trkpt>
+      <trkpt lat="36.014658" lon="128.698429"><ele>1064.1</ele></trkpt>
+      <trkpt lat="36.014658" lon="128.698665"><ele>1058.1</ele></trkpt>
+      <trkpt lat="36.014858" lon="128.699137"><ele>1033.8</ele></trkpt>
+      <trkpt lat="36.014841" lon="128.699512"><ele>1018.5</ele></trkpt>
+      <trkpt lat="36.014919" lon="128.699765"><ele>1010.3</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

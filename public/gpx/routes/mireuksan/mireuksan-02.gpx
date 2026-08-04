@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>미륵산 · 용화사-미륵산 정상 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:47:58.062Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>mireuksan</k100:mountain_id>
+      <k100:mountain_name>미륵산</k100:mountain_name>
+      <k100:route_id>mireuksan-9db7926f</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>용화사-미륵산 정상 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>26</k100:snap_trailhead_m>
+      <k100:snap_summit_m>212</k100:snap_summit_m>
+      <k100:validation_score>89</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>미륵산 · 용화사-미륵산 정상 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="34.832673" lon="128.411658"><ele>5.4</ele></trkpt>
+      <trkpt lat="34.832286" lon="128.412296"><ele>6.7</ele></trkpt>
+      <trkpt lat="34.832260" lon="128.412403"><ele>6.3</ele></trkpt>
+      <trkpt lat="34.832351" lon="128.412774"><ele>5.5</ele></trkpt>
+      <trkpt lat="34.832501" lon="128.414446"><ele>4.0</ele></trkpt>
+      <trkpt lat="34.831730" lon="128.414553"><ele>7.8</ele></trkpt>
+      <trkpt lat="34.831826" lon="128.416619"><ele>12.8</ele></trkpt>
+      <trkpt lat="34.831259" lon="128.416412"><ele>13.6</ele></trkpt>
+      <trkpt lat="34.831099" lon="128.416910"><ele>14.2</ele></trkpt>
+      <trkpt lat="34.831350" lon="128.417110"><ele>14.0</ele></trkpt>
+      <trkpt lat="34.831409" lon="128.417208"><ele>13.9</ele></trkpt>
+      <trkpt lat="34.831435" lon="128.417405"><ele>13.2</ele></trkpt>
+      <trkpt lat="34.831375" lon="128.417980"><ele>12.8</ele></trkpt>
+      <trkpt lat="34.831187" lon="128.418676"><ele>12.7</ele></trkpt>
+      <trkpt lat="34.830853" lon="128.418571"><ele>14.1</ele></trkpt>
+      <trkpt lat="34.830386" lon="128.419894"><ele>15.2</ele></trkpt>
+      <trkpt lat="34.830092" lon="128.419780"><ele>16.7</ele></trkpt>
+      <trkpt lat="34.830048" lon="128.419904"><ele>17.3</ele></trkpt>
+      <trkpt lat="34.829439" lon="128.419735"><ele>18.1</ele></trkpt>
+      <trkpt lat="34.829154" lon="128.421271"><ele>16.4</ele></trkpt>
+      <trkpt lat="34.828499" lon="128.421100"><ele>17.8</ele></trkpt>
+      <trkpt lat="34.828203" lon="128.422646"><ele>10.7</ele></trkpt>
+      <trkpt lat="34.827826" lon="128.422560"><ele>10.7</ele></trkpt>
+      <trkpt lat="34.827687" lon="128.423280"><ele>9.4</ele></trkpt>
+      <trkpt lat="34.825481" lon="128.422716"><ele>13.4</ele></trkpt>
+      <trkpt lat="34.825447" lon="128.423050"><ele>14.7</ele></trkpt>
+      <trkpt lat="34.825652" lon="128.423529"><ele>14.1</ele></trkpt>
+      <trkpt lat="34.825606" lon="128.423813"><ele>14.6</ele></trkpt>
+      <trkpt lat="34.825473" lon="128.423939"><ele>15.6</ele></trkpt>
+      <trkpt lat="34.825122" lon="128.424070"><ele>17.1</ele></trkpt>
+      <trkpt lat="34.825169" lon="128.424375"><ele>13.6</ele></trkpt>
+      <trkpt lat="34.824750" lon="128.424321"><ele>16.6</ele></trkpt>
+      <trkpt lat="34.824749" lon="128.424626"><ele>15.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

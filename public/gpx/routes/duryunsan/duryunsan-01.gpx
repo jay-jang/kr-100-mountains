@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>두륜산 · 대흥사-노승봉-가련봉-두륜봉 순환코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-08-04T05:56:07.624Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>duryunsan</k100:mountain_id>
+      <k100:mountain_name>두륜산</k100:mountain_name>
+      <k100:route_id>duryunsan-fbe596c2</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>대흥사-노승봉-가련봉-두륜봉 순환코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:snap_trailhead_m>143</k100:snap_trailhead_m>
+      <k100:snap_summit_m>25</k100:snap_summit_m>
+      <k100:validation_score>75</k100:validation_score>
+      <k100:validation_status>review</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>두륜산 · 대흥사-노승봉-가련봉-두륜봉 순환코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="34.484810" lon="126.614410"><ele>101.1</ele></trkpt>
+      <trkpt lat="34.483459" lon="126.614552"><ele>102.5</ele></trkpt>
+      <trkpt lat="34.482738" lon="126.614559"><ele>103.3</ele></trkpt>
+      <trkpt lat="34.482367" lon="126.614678"><ele>108.9</ele></trkpt>
+      <trkpt lat="34.482017" lon="126.614614"><ele>110.5</ele></trkpt>
+      <trkpt lat="34.480402" lon="126.613992"><ele>113.1</ele></trkpt>
+      <trkpt lat="34.479349" lon="126.613259"><ele>114.3</ele></trkpt>
+      <trkpt lat="34.478738" lon="126.612677"><ele>119.0</ele></trkpt>
+      <trkpt lat="34.478220" lon="126.612422"><ele>117.1</ele></trkpt>
+      <trkpt lat="34.477983" lon="126.612358"><ele>123.9</ele></trkpt>
+      <trkpt lat="34.477923" lon="126.612430"><ele>126.2</ele></trkpt>
+      <trkpt lat="34.477725" lon="126.613030"><ele>125.2</ele></trkpt>
+      <trkpt lat="34.477427" lon="126.613291"><ele>127.8</ele></trkpt>
+      <trkpt lat="34.477292" lon="126.613475"><ele>129.4</ele></trkpt>
+      <trkpt lat="34.477466" lon="126.613864"><ele>128.0</ele></trkpt>
+      <trkpt lat="34.477570" lon="126.614304"><ele>135.4</ele></trkpt>
+      <trkpt lat="34.477424" lon="126.614599"><ele>133.9</ele></trkpt>
+      <trkpt lat="34.477287" lon="126.615235"><ele>132.0</ele></trkpt>
+      <trkpt lat="34.476785" lon="126.615594"><ele>137.7</ele></trkpt>
+      <trkpt lat="34.476584" lon="126.615602"><ele>139.3</ele></trkpt>
+      <trkpt lat="34.476479" lon="126.615769"><ele>138.5</ele></trkpt>
+      <trkpt lat="34.476311" lon="126.615830"><ele>139.1</ele></trkpt>
+      <trkpt lat="34.476207" lon="126.616086"><ele>141.2</ele></trkpt>
+      <trkpt lat="34.476090" lon="126.616213"><ele>142.6</ele></trkpt>
+      <trkpt lat="34.475968" lon="126.616269"><ele>143.8</ele></trkpt>
+      <trkpt lat="34.475595" lon="126.616617"><ele>147.0</ele></trkpt>
+      <trkpt lat="34.475102" lon="126.616514"><ele>153.6</ele></trkpt>
+      <trkpt lat="34.474637" lon="126.616513"><ele>160.8</ele></trkpt>
+      <trkpt lat="34.474421" lon="126.616597"><ele>164.0</ele></trkpt>
+      <trkpt lat="34.474097" lon="126.616915"><ele>166.7</ele></trkpt>
+      <trkpt lat="34.473874" lon="126.617251"><ele>167.6</ele></trkpt>
+      <trkpt lat="34.473766" lon="126.617624"><ele>174.6</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
