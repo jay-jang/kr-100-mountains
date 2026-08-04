@@ -1,0 +1,1664 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-04T15:46:47.504Z",
+  "generator": "scripts/collect-reviews.mjs",
+  "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
+  "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
+  "topics": [
+    "난이도",
+    "혼잡",
+    "주차·교통",
+    "위험구간",
+    "계절·시기",
+    "조망·볼거리",
+    "편의시설",
+    "통제·예약"
+  ],
+  "stats": {
+    "mountains": 10,
+    "notes": 85,
+    "verified": 55
+  },
+  "mountains": [
+    {
+      "id": "baekamsan",
+      "name": "백암산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 5,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "백양사-백학봉-상왕봉 코스",
+          "topic": "위험구간",
+          "text": "백학봉에서 백양사 방향은 기암과 절벽 사이로 무수한 계단과 급경사가 계속되므로 하산할 때 특히 주의해야 한다.",
+          "sentiment": "caution",
+          "as_of": "2004-11",
+          "sources": [
+            "https://www.korea.kr/news/reporterView.do?newsId=65078062",
+            "https://namu.wiki/w/%EB%B0%B1%EC%95%94%EC%82%B0(%EC%A0%84%EB%9D%BC%EB%8B%A4)"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "단풍축제 시기의 백양사 방면은 인파가 가장 혼잡한 반면, 같은 시기 남창골은 상대적으로 한적한 들머리로 기록됐다.",
+          "sentiment": "neutral",
+          "as_of": "2004-11",
+          "sources": [
+            "https://www.korea.kr/news/reporterView.do?newsId=65078062",
+            "https://www.munhwa.com/news/view.html?no=2019110701032336000001"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "남창골(장성) 코스",
+          "topic": "조망·볼거리",
+          "text": "남창탐방소에서 몽계폭포·사자봉·상왕봉·백학봉을 거쳐 백양사로 내려간 산행에서는 하곡동골 단풍과 몽계폭포가 주요 볼거리로 확인되며, 전체 기록은 12km·5시간이다.",
+          "sentiment": "good",
+          "as_of": "2019-11",
+          "sources": [
+            "https://lblok2001.tistory.com/5476171",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "11월 초 단풍축제 무렵 애기단풍이 선홍색으로 물들고 백양사·쌍계루 일대까지 단풍 관람객이 붐비는 현장이 확인됐다.",
+          "sentiment": "good",
+          "as_of": "2004-11",
+          "sources": [
+            "https://www.korea.kr/news/reporterView.do?newsId=65078062",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백양사-백학봉-상왕봉 코스",
+          "topic": "편의시설",
+          "text": "백학봉 아래 영천굴에는 사시사철 샘솟는다고 소개된 샘물이 있어 현장 산행기에서도 물을 마신 기록이 확인된다.",
+          "sentiment": "neutral",
+          "as_of": "2004-11",
+          "sources": [
+            "https://www.korea.kr/news/reporterView.do?newsId=65078062",
+            "https://www.chosun.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "baekdeoksan",
+      "name": "백덕산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 6,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "난이도",
+          "text": "문재에서 출발한 실제 기록은 약 11km·5시간 13분이었으며, 작은당재 이후 정상까지 오르막이 한층 힘들었다고 기록됐다.",
+          "sentiment": "caution",
+          "as_of": "2017-12",
+          "sources": [
+            "https://yeong91.tistory.com/160",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "위험구간",
+          "text": "정상 직전에는 밧줄을 잡고 올라서는 구간이 있고, 겨울에는 바위 위 적설 때문에 미끄럽다고 기록돼 있다.",
+          "sentiment": "caution",
+          "as_of": "2017-12",
+          "sources": [
+            "https://yeong91.tistory.com/160",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "계절·시기",
+          "text": "12월 산행에서는 아이젠과 스틱을 착용해야 할 만큼 눈이 쌓였고, 능선의 강한 눈보라 때문에 눈을 제대로 뜨기 어려웠다는 현장 기록이 있다.",
+          "sentiment": "caution",
+          "as_of": "2017-12",
+          "sources": [
+            "https://yeong91.tistory.com/160",
+            "https://daum.net/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "조망·볼거리",
+          "text": "정상 500m 전 삼거리 부근에는 N자 모양으로 휘어진 나무가 백덕산의 상징적인 볼거리로 소개돼 있다.",
+          "sentiment": "good",
+          "as_of": "2017-12",
+          "sources": [
+            "https://yeong91.tistory.com/160",
+            "https://www.joongang.co.kr/article/23700000"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재쉼터-백덕산-비내석골",
+          "topic": "통제·예약",
+          "text": "2026년 봄철 공식 개방·폐쇄 자료에서 문재-백덕산-비내석골 8.5km 구간은 산림유전자원보호구역이지만 개방 노선으로 분류됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-02",
+          "sources": [
+            "https://www.untan1330.com/egf/bp/common/front/504/download",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "통제·예약",
+          "text": "2026년 봄철 공식 자료에서 문재-백덕산-먹골 12.7km 구간은 개방 노선으로 분류됐으며 산림유전자원보호구역이라는 비고가 붙어 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-02",
+          "sources": [
+            "https://www.untan1330.com/egf/bp/common/front/504/download",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문재-당재-백덕산-먹골 코스",
+          "topic": "편의시설",
+          "text": "먹골 하산 방향 갈림길 안내에는 100m 거리에 샘물터가 표시돼 있으나, 해당 산행자는 직접 수질이나 작동 여부를 확인하지는 않았다.",
+          "sentiment": "neutral",
+          "as_of": "2017-12",
+          "sources": [
+            "https://yeong91.tistory.com/160"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "baekunsan-gwangyang",
+      "name": "백운산(광양)",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 7,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "광양시는 겨울 백운산에서 따리봉과 한재 사이의 눈꽃·설경을 주요 볼거리로 소개하면서, 낮은 기온과 빠른 일몰에 대비한 체온 유지와 장비 준비를 당부했다.",
+          "sentiment": "caution",
+          "as_of": "2024-01",
+          "sources": [
+            "https://gwangyang.go.kr/board.es?act=view&bid=0057&list_no=158292&mid=a11007000000&nPage=15&tag=",
+            "https://www.gwangyang.go.kr/",
+            "https://gwangyang.go.kr/board.es?act=view&bid=0057&list_no=158292&mid=a11007000000&tag="
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진틀-상봉 코스",
+          "topic": "난이도",
+          "text": "진틀 들머리부터 진틀삼거리까지는 비교적 완만한 계곡길이지만, 삼거리 이후에는 급경사 산사면과 계단이 이어지고 능선에서도 계속 고도를 높인다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진틀-상봉 코스",
+          "topic": "위험구간",
+          "text": "병암산장에서 진틀삼거리까지 바위너덜길이 이어지며, 신선대는 암벽을 돌아 두 개의 계단을 올라야 하는 암봉이다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "억불봉 연계 코스",
+          "topic": "위험구간",
+          "text": "억불봉삼거리에서 억불봉까지 작은 암봉 3개를 넘으며 암릉과 급경사 오르내림이 반복되지만, 현장에는 계단이 설치돼 있다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진틀-상봉 코스",
+          "topic": "조망·볼거리",
+          "text": "신선대와 상봉은 사방 조망이 트이며, 상봉 북쪽에서는 천왕봉부터 노고단까지 지리산 주능선과 촛대봉·영신봉·반야봉을 한눈에 볼 수 있었다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "억불봉 연계 코스",
+          "topic": "조망·볼거리",
+          "text": "억불봉 정상석 주변은 잡목 때문에 조망이 없지만, 정상석 너머 약 30m 지점 바위 전망대에서는 광양 방향 남쪽 전망이 열린다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "동동마을-억불봉 코스",
+          "topic": "주차·교통",
+          "text": "동동마을회관에 주차한 뒤 동동마을 정류장에서 오전 9시 10분경 시내버스를 타고 진틀 들머리로 이동한 실제 산행 사례가 있다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://bungburi.tistory.com/12868975",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "baekunsan-jangsu",
+      "name": "백운산(장수)",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 4,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "무령고개-영취산-백운산 코스",
+          "topic": "위험구간",
+          "text": "영취산과 무령고개 사이는 가파른 나무계단 구간이며, 백운산 정상부로 접근할 때도 중고개재 이후 가파른 오름이 이어진다.",
+          "sentiment": "caution",
+          "as_of": "2009-04",
+          "sources": [
+            "https://dchoidy.tistory.com/12860295",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "무령고개-영취산-백운산 코스",
+          "topic": "난이도",
+          "text": "무령고개 벽계쉼터에서 영취산 정상까지 실제 소요시간은 약 18분이었고, 영취산에서 백운산을 거쳐 중재까지 포함한 역방향 기록은 약 9km·3시간 36분이었다.",
+          "sentiment": "neutral",
+          "as_of": "2017-09",
+          "sources": [
+            "https://dchoidy.tistory.com/12860295",
+            "https://tistory.com/",
+            "https://munjoolle.tistory.com/327"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "무령고개-영취산-백운산 코스",
+          "topic": "주차·교통",
+          "text": "무령고개 주차장에서 도로를 건너 벽계쉼터 뒤로 영취산 등산로가 시작되며, 들머리의 해발고도는 약 900m로 기록됐다.",
+          "sentiment": "neutral",
+          "as_of": "2017-09",
+          "sources": [
+            "https://munjoolle.tistory.com/327",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "무령고개-영취산-백운산 코스",
+          "topic": "조망·볼거리",
+          "text": "백운산 정상 직전 바위 전망대에서는 봉화산·월경산 능선이 보이며, 정상에서는 지리산·장안산·깃대봉·남덕유산 줄기까지 사방 조망이 열린다고 기록됐다.",
+          "sentiment": "good",
+          "as_of": "2009-04",
+          "sources": [
+            "https://dchoidy.tistory.com/12860295",
+            "https://tistory.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "baekunsan-jeongseon",
+      "name": "백운산(정선)",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 4,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "점재교 최단코스",
+          "topic": "난이도",
+          "text": "점재마을에서 정상까지 비탈과 암릉이 계속되는 난코스로 소개되며, 점재교에서 병매기고개 1.1km, 다시 정상까지 1.4km이다.",
+          "sentiment": "caution",
+          "as_of": "2014-10",
+          "sources": [
+            "https://shwkdrns5353.tistory.com/731",
+            "https://namu.wiki/w/%EB%B0%B1%EC%9B%B4%EC%82%B0(%EC%A0%95%EC%84%A0)",
+            "https://www.khan.co.kr/article/200804241725325"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제장-칠족령-정상 코스",
+          "topic": "조망·볼거리",
+          "text": "칠족령과 백운산 사이 능선에서는 감입곡류하는 동강을 내려다볼 수 있으며, 칠족령전망대와 하늘벽유리구름다리로 이어지는 갈림길도 있다.",
+          "sentiment": "good",
+          "as_of": "2011-06",
+          "sources": [
+            "https://www.forest.go.kr/images/data/fonDown/100_mountain_ebook.pdf",
+            "https://m.chosun.com/",
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20110610.22028200342"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "매년 3월부터 4월 봄철에는 문희마을 인근과 동강 벼랑 주변으로 희귀종인 동강할미꽃이 군락을 이루며 피어난다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://theway2417.tistory.com/16615232",
+            "https://korean.visitkorea.or.kr/",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9f5bb6ea-1d67-4d9a-a82f-2d2cdd25a4d4"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문희마을 원점회귀 코스",
+          "topic": "통제·예약",
+          "text": "2026년 봄철 등산로 개방·폐쇄 내역에서 문희마을-백운산 정상-칠족령-문희마을 6.1km 구간은 개방 노선으로 고시됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-02",
+          "sources": [
+            "https://www.untan1330.com/egf/bp/common/front/504/download",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "위험구간",
+          "text": "강변 돌산이라 벼랑 끝에 걸친 등산로와 급경사 바위길이 많다. 비가 오면 바위가 미끄러워 우중 산행과 단독 산행을 피하라는 현장 안내가 있다.",
+          "sentiment": "caution",
+          "as_of": "2008-04",
+          "sources": [
+            "https://m.sansuyuram.com/board/view.php?&bdId=san_notice&sno=76",
+            "https://www.khan.co.kr/article/200804241725325",
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20110610.22028200342"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제장-칠족령-정상 코스",
+          "topic": "난이도",
+          "text": "칠족령에서 제장마을 방향으로 한동안 가파른 내리막이 이어진 뒤 임도 가까이에서 길이 완만해진다는 산행 기록이 있다.",
+          "sentiment": "caution",
+          "as_of": "2011-06",
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20110610.22028200342"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "문희마을 원점회귀 코스",
+          "topic": "주차·교통",
+          "text": "문희마을 들머리인 백룡동굴 생태학습장 인근에 무료 주차장이 마련되어 있어 자차 이용 시 원점회귀 산행에 편리하다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.pc.go.kr/cave",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9f5bb6ea-1d67-4d9a-a82f-2d2cdd25a4d4"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제장-칠족령-정상 코스",
+          "topic": "조망·볼거리",
+          "text": "칠족령 전망대에서는 동강이 U자형으로 굽이치는 한반도 지형 형상의 비경과 기암절벽 뼝대를 한눈에 감상할 수 있다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://www.heritage.go.kr/",
+            "https://san.chosun.com/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "들머리인 문희마을 백룡동굴 탐방센터 주변에 화장실과 주차장이 구비되어 있으나 산행 능선 구간에는 매점이나 식수 공급처가 없다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.pc.go.kr/",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9f5bb6ea-1d67-4d9a-a82f-2d2cdd25a4d4"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "baekunsan-pocheon",
+      "name": "백운산(포천)",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 4,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "백운계곡·흥룡사 코스",
+          "topic": "위험구간",
+          "text": "백운계곡 하산길은 돌밭과 가파른 경사 구간이 많고 계곡 바위가 미끄러워 장마철이나 우기 하산 시 실족에 주의해야 한다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://www.youtube.com/watch?v=BjnmYCDkp6s",
+            "https://m.blog.naver.com/",
+            "https://namu.wiki/w/%EB%B0%B1%EC%9B%B4%EC%82%B0(%ED%8F%AC%EC%B2%9C)"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백운계곡·흥룡사 코스",
+          "topic": "조망·볼거리",
+          "text": "백운동계곡은 계곡과 단애가 어우러진 경관으로 소개되며, 산기슭에는 신라 말 도선이 창건했다고 전하는 흥룡사가 있다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://www.youtube.com/watch?v=BjnmYCDkp6s",
+            "https://encykorea.aks.ac.kr/Article/E0054707",
+            "https://www.foresttrip.go.kr/pot/cc/hm/selectHndfmsmtnMngmeDtl.do?fmmntArcd=01&fmmntSeq=71988&nowPage=1&preSrchArea=01&preSrchWrd=&srchArea=01&srchWrd="
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "광덕고개 최단 코스",
+          "topic": "난이도",
+          "text": "광덕고개 정상 해발 약 620m 지점에서 출발하여 903m 정상까지 능선 고도차가 작아 비교적 수월하게 오를 수 있는 코스이다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://sjkim818.tistory.com/2422",
+            "https://namu.wiki/w/%EB%B0%B1%EC%9B%B4%EC%82%B0(%ED%8F%AC%EC%B2%9C)",
+            "https://san.chosun.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "광덕고개 최단 코스",
+          "topic": "난이도",
+          "text": "광덕고개 들머리는 초반 경사가 높지만 능선에 오른 뒤에는 암벽이나 아찔한 구간 없이 비교적 여유롭게 정상까지 진행할 수 있다고 소개된다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://koreahike.com/pocheon-baegunsan-hiking-guide",
+            "https://koreahike.com/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백운계곡·흥룡사 코스",
+          "topic": "위험구간",
+          "text": "향적봉을 지난 하산로는 갑자기 경사가 심해지고 가파른 비탈과 돌계단이 이어져 막바지 낙상에 주의해야 한다.",
+          "sentiment": "caution",
+          "as_of": "2026-07",
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://koreahike.com/pocheon-baegunsan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "여름 피서철인 7~8월에는 백운계곡을 찾는 피서객과 등산객이 몰려 흥룡사 진입로와 주차장이 오전 일찍 만차된다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://namu.wiki/w/%EB%B0%B1%EC%9B%B4%EC%82%B0(%ED%8F%AC%EC%B2%9C)"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "광덕고개 최단 코스",
+          "topic": "주차·교통",
+          "text": "광덕고개에서 흥룡사 쪽으로 내려가면 출발지와 도착지가 달라진다. 자가용 이용자는 백운계곡 주차장에 주차한 뒤 택시로 광덕고개에 이동하는 방법이 안내돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://www.youtube.com/",
+            "https://koreahike.com/pocheon-baegunsan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백운계곡·흥룡사 코스",
+          "topic": "난이도",
+          "text": "백운계곡 원점회귀 코스는 약 4시간의 중급 코스로, 이동거리가 길고 급경사 구간이 많아 체력과 지구력이 부족하면 힘들 수 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://koreahike.com/pocheon-baegunsan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백운계곡·흥룡사 코스",
+          "topic": "주차·교통",
+          "text": "흥룡사 입구 백운계곡 주차장은 대형 무료 주차장과 공중화장실을 갖추고 있어 자차 방문객이 이용하기 편리하다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "bangjangsan",
+      "name": "방장산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 1,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "능선 종주 코스",
+          "topic": "난이도",
+          "text": "양고살재-방장사-벽오봉-방장산-봉수대-장성갈재 종주는 12.8km, 약 5시간 30분 코스로 안내된다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://m.tripinfo.co.kr/info.html?content_id=717051&content_type_id=12",
+            "http://www.tripinfo.co.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장성갈재-쓰리봉-봉수대-방장산",
+          "topic": "위험구간",
+          "text": "장성갈재에서 쓰리봉에 이르는 오르막 구간은 경사가 가파르고 암릉 및 줄잡고 오르는 로프 구간이 있어 발을 헛디디지 않도록 조심해야 한다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://namu.wiki/w/%EB%B0%B9%EC%9E%A5%EC%82%B0"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장성갈재-쓰리봉-방장산-억새봉-양고살재",
+          "topic": "난이도",
+          "text": "장성갈재에서 쓰리봉까지가 특히 힘들고, 이후에는 여러 봉우리를 오르내리는 능선 산행이 이어진다.",
+          "sentiment": "neutral",
+          "as_of": "2022-09",
+          "sources": [
+            "https://namu.wiki/w/%EB%B0%B9%EC%9E%A5%EC%82%B0",
+            "https://www.youtube.com/watch?v=-w6fTEbhQxw",
+            "https://yeong91.tistory.com/98"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "자연휴양림 코스",
+          "topic": "주차·교통",
+          "text": "휴양림 이용 후기에는 매표소 통과 후 7·8·9번 주차장을 이용하며, 7번 주차장 조금 아래에 방장산 등산로가 있다고 기록돼 있다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "http://www.tripinfo.co.kr/",
+            "https://m.tripinfo.co.kr/info.html?content_id=717051&content_type_id=12"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장성갈재-쓰리봉-방장산-억새봉-양고살재",
+          "topic": "조망·볼거리",
+          "text": "능선에서는 동쪽의 입암산·백암산과 서쪽의 고창평야·고창읍·선운산, 맑은 날에는 서해 방향까지 조망된다고 기록돼 있다.",
+          "sentiment": "good",
+          "as_of": "2018-11",
+          "sources": [
+            "https://namu.wiki/w/%EB%B0%B9%EC%9E%A5%EC%82%B0",
+            "https://hj030303.tistory.com/531?category=995549"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "자연휴양림 코스",
+          "topic": "난이도",
+          "text": "국립방장산자연휴양림 주차장에서 패러글라이딩 활공장을 거쳐 정상으로 오르는 최단 코스로 약 1시간 30분~2시간 만에 정상 왕복이 가능하다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "http://www.tripinfo.co.kr/",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장성갈재-쓰리봉-방장산-억새봉-양고살재",
+          "topic": "조망·볼거리",
+          "text": "억새봉 능선 구간에는 패러글라이딩 활공장이 펼쳐져 있어 막힘없는 고창평야와 서해바다 전경을 한눈에 바라볼 수 있다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://namu.wiki/w/%EB%B0%B9%EC%9E%A5%EC%82%B0",
+            "https://san.chosun.com/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "가을철 10월 하순에서 11월 초순 사이에는 능선의 억새와 활엽수 단풍이 조화를 이루어 산행객들에게 호평받는다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://www.chosun.com/",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "방장산자연휴양림 내부에는 숙박시설과 야영장, 숲속수련장 및 깨끗하게 관리되는 화장실 시설이 잘 갖추어져 있다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "bangtaesan",
+      "name": "방태산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "자연휴양림-주억봉 코스",
+          "topic": "위험구간",
+          "text": "동절기에는 진입로와 등산로가 결빙되므로 아이젠·등산스틱·스패츠 등 안전장비를 필수 착용하라는 휴양림 공지가 있다.",
+          "sentiment": "caution",
+          "as_of": "2024-02",
+          "sources": [
+            "https://www.hidoc.co.kr/",
+            "https://www.foresttrip.go.kr/pot/cc/nm/selectNticBbrssDtlView.do?bbrssMsterId=BBRSSMSTER_00000051&hmpgId=0109&menuId=005001&twbbsId=187184"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주억봉-구룡덕봉 능선 순환",
+          "topic": "통제·예약",
+          "text": "매봉령-구룡덕봉 구간은 산불조심기간에 통제된 사례가 있다. 공지된 산불조심기간은 봄철 2월 1일~5월 15일, 가을철 11월 1일~12월 15일이다.",
+          "sentiment": "caution",
+          "as_of": "2020-11",
+          "sources": [
+            "https://www.forest.go.kr/",
+            "https://www.ecomedia.co.kr/news/newsview.php?ncode=1065579974898389"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "자연휴양림-주억봉 코스",
+          "topic": "난이도",
+          "text": "방태산 자연휴양림 제2주차장에서 주억봉(1,445.7m)까지 오르는 구간은 해발 고도차가 크고 정상 부근 경사가 가파르다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주억봉-구룡덕봉 능선 순환",
+          "topic": "주차·교통",
+          "text": "2026년 7월 산행기 기준 휴양림 도로 일부가 유실돼 대형버스가 진입하지 못했고, 산악회 버스 이용자는 매표소까지 왕복 3km의 포장도로를 추가로 걸었다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://www.foresttrip.go.kr/",
+            "https://landyplay.com/%EB%B0%A9%ED%83%9C%EC%82%B0-%EC%A0%81%EA%B0%80%EB%A6%AC%EA%B3%A8-%EB%A7%A4%EB%B4%89%EB%A0%B9-%EC%A3%BC%EC%96%B5%EB%B4%89-%EC%B0%8D%EA%B3%A0-%ED%9C%B4%EC%96%91%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%9B%90"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주억봉-구룡덕봉 능선 순환",
+          "topic": "난이도",
+          "text": "산행 기록에서 등산로 입구부터 매봉령 갈림길까지 누적 4.4km에 약 1시간 3분, 매봉령에서 구룡덕봉까지 1.2km에 약 33분이 소요됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://m.blog.naver.com/",
+            "https://landyplay.com/%EB%B0%A9%ED%83%9C%EC%82%B0-%EC%A0%81%EA%B0%80%EB%A6%AC%EA%B3%A8-%EB%A7%A4%EB%B4%89%EB%A0%B9-%EC%A3%BC%EC%96%B5%EB%B4%89-%EC%B0%8D%EA%B3%A0-%ED%9C%B4%EC%96%91%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%9B%90"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주억봉-구룡덕봉 능선 순환",
+          "topic": "조망·볼거리",
+          "text": "주억봉과 구룡덕봉을 잇는 능선길에서는 방태산의 웅장한 원시림 산세와 설악산 방면 고산 능선 전경을 탁 트이게 조망할 수 있다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://koreahike.com/",
+            "https://san.chosun.com/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "적가리골 하류에 위치한 이단폭포는 2단으로 쏟아지는 시원한 물줄기와 가을 단풍이 어우러지는 방태산의 으뜸 명소이다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://www.foresttrip.go.kr/",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "매년 10월 초순에서 중순 사이에 적가리골 계곡을 따라 오색 단풍이 최절정을 이루어 많은 탐방객과 사진작가가 방문한다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://www.foresttrip.go.kr/",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "방태산 자연휴양림 내 제1주차장과 제2주차장에 화장실이 구비되어 있으나 산등성이 상부에는 매점 및 음수대가 없어 생수를 사전에 충분히 준비해야 한다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.foresttrip.go.kr/",
+            "https://www.forest.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "bukhansan",
+      "name": "북한산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 10,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "우이동-백운대 코스",
+          "topic": "난이도",
+          "text": "서울 등산관광 안내서는 백운대-우이구곡 구간을 총 9.98km, 약 4시간 20분이 걸리는 ‘어려움’ 코스로 분류한다.",
+          "sentiment": "caution",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/data/mountain_pdf/note_20250910184338446_01.pdf",
+            "https://www.visitseoul.net/",
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "우이동-백운대 코스",
+          "topic": "위험구간",
+          "text": "하루재에서 영봉으로 오르는 길은 가파르고 추락 위험 구간이 있어, 안내서는 스틱·장갑을 준비하고 설치된 핸드레일을 잡으라고 권한다.",
+          "sentiment": "caution",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/data/mountain_pdf/note_20250910184338446_01.pdf",
+            "https://www.visitseoul.net/",
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "난이도",
+          "text": "북한산성에서 대남문으로 이어지는 안내 코스는 10.2km, 약 4시간 10분의 ‘어려움’ 등급이며 심한 오르막과 내리막을 10km 넘게 걸어야 한다.",
+          "sentiment": "caution",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf",
+            "https://www.visitseoul.net/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "조망·볼거리",
+          "text": "북한산성의 성문과 행궁지 등 역사 유적을 지나며, 북한동역사관에서 중성문·용암문을 거쳐 만경대 쪽으로 우회하면 경사가 상대적으로 완만해진다.",
+          "sentiment": "good",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/data/mountain_pdf/note_20250910184338446_01.pdf",
+            "https://seoulhiking.or.kr/",
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "난이도",
+          "text": "북한산성 탐방지원센터에서 출발해 백운대 정상에 도달하는 북한산성 코스는 편도 약 3.4~4.1km 거리로 왕복 3시간 30분에서 4시간 이상 소요됩니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://mediahub.seoul.go.kr/archives/2017818",
+            "https://www.visitseoul.net/",
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "우이동-백운대 코스",
+          "topic": "주차·교통",
+          "text": "우이동 방면 도선사 광장 주차장은 주차 공간이 협소하여 조기 만차되며, 우이신설선 북한산우이역에서 탐방지원센터까지는 도보로 약 40분이 소요됩니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://bughansan.kmountain.kr/",
+            "https://www.knps.or.kr/",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "우이동-백운대 코스",
+          "topic": "조망·볼거리",
+          "text": "영봉에서는 인수봉을 정면으로 볼 수 있고, 백운대 정상에서는 서울을 360도 파노라마로 조망할 수 있다고 안내돼 있다.",
+          "sentiment": "good",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf",
+            "https://seoulhiking.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "우이동-백운대 코스",
+          "topic": "주차·교통",
+          "text": "우이신설선 북한산우이역 2번 출구에서 서울 등산관광센터 방향으로 약 5분 걸으며, 역에서 백운탐방지원센터까지 택시로 접근할 수도 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf",
+            "https://seoulhiking.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "주차·교통",
+          "text": "대중교통으로는 지하철 3호선 구파발역 2번 출구에서 704번 버스를 타고 북한산성입구 정류장에서 내리도록 안내돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-09",
+          "sources": [
+            "https://seoulhiking.or.kr/kr/theme/basic/img/mountain_bukhansan-kr.pdf",
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백운대탐방지원센터-하루재-백운대피소-백운대",
+          "topic": "난이도",
+          "text": "백운대탐방지원센터에서 출발해 하루재와 백운대피소를 거쳐 백운대로 오르는 코스는 편도 약 1.9~2.0km로 백운대 최단 경로이나 지속적인 오르막과 암릉으로 난이도가 높습니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://chiak.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020092&parkId=121500&parkNavGb=park_cateFac&vnewsId=005",
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "위험구간",
+          "text": "백운봉 암문에서 백운대 정상으로 이어지는 마지막 암릉 구간은 경사가 가파르고 바위가 미끄러울 수 있어 등산화와 장갑 착용이 필수적입니다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://www.visitseoul.net/",
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "북한산성 코스",
+          "topic": "주차·교통",
+          "text": "북한산성 제1·제2주차장은 중·소형차 기준 최초 1시간 1,100원이며, 주말과 공휴일 오전에는 주차장이 빠르게 만차되므로 대중교통 이용이 권장됩니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanrasan",
+      "name": "한라산",
+      "collected_at": "2026-08-04",
+      "checked_by": 2,
+      "verified": 14,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "난이도",
+          "text": "성판악은 편도 9.6km로 대체로 완만하지만, 진달래밭대피소부터 정상까지는 ‘어려움’ 구간이어서 긴 거리의 체력 안배가 필요하다고 소개돼 있다.",
+          "sentiment": "caution",
+          "as_of": "2021-11",
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://ppqzm-i.tistory.com/171"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관음사 코스",
+          "topic": "난이도",
+          "text": "관음사 코스는 편도 8.7km이지만 고도 차가 크며, 특히 왕관릉은 경사가 가팔라 호흡을 조절해야 할 만큼 힘든 구간으로 소개돼 있다.",
+          "sentiment": "caution",
+          "as_of": "2021-11",
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=62",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://ppqzm-i.tistory.com/171"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관음사 코스",
+          "topic": "통제·예약",
+          "text": "낙석방지책 보수와 위험구간 데크 교체 때문에 관음사 탐방로 삼각봉~정상 구간은 2026년 8월 1일부터 9월 30일까지 출입이 통제된다.",
+          "sentiment": "caution",
+          "as_of": "2026-06",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice&seq=1298",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://jeju.go.kr/lifecycle/notice/allnews.htm?act=view&seq=2022051"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "한라산 백록담 정상에 오를 수 있는 성판악 코스와 관음사 코스는 한라산 탐방예약시스템을 통한 사전 예약이 필수이며 1회 최대 4명까지 신청 가능합니다.",
+          "sentiment": "caution",
+          "as_of": "2026-08",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice&seq=1284",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://visithalla.jeju.go.kr/main/main.do"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영실 코스",
+          "topic": "통제·예약",
+          "text": "영실 코스는 예약 없이 탐방이 가능하지만 백록담 정상으로 이어지는 탐방로는 안전과 보전을 위해 통제되어 있어 윗세오름까지만 등산할 수 있습니다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://www.visitjeju.net/pdf/Official%20Jeju%20Tourism%20Guidebook_kr.pdf",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500685"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "한라산은 호우·태풍·대설 특보가 발효되면 탐방이 제한되며, 코스별·계절별 입산 통제 시각도 별도로 적용된다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=49",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영실 코스",
+          "topic": "통제·예약",
+          "text": "영실 입구의 입산 마감은 1·2·11·12월 12시, 3·4·9·10월 14시, 5~8월 15시로 안내돼 있다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=49",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영실 코스",
+          "topic": "조망·볼거리",
+          "text": "영실기암과 병풍바위가 대표 절경으로 언급되며, 병풍바위를 지난 뒤에는 선작지왓의 넓은 고원 풍경을 볼 수 있다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fc2b7cd7-ae9c-40a1-a752-9fed55273647",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://kokoreview.tistory.com/entry/%ED%95%9C%EB%9D%BC%EC%82%B0-%EC%98%81%EC%8B%A4%EC%BD%94%EC%8A%A4-%EB%82%9C%EC%9D%B4%EB%8F%84-%EB%B0%8F-%EC%86%8C%EC%9A%94%EC%8B%9C%EA%B0%84",
+            "https://info-time.tistory.com/entry/%ED%95%9C%EB%9D%BC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EC%A0%95%EB%A6%AC-%EB%B0%8F-%EC%9E%85%EC%82%B0%ED%86%B5%EC%A0%9C-%EC%8B%9C%EA%B0%84?category=755843"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "편의시설",
+          "text": "화장실은 성판악사무실·속밭대피소·진달래밭대피소에 있으며, 성판악 입구와 탐방로 안에는 운영 중인 매점이 없어 물품을 미리 준비해야 한다.",
+          "sentiment": "neutral",
+          "as_of": "2026-01",
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://visithalla.jeju.go.kr/reservation/resMessage.do?reserveId=PWkumoDi%2Fi15gp7bKVq4vg%3D%3D"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "주차·교통",
+          "text": "성판악 주차장은 최대 156대 주차가 가능하나 만차가 빠르므로, 199대 규모의 5.16도로변 환승주차장이나 10~14분 간격으로 운행하는 281번 버스 이용이 추천됩니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice&seq=1294",
+            "https://www.jeju.go.kr/hallasan/index.htm",
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "조망·볼거리",
+          "text": "탐방로 5.8km 지점에서 사라오름 방향으로 600m 오르면 산정호수와 한라산 경관을 볼 수 있는 사라오름 전망대가 나온다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "난이도",
+          "text": "성판악 코스는 편도 9.6km로 왕복 약 9시간이 소요되며, 속밭까지는 쉬움(C), 진달래밭까지는 보통(B), 정상까지는 어려움(A) 등급으로 구분됩니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "성판악 코스",
+          "topic": "편의시설",
+          "text": "성판악 코스 내에는 매점이 없으므로 식수를 직접 준비해야 하며, 화장실은 성판악 사무실, 속밭대피소, 진달래밭대피소 3곳에 위치합니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관음사 코스",
+          "topic": "난이도",
+          "text": "관음사 코스는 편도 8.7km로 왕복 10시간이 걸리며, 탐라계곡 및 정상 진입 전 왕관릉 구간 등 경사가 가파른 난구간이 포함되어 있습니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=62",
+            "https://www.jeju.go.kr/hallasan/index.htm"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        }
+      ]
+    }
+  ]
+}

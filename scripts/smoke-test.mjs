@@ -1,7 +1,7 @@
 // Headless smoke test: serves ./dist, drives it with playwright chromium, checks core flows.
 // Usage: node scripts/smoke-test.mjs
 import { createServer } from 'node:http';
-import { readFile, mkdir } from 'node:fs/promises';
+import { readFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +39,22 @@ const check = (name, cond, detail = '') => results.push({ name, ok: !!cond, deta
 
 try {
   await mkdir(SHOTS, { recursive: true });
+
+  // dist가 소스보다 오래됐으면 이 테스트는 "지금 코드"가 아니라 옛 빌드를 검사하는 셈이다.
+  // 통과해도 의미가 없고 실패해도 원인을 엉뚱한 데서 찾게 되므로 먼저 걸러 낸다.
+  const newestMtime = async (dir) => {
+    let newest = 0;
+    for (const e of await readdir(dir, { withFileTypes: true })) {
+      if (e.name === 'node_modules' || e.name.startsWith('.')) continue;
+      const p = join(dir, e.name);
+      newest = Math.max(newest, e.isDirectory() ? await newestMtime(p) : (await stat(p)).mtimeMs);
+    }
+    return newest;
+  };
+  const srcAt = Math.max(await newestMtime(join(ROOT, 'src')), await newestMtime(join(ROOT, 'public')));
+  const distAt = existsSync(join(DIST, 'index.html')) ? (await stat(join(DIST, 'index.html'))).mtimeMs : 0;
+  check('build: dist가 소스보다 최신 (아니면 옛 빌드를 검사하게 됨)', distAt >= srcAt,
+    distAt ? `dist ${new Date(distAt).toISOString().slice(0, 19)} vs src ${new Date(srcAt).toISOString().slice(0, 19)}` : 'dist 없음');
 
   // ---- home dashboard ----
   await page.goto(base + '/#/', { waitUntil: 'networkidle', timeout: 30000 });
@@ -316,6 +332,39 @@ try {
     check('gpx: 계산 경로가 지도 목록에 섞이지 않음', !routeLabels.some((t) => /OSM 계산 경로/.test(t)), `${routeLabels.length} route items`);
   } else {
     check('gpx: 수집된 코스 경로 존재', false, '매니페스트에 트랙 없음');
+  }
+
+  // ---- 탐방 후기 · 현장 정보 ----
+  const rv = await page.evaluate(async (b) => {
+    const r = await fetch(b + '/data/reviews/index.json');
+    return r.ok ? r.json() : null;
+  }, base);
+  check('reviews: 매니페스트 로드', !!rv && rv.schema_version === 1, rv ? `산 ${rv.stats.mountains} · 항목 ${rv.stats.notes}` : 'none');
+  check('reviews: 원문 후기가 아님을 명시', !!rv && /그대로 옮긴 것이 아니/.test(rv.what_this_is || ''));
+  check('reviews: 검증 방법 기록', !!rv && /반박/.test(rv.method || '') && /verified/.test(rv.method || ''));
+
+  const rvSample = rv?.mountains?.find((e) => e.notes > 0);
+  if (rvSample) {
+    const detail = await page.evaluate(async (u) => {
+      const r = await fetch(u); return r.ok ? r.json() : null;
+    }, `${base}/data/reviews/${rvSample.id}.json`);
+    check('reviews: 산별 상세 파일', !!detail?.notes?.length, `${rvSample.id} ${rvSample.notes}건`);
+    // 출처 없는 항목·깨진 인코딩은 애초에 저장되면 안 된다.
+    const bad = (detail?.notes || []).filter((n) => !n.sources?.length || /�/.test(n.text));
+    check('reviews: 모든 항목에 출처 URL · 인코딩 정상', bad.length === 0, `${bad.length}건 문제`);
+    check('reviews: 출처가 http(s) URL', (detail?.notes || []).every((n) => n.sources.every((u) => /^https?:\/\//.test(u))));
+
+    await page.goto(`${base}/#/m/${rvSample.id}`, { waitUntil: 'networkidle', timeout: 30000 });
+    await page.waitForSelector('.rv-item', { timeout: 10000 });
+    const rvRows = await page.$$eval('.rv-item', (n) => n.length);
+    check('reviews: 상세 페이지 렌더', rvRows === detail.notes.length, `${rvRows}건`);
+    const rvText = await page.$eval('.rv-list', (n) => n.closest('.section').textContent);
+    check('reviews: 원문 아님 고지 노출', /그대로 옮긴 것이 아닙니다/.test(rvText));
+    check('reviews: 교차검증 배지 노출', /교차검증|단일확인/.test(rvText));
+    const rel = await page.$$eval('.rv-src a', (n) => n.map((a) => a.getAttribute('rel') || ''));
+    check('reviews: 출처 링크가 noopener·nofollow', rel.length > 0 && rel.every((r) => /noopener/.test(r) && /nofollow/.test(r)), `${rel.length} links`);
+  } else {
+    check('reviews: 수집된 후기 존재', false, '매니페스트에 항목 없음');
   }
 
   // 위치 권한이 없을 때: 자동 프롬프트 없이 안내만 (홈이 깨지지 않아야 한다)

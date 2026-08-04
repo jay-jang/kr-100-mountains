@@ -58,6 +58,33 @@ data/enrichment.verified.json ─► scripts/build-data.mjs ─► public/data/m
 - `scripts/build-data.mjs` — 레지스트리와 검증된 조사 결과(`enrichment.verified.json`)를 합쳐 프론트 JSON + 위키 마크다운 생성(정상 좌표 범위 검증 포함).
 - 원자료: `data/sources/four_lists.txt`(4개 목록 비교), `hansanha_ranking.json`(인기명산 순위), `wolgansan_criteria.json`(월간산 선정기준 표).
 
+### 경로 GPX 수집 — `npm run routes`
+
+`scripts/collect-routes.mjs`가 등록된 들머리 → 정상 경로를 OpenStreetMap 등산로망 위에서 계산해
+코스별 GPX로 굽습니다(`public/gpx/routes/`). **실측 GPS 기록이 아니며** 실측 GPX와 자리를 나눠
+저장하고, 지도에 자동으로 그리지 않고 내려받기만 제공합니다. 자세한 내용은 `public/gpx/README.md`.
+
+### 탐방 후기 수집 — `npm run reviews`
+
+`scripts/collect-reviews.mjs`가 공개된 산행기·후기·공식 공지에서 확인되는 현장 정보(난이도 체감,
+혼잡, 주차·교통, 위험구간, 시기, 편의시설, 통제·예약)를 모읍니다.
+
+```
+독립적인 두 조사가 각자 수집  ─►  후보 주장 목록
+                                   │
+        같은 목록을 두 조사에게 다시 돌려 웹 근거로 판정
+                                   ▼
+   반박 1표라도 있으면 제외 · 확인 2표 verified · 1표 single · 0표 제외
+                                   ▼
+     data/reviews.verified.json  +  public/data/reviews/<id>.json
+```
+
+- 항목마다 **출처 URL이 반드시 있어야** 저장됩니다. 원문 후기를 그대로 옮긴 것이 아니라
+  확인된 사실을 한 줄로 정리한 요약입니다.
+- 문장 유사도로 "두 조사가 같은 말을 했는지" 세지 않습니다 — 한국어 요약문은 같은 사실이어도
+  0.11~0.22, 다른 사실이 0.08로 구분이 되지 않아, 대신 위와 같이 **검증 라운드**를 돌립니다.
+- 매일 한 번 자동으로 조금씩 갱신할 수 있습니다 → `ops/systemd/README.md`
+
 ## GPX 추가
 
 `public/gpx/<id>.gpx` 로 저장하면 해당 산 상세 페이지에 경로가 자동 표시됩니다. 자세한 내용은 `public/gpx/README.md`.

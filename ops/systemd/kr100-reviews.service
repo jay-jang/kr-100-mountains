@@ -1,0 +1,22 @@
+[Unit]
+Description=100대 명산 탐방 후기 수집 (교차검증)
+Documentation=https://github.com/jay-jang/kr-100-mountains
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# systemd 유닛은 절대경로만 받는다. %h 는 이 유닛을 돌리는 사용자의 홈 디렉터리로 치환된다.
+# 리포를 다른 곳에 두었다면 아래 두 줄과 Environment=KR100_REPO 를 **함께** 고쳐야 한다.
+WorkingDirectory=%h/workspace/100-kr-mountain
+ExecStart=%h/workspace/100-kr-mountain/scripts/reviews-daily.sh
+Environment=KR100_REPO=%h/workspace/100-kr-mountain
+# 웹 조사 도구가 멈춰도 하루를 넘기지 않게
+TimeoutStartSec=3h
+Nice=10
+
+# 하루에 몇 개 산을 볼지 / push 여부
+Environment=KR100_REVIEWS_LIMIT=8
+Environment=KR100_REVIEWS_BATCH=4
+Environment=KR100_REVIEWS_STALE_DAYS=21
+Environment=KR100_REVIEWS_PUSH=0

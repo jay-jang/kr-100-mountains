@@ -8,6 +8,7 @@ import { cachedPosition, notePosition, distanceTo, bearingLabel } from '../posit
 import { fetchElevations, resample, buildProfile, profileFromTrack, elevationChart, profileStats } from '../elevation.js';
 import { routeTrailheadToSummit } from '../routing.js';
 import { routeDownloadSection } from '../routegpx.js';
+import { reviewSection } from '../reviews.js';
 import { el, esc, clear } from '../dom.js';
 
 export async function renderDetail(root, id) {
@@ -114,6 +115,9 @@ export async function renderDetail(root, id) {
   // 수집해 둔 코스별 경로 GPX 내려받기(있는 산에서만 나타난다).
   // 계산 경로이므로 지도에 자동으로 그리지 않는다 — 지도는 실측/업로드 GPX만 그린다.
   page.append(routeDownloadSection(m.id));
+
+  // 교차검증한 탐방 후기·현장 정보(수집된 산에서만 나타난다).
+  page.append(reviewSection(m.id));
 
   const routes = [];             // { label, latlngs, profile, track|null, kind }
   let activeRoute = -1, activeRouteLayer = null;

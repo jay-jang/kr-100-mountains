@@ -1,0 +1,16 @@
+[Unit]
+Description=매일 1회 탐방 후기 수집
+Documentation=file:///home/ubuntu/workspace/100-kr-mountain/ops/systemd/README.md
+
+[Timer]
+# 호스트 시계가 UTC이므로 UTC로 적는다. 18:20 UTC = 03:20 KST.
+# 정각을 피해 두는 편이 좋다 — 외부 서비스에 요청이 몰리는 시각을 비껴간다.
+OnCalendar=*-*-* 18:20:00
+RandomizedDelaySec=900
+# 컴퓨터가 꺼져 있어 걸렀으면 켜진 뒤에 한 번 돌린다.
+Persistent=true
+AccuracySec=1min
+Unit=kr100-reviews.service
+
+[Install]
+WantedBy=timers.target
