@@ -24,6 +24,8 @@ export async function renderDetail(root, id) {
 
   const page = el('div', { class: 'page' });
   root.append(page);
+  // 라우트를 떠난 뒤 늦게 도착한 응답이 파괴된 지도를 건드리지 않게 하는 표식.
+  let disposed = false;
 
   // ---- breadcrumb ----
   page.append(el('div', { class: 'crumb' },
@@ -94,12 +96,12 @@ export async function renderDetail(root, id) {
 
   // ---- 등산로별 고도 (등산로 선택 → 그 경로만 지도 표시 + 고도 프로파일) ----
   const OSM_COLORS = ['#1a73e8', '#e2872a', '#8e44ad', '#16a085', '#c0392b'];
-  const routeColor = (r, i) => (r.kind === 'gpx' ? '#d1495b' : OSM_COLORS[i % OSM_COLORS.length]);
-
+  // 수집한 계산 경로는 실측(빨강)·OSM 등산로와 한눈에 구분되도록 보라 계열로 따로 둔다.
+  const COLLECTED_COLORS = ['#7048e8', '#0b7285', '#a61e4d', '#5c7cfa'];
   const routeList = el('div', { class: 'route-list' });
   const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '🗻 실제 등산로 불러오기');
   const showOnMapChk = el('input', { type: 'checkbox', id: 'route-showmap', checked: true });
-  const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 선택 등산로 지도 표시');
+  const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 지도에 겹쳐 표시');
   const routeLoading = el('div', { class: 'route-loading', hidden: true },
     el('span', { class: 'spinner', 'aria-hidden': 'true' }),
     el('span', {}, '실제 등산로와 고도를 불러오는 중… (최대 수십 초 걸릴 수 있어요)'));
@@ -108,59 +110,146 @@ export async function renderDetail(root, id) {
   page.append(el('div', { class: 'section' },
     el('h3', {}, '등산로별 고도'),
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
-      '등산로를 선택하면 그 경로만 지도에 표시되고 아래에 고도 단면이 나타납니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반입니다.'),
+      '등산로를 고르면 아래에 고도 단면이 나타납니다. 각 항목의 “🗺 지도”를 켜면 여러 경로를 지도에 '
+      + '겹쳐 볼 수 있습니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반이며, '
+      + '“계산” 표시가 붙은 것은 실측 기록이 아니라 등산로망 위에서 계산한 경로입니다.'),
     el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
     routeLoading, routeList, elevChartBox, elevNote));
 
-  // 수집해 둔 코스별 경로 GPX 내려받기(있는 산에서만 나타난다).
-  // 계산 경로이므로 지도에 자동으로 그리지 않는다 — 지도는 실측/업로드 GPX만 그린다.
-  page.append(routeDownloadSection(m.id));
+  // 수집해 둔 코스별 경로 GPX — 내려받기 + "지도에 표시"(있는 산에서만 나타난다).
+  // 자동으로 그리지는 않는다. 사용자가 올릴 때만 위 등산로 목록에 합류시켜
+  // 주요 등산로와 겹쳐 볼 수 있게 한다.
+  page.append(routeDownloadSection(m.id, {
+    onShow: (t) => addCollectedRoute(t),
+    onShowAll: (list) => addCollectedRoutes(list),
+  }));
 
   // 교차검증한 탐방 후기·현장 정보(수집된 산에서만 나타난다).
   page.append(reviewSection(m.id));
 
-  const routes = [];             // { label, latlngs, profile, track|null, kind }
-  let activeRoute = -1, activeRouteLayer = null;
+  // 경로는 배열 인덱스가 아니라 **고유 id로 식별**한다. OSM 등산로를 다시 불러오면 배열에서
+  // 빠지면서 인덱스가 당겨지는데, 그때 표시 상태·수집 경로 매핑이 통째로 어긋나기 때문이다.
+  const routes = [];                     // { rid, label, latlngs, profile, track|null, kind, color }
+  const byRid = new Map();               // rid → route
+  let routeSeq = 0;
+  let activeId = null;                   // 고도 단면을 보여 주는 경로
+  // 여러 경로를 동시에 지도에 올릴 수 있다 — 수집한 GPX를 주요 등산로와 나란히 겹쳐 보기 위해서다.
+  const shown = new Set();               // 지도에 올라간 rid
+  const layersById = new Map();          // rid → 지도 레이어 토큰
+
+  // 색은 만들 때 한 번 정해 둔다(인덱스로 계산하면 목록이 줄어들 때 색이 바뀐다).
+  const colorSeq = { collected: 0, other: 0 };
+  const pickColor = (kind) => (kind === 'gpx' ? '#d1495b'
+    : kind === 'collected' ? COLLECTED_COLORS[colorSeq.collected++ % COLLECTED_COLORS.length]
+    : OSM_COLORS[colorSeq.other++ % OSM_COLORS.length]);
 
   function renderRouteList() {
     clear(routeList);
     if (!routes.length) { routeList.append(el('div', { class: 'conf-note' }, 'GPX를 불러오거나 “실제 등산로 불러오기”로 등산로를 추가하세요.')); return; }
-    routes.forEach((r, i) => {
-      const item = el('button', { class: 'route-item' + (i === activeRoute ? ' active' : ''), type: 'button' },
-        el('span', { class: 'route-swatch', style: `background:${routeColor(r, i)}` }),
+    for (const r of routes) {
+      const on = shown.has(r.rid);
+      const pick = el('button', { class: 'route-pick', type: 'button', title: '고도 단면 보기' },
+        el('span', { class: 'route-swatch', style: `background:${r.color}` }),
         el('span', { class: 'route-label' }, r.label),
+        r.kind === 'collected' ? el('span', { class: 'route-tag', title: '실측 기록이 아니라 OSM 등산로망에서 계산한 경로' }, '계산') : null,
         r.profile ? el('span', { class: 'route-meta' }, `↑${r.profile.gain_m}m · ${fmtDist(r.profile.dist_m)}`) : null);
-      item.addEventListener('click', () => selectRoute(i));
-      routeList.append(item);
-    });
-  }
-  function drawActiveRoute() {
-    if (activeRouteLayer && view) view.removeLayer(activeRouteLayer);
-    activeRouteLayer = null;
-    if (!view || activeRoute < 0 || !showOnMapChk.checked) return;
-    const r = routes[activeRoute];
-    if (!r.latlngs) return;
-    const layers = [...drawTrack(view, { latlngs: r.latlngs }, routeColor(r, activeRoute))];
-    // 주요 지점 이름 라벨: 들머리 + 경로 주변 봉우리/고개
-    if (r.trailheadName && r.latlngs[0]) layers.push(view.addLabel({ lat: r.latlngs[0][0], lng: r.latlngs[0][1], text: r.trailheadName, kind: 'trailhead' }));
-    if (r.peaks) for (const pk of r.peaks.slice(0, 8)) {
-      if (haversine(pk.lat, pk.lon, m.lat, m.lon) < 200) continue; // 정상 라벨과 겹치는 봉우리는 생략
-      layers.push(view.addLabel({ lat: pk.lat, lng: pk.lon, text: pk.name, kind: 'peak' }));
+      pick.addEventListener('click', () => selectRoute(r.rid));
+      const eye = el('button', {
+        class: 'route-eye' + (on ? ' on' : ''), type: 'button',
+        'aria-pressed': on ? 'true' : 'false',
+        title: on ? '지도에서 숨기기' : '지도에 표시',
+      }, on ? '🗺 표시중' : '🗺 지도');
+      eye.addEventListener('click', () => toggleShown(r.rid));
+      routeList.append(el('div', { class: 'route-item' + (r.rid === activeId ? ' active' : '') }, pick, eye));
     }
-    activeRouteLayer = layers;
   }
-  function selectRoute(i) {
-    activeRoute = i; renderRouteList();
-    const r = routes[i];
+
+  function drawShownRoutes({ refit = false } = {}) {
+    if (disposed || !view) return;
+    for (const tokens of layersById.values()) view.removeLayer(tokens);
+    layersById.clear();
+    const all = [];
+    for (const rid of shown) {
+      const r = byRid.get(rid);
+      if (!r?.latlngs?.length) continue;
+      // 겹쳐 그리므로 여기서는 화면을 맞추지 않는다(아래에서 전체 기준으로 한 번만).
+      const layers = [...drawTrack(view, { latlngs: r.latlngs }, r.color, { fit: false })];
+      // 지점 이름 라벨은 지금 보고 있는 경로에만 — 여러 개를 켜면 라벨이 지도를 덮는다.
+      if (rid === activeId) {
+        if (r.trailheadName && r.latlngs[0]) layers.push(view.addLabel({ lat: r.latlngs[0][0], lng: r.latlngs[0][1], text: r.trailheadName, kind: 'trailhead' }));
+        if (r.peaks) for (const pk of r.peaks.slice(0, 8)) {
+          if (haversine(pk.lat, pk.lon, m.lat, m.lon) < 200) continue; // 정상 라벨과 겹치는 봉우리는 생략
+          layers.push(view.addLabel({ lat: pk.lat, lng: pk.lon, text: pk.name, kind: 'peak' }));
+        }
+      }
+      layersById.set(rid, layers);
+      all.push(...r.latlngs);
+    }
+    if (refit && all.length) view.fitBounds(all, 0.15);
+  }
+
+  // 전체 스위치와 개별 토글의 상태가 어긋나지 않게 맞춘다(프로그램적 변경은 change를 쏘지 않는다).
+  const syncMasterSwitch = () => { showOnMapChk.checked = shown.size > 0; };
+
+  function toggleShown(rid) {
+    if (shown.has(rid)) shown.delete(rid); else shown.add(rid);
+    syncMasterSwitch();
+    renderRouteList();
+    drawShownRoutes({ refit: shown.has(rid) });
+  }
+
+  function showProfile(r) {
     clear(elevChartBox);
-    if (r.profile) elevChartBox.append(elevationChart(r.profile), profileStats(r.profile));
+    if (r?.profile) elevChartBox.append(elevationChart(r.profile), profileStats(r.profile));
     else elevChartBox.append(el('div', { class: 'conf-note' }, '이 등산로의 고도 데이터를 만들 수 없습니다.'));
-    showOnMapChk.checked = true; // 선택할 때마다 지도에 보이도록
-    drawActiveRoute();
+  }
+
+  function selectRoute(rid, { show = true } = {}) {
+    const r = byRid.get(rid);
+    if (!r) return;
+    activeId = rid;
+    if (show) { shown.add(rid); syncMasterSwitch(); }
+    renderRouteList();
+    showProfile(r);
+    drawShownRoutes({ refit: show });
     setNavTrack(r.track || null);
   }
-  showOnMapChk.addEventListener('change', drawActiveRoute);
-  function addRoute(route) { routes.push(route); selectRoute(routes.length - 1); }
+
+  // 체크박스는 전체 표시/숨김 스위치. 껐다 켜면 겹쳐 두었던 선택을 그대로 되살린다
+  // (rid로 담아 두므로 그 사이 목록이 바뀌어도 엉뚱한 경로가 복원되지 않는다).
+  let stashedShown = null;
+  showOnMapChk.addEventListener('change', () => {
+    if (showOnMapChk.checked) {
+      for (const rid of stashedShown || []) if (byRid.has(rid)) shown.add(rid);
+      if (!shown.size && activeId != null && byRid.has(activeId)) shown.add(activeId);
+      stashedShown = null;
+    } else {
+      stashedShown = [...shown];
+      shown.clear();
+    }
+    renderRouteList();
+    drawShownRoutes({ refit: showOnMapChk.checked });
+  });
+
+  /** 경로를 목록에 추가하고 rid를 돌려준다. quiet=true면 그리기·선택을 호출측이 모아서 한다. */
+  function addRoute(route, { quiet = false } = {}) {
+    const rid = ++routeSeq;
+    const r = { ...route, rid, color: pickColor(route.kind) };
+    routes.push(r); byRid.set(rid, r);
+    if (!quiet) selectRoute(rid);
+    return rid;
+  }
+
+  /** 지도·목록에서 이 경로들을 완전히 걷어낸다(레이어까지). */
+  function removeRoutes(pred) {
+    for (const r of routes.filter(pred)) {
+      const tokens = layersById.get(r.rid);
+      if (tokens && view && !disposed) view.removeLayer(tokens);
+      layersById.delete(r.rid); shown.delete(r.rid); byRid.delete(r.rid);
+      if (activeId === r.rid) activeId = null;
+    }
+    for (let i = routes.length - 1; i >= 0; i--) if (pred(routes[i])) routes.splice(i, 1);
+  }
 
   function addGpxRoute(track, label) {
     const finish = (profile, note) => { addRoute({ label, latlngs: track.latlngs, profile, track, kind: 'gpx' }); if (note) elevNote.textContent = note; };
@@ -171,14 +260,80 @@ export async function renderDetail(root, id) {
     fetchElevations(line).then((eles) => finish(buildProfile(line, eles), '※ 고도는 open-meteo 지형 데이터로 보완했습니다.'))
       .catch(() => { finish(null); elevNote.textContent = '고도 조회 실패(경로는 지도에 표시됩니다).'; });
   }
+  // 수집해 둔 코스 GPX를 등산로 목록에 합류시킨다 — 주요 등산로와 같은 목록·같은 지도에서
+  // 겹쳐 보기 위해서다. 파일에 고도가 들어 있으므로 고도 API를 부르지 않는다.
+  // 이미 올린 파일을 다시 누르면 새로 받지 않고 그 항목을 선택만 한다.
+  const collectedRid = new Map();        // 파일 경로 → 경로 rid
+  const collectedLoading = new Map();    // 파일 경로 → 진행 중인 요청
+  async function addCollectedRoute(t, { quiet = false } = {}) {
+    const known = collectedRid.get(t.file);
+    if (known != null && byRid.has(known)) { if (!quiet) { selectRoute(known); scrollToRoutes(); } else shown.add(known); return known; }
+    // 좌표가 같아 파일을 공유하는 코스가 여러 행으로 보이므로, 서로 다른 행에서 같은 파일을
+    // 동시에 열 수 있다. 진행 중인 요청에 합류시켜 같은 경로가 목록에 두 번 실리지 않게 한다.
+    const inflight = collectedLoading.get(t.file);
+    if (inflight) return inflight;
+    const job = (async () => {
+      if (!quiet) { elevNote.textContent = ''; routeLoading.hidden = false; }
+      try {
+        const res = await fetch(`${import.meta.env.BASE_URL}gpx/${t.file}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const track = parseGPX(await res.text());
+        if (disposed) return null;                       // 이미 다른 화면으로 떠났다
+        const label = t.label || `${t.route_name || '수집 경로'}${t.variant ? ` (대안 ${t.variant})` : ''}`;
+        const rid = addRoute({ label, latlngs: track.latlngs, profile: profileFromTrack(track), track, kind: 'collected' }, { quiet });
+        collectedRid.set(t.file, rid);
+        if (quiet) shown.add(rid);
+        else {
+          elevNote.textContent = '※ 실측 기록이 아니라 OpenStreetMap 등산로망 위에서 계산한 경로입니다. '
+            + '현장 통제·계절 통제를 반영하지 않을 수 있으니 공식 안내를 함께 확인하세요.';
+          scrollToRoutes();
+        }
+        return rid;
+      } catch (e) {
+        // 실패를 삼키면 버튼이 "추가됨"으로 바뀌어 거짓말이 된다. 알리고 다시 던진다.
+        elevNote.textContent = '수집 경로를 불러오지 못했습니다: ' + (e.message || e);
+        throw e;
+      } finally {
+        if (!quiet) routeLoading.hidden = true;
+        collectedLoading.delete(t.file);
+      }
+    })();
+    collectedLoading.set(t.file, job);
+    return job;
+  }
+
+  // 여러 개를 한꺼번에 올릴 때는 파일을 다 받은 뒤 목록·지도를 **한 번만** 갱신한다.
+  // 하나씩 그리면 코스가 많은 산에서 지도 재생성·화면 맞춤·스크롤이 그 횟수만큼 반복된다.
+  async function addCollectedRoutes(list) {
+    if (!list.length) return;
+    routeLoading.hidden = false;
+    elevNote.textContent = '';
+    let firstRid = null, failed = 0;
+    try {
+      for (const t of list) {
+        try { const rid = await addCollectedRoute(t, { quiet: true }); if (rid && firstRid == null) firstRid = rid; }
+        catch { failed++; }
+        if (disposed) return;
+      }
+    } finally { routeLoading.hidden = true; }
+    syncMasterSwitch();
+    renderRouteList();
+    if (firstRid != null && activeId == null) { activeId = firstRid; showProfile(byRid.get(firstRid)); }
+    drawShownRoutes({ refit: true });
+    elevNote.textContent = `※ 계산 경로 ${list.length - failed}개를 지도에 겹쳐 표시했습니다`
+      + (failed ? ` (${failed}개 실패)` : '')
+      + '. 실측 기록이 아니라 OpenStreetMap 등산로망 위에서 계산한 경로입니다.';
+    scrollToRoutes();
+  }
+
   const lineLen = (l) => { let d = 0; for (let i = 1; i < l.length; i++) d += haversine(l[i - 1][0], l[i - 1][1], l[i][0], l[i][1]); return d; };
 
-  // 주요 등산로 코스 → 들머리(codex·agy 검증)에서 정상까지 실제 경로 + 고도로 연결
+  // 주요 등산로 코스 → 교차검증된 들머리에서 정상까지 실제 경로 + 고도로 연결
   const scrollToRoutes = () => routeList.scrollIntoView({ behavior: 'smooth', block: 'center' });
   async function showCourseRoute(t, btn) {
     if (!t.trailhead || m.lat == null) return;
-    const idx = routes.findIndex((r) => r.courseName === t.name);
-    if (idx >= 0) { selectRoute(idx); scrollToRoutes(); return; }
+    const hit = routes.find((r) => r.courseName === t.name);
+    if (hit) { selectRoute(hit.rid); scrollToRoutes(); return; }
     const orig = btn ? btn.textContent : '';
     if (btn) setBtnLoading(btn, true, '찾는 중…');
     routeLoading.hidden = false;
@@ -192,7 +347,7 @@ export async function renderDetail(root, id) {
         const sampled = resample(route.latlngs, 90);
         const prof = buildProfile(sampled, await fetchElevations(sampled));
         addRoute({ label: t.name, courseName: t.name, latlngs: route.latlngs, profile: prof, track: null, kind: 'course', trailheadName: thName, peaks });
-        elevNote.textContent = '※ 들머리(codex·agy 검증)에서 정상까지 실제 등산로 경로와 고도(open-meteo)입니다.';
+        elevNote.textContent = '※ 교차검증된 들머리에서 정상까지 실제 등산로 경로와 고도(open-meteo 지형데이터)입니다.';
       } else {
         const N = 30, a = t.trailhead, b = [m.lat, m.lon], line = [];
         for (let i = 0; i <= N; i++) { const f = i / N; line.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
@@ -221,18 +376,19 @@ export async function renderDetail(root, id) {
       const lines = await fetchTrails(m.lat, m.lon, 2500);
       const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 4);
       if (!top.length) { elevNote.textContent = '인근에서 표시할 등산로를 찾지 못했습니다.'; return; }
-      // 이전에 불러온 OSM 등산로는 교체(다시 눌러도 계속 누적되지 않도록). GPX·코스 경로는 유지.
-      if (activeRouteLayer && view) { view.removeLayer(activeRouteLayer); activeRouteLayer = null; }
-      for (let i = routes.length - 1; i >= 0; i--) if (routes[i].kind === 'osm') routes.splice(i, 1);
-      activeRoute = -1;
-      const base = routes.length;
-      let n = 0;
+      // 이전에 불러온 OSM 등산로는 지도 레이어까지 걷어내고 교체한다(다시 눌러도 누적되지 않도록).
+      // GPX·코스·수집 경로는 그대로 둔다.
+      removeRoutes((r) => r.kind === 'osm');
+      let first = null, n = 0;
       for (const { l, len } of top) {
         const line = resample(l, 55);
         let prof = null; try { prof = buildProfile(line, await fetchElevations(line)); } catch {}
-        n++; routes.push({ label: `OSM 등산로 ${n} (${(len / 1000).toFixed(1)}km)`, latlngs: line, profile: prof, track: null, kind: 'osm' });
+        if (disposed) return;
+        n++;
+        const rid = addRoute({ label: `OSM 등산로 ${n} (${(len / 1000).toFixed(1)}km)`, latlngs: line, profile: prof, track: null, kind: 'osm' }, { quiet: true });
+        if (first == null) first = rid;
       }
-      selectRoute(base); // 첫 신규 등산로 선택
+      if (first != null) selectRoute(first); // 첫 신규 등산로 선택
       elevNote.textContent = '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.';
     } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
     finally {
@@ -390,13 +546,23 @@ export async function renderDetail(root, id) {
     (m.hansanha_rank ? '한국의산하 인기명산 순위는 koreasanha.net 접속순위 집계(2003~2004년 기준 아카이브)입니다. ' : '') +
     (m.wolgansan_criteria ? '월간산 선정기준 부문 수는 2018년 선정기준 표를 재집계한 값으로, 월간산 자체 집계(연봉 포함)와 다를 수 있습니다. ' : '') +
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
-    '지도의 등산로 선은 OpenStreetMap 데이터이며, GPX는 실제 기록 파일만 표시합니다.'));
+    '지도의 등산로 선은 OpenStreetMap 데이터입니다. GPX는 실측 기록과 “계산 경로”를 구분해 표시하며, 계산 경로는 OpenStreetMap 등산로망 위에서 계산한 것이라 실제 기록이 아닙니다.'));
 
   const off = onChange(paintHike);
   const onTheme = () => view && view.refreshTheme();
   window.addEventListener('kr100:theme', onTheme);
   window.scrollTo(0, 0);
-  return () => { if (stopWatch) stopWatch(); off(); window.removeEventListener('kr100:theme', onTheme); controls?.cleanup?.(); view?.destroy(); };
+  return () => {
+    // 늦게 도착하는 fetch가 파괴된 지도를 건드리지 않도록 표식을 먼저 세우고 참조를 끊는다.
+    disposed = true;
+    if (stopWatch) stopWatch();
+    off();
+    window.removeEventListener('kr100:theme', onTheme);
+    controls?.cleanup?.();
+    layersById.clear();
+    view?.destroy();
+    view = null;
+  };
 }
 
 function factSpan(label, val) {

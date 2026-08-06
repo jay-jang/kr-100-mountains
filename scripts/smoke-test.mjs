@@ -320,16 +320,75 @@ try {
     check('gpx: 계산 경로임을 화면에 고지', /실측 GPS 기록이 아닙니다/.test(secText));
     check('gpx: 출처 표기 노출', /OpenStreetMap contributors/.test(secText));
 
-    const href = await page.$eval('.gpxdl-item', (a) => a.getAttribute('href'));
+    const href = await page.$eval('.gpxdl-item .gpxdl-dl', (a) => a.getAttribute('href'));
     const body = await page.evaluate(async (u) => {
       const r = await fetch(u); return r.ok ? r.text() : null;
     }, new URL(href, base + '/').toString());
     check('gpx: 링크가 실제 GPX 파일을 반환', !!body && body.startsWith('<?xml') && body.includes('<trkpt'));
     check('gpx: 파일에 실측 아님·출처 각인', !!body && body.includes('not_a_recorded_track')
       && body.includes('osm-routed') && body.includes('OpenStreetMap'));
-    // 계산 경로는 지도에 자동으로 그리지 않는다 — 지도 경로 목록에 섞이면 안 된다.
-    const routeLabels = await page.$$eval('.route-item .route-label', (n) => n.map((x) => x.textContent));
-    check('gpx: 계산 경로가 지도 목록에 섞이지 않음', !routeLabels.some((t) => /OSM 계산 경로/.test(t)), `${routeLabels.length} route items`);
+    // 계산 경로는 **자동으로는** 그리지 않는다 — 누르기 전에는 등산로 목록에 없어야 한다.
+    const before = await page.$$eval('.route-item', (n) => n.length);
+    check('gpx: 계산 경로가 자동으로 지도 목록에 섞이지 않음', (await page.$$eval('.route-tag', (n) => n.length)) === 0, `${before} route items`);
+
+    // "🗺 지도"를 누르면 등산로 목록에 합류하고 지도에 그려져야 한다.
+    await page.locator('.gpxdl-item .gpxdl-show').first().click();
+    await page.waitForSelector('.route-item .route-tag', { timeout: 20000 });
+    const afterTags = await page.$$eval('.route-tag', (n) => n.map((x) => x.textContent));
+    check('gpx: 지도에 표시 → 등산로 목록에 "계산" 표시로 합류', afterTags.length >= 1 && afterTags.every((t) => t === '계산'), afterTags.join(','));
+    check('gpx: 합류 후 항목이 늘어남', (await page.$$eval('.route-item', (n) => n.length)) === before + 1);
+    const drawn1 = await page.$$eval('#detail-map path.leaflet-interactive', (n) => n.length);
+    check('gpx: 지도에 선이 그려짐', drawn1 > 0, `${drawn1} paths`);
+    check('gpx: 지도 토글이 켜짐 상태', (await page.$eval('.route-item .route-eye', (b) => b.getAttribute('aria-pressed'))) === 'true');
+
+    // 주요 등산로와 **함께** 보기 — 두 번째 경로를 켜면 둘 다 남아야 한다.
+    const second = page.locator('.gpxdl-item .gpxdl-show').nth(1);
+    if (await second.count()) {
+      await second.click();
+      await page.waitForTimeout(1200);
+      const onCount = await page.$$eval('.route-eye.on', (n) => n.length);
+      check('gpx: 여러 경로를 지도에 겹쳐 표시', onCount >= 2, `${onCount}개 표시중`);
+      const drawn2 = await page.$$eval('#detail-map path.leaflet-interactive', (n) => n.length);
+      check('gpx: 겹쳐 그리면 선이 늘어남', drawn2 > drawn1, `${drawn1} → ${drawn2}`);
+      // 다시 누르면 그 경로만 지도에서 내려간다
+      await page.locator('.route-item .route-eye.on').first().click();
+      await page.waitForTimeout(600);
+      check('gpx: 토글로 개별 숨기기', (await page.$$eval('.route-eye.on', (n) => n.length)) === onCount - 1);
+    }
+
+    // "모두 지도에 표시" — 한 번에 올리고 목록·지도를 한 번만 갱신한다
+    const allBtn = page.locator('.gpxdl-actions .btn');
+    if (await allBtn.count()) {
+      const beforeAll = await page.$$eval('.route-tag', (n) => n.length);
+      const uniqFiles = await page.$$eval('.gpxdl-item .gpxdl-show', (n) => n.length);
+      await allBtn.click();
+      // 이미 올라간 것만 있는 산도 있으므로 "늘어남"을 기다리지 않는다. 버튼이 다시 풀릴 때까지만.
+      await page.waitForFunction(() => !document.querySelector('.gpxdl-actions .btn').disabled, null, { timeout: 120000 }).catch(() => {});
+      await page.waitForTimeout(800);
+      const tags = await page.$$eval('.route-tag', (n) => n.length);
+      check('gpx: 모두 표시 후 모든 계산 경로가 목록에 있음', tags >= beforeAll && tags >= 1, `${beforeAll} → ${tags} (행 ${uniqFiles})`);
+      const marked = await page.$$eval('.gpxdl-show.on', (n) => n.length);
+      check('gpx: 일괄 표시 후 각 행 버튼도 갱신', marked >= 1, `${marked} buttons`);
+    }
+
+    // 회귀: "실제 등산로 불러오기"가 예외 없이 동작해야 한다.
+    // (경로 다중 표시로 바꾸면서 삭제된 변수를 참조해 이 버튼이 죽은 적이 있다.
+    //  이 흐름을 테스트가 밟지 않아 빌드·다른 검사로는 잡히지 않았다.)
+    const errsBefore = errors.length;
+    await page.click('.route-actions .btn');
+    await page.waitForFunction(() => !document.querySelector('.route-actions .btn').classList.contains('loading'), null, { timeout: 120000 })
+      .catch(() => {});
+    await page.waitForTimeout(500);
+    const during = errors.slice(errsBefore);
+    const newErrs = during.filter((e) => /ReferenceError|TypeError|is not defined/.test(e));
+    check('gpx: “실제 등산로 불러오기”가 예외 없이 동작', newErrs.length === 0, newErrs.join(' | ') || 'no error');
+    // 이 단계는 공용 Overpass 서버를 부른다. 그쪽의 일시적 5xx/429는 우리 버그가 아니고
+    // 앱도 미러를 바꿔 가며 견디도록 만들어져 있으므로, 전체 실패로 치지 않는다.
+    // (그 밖의 오류는 그대로 남긴다.)
+    const transient = /Failed to load resource: the server responded with a status of (4[0-9]{2}|5[0-9]{2})/;
+    errors.length = errsBefore;
+    errors.push(...during.filter((e) => !transient.test(e)));
+    check('gpx: 불러오기 후에도 계산 경로가 목록에 남아 있음', (await page.$$eval('.route-tag', (n) => n.length)) > 0);
   } else {
     check('gpx: 수집된 코스 경로 존재', false, '매니페스트에 트랙 없음');
   }

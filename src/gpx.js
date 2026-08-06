@@ -89,12 +89,14 @@ export function navInfo(track, pos) {
 }
 
 // Draw a track on a provider-agnostic MapView. Returns a token array for removeLayer().
-export function drawTrack(view, track, color = '#d1495b') {
-  const tokens = [view.addPolyline(track.latlngs, { color, weight: 4, opacity: 0.95, outline: true })];
+// 여러 경로를 함께 그릴 때는 fit:false 로 두고, 호출측이 전체를 한 번에 맞춘다
+// (경로마다 fitBounds를 부르면 마지막 것만 보이게 튄다).
+export function drawTrack(view, track, color = '#d1495b', { fit = true, weight = 4, opacity = 0.95 } = {}) {
+  const tokens = [view.addPolyline(track.latlngs, { color, weight, opacity, outline: true })];
   const s = track.latlngs[0], e = track.latlngs[track.latlngs.length - 1];
   tokens.push(view.addDot({ lat: s[0], lng: s[1], color: '#2f7d4f', title: '출발' }));
   tokens.push(view.addDot({ lat: e[0], lng: e[1], color, title: '도착' }));
-  view.fitBounds(track.latlngs, 0.15);
+  if (fit) view.fitBounds(track.latlngs, 0.15);
   return tokens;
 }
 
