@@ -60,14 +60,15 @@ if [ -n "$(git status --porcelain -- "${PATHS[@]}" 2>/dev/null)" ]; then
   if ! git add -- "${PATHS[@]}"; then
     echo "[$(date -u +%FT%TZ)] git add 실패" >&2; FINAL=1
   # 커밋 대상 경로를 명시한다 — 안 그러면 다른 작업이 미리 stage 해 둔 파일까지 함께 커밋된다.
+  # `--` 뒤는 전부 경로로 해석되므로 -m 은 반드시 `--` **앞**에 와야 한다.
   elif git -c user.name="$NAME" -c user.email="$EMAIL" \
-        commit -q -- "${PATHS[@]}" -m "chore(reviews): 탐방 후기 정기 수집 $(date -u +%F)
+        commit -q -m "chore(reviews): 탐방 후기 정기 수집 $(date -u +%F)
 
 $COUNT
 
 매일 도는 수집 작업(scripts/reviews-daily.sh)이 자동으로 갱신했습니다.
 독립적인 두 조사가 각자 모은 뒤 서로의 주장을 웹 근거로 검증하며,
-반박된 항목은 싣지 않습니다."; then
+반박된 항목은 싣지 않습니다." -- "${PATHS[@]}"; then
     echo "[$(date -u +%FT%TZ)] 커밋 완료: $COUNT"
     if [ "${KR100_REVIEWS_PUSH:-0}" = "1" ]; then
       BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
