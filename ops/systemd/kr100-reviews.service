@@ -19,4 +19,9 @@ Nice=10
 Environment=KR100_REVIEWS_LIMIT=8
 Environment=KR100_REVIEWS_BATCH=4
 Environment=KR100_REVIEWS_STALE_DAYS=21
-Environment=KR100_REVIEWS_PUSH=0
+# 1이면 커밋 뒤 origin에 push한다. main에 push하면 GitHub Pages 배포가 자동으로 돈다 —
+# 즉 사람이 보지 않은 웹 조사 결과가 그대로 공개된다. 끄려면 0으로 바꾸고
+# `systemctl --user daemon-reload`. 무엇이 올라갔는지는 아래에서 확인한다.
+#   git log --oneline --grep='chore(reviews)'
+#   tail .cache/reviews-logs/<날짜>.log
+Environment=KR100_REVIEWS_PUSH=1

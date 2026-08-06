@@ -36,9 +36,21 @@ systemctl --user disable --now kr100-reviews.timer # 중지
   건너뜁니다.
 - **결과**: `data/reviews.verified.json`과 `public/data/reviews/`를 갱신하고, 바뀐 게 있으면
   **로컬에 커밋**합니다.
-- **push는 기본으로 하지 않습니다.** 웹 조사 결과를 사람이 보지 않은 채 공개 사이트에 바로
-  올리는 것은 되돌리기 어렵기 때문입니다. 켜려면 서비스 파일에서
-  `Environment=KR100_REVIEWS_PUSH=1`로 바꾸고 `systemctl --user daemon-reload`.
+- **push: 켜져 있습니다(`KR100_REVIEWS_PUSH=1`).** `main`에 push하면 GitHub Pages 배포가
+  자동으로 돌아 그날 모은 후기가 그대로 공개됩니다. 즉 **사람이 검토하지 않은 웹 조사 결과가
+  매일 사이트에 올라갑니다.** 대신 이런 장치가 걸려 있습니다.
+  - 출처 URL 없는 항목은 애초에 저장하지 않음
+  - 두 조사가 서로의 주장을 웹 근거로 다시 검증하고, **반박이 하나라도 나오면 싣지 않음**
+  - 확인 0표 항목도 싣지 않음 · 화면에 교차검증/단일확인 등급과 출처 링크를 그대로 노출
+
+  끄려면 서비스 파일에서 `Environment=KR100_REVIEWS_PUSH=0`으로 바꾸고
+  `systemctl --user daemon-reload`.
+
+  무엇이 올라갔는지 확인:
+  ```bash
+  git log --oneline --grep='chore(reviews)'
+  git show --stat $(git log -1 --format=%H --grep='chore(reviews)')
+  ```
 - **로그**: `.cache/reviews-logs/<날짜>.log` (30일치 보관, gitignore 대상)
 
 ## 설정 바꾸기
