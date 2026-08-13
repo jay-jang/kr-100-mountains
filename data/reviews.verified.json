@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-12T18:37:01.780Z",
+  "generated_at": "2026-08-13T18:50:13.432Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -15,8 +15,8 @@
     "통제·예약"
   ],
   "stats": {
-    "mountains": 98,
-    "notes": 853,
+    "mountains": 106,
+    "notes": 889,
     "verified": 303
   },
   "mountains": [
@@ -16499,6 +16499,726 @@
           "sources": [
             "https://www.newsis.com/",
             "https://www.pressian.com/pages/articles/2023111314185595767"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "minjujisan",
+      "name": "민주지산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "물한계곡주차장-민주지산-석기봉-삼도봉-삼마골재-물한계곡주차장",
+          "topic": "위험구간",
+          "text": "석기봉 정상 직전 암봉 구간은 로프를 잡고 올라가야 하는 급경사 바윗길이며, 험로가 부담스러우면 삼두마애불 방향 우회 등산로를 이용할 수 있다.",
+          "sentiment": "caution",
+          "as_of": "2012-01",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=55ec8313-ea9c-4977-bf30-4e31e50529d4",
+            "https://munjoolle.tistory.com/95"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "도마령-각호산-민주지산",
+          "topic": "난이도",
+          "text": "도마령은 해발 약 800m 고지에 위치해 1,200m급인 각호산과 민주지산 산행 시 고도 부담을 덜어주며, 초입 상용정 전망대를 지나 843m봉 산불초소까지 가파른 계단 오르막이 이어진다.",
+          "sentiment": "neutral",
+          "as_of": "2024-08",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=92582845-6bd0-4bc3-953e-46ff87e1f4ba",
+            "https://largo0124.tistory.com/1302"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "물한계곡주차장-민주지산-석기봉-삼도봉-삼마골재-물한계곡주차장",
+          "topic": "조망·볼거리",
+          "text": "충북·전북·경북 삼도가 만나는 삼도봉 정상에는 삼도 화합탑이 세워져 있으며, 백두대간 능선과 덕유산·가야산 등 주변 명산이 시원하게 조망된다.",
+          "sentiment": "good",
+          "as_of": "2012-01",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=55ec8313-ea9c-4977-bf30-4e31e50529d4",
+            "https://munjoolle.tistory.com/95"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "물한계곡 주차장은 무료로 개방되어 50대 이상 주차가 가능하며 공중화장실이 구비되어 있다.",
+          "sentiment": "neutral",
+          "as_of": "2012-01",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=903ec415-dc46-4cb4-8eb1-46c6b39922f3",
+            "https://munjoolle.tistory.com/95"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mireuksan",
+      "name": "미륵산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "미래사-정상 코스",
+          "topic": "난이도",
+          "text": "미래사 주차장에서 출발하여 미륵산 정상까지 편도 약 1.3km(왕복 약 2.6km)로 거리가 짧고 울창한 편백나무 숲길이 이어져 가볍게 다녀오기 좋다.",
+          "sentiment": "good",
+          "as_of": "2025-03",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=c8ee8db7-b08e-49b0-a35c-897b37063d3a",
+            "https://brightcw.tistory.com/675"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "케이블카 상부역사-미륵산 정상",
+          "topic": "편의시설",
+          "text": "통영 케이블카 상부역사에서 내려 나무 데크 계단길을 따라 도보 약 10~15분만 이동하면 미륵산 정상 및 전망대에 쉽게 닿을 수 있다.",
+          "sentiment": "good",
+          "as_of": "2024-03",
+          "sources": [
+            "http://cablecar.ttdc.kr/",
+            "https://cms7832.tistory.com/568"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "미륵산 정상 전망대에서는 한려해상국립공원의 다도해 풍경과 통영 시가지가 파노라마로 펼쳐지며, 맑은 날에는 일본 대마도까지 조망된다.",
+          "sentiment": "good",
+          "as_of": "2024-03",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=db3d726b-67a6-4dc4-ab4a-675e01dc1100",
+            "https://cms7832.tistory.com/568"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "moaksan",
+      "name": "모악산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "구이주차장-대원사-수왕사-정상",
+          "topic": "난이도",
+          "text": "구이관광단지에서 대원사까지는 완만한 흙길이나, 대원사 이후 수왕사와 무제봉으로 오르는 구간은 가파른 돌계단과 데크 계단이 연속된다.",
+          "sentiment": "caution",
+          "as_of": "2024-09",
+          "sources": [
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000000302001001000",
+            "https://kdk4876.tistory.com/18173115"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "모악산 정상 송신소 옥상 전망대와 정상석은 개방 시간(09:00~16:00)이 정해져 있어 이른 아침 산행 시 출입문이 잠겨 있어 진입할 수 없다.",
+          "sentiment": "caution",
+          "as_of": "2026-06",
+          "sources": [
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000000302001001000",
+            "https://nwlimp.tistory.com/3266"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상학능선 코스",
+          "topic": "조망·볼거리",
+          "text": "구이주차장에서 송학사길(상학능선)을 따라 무제봉 방면으로 오르면 구이저수지와 옥정호 방면의 탁 트인 풍경을 감상할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2026-06",
+          "sources": [
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000000302001001000",
+            "https://nwlimp.tistory.com/3266"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "모악산 구이관광단지 주차장은 주차 공간이 넓고 무료로 이용할 수 있으며 등산로 초입에 공중화장실과 상가가 밀집해 있다.",
+          "sentiment": "neutral",
+          "as_of": "2024-09",
+          "sources": [
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000000302001001000",
+            "https://kdk4876.tistory.com/18173115"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mudeungsan",
+      "name": "무등산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "무등산 정상 3봉 중 인왕봉 전망대는 상시 개방되었으나, 천왕봉과 지왕봉은 군사시설 구역으로 일반인 출입이 상시 통제된다.",
+          "sentiment": "caution",
+          "as_of": "2023-09",
+          "sources": [
+            "https://www.gwangju.go.kr/",
+            "https://www.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "원효사-꼬막재-규봉암-장불재-서석대",
+          "topic": "조망·볼거리",
+          "text": "규봉암 일대는 무등산 3대 주상절리 중 하나인 광석대의 기암괴석이 사찰 뒤편을 병풍처럼 감싸고 있어 절경을 이룬다.",
+          "sentiment": "good",
+          "as_of": "2022-10",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&parkNavGb=guide&menuNo=7020092",
+            "https://ppssj.tistory.com/11317016"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "원효사-서석대 코스",
+          "topic": "편의시설",
+          "text": "원효사에서 무등산 옛길을 따라 서석대로 향하는 중간 거점인 목교에는 안전쉼터와 화장실이 마련되어 있어 휴식하기 좋다.",
+          "sentiment": "good",
+          "as_of": "2025-09",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&parkNavGb=guide&menuNo=7020092",
+            "https://kai36.tistory.com/556"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "증심사-중머리재-서석대 코스",
+          "topic": "혼잡",
+          "text": "증심사 기점 코스는 광주 시내 대중교통 접근성이 뛰어나 주말이나 가을 단풍·억새 철에 등산객이 가장 많이 몰린다.",
+          "sentiment": "neutral",
+          "as_of": "2022-10",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&parkNavGb=guide&menuNo=7020092",
+            "https://ppssj.tistory.com/11317016"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "muhaksan",
+      "name": "무학산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "서원곡-서마지기-정상 코스",
+          "topic": "난이도",
+          "text": "서원곡에서 서마지기를 거쳐 정상으로 오르는 길목에 '365 사랑계단'과 '365 건강계단'이 연속으로 이어져 가파른 계단 오르막에 따른 다리와 무릎 부담이 큽니다.",
+          "sentiment": "caution",
+          "as_of": "2010-12",
+          "sources": [
+            "https://www.idomin.com/news/articleView.html?idxno=286290",
+            "https://www.idomin.com/news/articleView.html?idxno=334941"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "서원곡-서마지기-정상 코스",
+          "topic": "주차·교통",
+          "text": "서원곡 유원지 입구 공영주차장과 백운사 주변 주차장은 무료로 이용할 수 있으나, 주말과 봄철 진달래 개화기에는 이른 아침부터 혼잡합니다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=1600&key=20210408.22020002130",
+            "https://www.changwon.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "매년 4월 중·하순경 서마지기 분지와 무학산 정상 능선 일대에 진달래가 흐드러지게 만개하여 전국적인 봄꽃 산행 명소로 꼽힙니다.",
+          "sentiment": "good",
+          "as_of": "2016-09",
+          "sources": [
+            "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=1600&key=20210408.22020002130",
+            "http://san.chosun.com/news/articleView.html?idxno=10318"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "무학산 정상과 중간 걱정바위 전망대에서는 마산 시가지, 마산만(합포만), 돝섬, 마창대교까지 시원하게 내려다보이는 다도해 파노라마 조망을 감상할 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2016-09",
+          "sources": [
+            "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=1600&key=20210408.22020002130",
+            "http://san.chosun.com/news/articleView.html?idxno=10318"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "만날고개-대곡산-무학산 종주",
+          "topic": "난이도",
+          "text": "만날고개에서 대곡산(516m)으로 올라서는 초반 구간은 경사가 제법 가파르지만, 대곡산을 넘어서면 무학산 정상까지 비교적 완만하고 걷기 좋은 능선길이 이어집니다.",
+          "sentiment": "neutral",
+          "as_of": "2010-12",
+          "sources": [
+            "http://www.gnmaeil.com/news/articleView.html?idxno=311246",
+            "https://www.idomin.com/news/articleView.html?idxno=334941"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "정상 부근에 넓은 공터와 데크 쉼터가 조성되어 있으며, 인근에 샘터(안개약수터 등)가 있어 휴식 및 산행 정비가 편리합니다.",
+          "sentiment": "neutral",
+          "as_of": "2016-09",
+          "sources": [
+            "http://san.chosun.com/news/articleView.html?idxno=14777",
+            "http://san.chosun.com/news/articleView.html?idxno=10318"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "munamsan",
+      "name": "문암산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "난이도",
+          "text": "석화산(문암산) 정상부는 가파른 암릉과 로프 난간이 이어지는 험준한 바윗길이지만, 석화산에서 문암산으로 이어지는 주능선은 걷기 완만한 흙산 형태를 띱니다.",
+          "sentiment": "caution",
+          "as_of": "2010-08",
+          "sources": [
+            "http://www.kado.net/news/articleView.html?idxno=471836",
+            "https://www.kado.net/news/articleView.html?idxno=478716"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "만나산장가든-짝바위-문암산(석화산)-문암재 원점회귀",
+          "topic": "위험구간",
+          "text": "백성동(만나산장 인근)에서 정상으로 오르내리는 급경사 바위 능선길은 지형이 험하고 밧줄을 잡아야 하므로 눈·비가 내린 후에는 미끄럼 추락에 각별히 주의해야 합니다.",
+          "sentiment": "caution",
+          "as_of": "2010-08",
+          "sources": [
+            "http://www.kado.net/news/articleView.html?idxno=471836",
+            "https://www.kado.net/news/articleView.html?idxno=478716"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "창촌리-석화산-짝바위-백성동 코스",
+          "topic": "조망·볼거리",
+          "text": "동봉에서 954봉 갈림길로 이어지는 능선 구간에 득남 전설이 전해지는 명소인 '짝바위'와 노송 암봉이 어우러진 동양화 같은 풍광이 펼쳐집니다.",
+          "sentiment": "good",
+          "as_of": "2010-08",
+          "sources": [
+            "http://www.kado.net/news/articleView.html?idxno=471836",
+            "https://www.kado.net/news/articleView.html?idxno=478716"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "해발 600m 고원의 산촌 마을인 창촌리를 감싸고 있어 봄에는 진달래, 가을에는 기암절벽과 어우러진 오색 단풍이 수려한 절경을 뽐냅니다.",
+          "sentiment": "good",
+          "as_of": "2010-08",
+          "sources": [
+            "http://www.kado.net/news/articleView.html?idxno=471836",
+            "https://www.kado.net/news/articleView.html?idxno=478716"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "munsusan",
+      "name": "문수산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "축서사 원점회귀 코스",
+          "topic": "위험구간",
+          "text": "축서사로 내려서는 남릉 하산길은 가파른 경사면이 형성되어 있으며, 겨울철에는 눈과 얼음으로 빙판길이 되기 쉬워 아이젠 착용이 필수적입니다.",
+          "sentiment": "caution",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "겨울철 폭설이 내릴 경우 고지대에 자리한 주실령 고갯길과 축서사 진입로 일대에 대형버스 등의 차량 접근이 제한될 수 있습니다.",
+          "sentiment": "caution",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주실령 능선 코스",
+          "topic": "난이도",
+          "text": "해발 780m 고개인 주실령에서 출발하면 초반 고개 오름길 외에는 완만한 능선길이 길게 이어져 축서사 직등 코스에 비해 체력 소모가 적고 걷기 수월합니다.",
+          "sentiment": "good",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "주실령 능선 코스",
+          "topic": "조망·볼거리",
+          "text": "주실령에서 문수산으로 이어지는 능선길 내내 20m 높이로 곧게 뻗은 미인송(춘양목·금강소나무) 군락지가 울창하게 이어져 숲길 경관이 매우 뛰어납니다.",
+          "sentiment": "good",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "문수산 정상(1,207m)에 서면 사면팔방으로 조망이 탁 트여 맑은 날 태백산, 소백산, 청량산, 일월산, 각화산의 첩첩산중 산줄기를 한눈에 바라볼 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "축서사 원점회귀 코스",
+          "topic": "편의시설",
+          "text": "산행 들머리인 축서사는 해발 800m에 위치한 신라 천년고찰로, 보물 석조비로자나불좌상 등 문화재와 함께 주차장 및 화장실 시설을 갖추고 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2012-12",
+          "sources": [
+            "http://www.imaeil.com/sub_view.php?cate=1&sub=03&news_id=58102",
+            "https://news.imaeil.com/page/view/2012122714050600000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "myeongjisan",
+      "name": "명지산",
+      "collected_at": "2026-08-13",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "익근리-명지폭포-정상 코스",
+          "topic": "난이도",
+          "text": "익근리 주차장에서 명지폭포까지는 완만한 임도지만, 폭포 이후 정상까지는 거친 너덜바윗길과 가파른 오르막 계단이 이어져 왕복 5~6시간가량의 상당한 체력이 소모됩니다.",
+          "sentiment": "caution",
+          "as_of": "2015-01",
+          "sources": [
+            "https://www.kyeongin.com/main/view.php?key=20231105010000843",
+            "http://san.chosun.com/news/articleView.html?idxno=8958"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백둔리-연인산-아재비고개-명지산-익근리 종주",
+          "topic": "난이도",
+          "text": "연인산에서 아재비고개로 내려서는 길은 유순하지만, 아재비고개에서 명지3봉을 거쳐 정상으로 이어지는 능선은 오르내림이 심한 암릉 구간이 반복되어 체력 안배가 필수입니다.",
+          "sentiment": "caution",
+          "as_of": "2012-01",
+          "sources": [
+            "http://san.chosun.com/news/articleView.html?idxno=10541",
+            "http://san.chosun.com/news/articleView.html?idxno=6549"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "경기도에서 두 번째로 높은 산(1,267m)으로 겨울철 적설량이 많고 정상부에 상고대와 눈꽃이 자주 형성되어 수도권 대표 설경 산행지로 인기가 높습니다.",
+          "sentiment": "good",
+          "as_of": "2015-01",
+          "sources": [
+            "https://www.newsis.com/view/?id=NISX20231103_0002508753",
+            "http://san.chosun.com/news/articleView.html?idxno=8958"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "명지산-연인산 연계 종주",
+          "topic": "난이도",
+          "text": "명지산과 연인산 능선의 중심 안부인 아재비고개는 종주의 핵심 경유지이자 체력 저하나 악천후 발생 시 백둔리로 즉시 빠져나갈 수 있는 탈출로 역할을 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2012-01",
+          "sources": [
+            "http://san.chosun.com/news/articleView.html?idxno=10541",
+            "http://san.chosun.com/news/articleView.html?idxno=6549"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "익근리-명지폭포-정상 코스",
+          "topic": "주차·교통",
+          "text": "명지산 군립공원 익근리 주차장은 무료로 이용할 수 있으며, 가평역 및 가평터미널에서 익근리를 경유하는 시내버스가 운행합니다.",
+          "sentiment": "neutral",
+          "as_of": "2015-01",
+          "sources": [
+            "https://www.kyeongin.com/main/view.php?key=20231105010000843",
+            "http://san.chosun.com/news/articleView.html?idxno=8958"
           ],
           "verify": {
             "level": "single",
