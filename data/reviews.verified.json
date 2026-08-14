@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T18:50:13.432Z",
+  "generated_at": "2026-08-14T18:40:11.443Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -15,8 +15,8 @@
     "통제·예약"
   ],
   "stats": {
-    "mountains": 106,
-    "notes": 889,
+    "mountains": 114,
+    "notes": 937,
     "verified": 303
   },
   "mountains": [
@@ -17219,6 +17219,971 @@
           "sources": [
             "https://www.kyeongin.com/main/view.php?key=20231105010000843",
             "http://san.chosun.com/news/articleView.html?idxno=8958"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "myeongseongsan",
+      "name": "명성산",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "명성산 정상 방면은 인근 군부대 승진사격장 사격 훈련 일정이 있는 날 입산이 통제되며, 통제 시에는 억새밭 팔각정까지만 산행할 수 있습니다.",
+          "sentiment": "caution",
+          "as_of": "2024-11",
+          "sources": [
+            "https://san.chosun.com/news/articleView.html?idxno=17145",
+            "https://baegdu.tistory.com/entry/%EB%AA%85%EC%84%B1%EC%82%B0-%EB%8C%80%EC%A4%91%EA%B5%90%ED%86%B5-%EC%96%B5%EC%83%88-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5-%EC%B1%85%EB%B0%94%EC%9C%84-%EC%96%B5%EC%83%88%EB%B0%AD-%EC%82%BC%EA%B0%81%EB%B4%89-%EC%96%B5%EC%83%88%EB%B0%AD-%EB%93%B1%EB%A3%A1%ED%8F%AD%ED%8F%AC-%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5",
+            "https://landyplay.com/%EC%B4%88%EB%A1%9D-%EC%96%B5%EC%83%88%EA%B0%80-%EC%9D%80%EB%B9%9B%EC%9C%BC%EB%A1%9C-%EB%AC%BC%EB%93%9C%EB%8A%94-%EB%AA%85%EC%84%B1%EC%82%B0-%EC%96%B5%EC%83%88%EB%B0%94%EB%9E%8C%EA%B8%B8-%EC%B4%88"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제3코스(자인사)",
+          "topic": "위험구간",
+          "text": "제3코스(자인사)는 가파른 돌계단과 철계단 급경사 비탈길이 길게 이어지고 낙석 위험이 있어 등산로가 통제 및 폐쇄된 구간이 있습니다.",
+          "sentiment": "caution",
+          "as_of": "2024-11",
+          "sources": [
+            "https://san.chosun.com/news/articleView.html?idxno=17145",
+            "https://baegdu.tistory.com/entry/%EB%AA%85%EC%84%B1%EC%82%B0-%EB%8C%80%EC%A4%91%EA%B5%90%ED%86%B5-%EC%96%B5%EC%83%88-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5-%EC%B1%85%EB%B0%94%EC%9C%84-%EC%96%B5%EC%83%88%EB%B0%AD-%EC%82%BC%EA%B0%81%EB%B4%89-%EC%96%B5%EC%83%88%EB%B0%AD-%EB%93%B1%EB%A3%A1%ED%8F%AD%ED%8F%AC-%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5",
+            "https://landyplay.com/%EC%B4%88%EB%A1%9D-%EC%96%B5%EC%83%88%EA%B0%80-%EC%9D%80%EB%B9%9B%EC%9C%BC%EB%A1%9C-%EB%AC%BC%EB%93%9C%EB%8A%94-%EB%AA%85%EC%84%B1%EC%82%B0-%EC%96%B5%EC%83%88%EB%B0%94%EB%9E%8C%EA%B8%B8-%EC%B4%88"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제1코스(등룡폭포·억새밭)",
+          "topic": "난이도",
+          "text": "제1코스는 산정호수 상동주차장에서 등룡폭포를 지나 억새밭 팔각정까지 경사가 비교적 완만하고 넓으나, 바닥에 자갈과 너덜바위가 많아 발목 부상에 주의해야 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-09",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=9034d6ee-5c12-421a-9f5b-513689c17df2",
+            "https://landyplay.com/%EC%B4%88%EB%A1%9D-%EC%96%B5%EC%83%88%EA%B0%80-%EC%9D%80%EB%B9%9B%EC%9C%BC%EB%A1%9C-%EB%AC%BC%EB%93%9C%EB%8A%94-%EB%AA%85%EC%84%B1%EC%82%B0-%EC%96%B5%EC%83%88%EB%B0%94%EB%9E%8C%EA%B8%B8-%EC%B4%88",
+            "http://san.chosun.com/news/articleView.html?idxno=2470"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "산행 들머리인 산정호수 상동주차장은 유료(소형 기준 2,000원)로 운영되며, 가을 억새 축제 성수기 주말에는 이른 아침부터 만차되어 혼잡합니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-11",
+          "sources": [
+            "https://www.pcuc.kr/open_content/reservation/sanjunghosu.jsp",
+            "https://baegdu.tistory.com/entry/%EB%AA%85%EC%84%B1%EC%82%B0-%EB%8C%80%EC%A4%91%EA%B5%90%ED%86%B5-%EC%96%B5%EC%83%88-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5-%EC%B1%85%EB%B0%94%EC%9C%84-%EC%96%B5%EC%83%88%EB%B0%AD-%EC%82%BC%EA%B0%81%EB%B4%89-%EC%96%B5%EC%83%88%EB%B0%AD-%EB%93%B1%EB%A3%A1%ED%8F%AD%ED%8F%AC-%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "제1코스(등룡폭포·억새밭)",
+          "topic": "조망·볼거리",
+          "text": "등룡폭포 상부의 억새밭과 팔각정 일대는 가을철 은빛 억새 군락이 넓게 펼쳐지며 1년 후에 배달되는 빨간 우체통이 설치되어 있어 탐방객들이 많이 찾습니다.",
+          "sentiment": "good",
+          "as_of": "2023-09",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=9034d6ee-5c12-421a-9f5b-513689c17df2",
+            "https://landyplay.com/%EC%B4%88%EB%A1%9D-%EC%96%B5%EC%83%88%EA%B0%80-%EC%9D%80%EB%B9%9B%EC%9C%BC%EB%A1%9C-%EB%AC%BC%EB%93%9C%EB%8A%94-%EB%AA%85%EC%84%B1%EC%82%B0-%EC%96%B5%EC%83%88%EB%B0%94%EB%9E%8C%EA%B8%B8-%EC%B4%88"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "산정호수 상동주차장 및 등산로 진입 상가 골목 끝에 공중화장실이 있으며, 산행 중 억새밭 일대에는 간이 화장실이 없습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-11",
+          "sources": [
+            "https://www.pocheon.go.kr/ktour/selectTourCntntsView.do?key=6486&tourNo=11",
+            "https://baegdu.tistory.com/entry/%EB%AA%85%EC%84%B1%EC%82%B0-%EB%8C%80%EC%A4%91%EA%B5%90%ED%86%B5-%EC%96%B5%EC%83%88-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5-%EC%B1%85%EB%B0%94%EC%9C%84-%EC%96%B5%EC%83%88%EB%B0%AD-%EC%82%BC%EA%B0%81%EB%B4%89-%EC%96%B5%EC%83%88%EB%B0%AD-%EB%93%B1%EB%A3%A1%ED%8F%AD%ED%8F%AC-%EC%83%81%EB%8F%99%EC%A3%BC%EC%B0%A8%EC%9E%A5"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "naejangsan",
+      "name": "내장산",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "가을 단풍 성수기(10월 중순~11월 중순) 동안 벽련암~서래봉~서래탐방지원센터 구간은 탐방객 밀집 예방을 위해 국립공원공단 예약통합시스템을 통한 탐방예약제로 운영됩니다.",
+          "sentiment": "caution",
+          "as_of": "2025-10",
+          "sources": [
+            "https://reservation.knps.or.kr/",
+            "http://san.chosun.com/news/articleView.html?idxno=25128",
+            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?parkId=B04&prdDvcd=T&vrteId=TB042XXX01"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "서래봉 능선 코스",
+          "topic": "위험구간",
+          "text": "서래봉 정상 직전 및 능선 구간은 가파른 암벽과 급경사 철계단이 연속되어 고소공포증이 있거나 눈·비가 올 때 미끄러짐 사고에 각별히 유의해야 합니다.",
+          "sentiment": "caution",
+          "as_of": "2025-04",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121400&menuNo=7020089",
+            "https://hyunddangs.tistory.com/137",
+            "http://san.chosun.com/news/articleView.html?idxno=25128"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "가을 단풍철에는 연자교부터 일주문까지 일반 차량 진입이 전면 통제되며, 내장호 주차장 등 외곽 주차장에 주차 후 무료 셔틀버스나 도보로 이동해야 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2025-10",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitInfoMain.do?parkId=121400&menuCd=MENU000001",
+            "http://san.chosun.com/news/articleView.html?idxno=25128",
+            "https://hyunddangs.tistory.com/137"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "내장산 능선 일주 코스",
+          "topic": "난이도",
+          "text": "서래봉부터 불출봉, 망해봉, 까치봉, 신선봉, 연자봉, 장군봉을 도는 능선 일주 코스는 총 11km가 넘고 약 7시간이 소요되는 고난도 암릉 장거리 산행 코스입니다.",
+          "sentiment": "neutral",
+          "as_of": "2025-04",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121400&menuNo=7020089",
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&parkNavGb=guide&menuNo=7020087",
+            "https://hyunddangs.tistory.com/137"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "내장사-신선봉 코스",
+          "topic": "조망·볼거리",
+          "text": "내장산 최고봉인 신선봉(763.5m) 정상에서는 주변 연자봉, 까치봉 능선과 내장사 방면 분지 지형을 한눈에 내려다볼 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2025-04",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121400&menuNo=7020089",
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&parkNavGb=guide&menuNo=7020087",
+            "https://hyunddangs.tistory.com/137"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "내장산은 10월 말부터 11월 초순까지 아기단풍이 절정을 이루며 전국에서 단풍 인파가 집중되어 케이블카와 일주문 일대가 매우 혼잡합니다.",
+          "sentiment": "good",
+          "as_of": "2025-10",
+          "sources": [
+            "https://www.korea.kr/multi/visualNewsView.do?newsId=148895066",
+            "http://san.chosun.com/news/articleView.html?idxno=25128"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "naeyeonsan",
+      "name": "내연산",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "보경사-12폭포-삼지봉 코스",
+          "topic": "위험구간",
+          "text": "삼지봉에서 거무나리골 또는 은폭포 방향으로 하산하는 계곡 길은 경사가 매우 가파르고 낙엽과 잔돌이 많아 미끄러짐에 주의해야 합니다.",
+          "sentiment": "caution",
+          "as_of": "2022-09",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5f33a870-7613-43cf-87be-a5e2ca0464c0",
+            "https://smileolleh.tistory.com/98"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "보경사-소금강전망대-연산폭포 원점회귀",
+          "topic": "조망·볼거리",
+          "text": "소금강전망대는 절벽 끝에 투명 유리 바닥으로 설치되어 청하골의 기암괴석과 선일대, 관음·연산폭포 절경을 파노라마로 내려다볼 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2026-01",
+          "sources": [
+            "https://www.pohang.go.kr/tour/tour_sub.do?mode=view&idx=213",
+            "https://rainbowmemories.tistory.com/entry/%ED%8F%AD%ED%8F%AC%EB%A5%BC-%EB%94%B0%EB%9D%BC-%EC%98%A4%EB%A5%B4%EB%8A%94-%EA%B8%B8-%ED%8F%AC%ED%95%AD-%EB%82%B4%EC%97%B0%EC%82%B0-%EC%86%8C%EA%B8%88%EA%B0%95%EC%A0%84%EB%A7%9D%EB%8C%80-%ED%8A%B8%EB%9E%98%ED%82%B9-%EC%BD%94%EC%8A%A4-%EC%A0%95%EB%A6%AC",
+            "http://san.chosun.com/news/articleView.html?idxno=15037"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "보경사-문수봉-삼지봉 능선 코스",
+          "topic": "난이도",
+          "text": "보경사 뒤편에서 문수암을 거쳐 문수봉으로 오르는 구간은 경사가 가파른 돌길 오르막으로 체력 소모가 크며, 삼지봉 정상까지 능선은 수목에 둘러싸여 조망이 제한적입니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-06",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5f33a870-7613-43cf-87be-a5e2ca0464c0",
+            "https://martionkwak.tistory.com/13",
+            "https://smileolleh.tistory.com/98"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "들머리인 보경사 상가 앞 공영주차장은 무료로 개방되어 있으며, 보경사 문화재관람료도 무료화되어 입장료 부담 없이 이용 가능합니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-08",
+          "sources": [
+            "https://www.pohang.go.kr/tour/tour_sub.do?mode=view&idx=213",
+            "https://mountaintraveler.tistory.com/30",
+            "https://rainbowmemories.tistory.com/entry/%ED%8F%AD%ED%8F%AC%EB%A5%BC-%EB%94%B0%EB%9D%BC-%EC%98%A4%EB%A5%B4%EB%8A%94-%EA%B8%B8-%ED%8F%AC%ED%95%AD-%EB%82%B4%EC%97%B0%EC%82%B0-%EC%86%8C%EA%B8%88%EA%B0%95%EC%A0%84%EB%A7%9D%EB%8C%80-%ED%8A%B8%EB%9E%98%ED%82%B9-%EC%BD%94%EC%8A%A4-%EC%A0%95%EB%A6%AC"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "보경사-12폭포-삼지봉 코스",
+          "topic": "조망·볼거리",
+          "text": "관음폭포와 구름다리를 건너 만나는 연산폭포는 깎아지른 학소대 암벽과 어우러져 겸재 정선이 진경산수화를 남긴 내연산 최고의 명소입니다.",
+          "sentiment": "good",
+          "as_of": "2021-07",
+          "sources": [
+            "https://www.museum.go.kr/",
+            "http://san.chosun.com/news/articleView.html?idxno=15037",
+            "http://san.chosun.com/news/articleView.html?idxno=14132"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "보경사-소금강전망대-연산폭포 원점회귀",
+          "topic": "난이도",
+          "text": "보경사에서 연산폭포와 소금강전망대까지 이어지는 트레킹로는 완만한 데크길과 흙길이 잘 조성되어 있어 등산 초보자나 가족 단위 탐방객도 2~3시간 내에 무리 없이 다녀올 수 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2026-01",
+          "sources": [
+            "https://www.pohang.go.kr/tour/tour_sub.do?mode=view&idx=213",
+            "https://rainbowmemories.tistory.com/entry/%ED%8F%AD%ED%8F%AC%EB%A5%BC-%EB%94%B0%EB%9D%BC-%EC%98%A4%EB%A5%B4%EB%8A%94-%EA%B8%B8-%ED%8F%AC%ED%95%AD-%EB%82%B4%EC%97%B0%EC%82%B0-%EC%86%8C%EA%B8%88%EA%B0%95%EC%A0%84%EB%A7%9D%EB%8C%80-%ED%8A%B8%EB%9E%98%ED%82%B9-%EC%BD%94%EC%8A%A4-%EC%A0%95%EB%A6%AC"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "namdeokyusan",
+      "name": "남덕유산",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "영각사 코스",
+          "topic": "위험구간",
+          "text": "영각재 쉼터를 지나 남덕유산 정상으로 이어지는 구간에는 45도에 달하는 가파른 급경사 데크 철계단과 암벽이 이어지며 겨울철 결빙 시 매우 미끄럽습니다.",
+          "sentiment": "caution",
+          "as_of": "2023-02",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121100&menuNo=7020083",
+            "https://bluesdk.tistory.com/entry/%EC%84%A4%EC%82%B0%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%AA%85%ED%95%9C-%EB%82%A8%EB%8D%95%EC%9C%A0%EC%82%B0-%EC%98%81%EA%B0%81%EC%82%AC-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4",
+            "http://san.chosun.com/news/articleView.html?idxno=9034"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "덕유산국립공원은 봄철·가을철 산불조심기간에 일부 고지대 탐방로가 통제되며, 서봉 일대에서 덕유교육원 등 비법정 탐방로로의 샛길 진입이 엄격히 금지됩니다.",
+          "sentiment": "caution",
+          "as_of": "2025-12",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitInfoMain.do?parkId=121100&menuCd=MENU000001",
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&parkNavGb=guide&menuNo=7020089",
+            "https://sobak-2.tistory.com/entry/%EB%82%A8%EB%8D%95%EC%9C%A0%EC%82%B0-%EB%93%B1%EC%82%B0-%EC%BD%94%EC%8A%A4-%EC%B6%94%EC%B2%9C-5%EC%8B%9C%EA%B0%84-%EC%98%81%EA%B0%81%EC%82%AC-%EC%99%95%EB%B3%B5%EB%B6%80%ED%84%B0-%EC%9C%A1%EC%8B%AD%EB%A0%B9-%EC%A2%85%EC%A3%BC%EA%B9%8C%EC%A7%80-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영각사 코스",
+          "topic": "주차·교통",
+          "text": "영각사 대형 공영주차장은 무료로 이용할 수 있으며, 주차장에서 영각탐방지원센터 입구까지는 약 500m~1km 포장 임도를 걸어 올라가야 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-02",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121100&menuNo=7020083",
+            "https://bluesdk.tistory.com/entry/%EC%84%A4%EC%82%B0%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%AA%85%ED%95%9C-%EB%82%A8%EB%8D%95%EC%9C%A0%EC%82%B0-%EC%98%81%EA%B0%81%EC%82%AC-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4",
+            "https://sobak-2.tistory.com/entry/%EB%82%A8%EB%8D%95%EC%9C%A0%EC%82%B0-%EB%93%B1%EC%82%B0-%EC%BD%94%EC%8A%A4-%EC%B6%94%EC%B2%9C-5%EC%8B%9C%EA%B0%84-%EC%98%81%EA%B0%81%EC%82%AC-%EC%99%95%EB%B3%B5%EB%B6%80%ED%84%B0-%EC%9C%A1%EC%8B%AD%EB%A0%B9-%EC%A2%85%EC%A3%BC%EA%B9%8C%EC%A7%80-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "겨울철 남덕유산은 향적봉에 비해 한적하면서도 칼바람과 함께 상고대와 설경이 장관을 이루어 설산 산행지로 인기가 높으며 아이젠과 방한 장구가 필수입니다.",
+          "sentiment": "good",
+          "as_of": "2025-12",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121100&menuNo=7020083",
+            "https://min545454.tistory.com/221",
+            "http://san.chosun.com/news/articleView.html?idxno=10944"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "육십령 능선 코스",
+          "topic": "조망·볼거리",
+          "text": "할미봉 암봉과 서봉(장구목) 정상에 서면 남덕유산 동봉 암릉과 삿갓봉, 향적봉으로 이어지는 덕유산 주능선 파노라마가 한눈에 펼쳐집니다.",
+          "sentiment": "good",
+          "as_of": "2022-02",
+          "sources": [
+            "https://www.forest.go.kr/",
+            "https://hj030303.tistory.com/780",
+            "http://san.chosun.com/news/articleView.html?idxno=10079"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영각사 코스",
+          "topic": "편의시설",
+          "text": "영각사 공영주차장 간이 화장실보다 영각탐방지원센터 초입에 설치된 수세식 화장실이 훨씬 쾌적하므로 산행 시작 전 이용하는 것이 좋습니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-02",
+          "sources": [
+            "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121100&menuNo=7020083",
+            "https://bluesdk.tistory.com/entry/%EC%84%A4%EC%82%B0%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%AA%85%ED%95%9C-%EB%82%A8%EB%8D%95%EC%9C%A0%EC%82%B0-%EC%98%81%EA%B0%81%EC%82%AC-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "namhansan",
+      "name": "남한산",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "남한산성 도립공원 내 유료 주차장은 승용차 기준 평일 3,000원, 주말 및 공휴일 5,000원의 당일 정액 요금제로 운영되며 주말에는 오전 11시 전후로 만차되기 쉽습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.gg.go.kr/namhansansung-2/main.do",
+            "https://namhansansung.gg.go.kr/",
+            "https://www.gg.go.kr/namhansansung-2"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "산성로터리-북문-서문-수어장대",
+          "topic": "조망·볼거리",
+          "text": "서문(우익문) 전망대는 롯데월드타워를 비롯한 서울 도심과 한강 일대를 한눈에 내려다볼 수 있는 대표 조망처로 일몰과 야경 감상 명소로 꼽힙니다.",
+          "sentiment": "good",
+          "as_of": "2024-01",
+          "sources": [
+            "https://www.gg.go.kr/namhansansung-2/main.do",
+            "https://namhansansung.gg.go.kr/",
+            "https://www.gg.go.kr/namhansansung-2"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "마천역-서문 코스",
+          "topic": "주차·교통",
+          "text": "지하철 5호선 마천역 1번 출구에서 만남의 광장 들머리까지 도보 약 10분 거리로 접근성이 뛰어나나, 들머리 인근에 전용 대형 주차장이 없어 대중교통 이용이 권장됩니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://mediahub.seoul.go.kr/archives/2007204",
+            "https://www.gg.go.kr/namhansansung-2"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "마천역-서문 코스",
+          "topic": "난이도",
+          "text": "초반 숲길은 완만하지만 서문 직전 구간에 1,000개 이상의 가파른 나무 계단과 돌계단 오르막이 이어져 체력 소모가 집중됩니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-02",
+          "sources": [
+            "https://mediahub.seoul.go.kr/archives/2007204",
+            "https://www.gg.go.kr/namhansansung-2"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "산성로터리, 중앙주차장, 남문주차장 및 행궁 입구 등에 공중화장실이 완비되어 있으나 성곽길 등산로 중간에는 화장실이 없으므로 출발 전 이용하는 것이 좋습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-01",
+          "sources": [
+            "https://www.gg.go.kr/namhansansung-2/main.do",
+            "https://namhansansung.gg.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "산성종로-북문-남한산 성곽 코스",
+          "topic": "난이도",
+          "text": "성곽을 따라 도는 코스는 잘 정비된 완만한 보행로와 계단으로 조성되어 있어 등산 초보자나 가족 단위 탐방객도 수월하게 걸을 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2023-11",
+          "sources": [
+            "https://www.ggcf.kr/",
+            "https://www.gg.go.kr/namhansansung-2"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "namsan-gyeongju",
+      "name": "남산(경주)",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "용장골-고위봉 코스",
+          "topic": "위험구간",
+          "text": "용장골에서 이무기능선을 통해 고위봉으로 오르는 구간은 가파른 암릉과 로프 구간이 포함되어 있어 우천 시나 결빙기에는 미끄러짐 위험이 크므로 각별한 주의가 필요합니다.",
+          "sentiment": "caution",
+          "as_of": "2024-02",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gyeongju.knps.or.kr/",
+            "https://www.gyeongju.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "국립공원 전 구역은 반려견 등 반려동물 동반 입산이 금지되며, 하절기 04:00~17:00, 동절기 05:00~15:00 등 계절별 입산 통제 시간이 적용됩니다.",
+          "sentiment": "caution",
+          "as_of": "2024-01",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gyeongju.knps.or.kr/",
+            "https://reservation.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "서남산(삼릉) 공영주차장과 용장골 주차장은 소형차 기준 1일 2,000원(대형 4,000원)의 주차요금이 부과되며 주차장 내 공중화장실이 마련되어 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gyeongju.knps.or.kr/",
+            "https://www.gyeongju.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "삼릉계-금오봉 코스",
+          "topic": "조망·볼거리",
+          "text": "삼릉 소나무 숲길을 지나 상선암 위 바둑바위에 오르면 배동 들판과 경주 시가지 전체가 시원하게 내려다보이는 탁월한 조망을 즐길 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2024-04",
+          "sources": [
+            "https://korean.visitkorea.or.kr/",
+            "https://gyeongju.knps.or.kr/",
+            "https://www.gyeongju.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용장골-고위봉 코스",
+          "topic": "난이도",
+          "text": "경주 남산의 일반적인 유적 탐방로와 달리 용장골~이무기능선 코스는 암벽 구간과 가파른 데크 계단이 이어져 남산 내에서 가장 체력 소모가 크고 난이도가 높은 편입니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-12",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gyeongju.knps.or.kr/",
+            "https://www.gyeongju.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "삼릉계-금오봉 코스",
+          "topic": "편의시설",
+          "text": "들머리인 삼릉탐방지원센터에 화장실과 안내소가 있으며, 산행 중턱에 위치한 상선암에서 식수 보충과 휴식이 가능합니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-10",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gyeongju.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "namsanjeilbong",
+      "name": "남산제일봉",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "청량동 방면 황산주차장은 무료로 운영되나, 치인리 방면 치인주차장은 해인사 시설지구 내에 위치하여 승용차 기준 4,000원의 주차 요금이 부과됩니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-04",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/",
+            "https://www.hc.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "청량동탐방지원센터-청량사-남산제일봉",
+          "topic": "난이도",
+          "text": "청량사 이후 정상 직전까지 가파른 경사의 암릉과 연속된 철계단이 이어져 돼지골 코스에 비해 체력 소모가 훨씬 큽니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/",
+            "https://www.hc.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "청량동탐방지원센터-청량사-남산제일봉",
+          "topic": "조망·볼거리",
+          "text": "능선부에 진입하면 천 개의 불상이 늘어선 형상의 기암괴석 군락과 가야산 주능선이 시원하게 펼쳐지는 수려한 암릉 경관을 감상할 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2023-10",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/",
+            "https://www.hc.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "치인리(해인사 관광단지)-남산제일봉 코스",
+          "topic": "난이도",
+          "text": "돼지골 방면 탐방로는 완만한 흙길과 울창한 숲길 위주로 조성되어 있어 초보자나 하산 코스로 이용하기 수월합니다.",
+          "sentiment": "good",
+          "as_of": "2024-01",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/",
+            "https://www.hc.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "청량동탐방지원센터-남산제일봉-돼지골-치인주차장",
+          "topic": "주차·교통",
+          "text": "청량동으로 올라 치인주차장(돼지골)으로 하산하는 연계 산행 시 들머리와 날머리 간 거리가 멀어 차량 회수를 위해 택시(약 15,000~20,000원)나 버스 환승을 이용해야 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-02",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "황산주차장, 청량동탐방지원센터 입구, 돼지골탐방지원센터(치인주차장)에 화장실이 설치되어 있으며 국립공원 스탬프 투어 날인이 가능합니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://gaya.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "noinbong-odaesan",
+      "name": "노인봉(오대산)",
+      "collected_at": "2026-08-14",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "오대산국립공원은 봄철(2월~5월 중순)과 가을철(11월~12월 중순) 산불조심기간에 진고개~노인봉~소금강 구간의 입산이 전면 통제될 수 있으므로 사전 공지 확인이 필수입니다.",
+          "sentiment": "caution",
+          "as_of": "2024-02",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/",
+            "https://reservation.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진고개-노인봉-소금강분소",
+          "topic": "위험구간",
+          "text": "노인봉 삼거리에서 낙영폭포로 내려가는 구간은 경사가 급한 돌계단과 너덜길이 길게 이어져 무릎 부담과 미끄러짐 사고 위험이 높으므로 등산스틱과 보호대 사용이 권장됩니다.",
+          "sentiment": "caution",
+          "as_of": "2024-04",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진고개-노인봉 왕복 코스",
+          "topic": "난이도",
+          "text": "해발 약 960m의 진고개 정상 휴게소에서 출발하여 표고차가 400m 미만이며, 고위평탄면 데크길과 완만한 흙길로 이루어져 있어 1,300m대 고봉임에도 산행 난이도가 매우 낮습니다.",
+          "sentiment": "good",
+          "as_of": "2024-06",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진고개-노인봉-소금강 종주 코스",
+          "topic": "주차·교통",
+          "text": "진고개에서 노인봉을 거쳐 소금강으로 내려가는 약 13.3km 종주 코스는 들머리와 날머리가 고개를 사이에 두고 멀리 떨어져 있어 차량 회수를 위해 택시(편도 약 40,000~50,000원)를 주로 이용합니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "진고개-노인봉-소금강분소",
+          "topic": "조망·볼거리",
+          "text": "노인봉에서 소금강분소로 내려오는 계곡 구간은 낙영폭포, 광폭포, 백운대, 만물상, 구룡폭포 등 명승 제1호 소금강의 빼어난 화강암 기암절벽과 폭포 절경이 이어집니다.",
+          "sentiment": "good",
+          "as_of": "2024-07",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "진고개 휴게소 주차장은 무료로 개방되며 화장실이 갖춰져 있으나, 진고개 출발 후 소금강분소까지 약 13km 구간에는 노인봉 무인대피소(임시 화장실) 외에 정규 매점과 편의시설이 없습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-06",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://odae.knps.or.kr/"
           ],
           "verify": {
             "level": "single",
