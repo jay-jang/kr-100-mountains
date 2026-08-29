@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-28T18:44:21.548Z",
+  "generated_at": "2026-08-29T18:32:08.212Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,8 +16,8 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 1027,
-    "verified": 175
+    "notes": 1013,
+    "verified": 162
   },
   "mountains": [
     {
@@ -3693,98 +3693,25 @@
     {
       "id": "chuwolsan",
       "name": "추월산",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
+      "collected_at": "2026-08-29",
+      "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "추월산주차장-제2등산로-추월산",
-          "topic": "통제·예약",
-          "text": "2024년 4월 21일 산행 당시 보리암 정상에서 제2등산로로 내려가는 길이 막혀 있어 수리봉 방면으로 코스를 변경했다.",
-          "sentiment": "caution",
-          "as_of": "2024-04",
-          "sources": [
-            "https://m.blog.naver.com/",
-            "https://j-parksy.tistory.com/577"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "추월산주차장-제2등산로-추월산",
-          "topic": "위험구간",
-          "text": "수리봉 방향 하산로에는 급경사가 많고, 조릿대 구간은 길이 잘 보이지 않는 곳이 있어 진행 방향을 세심하게 확인해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2024-04",
-          "sources": [
-            "https://m.blog.naver.com/",
-            "https://j-parksy.tistory.com/577"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "보리암 코스(제1등산로)",
           "topic": "위험구간",
-          "text": "보리암으로 오르는 구간은 경사가 가파른 장시간의 철계단이 이어지며, 겨울철에는 계단 결빙이 심해 아이젠과 스틱 등 안전장구가 필수적이다.",
+          "text": "담양호 국민관광단지 주차장에서 보리암과 보리암 정상(상봉)으로 이어지는 구간은 가파른 데크 계단과 철계단이 끊임없이 이어져 무릎 부담과 체력 소모가 매우 큽니다.",
           "sentiment": "caution",
-          "as_of": "2025-01",
+          "as_of": "2024-05",
           "sources": [
-            "https://m.blog.naver.com/",
-            "https://blog.naver.com/dnjs3412/223743535882"
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9b8be4bb-b7b5-4b77-a89e-2dc3079b76c8"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "추월산주차장-제2등산로-추월산",
-          "topic": "통제·예약",
-          "text": "제2등산로 하산 구간은 동절기 낙석 및 대형 고드름 낙하 위험으로 산행 자제 및 위험 안내판이 설치되어 있다.",
-          "sentiment": "caution",
-          "as_of": "2025-01",
-          "sources": [
-            "https://m.blog.naver.com/",
-            "https://blog.naver.com/dnjs3412/223743535882"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "보리암 코스(제1등산로)",
-          "topic": "난이도",
-          "text": "보리암 정상까지 급경사와 긴 계단이 계속되며, 실제 산행기에서도 작은 산이지만 상당히 가파르다고 평가했다.",
-          "sentiment": "neutral",
-          "as_of": "2024-04",
-          "sources": [
-            "https://m.blog.naver.com/",
-            "https://j-parksy.tistory.com/577",
-            "https://brightcw.tistory.com/691"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -3792,89 +3719,90 @@
           "scope": "route",
           "route": "보리암 코스(제1등산로)",
           "topic": "조망·볼거리",
-          "text": "답사자는 상봉의 조망을 가장 좋게 평가했고, 다음으로 보리암과 추월산 정상 남쪽 무등산 방향 조망을 꼽았다.",
+          "text": "해발 약 600m 기암절벽에 매달리듯 자리한 보리암과 보리암 정상 부근 전망대에서 굽어보는 담양호의 푸른 수면 경관이 대표적인 조망 포인트로 꼽힙니다.",
           "sentiment": "good",
-          "as_of": "2019-01",
+          "as_of": "2024-05",
           "sources": [
-            "https://m.blog.naver.com/",
-            "https://sanboro.blogspot.com/2019/01/chuwolsan.html"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9292c2df-50ba-4700-8451-b0db4fb7df88",
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9b8be4bb-b7b5-4b77-a89e-2dc3079b76c8"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "보리암 코스(제1등산로)",
-          "topic": "주차·교통",
-          "text": "담양호 관광단지의 추월산 주차장은 주말에 매우 복잡하다는 현장 기록이 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-04",
-          "sources": [
-            "https://m.blog.naver.com/",
-            "https://brightcw.tistory.com/691"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "추월산 전망대에서는 정면의 금성산성과 왼쪽의 강천산을 볼 수 있고, 산행기에서는 담양호 조망이 특히 좋다고 평가했다.",
-          "sentiment": "good",
-          "as_of": "2025-04",
+          "topic": "편의시설",
+          "text": "담양호 국민관광단지 주차장에 공중화장실과 장애인 편의시설, 에어건이 갖춰져 있으며 주변에 식당과 매점이 밀집해 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
           "sources": [
-            "https://korean.visitkorea.or.kr/",
-            "https://brightcw.tistory.com/691"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9292c2df-50ba-4700-8451-b0db4fb7df88",
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9b8be4bb-b7b5-4b77-a89e-2dc3079b76c8"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "보리암 코스(제1등산로)",
-          "topic": "조망·볼거리",
-          "text": "보리암 전망대와 오름길 계단 구간에서는 아래로 푸른 담양호와 주변 산세가 한눈에 내려다보이는 뛰어난 조망을 자랑한다.",
-          "sentiment": "good",
-          "as_of": "2025-01",
-          "sources": [
-            "https://korean.visitkorea.or.kr/",
-            "https://blog.naver.com/dnjs3412/223743535882"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "추월산주차장-제2등산로-추월산",
-          "topic": "주차·교통",
-          "text": "담양호 국민관광단지 내 추월산 주차장은 부지가 넓고 주차 요금이 무료여서 자차 접근 및 주차가 수월하다.",
+          "topic": "난이도",
+          "text": "제2등산로는 제1등산로(보리암 방면)보다 거리가 약 1.6km로 다소 길지만 경사가 완만하고 숲길 위주이며, 국가지질공원 지질명소인 구상암을 경유합니다.",
           "sentiment": "neutral",
-          "as_of": "2025-01",
+          "as_of": "2024-05",
           "sources": [
-            "https://korean.visitkorea.or.kr/",
-            "https://blog.naver.com/dnjs3412/223743535882"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9292c2df-50ba-4700-8451-b0db4fb7df88",
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "산행 기점인 담양호 국민관광단지 주차장(전남 담양군 용면 월계리 149-38 일원)은 대형 및 소형 주차 시설이 완비되어 있으며 무료로 개방되어 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000",
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9b8be4bb-b7b5-4b77-a89e-2dc3079b76c8"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "가을철(10월 하순~11월 중순) 단풍나무가 붉게 물들 때 기암괴석과 담양호가 어우러져 단풍 산행지로 인기가 높습니다.",
+          "sentiment": "good",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.damyang.go.kr/tour/index.damyang?menuCd=DOM_000000301001001000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -3883,136 +3811,60 @@
     {
       "id": "daeamsan",
       "name": "대암산",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
-      "verified": 2,
+      "collected_at": "2026-08-29",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "인제 서흥리 용늪 탐방코스",
           "topic": "통제·예약",
-          "text": "2026년 운영 안내는 사전예약이 끝난 경우에도 기상 상황·산불조심기간·현장 여건에 따라 탐방이 취소될 수 있다고 공지한다.",
+          "text": "대암산 용늪은 람사르 습지 및 천연기념물 보호구역으로 전면 사전예약제로 운영되며, 탐방 예정일 전월 1일부터 11일 전까지 인제군 대암산 용늪 공식 홈페이지(sum.inje.go.kr)에서 사전 예약을 완료해야 입산할 수 있습니다.",
           "sentiment": "caution",
-          "as_of": "2026-04",
+          "as_of": "2024-05",
           "sources": [
-            "https://sum.inje.go.kr/br/reserve/sub04_01?articleSeq=293&boardCode=BDAAEE01&mode=readForm",
+            "https://sum.inje.go.kr/",
+            "https://www.inje.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "양구 광치 코스",
+          "topic": "통제·예약",
+          "text": "양구 광치자연휴양림 및 솔봉 방면에서 대암산 정상이나 용늪으로 이어지는 주능선 구간은 군사시설보호구역 및 산림유전자원보호구역으로 지정되어 개별 자유 출입이 통제됩니다.",
+          "sentiment": "caution",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030043",
+            "https://www.yanggu.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "인제 서흥리 용늪 탐방코스",
+          "topic": "위험구간",
+          "text": "큰용늪 일대는 해발 1,280m의 고지대로 평지보다 기온이 현저히 낮고 짙은 안개와 강풍이 잦으므로, 방풍·보온용 겉옷과 접지력이 좋은 등산화 착용이 필수적입니다.",
+          "sentiment": "caution",
+          "as_of": "2024-05",
+          "sources": [
             "https://sum.inje.go.kr/"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "인제 서흥리 용늪 탐방코스",
-          "topic": "조망·볼거리",
-          "text": "해발 1,280m 정상부에 위치한 국내 유일 고층습원인 용늪은 4,000년 이상 적설 및 미분해로 형성된 이탄층과 원시 수생 식생의 독특한 장관을 선보인다.",
-          "sentiment": "good",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.tour.go.kr/FileSystem/UploadTemp/SendNewsLetter/%EC%A0%9C250%ED%98%B8_%EA%B4%80%EA%B4%91%EA%B4%80%EB%A0%A8%EC%A0%95%EB%B6%80%EC%A0%95%EC%B1%85%282011%EB%85%844%EC%9B%94%20%EC%B2%AB%EC%A7%B8%20%EC%A3%BC%29.pdf",
-            "https://www.waterjournal.co.kr/",
-            "https://blog.naver.com/beyondthedoor1004/223926103463"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "인제 서흥리 용늪 탐방코스",
-          "topic": "통제·예약",
-          "text": "대암산 용늪 탐방은 매년 5월 16일부터 10월 31일까지 사전 예약제로만 운영되며(5월 15일까지 입산통제), 당일 신분증 확인 후 출입증을 배부받아야 입장이 가능하다.",
-          "sentiment": "caution",
-          "as_of": "2026-08",
-          "sources": [
-            "https://sum.inje.go.kr/",
-            "https://blog.naver.com/beyondthedoor1004/223926103463"
-          ],
-          "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "인제 서흥리 용늪 탐방코스",
-          "topic": "통제·예약",
-          "text": "서흥리 탐방 코스는 출발 10분 전까지 탐방센터에 집결해야 하며, 자연환경해설사 및 감시원의 동행 하에 그룹 단위로만 탐방이 실시된다.",
-          "sentiment": "caution",
-          "as_of": "2026-08",
-          "sources": [
-            "https://sum.inje.go.kr/",
-            "https://blog.naver.com/beyondthedoor1004/223926103463"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "용늪 이탄층 및 멸종위기 식물 보호를 위해 탐방 시 등산 스틱 사용이 엄격히 금지되며, 입수 전 신발의 흙먼지를 반드시 털어내야 한다.",
-          "sentiment": "caution",
-          "as_of": "2026-05",
-          "sources": [
-            "https://www.inje.go.kr/",
-            "https://blog.naver.com/5004yurim/224298343260"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "인제 서흥리 용늪 탐방코스",
-          "topic": "난이도",
-          "text": "서흥리 탐방안내소에서 용늪을 다녀오는 코스는 약 5~6시간이 걸리는 장거리 산행으로 소개된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-11",
-          "sources": [
-            "https://sum.inje.go.kr/",
-            "https://www.dongtuni.com/upload/webzine/143/a6d-20daa922dd0a.pdf",
-            "https://v.daum.net/v/NhhVtqGry3"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "인제 서흥리 용늪 탐방코스",
-          "topic": "조망·볼거리",
-          "text": "용늪에서는 비로용담·물매화·금강초롱 등 고산 습지 식물이 관찰됐고, 대암산 정상에서는 금강산과 설악산을 잇는 능선 조망이 기록돼 있다.",
-          "sentiment": "good",
-          "as_of": "2023-09",
-          "sources": [
-            "https://www.forest.go.kr/",
-            "https://brunch.co.kr/%4031f8f10fc4fe4f2/612",
-            "https://kimilkoo.tistory.com/1170"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4020,17 +3872,70 @@
           "scope": "route",
           "route": "인제 서흥리 용늪 탐방코스",
           "topic": "편의시설",
-          "text": "용늪 탐방과 대암산 정상을 합쳐 약 6시간 걷는 일정에는 식수와 점심 도시락을 직접 준비해야 한다는 현장 기사가 있다.",
+          "text": "서흥리 코스 탐방객은 출발 시간 전까지 인제군 서화면 금강로 1149-7의 대암산용늪 탐방자지원센터(용늪마을체험관)에 집결해 신분증 확인 및 출입증을 수령한 후 주민안내원·해설사와 함께 동행해야 합니다.",
           "sentiment": "neutral",
-          "as_of": "2022-10",
+          "as_of": "2024-05",
           "sources": [
-            "https://www.donga.com/",
-            "https://www.sateconomy.co.kr/news/print.html?newsid=4001545"
+            "https://sum.inje.go.kr/",
+            "https://www.inje.go.kr/"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "인제 서흥리 용늪 탐방코스",
+          "topic": "난이도",
+          "text": "서흥리 코스는 탐방자지원센터부터 큰용늪과 정상까지 도보로 왕복 약 5~6시간이 소요되는 장거리 코스로, 차량 연계로 이동하는 가아리 코스에 비해 체력 소모가 큽니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://sum.inje.go.kr/",
+            "https://www.inje.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "약 4,000년 전 형성된 국내 유일의 고층습원인 큰용늪에서 비로용담, 끈끈이주걱, 물이끼 등 희귀 고산 식물과 이탄층 생태계를 지정된 탐방로 데크를 따라 관찰할 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2024-05",
+          "sources": [
+            "https://sum.inje.go.kr/",
+            "https://www.inje.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "인제 서흥리 용늪 탐방코스",
+          "topic": "계절·시기",
+          "text": "산불방지기간 종료 후인 매년 5월 16일부터 10월 31일까지만 한시적으로 탐방로가 개방됩니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://sum.inje.go.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -4039,118 +3944,44 @@
     {
       "id": "daedunsan",
       "name": "대둔산",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
-      "verified": 7,
+      "collected_at": "2026-08-29",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "케이블카-금강구름다리-삼선계단-마천대",
           "topic": "위험구간",
-          "text": "삼선계단은 127개의 철제 계단으로 경사가 약 51도에 달하는 가파른 일방통행(상행) 구간이며, 강풍이나 결빙 등 기상 악화 시 출입이 통제되므로 유의해야 한다.",
+          "text": "명물인 삼선계단은 121개 계단에 경사도가 약 51도에 달하는 가파른 철계단으로, 추락 사고 예방을 위해 상행(올라가는 방향) 전용 일방통행으로 운영되며 하산 시에는 반드시 일반 우회 등산로를 이용해야 합니다.",
           "sentiment": "caution",
           "as_of": "2024-05",
           "sources": [
-            "https://orminfo.com/daedunsan-park-cablecar-info",
-            "https://namu.wiki/w/%EB%8C%80%EB%90%90%EC%82%B0%20%EB%8F%84%EB%A6%BD%EA%B3%B5%EC%9B%90",
-            "https://www.wanju.go.kr/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "대둔산관광단지-동심바위-금강구름다리-삼선계단-마천대",
-          "topic": "난이도",
-          "text": "대둔산관광단지에서 동심바위를 거쳐 올라가는 보행 등산로는 경사가 급하고 돌계단 구간이 많아 케이블카 미이용 시 체력 소모가 매우 크다.",
-          "sentiment": "caution",
-          "as_of": "2024-05",
-          "sources": [
-            "https://r.yna.co.kr/www/imazine/201603/Tracking.pdf",
-            "https://namu.wiki/w/%EB%8C%80%EB%90%90%EC%82%B0%20%EB%8F%84%EB%A6%BD%EA%B3%B5%EC%9B%90",
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000001001001001000",
+            "https://www.wanju.go.kr/tour",
             "https://korean.visitkorea.or.kr/"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "대둔산관광단지-동심바위-금강구름다리-삼선계단-마천대",
-          "topic": "난이도",
-          "text": "국민관광단지 쪽 산행기점부터 동심바위까지 가파른 바윗길과 돌계단이 이어지며, 삼선계단을 지난 뒤에도 정상 능선까지 가파른 돌계단을 올라야 한다.",
-          "sentiment": "caution",
-          "as_of": "2016-03",
-          "sources": [
-            "https://r.yna.co.kr/www/imazine/201603/Tracking.pdf",
-            "https://namu.wiki/w/%EB%8C%80%EB%90%90%EC%82%B0%20%EB%8F%84%EB%A6%BD%EA%B3%B5%EC%9B%90"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "대둔산관광단지-동심바위-금강구름다리-삼선계단-마천대",
-          "topic": "위험구간",
-          "text": "삼선계단은 금강구름다리보다 더 아슬아슬하다고 소개되며, 고소감이 부담스러우면 약수정휴게소 부근에서 우회 코스를 선택할 수 있다.",
-          "sentiment": "caution",
-          "as_of": "2016-03",
-          "sources": [
-            "https://r.yna.co.kr/www/imazine/201603/Tracking.pdf",
-            "http://www.daedunsancablecar.com/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "케이블카-금강구름다리-삼선계단-마천대",
-          "topic": "편의시설",
-          "text": "대둔산 케이블카는 20분 간격으로 운행하며 왕복 요금은 대인 기준 16,500원이고 현장 발권만 가능하다.",
-          "sentiment": "neutral",
+          "topic": "혼잡",
+          "text": "주말과 10~11월 가을 단풍철 성수기에는 케이블카 매표 및 탑승 대기 시간이 1시간 이상 길어지고 금강구름다리와 삼선계단 구간에 병목 현상이 발생하므로 이른 아침 산행이 권장됩니다.",
+          "sentiment": "caution",
           "as_of": "2024-05",
           "sources": [
-            "https://jkh70.com/entry/%EB%8C%80%EB%91%94%EC%82%B0-%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4-%EC%B4%9D%EC%A0%95%EB%A6%AC-%EC%9A%94%EA%B8%88-%EC%9A%B4%ED%96%89%EC%8B%9C%EA%B0%84-%ED%83%91%EC%8A%B9%EB%B0%A9%EB%B2%95%EB%B6%80%ED%84%B0-%EC%9D%B4%EC%9A%A9-%EA%BF%80%ED%8C%81%EA%B9%8C%EC%A7%80",
-            "http://www.daedunsancablecar.com/",
-            "https://www.wanju.go.kr/"
+            "http://daedunsancablecar.com/",
+            "https://www.wanju.go.kr/tour"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "케이블카-금강구름다리-삼선계단-마천대",
-          "topic": "편의시설",
-          "text": "케이블카 상부 정류장에는 전망대와 커피숍, 매점, 화장실이 있으며, 정상 능선 삼거리 쉼터에도 간단한 식사와 음료를 파는 매점이 확인된다.",
-          "sentiment": "neutral",
-          "as_of": "2016-03",
-          "sources": [
-            "https://r.yna.co.kr/www/imazine/201603/Tracking.pdf",
-            "http://www.daedunsancablecar.com/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4158,35 +3989,18 @@
           "scope": "route",
           "route": "케이블카-금강구름다리-삼선계단-마천대",
           "topic": "조망·볼거리",
-          "text": "금강구름다리에서는 침식된 화강암 봉우리들이 산수화처럼 펼쳐지고, 케이블카에서도 병풍처럼 둘러선 기암절벽과 계곡을 내려다볼 수 있다.",
+          "text": "임금바위와 입석대를 잇는 높이 81m, 길이 50m의 금강구름다리와 삼선계단에서 웅장한 기암괴석 암봉 군락과 협곡의 파노라마 조망을 감상할 수 있습니다.",
           "sentiment": "good",
-          "as_of": "2016-03",
+          "as_of": "2024-05",
           "sources": [
-            "https://r.yna.co.kr/www/imazine/201603/Tracking.pdf",
-            "http://www.daedunsancablecar.com/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "수락계곡-마천대 (논산 방면)",
-          "topic": "주차·교통",
-          "text": "논산 수락계곡 주차시설은 소형차 200대와 대형차 20대 규모로 안내되어 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.chungnam.go.kr/",
-            "https://tour.chungnam.go.kr/prog/trsrcn/kor/sub02_01_02/view.do?trsrcnNo=389"
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000001001001001000",
+            "https://www.wanju.go.kr/tour",
+            "https://korean.visitkorea.or.kr/"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4194,17 +4008,18 @@
           "scope": "route",
           "route": "수락계곡-마천대 (논산 방면)",
           "topic": "조망·볼거리",
-          "text": "수락계곡 코스는 군지구름다리와 수락폭포, 선녀폭포를 지나며 계곡 수량이 풍부하고 완주 방면에 비해 한적한 산행을 즐길 수 있다.",
+          "text": "논산 수락계곡 코스는 선녀폭포, 수락폭포, 군지구름다리를 거쳐 마천대로 오르며 완주 방면에 비해 한산하고 울창한 숲과 청정한 계곡 비경이 우수합니다.",
           "sentiment": "good",
           "as_of": "2024-05",
           "sources": [
-            "https://www.chungnam.go.kr/",
-            "https://korean.visitkorea.or.kr/"
+            "https://www.nonsan.go.kr/tour",
+            "https://www.nonsan.go.kr/",
+            "https://tour.chungnam.go.kr/"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4212,33 +4027,36 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "대둔산 도립공원 주차장은 소형 및 대형 차량 주차 공간을 갖추고 있으며 주차 요금은 무료이다.",
+          "text": "완주군 대둔산도립공원 공영주차장(전북 완주군 운주면 산북리 일원)과 논산시 수락계곡 공영주차장(충남 논산시 벌곡면 수락리 일원) 모두 별도의 주차비 없이 무료로 운영됩니다.",
           "sentiment": "neutral",
           "as_of": "2024-05",
           "sources": [
-            "https://www.wanju.go.kr/"
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000001001001001000",
+            "https://www.wanju.go.kr/tour",
+            "https://www.nonsan.go.kr/"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "정상인 마천대(878.9m)에는 개척탑이 세워져 있으며 논산, 금산, 완주 일대의 기암괴석 능선 조망을 한눈에 감상할 수 있다.",
+          "topic": "계절·시기",
+          "text": "10월 하순부터 11월 초순까지 기암절벽과 오색 단풍이 어우러져 절경을 이루며 연중 가장 많은 등산객이 몰립니다.",
           "sentiment": "good",
           "as_of": "2024-05",
           "sources": [
-            "https://www.wanju.go.kr/"
+            "https://www.wanju.go.kr/tour/index.wanju?menuCd=DOM_000001001001001000",
+            "https://www.wanju.go.kr/tour"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -4247,80 +4065,63 @@
     {
       "id": "daeyasan",
       "name": "대야산",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
-      "verified": 4,
+      "collected_at": "2026-08-29",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "용추계곡-대야산 정상 원점회귀",
+          "route": "벌바위주차장-용추계곡-월영대-피아골-대야산 정상",
           "topic": "위험구간",
-          "text": "밀재에서 정상까지 약 1km는 밧줄과 데크계단을 이용하는 급경사 암릉이며, 정상 직전 약 100m는 바위를 기어오르듯 진행하는 구간으로 안내된다.",
+          "text": "월영대에서 피아골을 거쳐 정상으로 이어지는 등산로는 급경사 암릉과 거친 너덜바위 구간으로 이루어져 있어 낙석 위험이 크고 비나 눈이 올 때 미끄러우며, 하산 시에는 비교적 완만한 밀재 방면을 이용하는 것이 안전합니다.",
           "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://koreahike.com/daeyasan-hiking-guide",
-            "https://ohiking.today/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "용추계곡-대야산 정상 원점회귀",
-          "topic": "조망·볼거리",
-          "text": "용추계곡의 용추폭포는 2단으로 이어진 하트 모양의 소(沼)가 특징으로, 문경 8경 중 하나인 대표 비경 지점이다.",
-          "sentiment": "good",
           "as_of": "2024-05",
           "sources": [
-            "https://majorplaces.tistory.com/8327",
-            "https://www.gbmg.go.kr/",
-            "https://korean.visitkorea.or.kr/"
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&parkNavGb=guide&menuNo=7020092",
+            "https://www.gbmg.go.kr/tour",
+            "https://www.knps.or.kr/"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "괴산 청천 방면 코스",
-          "topic": "통제·예약",
-          "text": "괴산군 자료에는 월령대-대야산-피아골-월령대 4.8km 노선이 ‘상시개방’으로 기재되어 있다.",
-          "sentiment": "neutral",
-          "as_of": "2024-11",
-          "sources": [
-            "https://www.goesan.go.kr/DATA/bbs/193/820CB97E-D36B-F88C-0188-25F476109CCD.pdf",
-            "https://www.goesan.go.kr/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "정상에서는 백두대간 산줄기를 둘러보는 360도 파노라마 조망이 펼쳐진다고 소개된다.",
-          "sentiment": "good",
-          "as_of": null,
+          "topic": "혼잡",
+          "text": "7~8월 여름철에는 용추계곡 물놀이 및 피서 산행객이 집중되어 주말 오전 일찍 주차장이 만차되고 진입로 정체가 심해집니다.",
+          "sentiment": "caution",
+          "as_of": "2024-05",
           "sources": [
-            "https://koreahike.com/daeyasan-hiking-guide",
-            "https://www.knps.or.kr/"
+            "https://www.gbmg.go.kr/tour/contents.do?idx=1420",
+            "https://www.gbmg.go.kr/tour"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용추계곡-대야산 정상 원점회귀",
+          "topic": "조망·볼거리",
+          "text": "화강암 암반이 하트 모양으로 파인 2단 구조의 용추폭포와 달빛이 맑은 계류에 비친다는 월영대 화강암 너럭바위가 코스의 핵심 경관 명소입니다.",
+          "sentiment": "good",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.gbmg.go.kr/tour/contents.do?idx=1420",
+            "https://www.gbmg.go.kr/tour",
+            "https://korean.visitkorea.or.kr/"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4328,88 +4129,17 @@
           "scope": "route",
           "route": "벌바위주차장-용추계곡-월영대-피아골-대야산 정상",
           "topic": "난이도",
-          "text": "월영대에서 정상으로 곧장 오르는 피아골은 급경사와 계단이 계속되고 일부 경사가 70~80도에 달해, 거리는 짧지만 체력 소모가 큰 구간으로 설명된다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://namu.wiki/w/%EB%8C%80%EC%95%BC%EC%82%B0",
-            "https://koreahike.com/daeyasan-hiking-guide"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "벌바위주차장-용추계곡-월영대-피아골-대야산 정상",
-          "topic": "계절·시기",
-          "text": "피아골은 겨울철 결빙 시 하산 위험이 특히 커지므로 해당 원점회귀 동선은 봄부터 가을 사이에 이용하라는 주의가 제시되어 있다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://namu.wiki/w/%EB%8C%80%EC%95%BC%EC%82%B0",
-            "https://koreahike.com/daeyasan-hiking-guide"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "대야산은 속리산국립공원 구역에 포함되어 봄철 및 가을철 산불조심기간에 일부 탐방로가 통제되므로 방문 전 국립공원공단 공지 확인이 필요하다.",
-          "sentiment": "caution",
+          "text": "벌바위 주차장에서 용추폭포를 지나 월영대 갈림길까지는 완만한 숲길 트레킹 구간이지만, 월영대 이후 피아골 및 밀재~정상 구간은 급경사 계단과 암릉이 이어져 난이도가 급격히 높아집니다.",
+          "sentiment": "neutral",
           "as_of": "2024-05",
           "sources": [
-            "https://www.knps.or.kr/"
+            "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&parkNavGb=guide&menuNo=7020092",
+            "https://www.gbmg.go.kr/tour"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "용추계곡-대야산 정상 원점회귀",
-          "topic": "혼잡",
-          "text": "용추계곡은 여름철 피서객이 몰려 산행 후기에서 ‘물 반 사람 반’으로 표현될 정도로 붐비는 곳으로 기록되어 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.busan.com/view/busan/view.php?code=2021070119280145248",
-            "https://duga.tistory.com/2707"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "용추계곡-대야산 정상 원점회귀",
-          "topic": "주차·교통",
-          "text": "별도 용추계곡 주차장 외에 대야산장 앞 화장실 옆까지 승용차로 진입해 주차한 사례가 있으며, 이곳에서 출발하면 포장도로 약 1km를 줄일 수 있다고 기록되어 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://landyplay.com/",
-            "https://duga.tistory.com/2707"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -4417,17 +4147,35 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "용추계곡 입구에 공영주차장이 마련되어 있으며, 국립대야산자연휴양림 내 주차장은 숙박객 전용이므로 일반 등산객은 공영주차장을 이용해야 한다.",
+          "text": "문경 방면 들머리인 가은읍 완장리 대야산 주차장(벌바위/용추계곡 주차장)에 대형·소형 주차 공간과 전기차 충전 시설이 마련되어 있습니다.",
           "sentiment": "neutral",
           "as_of": "2024-05",
           "sources": [
-            "https://www.foresttrip.go.kr/",
-            "https://www.knps.or.kr/"
+            "https://www.gbmg.go.kr/tour/contents.do?idx=1420",
+            "https://www.gbmg.go.kr/tour"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "용추계곡 주차장 입구에 공중화장실과 흙먼지 털이기(에어건), 속리산국립공원 안내도가 설치되어 있으며 주변에 식당가가 위치합니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://www.gbmg.go.kr/tour/contents.do?idx=1420",
+            "https://www.gbmg.go.kr/tour"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         }
