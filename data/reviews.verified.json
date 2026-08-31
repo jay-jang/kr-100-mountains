@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-30T18:47:29.059Z",
+  "generated_at": "2026-08-31T18:37:38.309Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,8 +16,8 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 971,
-    "verified": 130
+    "notes": 934,
+    "verified": 106
   },
   "mountains": [
     {
@@ -5865,189 +5865,97 @@
     {
       "id": "gamaksan-paju",
       "name": "감악산(파주)",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
-      "verified": 2,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
-          "topic": "조망·볼거리",
-          "text": "정상에서는 파주 적성 시내와 임진강, 개성 송악산이 보이며 출렁다리 이후 운계폭포와 범륜사도 차례로 만난다.",
-          "sentiment": "good",
-          "as_of": "2022-11",
-          "sources": [
-            "https://www.paju.go.kr/m/tour/place/BD_tourPlaceInfoView.do?areaSe=1001&cntntsSn=55&menuCode=55&q_gubunCode=1001",
-            "https://m.blog.naver.com/mtkmtk/223722401041",
-            "https://gnews.gg.go.kr/news/news_detail.do?number=202211231114491118C094&s_code=C094"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
-          "topic": "난이도",
-          "text": "출렁다리 주차장에서 출발하여 범륜사, 감악산 정상, 임꺽정봉, 장군봉을 둘러 내려오는 산행은 약 3시간 15분 소요됩니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://runflower.tistory.com/58",
-            "https://m.blog.naver.com/hyundori--/224321633294",
-            "https://blog.naver.com/soingood99/224359121403"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
-          "topic": "통제·예약",
-          "text": "출렁다리는 일출부터 일몰까지 이용하며 토요일에는 일몰 후 2시간까지 연장 운영되지만, 우천 등 기상악화 때는 출입이 통제될 수 있다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.paju.go.kr/tour/tour_01/tour_01_03/tour_01_03_01.do",
-            "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?areaSe=1002&cntntsSn=2061&q_gubun=area"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
           "topic": "위험구간",
-          "text": "파주시는 출렁다리 진입로의 가파른 경사 때문에 안전사고 위험이 있다고 안내하며, 휠체어 이용자의 통행이 제한될 수 있다고 명시한다.",
+          "text": "감악산 정상에서 까치봉을 지나 묵은밭 및 범륜사 방면으로 내려오는 하산로는 가파른 바위와 너덜길이 길게 이어져 있어 미끄러짐과 발목 부상에 주의해야 한다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2022-10",
           "sources": [
-            "https://www.paju.go.kr/tour/tour_01/tour_01_03/tour_01_03_01.do",
-            "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?areaSe=1002&cntntsSn=2061&q_gubun=area"
+            "https://www.hapt.co.kr/news/articleView.html?idxno=155700",
+            "https://baegdu.tistory.com/entry/%EA%B0%90%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC-%EC%9E%A5%EA%B5%B0%EB%B4%89-%EC%9E%84%EA%BA%BD%EC%A0%95%EB%B4%89-%ED%95%98%EB%8A%98%EA%B8%B8%EB%8D%B0%ED%81%AC-%EC%A0%95%EC%83%81"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
+          "route": "신암저수지-숯가마터-임꺽정봉-감악산 정상",
           "topic": "난이도",
-          "text": "제1주차장-출렁다리-운계폭포-범륜사-정상-임꺽정봉-장군봉-계곡길 순환 산행은 실제 기록에서 4시간 30분이 걸렸다.",
-          "sentiment": "neutral",
-          "as_of": "2022-11",
+          "text": "양주 신암저수지에서 선일재를 지나 임꺽정봉 암벽으로 직등하는 구간은 가파른 직벽을 따라 지그재그 암벽 데크계단이 길게 이어져 체력 소모가 크다.",
+          "sentiment": "caution",
+          "as_of": "2021-05",
           "sources": [
-            "https://m.blog.naver.com/mtkmtk/223722401041",
-            "https://gnews.gg.go.kr/news/news_detail.do?number=202211231114491118C094&s_code=C094"
+            "https://www.gukjenews.com/news/articleView.html?idxno=2456488",
+            "https://ha0077.tistory.com/16344674"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "범륜사-임꺽정봉 코스",
-          "topic": "난이도",
-          "text": "파주시 공식 코스 안내에서 범륜사 입구-만남의 숲-임꺽정봉-감악산 정상 구간은 3.9km로 제시된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.paju.go.kr/tour/tour_01/tour_01_03/tour_01_03_01.do",
-            "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=838&menuCode=65&q_gubunCode=1006"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "mountain",
           "route": null,
-          "topic": "계절·시기",
-          "text": "파주시 관광 안내는 감악산 주변 수목이 단풍철에 울긋불긋한 경관을 이룬다고 소개한다.",
-          "sentiment": "good",
-          "as_of": null,
-          "sources": [
-            "https://www.paju.go.kr/tour/tour_01/tour_01_03/tour_01_03_01.do",
-            "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=838&menuCode=65&q_gubunCode=1006"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
           "topic": "주차·교통",
-          "text": "감악산 출렁다리 제1주차장 및 제2주차장은 소형차 기준 1일 주차요금이 2,000원이며 카드 결제가 가능합니다.",
+          "text": "감악산 출렁다리 주차장은 제1~5주차장이 조성되어 있으며, 출렁다리 입구와 가장 가까운 제1주차장은 소형·중형차 기준 1일 2,000원의 주차요금이 부과된다(최초 20분 무료, 사전 무인정산기 운영).",
           "sentiment": "neutral",
-          "as_of": "2025-05",
+          "as_of": "2024-10",
           "sources": [
-            "https://m.blog.naver.com/dldyddl/224288683139",
-            "https://blog.naver.com/leehumdinger/223862831661"
+            "https://tour.paju.go.kr/",
+            "https://diary5337.tistory.com/entry/%ED%8C%8C%EC%A3%BC-%EA%B0%90%EC%95%85%EC%82%B0-%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC-%EA%B0%80%EC%9D%84-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C-%EA%B3%B3-%EC%A3%BC%EC%B0%A8-%EC%9D%B4%EC%9A%A9-%EC%9A%94%EA%B8%88-%EA%BF%80%ED%8C%81-%EC%B4%9D%EC%A0%95%EB%A6%AC"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "출렁다리주차장-범륜사-까치봉-감악산 정상",
+          "route": "임꺽정봉 코스",
           "topic": "조망·볼거리",
-          "text": "등산 초입에 위치한 감악산 출렁다리와 운계폭포, 범륜사는 산행 과정에서 탐방객들이 가장 많이 찾는 볼거리 지점입니다.",
+          "text": "감악산 정상보다 해발고도가 살짝 더 높은 임꺽정봉(676.3m) 절벽 구간에 조성된 하늘길 데크와 전망대에서는 탁 트인 암릉 절경과 조망을 감상할 수 있다.",
           "sentiment": "good",
-          "as_of": "2026-07",
+          "as_of": "2022-10",
           "sources": [
-            "https://korean.visitkorea.or.kr/",
-            "https://blog.naver.com/soingood99/224359121403"
+            "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002878199",
+            "https://baegdu.tistory.com/entry/%EA%B0%90%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC-%EC%9E%A5%EA%B5%B0%EB%B4%89-%EC%9E%84%EA%BA%BD%EC%A0%95%EB%B4%89-%ED%95%98%EB%8A%98%EA%B8%B8%EB%8D%B0%ED%81%AC-%EC%A0%95%EC%83%81"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
-          "scope": "mountain",
-          "route": null,
+          "scope": "route",
+          "route": "신암저수지-숯가마터-임꺽정봉-감악산 정상",
           "topic": "편의시설",
-          "text": "감악산 출렁다리 제1주차장 입구 근처에 공중화장실이 정비되어 있어 입산 전 이용하기 적합합니다.",
+          "text": "양주 신암저수지 방면 들머리 부도골·선일재 갈림길 주변에 주차 공간과 화장실이 갖춰져 있으며, 부도골 하산 코스 일대에는 옛 숯가마터 2곳의 흔적이 보존되어 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-05",
+          "as_of": "2021-01",
           "sources": [
-            "https://m.blog.naver.com/sh0239-/224336624669",
-            "https://blog.naver.com/leehumdinger/223862831661"
+            "https://www.gocamping.or.kr/bsite/camp/info/read.do?c_no=6781",
+            "https://smfvnfmstks.tistory.com/15842200"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -6056,243 +5964,97 @@
     {
       "id": "gamaksan-wonju",
       "name": "감악산(원주)",
-      "collected_at": "2026-08-06",
-      "checked_by": 2,
-      "verified": 3,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "능선-백련사 원점회귀 코스",
+          "route": "황둔리-능선-감악산",
           "topic": "위험구간",
-          "text": "능선코스에는 통행금지 표지와 급경사 로프 구간이 있고, 실제 후기 작성자는 밧줄 구간 한 곳과 제천 정상석 접근을 포기할 만큼 위험을 체감했다.",
+          "text": "황둔리 기점 능선 코스는 초입부터 가파른 계단과 로프를 잡고 올라야 하는 암릉 구간이 반복되어 장갑 착용과 낙상 주의가 필요하다.",
           "sentiment": "caution",
-          "as_of": "2025-06",
+          "as_of": "2022-08",
           "sources": [
-            "https://kimisigi.tistory.com/811",
-            "https://m.blog.naver.com/rockcrawler/223723536747"
+            "https://www.chosun.com/site/data/html_dir/2019/10/24/2019102401831.html",
+            "https://smileolleh.tistory.com/66"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "원주 감악산은 원주시에서 세운 정상석과 제천시에서 세운 정상석(선녀바위)이 각기 다른 봉우리에 나뉘어 설치되어 있습니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://data.visitkorea.or.kr/resource/125600",
-            "https://m.blog.naver.com/atmpkj/224307549769",
-            "https://blog.naver.com/cgs7534/224345506361",
-            "https://blog.naver.com/allpl-jeki/223192257952"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "능선-백련사 원점회귀 코스",
-          "topic": "난이도",
-          "text": "창촌 주차장에서 능선으로 올라 두 정상과 백련사를 거쳐 계곡으로 하산한 기록은 약 7.28km, 4시간 49분이며, 거리는 짧아도 조심할 곳이 많다고 평가했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-06",
+          "route": "백련사 코스(제천 방면 최단)",
+          "topic": "주차·교통",
+          "text": "제천 봉양읍 명암리에서 해발 800m대 백련사 주차장까지 오르는 산길 도로는 경사가 매우 가파르고 급커브가 많아 우천 시 차량 바퀴 헛돌림 및 운전에 각별한 주의가 필요하다.",
+          "sentiment": "caution",
+          "as_of": "2024-07",
           "sources": [
-            "https://kimisigi.tistory.com/811",
-            "https://m.blog.naver.com/mdc0318/224327331903"
+            "https://tour.jecheon.go.kr/",
+            "https://5ckorea.tistory.com/122"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "능선-백련사 원점회귀 코스",
+          "route": "백련사 코스(제천 방면 최단)",
           "topic": "통제·예약",
-          "text": "2025년 현장 기록에서 능선코스 일부에 폐쇄구간 및 통행금지 표지가 확인됐다.",
+          "text": "제천 명암로 백련사 진입로의 차량 통제 철문이 닫혀 있을 경우 백련사 입구까지 약 2km의 포장 오르막길을 도보로 올라가야 하므로 사전 확인이 필요하다.",
           "sentiment": "caution",
-          "as_of": "2025-06",
+          "as_of": "2022-06",
           "sources": [
-            "https://m.blog.naver.com/jaycob0/223965893143",
-            "https://kimisigi.tistory.com/811"
+            "https://tour.jecheon.go.kr/",
+            "https://security-song.tistory.com/162"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "황둔리-능선-감악산",
-          "topic": "위험구간",
-          "text": "황둔리 인근 급경사 로프 구간에서 등반객이 낙석을 맞고 약 10m 아래로 추락한 사고가 보도돼, 로프 구간에서는 낙석과 추락을 함께 주의해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2023-07",
+          "topic": "주차·교통",
+          "text": "원주시 신림면 황둔리 방면의 감악산 쉼터 주차장은 1일 3,000원의 주차료를 징수하며, 등산로 초입에 화장실과 쉼터 시설이 위치해 있다.",
+          "sentiment": "neutral",
+          "as_of": "2022-08",
           "sources": [
-            "https://www.joongang.co.kr/article/25175821",
-            "https://www.wikitree.co.kr/articles/868186"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=903ecab9-54ad-4d9a-a43b-31a8a25c13b2",
+            "https://smileolleh.tistory.com/66"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "백련사 코스(제천 방면 최단)",
-          "topic": "위험구간",
-          "text": "백련사 최단 코스는 등산 거리가 짧으나 정상 직전에 밧줄을 잡고 올라가야 하는 급경사 바위 암릉 구간이 2회 나와 주의를 요합니다.",
-          "sentiment": "caution",
-          "as_of": "2026-06",
-          "sources": [
-            "https://m.blog.naver.com/chokho_o/224180018341",
-            "https://blog.naver.com/sto0917/224306578339"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "황둔리-능선-감악산",
-          "topic": "위험구간",
-          "text": "황둔리 능선 코스는 초반 경사가 매우 가파르고 계단과 로프 암반 구간이 계속되므로 산행 시 미끄러짐 방지에 유의해야 합니다.",
-          "sentiment": "caution",
-          "as_of": "2024-06",
-          "sources": [
-            "https://m.blog.naver.com/mdc0318/224327331903",
-            "https://blog.naver.com/idhwang3/223486687853"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "능선-백련사 원점회귀 코스",
-          "topic": "주차·교통",
-          "text": "2025년 산행기에서는 창촌 나우리쉼터 주차장을 이용하고 현장에서 주차비 3,000원을 냈다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-06",
-          "sources": [
-            "https://m.blog.naver.com/soccerboy77/224294424316",
-            "https://kimisigi.tistory.com/811"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "백련사 코스(제천 방면 최단)",
           "topic": "난이도",
-          "text": "백련사까지 자동차로 접근할 수 있고 백련사 주차장에서 정상까지는 도보 약 30분이면 충분하다고 현장 소개 글이 전한다.",
-          "sentiment": "neutral",
-          "as_of": "2022-11",
-          "sources": [
-            "https://m.blog.naver.com/chokho_o/224180018341",
-            "https://zznz.co.kr/archives/19338"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "백련사 코스(제천 방면 최단)",
-          "topic": "편의시설",
-          "text": "제천시 코스 안내는 백련사를 떠난 뒤에는 식수를 구할 곳이 없으므로 사찰에서 수통을 채우도록 안내한다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://tour.jecheon.go.kr/selectTourCntntsView.do?key=147&tourCntntsNo=19",
-            "https://tour.jecheon.go.kr/tour/base/tour/contents/view?clturCntntsNo=318&cpn=2&menuLevel=3&menuNo=52&psz=10&rcpp=16&sc1=B040200&sc2=all&siteId=base&so1=X.CLTUR_CNTNTS_NO&trc=28"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "황둔리-능선-감악산",
-          "topic": "조망·볼거리",
-          "text": "능선의 전망바위와 암봉에서는 중첩된 산줄기가 사방으로 펼쳐지고, 암릉과 소나무가 어우러진 풍경이 주요 매력으로 평가됐다.",
+          "text": "감악산은 황둔리 능선 코스로 올라 정상(원주 930m, 제천 945m)을 밟은 후 백련사 방향 임도를 거쳐 완만한 감악고개 계곡 코스로 하산하는 것이 체력 안배에 수월하다.",
           "sentiment": "good",
-          "as_of": "2022-11",
+          "as_of": "2022-08",
           "sources": [
-            "https://m.blog.naver.com/idhwang3/223486687853",
-            "https://zznz.co.kr/archives/19338"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=903ecab9-54ad-4d9a-a43b-31a8a25c13b2",
+            "https://smileolleh.tistory.com/66"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "황둔리-능선-감악산",
-          "topic": "주차·교통",
-          "text": "황둔리 들머리(신림황둔로)의 사설 감악산 쉼터 주차장은 일일 주차료가 3,000원이며 계좌이체 납부가 지원됩니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://m.blog.naver.com/mdc0318/224327331903",
-            "https://blog.naver.com/cgs7534/224345506361"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "백련사 코스(제천 방면 최단)",
-          "topic": "주차·교통",
-          "text": "백련사 절 바로 앞 공터 주차장에 차량 주차가 가능하며 입구 인근에 간이 화장실이 조성되어 있습니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-06",
-          "sources": [
-            "https://m.blog.naver.com/jungookson/222610176772",
-            "https://blog.naver.com/sto0917/224306578339"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -6301,65 +6063,43 @@
     {
       "id": "gangcheonsan",
       "name": "강천산",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
-      "verified": 7,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "호우·폭설·건조특보 등 기상 상황에 따라 일부 또는 전 구간 입산통제가 시행된 사례가 있으므로 방문 직전 군립공원 공지를 확인해야 한다.",
+          "scope": "route",
+          "route": "강천사-왕자봉 코스",
+          "topic": "위험구간",
+          "text": "현수교 갈림길에서 왕자봉(584m) 정상까지는 경사 데크계단 오르막이 이어지며, 깃대봉 방면 하산로는 음지 구간이 많아 결빙 시 미끄러짐에 주의해야 한다.",
           "sentiment": "caution",
-          "as_of": "2025-07",
+          "as_of": "2023-03",
           "sources": [
-            "https://gangcheonsan.kr/?bid=notice&m=bbs",
-            "https://gangcheonsan.kr/",
-            "https://www.sunchang.go.kr/gangcheonsan",
-            "https://gangcheonsan.kr/?bid=notice&m=bbs&p=2&uid=365"
+            "https://www.gangcheonsan.kr/",
+            "https://smileolleh.tistory.com/293"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "강천산군립공원 내에는 반려동물 출입이 금지되며, 지정 장소 외 텐트 및 그늘막 설치, 취사, 야영 행위가 엄격히 제한된다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://gangcheonsan.kr/?bid=notice&m=bbs&p=2&uid=264",
-            "https://gangcheonsan.kr/",
-            "https://gangcheonsan.kr/?c=1/62"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "강천사-왕자봉 코스",
-          "topic": "편의시설",
-          "text": "공중화장실은 군립공원 주차장 매표소 부근과 강천사 부근에 확인되며, 단풍철 운영 공지에는 현수교와 병풍폭포 앞 화장실도 안내돼 있다.",
-          "sentiment": "neutral",
-          "as_of": "2021-10",
+          "route": "산성산 연대봉 연계 코스",
+          "topic": "난이도",
+          "text": "강천산 왕자봉에서 산성산 연대봉(603m), 금성산성 북문·동문, 시루봉을 거치는 연계 코스는 총 14~17km에 달하는 장거리 종주 구간으로 5시간 이상 소요된다.",
+          "sentiment": "caution",
+          "as_of": "2018-02",
           "sources": [
-            "https://gangcheonsan.kr/?bid=notice&m=bbs&p=2&uid=365",
-            "https://gangcheonsan.kr/",
-            "https://jin-gu.tistory.com/80"
+            "https://www.gangcheonsan.kr/",
+            "https://0709im.tistory.com/505"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6367,91 +6107,18 @@
           "scope": "route",
           "route": "강천산군립공원 입구-현수교-신선봉",
           "topic": "조망·볼거리",
-          "text": "공원 입구에서 병풍폭포·강천사·현수교·구장군폭포를 잇는 산책형 탐방로가 공식 대표 코스로 소개되며, 현수교 주변의 계곡과 기암 절경이 주요 볼거리다.",
+          "text": "지상 약 50m 높이에 걸린 붉은 현수교(구름다리)를 건너 신선봉 전망대에 오르면 강천사 계곡과 현수교 일대의 빼어난 풍경을 한눈에 내려다볼 수 있다.",
           "sentiment": "good",
-          "as_of": null,
+          "as_of": "2022-01",
           "sources": [
-            "https://www.sunchang.go.kr/gangcheonsan",
-            "https://gangcheonsan.kr/",
-            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20060609.22031142143"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "강천사-왕자봉 코스",
-          "topic": "난이도",
-          "text": "강천산 왕자봉 코스 1은 매표소, 병풍폭포, 깃대봉, 왕자봉, 구름다리를 거쳐 돌아오는 6.2km 구간으로 약 3시간이 소요된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.tripinfo.co.kr/info.html?content_id=126249&content_type_id=12&device=pc",
-            "https://gangcheonsan.kr/",
-            "https://gangcheonsan.kr/?c=3/14"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "혼잡",
-          "text": "단풍철 공식 안내에서 주차 혼잡 시간대를 오전 10시부터 오후 3시까지로 명시했다.",
-          "sentiment": "neutral",
-          "as_of": "2021-10",
-          "sources": [
-            "https://gangcheonsan.kr/?bid=notice&m=bbs&p=2&uid=365",
-            "https://gangcheonsan.kr/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "2021년 운영 공지는 단풍 성수기를 10월 23일~11월 21일, 과거 기준 최대 절정 예상 시기를 10월 30일~11월 10일로 안내했다.",
-          "sentiment": "neutral",
-          "as_of": "2021-10",
-          "sources": [
-            "https://gangcheonsan.kr/?bid=notice&m=bbs&p=2&uid=365",
-            "https://gangcheonsan.kr/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "강천사-왕자봉 코스",
-          "topic": "난이도",
-          "text": "군립공원 주차장에서 강천사·현수교를 거쳐 왕자봉까지 왕복 6.0km, 약 3시간이며, 현수교 갈림길의 데크계단을 200m 오른 뒤부터 본격적인 산행 구간이 시작된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://gangcheonsan.kr/",
-            "https://jin-gu.tistory.com/80"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9f257a3e-72d8-4f24-9b55-d142b453ec4a",
+            "https://jin-gu.tistory.com/80",
+            "https://smileolleh.tistory.com/293"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6459,33 +6126,35 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "강천산군립공원 주차장은 무료로 이용 가능하며, 입장료 결제 시 일부 금액을 순창사랑상품권으로 환급받을 수 있다.",
+          "text": "강천산군립공원 주차장은 주차요금이 무료이며, 군립공원 매표소 인근 및 강천사 주변에 공중화장실이 잘 갖춰져 있다.",
           "sentiment": "neutral",
-          "as_of": null,
+          "as_of": "2022-01",
           "sources": [
-            "https://gangcheonsan.kr/"
+            "https://www.gangcheonsan.kr/",
+            "https://jin-gu.tistory.com/80"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "산책로 초입의 병풍폭포와 높이 50m 지점에 위치한 현수교(구름다리)는 강천산에서 가장 널리 알려진 주요 명소이다.",
-          "sentiment": "good",
-          "as_of": null,
+          "topic": "주차·교통",
+          "text": "순창공용버스터미널에서 강천사 방면 시내버스가 운행되어 대중교통으로 군립공원 입구까지 접근이 가능하다.",
+          "sentiment": "neutral",
+          "as_of": "2018-02",
           "sources": [
-            "https://gangcheonsan.kr/"
+            "https://www.sunchang.go.kr/tour",
+            "https://0709im.tistory.com/505"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -6494,118 +6163,45 @@
     {
       "id": "garisan",
       "name": "가리산",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "자연휴양림-가리산(가삽고개)",
-          "topic": "위험구간",
-          "text": "가삽고개 이후 3봉·2봉·1봉을 잇는 정상부는 난간·계단·바위가 섞인 가파른 암릉이며, 미끄러짐에 주의해야 한다. 정상에서 무쇠말재로 내려가는 길도 급경사다.",
-          "sentiment": "caution",
-          "as_of": "2026-05",
-          "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://koreahike.com/%EA%B0%80%EB%A6%AC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "가리산자연휴양림 야영장 및 소형산막(1번~9번)은 동절기 동파 방지를 위해 11월 17일부터 다음 해 3월 31일까지 운영이 중지된다.",
-          "sentiment": "caution",
-          "as_of": "2025-10",
-          "sources": [
-            "https://www.foresttrip.go.kr/",
-            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030002"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "자연휴양림 원점회귀 코스",
           "topic": "위험구간",
-          "text": "가리산 정상부의 1봉, 2봉, 3봉 암봉 구간은 경사가 가파르고 수직 철제 계단과 암릉이 연속되므로 등산 장갑 착용이 권장된다.",
+          "text": "가리산 정상부(1봉 1051m, 2봉, 3봉)는 좁은 협곡을 낀 가파른 암봉 지대로, 암벽 데크계단이 설치되어 있으나 경사가 급하고 험하므로 등산화와 장갑 착용이 필수적이다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2024-09",
           "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030002"
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5f335b2e-0a56-4c4c-83b6-12a8fa2e0220",
+            "https://wonhaeng.tistory.com/355201",
+            "https://lotus9217.tistory.com/24"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "자연휴양림 원점회귀 코스",
-          "topic": "난이도",
-          "text": "공식 안내 거리는 7.2km, 예상 시간은 3시간 30분이다. 합수곡에서 가삽고개까지 약 1시간 동안 계단과 긴 오르막이 이어져 체감 난이도가 높아진다는 설명이 있다.",
-          "sentiment": "neutral",
-          "as_of": "2026-05",
-          "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://www.foresttrip.go.kr/pot/rm/ri/selectRcrfrIntrdDtlView.do?hmpgId=ID02030002&menuId=002001",
-            "https://koreahike.com/%EA%B0%80%EB%A6%AC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "능선 코스",
-          "topic": "난이도",
-          "text": "공식 안내상 10km, 약 5시간 코스이며, 관리사무소 뒤 능선을 길게 돈 뒤 피로가 쌓인 상태에서 정상부 1~3봉을 넘어야 해 중상급으로 평가됐다.",
-          "sentiment": "neutral",
-          "as_of": "2026-05",
-          "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://www.foresttrip.go.kr/pot/rm/ri/selectRcrfrIntrdDtlView.do?hmpgId=ID02030002&menuId=002001",
-            "https://koreahike.com/%EA%B0%80%EB%A6%AC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "자연휴양림-가리산(가삽고개)",
-          "topic": "조망·볼거리",
-          "text": "정상부 2봉은 소양호와 1봉을 함께 조망하기 좋은 지점으로 소개되며, 공식 휴양림 안내도 정상의 세 암봉을 가리산의 특징으로 꼽는다.",
+          "topic": "난이도",
+          "text": "합수곡 기점에서 가삽고개 방면은 경사가 비교적 완만하여 초심자도 오르막 들머리로 이용하기 수월한 편이다.",
           "sentiment": "good",
-          "as_of": "2026-05",
+          "as_of": "2024-09",
           "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://koreahike.com/%EA%B0%80%EB%A6%AC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4",
-            "https://www.foresttrip.go.kr/pot/rm/ri/selectRcrfrIntrdDtlView.do?hmpgId=ID02030002&menuId=002001"
+            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030043",
+            "https://wonhaeng.tistory.com/355201",
+            "https://w55ri5.tistory.com/1566"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6613,35 +6209,53 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "자연휴양림 매표소 앞까지 가는 홍천 시내버스는 자료상 하루 약 3회(07:15·12:45·18:36)뿐이며, 휴양림 입구에서 걸으면 매표소까지 1시간 이상 걸린다고 안내돼 있다.",
+          "text": "가리산 자연휴양림 매점과 관리사무소를 지나 위쪽에 위치한 제2주차장을 이용하면 등산로 입구(합수곡 기점 방면)까지의 도보 거리를 약 1km 단축할 수 있다.",
           "sentiment": "neutral",
-          "as_of": "2026-05",
+          "as_of": "2024-09",
           "sources": [
-            "https://www.hongcheonbus.kr/",
-            "https://koreahike.com/%EA%B0%80%EB%A6%AC%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030043",
+            "https://wonhaeng.tistory.com/355201"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "가리산 자연휴양림 방면 등산로는 등산로 정비 공사로 인해 한동안 출입이 통제되었다가 정비를 마치고 전 구간 정상 개방되었다.",
+          "sentiment": "neutral",
+          "as_of": "2024-09",
+          "sources": [
+            "https://www.hongcheon.go.kr/",
+            "https://wonhaeng.tistory.com/355201"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "자연휴양림-가리산(가삽고개)",
+          "route": "자연휴양림 원점회귀 코스",
           "topic": "조망·볼거리",
-          "text": "가삽고개를 지나 정상 제1봉에 이르면 소양호 일대와 강원도 산자락이 한눈에 들어오는 시원한 전망을 제공한다.",
+          "text": "가리산 1봉 정상과 2·3봉 암릉에서는 푸른 소양호와 강원도 일대의 산그리메가 시원하게 조망되며, 2봉 암벽에서는 큰바위얼굴 형상을 관찰할 수 있다.",
           "sentiment": "good",
-          "as_of": null,
+          "as_of": "2024-09",
           "sources": [
-            "https://www.hongcheon.go.kr/",
-            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030002"
+            "https://www.kado.net/news/articleView.html?idxno=1041697",
+            "https://wonhaeng.tistory.com/355201"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -6650,82 +6264,25 @@
     {
       "id": "gariwangsan",
       "name": "가리왕산",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
-      "verified": 2,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "난이도",
-          "text": "산림청 연계 100대 명산 자료에는 해발 1,500m 이상 산으로 분류되고 난이도는 ‘중급’으로 표시돼 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.forest.go.kr/kfsweb/kfi/kfs/foreston/main/contents/ClbngManage/selectMntnInfoDetail.do?mn=AR02_02_05_01&mntnId=20000006&orgId=fon",
-            "https://www.forest.go.kr/",
-            "https://www.foresttrip.go.kr/pot/cc/hm/selectHndfmsmtnMngmeDtl.do?fmmntArcd=02&fmmntSeq=71944&nowPage=1&preSrchArea=02&preSrchWrd=&srchArea=02&srchWrd="
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "장구목이-상봉 코스",
-          "topic": "조망·볼거리",
-          "text": "장구목이 골짜기 초입 계곡을 따라 펼쳐지는 이끼계곡과 여름철 폭포 경관은 가리왕산의 주요 볼거리로 꼽힌다.",
-          "sentiment": "good",
-          "as_of": null,
-          "sources": [
-            "https://guidetoeverythings.tistory.com/356",
-            "https://www.ohiking.today/",
-            "https://www.jeongseon.go.kr/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
         {
           "scope": "route",
           "route": "가리왕산자연휴양림-심마니교-어은골-상봉",
-          "topic": "위험구간",
-          "text": "휴양림 쪽에서 임도에 오른 뒤에는 거의 직선의 가파른 사면이 이어지며, 산림청 자료도 중봉에서 자연휴양림으로 내려서는 길을 ‘무척 가파르다’고 설명한다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.forest.go.kr/",
-            "https://nam3342.tistory.com/1171",
-            "https://www.foresttrip.go.kr/pot/cc/hm/selectHndfmsmtnMngmeDtl.do?fmmntArcd=02&fmmntSeq=71944&nowPage=1&preSrchArea=02&preSrchWrd=&srchArea=02&srchWrd="
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "장구목이-상봉 코스",
           "topic": "난이도",
-          "text": "장구목이 들머리에서 정상 상봉까지는 편도 약 4.2km이며, 임도 이후 구간은 경사가 가파른 너덜길로 이어져 체력 소모가 크다.",
+          "text": "심마니교를 지나 어은골 임도까지는 계곡을 따라 완만하게 이동하지만, 어은골 임도를 통과한 후 마항치삼거리와 상봉으로 이어지는 구간부터는 가파른 오르막 돌길이 계속된다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2025-06",
           "sources": [
             "https://www.forest.go.kr/",
-            "https://www.jeongseon.go.kr/"
+            "https://blog.naver.com/libido72/223890095496"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6733,71 +6290,17 @@
           "scope": "mountain",
           "route": null,
           "topic": "통제·예약",
-          "text": "가리왕산은 봄·가을 산불조심기간 동안 일부 등산로의 입산이 통제되므로 방문 전 산림청 및 지자체 통제 공지를 미리 확인해야 한다.",
+          "text": "가리왕산 케이블카는 숙암역에서 하봉까지만 운행하며, 하봉에서 가리왕산 정상(상봉)으로 연결되는 등산로는 산림 및 생태 복원을 위해 통제되어 있어 케이블카 탑승을 통한 정상 등산은 불가능하다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2023-07",
           "sources": [
-            "https://www.foresttrip.go.kr/"
+            "https://www.gariwangsancablecar.com/",
+            "https://blog.naver.com/okleedh100/223165080102"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "정상부에는 관리번호 표찰이 붙은 주목이 곳곳에 분포하며, 산림청 자료도 가리왕산의 주목군락지와 활엽수 극상림을 주요 경관·생태 자원으로 꼽는다.",
-          "sentiment": "good",
-          "as_of": null,
-          "sources": [
-            "https://www.forest.go.kr/",
-            "https://nam3342.tistory.com/1171",
-            "https://www.foresttrip.go.kr/pot/cc/hm/selectHndfmsmtnMngmeDtl.do?fmmntArcd=02&fmmntSeq=71944&nowPage=1&preSrchArea=02&preSrchWrd=&srchArea=02&srchWrd="
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "가리왕산자연휴양림-심마니교-어은골-상봉",
-          "topic": "난이도",
-          "text": "심마니교에서 어은골·임도·정상을 거쳐 회귀하는 길은 특별히 험난한 구간은 없지만 산길 자체가 대체로 거칠어 초등학교 저학년 산행에는 적합하지 않다고 평가됐다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.forest.go.kr/",
-            "https://nam3342.tistory.com/1171"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "가리왕산자연휴양림-심마니교-어은골-상봉",
-          "topic": "편의시설",
-          "text": "산행기 자료에서는 심마니교에서 약 50분 거리의 합수지점을 식수 확보 지점으로 안내한다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.forest.go.kr/",
-            "https://nam3342.tistory.com/1171"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6805,17 +6308,89 @@
           "scope": "route",
           "route": "장구목이-상봉 코스",
           "topic": "주차·교통",
-          "text": "장구목이 입구에는 별도의 전용 주차장이 마련되어 있지 않아 들머리 인근 도로 갓길 공간을 이용해야 한다.",
+          "text": "장구목이 들머리(숙암리 산400-17 일대)에는 공식 전용 주차장이 없어 도로변 갓길 공간에 5~6대 남짓 일렬 주차해야 하므로 이른 시간 도착이 필요하다.",
           "sentiment": "neutral",
-          "as_of": null,
+          "as_of": "2023-07",
           "sources": [
-            "https://www.ohiking.today/",
-            "https://www.jeongseon.go.kr/"
+            "https://www.forest.go.kr/",
+            "https://blog.naver.com/okleedh100/223165080102"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장구목이-상봉 코스",
+          "topic": "편의시설",
+          "text": "장구목이 입구에 간이 화장실이 설치되어 있으나 시설 관리가 열악하므로 산행 전 다른 곳에서 미리 화장실을 이용하는 것이 좋다.",
+          "sentiment": "neutral",
+          "as_of": "2026-08",
+          "sources": [
+            "https://www.forest.go.kr/",
+            "https://blog.naver.com/mychance16/224372324578"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "장구목이-상봉 코스",
+          "topic": "조망·볼거리",
+          "text": "장구목이골을 따라 1폭포부터 9폭포까지 이어지는 원시림 이끼계곡이 대표적인 여름 절경이며, 정상(상봉 1,561m) 부근에는 고사목 주목 군락지와 함께 탁 트인 파노라마 능선 조망이 펼쳐진다.",
+          "sentiment": "good",
+          "as_of": "2026-06",
+          "sources": [
+            "https://www.forest.go.kr/",
+            "https://blog.naver.com/rokag4/224314632234"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "가리왕산자연휴양림-심마니교-어은골-상봉",
+          "topic": "주차·교통",
+          "text": "국립가리왕산자연휴양림 방문자안내센터 앞 주차장을 이용할 수 있으며, 경형 1,500원, 중·소형 3,000원의 주차요금이 부과된다.",
+          "sentiment": "neutral",
+          "as_of": "2025-06",
+          "sources": [
+            "https://www.huyang.go.kr/",
+            "https://blog.naver.com/libido72/223890095496"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "숙암리-마항치-상봉 코스",
+          "topic": "주차·교통",
+          "text": "숙암리 발심사 방면에서 마항치사거리로 접근하는 코스는 별도 정식 주차장이 없고 발심사 부근 갓길 공터에 소수 차량만 주차할 수 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-06",
+          "sources": [
+            "https://www.forest.go.kr/",
+            "https://blog.naver.com/momsari/224317429228"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -6824,137 +6399,43 @@
     {
       "id": "gayasan-chungnam",
       "name": "가야산(충남)",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
-      "verified": 2,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
-          "topic": "조망·볼거리",
-          "text": "하산 종점의 남연군묘에서는 옥양봉~석문봉~가야봉으로 이어지는 능선 전체를 한눈에 볼 수 있으며, 가야사 옛터와 남은들상여도 함께 확인된다.",
-          "sentiment": "good",
-          "as_of": "2023-09",
-          "sources": [
-            "https://neowind.tistory.com/75",
-            "https://www.yesan.go.kr/",
-            "https://cc.newdaily.co.kr/site/data/html/2023/09/04/2023090400004.html",
-            "https://nam-sh0302.tistory.com/13473416"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
-          "topic": "난이도",
-          "text": "상가리 주차장에서 출발해 옥양봉, 석문봉, 가야봉을 거쳐 하산하는 종주형 원점회귀 코스는 약 4시간 30분에서 5시간이 소요된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://kdk4876.tistory.com/18172896?category=839113",
-            "https://www.yesan.go.kr/",
-            "https://www.yesan.go.kr/tour.do"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
-          "topic": "위험구간",
-          "text": "관음전 부근에서 옥양봉으로 오를 때 밧줄이 설치된 바위를 지나 약 15분간 세미클라이밍 형태로 쉰길바위 지대를 올라야 한다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "석문봉-가야봉 능선 코스",
-          "topic": "통제·예약",
-          "text": "가야봉 정상부는 통신 중계기지가 차지하고 있어 시설 내부 출입이 금지되며, 탐방은 중계기지 부근 등산로로 제한된다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
           "topic": "위험구간",
-          "text": "가야산 정상 가야봉과 석문봉 주변 능선은 암릉 구간이 많고 바윗길 경사가 있어 발을 헛디디지 않도록 주의해야 한다.",
+          "text": "석문봉에서 가야봉 사이 능선부에는 깎아지른 바위 절벽과 암벽 구간에 로프와 철계단이 설치되어 있어 강풍 시나 결빙기 미끄러짐과 추락에 주의해야 한다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2026-06",
           "sources": [
-            "https://www.yesan.go.kr/",
-            "https://www.yesan.go.kr/tour.do"
+            "https://www.chungnam.go.kr/",
+            "https://blog.naver.com/purme977/224330962237"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "석문봉-가야봉 능선 코스",
-          "topic": "조망·볼거리",
-          "text": "옥양봉~석문봉 능선의 여러 암봉과 석문봉 정상에서는 용봉산·천수만·서해·서산 들판 방향의 막힘없는 조망이 반복해서 확인된다.",
-          "sentiment": "good",
-          "as_of": null,
-          "sources": [
-            "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416",
-            "https://cc.newdaily.co.kr/site/data/html/2023/09/04/2023090400004.html"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
+          "route": "상가리-가야봉 코스",
           "topic": "난이도",
-          "text": "상가리에서 옥양봉·석문봉을 돌아오는 일반 코스는 약 4시간, 가야봉 중계기지 부근까지 잇는 경우 약 4시간 30분으로 안내된다.",
-          "sentiment": "neutral",
-          "as_of": null,
+          "text": "상가리저수지에서 헬기장 방면으로 가야봉에 직등하는 경로는 등산로 표지가 다소 불명확하고 너덜성 급경사 돌계단이 많아 초행길에 길을 헤매기 쉽다.",
+          "sentiment": "caution",
+          "as_of": "2024-10",
           "sources": [
             "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
+            "https://blog.naver.com/hwa_to/223624575507"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -6962,89 +6443,89 @@
           "scope": "route",
           "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
           "topic": "주차·교통",
-          "text": "상가리 주차장은 무료이며, 주차장에서 남연군묘 입구 삼거리까지 포장길로 약 540m·5분 거리로 기록돼 있다.",
+          "text": "덕산도립공원 상가리 주차장(예산군 덕산면 상가리 298-1)은 대형·소형 전용 공간이 넓게 갖추어져 있으며 무료로 주차가 가능하다.",
           "sentiment": "neutral",
-          "as_of": null,
+          "as_of": "2025-11",
           "sources": [
             "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
+            "https://blog.naver.com/smc0863/224090896212"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상가리주차장-옥양봉-석문봉-가야봉-남연군묘 원점회귀",
+          "topic": "편의시설",
+          "text": "상가리 주차장에 깨끗하게 관리되는 공중화장실과 에어건(먼지털이기)이 구비되어 있으나, 등산로에 진입하면 정상까지 화장실이 없다.",
+          "sentiment": "neutral",
+          "as_of": "2026-05",
+          "sources": [
+            "https://www.yesan.go.kr/",
+            "https://blog.naver.com/kangys0811/224283256800"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "석문봉-가야봉 능선 코스",
-          "topic": "편의시설",
-          "text": "능선에서는 물을 구하기 마땅치 않으므로 출발 전에 식수를 준비해야 한다.",
-          "sentiment": "neutral",
-          "as_of": null,
+          "topic": "조망·볼거리",
+          "text": "석문봉(653m) 정상의 백두대간 종주 기념탑과 태극기를 지나 가야봉으로 이어지는 약 1.5km의 능선길은 사방이 트여 내포평야와 서해 방면의 뛰어난 파노라마 조망을 감상할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2026-06",
           "sources": [
-            "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
+            "https://www.chungnam.go.kr/",
+            "https://blog.naver.com/purme977/224330962237"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "개심사-일락산 연계 코스",
-          "topic": "난이도",
-          "text": "상가리~석문봉~일락산~개심사 종주 코스는 문화유적 답사를 겸한 코스로 소개되며 예상 산행시간은 약 4~5시간이다.",
-          "sentiment": "neutral",
-          "as_of": null,
+          "topic": "계절·시기",
+          "text": "4월 중순에서 하순 사이 개심사 경내에 왕벚꽃과 청벚꽃이 만개하는 개화 시기에는 일락산과 연계하여 탐방하는 등산객이 집중된다.",
+          "sentiment": "good",
+          "as_of": "2026-04",
           "sources": [
-            "https://www.yesan.go.kr/",
-            "https://nam-sh0302.tistory.com/13473416"
+            "https://www.seosan.go.kr/",
+            "https://blog.naver.com/juyeon123456/224249534852"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "주차·교통",
-          "text": "산행 기점인 덕산도립공원 상가리 주차장은 무료로 운영되며, 넓은 주차 공간과 공중화장실 시설이 갖춰져 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.yesan.go.kr/",
-            "https://www.yesan.go.kr/tour.do"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "석문봉-가야봉 능선 코스",
+          "route": "개심사-일락산 연계 코스",
           "topic": "조망·볼거리",
-          "text": "석문봉에서 가야봉으로 이어지는 능선 암릉길에서는 내포평야와 기암괴석 풍광이 시원하게 펼쳐진다.",
+          "text": "일락산에서 백암사지 갈림길을 지나 개심사로 내려오는 하산로는 울창한 소나무 숲길이 포근하게 이어지며 백제 고찰 개심사 경내로 연결된다.",
           "sentiment": "good",
-          "as_of": null,
+          "as_of": "2024-04",
           "sources": [
-            "https://www.yesan.go.kr/",
-            "https://www.yesan.go.kr/tour.do"
+            "https://www.seosan.go.kr/",
+            "https://blog.naver.com/matilda0817/224186991091"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -7053,102 +6534,25 @@
     {
       "id": "gayasan-hapcheon",
       "name": "가야산(합천)",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
-      "verified": 5,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "만물상 코스",
           "topic": "난이도",
-          "text": "국립공원공단은 백운동 탐방지원센터~만물상~서성재 3km 구간의 난이도를 ‘매우 어려움’으로 분류하며, 편도 소요시간을 2시간 30분으로 안내한다.",
+          "text": "백운동탐방지원센터에서 서성재까지 이어지는 약 3km 구간은 초입부터 가파른 데크계단과 울퉁불퉁한 바위 암릉이 끊임없이 반복되는 최고 난이도 코스로, 약 1km당 1시간 수준의 긴 소요시간과 높은 체력을 요구한다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2025-09",
           "sources": [
-            "https://res.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T",
             "https://www.knps.or.kr/",
-            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T&vrteId=TB131XXX01"
+            "https://blog.naver.com/fiberboard/224015596325"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "만물상 코스",
-          "topic": "통제·예약",
-          "text": "만물상 구간은 9월 1일~10월 31일 인터넷·현장 예약제로 운영되며 정원은 340명이다. 인터넷 예약은 이용 전날 14시까지 가능하고, 그 밖의 기간에는 지정된 입산시간 안에서 예약 없이 입장할 수 있다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://res.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T",
-            "https://res.knps.or.kr/",
-            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T&vrteId=TB131XXX01"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "만물상 코스",
-          "topic": "통제·예약",
-          "text": "입장 마감은 4~10월 13시, 11~3월 12시이며 태풍·호우 등 기상특보가 발효되면 탐방로가 통제된다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://res.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T",
-            "https://www.knps.or.kr/",
-            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T&vrteId=TB131XXX01"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "만물상 코스",
-          "topic": "난이도",
-          "text": "만물상 코스는 백운동탐방지원센터에서 서성재까지 3.0km 구간으로, 국립공원 난이도 등급상 '매우 어려움'에 해당하며 경사가 급하고 끊임없는 오르내림으로 체력 소모가 매우 큽니다.",
-          "sentiment": "caution",
-          "as_of": "2024-05",
-          "sources": [
-            "https://res.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T",
-            "https://www.knps.or.kr/",
-            "https://ohiking.today/"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "백운동(용기골)-상왕봉 코스",
-          "topic": "주차·교통",
-          "text": "백운동 출발점의 공식 주차 장소는 경북 성주군 수륜면 가야산식물원길 17의 백운동주차장이다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://res.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T",
-            "https://www.knps.or.kr/",
-            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?parkId=B13&prdDvcd=T&vrteId=TB131XXX01"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -7156,17 +6560,35 @@
           "scope": "route",
           "route": "만물상 코스",
           "topic": "위험구간",
-          "text": "만물상 구간에는 급경사 데크 계단과 철계단이 잘 정비되어 있으나, 가파른 암반 및 너덜지대가 많아 우천 시 미끄럼 사고와 무릎 부상에 각별히 주의해야 합니다.",
+          "text": "만물상 코스는 깎아지른 바위 절벽과 급경사 철계단이 연속되며 낙석 및 미끄럼 위험 구간이 다수 존재하므로 접지력 좋은 등산화와 장갑 착용이 필수적이다.",
           "sentiment": "caution",
-          "as_of": "2024-05",
+          "as_of": "2026-05",
           "sources": [
             "https://www.knps.or.kr/",
-            "https://ohiking.today/"
+            "https://blog.naver.com/wia_dhy/224275624477"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "만물상 코스",
+          "topic": "조망·볼거리",
+          "text": "만물상 능선의 기암괴석과 상아덤(정견모주 신화 전설지)에서는 웅장한 가야산의 암봉 비경과 남산제일봉 방면 풍경을 한눈에 조망할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2026-05",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://blog.naver.com/wia_dhy/224275624477"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -7174,17 +6596,35 @@
           "scope": "route",
           "route": "백운동(용기골)-상왕봉 코스",
           "topic": "난이도",
-          "text": "용기골 코스는 계곡을 따라 서성재까지 완만하게 이어져 있어 만물상 코스에 비해 난이도가 낮으며 초보자나 하산길 코스로 적합합니다.",
+          "text": "백운동에서 서성재까지 이어지는 용기골 구간은 완만한 숲길과 계곡길로 이루어져 만물상 코스에 비해 체력 부담이 적어 하산길이나 초보자 코스로 주로 추천된다.",
           "sentiment": "neutral",
-          "as_of": "2024-05",
+          "as_of": "2026-08",
           "sources": [
             "https://www.knps.or.kr/",
-            "https://reservation.knps.or.kr/"
+            "https://blog.naver.com/meta9911/224375061783"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "해인사-상왕봉 코스",
+          "topic": "난이도",
+          "text": "토신골탐방지원센터에서 상왕봉 1km 전(해발 1,135m 지점)까지는 완만하고 편안한 흙길이지만, 석조여래입상 갈림길을 지난 후 상왕봉 정상 직전 600m 구간부터 가파른 데크계단과 암릉 오르막이 집중된다.",
+          "sentiment": "neutral",
+          "as_of": "2025-11",
+          "sources": [
+            "https://www.knps.or.kr/",
+            "https://blog.naver.com/wia_dhy/224092123046"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -7192,53 +6632,17 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "백운동지구 주차장(경북 성주군 수륜면 가야산식물원길 17)은 소형·대형 차량 모두 주차요금이 무료로 운영되며, 해인사 치인주차장은 중소형 4,000원·대형 6,000원의 요금이 부과됩니다.",
+          "text": "백운동탐방지원센터 앞 공영주차장은 무료로 개방되어 있으나 주말 오전 8시 이후에는 등산객 차량으로 조기 만차될 수 있어 이른 도착을 권장한다.",
           "sentiment": "neutral",
-          "as_of": "2024-05",
+          "as_of": "2026-08",
           "sources": [
             "https://www.knps.or.kr/",
-            "https://www.hc.go.kr/"
+            "https://blog.naver.com/meta9911/224375061783"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "10월 중순부터 11월 초 단풍 시즌에는 만물상 암봉의 기암괴석과 붉은 단풍이 어우러져 최고 경관을 이루며 탐방객 방문이 가장 많은 시기입니다.",
-          "sentiment": "good",
-          "as_of": "2024-10",
-          "sources": [
-            "https://www.knps.or.kr/",
-            "https://www.hc.go.kr/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "백운동탐방지원센터와 해인사 토신골 입구에 화장실이 설치되어 있으며, 등산로 중간 구간(만물상 및 서성재)에는 화장실이 없어 입구에서 미리 이용해야 합니다.",
-          "sentiment": "neutral",
-          "as_of": "2024-05",
-          "sources": [
-            "https://www.knps.or.kr/",
-            "https://reservation.knps.or.kr/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
@@ -7247,153 +6651,133 @@
     {
       "id": "geomdansan",
       "name": "검단산",
-      "collected_at": "2026-08-07",
-      "checked_by": 2,
-      "verified": 3,
+      "collected_at": "2026-08-31",
+      "checked_by": 1,
+      "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "창우동-유길준묘-전망대-검단산 정상",
-          "topic": "편의시설",
-          "text": "유길준묘 코스는 출발지 주차장의 화장실을 지나면 산 위에 화장실과 식수가 없다고 안내되어 있어 물을 미리 준비해야 한다.",
+          "topic": "난이도",
+          "text": "유길준묘 코스는 초반 완만한 흙길로 시작하지만 중반 이후 전망대와 정상에 이르기까지 가파른 계단과 거친 암릉·돌길이 지속적으로 이어진다.",
           "sentiment": "caution",
           "as_of": "2026-06",
           "sources": [
-            "https://www.hiking-beginner.com/trail/geomdansan-yugiljun",
-            "https://www.hanam.go.kr/"
+            "https://www.hanam.go.kr/",
+            "https://blog.naver.com/davidum/224329755600"
           ],
           "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "창우동(등산로 입구)-정상 코스",
+          "topic": "주차·교통",
+          "text": "창우동 현충탑진입로 노상 공영주차장(창우동 272-18)은 일일 주차요금 2,000원(16시 이후 무료)으로 저렴하나 주말 오전에는 만차되는 경우가 많다.",
+          "sentiment": "neutral",
+          "as_of": "2025-11",
+          "sources": [
+            "https://www.hanam.go.kr/",
+            "https://blog.naver.com/ehr1028/224088970377"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "창우동(등산로 입구)-정상 코스",
+          "topic": "편의시설",
+          "text": "현충탑 진입로 주차장 하단 및 등산로 초입에 공중화장실이 마련되어 있으며, 등산로에 진입한 후에는 정상까지 화장실이 없다.",
+          "sentiment": "neutral",
+          "as_of": "2026-06",
+          "sources": [
+            "https://www.hanam.go.kr/",
+            "https://blog.naver.com/doongdoong33/224328956033"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "창우동-유길준묘-전망대-검단산 정상",
+          "topic": "조망·볼거리",
+          "text": "유길준묘를 지나 능선길 중간 전망대 및 전망바위에 오르면 한강 줄기와 팔당댐, 예봉산 일대의 시원한 파노라마 풍경을 조망할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2024-06",
+          "sources": [
+            "https://www.hanam.go.kr/",
+            "https://blog.naver.com/nammomo/223478993441"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "산곡초등학교-정상 코스",
-          "topic": "난이도",
-          "text": "하남시 공식 안내 기준 산곡초등학교에서 통일기원돌탑과 곰터약수터를 거쳐 정상까지는 3.1km이며 예상 소요시간은 1시간 50분이다.",
+          "topic": "주차·교통",
+          "text": "산곡초등학교 인근 등산로 초입 아래 공터에 무료 주차 공간이 있으나 수용 대수가 10여 대 안팎으로 매우 협소하다.",
           "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://ggtourmap.or.kr/fileUpload/%ED%95%98%EB%82%A8%EC%8B%9C_%EA%B4%80%EA%B4%91%EC%95%88%EB%82%B4%EC%A7%80%EB%8F%84%28%EA%B5%AD%EB%AC%B8%29_202404_1.pdf",
-            "https://www.hanam.go.kr/",
-            "https://www.hanam.go.kr/www/contents.do?key=3336"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "창우동(등산로 입구)-정상 코스",
-          "topic": "난이도",
-          "text": "창우동 애니메이션고등학교에서 현충탑과 곱돌약수터를 거치는 공식 등산로는 4.2km, 약 2시간으로 안내된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://www.hanam.go.kr/DATA/newsletter/3242/20231023023623848_RpGm.pdf",
-            "https://www.hanam.go.kr/",
-            "https://www.hanam.go.kr/www/contents.do?key=3336"
-          ],
-          "verify": {
-            "level": "verified",
-            "confirmed": 2,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "창우동-유길준묘-전망대-검단산 정상",
-          "topic": "위험구간",
-          "text": "베트남참전기념탑~유길준묘 1.3km에는 돌계단과 급경사가 이어지고, 비가 온 뒤에는 돌길이 매우 미끄럽다는 현장 안내가 있다.",
-          "sentiment": "caution",
-          "as_of": "2026-06",
+          "as_of": "2024-05",
           "sources": [
             "https://www.hanam.go.kr/",
-            "https://www.hiking-beginner.com/trail/geomdansan-yugiljun"
+            "https://blog.naver.com/miranolja911/223458490362"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "창우동-유길준묘-전망대-검단산 정상",
-          "topic": "난이도",
-          "text": "창우동 유길준묘 코스는 총 3.5km(소요시간 약 1시간 50분)로 초반 능선길은 비교적 완만하지만, 정상 직전 나무계단과 암릉·밧줄 구간에서 경사가 가빠져 체력 소모가 큽니다.",
-          "sentiment": "caution",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hanam.go.kr/",
-            "https://blog.naver.com/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "창우동(등산로 입구)-정상 코스",
-          "topic": "위험구간",
-          "text": "창우동 현충탑 및 곱돌약수터를 거쳐 정상으로 합류하는 갓길과 정상 직전 계단 구간은 우천 시 및 동절기 얼음으로 슬립(미끄러짐) 위험이 있어 아이젠이나 등산스틱 지참이 필요합니다.",
-          "sentiment": "caution",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hanam.go.kr/",
-            "https://blog.naver.com/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
+          "route": "산곡초등학교-정상 코스",
           "topic": "혼잡",
-          "text": "5호선 지하철 개통 이후 주말 오전 9시 전후로 창우동 공영주차장이 조기 만차되며 정상부 전망 데크 공간이 매우 붐비므로 아침 일찍 산행을 시작하는 것을 추천합니다.",
-          "sentiment": "caution",
-          "as_of": "2026-08",
+          "text": "산곡초교 코스는 창우동 현충탑이나 유길준묘 방면 들머리에 비해 등산객 통행량이 훨씬 적어 주말에도 한적하게 산행할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2026-04",
           "sources": [
-            "https://www.huic.co.kr/",
-            "https://blog.naver.com/"
+            "https://www.hanam.go.kr/",
+            "https://blog.naver.com/eaglewingsfly/224255744408"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
         {
           "scope": "route",
-          "route": "창우동-유길준묘-전망대-검단산 정상",
+          "route": "창우동(등산로 입구)-정상 코스",
           "topic": "조망·볼거리",
-          "text": "유길준묘에서는 한강 조망이 열리고, 능선 삼거리부터 정상으로 가는 동안 팔당호 전망이 점차 드러난다고 소개된다.",
+          "text": "현충탑 코스를 따라 오르면 사계절 울창한 낙엽송 숲길을 만날 수 있으며, 곱돌약수터를 지나 정상에 오르면 두물머리와 양수리, 용문산 능선이 시원하게 조망된다.",
           "sentiment": "good",
-          "as_of": "2026-06",
+          "as_of": "2026-08",
           "sources": [
             "https://www.hanam.go.kr/",
-            "https://www.hiking-beginner.com/trail/geomdansan-yugiljun"
+            "https://blog.naver.com/dchoidy/224371587031"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         },
@@ -7401,88 +6785,17 @@
           "scope": "mountain",
           "route": null,
           "topic": "조망·볼거리",
-          "text": "검단산 정상 부근은 넓은 공터이며 사방으로 시야가 트인 전망 지점이라고 하남시가 안내한다.",
+          "text": "검단산 정상(657m) 넓은 데크 쉼터에서는 북한강과 남한강이 만나는 두물머리, 팔당댐, 그리고 서울 도심의 롯데월드타워까지 탁 트인 파노라마 전경을 감상할 수 있다.",
           "sentiment": "good",
-          "as_of": null,
+          "as_of": "2024-05",
           "sources": [
             "https://www.hanam.go.kr/",
-            "https://www.hanam.go.kr/www/contents.do?key=3336"
+            "https://blog.naver.com/miranolja911/223458490362"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "산곡초등학교-정상 코스",
-          "topic": "난이도",
-          "text": "산곡초등학교 코스는 편도 약 3.1km(약 1시간 50분 소요)로 초반 오르막 경사가 다소 급하지만, 통일기원돌탑과 곰터약수터를 지나며 숲길과 능선길로 이어집니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hanam.go.kr/",
-            "https://blog.naver.com/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "창우동-유길준묘-전망대-검단산 정상",
-          "topic": "조망·볼거리",
-          "text": "유길준묘 전망바위 및 검단산 정상(657m)에서는 한강, 팔당호, 두물머리(양수리), 예봉산, 운길산 조망이 훌륭하며, 맑은 날에는 잠실 롯데월드타워와 북한산까지 한눈에 조망할 수 있습니다.",
-          "sentiment": "good",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hanam.go.kr/",
-            "https://blog.naver.com/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "창우동 등산로 입구 및 현충탑 인근 관광안내소 옆에 공중화장실이 조성되어 있으며, 하산 지점 인근에는 먼지 제거를 위한 에어컴프레셔(흙먼지털이기)가 설치되어 있습니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hanam.go.kr/",
-            "https://blog.naver.com/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "검단산은 별도의 탐방 예약 없이 상시 입산이 가능하며, 봄철(2.1~5.15) 및 가을철(11.1~12.15) 산불방지기간에도 주 등산로는 정상 개방 운영됩니다.",
-          "sentiment": "neutral",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.forest.go.kr/"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 2,
+            "checked_by": 1,
             "found_by": 1
           }
         }
