@@ -34,8 +34,14 @@ export function toggleHiked(id, on) {
 }
 
 export function setHikedDate(id, date) {
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const parsed = new Date(date + 'T12:00:00Z');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date || date > today)
+    throw new Error('오늘 또는 이전의 올바른 산행일을 입력하세요.');
   const obj = read();
-  if (id in obj) { obj[id] = date; write(obj); syncHook?.('set', id, date); }
+  obj[id] = date; write(obj);
+  syncHook?.('set', id, date);
 }
 
 export function exportHiked() {

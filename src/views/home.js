@@ -1,5 +1,5 @@
 // 홈 대시보드 — 지도 우선 대신 탐색·개인화·기록으로 이어지는 랜딩.
-import { loadData, REGION_COLORS, LIST_KEYS, LIST_META, DIFF_CLASS } from '../data.js';
+import { loadData, REGION_COLORS, LIST_KEYS, LIST_META, DIFF_CLASS, filterMountains, representativeCourse } from '../data.js';
 import { hikedMap, isHiked, recentViews, onChange } from '../store.js';
 import { cachedPosition, requestPosition, onPositionChange, permissionState, geoAvailable,
   bearingLabel, positionAgeText, sortByDistance, FRESH_MS } from '../position.js';
@@ -16,17 +16,9 @@ function seasonInfo(month) {
   return { name: '겨울', kw: ['설경', '상고대', '눈꽃', '일출', '해맞이'] };
 }
 
-function difficultyOf(m) {
-  // 대표 코스들의 난이도 최빈/최고를 요약
-  const order = { '쉬움': 1, '보통': 2, '어려움': 3, '매우 어려움': 4 };
-  const ds = (m.trails || []).map((t) => t.difficulty).filter(Boolean).map((d) => order[d] || 2);
-  if (!ds.length) return null;
-  const max = Math.max(...ds);
-  return ['', '쉬움', '보통', '어려움', '매우 어려움'][max];
-}
-
 export async function renderHome(root) {
   const data = await loadData();
+  if (!root.isConnected) return () => {};
   const page = el('div', { class: 'dash' });
   root.append(page);
 
@@ -53,10 +45,11 @@ export async function renderHome(root) {
     const season = seasonInfo(new Date().getMonth());
 
     body.append(heroSection(data, season));
-    body.append(returning ? progressSection(data, hikedIds) : introSection(data));
-    body.append(quickExploreSection(data));
+    if (cachedPosition()) body.append(nearbySection(data, near, locateForNearby));
     body.append(recommendSection(data, hikedIds, recent, season));
-    body.append(nearbySection(data, near, locateForNearby));
+    if (!cachedPosition()) body.append(nearbySection(data, near, locateForNearby));
+    body.append(quickExploreSection(data));
+    body.append(returning ? progressSection(data, hikedIds) : introSection(data));
     body.append(curationSection(data, hikedIds, season));
     if (recent.length) body.append(recentSection(recent));
     body.append(footerSection());
@@ -88,8 +81,7 @@ function heroSection(data, season) {
     const q = search.value.trim().toLowerCase();
     clear(results);
     if (!q) { results.hidden = true; return; }
-    const hits = data.mountains.filter((m) =>
-      `${m.name} ${m.name_full} ${m.province} ${m.location}`.toLowerCase().includes(q)).slice(0, 6);
+    const hits = filterMountains(data.mountains, { q }).slice(0, 6);
     if (!hits.length) { results.hidden = true; return; }
     hits.forEach((m) => results.append(el('a', { class: 'dash-suggest-item', href: `#/m/${m.id}` },
       el('span', { class: 'ds-dot', style: `background:${REGION_COLORS[m.region]}` }),
@@ -153,7 +145,7 @@ function progressSection(data, hikedIds) {
     const d = inList.filter((m) => hikedIds.has(m.id)).length;
     const p = inList.length ? Math.round((d / inList.length) * 100) : 0;
     return el('div', { class: 'plist-row' },
-      el('span', { class: 'plist-label' }, LIST_META[k].short),
+      el('span', { class: 'plist-label' }, LIST_META[k].chip),
       el('span', { class: `plist-track card-${k}` }, el('span', { style: `width:${p}%` })),
       el('span', { class: 'plist-num' }, `${d}/${inList.length}`));
   });
@@ -169,7 +161,7 @@ function progressSection(data, hikedIds) {
       el('div', {},
         el('div', { class: 'prog-big' }, String(done), el('small', {}, ` / ${all.length}곳 등정`)),
         el('div', { class: 'muted', style: 'font-size:13px' }, `전체 진행률 ${pct}%` +
-          (next ? ` · ${LIST_META[next.k].short} ${next.goal}좌까지 ${next.goal - next.d}곳` : ''))),
+          (next ? ` · ${LIST_META[next.k].chip} ${next.goal}좌까지 ${next.goal - next.d}곳` : ''))),
       el('a', { class: 'btn', href: '#/track' }, '내 기록 보기 →')),
     el('div', { class: 'prog-overall' }, el('span', { style: `width:${pct}%` })),
     el('div', { class: 'plist' }, ...bars));
@@ -222,7 +214,7 @@ function recommendSection(data, hikedIds, recent, season) {
     .map((m) => {
       let s = 0; const reasons = [];
       if (recentRegions.has(m.region) && recent.length) { s += 3; reasons.push(`최근 본 ${m.region} 인근`); }
-      if (m.hansanha_rank) { s += Math.max(0, 3 - Math.floor((m.hansanha_rank - 1) / 20)); if (m.hansanha_rank <= 30) reasons.push(`인기명산 ${m.hansanha_rank}위`); }
+      if (m.hansanha_rank) { s += Math.max(0, 3 - Math.floor((m.hansanha_rank - 1) / 20)); if (m.hansanha_rank <= 30) reasons.push(`2003–2004년 집계 ${m.hansanha_rank}위`); }
       const hay = `${(m.features || []).join(' ')} ${m.best_season || ''}`;
       if (season.kw.some((k) => hay.includes(k))) { s += 2.5; reasons.push(`${season.name} 추천`); }
       if (m.lists.sanlim && m.lists.bac && m.lists.hansanha && m.lists.wolgansan) { s += 1; reasons.push('4대 공통'); }
@@ -266,7 +258,7 @@ function curationSection(data, hikedIds, season) {
   const popular = data.mountains.filter((m) => m.hansanha_rank).sort((a, b) => a.hansanha_rank - b.hansanha_rank).slice(0, 4);
   // 초보자 추천: 쉬운/보통 + 저고도 미등정
   const easy = data.mountains
-    .filter((m) => !hikedIds.has(m.id) && ['쉬움', '보통'].includes(difficultyOf(m)) && m.elevation_m <= 700)
+    .filter((m) => !hikedIds.has(m.id) && representativeCourse(m, { easy: true, maxHours: 4 }))
     .sort((a, b) => a.elevation_m - b.elevation_m).slice(0, 4);
   // 계절 큐레이션
   const seasonal = data.mountains
@@ -274,15 +266,15 @@ function curationSection(data, hikedIds, season) {
     .slice(0, 4);
 
   const groups = [
-    [' 한국의산하 인기명산 TOP', popular, '#/map?list=hansanha'],
-    [' 초보자에게 좋은 산', easy, '#/map'],
+    [' 한국의산하 인기명산 · 2003–2004년 집계', popular, '#/map?list=hansanha'],
+    ['4시간 이내 쉬움·보통 코스', easy, '#/map?easy=1&hours=4'],
     [`지금 오르기 좋은 ${season.name} 명산`, seasonal, `#/map?q=${encodeURIComponent(season.kw[0])}`],
   ].filter(([, arr]) => arr.length);
 
   return el('section', { class: 'dash-section' },
     ...groups.map(([title, arr, href]) => el('div', { class: 'curation' },
       sectionHead(title, null, href),
-      el('div', { class: 'card-grid' }, ...arr.map((m) => mtnCard(m))))));
+      el('div', { class: 'card-grid' }, ...arr.map((m) => mtnCard(m, null, href.includes("easy=1") ? { easy: true, maxHours: 4 } : {}))))));
 }
 
 function recentSection(recent) {
@@ -306,8 +298,9 @@ function sectionHead(title, sub, moreHref) {
     moreHref ? el('a', { class: 'sec-more', href: moreHref }, '전체 보기 →') : null);
 }
 
-function mtnCard(m, reason) {
-  const diff = difficultyOf(m);
+function mtnCard(m, reason, options = {}) {
+  const course = representativeCourse(m, options);
+  const diff = course?.difficulty;
   return el('a', { class: 'mtn-card', href: `#/m/${m.id}` },
     el('span', { class: 'mc-index' }, `${Math.round(m.elevation_m).toLocaleString()} `, el('small', {}, 'm')),
     el('div', { class: 'mc-body' },
@@ -317,6 +310,7 @@ function mtnCard(m, reason) {
       el('div', { class: 'mc-meta' },
         el('span', {}, `${m.region} · ${Math.round(m.elevation_m)}m`),
         diff ? el('span', { class: 'mc-diff ' + (DIFF_CLASS[diff] || 'd2') }, diff) : null),
+      course ? el('div', { class: 'mc-course' }, `${course.name} 기준`, el('span', {}, [course.round_trip_hours ? `왕복 ${course.round_trip_hours}시간` : null, course.distance_km ? `코스 거리 ${course.distance_km}km` : null].filter(Boolean).join(' · '))) : null,
       el('div', { class: 'mc-description' }, (m.features || []).slice(0, 3).join(' · ')),
       reason ? el('div', { class: 'mc-reason' }, reason) : null));
 }

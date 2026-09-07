@@ -41,17 +41,30 @@ export const LIST_META = {
 };
 
 // filter predicate factory. `lists` = Set of selected list keys (union: 하나라도 속하면 통과). `allFour` = 4개 공통만.
-export function filterMountains(mountains, { q, regions, lists, allFour, hikedOnly, isHiked }) {
+export function filterMountains(mountains, { q, regions, lists, allFour, hikedOnly, isHiked, easy, maxHours, maxDistance }) {
   const query = (q || '').trim().toLowerCase();
   return mountains.filter((m) => {
     if (regions && regions.size && !regions.has(m.region)) return false;
     if (allFour && !(m.lists.sanlim && m.lists.bac && m.lists.hansanha && m.lists.wolgansan)) return false;
     if (lists && lists.size && ![...lists].some((k) => m.lists[k])) return false;
     if (hikedOnly && !isHiked(m.id)) return false;
+    if ((easy || maxHours || maxDistance) && !matchingCourses(m, { easy, maxHours, maxDistance }).length) return false;
     if (query) {
-      const hay = `${m.name} ${m.name_full} ${m.province} ${m.location} ${m.id}`.toLowerCase();
+      const hay = `${m.name} ${m.name_full} ${m.province} ${m.location} ${m.id} ${(m.features || []).join(' ')} ${m.best_season || ''} ${m.transport || ''} ${(m.trails || []).map(t => `${t.name} ${t.start || ''} ${t.note || ''}`).join(' ')}`.toLowerCase();
       if (!hay.includes(query)) return false;
     }
     return true;
   });
+}
+
+// Recommendations and filters use the same course criteria; unknown values never pass a limit.
+export function matchingCourses(m, { easy = false, maxHours = 0, maxDistance = 0 } = {}) {
+  return (m.trails || []).filter(t =>
+    (!easy || ['쉬움', '보통'].includes(t.difficulty)) &&
+    (!maxHours || (Number(t.round_trip_hours) > 0 && Number(t.round_trip_hours) <= maxHours)) &&
+    (!maxDistance || (Number(t.distance_km) > 0 && Number(t.distance_km) <= maxDistance)));
+}
+export function representativeCourse(m, options = {}) {
+  return matchingCourses(m, options).slice().sort((a, b) =>
+    (Number(a.round_trip_hours) || Infinity) - (Number(b.round_trip_hours) || Infinity))[0];
 }

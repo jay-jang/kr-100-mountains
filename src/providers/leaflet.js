@@ -87,6 +87,8 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
     removeLayer(token) { (Array.isArray(token) ? token : [token]).forEach((t) => t?.remove?.()); },
     fitBounds(latlngs, pad = 0.15) { map.fitBounds(L.latLngBounds(latlngs).pad(pad)); },
     setBaseType(type) { if (type !== baseType) applyBase(type); },
+    snapshot() { const c = map.getCenter(), b = map.getBounds(); return { center: [c.lat, c.lng], zoom: map.getZoom(), span: [b.getNorth() - b.getSouth(), b.getEast() - b.getWest()] }; },
+    restore(s) { if (s?.center && s.zoom != null) map.setView(s.center, s.zoom, { animate: false }); },
     relayout() { map.invalidateSize(); },
     refreshTheme() { if (baseType === 'default') tile.setUrl(isDark() ? DARK : LIGHT); },
     destroy() { map.remove(); },

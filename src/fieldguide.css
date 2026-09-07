@@ -238,3 +238,83 @@ button:disabled { cursor: default; }
   color: var(--text-soft); border-color: var(--border-strong); background: transparent;
 }
 :root .detail-page .hero .hero-badges .pill-rank, :root .detail-page .crit-count { color: var(--accent-ink); }
+/* Task-first discovery and course planning. */
+.explore-view-toggle { display: none; }
+.filter-details { margin-top: 12px; }
+.filter-details summary, .course-directions summary { cursor: pointer; min-height: 44px; padding: 10px 0; font-weight: 600; font-size: 14px; }
+.course-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.course-filters label { display: grid; gap: 5px; font-size: 13px; }
+.course-filters select { min-height: 44px; width: 100%; background: var(--bg-elev); color: var(--text); border: 1px solid var(--border-strong); border-radius: 3px; font: inherit; }
+.list-course { font-size: 12px; color: var(--text-soft); margin-top: 6px; line-height: 1.65; }
+.mc-course { font-size: 13px; color: var(--text-soft); margin-top: 14px; }
+.mc-course span { display: block; margin-top: 5px; }
+.hchip, .sec-more { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+.dash-hero-chips { gap: 8px 16px; }
+.dash-hero { padding: 32px 0 12px; gap: 40px; }
+.dash-hero h1 { font-size: 48px; margin-bottom: 16px; }
+.dash-hero-sub { margin-bottom: 15px; }
+.atlas-cover { min-height: 300px; }
+.mc-description, .mc-reason, .sec-head .sec-sub, .conf-note { font-size: 13px; }
+.intro-card { margin-top: 36px; }
+.info-disclosure { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.info-disclosure > summary { cursor: pointer; min-height: 52px; padding: 14px 0; }
+.info-disclosure > summary h3 { display: inline; margin: 0; font-size: 17px; }
+.disclosure-body { padding: 8px 0 20px; }
+.course-section { margin-top: 24px; }
+.course-section .t-facts { font-size: 14px; }
+.course-directions { border-top: 1px solid var(--border); margin-top: 14px; }
+.direction-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.detail-contents button, .course-route-btn, .route-eye, .gpxdl-show, .gpxdl-dl { min-height: 44px; }
+.dir-menu button { border: 0; border-bottom: 1px solid var(--border); background: var(--bg-elev); color: var(--text); padding: 12px; min-height: 44px; text-align: left; }
+.record-dialog { width: min(440px, calc(100vw - 32px)); padding: 28px; background: var(--bg-elev); color: var(--text); border: 1px solid var(--border-strong); border-radius: 5px; }
+.record-dialog::backdrop { background: #12251e88; }
+.record-dialog h2 { margin: 0 0 12px; font-size: 23px; }
+.record-dialog p, .record-dialog label { font-size: 14px; }
+.record-dialog input { display: block; width: 100%; min-height: 48px; margin-top: 8px; background: var(--bg); color: var(--text); border: 1px solid var(--border-strong); padding: 10px; color-scheme: light dark; }
+.record-actions, .record-row-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.record-error { color: var(--text); }
+.record-toast { position: fixed; z-index: 1000; bottom: 22px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px); display: flex; align-items: center; flex-wrap: wrap; gap: 10px; background: var(--bg-elev); color: var(--text); border: 1px solid var(--border-strong); padding: 14px 18px; box-shadow: 0 3px 20px #0002; }
+@media (min-width: 861px) {
+  .panel .filters { max-height: 60vh; overflow-y: auto; }
+}
+@media (max-width: 860px) {
+  .explore-view-toggle { display: flex; flex: none; gap: 0; padding: 8px 18px; border-bottom: 1px solid var(--border); }
+  .explore-view-toggle button { flex: 1; min-height: 44px; border: 1px solid var(--border); background: var(--bg-elev); color: var(--text); }
+  .explore-view-toggle button[aria-pressed=true] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .home[data-view=list] > .map-wrap { position: absolute; visibility: hidden; pointer-events: none; width: 100%; height: 300px; }
+  .home[data-view=map] > .panel { display: none; }
+  .home[data-view=map] > .map-wrap { height: 100%; flex: 1; }
+  .home .explore-heading { display: none; }
+  .home .filters { padding-top: 12px; }
+  .home .mtn-badges { display: none; }
+  .home .mtn-item { grid-template-columns: auto minmax(0, 1fr) auto; }
+}
+@media (max-width: 760px) {
+  .dash-hero { display: block; padding: 24px 0 0; }
+  .dash-hero h1 { font-size: 34px; margin-bottom: 10px; }
+  .dash-hero h1 br { display: none; }
+  .dash-hero-sub { margin: 8px 0 10px; line-height: 1.7; }
+  .dash-hero .eyebrow { margin-bottom: 12px; }
+  .atlas-cover { display: none; }
+  .dash-hero-chips { gap: 0 16px; }
+  .dash-section { margin-top: 24px; }
+  .card-grid:has(> :last-child:nth-child(3)) { display: flex; flex-direction: column; }
+  .card-grid:has(> :last-child:nth-child(3)) .mtn-card { display: flex; align-items: flex-start; padding: 14px 0; }
+  .card-grid:has(> :last-child:nth-child(3)) .mc-index { font-size: 20px; min-width: 78px; padding: 0 8px 0 0; }
+  .mc-course, .mc-description, .mc-reason { font-size: 13px; }
+  .record-toast { bottom: calc(72px + env(safe-area-inset-bottom)); }
+  .journal-page .mtn-item { grid-template-columns: auto minmax(0, 1fr); }
+  .record-row-actions { grid-column: 2; justify-content: flex-start; }
+  .course-section .t-name { flex-wrap: wrap; }
+}
+@media (max-width: 760px) {
+  .detail-page .hero { padding: 0 0 20px; gap: 14px; }
+  .detail-page .hero-badges { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .detail-page .hero-badges .pill { white-space: nowrap; flex: none; }
+  .detail-page .crumb { margin-bottom: 16px; }
+  .detail-page .hero .sub { margin-top: 8px; }
+}
+.home .mtn-item { grid-template-columns: auto minmax(0, 1fr) auto; }
+.btn, .chip, .seg button, .map-type-seg button, .map-tools button { min-height: 44px; }
+.icon-btn, .map-fs-btn { min-width: 44px; min-height: 44px; }
+.route-mount { display: contents; }

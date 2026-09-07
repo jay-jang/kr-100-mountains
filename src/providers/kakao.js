@@ -128,6 +128,8 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
       map.setBounds(b);
     },
     setBaseType(type) { if (type !== baseType) applyBase(type); },
+    snapshot() { const c = map.getCenter(), b = map.getBounds(); return { center: [c.getLat(), c.getLng()], level: map.getLevel(), span: [b.getNorthEast().getLat() - b.getSouthWest().getLat(), b.getNorthEast().getLng() - b.getSouthWest().getLng()] }; },
+    restore(s) { if (s?.center && s.level != null) { map.setLevel(s.level); map.setCenter(ll(...s.center)); } },
     relayout() { const c = map.getCenter(); map.relayout(); map.setCenter(c); },
     refreshTheme() { /* Kakao has no built-in dark skin; no-op */ },
     destroy() { closePopup(); managedMarkers.forEach((m) => m.setMap(null)); node.innerHTML = ''; },

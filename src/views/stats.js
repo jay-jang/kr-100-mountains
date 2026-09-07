@@ -1,12 +1,14 @@
 import { loadData, REGION_COLORS, LIST_KEYS, LIST_META } from '../data.js';
-import { hikedMap, hikedCount, toggleHiked, exportHiked, importHiked, clearHiked, onChange } from '../store.js';
+import { hikedMap, exportHiked, importHiked, clearHiked, onChange } from '../store.js';
 import { CLOUD_ENABLED, currentUser, onAuthChange, authProviders, signInWithEmail, signInWithGoogle, signOut } from '../auth.js';
+import { editHike, removeHikeWithUndo } from '../hikerecord.js';
 import { el, clear } from '../dom.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 
 export async function renderStats(root) {
   const data = await loadData();
+  if (!root.isConnected) return () => {};
   const page = el('div', { class: 'page journal-page' });
   root.append(page);
 
@@ -67,7 +69,7 @@ export async function renderStats(root) {
             el('a', { class: 'mtn-name', href: `#/m/${m.id}` }, m.name_full),
             el('div', { class: 'mtn-meta' }, el('span', {}, `${Math.round(m.elevation_m)}m`),
               el('span', {}, m.province), el('span', {}, date))),
-          el('button', { class: 'btn', onClick: () => toggleHiked(m.id, false) }, '해제')));
+          el('div', { class: 'record-row-actions' }, el('button', { class: 'btn', onClick: () => editHike(m) }, '날짜 수정'), el('button', { class: 'btn', onClick: () => removeHikeWithUndo(m.id, m.name) }, '삭제'))));
       });
       listSec.append(grid);
     }

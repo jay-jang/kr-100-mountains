@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "test": "node scripts/smoke-test.mjs",
     "routes": "node scripts/collect-routes.mjs",
-    "reviews": "node scripts/collect-reviews.mjs"
+    "reviews": "node scripts/collect-reviews.mjs",
+    "test:ux": "node scripts/ux-test.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1",

@@ -1,7 +1,7 @@
 import { loadData, DIFF_CLASS, regionColor, LIST_KEYS, LIST_META } from '../data.js';
 import { createMapView, fetchTrails } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
-import { isHiked, toggleHiked, onChange, recordView } from '../store.js';
+import { isHiked, onChange, recordView } from '../store.js';
 import { parseGPX, drawTrack, navInfo, haversine } from '../gpx.js';
 import { watchPosition, fmtDist, fmtDistFine, directionsLinks } from '../geo.js';
 import { cachedPosition, notePosition, distanceTo, bearingLabel } from '../position.js';
@@ -9,10 +9,12 @@ import { fetchElevations, resample, buildProfile, profileFromTrack, elevationCha
 import { routeTrailheadToSummit } from '../routing.js';
 import { routeDownloadSection } from '../routegpx.js';
 import { reviewSection } from '../reviews.js';
+import { editHike } from '../hikerecord.js';
 import { el, esc, clear } from '../dom.js';
 
 export async function renderDetail(root, id) {
   const data = await loadData();
+  if (!root.isConnected) return () => {};
   const m = data.byId.get(id);
   if (!m) {
     root.append(el('div', { class: 'page' },
@@ -37,11 +39,11 @@ export async function renderDetail(root, id) {
   const paintHike = () => {
     const on = isHiked(m.id);
     hikeBtn.className = 'hike-btn' + (on ? ' done' : '');
-    hikeBtn.textContent = on ? '★ 등정 완료' : '☆ 등정 기록';
+    hikeBtn.textContent = on ? '★ 등정 완료 · 수정' : '☆ 등정 기록';
     hikeBtn.setAttribute('aria-pressed', String(on));
   };
   paintHike();
-  hikeBtn.addEventListener('click', () => { toggleHiked(m.id); paintHike(); });
+  hikeBtn.addEventListener('click', () => editHike(m));
 
   // 현재 위치를 이미 알고 있으면(다른 화면에서 측정) 직선거리를 함께 보여준다. 새로 묻지는 않는다.
   const myPos = cachedPosition();
@@ -332,7 +334,7 @@ export async function renderDetail(root, id) {
   const lineLen = (l) => { let d = 0; for (let i = 1; i < l.length; i++) d += haversine(l[i - 1][0], l[i - 1][1], l[i][0], l[i][1]); return d; };
 
   // 주요 등산로 코스 → 교차검증된 들머리에서 정상까지 실제 경로 + 고도로 연결
-  const scrollToRoutes = () => routeList.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const scrollToRoutes = () => { const disclosure = routeList.closest('details'); if (disclosure) disclosure.open = true; routeList.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
   async function showCourseRoute(t, btn) {
     if (!t.trailhead || m.lat == null) return;
     const hit = routes.find((r) => r.courseName === t.name);
@@ -405,8 +407,37 @@ export async function renderDetail(root, id) {
   let view, controls, navTrack = null, locLayer = null;
   let stopWatch = null, locateOn = false, following = false, firstFix = false, lastPos = null;
 
+  // ---- trails (난이도·시간: 웹 조사 + 복수 자료 교차검증) ----
+  if (m.trails?.length) {
+    const VBADGE = { verified: ['교차검증 일치', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
+    const grid = el('div', { class: 'trail-grid' });
+    m.trails.forEach((t) => {
+      const vb = t.verify && VBADGE[t.verify.level];
+      const directions = courseDirections(m, t);
+      const facts = el('div', { class: 't-facts' },
+        t.start ? factSpan('들머리', t.start) : null,
+        t.distance_km ? factSpan('거리', `${t.distance_km}km`) : null,
+        t.ascent_hours ? factSpan('오름(편도)', `${t.ascent_hours}시간`) : null,
+        t.round_trip_hours ? factSpan('왕복', `${t.round_trip_hours}시간`) : (t.duration && !t.ascent_hours ? factSpan('소요', t.duration) : null),
+        t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null,
+        vb ? el('span', { class: 'vbadge ' + vb[1], title: verifyTitle(t.verify) }, vb[0]) : null);
+      const routeBtn = t.trailhead
+        ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '지도·고도')
+        : null;
+      if (routeBtn) routeBtn.addEventListener('click', () => showCourseRoute(t, routeBtn));
+      grid.append(el('div', { class: 'trail-card' },
+        el('div', { class: 't-name' }, t.name || '주요 코스', routeBtn), facts,
+        t.note ? el('div', { class: 't-note' }, t.note) : null, directions));
+    });
+    page.insertBefore(el('div', { class: 'section course-section' },
+      el('h3', {}, '주요 등산로'), grid,
+      el('p', { class: 'conf-note' }, '난이도·등반시간은 자료 간 차이가 있을 수 있습니다. “지도·고도”에서 코스 경로와 고도를 확인하세요.')),
+      contents.nextSibling);
+  }
+
   if (m.lat != null) {
     view = await createMapView(mapNode, { center: [m.lat, m.lon], zoom: 13 });
+    if (!page.isConnected) { view.destroy(); return () => {}; }
     // 전체화면에서는 상세 페이지에도 검색 경로가 없으므로 공용 검색을 붙인다.
     // 다른 산을 고르면 그 산의 상세로 이동한다(라우트 정리 과정에서 전체화면도 해제된다).
     controls = mapControls(view, mapWrap, {
@@ -428,11 +459,13 @@ export async function renderDetail(root, id) {
     if (m.coord_confidence && m.coord_confidence !== 'high')
       gpxNote.textContent = `※ 정상 좌표는 근사값일 수 있습니다 (신뢰도: ${m.coord_confidence}).`;
 
-    // 외부 지도 길찾기 (목적지=정상)
-    const links = directionsLinks(m.name_full, m.lat, m.lon);
-    dirMenu.append(
-      el('a', { href: links.kakao, target: '_blank', rel: 'noopener' }, '카카오맵 길찾기'),
-      el('a', { href: links.google, target: '_blank', rel: 'noopener' }, '구글 지도 길찾기'));
+    // Choose a course destination; never send driving directions to the summit.
+    (m.trails || []).forEach((t, i) => dirMenu.append(el('button', { type: 'button', onClick: () => {
+      const target = page.querySelectorAll('.course-directions')[i];
+      if (target) { target.open = true; target.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      dirMenu.hidden = true;
+    } }, `${t.name} · ${t.start || '출발점 미확인'}`)));
+    if (!m.trails?.length) dirMenu.append(el('p', {}, '확인된 코스 출발점이 없습니다.'));
     dirBtn.addEventListener('click', () => { dirMenu.hidden = !dirMenu.hidden; });
 
     // 수록 GPX 자동 로드 → 등산로 목록에 추가(선택 시 지도 표시)
@@ -502,36 +535,9 @@ export async function renderDetail(root, id) {
       offEl);
   }
 
-  // ---- trails (난이도·시간: 웹 조사 + 복수 자료 교차검증) ----
-  if (m.trails?.length) {
-    const VBADGE = { verified: ['교차검증 일치', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
-    const grid = el('div', { class: 'trail-grid' });
-    m.trails.forEach((t) => {
-      const vb = t.verify && VBADGE[t.verify.level];
-      const facts = el('div', { class: 't-facts' },
-        t.start ? factSpan('들머리', t.start) : null,
-        t.distance_km ? factSpan('거리', `${t.distance_km}km`) : null,
-        t.ascent_hours ? factSpan('오름(편도)', `${t.ascent_hours}시간`) : null,
-        t.round_trip_hours ? factSpan('왕복', `${t.round_trip_hours}시간`) : (t.duration && !t.ascent_hours ? factSpan('소요', t.duration) : null),
-        t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null,
-        vb ? el('span', { class: 'vbadge ' + vb[1], title: verifyTitle(t.verify) }, vb[0]) : null);
-      const routeBtn = t.trailhead
-        ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '지도·고도')
-        : null;
-      if (routeBtn) routeBtn.addEventListener('click', () => showCourseRoute(t, routeBtn));
-      grid.append(el('div', { class: 'trail-card' },
-        el('div', { class: 't-name' }, t.name || '주요 코스', routeBtn), facts,
-        t.note ? el('div', { class: 't-note' }, t.note) : null));
-    });
-    page.append(el('div', { class: 'section' },
-      el('h3', {}, '주요 등산로'),
-      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다. “지도·고도”로 각 코스의 실제 경로와 고도를 볼 수 있습니다.'),
-      grid));
-  }
-
   // ---- transport ----
   if (m.transport)
-    page.append(el('div', { class: 'section' }, el('h3', {}, '교통'), el('p', { class: 'prose' }, m.transport)));
+    page.insertBefore(el('div', { class: 'section transport-section' }, el('h3', {}, '교통 · 주차 · 대중교통'), el('p', { class: 'prose' }, m.transport)), page.querySelector('.course-section')?.nextSibling || contents.nextSibling);
 
   // ---- features ----
   if (m.features?.length)
@@ -551,11 +557,19 @@ export async function renderDetail(root, id) {
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
     '지도의 등산로 선은 OpenStreetMap 데이터입니다. GPX는 실측 기록과 “계산 경로”를 구분해 표시하며, 계산 경로는 OpenStreetMap 등산로망 위에서 계산한 것이라 실제 기록이 아닙니다.'));
 
+  const folded = ['월간산 선정기준', '등산로별 고도', '코스별 경로 GPX', '탐방 후기', '출처'];
+  page.querySelectorAll('.section').forEach(section => {
+    const heading = section.querySelector('h3');
+    if (!heading || !folded.some(prefix => heading.textContent.startsWith(prefix))) return;
+    const summary = el('summary', {}, heading);
+    const body = el('div', { class: 'disclosure-body' }, ...section.childNodes);
+    section.append(el('details', { class: 'info-disclosure' }, summary, body));
+  });
   page.querySelectorAll('.section').forEach((section, i) => {
     const title = section.querySelector('h3');
     if (!title) return;
     section.id = `mountain-section-${i}`;
-    contents.append(el('button', { type: 'button', onClick: () => section.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }) }, title.childNodes[0].textContent.trim()));
+    contents.append(el('button', { type: 'button', onClick: () => { const disclosure = section.querySelector('details'); if (disclosure) disclosure.open = true; section.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); } }, title.childNodes[0].textContent.trim()));
   });
 
   const off = onChange(paintHike);
@@ -583,7 +597,7 @@ function factSpan(label, val) {
 function listPill(k, m) {
   if (k === 'hansanha' && m.hansanha_rank) {
     return el('span', { class: 'pill p-hansanha ranked', title: '한국의 산하(koreasanha.net) 인기명산 100 접속순위' },
-      '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`));
+      '한국의산하 인기명산 (2003–2004년 집계)', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`));
   }
   if (k === 'wolgansan' && m.wolgansan_criteria) {
     const wc = m.wolgansan_criteria;
@@ -623,4 +637,25 @@ async function tryLoadCuratedGPX(id, note) {
       (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
     return { track };
   } catch { return null; }
+}
+
+// Coordinates describe a trail entrance, not a verified car park or bus stop.
+function courseDirections(m, t) {
+  const confirmed = Array.isArray(t.trailhead) && t.trailhead_conf === 'high';
+  const name = `${m.name_full} ${t.start || t.name}`;
+  const label = t.start || '출발점';
+  const details = el('details', { class: 'course-directions' }, el('summary', {}, `${label}로 길찾기`));
+  if (confirmed) {
+    const links = directionsLinks(name, ...t.trailhead);
+    details.append(el('p', { class: 'conf-note' }, `목적지: ${label} (들머리). 주차장·정류장 좌표와는 다를 수 있습니다.`),
+      el('div', { class: 'direction-links' },
+        el('a', { class: 'btn', href: links.kakao, target: '_blank', rel: 'noopener' }, '카카오맵에서 보기'),
+        el('a', { class: 'btn', href: links.google, target: '_blank', rel: 'noopener' }, '자동차 경로 검색'),
+        el('a', { class: 'btn', href: links.google.replace('travelmode=driving', 'travelmode=transit'), target: '_blank', rel: 'noopener' }, '대중교통 경로 검색')));
+  } else {
+    details.append(el('p', { class: 'conf-note' }, '정확한 출발점 좌표가 확인되지 않았습니다. 장소 검색 결과에서 입구를 확인해 주세요.'),
+      el('a', { class: 'btn', href: `https://map.kakao.com/link/search/${encodeURIComponent(name)}`, target: '_blank', rel: 'noopener' }, `${label} 장소 검색`));
+  }
+  details.append(el('p', { class: 'conf-note' }, '주차: 전용 주차장 위치·운영 정보 미확인. 대중교통: 도착 정류장·운행 시간은 경로 검색 결과에서 확인하세요.'));
+  return details;
 }

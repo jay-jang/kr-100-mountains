@@ -89,6 +89,7 @@ try {
 
   // region chip filter
   await page.fill('.search', '');
+  await page.locator('.filter-details summary').click();
   await page.click('.chip[data-region="제주"]');
   await page.waitForTimeout(300);
   const jeju = await page.$$eval('.mtn-item', (n) => n.length);
@@ -110,7 +111,7 @@ try {
   await page.waitForSelector('.hero h2', { timeout: 10000 });
   const title = await page.$eval('.hero h2', (n) => n.textContent);
   check('detail: hero title', title.includes('설악'), title);
-  const summary = await page.$eval('.section .prose', (n) => n.textContent.length);
+  const summary = (await page.locator('.section').filter({ has: page.getByRole('heading', { name: '개요', exact: true }) }).locator('.prose').textContent()).length;
   check('detail: summary present', summary > 30, `${summary} chars`);
   const hasTrails = await page.$$eval('.trail-card', (n) => n.length);
   check('detail: trail cards render', hasTrails >= 1, `${hasTrails} trails`);
@@ -126,6 +127,7 @@ try {
   const summitMarker = await page.$$eval('#detail-map .leaflet-marker-icon, #detail-map path.leaflet-interactive', (n) => n.length);
   check('detail: summit marker on map', summitMarker >= 1, `${summitMarker} markers`);
   await page.click('.hike-btn');
+  await page.getByRole('button', { name: '기록 저장', exact: true }).click();
   const hikeOn = await page.$eval('.hike-btn', (n) => n.classList.contains('done'));
   check('detail: hike toggle works', hikeOn);
   await page.screenshot({ path: join(SHOTS, 'detail.png'), fullPage: true });
@@ -217,6 +219,7 @@ try {
   await sPage.screenshot({ path: join(SHOTS, 'map-search.png') });
 
   // 칩을 눌러도(같은 검색어로 update 재발생) 자동 맞춤이 줌을 되돌리면 안 된다
+  await sPage.locator('.filter-details summary').click();
   await sPage.locator('.chip', { hasText: '강원' }).first().click();
   await sPage.waitForTimeout(1600);
   check('search: 칩 토글해도 선택한 산의 줌 유지', (await mapViewport(sPage))?.z === (vp?.z ?? 13), `z=${(await mapViewport(sPage))?.z}`);
@@ -313,6 +316,7 @@ try {
   check('gpx: 산별 상세 파일 분리', !!sample?.tracks?.length, listed ? `${listed.mountain_id} ${listed.tracks}건` : 'none');
   if (sample) {
     await page.goto(`${base}/#/m/${sample.mountain_id}`, { waitUntil: 'networkidle', timeout: 30000 });
+    await page.getByRole('button', { name: '코스별 경로 GPX', exact: true }).click();
     await page.waitForSelector('.gpxdl-item', { timeout: 10000 });
     const rows = await page.$$eval('.gpxdl-item', (n) => n.length);
     check('gpx: 상세 페이지에 코스별 내려받기 목록', rows >= sample.tracks.length, `${sample.mountain_id} ${rows}건`);
@@ -414,6 +418,7 @@ try {
     check('reviews: 출처가 http(s) URL', (detail?.notes || []).every((n) => n.sources.every((u) => /^https?:\/\//.test(u))));
 
     await page.goto(`${base}/#/m/${rvSample.id}`, { waitUntil: 'networkidle', timeout: 30000 });
+    await page.getByRole('button', { name: '탐방 후기 · 현장 정보', exact: true }).click();
     await page.waitForSelector('.rv-item', { timeout: 10000 });
     const rvRows = await page.$$eval('.rv-item', (n) => n.length);
     check('reviews: 상세 페이지 렌더', rvRows === detail.notes.length, `${rvRows}건`);

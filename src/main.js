@@ -36,10 +36,15 @@ main.tabIndex = -1;
 
 // ---- router ----
 let cleanup = null;
+let routeVersion = 0;
 async function route() {
+  const version = ++routeVersion;
+  let nextCleanup = null;
   if (cleanup) { try { cleanup(); } catch {} cleanup = null; }
   clear(main);
   main.className = '';
+  const mount = el('div', { class: 'route-mount' });
+  main.append(mount);
   const hash = location.hash.replace(/^#/, '') || '/';
   const [path] = hash.split('?');
   const parts = path.split('/').filter(Boolean); // [] | ['map'] | ['m', id] | ['track']
@@ -50,18 +55,21 @@ async function route() {
   try {
     if (parts[0] === 'm' && parts[1]) {
       main.className = '';
-      cleanup = await renderDetail(main, decodeURIComponent(parts[1]));
+      nextCleanup = await renderDetail(mount, decodeURIComponent(parts[1]));
     } else if (parts[0] === 'map') {
       main.className = 'home-mode';
-      cleanup = await renderExplore(main);
+      nextCleanup = await renderExplore(mount);
     } else if (parts[0] === 'track' || parts[0] === 'stats') {
       main.className = '';
-      cleanup = await renderStats(main);
+      nextCleanup = await renderStats(mount);
     } else {
       main.className = '';
-      cleanup = await renderHome(main);
+      nextCleanup = await renderHome(mount);
     }
+    if (version === routeVersion) cleanup = nextCleanup;
+    else nextCleanup?.();
   } catch (e) {
+    if (version !== routeVersion) return;
     console.error(e);
     clear(main);
     main.append(el('div', { class: 'page' }, el('div', { class: 'empty' }, '오류: ' + e.message)));

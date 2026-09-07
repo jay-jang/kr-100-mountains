@@ -150,3 +150,18 @@ Vanilla JS + [Vite](https://vitejs.dev) · 지도: [Leaflet](https://leafletjs.c
 npm run build && npm test   # 헤드리스(playwright) 스모크 테스트 + 스크린샷(shots/)
 ```
 ※ 이 저장소는 **arm64** 환경에서 개발되어 playwright(arm64 chromium)를 사용합니다. 최초 1회 `sudo npx playwright install-deps chromium` 필요.
+
+UX 회귀 검사는 `npm run test:ux`로 실행합니다. 테마·코스 필터, 뒤로 가기와 지도 위치 복원, 들머리 길찾기, 산행일 수정·삭제 복구, 모바일/데스크톱 및 밝은/어두운 테마를 확인합니다. 브라우저 기록은 격리된 테스트 컨텍스트에만 저장합니다.
+
+카카오 도메인 등록에 의존하지 않는 테스트용 빌드:
+
+```bash
+npm run build:data
+VITE_KAKAO_KEY='' npx vite build --outDir /tmp/kr100-ux-test
+SMOKE_DIST=/tmp/kr100-ux-test npm test
+SMOKE_DIST=/tmp/kr100-ux-test npm run test:ux
+```
+
+등록된 로컬 카카오 주소에서도 UX 검사를 실행할 수 있습니다. 먼저 `npm run dev`로 서버를 실행한 뒤 `UX_BASE_URL=http://localhost:5173 npm run test:ux`를 사용합니다. 기존 스모크 검사의 지도 타일·선 검증은 Leaflet 전용입니다.
+
+코스 필터의 시간은 **왕복 시간**, 거리는 **자료에 기록된 코스 거리**입니다. 같은 코스가 모든 조건을 만족해야 하며, 값이 없는 코스는 해당 제한 조건을 통과하지 않습니다. 길찾기는 신뢰도가 높은 들머리 좌표로 연결하고, 그 외에는 장소 검색을 제공합니다. 별도로 확인되지 않은 주차장·정류장 좌표를 추정하지 않습니다. 산행일 저장·수정·삭제 복구는 기존 로컬 기록 형식과 클라우드 동기화 훅을 유지합니다.
