@@ -22,7 +22,7 @@ export async function renderDetail(root, id) {
   }
   recordView(m.id);
 
-  const page = el('div', { class: 'page' });
+  const page = el('div', { class: 'page detail-page' });
   root.append(page);
   // 라우트를 떠난 뒤 늦게 도착한 응답이 파괴된 지도를 건드리지 않게 하는 표식.
   let disposed = false;
@@ -51,9 +51,9 @@ export async function renderDetail(root, id) {
     el('span', {}, `${m.region} · ${m.location}`),
     el('span', { class: 'elev' }, `해발 ${m.elevation_m}m`),
     Number.isFinite(myDist)
-      ? el('span', { class: 'sub-dist', title: '현재 위치에서의 직선거리' }, `📍 현 위치에서 ${bearingLabel(myPos, m.lat, m.lon)}쪽 ${fmtDistFine(myDist)}`)
+      ? el('span', { class: 'sub-dist', title: '현재 위치에서의 직선거리' }, `현 위치에서 ${bearingLabel(myPos, m.lat, m.lon)}쪽 ${fmtDistFine(myDist)}`)
       : null,
-    m.best_season ? el('span', {}, `🍂 ${m.best_season}`) : null);
+    m.best_season ? el('span', {}, `${m.best_season}`) : null);
 
   page.append(el('div', { class: 'hero' },
     el('div', {},
@@ -62,6 +62,9 @@ export async function renderDetail(root, id) {
     el('div', { class: 'hero-badges' },
       ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => listPill(k, m))),
     hikeBtn));
+
+  const contents = el('nav', { class: 'detail-contents', 'aria-label': '산 정보 목차' });
+  page.append(contents);
 
   // ---- summary ----
   page.append(el('div', { class: 'section' },
@@ -83,10 +86,10 @@ export async function renderDetail(root, id) {
   // ---- location · route · navigation ----
   const mapNode = el('div', { id: 'detail-map' });
   const fileInput = el('input', { type: 'file', accept: '.gpx', style: 'display:none' });
-  const fileBtn = el('button', { type: 'button', onClick: () => fileInput.click() }, '📈 GPX 불러오기');
-  const locateBtn = el('button', { type: 'button', title: '내 위치 실시간 표시' }, '📍 내 위치');
-  const dirBtn = el('button', { type: 'button', title: '외부 지도 길찾기' }, '🧭 길찾기');
-  const followBtn = el('button', { type: 'button', disabled: true, title: 'GPX 경로를 따라 실시간 안내' }, '➡️ 경로 따라가기');
+  const fileBtn = el('button', { type: 'button', onClick: () => fileInput.click() }, 'GPX 불러오기');
+  const locateBtn = el('button', { type: 'button', title: '내 위치 실시간 표시' }, '내 위치');
+  const dirBtn = el('button', { type: 'button', title: '외부 지도 길찾기' }, '길찾기');
+  const followBtn = el('button', { type: 'button', disabled: true, title: 'GPX 경로를 따라 실시간 안내' }, '경로 따라가기');
   const dirMenu = el('div', { class: 'dir-menu', hidden: true });
   const tools = el('div', { class: 'map-tools' }, locateBtn, dirBtn, fileBtn, followBtn, fileInput);
   const navPanel = el('div', { class: 'nav-panel', hidden: true });
@@ -99,7 +102,7 @@ export async function renderDetail(root, id) {
   // 수집한 계산 경로는 실측(빨강)·OSM 등산로와 한눈에 구분되도록 보라 계열로 따로 둔다.
   const COLLECTED_COLORS = ['#7048e8', '#0b7285', '#a61e4d', '#5c7cfa'];
   const routeList = el('div', { class: 'route-list' });
-  const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '🗻 실제 등산로 불러오기');
+  const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '실제 등산로 불러오기');
   const showOnMapChk = el('input', { type: 'checkbox', id: 'route-showmap', checked: true });
   const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 지도에 겹쳐 표시');
   const routeLoading = el('div', { class: 'route-loading', hidden: true },
@@ -110,7 +113,7 @@ export async function renderDetail(root, id) {
   page.append(el('div', { class: 'section' },
     el('h3', {}, '등산로별 고도'),
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
-      '등산로를 고르면 아래에 고도 단면이 나타납니다. 각 항목의 “🗺 지도”를 켜면 여러 경로를 지도에 '
+      '등산로를 고르면 아래에 고도 단면이 나타납니다. 각 항목의 “지도”를 켜면 여러 경로를 지도에 '
       + '겹쳐 볼 수 있습니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반이며, '
       + '“계산” 표시가 붙은 것은 실측 기록이 아니라 등산로망 위에서 계산한 경로입니다.'),
     el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
@@ -158,7 +161,7 @@ export async function renderDetail(root, id) {
         class: 'route-eye' + (on ? ' on' : ''), type: 'button',
         'aria-pressed': on ? 'true' : 'false',
         title: on ? '지도에서 숨기기' : '지도에 표시',
-      }, on ? '🗺 표시중' : '🗺 지도');
+      }, on ? '표시중' : '지도');
       eye.addEventListener('click', () => toggleShown(r.rid));
       routeList.append(el('div', { class: 'route-item' + (r.rid === activeId ? ' active' : '') }, pick, eye));
     }
@@ -393,7 +396,7 @@ export async function renderDetail(root, id) {
     } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
     finally {
       routeLoading.hidden = true;
-      setBtnLoading(loadTrailsBtn, false, null, routes.some((r) => r.kind === 'osm') ? '🗻 실제 등산로 다시 불러오기' : orig);
+      setBtnLoading(loadTrailsBtn, false, null, routes.some((r) => r.kind === 'osm') ? '실제 등산로 다시 불러오기' : orig);
       renderRouteList();
     }
   });
@@ -465,20 +468,20 @@ export async function renderDetail(root, id) {
     if (stopWatch) { stopWatch(); stopWatch = null; }
     locLayer.remove(); locateOn = false; following = false; navPanel.hidden = true;
     locateBtn.classList.remove('loading', 'active'); locateBtn.textContent = err.code === 1 ? '🚫 권한 거부' : '⚠️ 위치 실패';
-    followBtn.classList.remove('active'); followBtn.textContent = '➡️ 경로 따라가기';
-    setTimeout(() => { locateBtn.textContent = '📍 내 위치'; }, 2200);
+    followBtn.classList.remove('active'); followBtn.textContent = '경로 따라가기';
+    setTimeout(() => { locateBtn.textContent = '내 위치'; }, 2200);
   }
   function ensureWatch() { if (!stopWatch) { firstFix = true; stopWatch = watchPosition(onPos, onGeoErr); } }
   function maybeStopWatch() { if (!locateOn && !following && stopWatch) { stopWatch(); stopWatch = null; locLayer.remove(); } }
 
   function toggleLocate() {
-    if (locateOn) { locateOn = false; locateBtn.classList.remove('active'); locateBtn.textContent = '📍 내 위치'; maybeStopWatch(); return; }
+    if (locateOn) { locateOn = false; locateBtn.classList.remove('active'); locateBtn.textContent = '내 위치'; maybeStopWatch(); return; }
     locateOn = true; locateBtn.classList.add('active', 'loading'); locateBtn.textContent = '⏳'; ensureWatch();
   }
   function toggleFollow() {
     if (!navTrack) return;
     if (following) {
-      following = false; navPanel.hidden = true; followBtn.classList.remove('active'); followBtn.textContent = '➡️ 경로 따라가기'; maybeStopWatch(); return;
+      following = false; navPanel.hidden = true; followBtn.classList.remove('active'); followBtn.textContent = '경로 따라가기'; maybeStopWatch(); return;
     }
     following = true; followBtn.classList.add('active'); followBtn.textContent = '⏹ 안내 중지'; navPanel.hidden = false;
     navPanel.textContent = '위치 확인 중…'; ensureWatch();
@@ -513,7 +516,7 @@ export async function renderDetail(root, id) {
         t.difficulty ? el('span', { class: 'diff ' + (DIFF_CLASS[t.difficulty] || 'd2') }, t.difficulty) : null,
         vb ? el('span', { class: 'vbadge ' + vb[1], title: verifyTitle(t.verify) }, vb[0]) : null);
       const routeBtn = t.trailhead
-        ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '🗻 지도·고도')
+        ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '지도·고도')
         : null;
       if (routeBtn) routeBtn.addEventListener('click', () => showCourseRoute(t, routeBtn));
       grid.append(el('div', { class: 'trail-card' },
@@ -522,7 +525,7 @@ export async function renderDetail(root, id) {
     });
     page.append(el('div', { class: 'section' },
       el('h3', {}, '주요 등산로'),
-      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다. “🗻 지도·고도”로 각 코스의 실제 경로와 고도를 볼 수 있습니다.'),
+      el('p', { class: 'conf-note', style: 'margin:-4px 0 12px' }, '난이도·등반시간은 웹 조사와 복수의 독립 자료를 교차검증한 값입니다. “지도·고도”로 각 코스의 실제 경로와 고도를 볼 수 있습니다.'),
       grid));
   }
 
@@ -548,6 +551,13 @@ export async function renderDetail(root, id) {
     '실제 산행 전에는 국립공원·지자체의 최신 탐방로·통제 정보를 반드시 확인하세요. ' +
     '지도의 등산로 선은 OpenStreetMap 데이터입니다. GPX는 실측 기록과 “계산 경로”를 구분해 표시하며, 계산 경로는 OpenStreetMap 등산로망 위에서 계산한 것이라 실제 기록이 아닙니다.'));
 
+  page.querySelectorAll('.section').forEach((section, i) => {
+    const title = section.querySelector('h3');
+    if (!title) return;
+    section.id = `mountain-section-${i}`;
+    contents.append(el('button', { type: 'button', onClick: () => section.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }) }, title.childNodes[0].textContent.trim()));
+  });
+
   const off = onChange(paintHike);
   const onTheme = () => view && view.refreshTheme();
   window.addEventListener('kr100:theme', onTheme);
@@ -569,17 +579,11 @@ function factSpan(label, val) {
   return el('span', {}, `${label} `, el('b', {}, val));
 }
 
-// 한국의산하 인기명산 순위 메달 (상위권 강조)
-function rankMedal(rank) {
-  const m = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank <= 10 ? '🏅' : '';
-  return m ? el('span', { class: 'medal', 'aria-hidden': 'true' }, m + ' ') : null;
-}
 
-// 리스트 pill — 한국의산하는 인기명산 순위, 월간산은 선정기준 충족 개수를 함께 표시
 function listPill(k, m) {
   if (k === 'hansanha' && m.hansanha_rank) {
     return el('span', { class: 'pill p-hansanha ranked', title: '한국의 산하(koreasanha.net) 인기명산 100 접속순위' },
-      rankMedal(m.hansanha_rank), '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`));
+      '한국의산하 인기명산', el('b', { class: 'pill-rank' }, ` ${m.hansanha_rank}위`));
   }
   if (k === 'wolgansan' && m.wolgansan_criteria) {
     const wc = m.wolgansan_criteria;

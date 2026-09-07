@@ -50,7 +50,7 @@ export async function renderExplore(root) {
   const regionChips = el('div', { class: 'chips' });
   const listChips = el('div', { class: 'chips', 'aria-label': '명산 리스트' });
   const allFourChip = el('button', { class: 'chip', 'aria-pressed': String(state.allFour), title: '4개 리스트 모두에 든 산' }, '★ 4대 공통');
-  const hikedChip = el('button', { class: 'chip', 'aria-pressed': String(state.hikedOnly) }, '⛰ 등정한 산만');
+  const hikedChip = el('button', { class: 'chip', 'aria-pressed': String(state.hikedOnly) }, '등정한 산만');
   const countEl = el('span', { 'aria-live': 'polite' });
   const resetBtn = el('button', {}, '필터 초기화');
   const listEl = el('div', { class: 'mtn-list' });
@@ -58,7 +58,7 @@ export async function renderExplore(root) {
 
   // ---- 정렬(기본순 / 가까운 순) ----
   const sortDefaultBtn = el('button', { type: 'button', 'aria-pressed': 'true' }, '기본순');
-  const sortNearBtn = el('button', { type: 'button', 'aria-pressed': 'false' }, '📍 가까운 순');
+  const sortNearBtn = el('button', { type: 'button', 'aria-pressed': 'false' }, '가까운 순');
   const sortSeg = el('div', { class: 'seg sort-seg', role: 'group', 'aria-label': '목록 정렬' }, sortDefaultBtn, sortNearBtn);
   const geoNote = el('div', { class: 'geo-note', role: 'status', hidden: true });
 
@@ -106,6 +106,7 @@ export async function renderExplore(root) {
   });
 
   const panel = el('aside', { class: 'panel' },
+    el('div', { class: 'explore-heading' }, el('span', { class: 'eyebrow' }, '전국 명산 안내'), el('h2', {}, '명산 지도')),
     el('div', { class: 'filters' }, panelSearch.root, sortSeg, geoNote, regionChips, listChips,
       el('div', { class: 'chips', style: 'margin-top:8px' }, allFourChip, hikedChip),
       el('div', { class: 'filters-foot' }, countEl, resetBtn)),
@@ -117,7 +118,7 @@ export async function renderExplore(root) {
     el('div', { class: 'row' }, el('span', { class: 'hiked-star' }, '★'), '등정 완료'));
 
   // 현재 위치 버튼
-  const locateBtn = el('button', { class: 'locate-btn', type: 'button', title: '내 위치 표시', 'aria-label': '내 위치 표시' }, '📍');
+  const locateBtn = el('button', { class: 'locate-btn', type: 'button', title: '내 위치 표시', 'aria-label': '내 위치 표시' }, '◎');
 
   const mapWrap = el('div', { class: 'map-wrap' }, mapNode, legend, locateBtn);
   const homeEl = el('div', { class: 'home', dataset: { view: 'list' } }, panel, mapWrap);
@@ -140,7 +141,7 @@ export async function renderExplore(root) {
   locateBtn.addEventListener('click', () => {
     if (stopWatch) {
       stopWatch(); stopWatch = null; firstFix = true;
-      locateBtn.classList.remove('active'); locateBtn.textContent = '📍';
+      locateBtn.classList.remove('active'); locateBtn.textContent = '◎';
       if (state.sort !== 'near') { locLayer.remove(); locShown = false; }  // 가까운 순일 땐 기준점 표시 유지
       return;
     }
@@ -157,7 +158,7 @@ export async function renderExplore(root) {
         if (state.sort !== 'near') { locLayer.remove(); locShown = false; }
         locateBtn.classList.remove('loading', 'active');
         locateBtn.textContent = err.code === 1 ? '🚫' : '⚠️';
-        setTimeout(() => (locateBtn.textContent = '📍'), 1800);
+        setTimeout(() => (locateBtn.textContent = '◎'), 1800);
       },
     );
   });
@@ -330,7 +331,7 @@ export async function renderExplore(root) {
             isHiked(m.id) ? el('span', { class: 'hiked-star', title: '등정 완료' }, '★') : null),
           el('div', { class: 'mtn-meta' },
             Number.isFinite(d)
-              ? el('span', { class: 'mtn-dist', title: '현재 위치에서의 직선거리' }, `📍 ${bearingLabel(pos, m.lat, m.lon)} ${fmtDistFine(d)}`)
+              ? el('span', { class: 'mtn-dist', title: '현재 위치에서의 직선거리' }, `${bearingLabel(pos, m.lat, m.lon)} ${fmtDistFine(d)}`)
               : null,
             el('span', {}, `${Math.round(m.elevation_m)}m`),
             el('span', {}, m.province))),
@@ -366,7 +367,7 @@ export async function renderExplore(root) {
       permissionState().then((s) => {
         if (disposed) return;
         if (s === 'granted') activateNear();
-        else setNote('‘📍 가까운 순’을 누르면 현재 위치를 확인해 가까운 산부터 보여드려요.', null);
+        else setNote('‘가까운 순’을 누르면 현재 위치를 확인해 가까운 산부터 보여드려요.', null);
       });
     }
   }

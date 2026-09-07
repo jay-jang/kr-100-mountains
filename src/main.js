@@ -1,4 +1,5 @@
 import './style.css';
+import './fieldguide.css';
 import { el, clear } from './dom.js';
 import { initTheme, toggleTheme } from './store.js';
 import { renderHome } from './views/home.js';
@@ -14,8 +15,8 @@ const appRoot = document.getElementById('app');
 
 // ---- header ----
 const nav = el('nav', { class: 'nav', 'aria-label': '주요 메뉴' },
-  el('a', { href: '#/', dataset: { route: 'home' } }, '홈'),
-  el('a', { href: '#/map', dataset: { route: 'map' } }, '지도'),
+  el('a', { href: '#/', dataset: { route: 'home' } }, '산 둘러보기'),
+  el('a', { href: '#/map', dataset: { route: 'map' } }, '명산 지도'),
   el('a', { href: '#/track', dataset: { route: 'track' } }, '내 기록'),
   el('a', { class: 'external-nav', href: 'https://ko.wikipedia.org/wiki/대한민국_100대_명산_목록', target: '_blank', rel: 'noopener' }, '원자료 ↗'));
 
@@ -24,13 +25,14 @@ themeBtn.addEventListener('click', () => { toggleTheme(); window.dispatchEvent(n
 
 const header = el('header', { class: 'app-header' },
   el('a', { class: 'brand', href: '#/', style: 'color:inherit' },
-    el('span', { class: 'logo' }, '⛰️'),
+    el('span', { class: 'logo', 'aria-hidden': 'true' }, '山'),
     el('div', {}, el('h1', {}, '대한민국 100대 명산'),
-      el('small', {}, '산림청 · 블랙야크 · 한국의산하 · 월간산 통합 위키'))),
+      el('small', {}, '우리 산을 걷는 즐거움'))),
   nav, themeBtn);
 
 const main = el('main', { id: 'view' });
-appRoot.append(header, main);
+appRoot.append(el('a', { class: 'skip-link', href: '#view', onClick: (e) => { e.preventDefault(); main.focus(); } }, '본문으로 건너뛰기'), header, main);
+main.tabIndex = -1;
 
 // ---- router ----
 let cleanup = null;

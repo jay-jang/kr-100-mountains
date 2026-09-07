@@ -2,7 +2,7 @@
 // 가벼운 목록 gpx/routes/index.json → 산별 상세 gpx/routes/m/<산id>.json 순으로 받는다.
 //
 // 이 파일들은 실측 GPS 기록이 아니라 OSM 등산로망 위에서 계산한 경로다. 그래서 자동으로
-// 그리지 않고, 사용자가 "🗺 지도"를 눌렀을 때만 위쪽 등산로 목록에 합류시켜 주요 등산로와
+// 그리지 않고, 사용자가 "지도"를 눌렀을 때만 위쪽 등산로 목록에 합류시켜 주요 등산로와
 // 겹쳐 볼 수 있게 한다. 목록·지도 어디서나 "계산" 표시가 따라붙는다.
 import { el } from './dom.js';
 import { fmtDist } from './geo.js';
@@ -45,11 +45,11 @@ const fileName = (f) => f.split('/').pop();
 // 누르면 위쪽 "등산로별 고도" 목록에 합류시킨다.
 // 버튼 라벨은 "목록에 추가됨"까지만 말한다 — 지도 표시 여부는 그 목록의 토글이 주인이고,
 // 거기서 끄면 여기 라벨이 "지도에 있음"으로 남아 거짓말이 되기 때문이다.
-const markAdded = (btn) => { if (!btn) return; btn.textContent = '🗺 목록에 추가됨'; btn.classList.add('on'); btn.dataset.added = '1'; };
+const markAdded = (btn) => { if (!btn) return; btn.textContent = '목록에 추가됨'; btn.classList.add('on'); btn.dataset.added = '1'; };
 
 function showButton(onShow, payload, buttonsByFile) {
   if (!onShow) return null;
-  const btn = el('button', { class: 'gpxdl-show', type: 'button', title: '위 등산로 목록에 올려 지도에 겹쳐 보기' }, '🗺 지도');
+  const btn = el('button', { class: 'gpxdl-show', type: 'button', title: '위 등산로 목록에 올려 지도에 겹쳐 보기' }, '지도');
   // 같은 파일을 가리키는 행이 여럿일 수 있어(좌표가 같으면 파일을 공유) 파일별로 모아 둔다.
   const list = buttonsByFile.get(payload.file) || [];
   list.push(btn); buttonsByFile.set(payload.file, list);
@@ -109,7 +109,7 @@ export function routeDownloadSection(mountainId, { onShow, onShowAll } = {}) {
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
       '실측 GPS 기록이 아닙니다. 등록된 들머리에서 정상까지를 OpenStreetMap 등산로망 위에서 계산한 경로이며, '
       + '현장 통제·계절 통제·출입 제한을 반영하지 않을 수 있으니 산행 전 공식 안내를 함께 확인하세요. '
-      + '“🗺 지도”를 누르면 위 “등산로별 고도” 목록에 더해져 주요 등산로와 겹쳐 볼 수 있습니다.'),
+      + '“지도”를 누르면 위 “등산로별 고도” 목록에 더해져 주요 등산로와 겹쳐 볼 수 있습니다.'),
     actions, list);
 
   routeEntryFor(mountainId).then((entry) => {
@@ -127,7 +127,7 @@ export function routeDownloadSection(mountainId, { onShow, onShowAll } = {}) {
         file: t.file, route_name: t.route_name, variant: t.variant,
         label: (t.route_name || `코스 ${t.route_index}`) + (t.variant ? ` (대안 ${t.variant})` : ''),
       }));
-      const allBtn = el('button', { class: 'btn', type: 'button' }, `🗺 계산 경로 ${uniq.length}개 모두 지도에 표시`);
+      const allBtn = el('button', { class: 'btn', type: 'button' }, `계산 경로 ${uniq.length}개 모두 지도에 표시`);
       allBtn.addEventListener('click', async () => {
         allBtn.disabled = true;
         const before = allBtn.textContent;

@@ -1,6 +1,6 @@
 // 홈 대시보드 — 지도 우선 대신 탐색·개인화·기록으로 이어지는 랜딩.
-import { loadData, REGION_COLORS, regionColor, LIST_KEYS, LIST_META, DIFF_CLASS } from '../data.js';
-import { hikedMap, hikedCount, isHiked, recentViews, onChange } from '../store.js';
+import { loadData, REGION_COLORS, LIST_KEYS, LIST_META, DIFF_CLASS } from '../data.js';
+import { hikedMap, isHiked, recentViews, onChange } from '../store.js';
 import { cachedPosition, requestPosition, onPositionChange, permissionState, geoAvailable,
   bearingLabel, positionAgeText, sortByDistance, FRESH_MS } from '../position.js';
 import { fmtDistFine } from '../geo.js';
@@ -54,9 +54,9 @@ export async function renderHome(root) {
 
     body.append(heroSection(data, season));
     body.append(returning ? progressSection(data, hikedIds) : introSection(data));
-    body.append(nearbySection(data, near, locateForNearby));
-    body.append(recommendSection(data, hikedIds, recent, season));
     body.append(quickExploreSection(data));
+    body.append(recommendSection(data, hikedIds, recent, season));
+    body.append(nearbySection(data, near, locateForNearby));
     body.append(curationSection(data, hikedIds, season));
     if (recent.length) body.append(recentSection(recent));
     body.append(footerSection());
@@ -78,12 +78,12 @@ export async function renderHome(root) {
 function heroSection(data, season) {
   const search = el('input', {
     class: 'dash-search', type: 'search', 'aria-label': '산 이름·지역 검색',
-    placeholder: '산 이름·지역으로 검색 (예: 설악, 지리, 경남)',
+    placeholder: '어느 산으로 떠날까요? 산 이름 또는 지역',
   });
   const results = el('div', { class: 'dash-suggest', hidden: true });
 
   const go = (q) => { location.hash = `#/map?q=${encodeURIComponent(q)}`; };
-  search.addEventListener('keydown', (e) => { if (e.key === 'Enter' && search.value.trim()) go(search.value.trim()); });
+  search.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.isComposing && search.value.trim()) go(search.value.trim()); });
   search.addEventListener('input', () => {
     const q = search.value.trim().toLowerCase();
     clear(results);
@@ -99,34 +99,47 @@ function heroSection(data, season) {
   });
 
   const chips = el('div', { class: 'dash-hero-chips' },
-    el('a', { class: 'hchip', href: '#/map' }, '🗺️ 지도로 탐색'),
-    el('a', { class: 'hchip', href: '#/map?sort=near' }, '📍 가까운 순'),
-    el('a', { class: 'hchip', href: `#/map?q=${encodeURIComponent(season.kw[0])}` }, `${seasonEmoji(season.name)} ${season.name} 추천`),
-    el('a', { class: 'hchip', href: '#/map?list=hansanha' }, '🏅 인기명산'),
-    el('a', { class: 'hchip', href: '#/track' }, '⛰ 내 기록'));
+    el('a', { class: 'hchip', href: '#/map' }, ' 지도로 탐색'),
+    el('a', { class: 'hchip', href: '#/map?sort=near' }, ' 가까운 순'),
+    el('a', { class: 'hchip', href: `#/map?q=${encodeURIComponent(season.kw[0])}` }, `${season.name} 추천`),
+    el('a', { class: 'hchip', href: '#/map?list=hansanha' }, ' 인기명산'),
+    el('a', { class: 'hchip', href: '#/track' }, ' 내 기록'));
 
+  const searchButton = el('button', { type: 'submit', 'aria-label': '산 검색' }, '검색 ↗');
+  const form = el('form', { class: 'dash-search-wrap', onSubmit: (e) => { e.preventDefault(); if (search.value.trim()) go(search.value.trim()); } }, search, searchButton, results);
+  search.addEventListener('keydown', (e) => { if (e.key === 'Escape') results.hidden = true; });
+  form.addEventListener('focusout', (e) => { if (!form.contains(e.relatedTarget)) results.hidden = true; });
   return el('section', { class: 'dash-hero' },
-    el('h1', {}, '대한민국 100대 명산'),
-    el('p', { class: 'dash-hero-sub' }, '산림청·블랙야크·한국의산하·월간산 네 목록을 통합한 149개 명산을 탐색하고 등정을 기록하세요.'),
-    el('div', { class: 'dash-search-wrap' }, search, results),
-    chips);
+    el('div', { class: 'hero-copy' },
+      el('p', { class: 'eyebrow' }, '대한민국 명산 안내서'),
+      el('h1', {}, '산으로 가는', el('br'), '나만의 길.'),
+      el('p', { class: 'dash-hero-sub' }, '가까운 뒷산부터 오래 마음에 둔 능선까지.', el('br'), '다음에 오를 산을 찾고, 걸어온 길을 기록하세요.'),
+      form, chips),
+    el('a', { class: 'atlas-cover', href: '#/map', 'aria-label': '전국 명산 지도 펼치기' },
+      el('span', { class: 'atlas-top' }, '전국 명산 지도', el('span', {}, '山 / 100')),
+      el('div', { class: 'contour-art', 'aria-hidden': 'true', html: contourArt() }),
+      el('div', { class: 'atlas-bottom' }, el('span', {}, '산을 만나는 또 하나의 방법', el('strong', {}, '지도를 펼쳐보세요')), el('span', { class: 'atlas-arrow' }, '↗'))));
 }
 
-function seasonEmoji(name) { return { 봄: '🌸', 여름: '🌿', 가을: '🍁', 겨울: '❄️' }[name] || '⛰'; }
+// Decorative contour drawing; not geographic or navigational data.
+function contourArt() {
+  const paths = Array.from({ length: 18 }, (_, i) => {
+    const scale = 0.20 + i * 0.065;
+    return `<path transform="translate(230 210) scale(${scale})" d="M-150,-110 C-110,-170 -40,-122 12,-162 C95,-216 122,-93 175,-65 C236,-26 153,33 153,100 C148,158 56,128 4,160 C-52,197 -62,100 -136,99 C-215,90 -161,15 -186,-24 C-211,-67 -172,-73 -150,-110Z"/>`;
+  }).join('');
+  return `<svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" fill="none"><g stroke="currentColor" stroke-width="1">${paths}</g><path d="M115 355 Q160 265 220 235 T266 127" stroke="#d7ae71" stroke-width="2" stroke-dasharray="4 6"/><circle cx="266" cy="127" r="5" fill="#d7ae71"/><path d="M228 200l7-12 7 12z" stroke="#e9e8d8"/><g stroke="#e9e8d8"><path d="M395 35v35m-7-27 7-8 7 8"/></g><text x="390" y="25" fill="#e9e8d8" font-size="11">N</text></svg>`;
+}
+
+
 
 function introSection(data) {
   const total = data.mountains.length;
   const stat = (n, l) => el('div', { class: 'intro-stat' }, el('b', {}, String(n)), el('span', {}, l));
-  return el('section', { class: 'dash-section intro-card' },
-    el('div', { class: 'intro-grid' },
-      stat(total, '고유 명산'),
-      stat(4, '통합 목록'),
-      stat(6, '권역'),
-      stat(58, '4대 공통')),
-    el('p', { class: 'intro-lead' }, '지역별로 정리된 산 지도, 코스별 난이도·등반시간, 교통, GPX 경로까지 한곳에서 확인하고, 오른 산을 기록해 보세요.'),
-    el('div', { class: 'intro-cta' },
-      el('a', { class: 'btn primary', href: '#/map' }, '첫 산 찾아보기 →'),
-      el('a', { class: 'btn', href: '#/track' }, '등정 기록 시작')));
+  return el('section', { class: 'dash-section intro-card', 'aria-label': '명산 안내서 수록 현황' },
+    el('div', { class: 'intro-label' }, '한곳에 모은', el('strong', {}, '우리나라 명산')),
+    el('div', { class: 'intro-grid' }, stat(total, '수록 명산'), stat(4, '선정 목록'), stat(6, '전국 권역'),
+      stat(data.mountains.filter(m => LIST_KEYS.every(k => m.lists[k])).length, '네 목록 공통')));
+
 }
 
 function progressSection(data, hikedIds) {
@@ -169,7 +182,7 @@ function nearbySection(data, near, onLocate) {
   if (!pos) {
     const btn = el('button', { class: 'btn primary', type: 'button', disabled: near.loading });
     if (near.loading) btn.append(el('span', { class: 'spinner', 'aria-hidden': 'true' }), ' 현재 위치 확인 중…');
-    else btn.append(near.error ? '📍 다시 시도' : '📍 내 위치로 가까운 산 찾기');
+    else btn.append(near.error ? ' 다시 시도' : ' 내 위치로 가까운 산 찾기');
     btn.addEventListener('click', () => onLocate());
 
     const unsupported = !geoAvailable();
@@ -231,9 +244,9 @@ function quickExploreSection(data) {
     el('span', { class: 'rc-dot' }), el('span', { class: 'rc-name' }, r), el('span', { class: 'rc-count' }, `${counts[r]}곳`)));
 
   const themes = [
-    ['🌸 봄꽃', 'q', '진달래'], ['🍁 단풍', 'q', '단풍'], ['🌾 억새', 'q', '억새'],
-    ['💧 계곡', 'q', '계곡'], ['🌅 일출', 'q', '일출'], ['🪨 암릉', 'q', '암릉'],
-    ['🚌 대중교통', 'q', '대중교통'],
+    [' 봄꽃', 'q', '진달래'], [' 단풍', 'q', '단풍'], [' 억새', 'q', '억새'],
+    [' 계곡', 'q', '계곡'], [' 일출', 'q', '일출'], [' 암릉', 'q', '암릉'],
+    [' 대중교통', 'q', '대중교통'],
   ];
   const themeChips = themes.map(([label, key, val]) =>
     el('a', { class: 'chip', href: `#/map?${key}=${encodeURIComponent(val)}` }, label));
@@ -241,7 +254,7 @@ function quickExploreSection(data) {
   const listChips = LIST_KEYS.map((k) => el('a', { class: `chip list-${k}`, href: `#/map?list=${k}` }, LIST_META[k].chip));
 
   return el('section', { class: 'dash-section' },
-    sectionHead('빠르게 탐색', null),
+    sectionHead('어디로 떠나볼까요', '지역과 테마로 찾는 산', '#/map'),
     el('div', { class: 'region-scroller' }, ...regionCards),
     el('div', { class: 'explore-groups' },
       el('div', { class: 'eg' }, el('span', { class: 'eg-label' }, '목록별'), el('div', { class: 'chips' }, ...listChips)),
@@ -261,9 +274,9 @@ function curationSection(data, hikedIds, season) {
     .slice(0, 4);
 
   const groups = [
-    ['🏅 한국의산하 인기명산 TOP', popular, '#/map?list=hansanha'],
-    ['🌱 초보자에게 좋은 산', easy, '#/map'],
-    [`${seasonEmoji(season.name)} 지금 오르기 좋은 ${season.name} 명산`, seasonal, `#/map?q=${encodeURIComponent(season.kw[0])}`],
+    [' 한국의산하 인기명산 TOP', popular, '#/map?list=hansanha'],
+    [' 초보자에게 좋은 산', easy, '#/map'],
+    [`지금 오르기 좋은 ${season.name} 명산`, seasonal, `#/map?q=${encodeURIComponent(season.kw[0])}`],
   ].filter(([, arr]) => arr.length);
 
   return el('section', { class: 'dash-section' },
@@ -296,15 +309,14 @@ function sectionHead(title, sub, moreHref) {
 function mtnCard(m, reason) {
   const diff = difficultyOf(m);
   return el('a', { class: 'mtn-card', href: `#/m/${m.id}` },
-    el('span', { class: 'mc-accent', style: `background:${REGION_COLORS[m.region]}` }),
+    el('span', { class: 'mc-index' }, `${Math.round(m.elevation_m).toLocaleString()} `, el('small', {}, 'm')),
     el('div', { class: 'mc-body' },
       el('div', { class: 'mc-top' },
         el('span', { class: 'mc-name' }, m.name, m.disambig ? el('span', { class: 'disambig' }, m.disambig) : null),
-        isHiked(m.id) ? el('span', { class: 'hiked-star', title: '등정 완료' }, '★') : null),
+        isHiked(m.id) ? el('span', { class: 'hiked-star', title: '등정 완료' }, '') : null),
       el('div', { class: 'mc-meta' },
         el('span', {}, `${m.region} · ${Math.round(m.elevation_m)}m`),
         diff ? el('span', { class: 'mc-diff ' + (DIFF_CLASS[diff] || 'd2') }, diff) : null),
-      el('div', { class: 'mc-badges' },
-        ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => el('span', { class: `badge b-${k}` }, LIST_META[k].badge))),
-      reason ? el('div', { class: 'mc-reason' }, `· ${reason}`) : null));
+      el('div', { class: 'mc-description' }, (m.features || []).slice(0, 3).join(' · ')),
+      reason ? el('div', { class: 'mc-reason' }, reason) : null));
 }

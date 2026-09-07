@@ -7,7 +7,7 @@ const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 
 export async function renderStats(root) {
   const data = await loadData();
-  const page = el('div', { class: 'page' });
+  const page = el('div', { class: 'page journal-page' });
   root.append(page);
 
   const authBox = el('div', { class: 'auth-box' });
@@ -35,6 +35,7 @@ export async function renderStats(root) {
     });
     cards.push(statCard('전체 명산', all.filter((m) => ids.has(m.id)).length, all.length));
 
+    body.append(el('div', { class: 'journal-summary' }, el('span', { class: 'eyebrow' }, '차곡차곡 쌓이는 산행'), el('p', {}, '지금까지 ', el('strong', {}, String(all.filter(m => ids.has(m.id)).length)), '개의 산을 올랐습니다.'), el('a', { href: '#/map' }, '다음 산 찾아보기 ↗')));
     body.append(el('div', { class: 'stat-grid' }, ...cards));
 
     // region breakdown
@@ -56,7 +57,7 @@ export async function renderStats(root) {
       .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const listSec = el('div', { class: 'section' }, el('h3', {}, `등정한 산 (${hikedMtns.length})`));
     if (!hikedMtns.length) {
-      listSec.append(el('div', { class: 'empty' }, '아직 기록이 없습니다. 산 상세 페이지에서 “등정 기록”을 눌러 보세요.'));
+      listSec.append(el('div', { class: 'empty' }, el('strong', {}, '첫 산행을 기록해 보세요.'), el('p', {}, '다녀온 산을 찾아 ‘등정 기록’을 누르면 이곳에 모입니다.'), el('a', { class: 'btn', href: '#/map' }, '다녀온 산 찾기 ↗')));
     } else {
       const grid = el('div', { class: 'mtn-list', style: 'max-height:none' });
       hikedMtns.forEach(({ m, date }) => {
