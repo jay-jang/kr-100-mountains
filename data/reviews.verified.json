@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T19:14:23.269Z",
+  "generated_at": "2026-09-24T19:14:08.517Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,7 +16,7 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 1030,
+    "notes": 1032,
     "verified": 165
   },
   "mountains": [
@@ -9486,26 +9486,24 @@
     {
       "id": "hambaeksan-taebaek",
       "name": "함백산(태백)",
-      "collected_at": "2026-09-03",
-      "checked_by": 1,
+      "collected_at": "2026-09-24",
+      "checked_by": 0,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
+          "scope": "route",
+          "route": "만항재-함백산 정상 코스",
           "topic": "위험구간",
-          "text": "정상부와 능선은 사계절 내내 강풍(칼바람)이 심하게 불어 체감온도가 급격히 떨어지며, 겨울철에는 등산로 전반에 결빙과 살얼음이 발생하므로 아이젠과 방한 장비 착용이 필수적이다.",
+          "text": "해발 1,570m가 넘는 정상부는 강풍이 상시 불어 체감온도가 급격히 떨어지며, 겨울철 결빙 구간이 길어 아이젠과 방한 장구를 반드시 갖추어야 합니다.",
           "sentiment": "caution",
-          "as_of": "2026-01",
+          "as_of": "2024-01",
           "sources": [
-            "https://hikingsong.tistory.com/entry/%ED%99%98%EC%83%81%EC%A0%81%EC%9D%B8-%EA%B2%A8%EC%9A%B8-%EB%88%88%EA%BD%83-%EC%82%B0%ED%96%89-%EB%93%B1%EC%82%B0-%EC%B4%88%EB%B3%B4%EB%8F%84-%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%95%A8%EB%B0%B1%EC%82%B0-%EB%A7%8C%ED%95%AD%EC%9E%AC-%EC%BD%94%EC%8A%A4",
-            "https://blog.naver.com/amyangela/224156373166",
-            "https://blog.naver.com/crom234/224147160018"
+            "https://min545454.tistory.com/75"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9513,17 +9511,67 @@
           "scope": "mountain",
           "route": null,
           "topic": "통제·예약",
-          "text": "태백산국립공원 입산 가능 시간은 동절기 04:00~15:00, 하절기 03:00~16:00이며, 봄철 산불조심기간에는 함백산 정상에서 중함백 방면 능선 구간 등 일부 탐방로가 통제된다.",
+          "text": "태백산국립공원 입산시간지정제에 따라 동절기(11월~3월)는 04:00~15:00, 하절기(4월~10월)는 03:00~16:00에만 입산이 허용됩니다.",
           "sentiment": "caution",
-          "as_of": "2026-03",
+          "as_of": "2024-01",
           "sources": [
-            "https://www.knps.or.kr/portal/main/contents.do?menuNo=8000198",
-            "https://blog.naver.com/jkm501/224224621006"
+            "https://min545454.tistory.com/75"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "두문동재-은대봉-중함백-함백산 정상-만항재",
+          "topic": "난이도",
+          "text": "두문동재에서 출발해 은대봉, 중함백을 거쳐 함백산 정상과 만항재로 이어지는 능선길(약 8.6km)은 해발 1,200~1,500m 고지대임에도 완만하여 4~5시간 동안 편안하게 산책하듯 걸을 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2023-07",
+          "sources": [
+            "https://zznz.co.kr/archives/21269"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "두문동재-은대봉-중함백-함백산 정상-만항재",
+          "topic": "통제·예약",
+          "text": "두문동재 북쪽의 금대봉·대덕산 방면 탐방로는 국립공원 사전 예약이 필수이나, 두문동재 남쪽의 은대봉·함백산 방면 능선 코스는 별도 예약 없이 상시 탐방할 수 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-07",
+          "sources": [
+            "https://zznz.co.kr/archives/21269"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "두문동재-은대봉-함백산 코스",
+          "topic": "주차·교통",
+          "text": "두문동재 들머리는 주차 공간이 협소하므로 만항재 쉼터 주차장에 차를 대고 콜택시를 이용해 두문동재로 이동한 후 산행하는 방식이 주로 활용됩니다.",
+          "sentiment": "neutral",
+          "as_of": "2022-06",
+          "sources": [
+            "https://security-song.tistory.com/146"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9531,91 +9579,33 @@
           "scope": "route",
           "route": "만항재-함백산 정상 코스",
           "topic": "편의시설",
-          "text": "최단코스 들머리인 KBS중계소 차단기 앞 공터에는 화장실이 전혀 없으므로, 만항재 야생화 쉼터나 함백산 소공원 주차장의 공중화장실을 사전에 이용해야 한다.",
+          "text": "만항재 쉼터와 백두대간 야생화 탐방로 주차장에 남녀 구분 공중화장실이 마련되어 있으나, KBS 함백산 중계소 앞 최단코스 들머리와 등산로에는 화장실이 전혀 없습니다.",
           "sentiment": "neutral",
-          "as_of": "2026-01",
+          "as_of": "2024-01",
           "sources": [
-            "https://wonhaeng.tistory.com/457",
-            "https://blog.naver.com/crom234/224147160018",
-            "https://blog.naver.com/jkm501/224224621006"
+            "https://min545454.tistory.com/75"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "국내 포장도로 중 가장 높은 고갯길인 만항재(1,330m) 일원과 함백산 능선은 7~8월에 국내 최대 규모 야생화 군락지가 만개해 축제가 열리며, 겨울에는 설경과 상고대로 인기가 높다.",
-          "sentiment": "good",
-          "as_of": "2026-08",
-          "sources": [
-            "https://wonhaeng.tistory.com/457",
-            "https://blog.naver.com/spxl1010/224369772612",
-            "https://blog.naver.com/dudrl3650/224338960960"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
         {
           "scope": "route",
           "route": "만항재-함백산 정상 코스",
-          "topic": "난이도",
-          "text": "만항재 인근 KBS중계소 입구 차단기(해발 약 1,360m)에서 출발하면 정상(1,572.9m)까지 고도차가 약 210m에 불과하며, 편도 약 1km 거리로 30~40분이면 오를 수 있어 체감 난이도가 매우 낮다.",
-          "sentiment": "good",
-          "as_of": "2026-03",
-          "sources": [
-            "https://v.daum.net/v/G3HfYsYChS",
-            "https://blog.naver.com/jkm501/224224621006"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "두문동재-은대봉-중함백-함백산 정상-만항재",
           "topic": "조망·볼거리",
-          "text": "백두대간 주능선을 따라 걸으며 매봉산 바람의언덕 풍력발전 단지와 태백산맥 능선이 시원하게 펼쳐지며, 고산 지대의 주목 군락지와 야생화를 감상하기 좋다.",
+          "text": "해발 1,330m 만항재에서 출발해 완만한 숲길을 지나 정상에 오르면 사방으로 백두대간 마루금과 태백산 일대의 탁 트인 운해 및 능선 조망을 감상할 수 있습니다.",
           "sentiment": "good",
-          "as_of": "2026-06",
+          "as_of": "2023-08",
           "sources": [
-            "https://www.hapt.co.kr/news/articleView.html?idxno=159455",
-            "https://blog.naver.com/iloveknp/224312777275"
+            "https://wonhaeng.tistory.com/457"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "두문동재-은대봉-중함백-함백산 정상-만항재",
-          "topic": "난이도",
-          "text": "해발 1,268m의 두문동재에서 출발해 만항재(1,330m)로 이어지는 총 약 8.5~9km 코스로, 능선 오르내림이 완만하여 초보자도 3시간 30분 안팎으로 수월하게 완주할 수 있다.",
-          "sentiment": "good",
-          "as_of": "2026-07",
-          "sources": [
-            "https://www.hapt.co.kr/news/articleView.html?idxno=159455",
-            "https://blog.naver.com/dudrl3650/224338960960"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         }
@@ -9881,45 +9871,25 @@
     {
       "id": "huiyangsan",
       "name": "희양산",
-      "collected_at": "2026-09-03",
-      "checked_by": 1,
+      "collected_at": "2026-09-24",
+      "checked_by": 0,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "은티마을-지름티재-정상",
           "topic": "위험구간",
-          "text": "지름티재에서 정상 직전 안부로 이어지는 약 500m 구간은 수직에 가까운 화강암 대슬랩 암벽에 긴 로프가 설치된 험로로, 팔 힘 소모가 크고 추락 위험이 높아 장갑과 접지력 좋은 등산화가 필수이다.",
+          "text": "지름티재에서 정상 직전 능선 삼거리까지 이어지는 약 100~200m 구간은 직벽에 가까운 암벽에 연속으로 밧줄이 설치된 고난도 세미클라이밍 구간으로 코팅 장갑 착용이 필수적입니다.",
           "sentiment": "caution",
-          "as_of": "2026-01",
+          "as_of": "2023-10",
           "sources": [
-            "https://smileolleh.tistory.com/9",
-            "https://blog.naver.com/gaia5555/224163333620",
-            "https://blog.naver.com/channel0325-/223449282322"
+            "https://4000nom.tistory.com/1235",
+            "https://busormorme.tistory.com/410"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "은티마을-지름티재-정상",
-          "topic": "난이도",
-          "text": "지름티재 방면의 가파른 암벽 로프 구간은 유격훈련에 비견될 정도로 경사가 심해, 초보자나 고소공포증이 있는 탐방객은 체감 난이도가 매우 높고 정체가 자주 발생한다.",
-          "sentiment": "caution",
-          "as_of": "2026-07",
-          "sources": [
-            "https://smileolleh.tistory.com/9",
-            "https://blog.naver.com/rkdgytn/224339067145",
-            "https://blog.naver.com/gaia5555/224163333620"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9927,18 +9897,34 @@
           "scope": "mountain",
           "route": null,
           "topic": "통제·예약",
-          "text": "희양산 남쪽 방면(문경시 가은읍)은 조계종 특별선원인 봉암사 사유지로 상시 입산이 엄격히 통제(위반 시 과태료 부과)되며, 부처님오신날 연 1회 개방 시에도 등산복 차림의 입산은 제한된다.",
+          "text": "희양산 남쪽 방면(문경시 가은읍 봉암사 일대)은 조계종 특별수도원 사유지로 상시 입산이 통제되며, 지름티재 고개에는 봉암사 방면 진입을 막는 철책과 감시 초소가 설치되어 있습니다.",
           "sentiment": "caution",
-          "as_of": "2024-05",
+          "as_of": "2023-10",
           "sources": [
-            "http://www.bongamsa.or.kr/board/view/board/91",
-            "https://blog.naver.com/channel0325-/223449282322",
-            "https://blog.naver.com/babe311/222777368544"
+            "https://4000nom.tistory.com/1235"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "은티마을 주차장 내 농특산물 판매장 뒤편에 공중화장실이 구비되어 있으나, 방문 시기나 동절기 등에 따라 일시적으로 폐쇄될 수 있습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-06",
+          "sources": [
+            "https://ssvg.tistory.com/280",
+            "https://4000nom.tistory.com/1235"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9946,18 +9932,17 @@
           "scope": "route",
           "route": "은티마을-희양산성-정상 코스",
           "topic": "난이도",
-          "text": "은티마을에서 희양폭포와 희양산성(성터)을 거쳐 오르는 코스는 지름티재의 직벽 로프 구간을 우회하는 숲길 위주여서 상대적으로 완만하며, 지름티재로 오른 등산객의 하산 코스로 권장된다.",
+          "text": "희양산성(성터)에서 희양폭포를 거쳐 은티마을로 이어지는 하산길(약 3.2km)은 지름티재의 험준한 암벽 로프 구간과 달리 로프 없이 흙길과 돌길로 내려올 수 있는 완만한 계곡길입니다.",
           "sentiment": "good",
-          "as_of": "2022-06",
+          "as_of": "2022-09",
           "sources": [
-            "https://smileolleh.tistory.com/9",
-            "https://blog.naver.com/babe311/222777368544",
-            "https://blog.naver.com/gaia5555/224163333620"
+            "https://busormorme.tistory.com/410",
+            "https://zznz.co.kr/archives/18365"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9965,18 +9950,16 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "산행 들머리인 충북 괴산군 연풍면 은티마을 주차장은 소형차 기준 3,000원의 주차요금이 부과되며, 주차장 구역에 공용화장실이 마련되어 있다.",
+          "text": "산행 기점인 은티마을 입구에 마련된 탐방객 전용 주차장은 무료로 개방되어 운영되고 있습니다.",
           "sentiment": "neutral",
-          "as_of": "2024-05",
+          "as_of": "2024-06",
           "sources": [
-            "https://ssvg.tistory.com/279",
-            "https://blog.naver.com/channel0325-/223449282322",
-            "https://blog.naver.com/mountianbook/224062231018"
+            "https://ssvg.tistory.com/280"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -9984,36 +9967,16 @@
           "scope": "mountain",
           "route": null,
           "topic": "조망·볼거리",
-          "text": "정상 직전 너럭바위(암봉 대슬랩 상단)와 암릉 조망터에서는 구왕봉, 악휘봉을 비롯해 대야산과 속리산 주능선이 파노라마로 막힘없이 펼쳐진다.",
+          "text": "희양산 정상부는 거대한 화강암 단일 암반으로 이루어져 있어 문경 방향 계곡과 봉암사, 주변 백두대간 준봉들이 시원하게 내려다보이는 파노라마 조망을 제공합니다.",
           "sentiment": "good",
-          "as_of": "2025-11",
+          "as_of": "2022-07",
           "sources": [
-            "https://smileolleh.tistory.com/9",
-            "https://blog.naver.com/mountianbook/224062231018",
-            "https://blog.naver.com/channel0325-/223449282322"
+            "https://zznz.co.kr/archives/18365"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "은티마을-희양산성-정상 코스",
-          "topic": "조망·볼거리",
-          "text": "정상 능선 안부에는 신라 경순왕 3년(929년) 견훤의 군사를 막기 위해 축조된 자연석 석성인 희양산성(성터) 유적이 남아 있어 역사적 볼거리를 제공한다.",
-          "sentiment": "good",
-          "as_of": "2026-06",
-          "sources": [
-            "https://seonghwan7047.tistory.com/254",
-            "https://blog.naver.com/whereiam016/224311452954"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         }
@@ -10022,26 +9985,58 @@
     {
       "id": "hwaaksan-gapyeong",
       "name": "화악산(가평)",
-      "collected_at": "2026-09-03",
-      "checked_by": 1,
+      "collected_at": "2026-09-24",
+      "checked_by": 0,
       "verified": 0,
       "notes": [
         {
-          "scope": "route",
-          "route": "화악터널-중봉 코스",
-          "topic": "주차·교통",
-          "text": "가평과 화천 경계인 화악터널 쌈지공원에 무료 주차가 가능하나, 실운현으로 이어지는 군사 작전도로는 2026년 4월부터 일반 차량 진입이 전면 통제되어 도보로만 이동할 수 있다.",
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "화악산 최고봉인 신선봉(1,468.3m)은 군사시설 주둔으로 민간인 출입이 전면 통제되어 있어, 일반 등산객들은 인근의 중봉(1,446.1m)을 실질적인 정상으로 탐방 및 인증합니다.",
           "sentiment": "caution",
-          "as_of": "2026-05",
+          "as_of": "2017-09",
           "sources": [
-            "https://trlt30.tistory.com/407",
-            "https://blog.naver.com/innotechcom/224289918250",
-            "https://blog.naver.com/jangdi65/224378775105"
+            "http://san.chosun.com/news/articleView.html?idxno=11215"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "화악터널-중봉 코스",
+          "topic": "통제·예약",
+          "text": "실운현에서 군부대로 이어지는 포장도로는 군사 작전도로로 차단기가 내려져 있어 일반 차량 진입이 금지되며 오직 도보 산행만 가능합니다.",
+          "sentiment": "caution",
+          "as_of": "2024-03",
+          "sources": [
+            "https://dahyesanta.tistory.com/9"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관청리-중봉 코스",
+          "topic": "위험구간",
+          "text": "관청마을에서 큰골 계곡을 지나 중봉 남릉으로 오르는 코스는 밧줄 난간, ㄷ자형 철심계단(호치케스 발판), 미끄러운 급경사 너덜지대가 이어져 낙상 위험이 높으므로 스틱 사용이 필수적입니다.",
+          "sentiment": "caution",
+          "as_of": "2017-09",
+          "sources": [
+            "http://san.chosun.com/news/articleView.html?idxno=11215"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
             "found_by": 1
           }
         },
@@ -10049,13 +10044,185 @@
           "scope": "route",
           "route": "관청리-중봉 코스",
           "topic": "난이도",
-          "text": "관청리(도대2리)에서 가마소폭포를 거쳐 중봉에 이르는 코스는 왕복 약 11~12km로 5~7시간이 걸리며, 하단 계곡부를 지나면 가파른 로프 오르막이 길게 이어지는 상급 난이도 코스이다.",
+          "text": "해발 200m대 관청리부터 1,446m 중봉까지 약 1,200m 이상의 고도차를 순수 도보로 극복해야 하는 편도 약 5.2km의 된비알 코스로, 왕복 6~7시간 이상의 강한 체력이 요구됩니다.",
           "sentiment": "caution",
-          "as_of": "2025-06",
+          "as_of": "2017-09",
           "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=11215",
-            "https://blog.naver.com/mountain_peak/223908000871",
-            "https://blog.naver.com/newcity2030/224396471259"
+            "http://san.chosun.com/news/articleView.html?idxno=11215"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "화악터널-중봉 코스",
+          "topic": "난이도",
+          "text": "해발 약 850m의 화악터널에서 출발하여 군부대 갈림길까지는 완만한 임도를 따르고, 이후 중봉 정상 직전 약 200m 구간만 가파른 등산로를 오르면 왕복 3~4시간 내에 다녀올 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2024-03",
+          "sources": [
+            "https://dahyesanta.tistory.com/9",
+            "https://againssanta.tistory.com/entry/%EA%B0%80%ED%8F%89%ED%99%94%EC%95%85%EC%82%B0-%EC%82%B0%ED%96%89"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "화악터널-중봉 코스",
+          "topic": "주차·교통",
+          "text": "화악터널 북쪽(화천 방면) 출구 우측 공터나 쌈지공원 주변 갓길에 주차한 뒤 실운현 방면 임도(군사도로)를 통해 산행을 시작합니다.",
+          "sentiment": "neutral",
+          "as_of": "2023-02",
+          "sources": [
+            "https://againssanta.tistory.com/entry/%EA%B0%80%ED%8F%89%ED%99%94%EC%95%85%EC%82%B0-%EC%82%B0%ED%96%89"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hwangaksan",
+      "name": "황악산",
+      "collected_at": "2026-09-24",
+      "checked_by": 0,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "운수암-백운봉-비로봉",
+          "topic": "난이도",
+          "text": "운수암 주차장에서 시작해 백운봉을 거쳐 비로봉 정상까지 왕복 약 6km(소요시간 약 2시간 30분~3시간) 구간으로, 능선 안부까지의 초반 오르막을 지나면 흙산 특유의 편안한 능선길이 이어지는 최단 코스입니다.",
+          "sentiment": "good",
+          "as_of": "2021-03",
+          "sources": [
+            "https://dchoidy.tistory.com/12861102"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "운수암-백운봉-비로봉",
+          "topic": "주차·교통",
+          "text": "직지사 경내를 통과해 운수암 입구까지 차량으로 올라가면 약 10~20대 주차 가능한 소형 주차장이 마련되어 있으나 진입로가 좁아 서행해야 합니다.",
+          "sentiment": "neutral",
+          "as_of": "2021-03",
+          "sources": [
+            "https://dchoidy.tistory.com/12861102"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "직지사 원점회귀 코스",
+          "topic": "주차·교통",
+          "text": "대중교통 이용 시 김천역 정류장에서 11번(또는 111번), 22번(또는 222번) 시내버스를 타면 약 25분 만에 직지사 종점 정류장에 편리하게 도착할 수 있습니다.",
+          "sentiment": "good",
+          "as_of": "2024-04",
+          "sources": [
+            "https://busormorme.tistory.com/258"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "괘방령-운수봉-비로봉-신선봉-직지사",
+          "topic": "난이도",
+          "text": "괘방령에서 시작해 여시골산, 운수봉, 비로봉, 신선봉을 거쳐 직지사로 하산하는 코스는 총거리 약 14.5km로 5시간 이상 소요되는 장거리 종주이나, 육산 능선길이라 등산로 정비가 잘 되어 있습니다.",
+          "sentiment": "good",
+          "as_of": "2023-01",
+          "sources": [
+            "https://smileolleh.tistory.com/248"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "직지사 입구 대형 주차장에 대형 공중화장실과 편의점 및 음식점이 잘 정비되어 있으나, 운수암 이후 등산로 및 정상 능선부에는 화장실이나 매점이 없습니다.",
+          "sentiment": "neutral",
+          "as_of": "2024-04",
+          "sources": [
+            "https://busormorme.tistory.com/258"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "직지사 원점회귀 코스",
+          "topic": "조망·볼거리",
+          "text": "황악산 정상 비로봉(1,111m)에 서면 직지사를 말발굽 형태로 감싸고 있는 백운봉, 신선봉, 운수봉 등의 능선과 김천 일대의 웅장한 산세가 사방으로 조망됩니다.",
+          "sentiment": "good",
+          "as_of": "2024-04",
+          "sources": [
+            "https://busormorme.tistory.com/258"
+          ],
+          "verify": {
+            "level": "unverified",
+            "confirmed": 0,
+            "checked_by": 0,
+            "found_by": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hwangjangsan",
+      "name": "황장산",
+      "collected_at": "2026-09-24",
+      "checked_by": 1,
+      "verified": 0,
+      "notes": [
+        {
+          "scope": "route",
+          "route": "안생달-작은차갓재-맷등바위-황장산 정상-안생달",
+          "topic": "위험구간",
+          "text": "맷등바위 암릉에는 안전 데크가 잘 설치되어 있으나, 정상 직하 황장산 하단에서 안생달 주차장으로 내려오는 약 2.2km 계곡 구간은 급경사 돌계단과 너덜지대가 이어져 발목 부상에 주의해야 한다.",
+          "sentiment": "caution",
+          "as_of": "2023-06",
+          "sources": [
+            "https://blog.naver.com/ljy050909/223616148301",
+            "https://himountain.tistory.com/m/288",
+            "https://zznz.co.kr/archives/15510"
           ],
           "verify": {
             "level": "single",
@@ -10068,13 +10235,13 @@
           "scope": "mountain",
           "route": null,
           "topic": "통제·예약",
-          "text": "화악산 실제 최고봉인 신선봉(1,468.3m)은 공군 군부대가 주둔하여 민간인 출입이 통제되므로, 100대 명산 인증 및 실질적 정상 탐방은 남서쪽 중봉(1,446m)에서 이루어진다.",
+          "text": "월악산국립공원 관할로 호우·태풍 등 기상특보 발효 시 탐방이 즉시 통제되며, 작은차갓재와 황장산 하단 양쪽의 백두대간 연결 구간은 비법정탐방로로 출입이 통제된다.",
           "sentiment": "caution",
-          "as_of": "2026-08",
+          "as_of": null,
           "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=11215",
-            "https://blog.naver.com/jangdi65/224378775105",
-            "https://blog.naver.com/rokag4/223250206686"
+            "http://san.chosun.com/news/articleView.html?idxno=10116",
+            "https://reservation.knps.or.kr/contents/T/serviceGuide.do?prdDvcd=T&parkId=B11&vrteId=TB111XXX02",
+            "https://zznz.co.kr/archives/15510"
           ],
           "verify": {
             "level": "single",
@@ -10083,240 +10250,16 @@
             "found_by": 1
           }
         },
-        {
-          "scope": "route",
-          "route": "화악터널-중봉 코스",
-          "topic": "편의시설",
-          "text": "들머리인 화악터널 쌈지공원 공터에 간이 화장실이 마련되어 있으나 관리가 다소 미흡하며, 이후 군사도로와 등산로에는 화장실이나 매점이 전혀 없다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://kyungmi1201.tistory.com/315",
-            "https://blog.naver.com/jsh1073/224344474704",
-            "https://blog.naver.com/rokag4/223250206686"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "화악터널-중봉 코스",
-          "topic": "난이도",
-          "text": "실운현에서 중봉 직전까지는 완만한 시멘트 포장 군사도로를 약 4km 이상 걸어야 해 지루할 수 있으나 체력 부담은 적으며, 마지막 중봉 직전 200m 구간만 가파른 바위 오르막이다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://landyplay.com/%ED%99%94%EC%95%85%EC%82%B0-%EC%A1%B0%EB%AC%B4%EB%9D%BD%EA%B3%A8-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%ED%99%94%EC%95%85%ED%84%B0%EB%84%90-%EC%A4%91%EB%B4%89-%EC%A1%B0%EB%AC%B4%EB%9D%BD%EA%B3%A8",
-            "https://blog.naver.com/rkdgytn/224338976912",
-            "https://blog.naver.com/jsh1073/224344474704"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "경기도 최고봉인 중봉 정상 전망 데크에서는 북쪽 군부대 통신시설을 비롯해 명지산, 연인산, 화천 일대 첩첩산중 능선이 시원하게 조망된다.",
-          "sentiment": "good",
-          "as_of": "2026-08",
-          "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=11215",
-            "https://blog.naver.com/newcity2030/224396471259",
-            "https://blog.naver.com/jangdi65/224378775105"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "관청리-중봉 코스",
-          "topic": "주차·교통",
-          "text": "들머리인 가평군 북면 도대2리(관청리) 공터(도대리 산 49-2 인근)에 주차가 가능하며, 여름철 성수기에는 계곡 이용 관리로 주차비를 징수하기도 한다.",
-          "sentiment": "neutral",
-          "as_of": "2025-06",
-          "sources": [
-            "https://wuohyun.tistory.com/14954701",
-            "https://blog.naver.com/mountain_peak/223908000871"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "화악터널과 실운현 임도 능선 일대는 8월 중순부터 금강초롱꽃, 참닻꽃 등 고산 야생화가 개화하여 야생화 트레킹 명소로 붐빈다.",
-          "sentiment": "good",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.chosun.com/culture-life/culture_general/2022/08/30/S3KFODWR45FRVB3NZ7PREOZL2U",
-            "https://blog.naver.com/jangdi65/224378775105"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        }
-      ]
-    },
-    {
-      "id": "hwangaksan",
-      "name": "황악산",
-      "collected_at": "2026-09-03",
-      "checked_by": 1,
-      "verified": 0,
-      "notes": [
-        {
-          "scope": "route",
-          "route": "괘방령 종주 코스",
-          "topic": "편의시설",
-          "text": "충북 영동과 경북 김천의 경계인 괘방령 들머리에는 화장실이나 식수 보급 시설이 없으므로 사전에 용무를 마치고 식수를 준비해 와야 한다.",
-          "sentiment": "caution",
-          "as_of": "2025-03",
-          "sources": [
-            "https://landyplay.com/%EA%B9%80%EC%B2%9C-%ED%99%A9%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B4%98%EB%B0%A9%EB%A0%B9-%ED%99%A9%EC%95%85%EC%82%B0-%EC%8B%A0%EC%84%A0%EB%B4%89",
-            "https://blog.naver.com/leehochi_diary/223801780524"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "운수암-백운봉-비로봉",
-          "topic": "난이도",
-          "text": "운수암 주차장에서 비로봉 정상까지 왕복 약 6~6.5km로 3시간 안팎에 다녀올 수 있는 최단 코스이나, 초반 백운봉 삼거리까지는 가파른 흙길과 나무계단 오르막이 꾸준히 이어진다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
-          "sources": [
-            "https://landyplay.com/%EA%B9%80%EC%B2%9C-%ED%99%A9%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B4%98%EB%B0%A9%EB%A0%B9-%ED%99%A9%EC%95%85%EC%82%B0-%EC%8B%A0%EC%84%A0%EB%B4%89",
-            "https://blog.naver.com/laylak0210/224358625463",
-            "https://blog.naver.com/jw09911/224257161169"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "운수암-백운봉-비로봉",
-          "topic": "주차·교통",
-          "text": "직지사 경내 포장도로를 따라 차로 올라가면 해발 약 340m 지점에 위치한 운수암 주차장(경북 김천시 대항면 운수리 157-3)을 무료로 이용할 수 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-09",
-          "sources": [
-            "https://landyplay.com/%EA%B9%80%EC%B2%9C-%ED%99%A9%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B4%98%EB%B0%A9%EB%A0%B9-%ED%99%A9%EC%95%85%EC%82%B0-%EC%8B%A0%EC%84%A0%EB%B4%89",
-            "https://blog.naver.com/yony__yony__/224030284222",
-            "https://blog.naver.com/pulpul_flower/224030960413"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "괘방령-운수봉-비로봉-신선봉-직지사",
-          "topic": "난이도",
-          "text": "괘방령에서 여시골산, 운수봉, 백운봉을 거쳐 비로봉 정상에 오른 뒤 신선봉을 경유해 직지사로 하산하는 코스는 약 11~12km에 4시간 30분~5시간 30분이 걸리며 능선 업다운이 반복된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-12",
-          "sources": [
-            "https://landyplay.com/%EA%B9%80%EC%B2%9C-%ED%99%A9%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B4%98%EB%B0%A9%EB%A0%B9-%ED%99%A9%EC%95%85%EC%82%B0-%EC%8B%A0%EC%84%A0%EB%B4%89",
-            "https://blog.naver.com/matilda0817/224126621538",
-            "https://blog.naver.com/leehochi_diary/223801780524"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "직지사 원점회귀 코스",
-          "topic": "편의시설",
-          "text": "직지사 공용주차장과 사찰 경내에 청결한 대형 공용화장실과 에어건(흙먼지 털이기)이 갖추어져 있으며, 사찰 문화재관람료와 주차 요금 모두 무료이다.",
-          "sentiment": "good",
-          "as_of": "2026-07",
-          "sources": [
-            "https://landyplay.com/%EA%B9%80%EC%B2%9C-%ED%99%A9%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B4%98%EB%B0%A9%EB%A0%B9-%ED%99%A9%EC%95%85%EC%82%B0-%EC%8B%A0%EC%84%A0%EB%B4%89",
-            "https://blog.naver.com/qaztt1010/224343963817",
-            "https://blog.naver.com/zinizio/224271238576"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "황악산 최고봉인 비로봉(1,111m) 정상 헬기장 공터에서는 서쪽으로 백두대간 민주지산, 동쪽으로 금오산, 남쪽으로 수도산과 가야산 능선이 파노라마로 시원하게 펼쳐진다.",
-          "sentiment": "good",
-          "as_of": "2025-12",
-          "sources": [
-            "https://dchoidy.tistory.com/12861102",
-            "https://blog.naver.com/matilda0817/224126621538"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        }
-      ]
-    },
-    {
-      "id": "hwangjangsan",
-      "name": "황장산",
-      "collected_at": "2026-09-03",
-      "checked_by": 1,
-      "verified": 0,
-      "notes": [
         {
           "scope": "route",
           "route": "안생달-작은차갓재-맷등바위-황장산 정상-안생달",
-          "topic": "위험구간",
-          "text": "황장산 정상에서 계곡(산태골) 방향으로 내려서는 하산로는 경사가 매우 가파르고 긴 데크 계단과 불규칙한 너덜바위길이 이어져 미끄러짐과 무릎 부상에 주의해야 한다.",
+          "topic": "난이도",
+          "text": "황장산 탐방로는 평균 경사도가 21.8%에 달해 가파르고 돌길이 많으며, 특히 안생달에서 정상으로 곧장 오르는 2.4km 구간은 지속적인 급경사 험로라 체력 소모가 크다.",
           "sentiment": "caution",
-          "as_of": "2024-10",
+          "as_of": null,
           "sources": [
-            "https://lblok2001.tistory.com/5475084",
-            "https://blog.naver.com/ljy050909/223616148301",
-            "https://blog.naver.com/sik2gun/224366189890"
+            "https://koreahike.com/%ed%99%a9%ec%9e%a5%ec%82%b0-%eb%93%b1%ec%82%b0%ec%bd%94%ec%8a%a4",
+            "https://koreahike.com/%ED%99%A9%EC%9E%A5%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -10329,13 +10272,13 @@
           "scope": "route",
           "route": "안생달-작은차갓재-맷등바위-황장산 정상-안생달",
           "topic": "조망·볼거리",
-          "text": "맷등바위 구간은 데크 계단과 난간이 설치된 암릉으로 월악산 영봉과 도락산, 백두대간 능선 조망이 시원하게 트이는 황장산 최고의 뷰포인트다. 반면 황장산 정상석 주변은 숲으로 둘러싸여 있어 사방 조망이 제한적이다.",
+          "text": "작은차갓재를 지나 맷등바위부터 정상까지 이어지는 약 400m 암릉 능선은 도락산과 용두산 등 주변 백두대간 산세가 시원하게 트이는 황장산 최고의 핵심 전망 포인트다.",
           "sentiment": "good",
-          "as_of": "2024-10",
+          "as_of": "2023-06",
           "sources": [
-            "https://blog.naver.com/iloveknp/224212332819",
-            "https://blog.naver.com/choig825/223614706890",
-            "https://blog.naver.com/man4189/224217510329"
+            "https://cominet.tistory.com/587",
+            "https://himountain.tistory.com/m/288",
+            "https://zznz.co.kr/archives/15510"
           ],
           "verify": {
             "level": "single",
@@ -10348,32 +10291,12 @@
           "scope": "mountain",
           "route": null,
           "topic": "주차·교통",
-          "text": "들머리인 생달리 공영주차장(약 15~20대 규모)은 무료 주차가 가능하나, 마을 안쪽 와인동굴(까브) 인근 주차 공간은 협소하고 사유지 등산객 주차 제한이 있어 공영주차장 이용이 권장된다.",
+          "text": "주 들머리인 생달공영주차장(문경시 동로면 생달리 347-1)을 무료로 이용할 수 있으며, 만차 시에는 와인동굴 방면 오르막 도로변 갓길에 일부 주차가 가능하다.",
           "sentiment": "neutral",
-          "as_of": "2026-03",
-          "sources": [
-            "https://blog.naver.com/mklee25/224321106624",
-            "https://blog.naver.com/man4189/224217510329",
-            "https://blog.naver.com/uptoyouqld/224392341627"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "안생달 공원지킴터-황장산 정상",
-          "topic": "편의시설",
-          "text": "생달리 공영주차장과 안생달 공원지킴터 인근 화장실을 지나 산행에 진입하면 정상까지 식수 공급처나 화장실 등 편의시설이 전무하므로 들머리에서 미리 정비해야 한다.",
-          "sentiment": "neutral",
-          "as_of": "2026-03",
+          "as_of": "2023-06",
           "sources": [
             "https://himountain.tistory.com/288",
-            "https://blog.naver.com/man4189/224217510329",
-            "https://blog.naver.com/uptoyouqld/224392341627"
+            "https://himountain.tistory.com/m/288"
           ],
           "verify": {
             "level": "single",
@@ -10383,16 +10306,33 @@
           }
         },
         {
-          "scope": "route",
-          "route": "안생달-작은차갓재-맷등바위-황장산 정상-안생달",
-          "topic": "난이도",
-          "text": "안생달 기점 원점회귀 코스는 총거리 약 5.3~5.6km, 소요시간 약 3시간 30분~4시간 내외로 짧은 편이나, 작은차갓재 직전 오르막과 정상 직전 맷등바위 암릉 계단길에서 일시적인 고도 상승이 집중된다.",
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "생달공영주차장에 수세식 화장실이 마련되어 있고, 탐방안내소에서 와인동굴 방향으로 약 100m 올라간 지점에도 공중화장실이 추가로 설치되어 있다.",
           "sentiment": "neutral",
-          "as_of": "2024-10",
+          "as_of": "2023-06",
           "sources": [
-            "https://seonghwan7047.tistory.com/239",
-            "https://blog.naver.com/choig825/223614706890",
-            "https://blog.naver.com/sik2gun/224366189890"
+            "https://himountain.tistory.com/288",
+            "https://himountain.tistory.com/m/288"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "점촌시내버스터미널이나 문경버스터미널에서 안생달 마을까지 시내버스가 운행하지만 배차 간격이 매우 길고 일일 운행 횟수가 적으므로 사전 시간표 확인이 필수다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://koreahike.com/%ed%99%a9%ec%9e%a5%ec%82%b0-%eb%93%b1%ec%82%b0%ec%bd%94%ec%8a%a4",
+            "https://koreahike.com/%ED%99%A9%EC%9E%A5%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -10406,21 +10346,19 @@
     {
       "id": "hwangmaesan",
       "name": "황매산",
-      "collected_at": "2026-09-03",
+      "collected_at": "2026-09-24",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "혼잡",
-          "text": "5월 철쭉축제와 10월 억새축제 기간 주말에는 상부 오토캠핑장 주차장(정상주차장)이 새벽 6~7시경 만차되며, 하부 진입로부터 극심한 차량 정체와 진입 통제가 발생한다.",
+          "scope": "route",
+          "route": "오토캠핑장-황매산 정상 코스",
+          "topic": "난이도",
+          "text": "제1오토캠핑장(정상 주차장)에서 황매산성까지는 완만한 평지 데크길이나, 성곽을 지나 정상 직전까지 이어지는 약 600개의 가파른 나무 데크 계단은 급경사 깔딱고개로 무릎 부담이 크다.",
           "sentiment": "caution",
-          "as_of": "2026-04",
+          "as_of": null,
           "sources": [
-            "https://blog.naver.com/iamso02/223863909119",
-            "https://blog.naver.com/redann8926/224260929428",
-            "https://blog.naver.com/standupandlight/224393185823"
+            "https://koreahike.com/hwangmaesan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10433,12 +10371,11 @@
           "scope": "route",
           "route": "모산재주차장-모산재-황매평전-황매산 정상",
           "topic": "위험구간",
-          "text": "모산재 구간은 수직에 가까운 가파른 철계단과 거친 암릉 슬랩, 로프 구간이 연속되며 돛대바위와 순결바위 옆으로 천 길 낭떠러지 절벽이 이어져 있어 안전에 각별히 유의해야 한다.",
+          "text": "모산재 들머리에서 돛대바위로 올라가는 암릉 구간에는 약 70도 경사의 가파른 철계단이 설치되어 있어 고소공포증이나 현기증을 유발할 수 있으므로 주의해야 한다.",
           "sentiment": "caution",
-          "as_of": "2026-06",
+          "as_of": null,
           "sources": [
-            "https://www.yeongnam.com/web/view.php?key=20211201010000061",
-            "https://blog.naver.com/parksw1004/224322589187"
+            "https://koreahike.com/hwangmaesan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10450,14 +10387,63 @@
         {
           "scope": "route",
           "route": "모산재주차장-모산재-황매평전-황매산 정상",
-          "topic": "조망·볼거리",
-          "text": "모산재 암릉 능선은 돛대바위, 득도바위, 순결바위 등 기암괴석이 병풍처럼 늘어서 있고 발아래 영암사지와 대기저수지, 정면으로 광활한 황매평전과 정상이 한눈에 들어오는 최고의 조망 명소다.",
-          "sentiment": "good",
-          "as_of": "2026-06",
+          "topic": "위험구간",
+          "text": "모산재 정상에서 순결바위를 거쳐 영암사지 및 주차장으로 하산하는 길은 경사면 화강암 바위에 미끄러운 마사토 알갱이가 많아 하산 시 미끄러짐 사고에 유의해야 한다.",
+          "sentiment": "caution",
+          "as_of": null,
           "sources": [
-            "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002111901",
-            "https://blog.naver.com/parksw1004/224322589187",
-            "https://blog.naver.com/teddyjun/224357987645"
+            "https://koreahike.com/hwangmaesan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "봄철 철쭉제와 가을철 억새축제 시즌 주말에는 해발 850m 정상 주차장(제1오토캠핑장) 진입 도로가 새벽 이른 시간부터 극심한 만차 정체를 빚으므로 아래쪽 덕만주차장 이용이 권장된다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://koreahike.com/hwangmaesan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "산청 미리내파크-황매산 정상",
+          "topic": "혼잡",
+          "text": "산청군 차황면 미리내파크에서 출발하는 코스는 합천 방면에 비해 탐방객 혼잡도가 덜하며, 별빛언덕과 황매단을 거쳐 약 1시간 30분 만에 정상에 오를 수 있는 한적한 최단 트레킹 경로다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://koreahike.com/hwangmaesan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "모산재-황매산 종주",
+          "topic": "난이도",
+          "text": "덕만주차장을 기점으로 박덤, 장군봉, 황매산 정상을 거쳐 황매평원과 모산재, 순결바위로 돌아오는 원점회귀 종주 코스는 약 12.3km 거리에 식사 포함 6시간 이상 소요되는 중상급 코스다.",
+          "sentiment": "neutral",
+          "as_of": "2024-10",
+          "sources": [
+            "https://4000nom.tistory.com/1273"
           ],
           "verify": {
             "level": "single",
@@ -10470,13 +10456,11 @@
           "scope": "mountain",
           "route": null,
           "topic": "계절·시기",
-          "text": "황매평전 일대는 5월 초중순 능선 가득 진분홍 철쭉 군락이 만개하고, 가을인 10월에는 은빛 억새평원으로 변모하여 봄과 가을 축제 시기에 탐방객이 집중된다.",
+          "text": "4월 말~5월 초에는 고지대 대규모 철쭉 군락지가 만개하여 철쭉제가 열리고, 10월 중순~11월 초에는 광활한 황매평전이 은빛 억새 물결로 장관을 이룬다.",
           "sentiment": "good",
-          "as_of": "2026-05",
+          "as_of": null,
           "sources": [
-            "https://www.hc.go.kr/09420/09436.web",
-            "https://blog.naver.com/kkulee/224279522172",
-            "https://blog.naver.com/standupandlight/224393185823"
+            "https://koreahike.com/hwangmaesan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10486,34 +10470,14 @@
           }
         },
         {
-          "scope": "route",
-          "route": "산청 미리내파크-황매산 정상",
-          "topic": "주차·교통",
-          "text": "산청 방면 들머리인 황매산 미리내파크 제1주차장은 등산로 입구와 인접해 있으며 무료 주차공간과 공중화장실이 갖추어져 있어 합천 방면에 비해 비교적 여유롭게 이용할 수 있다.",
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "황매산은 군립공원으로 지정되어 야간 입산 통제 없이 24시간 연중 상시 개방되며, 정상 부근 주차 차단기도 24시간 작동하여 야간 은하수 관측 및 새벽 산행이 가능하다.",
           "sentiment": "neutral",
-          "as_of": "2026-07",
+          "as_of": null,
           "sources": [
-            "https://ohiking.today/course/view/343",
-            "https://blog.naver.com/jungbae1022/224361343611",
-            "https://blog.naver.com/ezvarang/224276835655"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "오토캠핑장-황매산 정상 코스",
-          "topic": "난이도",
-          "text": "오토캠핑장 상부 정상주차장(해발 약 800m 이상)에서 출발하면 황매평전을 거쳐 정상까지 왕복 약 1시간 30분~2시간이면 다녀올 수 있어 체력 부담이 매우 적고 초보자에게 수월하다.",
-          "sentiment": "neutral",
-          "as_of": "2026-08",
-          "sources": [
-            "https://www.hc.go.kr/09420/09436.web",
-            "https://blog.naver.com/standupandlight/224393185823"
+            "https://koreahike.com/hwangmaesan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10527,40 +10491,21 @@
     {
       "id": "hwangseoksan",
       "name": "황석산",
-      "collected_at": "2026-09-03",
+      "collected_at": "2026-09-24",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "황석산 정상부는 거대한 암봉 칼날능선으로 정상석 주변 발 디딜 공간이 매우 협소하고 양옆이 낭떠러지 절벽이므로 사진 촬영 및 교행 시 추락 사고에 각별히 유의해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2026-07",
-          "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=12458",
-            "https://blog.naver.com/pystt222/224364173906",
-            "https://blog.naver.com/destroyer_pkjs0907/224335989071"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
           "scope": "route",
-          "route": "황석산-거망산 종주 코스",
+          "route": "유동마을-황석산-거망산-용추사 일주문",
           "topic": "위험구간",
-          "text": "황석산 정상에서 북봉을 거쳐 거망산으로 향하는 초반 능선 구간은 밧줄을 잡고 내려서는 험준한 암벽과 바윗길이 이어지며, 위험한 북봉 암릉은 목재 데크 우회로를 이용해야 한다.",
+          "text": "황석산 정상 암봉과 북봉에서 거망산으로 이어지는 능선 안부에는 깎아지른 바위 절벽과 가파른 로프 구간이 있어 결빙기나 비가 올 때 추락 및 미끄럼 위험에 각별히 대비해야 한다.",
           "sentiment": "caution",
-          "as_of": "2026-07",
+          "as_of": "2015-01",
           "sources": [
-            "https://blog.naver.com/phk581210/224359031723",
-            "https://blog.naver.com/destroyer_pkjs0907/224335989071",
-            "https://blog.naver.com/jcdark1/223913886216"
+            "https://leezzang.tistory.com/144",
+            "https://duga.tistory.com/1934",
+            "https://68djh.tistory.com/1985"
           ],
           "verify": {
             "level": "single",
@@ -10572,12 +10517,12 @@
         {
           "scope": "route",
           "route": "우전마을 코스",
-          "topic": "주차·교통",
-          "text": "우전마을 사방댐 들머리는 주차 면수가 6~8대 정도로 매우 협소하고 올라가는 진입로가 좁은 외길이어서 차량 교행이 어려우므로 성수기나 주말에는 교행 및 주차 공간 확보에 유의해야 한다.",
+          "topic": "난이도",
+          "text": "우전마을 사방댐에서 출발하는 왕복 약 5km(3시간 소요) 최단 코스는 초반 임도를 지나면 피바위부터 정상까지 가파른 돌길과 자갈 비탈이 이어져 하산 시 관절 부담이 매우 크다.",
           "sentiment": "caution",
-          "as_of": "2026-08",
+          "as_of": null,
           "sources": [
-            "https://blog.naver.com/hello_lovelyblossom/224396360074"
+            "https://koreahike.com/hwangseoksan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10589,13 +10534,46 @@
         {
           "scope": "route",
           "route": "유동마을 코스",
-          "topic": "난이도",
-          "text": "유동마을 기점 코스는 왕복 약 8.8km에 5시간 이상 소요되며, 연촌마을을 지나 산성 부근부터 정상 암릉까지 경사도가 급격히 가팔라져 꾸준한 체력 안배와 페이스 조절이 필요하다.",
-          "sentiment": "neutral",
-          "as_of": "2026-07",
+          "topic": "조망·볼거리",
+          "text": "유동마을회관에서 출발하여 연촌마을을 거쳐 오르는 망월대는 남쪽 거망산 능선과 장대한 황석산성 성벽이 시원하게 트이는 훌륭한 전망 쉼터다.",
+          "sentiment": "good",
+          "as_of": null,
           "sources": [
-            "https://blog.naver.com/pystt222/224364173906",
-            "https://blog.naver.com/jcdark1/223913886216"
+            "https://koreahike.com/hwangseoksan-hiking-guide"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "황석산-거망산 종주 코스",
+          "topic": "조망·볼거리",
+          "text": "황석산 정상에서 거망산 정상까지 이어지는 약 4.5km(약 2시간 소요) 능선길은 암봉인 황석산과 달리 완만한 능선과 억새밭이 펼쳐지며 맞은편 기백산과 금원산 조망이 빼어나다.",
+          "sentiment": "good",
+          "as_of": "2015-01",
+          "sources": [
+            "https://duga.tistory.com/1934"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "유동마을-황석산-거망산-용추사 일주문",
+          "topic": "주차·교통",
+          "text": "거망산 직전 지장골을 통해 용추사와 용추폭포로 하산하여 안의터미널행 군내버스를 탈 때, 버스 회차장이 용추사 바로 아래 주차장이 아닌 도보 10분 거리의 용추사 일주문 앞에 위치함을 유의해야 한다.",
+          "sentiment": "neutral",
+          "as_of": "2015-01",
+          "sources": [
+            "https://duga.tistory.com/1934"
           ],
           "verify": {
             "level": "single",
@@ -10607,13 +10585,12 @@
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "삼국시대에 축성된 황석산성(사적 제322호)의 유서 깊은 석축 성벽과 정상 암봉에 서면 백두대간 남덕유산, 기백산, 금원산 능선이 파노라마로 시원하게 펼쳐진다.",
-          "sentiment": "good",
-          "as_of": "2026-07",
+          "topic": "주차·교통",
+          "text": "함양시외버스터미널에서 유동마을이나 우전마을 방면 농어촌버스는 배차 간격이 드물며, 터미널에서 택시를 이용할 경우 들머리까지 약 25~30분이 걸리고 편도 요금은 약 2만 5천~3만 원이다.",
+          "sentiment": "neutral",
+          "as_of": null,
           "sources": [
-            "https://blog.naver.com/pystt222/224364173906",
-            "https://blog.naver.com/destroyer_pkjs0907/224335989071"
+            "https://koreahike.com/hwangseoksan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10623,14 +10600,14 @@
           }
         },
         {
-          "scope": "route",
-          "route": "우전마을 코스",
-          "topic": "편의시설",
-          "text": "우전마을 사방댐 들머리 현장에는 공용화장실이 없으므로 산행 전 우전마을회관 광장 화장실이나 군자정 공용화장실을 미리 이용해야 한다.",
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "함양군 15개 명산 완등 사업인 '오르GO 함양' 인증 시 심원정 주차장 또는 황암사 주차장에서 모바일 앱으로 방문 인증을 완료한 뒤 정상석에서 얼굴이 나오도록 완등 사진을 등록해야 효력이 인정된다.",
           "sentiment": "neutral",
-          "as_of": "2026-08",
+          "as_of": null,
           "sources": [
-            "https://blog.naver.com/hello_lovelyblossom/224396360074"
+            "https://koreahike.com/hwangseoksan-hiking-guide"
           ],
           "verify": {
             "level": "single",
@@ -10644,21 +10621,19 @@
     {
       "id": "hwawangsan",
       "name": "화왕산",
-      "collected_at": "2026-09-03",
+      "collected_at": "2026-09-24",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "자하곡 코스",
-          "topic": "난이도",
-          "text": "자하곡 2등산로 구간은 화왕산성 서문 직전에 '환장고개'라 불리는 가파른 급경사 돌계단과 침목 계단이 연속되어 숨이 차고 체력 소모가 극심하다.",
+          "topic": "위험구간",
+          "text": "자하곡 1코스는 체육공원과 자하정을 지나면서부터 가파른 슬랩성 화강암 암릉 능선과 밧줄(로프) 구간이 이어지므로 접지력이 우수한 등산화와 장갑을 갖추어야 안전하다.",
           "sentiment": "caution",
-          "as_of": "2026-04",
+          "as_of": "2023-09",
           "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=4179",
-            "https://blog.naver.com/ansu2021/224254665320",
-            "https://blog.naver.com/yukiyomi99/224184416219"
+            "https://deungsan.tistory.com/52"
           ],
           "verify": {
             "level": "single",
@@ -10669,33 +10644,15 @@
         },
         {
           "scope": "route",
-          "route": "자하곡 코스",
-          "topic": "위험구간",
-          "text": "자하곡 1등산로는 쇠난간을 잡고 올라야 하는 거친 암릉 구간이 많아 초보자에게 위험하며 하산길로는 권장되지 않고, 2등산로 또한 하산 시 급경사로 미끄러지기 쉬워 보통 3등산로(도성암 방면)로 하산한다.",
-          "sentiment": "caution",
-          "as_of": "2026-04",
+          "route": "옥천매표소-관룡사-용선대-화왕산 정상",
+          "topic": "난이도",
+          "text": "옥천주차장에서 관룡사, 용선대, 관룡산 정상을 거쳐 억새밭 드라마세트장과 화왕산성 동문 및 정상까지 이어지는 코스는 왕복 거리가 10km를 넘고 4~5시간 이상 소요되는 장거리 코스다.",
+          "sentiment": "neutral",
+          "as_of": "2023-10",
           "sources": [
-            "http://san.chosun.com/news/articleView.html?idxno=4179",
-            "https://blog.naver.com/ansu2021/224254665320",
-            "https://blog.naver.com/yukiyomi99/224184416219"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "화왕산성 남쪽 능선의 명소인 배바위는 바위 틈과 둘레가 깎아지른 절벽 낭떠러지로 되어 있어 강풍이나 사진 촬영 시 실족 및 소지품 낙하 사고에 각별히 주의해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2026-04",
-          "sources": [
-            "https://www.ktsketch.co.kr/news/articleView.html?idxno=7213",
-            "https://blog.naver.com/ansu2021/224254665320"
+            "https://koreahike.com/%ed%99%94%ec%99%95%ec%82%b0-%eb%93%b1%ec%82%b0%ec%bd%94%ec%8a%a4",
+            "https://kimyy22001.tistory.com/6698",
+            "https://jungwa686.tistory.com/15974412"
           ],
           "verify": {
             "level": "single",
@@ -10708,32 +10665,12 @@
           "scope": "route",
           "route": "옥천매표소-관룡사-용선대-화왕산 정상",
           "topic": "조망·볼거리",
-          "text": "관룡사 뒤편 약 500m 지점 암반 위에 위치한 용선대 석조여래좌상(보물)은 관룡산·구룡산의 기암 암릉과 옥천저수지 일대를 굽어보는 화왕산 최고의 조망 및 일출 기도 명소다.",
+          "text": "관룡사에서 약 15분 거리인 용선대에 오르면 깎아지른 절벽 끝에 자리 잡은 보물 석조여래좌상과 관룡산 병풍바위 암릉이 어우러진 빼어난 절경을 감상할 수 있다.",
           "sentiment": "good",
-          "as_of": "2026-04",
+          "as_of": "2025-10",
           "sources": [
-            "https://place.tripmate.co.kr/ko/detail.php?contentId=2785626&contentTypeId=12",
-            "https://blog.naver.com/chasd3679/224247066961",
-            "https://blog.naver.com/docukang/223911779112"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "옥천매표소-관룡사-용선대-화왕산 정상",
-          "topic": "난이도",
-          "text": "옥천주차장에서 관룡사까지는 약 1.2km의 완만한 아스팔트 포장도로를 걸어 올라가며, 관룡사 경내를 통과하면서부터 용선대와 화왕산성으로 향하는 본격적인 산길 오르막이 시작된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-06",
-          "sources": [
-            "https://cheonym.tistory.com/12822514",
-            "https://blog.naver.com/docukang/223911779112",
-            "https://blog.naver.com/chasd3679/224247066961"
+            "http://www.thereport.co.kr/news/articleView.html?idxno=14367",
+            "https://jungwa686.tistory.com/15974412"
           ],
           "verify": {
             "level": "single",
@@ -10746,13 +10683,30 @@
           "scope": "mountain",
           "route": null,
           "topic": "계절·시기",
-          "text": "화왕산성 분화구 안쪽 능선은 4월 초순 진달래 군락이 만개하고, 가을 10월에는 18만 5천㎡ 규모의 분화구 가득 은빛 억새평원이 장관을 이루어 탐방객이 집중된다.",
+          "text": "정상부 분화구 5만여 평의 억새 군락지는 10월 말부터 11월 초에 은빛 절정을 이루며, 오후 3시 이후 서문 방향을 바라볼 때 햇빛 역광을 받아 황금빛으로 빛나는 장관을 볼 수 있다.",
           "sentiment": "good",
-          "as_of": "2026-04",
+          "as_of": null,
           "sources": [
-            "https://www.ktsketch.co.kr/news/articleView.html?idxno=7213",
-            "https://blog.naver.com/ansu2021/224254665320",
-            "https://blog.naver.com/yukiyomi99/224184416219"
+            "https://koreahike.com/%ed%99%94%ec%99%95%ec%82%b0-%eb%93%b1%ec%82%b0%ec%bd%94%ec%8a%a4",
+            "https://koreahike.com/%ED%99%94%EC%99%95%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "자하곡 하단 매표소 주차장보다 위쪽에 위치한 상단 주차장이나 도성암 인근 주차 공간을 이용하면 등산로 입구까지 걷는 지루한 아스팔트 포장도로 구간을 단축할 수 있다.",
+          "sentiment": "neutral",
+          "as_of": "2023-09",
+          "sources": [
+            "https://deungsan.tistory.com/52",
+            "https://koreahike.com/%ED%99%94%EC%99%95%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -10764,13 +10718,29 @@
         {
           "scope": "route",
           "route": "자하곡 코스",
-          "topic": "주차·교통",
-          "text": "자하곡 매표소 인근 제2공영주차장(말흘리 16-3 일원)은 무료로 주차할 수 있으며 공중화장실이 완비되어 있으나, 성수기 주말에는 일찍 만차되므로 하부 주차장에 차를 대고 걸어 올라와야 할 수 있다.",
-          "sentiment": "neutral",
-          "as_of": "2026-04",
+          "topic": "조망·볼거리",
+          "text": "자하곡 1코스는 능선에 오르는 내내 창녕 시내와 배바위 암릉이 시원하게 트여 숲길인 2코스(환장고개)나 3코스에 비해 조망 만족도가 단연 가장 높다.",
+          "sentiment": "good",
+          "as_of": "2023-09",
           "sources": [
-            "https://blog.naver.com/bspsy0519/223849089120",
-            "https://blog.naver.com/ansu2021/224254665320"
+            "https://deungsan.tistory.com/52"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "자하곡 코스",
+          "topic": "난이도",
+          "text": "화왕산 탐방객들은 경치가 좋지만 험한 암릉인 1코스로 정상에 오른 후, 하산 시에는 완만한 흙길과 그늘 숲길로 이루어진 도성암 방면 3코스로 내려오는 원점회귀 코스를 가장 추천한다.",
+          "sentiment": "neutral",
+          "as_of": "2023-09",
+          "sources": [
+            "https://deungsan.tistory.com/52"
           ],
           "verify": {
             "level": "single",
