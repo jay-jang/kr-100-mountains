@@ -39,6 +39,9 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
   }
 
   const managedMarkers = [];   // addMarker() overlays (cleared by clearMarkers)
+  const clickHandlers = new Set();
+  const emitClick = e => clickHandlers.forEach(fn => fn([e.latLng.getLat(), e.latLng.getLng()]));
+  kakao.maps.event.addListener(map, 'click', emitClick);
   let openPopupOverlay = null;
 
   function closePopup() { if (openPopupOverlay) { openPopupOverlay.setMap(null); openPopupOverlay = null; } }
@@ -56,6 +59,7 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
     setView([lat, lng], z) { map.setCenter(ll(lat, lng)); if (z != null) map.setLevel(toLevel(z)); },
     panTo([lat, lng]) { map.panTo(ll(lat, lng)); },
     flyTo([lat, lng], z) { map.panTo(ll(lat, lng)); if (z != null) map.setLevel(toLevel(z), { anchor: ll(lat, lng) }); },
+    onClick(fn) { clickHandlers.add(fn); return () => clickHandlers.delete(fn); },
 
     clearMarkers() { managedMarkers.forEach((m) => m.setMap(null)); managedMarkers.length = 0; closePopup(); },
     addMarker({ lat, lng, color, star = false, popupHTML, onClick, title }) {
@@ -113,6 +117,7 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
       const lines = [];
       if (outline) lines.push(new kakao.maps.Polyline({ map, path, strokeWeight: weight + 3, strokeColor: '#ffffff', strokeOpacity: 0.85, strokeStyle: 'solid' }));
       lines.push(new kakao.maps.Polyline({ map, path, strokeWeight: weight, strokeColor: color, strokeOpacity: opacity, strokeStyle: 'solid' }));
+      lines.forEach(line => kakao.maps.event.addListener(line, 'click', e => { kakao.maps.event.preventMap(); emitClick(e); }));
       return { remove() { lines.forEach((l) => l.setMap(null)); } };
     },
     addPolylines(lines, { color = '#e2872a', weight = 2.2, opacity = 0.8 } = {}) {
@@ -132,6 +137,6 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
     restore(s) { if (s?.center && s.level != null) { map.setLevel(s.level); map.setCenter(ll(...s.center)); } },
     relayout() { const c = map.getCenter(); map.relayout(); map.setCenter(c); },
     refreshTheme() { /* Kakao has no built-in dark skin; no-op */ },
-    destroy() { closePopup(); managedMarkers.forEach((m) => m.setMap(null)); node.innerHTML = ''; },
+    destroy() { clickHandlers.clear(); kakao.maps.event.removeListener(map, 'click', emitClick); closePopup(); managedMarkers.forEach((m) => m.setMap(null)); node.innerHTML = ''; },
   };
 }

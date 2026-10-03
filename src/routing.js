@@ -4,6 +4,28 @@
 import { haversine } from './gpx.js';
 import { overpassFetch } from './osm.js';
 
+export async function fetchMountainTrailNetwork(mountain, points = [], { signal } = {}) {
+  if (mountain.lat == null) throw new Error('정상 좌표가 없어 주변 등산로를 조회할 수 없습니다.');
+  const center = [mountain.lat, mountain.lon];
+  const extent = [center, ...(mountain.trails || []).map(t => t.trailhead), ...points]
+    .filter(p => Array.isArray(p) && p.every(Number.isFinite) && haversine(...center, ...p) <= 35000);
+  const pad = 0.009; // one kilometre around the mountain's documented geometry
+  const bounds = [Math.min(...extent.map(p => p[0])) - pad, Math.min(...extent.map(p => p[1])) - pad,
+    Math.max(...extent.map(p => p[0])) + pad, Math.max(...extent.map(p => p[1])) + pad];
+  const query = `[out:json][timeout:25];way["highway"~"^(path|footway|track|steps|cycleway|pedestrian|service|bridleway|unclassified)$"]["access"!="no"]["access"!="private"]["foot"!="no"]["foot"!="private"](${bounds.join(',')});out geom;`;
+  let json;
+  try { json = await overpassFetch(query, { signal }); }
+  catch (error) {
+    if (signal?.aborted) throw error;
+    throw new Error('등산로 서버에 연결하지 못했습니다. 수록 GPX로 계획하거나 잠시 후 다시 시도하세요.', { cause: error });
+  }
+  const ways = (json.elements || []).filter(e => e.type === 'way' && e.geometry?.length > 1).map((way, i) => ({
+    osmId: way.id, label: way.tags?.name || way.tags?.ref || `OSM 등산로 ${i + 1}`,
+    latlngs: way.geometry.map(p => [p.lat, p.lon]),
+  }));
+  return { ways, bounds };
+}
+
 class MinHeap {
   constructor() { this.a = []; }
   get size() { return this.a.length; }

@@ -7,17 +7,20 @@ const ENDPOINTS = [
   'https://overpass.kumi.systems/api/interpreter',
 ];
 
-export async function overpassFetch(query, { timeoutMs = 28000 } = {}) {
+export async function overpassFetch(query, { timeoutMs = 28000, signal } = {}) {
   let lastErr;
   for (const url of ENDPOINTS) {
+    if (signal?.aborted) throw new DOMException('요청이 취소되었습니다.', 'AbortError');
     const ctrl = new AbortController();
+    const abort = () => ctrl.abort();
+    signal?.addEventListener('abort', abort, { once: true });
     const to = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
       const res = await fetch(url, { method: 'POST', body: 'data=' + encodeURIComponent(query), signal: ctrl.signal });
-      clearTimeout(to);
       if (res.ok) return await res.json();
       lastErr = new Error('HTTP ' + res.status);
-    } catch (e) { clearTimeout(to); lastErr = e; }
+    } catch (e) { lastErr = e; }
+    finally { clearTimeout(to); signal?.removeEventListener('abort', abort); }
   }
   throw lastErr || new Error('Overpass 요청 실패');
 }

@@ -17,30 +17,46 @@ async function getJSON(url) {
 }
 
 let _index;
+let _indexLoading;
 export async function routesManifest() {
   if (_index !== undefined) return _index;
-  try { _index = await getJSON(`${import.meta.env.BASE_URL}gpx/routes/index.json`); }
-  catch { _index = null; }
-  return _index;
+  if (!_indexLoading) _indexLoading = getJSON(`${import.meta.env.BASE_URL}gpx/routes/index.json`).then(value => {
+    if (!value) throw new Error('수록 경로 목록을 불러오지 못했습니다.');
+    _index = value; return value;
+  }).finally(() => { _indexLoading = null; });
+  return _indexLoading;
 }
 
 const _entries = new Map();
+const _entryLoading = new Map();
 export async function routeEntryFor(mountainId) {
   if (_entries.has(mountainId)) return _entries.get(mountainId);
-  const index = await routesManifest();
-  // 목록에 없는 산은 아예 요청하지 않는다 — 404 콘솔 오류를 내지 않기 위해.
-  const listed = index?.mountains?.find((e) => e.mountain_id === mountainId);
-  let entry = null;
-  if (listed && (listed.tracks || listed.relations)) {
-    try { entry = await getJSON(`${import.meta.env.BASE_URL}gpx/routes/m/${mountainId}.json`); }
-    catch { entry = null; }
+  if (!_entryLoading.has(mountainId)) {
+    const job = (async () => {
+      const index = await routesManifest();
+      // 목록에 없는 산은 아예 요청하지 않는다 — 404 콘솔 오류를 내지 않기 위해.
+      const listed = index?.mountains?.find((e) => e.mountain_id === mountainId);
+      let entry = null;
+      if (listed && (listed.tracks || listed.relations)) {
+        entry = await getJSON(`${import.meta.env.BASE_URL}gpx/routes/m/${mountainId}.json`);
+        if (!entry) throw new Error('산의 수록 경로를 불러오지 못했습니다. 다시 시도하세요.');
+      }
+      _entries.set(mountainId, entry); return entry;
+    })().finally(() => { _entryLoading.delete(mountainId); });
+    _entryLoading.set(mountainId, job);
   }
-  _entries.set(mountainId, entry);
-  return entry;
+  return _entryLoading.get(mountainId);
 }
 
 const km = (v) => (v == null ? null : `${v.toFixed(1)}km`);
 const fileName = (f) => f.split('/').pop();
+
+export function routePayloads(entry) {
+  return [...new Map([
+    ...(entry?.tracks || []).map(t => ({ ...t, label: (t.route_name || `코스 ${t.route_index}`) + (t.variant ? ` (대안 ${t.variant})` : '') })),
+    ...(entry?.relations || []).map(r => ({ ...r, label: r.name })),
+  ].map(t => [t.file, t])).values()];
+}
 
 // 누르면 위쪽 "등산로별 고도" 목록에 합류시킨다.
 // 버튼 라벨은 "목록에 추가됨"까지만 말한다 — 지도 표시 여부는 그 목록의 토글이 주인이고,
@@ -79,7 +95,7 @@ function trackRow(t, base, onShow, buttonsByFile) {
     el('span', { class: 'gpxdl-meta' }, meta),
     t.status === 'review' ? el('span', { class: 'gpxdl-badge' }, '검토 필요') : null,
     t.duplicate_of ? el('span', { class: 'gpxdl-badge dup' }, '동일 경로') : null,
-    showButton(onShow, { file: t.file, label, route_name: t.route_name, variant: t.variant }, buttonsByFile),
+    showButton(onShow, { ...t, label }, buttonsByFile),
     el('a', { class: 'gpxdl-dl', href: `${base}gpx/${t.file}`, download: fileName(t.file), title: '내려받기' }, '⬇'));
 }
 
@@ -104,13 +120,14 @@ function relationRow(r, base, onShow, buttonsByFile) {
 export function routeDownloadSection(mountainId, { onShow, onShowAll } = {}) {
   const list = el('div', { class: 'gpxdl-list' });
   const actions = el('div', { class: 'gpxdl-actions' });
+  const status = el('p', { class: 'conf-note', role: 'status' });
   const section = el('div', { class: 'section', hidden: true },
     el('h3', {}, '코스별 경로 GPX'),
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
       '실측 GPS 기록이 아닙니다. 등록된 들머리에서 정상까지를 OpenStreetMap 등산로망 위에서 계산한 경로이며, '
       + '현장 통제·계절 통제·출입 제한을 반영하지 않을 수 있으니 산행 전 공식 안내를 함께 확인하세요. '
       + '“지도”를 누르면 위 “등산로별 고도” 목록에 더해져 주요 등산로와 겹쳐 볼 수 있습니다.'),
-    actions, list);
+    actions, status, list);
 
   routeEntryFor(mountainId).then((entry) => {
     if (!entry) return;
@@ -120,24 +137,23 @@ export function routeDownloadSection(mountainId, { onShow, onShowAll } = {}) {
     const base = import.meta.env.BASE_URL;
     const buttonsByFile = new Map();   // 파일 → 그 파일을 가리키는 버튼들
 
-    if (onShow && tracks.length) {
+    if (onShow && (tracks.length || rels.length)) {
       // 파일이 같은 항목(좌표가 같아 공유하는 코스)은 한 번만 올린다.
-      const uniq = [...new Map(tracks.map((t) => [t.file, t])).values()];
-      const payloads = uniq.map((t) => ({
-        file: t.file, route_name: t.route_name, variant: t.variant,
-        label: (t.route_name || `코스 ${t.route_index}`) + (t.variant ? ` (대안 ${t.variant})` : ''),
-      }));
-      const allBtn = el('button', { class: 'btn', type: 'button' }, `계산 경로 ${uniq.length}개 모두 지도에 표시`);
+      const payloads = routePayloads(entry);
+      const allBtn = el('button', { class: 'btn', type: 'button' }, `수록 경로 ${payloads.length}개 모두 지도에 표시`);
       allBtn.addEventListener('click', async () => {
         allBtn.disabled = true;
         const before = allBtn.textContent;
         allBtn.textContent = '여는 중…';
         // 한꺼번에 넘겨 목록·지도를 한 번만 다시 그리게 한다(하나씩 부르면 그 횟수만큼 재생성된다).
         try {
-          if (onShowAll) await onShowAll(payloads);
-          else for (const p of payloads) await onShow(p).catch(() => {});
-          for (const p of payloads) (buttonsByFile.get(p.file) || []).forEach(markAdded);
-        } finally { allBtn.textContent = before; allBtn.disabled = false; }
+          const result = onShowAll ? await onShowAll(payloads) : { loadedFiles: await Promise.all(payloads.map(async p => { try { await onShow(p); return p.file; } catch { return null; } })) };
+          const loaded = result?.loadedFiles || [];
+          for (const file of loaded) (buttonsByFile.get(file) || []).forEach(markAdded);
+          const failed = payloads.length - loaded.filter(Boolean).length;
+          status.textContent = `${loaded.filter(Boolean).length}개 경로를 표시했습니다.${failed ? ` ${failed}개는 불러오지 못했습니다. 다시 누르면 재시도합니다.` : ''}`;
+        } catch (err) { status.textContent = err.message || '경로를 불러오지 못했습니다.'; }
+        finally { allBtn.textContent = before; allBtn.disabled = false; }
       });
       actions.append(allBtn);
     }
@@ -150,7 +166,7 @@ export function routeDownloadSection(mountainId, { onShow, onShowAll } = {}) {
     section.append(el('p', { class: 'conf-note', style: 'margin-top:10px' },
       '선형 © OpenStreetMap contributors (ODbL 1.0) · 고도 SRTM 1 arc-second(NASA/USGS) 지형 DEM 추정값'));
     section.hidden = false;
-  });
+  }).catch(() => {});
 
   return section;
 }

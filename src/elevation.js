@@ -48,7 +48,7 @@ export function buildProfile(latlngs, eles) {
 
 // GPX 파싱 결과(track)에 고도가 있으면 바로 프로파일 생성
 export function profileFromTrack(track) {
-  if (!track?.hasEle) return null;
+  if (!track?.hasEle || track.segments?.length > 1) return null;
   return buildProfile(track.latlngs, track.points.map((p) => p.ele));
 }
 

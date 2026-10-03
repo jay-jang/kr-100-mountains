@@ -39,6 +39,10 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
     setView([lat, lng], z) { map.setView([lat, lng], z ?? map.getZoom()); },
     panTo([lat, lng]) { map.panTo([lat, lng]); },
     flyTo([lat, lng], z) { map.flyTo([lat, lng], z ?? map.getZoom(), { duration: 0.6 }); },
+    onClick(fn) {
+      const handler = e => fn([e.latlng.lat, e.latlng.lng]);
+      map.on('click', handler); return () => map.off('click', handler);
+    },
 
     clearMarkers() { markerGroup.clearLayers(); },
     addMarker({ lat, lng, color, star = false, popupHTML, onClick, title }) {

@@ -13,7 +13,9 @@
     "test": "node scripts/smoke-test.mjs",
     "routes": "node scripts/collect-routes.mjs",
     "reviews": "node scripts/collect-reviews.mjs",
-    "test:ux": "node scripts/ux-test.mjs"
+    "test:ux": "node scripts/ux-test.mjs",
+    "test:routing": "node --test scripts/trailnetwork.test.mjs",
+    "test:planner": "node scripts/planner-test.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1",

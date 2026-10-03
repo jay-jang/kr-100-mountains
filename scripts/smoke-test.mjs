@@ -339,7 +339,8 @@ try {
     await page.locator('.gpxdl-item .gpxdl-show').first().click();
     await page.waitForSelector('.route-item .route-tag', { timeout: 20000 });
     const afterTags = await page.$$eval('.route-tag', (n) => n.map((x) => x.textContent));
-    check('gpx: 지도에 표시 → 등산로 목록에 "계산" 표시로 합류', afterTags.length >= 1 && afterTags.every((t) => t === '계산'), afterTags.join(','));
+    const calculatedItems = await page.locator('.route-item').filter({ has: page.locator('.route-tag').filter({ hasText: /^계산$/ }) }).count();
+    check('gpx: 지도에 표시 → 등산로 목록에 "계산" 표시로 합류', calculatedItems === before + 1, afterTags.join(','));
     check('gpx: 합류 후 항목이 늘어남', (await page.$$eval('.route-item', (n) => n.length)) === before + 1);
     const drawn1 = await page.$$eval('#detail-map path.leaflet-interactive', (n) => n.length);
     check('gpx: 지도에 선이 그려짐', drawn1 > 0, `${drawn1} paths`);

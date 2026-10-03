@@ -1,13 +1,14 @@
 import { loadData, DIFF_CLASS, regionColor, LIST_KEYS, LIST_META } from '../data.js';
-import { createMapView, fetchTrails } from '../map.js';
+import { createMapView } from '../map.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, onChange, recordView } from '../store.js';
 import { parseGPX, drawTrack, navInfo, haversine } from '../gpx.js';
 import { watchPosition, fmtDist, fmtDistFine, directionsLinks } from '../geo.js';
 import { cachedPosition, notePosition, distanceTo, bearingLabel } from '../position.js';
 import { fetchElevations, resample, buildProfile, profileFromTrack, elevationChart, profileStats } from '../elevation.js';
-import { routeTrailheadToSummit } from '../routing.js';
-import { routeDownloadSection } from '../routegpx.js';
+import { routeTrailheadToSummit, fetchMountainTrailNetwork } from '../routing.js';
+import { routeDownloadSection, routeEntryFor, routePayloads } from '../routegpx.js';
+import { routePlanner } from '../routeplanner.js';
 import { reviewSection } from '../reviews.js';
 import { editHike } from '../hikerecord.js';
 import { el, esc, clear } from '../dom.js';
@@ -28,6 +29,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   root.append(page);
   // 라우트를 떠난 뒤 늦게 도착한 응답이 파괴된 지도를 건드리지 않게 하는 표식.
   let disposed = false;
+  const routeAbort = new AbortController();
 
   // ---- breadcrumb ----
   page.append(el('div', { class: 'crumb' },
@@ -89,8 +91,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
 
   // ---- location · route · navigation ----
   const mapNode = el('div', { id: 'detail-map', 'aria-label': `${m.name} 위치 지도` }, el('p', { class: 'explore-loading', role: 'status' }, '지도를 불러오는 중…'));
-  const fileInput = el('input', { type: 'file', accept: '.gpx', style: 'display:none' });
-  const fileBtn = el('button', { disabled: true, type: 'button', onClick: () => fileInput.click() }, 'GPX 불러오기');
+  const fileInput = el('input', { type: 'file', accept: '.gpx', multiple: true, style: 'display:none' });
+  const fileBtn = el('button', { disabled: true, type: 'button', onClick: () => fileInput.click() }, 'GPX 여러 개 불러오기');
   const locateBtn = el('button', { disabled: true, type: 'button', title: '내 위치 실시간 표시' }, '내 위치');
   const dirBtn = el('button', { disabled: true, type: 'button', title: '외부 지도 길찾기' }, '길찾기');
   const followBtn = el('button', { type: 'button', disabled: true, title: 'GPX 경로를 따라 실시간 안내' }, '경로 따라가기');
@@ -99,7 +101,18 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const navPanel = el('div', { class: 'nav-panel', hidden: true });
   const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools, dirMenu);
   const gpxNote = el('div', { class: 'conf-note' });
-  page.append(el('div', { class: 'section' }, el('h3', {}, '위치 · 경로 · 내비게이션'), mapWrap, navPanel, gpxNote));
+  const planner = routePlanner(m, {
+    loadAll: loadPlanningRoutes,
+    showRoutes: () => scrollToRoutes(),
+    onPlan: plan => {
+      removeRoutes(r => r.kind === 'planned');
+      const track = { ...plan, name: `${m.name} 산행 계획`, hasEle: plan.points.every(p => Number.isFinite(p.ele)), segments: [plan.points] };
+      addRoute({ label: `${m.name} · 나의 계획 (${(plan.distance_m / 1000).toFixed(2)}km)`, latlngs: plan.latlngs,
+        profile: profileFromTrack(track), track, kind: 'planned', planningEligible: false });
+    },
+  });
+  mapWrap.append(planner.mapTools);
+  page.append(el('div', { class: 'section planning-section' }, el('h3', {}, '위치 · 경로 · 내비게이션'), planner.root, mapWrap, navPanel, gpxNote));
 
   // ---- 등산로별 고도 (등산로 선택 → 그 경로만 지도 표시 + 고도 프로파일) ----
   const OSM_COLORS = ['#1a73e8', '#e2872a', '#8e44ad', '#16a085', '#c0392b'];
@@ -146,7 +159,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
 
   // 색은 만들 때 한 번 정해 둔다(인덱스로 계산하면 목록이 줄어들 때 색이 바뀐다).
   const colorSeq = { collected: 0, other: 0 };
-  const pickColor = (kind) => (kind === 'gpx' ? '#d1495b'
+  const pickColor = (kind) => (kind === 'planned' ? '#e37722' : kind === 'gpx' ? '#d1495b'
     : kind === 'collected' ? COLLECTED_COLORS[colorSeq.collected++ % COLLECTED_COLORS.length]
     : OSM_COLORS[colorSeq.other++ % OSM_COLORS.length]);
 
@@ -159,6 +172,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
         el('span', { class: 'route-swatch', style: `background:${r.color}` }),
         el('span', { class: 'route-label' }, r.label),
         r.kind === 'collected' ? el('span', { class: 'route-tag', title: '실측 기록이 아니라 OSM 등산로망에서 계산한 경로' }, '계산') : null,
+        r.kind === 'planned' ? el('span', { class: 'route-tag' }, '계획') : null,
+        r.review ? el('span', { class: 'route-tag' }, '검토 필요') : null,
         r.profile ? el('span', { class: 'route-meta' }, `↑${r.profile.gain_m}m · ${fmtDist(r.profile.dist_m)}`) : null);
       pick.addEventListener('click', () => selectRoute(r.rid));
       const eye = el('button', {
@@ -180,7 +195,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       const r = byRid.get(rid);
       if (!r?.latlngs?.length) continue;
       // 겹쳐 그리므로 여기서는 화면을 맞추지 않는다(아래에서 전체 기준으로 한 번만).
-      const layers = [...drawTrack(view, { latlngs: r.latlngs }, r.color, { fit: false })];
+      const layers = [...drawTrack(view, r.track || { latlngs: r.latlngs }, r.color, { fit: false, endpoints: r.kind !== 'osm' || rid === activeId, weight: r.kind === 'planned' ? 6 : 3, opacity: 0.75 })];
       // 지점 이름 라벨은 지금 보고 있는 경로에만 — 여러 개를 켜면 라벨이 지도를 덮는다.
       if (rid === activeId) {
         if (r.trailheadName && r.latlngs[0]) layers.push(view.addLabel({ lat: r.latlngs[0][0], lng: r.latlngs[0][1], text: r.trailheadName, kind: 'trailhead' }));
@@ -193,6 +208,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       all.push(...r.latlngs);
     }
     if (refit && all.length) view.fitBounds(all, 0.15);
+    planner.refresh(routes.filter(r => shown.has(r.rid)));
+    planner.redraw();
   }
 
   // 전체 스위치와 개별 토글의 상태가 어긋나지 않게 맞춘다(프로그램적 변경은 change를 쏘지 않는다).
@@ -208,7 +225,9 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   function showProfile(r) {
     clear(elevChartBox);
     if (r?.profile) elevChartBox.append(elevationChart(r.profile), profileStats(r.profile));
-    else elevChartBox.append(el('div', { class: 'conf-note' }, '이 등산로의 고도 데이터를 만들 수 없습니다.'));
+    else elevChartBox.append(el('div', { class: 'conf-note' }, r?.track?.segments?.length > 1
+      ? '여러 조각으로 나뉜 GPX입니다. 연결된 구간으로 산행 계획을 만들면 해당 구간의 고도를 확인할 수 있습니다.'
+      : '이 등산로의 고도 데이터를 만들 수 없습니다.'));
   }
 
   function selectRoute(rid, { show = true } = {}) {
@@ -219,7 +238,16 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     renderRouteList();
     showProfile(r);
     drawShownRoutes({ refit: show });
-    setNavTrack(r.track || null);
+    setNavTrack(r.track?.segments?.length > 1 ? null : r.track || null);
+    if (!r.profile && !r.profileLoading && !(r.track?.segments?.length > 1)) {
+      r.profileLoading = true;
+      const sampled = resample(r.latlngs, 80);
+      fetchElevations(sampled).then(elevations => {
+        if (disposed || !byRid.has(r.rid)) return;
+        r.profile = buildProfile(sampled, elevations);
+        if (activeId === r.rid) showProfile(r);
+      }).catch(() => {}).finally(() => { r.profileLoading = false; });
+    }
   }
 
   // 체크박스는 전체 표시/숨김 스위치. 껐다 켜면 겹쳐 두었던 선택을 그대로 되살린다
@@ -259,7 +287,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   }
 
   function addGpxRoute(track, label) {
-    const finish = (profile, note) => { addRoute({ label, latlngs: track.latlngs, profile, track, kind: 'gpx' }); if (note) elevNote.textContent = note; };
+    const finish = (profile, note) => { if (disposed) return; addRoute({ label, latlngs: track.latlngs, profile, track, kind: 'gpx' }); if (note) elevNote.textContent = note; };
+    if (track.segments?.length > 1) { finish(null); return; }
     const direct = profileFromTrack(track);
     if (direct) { finish(direct); return; }
     elevNote.textContent = 'GPX에 고도가 없어 지형 고도를 조회하는 중…';
@@ -278,16 +307,20 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     // 좌표가 같아 파일을 공유하는 코스가 여러 행으로 보이므로, 서로 다른 행에서 같은 파일을
     // 동시에 열 수 있다. 진행 중인 요청에 합류시켜 같은 경로가 목록에 두 번 실리지 않게 한다.
     const inflight = collectedLoading.get(t.file);
-    if (inflight) return inflight;
+    if (inflight) {
+      const rid = await inflight;
+      if (!quiet && rid != null && !disposed) { selectRoute(rid); scrollToRoutes(); }
+      return rid;
+    }
     const job = (async () => {
       if (!quiet) { elevNote.textContent = ''; routeLoading.hidden = false; }
       try {
-        const res = await fetch(`${import.meta.env.BASE_URL}gpx/${t.file}`);
+        const res = await fetch(`${import.meta.env.BASE_URL}gpx/${t.file}`, { signal: routeAbort.signal });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const track = parseGPX(await res.text());
         if (disposed) return null;                       // 이미 다른 화면으로 떠났다
         const label = t.label || `${t.route_name || '수집 경로'}${t.variant ? ` (대안 ${t.variant})` : ''}`;
-        const rid = addRoute({ label, latlngs: track.latlngs, profile: profileFromTrack(track), track, kind: 'collected' }, { quiet });
+        const rid = addRoute({ label, latlngs: track.latlngs, profile: profileFromTrack(track), track, kind: 'collected', sourceFile: t.file, review: t.status === 'review' }, { quiet });
         collectedRid.set(t.file, rid);
         if (quiet) shown.add(rid);
         else {
@@ -311,29 +344,67 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
 
   // 여러 개를 한꺼번에 올릴 때는 파일을 다 받은 뒤 목록·지도를 **한 번만** 갱신한다.
   // 하나씩 그리면 코스가 많은 산에서 지도 재생성·화면 맞춤·스크롤이 그 횟수만큼 반복된다.
-  async function addCollectedRoutes(list) {
-    if (!list.length) return;
-    routeLoading.hidden = false;
-    elevNote.textContent = '';
-    let firstRid = null, failed = 0;
-    try {
-      for (const t of list) {
-        try { const rid = await addCollectedRoute(t, { quiet: true }); if (rid && firstRid == null) firstRid = rid; }
-        catch { failed++; }
-        if (disposed) return;
+  // At most six requests in flight; already loaded/in-flight files are reused.
+  async function loadCollectedBatch(list) {
+    const results = new Array(list.length); let next = 0;
+    await Promise.all(Array.from({ length: Math.min(6, list.length) }, async () => {
+      while (next < list.length && !disposed) {
+        const i = next++;
+        try { results[i] = { file: list[i].file, rid: await addCollectedRoute(list[i], { quiet: true }) }; }
+        catch (error) { results[i] = { file: list[i].file, error }; }
       }
+    }));
+    return { loadedFiles: results.filter(r => r?.rid != null).map(r => r.file), failed: results.filter(r => r?.error).length };
+  }
+  async function addCollectedRoutes(list) {
+    routeLoading.hidden = false;
+    try {
+      const result = await loadCollectedBatch(list); if (disposed) return result;
+      syncMasterSwitch(); renderRouteList(); drawShownRoutes({ refit: true });
+      elevNote.textContent = `${result.loadedFiles.length}개 수록 경로를 함께 표시했습니다.${result.failed ? ` ${result.failed}개는 실패했습니다. 다시 시도하세요.` : ''} 실측 기록이 아닌 OSM 경로 자료입니다.`;
+      return result;
     } finally { routeLoading.hidden = true; }
-    syncMasterSwitch();
-    renderRouteList();
-    if (firstRid != null && activeId == null) { activeId = firstRid; showProfile(byRid.get(firstRid)); }
-    drawShownRoutes({ refit: true });
-    elevNote.textContent = `※ 계산 경로 ${list.length - failed}개를 지도에 겹쳐 표시했습니다`
-      + (failed ? ` (${failed}개 실패)` : '')
-      + '. 실측 기록이 아니라 OpenStreetMap 등산로망 위에서 계산한 경로입니다.';
-    scrollToRoutes();
   }
 
-  const lineLen = (l) => { let d = 0; for (let i = 1; i < l.length; i++) d += haversine(l[i - 1][0], l[i - 1][1], l[i][0], l[i][1]); return d; };
+  let osmLoaded = false, osmLoading = null, planningLoading = null;
+  async function loadOSMRoutes(points = []) {
+    if (osmLoaded) { routes.filter(r => r.kind === 'osm').forEach(r => shown.add(r.rid)); return; }
+    if (osmLoading) return osmLoading;
+    osmLoading = (async () => {
+      const result = await fetchMountainTrailNetwork(m, points, { signal: routeAbort.signal });
+      if (disposed) return;
+      if (!result.ways.length) throw new Error('조회 범위에서 OSM 등산로를 찾지 못했습니다.');
+      for (const way of result.ways) {
+        const rid = addRoute({ ...way, profile: null, track: null, kind: 'osm' }, { quiet: true });
+        shown.add(rid);
+      }
+      osmLoaded = true;
+    })().finally(() => { osmLoading = null; });
+    return osmLoading;
+  }
+  async function loadPlanningRoutes() {
+    if (planningLoading) return planningLoading;
+    planningLoading = (async () => {
+      let payloads = [], catalogError = null;
+      try { payloads = routePayloads(await routeEntryFor(m.id)); } catch (err) { catalogError = err; }
+      const points = routes.flatMap(r => [r.latlngs?.[0], r.latlngs?.at(-1)]).filter(Boolean);
+      // Publish each source batch as it arrives so a slow Overpass mirror never
+      // blocks planning with GPX. Fit once, without moving an ongoing edit.
+      const publish = result => {
+        if (!disposed) { syncMasterSwitch(); renderRouteList(); drawShownRoutes(); }
+        return result;
+      };
+      const [stored, osm] = await Promise.allSettled([loadCollectedBatch(payloads).then(publish), loadOSMRoutes(points).then(publish)]);
+      if (disposed) return { failed: true, message: '' };
+      syncMasterSwitch(); renderRouteList(); drawShownRoutes({ refit: !planner.editing });
+      const failures = [catalogError?.message,
+        stored.status === 'rejected' ? stored.reason.message : stored.value.failed ? `수록 GPX ${stored.value.failed}개 불러오기 실패` : null,
+        osm.status === 'rejected' ? `주변 등산로: ${osm.reason.message}` : null].filter(Boolean);
+      const counts = `${routes.filter(r => r.kind === 'collected').length}개 수록 경로 · ${routes.filter(r => r.kind === 'osm').length}개 OSM 등산로`;
+      return { failed: failures.length > 0, message: `${counts}를 함께 표시했습니다.${failures.length ? ` ${failures.join(' / ')} 다시 눌러 재시도할 수 있습니다.` : ''} OSM 조회는 정상과 35km 이내 들머리를 포함한 주변 범위입니다.` };
+    })().finally(() => { planningLoading = null; });
+    return planningLoading;
+  }
 
   // 주요 등산로 코스 → 교차검증된 들머리에서 정상까지 실제 경로 + 고도로 연결
   const scrollToRoutes = () => { const disclosure = routeList.closest('details'); if (disclosure) disclosure.open = true; routeList.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
@@ -359,7 +430,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
         const N = 30, a = t.trailhead, b = [m.lat, m.lon], line = [];
         for (let i = 0; i <= N; i++) { const f = i / N; line.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
         const prof = buildProfile(line, await fetchElevations(line));
-        addRoute({ label: `${t.name} (직선참고)`, courseName: t.name, latlngs: [a, b], profile: prof, track: null, kind: 'course', trailheadName: thName, peaks });
+        addRoute({ label: `${t.name} (직선참고)`, courseName: t.name, latlngs: [a, b], profile: prof, track: null, kind: 'course', planningEligible: false, trailheadName: thName, peaks });
         elevNote.textContent = '※ 실제 등산로 연결을 확인하지 못해 들머리→정상 직선 기준 지형 고도를 표시합니다.';
       }
     } catch (e) { elevNote.textContent = '경로 불러오기 실패: ' + (e.message || e); }
@@ -374,35 +445,15 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   };
 
   loadTrailsBtn.addEventListener('click', async () => {
-    if (m.lat == null) { elevNote.textContent = '정상 좌표가 없어 불러올 수 없습니다.'; return; }
-    const orig = loadTrailsBtn.textContent;
-    setBtnLoading(loadTrailsBtn, true, '불러오는 중…');
-    routeLoading.hidden = false;
-    elevNote.textContent = '';
+    const original = loadTrailsBtn.textContent;
+    setBtnLoading(loadTrailsBtn, true, '모든 등산로 불러오는 중…'); routeLoading.hidden = false;
     try {
-      const lines = await fetchTrails(m.lat, m.lon, 2500);
-      const top = lines.map((l) => ({ l, len: lineLen(l) })).filter((o) => o.len > 400).sort((a, b) => b.len - a.len).slice(0, 4);
-      if (!top.length) { elevNote.textContent = '인근에서 표시할 등산로를 찾지 못했습니다.'; return; }
-      // 이전에 불러온 OSM 등산로는 지도 레이어까지 걷어내고 교체한다(다시 눌러도 누적되지 않도록).
-      // GPX·코스·수집 경로는 그대로 둔다.
-      removeRoutes((r) => r.kind === 'osm');
-      let first = null, n = 0;
-      for (const { l, len } of top) {
-        const line = resample(l, 55);
-        let prof = null; try { prof = buildProfile(line, await fetchElevations(line)); } catch {}
-        if (disposed) return;
-        n++;
-        const rid = addRoute({ label: `OSM 등산로 ${n} (${(len / 1000).toFixed(1)}km)`, latlngs: line, profile: prof, track: null, kind: 'osm' }, { quiet: true });
-        if (first == null) first = rid;
-      }
-      if (first != null) selectRoute(first); // 첫 신규 등산로 선택
-      elevNote.textContent = '※ OpenStreetMap 등산로 좌표의 고도를 open-meteo로 조회한 실제 값입니다.';
-    } catch (e) { elevNote.textContent = '불러오기 실패: ' + (e.message || e); }
-    finally {
-      routeLoading.hidden = true;
-      setBtnLoading(loadTrailsBtn, false, null, routes.some((r) => r.kind === 'osm') ? '실제 등산로 다시 불러오기' : orig);
-      renderRouteList();
-    }
+      await loadOSMRoutes(routes.flatMap(r => [r.latlngs?.[0], r.latlngs?.at(-1)]).filter(Boolean));
+      if (disposed) return;
+      syncMasterSwitch(); renderRouteList(); drawShownRoutes({ refit: true });
+      elevNote.textContent = `범위 내 OSM 등산로 ${routes.filter(r => r.kind === 'osm').length}개를 모두 표시했습니다. 고도는 경로를 선택할 때 조회합니다.`;
+    } catch (err) { if (!disposed) elevNote.textContent = '불러오기 실패: ' + err.message; }
+    finally { routeLoading.hidden = true; setBtnLoading(loadTrailsBtn, false, null, original); }
   });
   renderRouteList();
 
@@ -546,6 +597,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       view.addDot({ lat: m.lat, lng: m.lon, color: regionColor(m.region), title: `${m.name} 정상 ${m.elevation_m}m` });
       view.addLabel({ lat: m.lat, lng: m.lon, text: `${m.name} 정상`, kind: 'summit' }); // 주요 지점 이름(정상)
       locLayer = view.locate();
+      planner.attach(view);
+      drawShownRoutes();
       if (m.coord_confidence && m.coord_confidence !== 'high')
         gpxNote.textContent = `※ 정상 좌표는 근사값일 수 있습니다 (신뢰도: ${m.coord_confidence}).`;
 
@@ -565,15 +618,18 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       followBtn.addEventListener('click', toggleFollow);
 
       fileInput.addEventListener('change', async (e) => {
-        const f = e.target.files?.[0]; if (!f) return;
-        try {
-          const text = await f.text();
-          if (disposed) return;
-          const track = parseGPX(text);
-          gpxNote.textContent = `${track.name || f.name} · 거리 ${track.distance_km}km` +
-            (track.gain_m ? ` · 누적 상승 ${track.gain_m}m` : '');
-          addGpxRoute(track, `GPX: ${track.name || f.name}`);
-        } catch (err) { gpxNote.textContent = 'GPX 오류: ' + err.message; }
+        const files = [...(e.target.files || [])]; if (!files.length) return;
+        const parsed = await Promise.allSettled(files.map(async file => ({ file, track: parseGPX(await file.text()) })));
+        if (disposed) return;
+        for (const result of parsed) if (result.status === 'fulfilled') {
+          const { file, track } = result.value;
+          const rid = addRoute({ label: `GPX: ${track.name || file.name}`, latlngs: track.latlngs,
+            profile: profileFromTrack(track), track, kind: 'gpx' }, { quiet: true }); shown.add(rid);
+        }
+        syncMasterSwitch(); renderRouteList(); drawShownRoutes({ refit: true });
+        const failed = parsed.filter(r => r.status === 'rejected').length;
+        gpxNote.textContent = `${files.length - failed}개 GPX를 함께 표시했습니다.${failed ? ` ${failed}개는 GPX 형식 오류로 제외했습니다.` : ''}`;
+        fileInput.value = '';
       });
     } else {
       mapWrap.replaceWith(el('div', { class: 'empty' }, '정상 좌표 정보를 준비 중입니다.'));
@@ -588,6 +644,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const cleanup = () => {
     // 늦게 도착하는 fetch가 파괴된 지도를 건드리지 않도록 표식을 먼저 세우고 참조를 끊는다.
     disposed = true;
+    routeAbort.abort(); planner.destroy();
     if (stopWatch) stopWatch();
     off();
     window.removeEventListener('kr100:theme', onTheme);

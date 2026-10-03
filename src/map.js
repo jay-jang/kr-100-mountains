@@ -52,6 +52,7 @@ function deadMapView(node) {
     locate: () => ({ set: noop, remove: noop }),
     removeLayer: noop, fitBounds: noop, setBaseType: noop, relayout: noop,
     refreshTheme: noop, destroy: noop,
+    onClick: () => noop,
   };
 }
 

@@ -4,28 +4,40 @@
 export function parseGPX(text) {
   const xml = new DOMParser().parseFromString(text, 'application/xml');
   if (xml.querySelector('parsererror')) throw new Error('GPX 형식을 해석할 수 없습니다');
-  const nodes = [...xml.querySelectorAll('trkpt, rtept')];
-  const pts = nodes.map((n) => ({
+  const parsePoints = nodes => [...nodes].map((n) => ({
     lat: parseFloat(n.getAttribute('lat')),
     lon: parseFloat(n.getAttribute('lon')),
     ele: parseFloat(n.querySelector('ele')?.textContent ?? 'NaN'),
-  })).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lon));
-  if (!pts.length) throw new Error('트랙 포인트가 없습니다');
+  }));
+  const groups = [...xml.querySelectorAll('trkseg, rte')];
+  const segments = [];
+  for (const group of groups.length ? groups : [xml]) {
+    let segment = [];
+    for (const p of parsePoints(group.querySelectorAll('trkpt, rtept'))) {
+      if (!Number.isFinite(p.lat) || !Number.isFinite(p.lon) || Math.abs(p.lat) > 90 || Math.abs(p.lon) > 180) {
+        if (segment.length > 1) segments.push(segment); segment = []; continue;
+      }
+      segment.push(p);
+    }
+    if (segment.length > 1) segments.push(segment);
+  }
+  const pts = segments.flat();
+  if (pts.length < 2) throw new Error('연결된 트랙 포인트가 없습니다');
 
   // stats
   let dist = 0, gain = 0, prev = null;
   const eles = [];
-  for (const p of pts) {
+  for (const segment of segments) { prev = null; for (const p of segment) {
     if (prev) {
       dist += haversine(prev.lat, prev.lon, p.lat, p.lon);
       if (Number.isFinite(p.ele) && Number.isFinite(prev.ele) && p.ele > prev.ele) gain += p.ele - prev.ele;
     }
     if (Number.isFinite(p.ele)) eles.push(p.ele);
     prev = p;
-  }
+  } }
   const name = xml.querySelector('trk > name, metadata > name')?.textContent?.trim() || null;
   return {
-    name, points: pts,
+    name, points: pts, segments,
     latlngs: pts.map((p) => [p.lat, p.lon]),
     distance_km: +(dist / 1000).toFixed(2),
     gain_m: Math.round(gain),
@@ -91,11 +103,14 @@ export function navInfo(track, pos) {
 // Draw a track on a provider-agnostic MapView. Returns a token array for removeLayer().
 // 여러 경로를 함께 그릴 때는 fit:false 로 두고, 호출측이 전체를 한 번에 맞춘다
 // (경로마다 fitBounds를 부르면 마지막 것만 보이게 튄다).
-export function drawTrack(view, track, color = '#d1495b', { fit = true, weight = 4, opacity = 0.95 } = {}) {
-  const tokens = [view.addPolyline(track.latlngs, { color, weight, opacity, outline: true })];
+export function drawTrack(view, track, color = '#d1495b', { fit = true, endpoints = true, weight = 4, opacity = 0.95 } = {}) {
+  const lines = track.segments?.map(segment => segment.map(p => [p.lat, p.lon])) || [track.latlngs];
+  const tokens = lines.map(line => view.addPolyline(line, { color, weight, opacity, outline: true }));
   const s = track.latlngs[0], e = track.latlngs[track.latlngs.length - 1];
-  tokens.push(view.addDot({ lat: s[0], lng: s[1], color: '#2f7d4f', title: '출발' }));
-  tokens.push(view.addDot({ lat: e[0], lng: e[1], color, title: '도착' }));
+  if (endpoints) {
+    tokens.push(view.addDot({ lat: s[0], lng: s[1], color: '#2f7d4f', title: '출발' }));
+    tokens.push(view.addDot({ lat: e[0], lng: e[1], color, title: '도착' }));
+  }
   if (fit) view.fitBounds(track.latlngs, 0.15);
   return tokens;
 }
