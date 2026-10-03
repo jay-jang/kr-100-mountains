@@ -42,7 +42,7 @@ export const LIST_META = {
 
 // filter predicate factory. `lists` = Set of selected list keys (union: 하나라도 속하면 통과). `allFour` = 4개 공통만.
 export function mountainSearchText(m) {
-  return `${m.name} ${m.name_full} ${m.region} ${m.province} ${m.location} ${m.id} ${(m.features || []).join(' ')} ${m.best_season || ''} ${m.transport || ''} ${(m.trails || []).map(t => `${t.name} ${t.start || ''} ${t.note || ''}`).join(' ')}`.toLowerCase();
+  return `${m.name} ${m.name_full} ${m.region} ${m.province} ${m.location} ${m.id} ${(m.features || []).join(' ')} ${m.best_season || ''} ${m.transport || ''} ${(m.trails || []).map(t => `${t.name} ${t.start || ''} ${t.note || ''}`).join(' ')} ${(m.famous_courses || []).map(c => `${c.name} ${(c.via || []).join(' ')} ${c.highlight || ''}`).join(' ')}`.toLowerCase();
 }
 
 export function filterMountains(mountains, { q, regions, lists, allFour, hikedOnly, isHiked, easy, maxHours, maxDistance }) {

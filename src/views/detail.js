@@ -12,6 +12,7 @@ import { routePlanner } from '../routeplanner.js';
 import { reviewSection } from '../reviews.js';
 import { editHike } from '../hikerecord.js';
 import { el, esc, clear } from '../dom.js';
+import { famousCourseRow } from '../famouscourses.js';
 
 export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const data = await loadData();
@@ -33,7 +34,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
 
   // ---- breadcrumb ----
   page.append(el('div', { class: 'crumb' },
-    el('a', { class: 'detail-return', href: returnTo }, returnTo === '#/track' ? '← 내 기록으로 돌아가기' : returnTo === '#/' ? '← 홈으로 돌아가기' : '← 탐색으로 돌아가기'),
+    el('a', { class: 'detail-return', href: returnTo }, returnTo.startsWith('#/courses') ? '← 대표 코스로 돌아가기' : returnTo === '#/track' ? '← 내 기록으로 돌아가기' : returnTo === '#/' ? '← 홈으로 돌아가기' : '← 탐색으로 돌아가기'),
     el('span', { 'aria-hidden': 'true' }, ' / '),
     el('a', { href: '#/map' }, '지도'), ' / ',
     el('a', { href: `#/map?region=${encodeURIComponent(m.region)}&focus=${m.id}` }, m.region), ' / ', m.name_full));
@@ -464,7 +465,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   if (m.trails?.length) {
     const VBADGE = { verified: ['교차검증 일치', 'v-ok'], mixed: ['난이도 이견', 'v-mixed'], single: ['단일 확인', 'v-single'] };
     const grid = el('div', { class: 'trail-grid' });
-    m.trails.forEach((t) => {
+    m.trails.forEach((t, index) => {
       const vb = t.verify && VBADGE[t.verify.level];
       const directions = courseDirections(m, t);
       const facts = el('div', { class: 't-facts' },
@@ -478,7 +479,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
         ? el('button', { class: 'course-route-btn', type: 'button', title: '이 코스를 지도·고도로 보기' }, '지도·고도')
         : null;
       if (routeBtn) routeBtn.addEventListener('click', () => showCourseRoute(t, routeBtn));
-      grid.append(el('div', { class: 'trail-card' },
+      grid.append(el('div', { class: 'trail-card', dataset: { trailIndex: index }, tabindex: '-1' },
         el('div', { class: 't-name' }, t.name || '주요 코스', routeBtn), facts,
         t.note ? el('div', { class: 't-note' }, t.note) : null, directions));
     });
@@ -486,6 +487,20 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       el('h3', {}, '주요 등산로'), grid,
       el('p', { class: 'conf-note' }, '난이도·등반시간은 자료 간 차이가 있을 수 있습니다. “지도·고도”에서 코스 경로와 고도를 확인하세요.')),
       contents.nextSibling);
+  }
+
+  if (m.famous_courses?.length) {
+    const onInfo = index => {
+      const card = page.querySelector(`[data-trail-index="${index}"]`);
+      card?.focus({ preventScroll: true });
+      card?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center' });
+    };
+    page.insertBefore(el('section', { class: 'section famous-section' },
+      el('h3', {}, '대표·유명 코스'),
+      el('p', { class: 'conf-note' }, '정상 접근·능선 종주·경관 탐방을 대표하는 코스를 따로 모았습니다. 공식 안내 확인과 기존 자료 선정을 구분하며, 인기 순위는 아닙니다.'),
+      el('ol', { class: 'famous-course-list' }, ...m.famous_courses.map(c => famousCourseRow(m, c, { detail: true, onInfo }))),
+      el('a', { class: 'course-mountain-link', href: '#/courses' }, '전체 산별 대표 코스 모음 →')),
+    contents.nextSibling);
   }
 
   function setNavTrack(track) { navTrack = track; followBtn.disabled = !track; }
@@ -640,6 +655,14 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const onTheme = () => view && view.refreshTheme();
   window.addEventListener('kr100:theme', onTheme);
   window.scrollTo(0, 0);
+  const selectedCourse = new URLSearchParams(location.hash.split('?')[1] || '').get('course');
+  const selectedRow = [...page.querySelectorAll('.famous-course')].find(n => n.dataset.courseId === selectedCourse);
+  if (selectedRow) requestAnimationFrame(() => {
+    if (disposed) return;
+    selectedRow.classList.add('selected-course');
+    selectedRow.focus({ preventScroll: true });
+    selectedRow.scrollIntoView({ block: 'center' });
+  });
   initializeMap().catch(err => { if (!disposed) gpxNote.textContent = '지도를 불러오지 못했습니다. 코스 안내를 이용해 주세요.'; console.error(err); });
   const cleanup = () => {
     // 늦게 도착하는 fetch가 파괴된 지도를 건드리지 않도록 표식을 먼저 세우고 참조를 끊는다.

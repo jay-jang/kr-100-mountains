@@ -395,3 +395,49 @@ button:disabled { cursor: default; }
   .record-add { padding: 16px; }
   .ds-meta { display: none; }
 }
+
+/* A mountain-by-mountain index of selected walks, with references on each row. */
+.courses-page { max-width: 1120px; padding-bottom: 90px; }
+.course-eyebrow { margin: 30px 0 12px; color: var(--text-faint); font-size: 12px; letter-spacing: .09em; }
+.courses-page > h2 { font-family: 'Noto Serif KR', 'Batang', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 500; margin: 0 0 16px; }
+.courses-intro { max-width: 650px; color: var(--text-soft); line-height: 1.8; }
+.courses-policy { margin: 20px 0 28px; max-width: 780px; font-size: 13px; color: var(--text-soft); }
+.courses-policy summary { cursor: pointer; min-height: 44px; display: list-item; padding: 12px 0; color: var(--accent-ink); }
+.courses-policy p { line-height: 1.8; }
+.courses-filters { display: flex; align-items: end; gap: 16px; padding: 20px 0; border-block: 1px solid var(--border-strong); }
+.courses-filters label { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--text-soft); }
+.courses-filters label:first-child { flex: 1; }
+.courses-filters input, .courses-filters select { width: 100%; min-height: 44px; border: 1px solid var(--border-strong); border-radius: 3px; padding: 10px 12px; background: var(--bg-elev); color: var(--text); font: inherit; font-size: 14px; }
+.courses-filters .btn { min-height: 44px; }
+.courses-count { margin: 24px 0; font-size: 13px; color: var(--text-faint); }
+.famous-mountain { display: grid; grid-template-columns: minmax(170px, 1fr) minmax(0, 3fr); gap: 32px; padding: 30px 0; border-top: 1px solid var(--border-strong); }
+.famous-mountain-title h3 { font-family: 'Noto Serif KR', 'Batang', serif; font-size: 23px; font-weight: 500; margin: 0 0 10px; }
+.famous-mountain-title h3 a, .famous-course h4 a { color: var(--text); }
+.famous-mountain-title p { color: var(--text-faint); font-size: 12px; line-height: 1.8; margin: 0 0 16px; }
+.course-mountain-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-ink); font-size: 13px; }
+.famous-course-list { list-style: none; padding: 0; margin: 0; }
+.famous-course { padding: 18px 0; border-bottom: 1px solid var(--border); scroll-margin-block: 120px; }
+.famous-course:first-child { padding-top: 0; }
+.famous-course:last-child { border-bottom: 0; }
+.famous-course-heading { display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.famous-course h4 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.6; overflow-wrap: anywhere; }
+.famous-course h4 a { display: inline-block; padding: 8px 0; min-height: 44px; }
+.course-type { font-size: 11px; color: var(--text-faint); }
+.course-itinerary { color: var(--accent-ink); font-size: 13px; line-height: 1.8; margin: 8px 0; overflow-wrap: anywhere; }
+.course-highlight { font-size: 13px; line-height: 1.8; color: var(--text-soft); margin: 8px 0; }
+.course-evidence { display: flex; flex-wrap: wrap; column-gap: 12px; align-items: center; color: var(--text-faint); font-size: 11px; line-height: 1.8; }
+.course-evidence a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-ink); overflow-wrap: anywhere; }
+.course-evidence time { font-size: 10px; }
+.course-info-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0; margin-top: 4px; background: none; border: 0; color: var(--accent-ink); font-size: 13px; text-align: left; }
+.famous-section > .conf-note { margin-bottom: 20px; }
+.famous-section .famous-course { padding: 18px 0; }
+.famous-course.selected-course { background: var(--accent-soft); padding: 18px 14px; border-radius: 3px; }
+@media (max-width: 760px) {
+  .famous-mountain { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
+  .famous-mountain-title p { margin-bottom: 0; }
+  .courses-filters { flex-wrap: wrap; gap: 12px; }
+  .courses-filters label:first-child { flex-basis: 100%; }
+  .courses-filters label:nth-child(2) { flex: 1; }
+  .nav a { padding-inline: 6px; }
+}
+@media (max-width: 380px) { .nav a { font-size: 12px; } }

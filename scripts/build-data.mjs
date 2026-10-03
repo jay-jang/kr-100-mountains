@@ -21,6 +21,11 @@ if (existsSync(enrichPath)) {
   console.log(`using ${enrichPath.split('/').pop()}`);
 }
 const byId = new Map(enrichment.results.map(r => [r.id, r]));
+const famous = JSON.parse(readFileSync(join(ROOT, 'data', 'famous-courses.json'), 'utf8'));
+const famousById = new Map(famous.mountains.map(m => [m.mountain_id, m.courses]));
+if (famousById.size !== registry.mountains.length || famous.mountains.length !== famousById.size) {
+  throw new Error('Representative courses must cover every mountain exactly once');
+}
 
 // Korea bounding box sanity check
 const inKorea = (lat, lon) =>
@@ -47,6 +52,25 @@ const mountains = registry.mountains.map(m => {
     issues.push(`${m.id}: no enrichment`);
     out.coord_confidence = 'none';
   }
+  const courses = famousById.get(m.id);
+  if (!courses?.length) throw new Error(`${m.id}: no representative courses`);
+  const courseIds = new Set();
+  out.famous_courses = courses.map(c => {
+    if (!c.id || courseIds.has(c.id) || !c.name || c.name.includes('\uFFFD') || !c.selection_reason ||
+        !['official', 'catalog'].includes(c.evidence) || !c.sources?.length) {
+      throw new Error(`${m.id}: invalid representative course ${c.id}`);
+    }
+    courseIds.add(c.id);
+    for (const s of c.sources) {
+      const url = new URL(s.url);
+      if (!['http:', 'https:'].includes(url.protocol) || !s.title ||
+          s.scope !== (c.evidence === 'official' ? 'course' : 'mountain') ||
+          (c.evidence === 'official' && !s.checked_at)) throw new Error(`${c.id}: invalid source`);
+    }
+    const trailIndex = c.trail_name ? out.trails.findIndex(t => t.name === c.trail_name) : -1;
+    if (c.trail_name && trailIndex < 0) throw new Error(`${c.id}: missing referenced trail`);
+    return { ...c, ...(trailIndex >= 0 ? { trail_index: trailIndex } : {}) };
+  });
   return out;
 });
 
@@ -60,6 +84,12 @@ const payload = {
     generated: 'build-data.mjs',
     enriched,
     with_coords: withCoords,
+    famous_courses: {
+      ...famous.meta,
+      mountains: mountains.length,
+      courses: mountains.reduce((n, m) => n + m.famous_courses.length, 0),
+      official: mountains.reduce((n, m) => n + m.famous_courses.filter(c => c.evidence === 'official').length, 0),
+    },
   },
   mountains,
 };
@@ -101,6 +131,14 @@ for (const m of mountains) {
   body.push(`> ${m.region} · ${m.location} · 해발 ${m.elevation_m}m` +
     ` · ${['sanlim', 'bac', 'hansanha', 'wolgansan'].filter((k) => m.lists[k]).map((k) => LIST_LABEL[k]).join(' / ')}`, '');
   if (m.summary) body.push('## 개요', '', m.summary, '');
+  body.push('## 대표·유명 코스', '', famous.meta.policy, '', famous.meta.catalog_note, '');
+  for (const c of m.famous_courses) {
+    body.push(`### ${c.name}`, '', `- 선정 유형: ${c.selection_reason}`);
+    if (c.via?.length) body.push(`- 주요 동선: ${c.via.join(' → ')}`);
+    if (c.highlight) body.push(`- 특징: ${c.highlight}`);
+    body.push(`- 근거: ${c.evidence === 'official' ? '공식 코스 안내 확인' : '기존 자료 선정 (산 단위 참고자료)'}`,
+      ...c.sources.map(s => `- [${s.title}](${s.url})${s.checked_at ? ` (확인: ${s.checked_at})` : ''}`), '');
+  }
   if (m.trails && m.trails.length) {
     const vmark = { verified: '교차검증 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };
     body.push('## 주요 등산로', '');

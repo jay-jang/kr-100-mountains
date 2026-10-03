@@ -6,6 +6,7 @@ import { renderHome } from './views/home.js';
 import { renderExplore } from './views/explore.js';
 import { renderDetail } from './views/detail.js';
 import { renderStats } from './views/stats.js';
+import { renderCourses } from './views/courses.js';
 import { initSync } from './sync.js';
 
 initTheme();
@@ -17,6 +18,7 @@ const appRoot = document.getElementById('app');
 const nav = el('nav', { class: 'nav', 'aria-label': '주요 메뉴' },
   el('a', { href: '#/', dataset: { route: 'home' } }, '산 둘러보기'),
   el('a', { href: '#/map', dataset: { route: 'map' } }, '명산 지도'),
+  el('a', { href: '#/courses', dataset: { route: 'courses' } }, '대표 코스'),
   el('a', { href: '#/track', dataset: { route: 'track' } }, '내 기록'),
   el('a', { class: 'external-nav', href: 'https://ko.wikipedia.org/wiki/대한민국_100대_명산_목록', target: '_blank', rel: 'noopener' }, '원자료 ↗'));
 
@@ -57,7 +59,7 @@ async function route() {
     history.replaceState(state, '');
   }
 
-  const navKey = parts[0] === 'map' ? 'map' : (parts[0] === 'track' || parts[0] === 'stats') ? 'track' : parts[0] === 'm' ? '' : 'home';
+  const navKey = parts[0] === 'courses' ? 'courses' : parts[0] === 'map' ? 'map' : (parts[0] === 'track' || parts[0] === 'stats') ? 'track' : parts[0] === 'm' ? '' : 'home';
   markActiveNav(navKey);
 
   try {
@@ -66,6 +68,8 @@ async function route() {
       const returnTo = history.state?.kr100DetailPath === path ? history.state.kr100ReturnTo : origin || '#/map';
       history.replaceState({ ...history.state, kr100DetailPath: path, kr100ReturnTo: returnTo }, '');
       nextCleanup = await renderDetail(mount, decodeURIComponent(parts[1]), { returnTo });
+    } else if (parts[0] === 'courses') {
+      nextCleanup = await renderCourses(mount);
     } else if (parts[0] === 'map') {
       main.className = 'home-mode';
       nextCleanup = await renderExplore(mount);
@@ -80,7 +84,7 @@ async function route() {
       cleanup = nextCleanup;
       loading.remove();
       main.removeAttribute('aria-busy');
-      const title = mount.querySelector('.hero h2, .journal-page > h2, .explore-heading h2');
+      const title = mount.querySelector('.hero h2, .journal-page > h2, .explore-heading h2, .courses-page > h2');
       document.title = `${title?.textContent || '산 둘러보기'} · 대한민국 100대 명산`;
       if (version > 1 && (!document.activeElement || document.activeElement === document.body)) main.focus({ preventScroll: true });
     }
