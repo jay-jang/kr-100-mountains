@@ -41,6 +41,10 @@ export const LIST_META = {
 };
 
 // filter predicate factory. `lists` = Set of selected list keys (union: 하나라도 속하면 통과). `allFour` = 4개 공통만.
+export function mountainSearchText(m) {
+  return `${m.name} ${m.name_full} ${m.region} ${m.province} ${m.location} ${m.id} ${(m.features || []).join(' ')} ${m.best_season || ''} ${m.transport || ''} ${(m.trails || []).map(t => `${t.name} ${t.start || ''} ${t.note || ''}`).join(' ')}`.toLowerCase();
+}
+
 export function filterMountains(mountains, { q, regions, lists, allFour, hikedOnly, isHiked, easy, maxHours, maxDistance }) {
   const query = (q || '').trim().toLowerCase();
   return mountains.filter((m) => {
@@ -49,10 +53,7 @@ export function filterMountains(mountains, { q, regions, lists, allFour, hikedOn
     if (lists && lists.size && ![...lists].some((k) => m.lists[k])) return false;
     if (hikedOnly && !isHiked(m.id)) return false;
     if ((easy || maxHours || maxDistance) && !matchingCourses(m, { easy, maxHours, maxDistance }).length) return false;
-    if (query) {
-      const hay = `${m.name} ${m.name_full} ${m.province} ${m.location} ${m.id} ${(m.features || []).join(' ')} ${m.best_season || ''} ${m.transport || ''} ${(m.trails || []).map(t => `${t.name} ${t.start || ''} ${t.note || ''}`).join(' ')}`.toLowerCase();
-      if (!hay.includes(query)) return false;
-    }
+    if (query && !mountainSearchText(m).includes(query)) return false;
     return true;
   });
 }

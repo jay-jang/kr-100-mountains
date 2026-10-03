@@ -40,14 +40,22 @@ let routeVersion = 0;
 async function route() {
   const version = ++routeVersion;
   let nextCleanup = null;
+  const origin = cleanup?.origin;
   if (cleanup) { try { cleanup(); } catch {} cleanup = null; }
   clear(main);
   main.className = '';
   const mount = el('div', { class: 'route-mount' });
   main.append(mount);
+  main.setAttribute('aria-busy', 'true');
+  const loading = el('p', { class: 'page route-loading', role: 'status' }, '산 정보를 불러오는 중…');
+  mount.append(loading);
   const hash = location.hash.replace(/^#/, '') || '/';
   const [path] = hash.split('?');
   const parts = path.split('/').filter(Boolean); // [] | ['map'] | ['m', id] | ['track']
+  if (parts[0] !== 'm' && history.state?.kr100DetailPath) {
+    const { kr100DetailPath, kr100ReturnTo, ...state } = history.state;
+    history.replaceState(state, '');
+  }
 
   const navKey = parts[0] === 'map' ? 'map' : (parts[0] === 'track' || parts[0] === 'stats') ? 'track' : parts[0] === 'm' ? '' : 'home';
   markActiveNav(navKey);
@@ -55,7 +63,9 @@ async function route() {
   try {
     if (parts[0] === 'm' && parts[1]) {
       main.className = '';
-      nextCleanup = await renderDetail(mount, decodeURIComponent(parts[1]));
+      const returnTo = history.state?.kr100DetailPath === path ? history.state.kr100ReturnTo : origin || '#/map';
+      history.replaceState({ ...history.state, kr100DetailPath: path, kr100ReturnTo: returnTo }, '');
+      nextCleanup = await renderDetail(mount, decodeURIComponent(parts[1]), { returnTo });
     } else if (parts[0] === 'map') {
       main.className = 'home-mode';
       nextCleanup = await renderExplore(mount);
@@ -66,13 +76,25 @@ async function route() {
       main.className = '';
       nextCleanup = await renderHome(mount);
     }
-    if (version === routeVersion) cleanup = nextCleanup;
+    if (version === routeVersion) {
+      cleanup = nextCleanup;
+      loading.remove();
+      main.removeAttribute('aria-busy');
+      const title = mount.querySelector('.hero h2, .journal-page > h2, .explore-heading h2');
+      document.title = `${title?.textContent || '산 둘러보기'} · 대한민국 100대 명산`;
+      if (version > 1 && (!document.activeElement || document.activeElement === document.body)) main.focus({ preventScroll: true });
+    }
     else nextCleanup?.();
   } catch (e) {
     if (version !== routeVersion) return;
     console.error(e);
     clear(main);
-    main.append(el('div', { class: 'page' }, el('div', { class: 'empty' }, '오류: ' + e.message)));
+    main.removeAttribute('aria-busy');
+    main.append(el('div', { class: 'page' }, el('div', { class: 'empty', role: 'alert' },
+      el('strong', {}, '산 정보를 불러오지 못했습니다.'),
+      el('p', {}, '연결 상태를 확인한 후 다시 시도해 주세요.'),
+      el('button', { class: 'btn primary', onClick: route }, '다시 시도'),
+      el('a', { class: 'btn', href: '#/' }, '홈으로'))));
   }
 }
 function markActiveNav(route) {

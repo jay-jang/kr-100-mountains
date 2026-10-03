@@ -33,12 +33,15 @@ export function toggleHiked(id, on) {
   return next;
 }
 
-export function setHikedDate(id, date) {
+function validateHikeDate(date) {
   const now = new Date();
   const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   const parsed = new Date(date + 'T12:00:00Z');
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date || date > today)
+  if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date || date > today)
     throw new Error('오늘 또는 이전의 올바른 산행일을 입력하세요.');
+}
+export function setHikedDate(id, date) {
+  validateHikeDate(date);
   const obj = read();
   obj[id] = date; write(obj);
   syncHook?.('set', id, date);
@@ -47,13 +50,25 @@ export function setHikedDate(id, date) {
 export function exportHiked() {
   return JSON.stringify({ version: 1, hiked: read() }, null, 2);
 }
-export function importHiked(json) {
+export function importHiked(json, validIds) {
   const parsed = JSON.parse(json);
-  const incoming = parsed.hiked || parsed; // tolerate raw map
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('등정 기록 파일을 선택하세요.');
+  if ('version' in parsed && parsed.version !== 1) throw new Error('지원하지 않는 기록 파일 버전입니다.');
+  const incoming = 'hiked' in parsed ? parsed.hiked : parsed; // tolerate legacy raw map
+  if (!incoming || typeof incoming !== 'object' || Array.isArray(incoming)) throw new Error('등정 기록 형식이 올바르지 않습니다.');
   const obj = read();
-  for (const [id, date] of Object.entries(incoming)) obj[id] = date || obj[id] || '1970-01-01';
+  let imported = 0, skipped = 0;
+  for (const [id, date] of Object.entries(incoming)) {
+    if (['__proto__', 'constructor', 'prototype'].includes(id)) throw new Error('등정 기록 형식이 올바르지 않습니다.');
+    if (validIds && !validIds.has(id)) { skipped++; continue; }
+    const value = date || obj[id] || '1970-01-01';
+    validateHikeDate(value);
+    obj[id] = value; imported++;
+  }
+  if (!imported) throw new Error('가져올 수 있는 명산 기록이 없습니다.');
   write(obj);
   syncHook?.('bulk');
+  return { imported, skipped };
 }
 export function clearHiked() { write({}); syncHook?.('clear'); }
 

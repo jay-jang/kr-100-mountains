@@ -20,6 +20,7 @@ export function removeHikeWithUndo(id, name) {
 }
 export function editHike(m) {
   activeDialog?.close();
+  const opener = document.activeElement;
   const previous = hikedMap()[m.id];
   const date = el('input', { type: 'date', required: true, max: localToday(), value: previous || localToday(), id: 'hike-date' });
   const error = el('p', { role: 'alert', class: 'record-error' });
@@ -27,7 +28,14 @@ export function editHike(m) {
   const close = () => dialog.close();
   const form = el('form', { onSubmit: e => {
     e.preventDefault();
-    try { setHikedDate(m.id, date.value); close(); }
+    try {
+      setHikedDate(m.id, date.value); close();
+      activeToast?.remove();
+      const toast = el('div', { class: 'record-toast', role: 'status' }, `${m.name} · ${date.value} 산행을 저장했습니다.`,
+        el('button', { class: 'btn', 'aria-label': '알림 닫기', onClick: () => toast.remove() }, '닫기'));
+      activeToast = toast; document.body.append(toast);
+      setTimeout(() => toast.remove(), 4500);
+    }
     catch (err) { error.textContent = err.message; }
   } },
   el('h2', { id: 'record-title' }, `${m.name} 등정 기록`),
@@ -45,6 +53,8 @@ export function editHike(m) {
     window.removeEventListener('hashchange', close);
     dialog.remove();
     if (activeDialog === dialog) activeDialog = null;
+    const target = opener?.isConnected ? opener : document.querySelector('.hike-btn, .record-add input');
+    target?.focus({ preventScroll: true });
   }, { once: true });
   dialog.showModal();
   date.focus();

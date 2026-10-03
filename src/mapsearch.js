@@ -1,7 +1,7 @@
 // 산 검색 콤보박스 — 지도 페이지 패널과 전체화면 오버레이가 함께 쓰는 단일 구현.
 // 타이핑은 onInput으로 넘기고(목록 필터 등 화면별 처리), 제안을 고르면 onPick으로 알린다.
 import { el, clear } from './dom.js';
-import { REGION_COLORS } from './data.js';
+import { REGION_COLORS, mountainSearchText } from './data.js';
 import { fmtDistFine } from './geo.js';
 import { distanceTo } from './position.js';
 
@@ -15,7 +15,7 @@ export function searchRank(m, q) {
   if (name === q || full === q) return 0;
   if (name.startsWith(q) || full.startsWith(q)) return 1;
   if (name.includes(q) || full.includes(q)) return 2;
-  return `${m.province} ${m.location} ${m.id}`.toLowerCase().includes(q) ? 3 : -1;
+  return mountainSearchText(m).includes(q) ? 3 : -1;
 }
 
 /**
@@ -67,6 +67,7 @@ export function mountainSearch({
   function render() {
     const q = input.value.trim().toLowerCase();
     clear(box); items = []; idx = -1;
+    input.removeAttribute('aria-activedescendant');
     if (!q) { close(); return; }
     const pos = getPos();
     const hits = mountains

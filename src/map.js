@@ -6,6 +6,7 @@
 //   addDot({lat,lng,color,title}) -> {remove()}
 //   addPolyline(latlngs,style) -> {remove()} · addPolylines(lines,style) -> {remove()}
 //   removeLayer(token|token[]) · fitBounds(latlngs,pad) · refreshTheme() · destroy()
+import { el, clear } from './dom.js';
 
 export const KAKAO_KEY = import.meta.env.VITE_KAKAO_KEY || '';
 export const MAP_PROVIDER = KAKAO_KEY ? 'kakao' : 'osm';
@@ -20,25 +21,30 @@ export async function createMapView(node, opts = {}) {
   try {
     if (MAP_PROVIDER === 'kakao') {
       const { createKakaoView } = await import('./providers/kakao.js');
-      return await createKakaoView(node, opts);
+      const view = await createKakaoView(node, opts);
+      node.querySelector('.explore-loading')?.remove();
+      return view;
     }
     const { createLeafletView } = await import('./providers/leaflet.js');
-    return createLeafletView(node, opts);
+    const view = createLeafletView(node, opts);
+    node.querySelector('.explore-loading')?.remove();
+    return view;
   } catch (e) {
     // Map failure must never break the rest of the page — return a no-op stub.
     console.error('map provider failed:', e);
-    return deadMapView(node, e);
+    return deadMapView(node);
   }
 }
 
-function deadMapView(node, err) {
-  const hint = MAP_PROVIDER === 'kakao'
-    ? '카카오맵 JS 키/도메인 등록을 확인하세요.'
-    : (err?.message || '');
-  node.innerHTML = `<div class="map-error">🗺️ 지도를 불러오지 못했습니다.<br><small>${hint}</small></div>`;
+function deadMapView(node) {
+  clear(node).append(el('div', { class: 'map-error', role: 'status' },
+    el('strong', {}, '지도를 불러오지 못했습니다.'),
+    el('p', {}, '연결 상태를 확인해 주세요. 산 목록과 코스 정보는 계속 이용할 수 있습니다.'),
+    el('button', { class: 'btn', onClick: () => location.reload() }, '새로고침')));
   const noop = () => {};
   const token = { remove: noop };
   return {
+    ready: false,
     setView: noop, panTo: noop, flyTo: noop, clearMarkers: noop,
     addMarker: () => ({ openPopup: noop, remove: noop }),
     addDot: () => token, addPolyline: () => token, addPolylines: () => token,

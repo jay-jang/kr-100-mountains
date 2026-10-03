@@ -5,6 +5,7 @@ import { cachedPosition, requestPosition, onPositionChange, permissionState, geo
   bearingLabel, positionAgeText, sortByDistance, FRESH_MS } from '../position.js';
 import { fmtDistFine } from '../geo.js';
 import { el, clear } from '../dom.js';
+import { searchRank } from '../mapsearch.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 
@@ -23,7 +24,7 @@ export async function renderHome(root) {
   root.append(page);
 
   const body = el('div');
-  page.append(body);
+  page.append(heroSection(data, seasonInfo(new Date().getMonth())), body);
 
   // "내 주변 명산" 상태 — 위치는 사용자가 눌렀을 때만 새로 측정한다.
   // force=true(위치 새로고침)면 캐시를 쓰지 않고 반드시 다시 측정한다.
@@ -37,6 +38,7 @@ export async function renderHome(root) {
   }
 
   function draw() {
+    if (!root.isConnected) return;
     clear(body);
     const hiked = hikedMap();
     const hikedIds = new Set(Object.keys(hiked));
@@ -44,7 +46,6 @@ export async function renderHome(root) {
     const returning = hikedIds.size > 0 || recent.length > 0;
     const season = seasonInfo(new Date().getMonth());
 
-    body.append(heroSection(data, season));
     if (cachedPosition()) body.append(nearbySection(data, near, locateForNearby));
     body.append(recommendSection(data, hikedIds, recent, season));
     if (!cachedPosition()) body.append(nearbySection(data, near, locateForNearby));
@@ -58,12 +59,14 @@ export async function renderHome(root) {
   draw();
   // 이미 권한을 허용한 사용자는 묻지 않고 바로 내 주변을 채운다.
   if (!cachedPosition() && geoAvailable()) {
-    permissionState().then((s) => { if (s === 'granted') locateForNearby(); });
+    permissionState().then((s) => { if (root.isConnected && s === 'granted') locateForNearby(); });
   }
   const off = onChange(draw);
   const offPos = onPositionChange(draw);
   window.scrollTo(0, 0);
-  return () => { off(); offPos(); };
+  const cleanup = () => { off(); offPos(); };
+  cleanup.origin = '#/';
+  return cleanup;
 }
 
 /* ---------- 섹션들 ---------- */
@@ -72,22 +75,37 @@ function heroSection(data, season) {
   const search = el('input', {
     class: 'dash-search', type: 'search', 'aria-label': '산 이름·지역 검색',
     placeholder: '어느 산으로 떠날까요? 산 이름 또는 지역',
+    role: 'combobox', 'aria-autocomplete': 'list', 'aria-controls': 'home-suggestions', 'aria-expanded': 'false', autocomplete: 'off',
   });
-  const results = el('div', { class: 'dash-suggest', hidden: true });
+  const results = el('div', { class: 'dash-suggest', id: 'home-suggestions', role: 'listbox', 'aria-label': '검색 제안', hidden: true });
+  let selected = -1;
+  function closeSuggestions() {
+    results.hidden = true;
+    selected = -1;
+    search.setAttribute('aria-expanded', 'false');
+    search.removeAttribute('aria-activedescendant');
+  }
 
   const go = (q) => { location.hash = `#/map?q=${encodeURIComponent(q)}`; };
-  search.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.isComposing && search.value.trim()) go(search.value.trim()); });
   search.addEventListener('input', () => {
     const q = search.value.trim().toLowerCase();
     clear(results);
-    if (!q) { results.hidden = true; return; }
-    const hits = filterMountains(data.mountains, { q }).slice(0, 6);
-    if (!hits.length) { results.hidden = true; return; }
-    hits.forEach((m) => results.append(el('a', { class: 'dash-suggest-item', href: `#/m/${m.id}` },
+    closeSuggestions();
+    if (!q) return;
+    const hits = filterMountains(data.mountains, { q })
+      .sort((a, b) => searchRank(a, q) - searchRank(b, q) || a.name.localeCompare(b.name, 'ko')).slice(0, 6);
+    if (!hits.length) {
+      results.append(el('p', { class: 'search-empty', role: 'status' }, '검색 결과가 없습니다. 산 이름이나 지역을 바꿔보세요.'));
+      results.hidden = false;
+      search.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    hits.forEach((m, i) => results.append(el('a', { class: 'dash-suggest-item', href: `#/m/${m.id}`, id: `home-suggestion-${i}`, role: 'option', 'aria-selected': 'false', tabindex: '-1' },
       el('span', { class: 'ds-dot', style: `background:${REGION_COLORS[m.region]}` }),
       el('span', { class: 'ds-name' }, m.name_full),
       el('span', { class: 'ds-meta' }, `${m.province} · ${Math.round(m.elevation_m)}m`))));
     results.hidden = false;
+    search.setAttribute('aria-expanded', 'true');
   });
 
   const chips = el('div', { class: 'dash-hero-chips' },
@@ -99,8 +117,23 @@ function heroSection(data, season) {
 
   const searchButton = el('button', { type: 'submit', 'aria-label': '산 검색' }, '검색 ↗');
   const form = el('form', { class: 'dash-search-wrap', onSubmit: (e) => { e.preventDefault(); if (search.value.trim()) go(search.value.trim()); } }, search, searchButton, results);
-  search.addEventListener('keydown', (e) => { if (e.key === 'Escape') results.hidden = true; });
-  form.addEventListener('focusout', (e) => { if (!form.contains(e.relatedTarget)) results.hidden = true; });
+  search.addEventListener('keydown', (e) => {
+    if (e.isComposing || e.keyCode === 229) { if (e.key === 'Enter') e.preventDefault(); return; }
+    const options = [...results.querySelectorAll('[role="option"]')];
+    if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !results.hidden && options.length) {
+      e.preventDefault();
+      selected = (selected + (e.key === 'ArrowDown' ? 1 : (selected < 0 ? 0 : -1)) + options.length) % options.length;
+      options.forEach((node, i) => node.setAttribute('aria-selected', String(i === selected)));
+      search.setAttribute('aria-activedescendant', options[selected].id);
+      options[selected].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter' && selected >= 0 && !results.hidden) {
+      e.preventDefault(); options[selected].click();
+    } else if (e.key === 'Escape' && !results.hidden) {
+      e.preventDefault(); closeSuggestions();
+    }
+  });
+  search.addEventListener('focus', () => { if (search.value.trim()) search.dispatchEvent(new Event('input')); });
+  form.addEventListener('focusout', (e) => { if (!form.contains(e.relatedTarget)) closeSuggestions(); });
   return el('section', { class: 'dash-hero' },
     el('div', { class: 'hero-copy' },
       el('p', { class: 'eyebrow' }, '대한민국 명산 안내서'),
