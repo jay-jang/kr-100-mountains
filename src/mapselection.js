@@ -25,6 +25,8 @@ export function nearbyMountains(view, mountains, mountain, tolerance = 44) {
   return mountains.filter(m => {
     if (m.lat == null) return false;
     const p = view.project([m.lat, m.lon]);
-    return Math.hypot(p.x - origin.x, p.y - origin.y) <= tolerance;
+    // The 44 × 72px marker includes an upper hover area. Include every
+    // overlapping button so that a taller hit target cannot hide another pin.
+    return Math.abs(p.x - origin.x) <= tolerance && Math.abs(p.y - origin.y) <= tolerance + 28;
   }).sort((a, b) => a.name_full.localeCompare(b.name_full, 'ko'));
 }

@@ -354,6 +354,7 @@ export async function renderExplore(root) {
       const mk = view.addMarker({
         lat: m.lat, lng: m.lon, color: regionColor(m.region), star: isHiked(m.id),
         title: m.name_full,
+        subtitle: `${m.region} · ${Math.round(m.elevation_m)}m`,
         popupHTML: popupContent(m), onClick: () => {
           const nearby = nearbyMountains(view, list, m);
           if (nearby.length === 1) { mountainPicker.hidden = true; focus(m, { pan: false }); return; }

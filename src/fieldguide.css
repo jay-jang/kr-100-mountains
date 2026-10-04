@@ -369,10 +369,19 @@ button:disabled { cursor: default; }
 .detail-map-wrap:has(.planner-map-tools:not([hidden])) .map-tools { display: none; }
 .planner-map-tools span { flex: 1 1 260px; font-size: 13px; line-height: 1.6; }
 .route-list { max-height: 520px; overflow-y: auto; }
-.mountain-marker { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; touch-action: manipulation; }
+.mountain-marker { position: relative; width: 44px; height: 72px; padding: 0; border: 0; border-radius: 3px; background: transparent; cursor: pointer; touch-action: manipulation; }
+.mountain-marker > .map-pin { position: absolute; left: 50%; bottom: 12px; margin-left: -10px; }
+.mountain-marker > .map-pin.star { margin-left: -11px; bottom: 11px; }
 .mountain-marker .map-pin.dot { width: 20px; height: 20px; }
 .mountain-marker:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; background: var(--bg-elev); }
-.mountain-marker:hover .map-pin { transform: scale(1.2); }
+.mountain-marker-preview { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 200px; padding: 7px 10px; border: 1px solid var(--border-strong); border-radius: 3px; background: var(--bg-elev); color: var(--text); box-shadow: var(--shadow); text-align: left; line-height: 1.4; visibility: hidden; }
+.mountain-marker-preview strong { display: block; font-size: 13px; }
+.mountain-marker-preview > span { display: block; color: var(--text-soft); font-size: 11px; }
+.mountain-marker:focus-visible .mountain-marker-preview { visibility: visible; }
+@media (hover: hover) {
+  .mountain-marker:hover .map-pin { transform: scale(1.2); }
+  .mountain-marker:hover .mountain-marker-preview { visibility: visible; }
+}
 .map-choice-panel { position: absolute; z-index: 480; background: var(--bg-elev); color: var(--text); border: 1px solid var(--border-strong); border-radius: 3px; box-shadow: var(--shadow); padding: 10px; }
 .map-choice-panel[hidden], .route-map-status[hidden] { display: none; }
 .map-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }

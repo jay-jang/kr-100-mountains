@@ -2,7 +2,7 @@
 // Picks Kakao Maps when VITE_KAKAO_KEY is set at build time, otherwise Leaflet + OSM.
 // Both providers implement the same MapView contract (see providers/*.js):
 //   setView([lat,lng],zoom) · panTo([lat,lng]) · clearMarkers()
-//   addMarker({lat,lng,color,star,popupHTML,onClick,title}) -> {openPopup(),remove()}
+//   addMarker({lat,lng,color,star,popupHTML,onClick,title,subtitle}) -> {openPopup(),remove()}
 //   addDot({lat,lng,color,title}) -> {remove()}
 //   addPolyline(latlngs,style) -> {remove()} · addPolylines(lines,style) -> {remove()}
 //   removeLayer(token|token[]) · fitBounds(latlngs,pad) · refreshTheme() · destroy()
@@ -65,9 +65,25 @@ export function markerHTML(color, star) {
     : `<div class="map-pin dot" style="background:${color}"></div>`;
 }
 
-export function markerButton(color, star, title) {
-  const button = el('button', { class: 'mountain-marker', type: 'button', title, 'aria-label': title || '산 선택' });
+export function markerButton(color, star, title, subtitle) {
+  const button = el('button', { class: 'mountain-marker', type: 'button', 'aria-label': title || '산 선택' });
   button.innerHTML = markerHTML(color, star);
+  // Keep the preview inside the button: moving from the pin to its name must
+  // preserve hover and allow the same pointer/keyboard selection action.
+  button.append(el('span', { class: 'mountain-marker-preview', 'aria-hidden': 'true' },
+    el('strong', {}, title || '산 선택'), subtitle && el('span', {}, subtitle)));
+  let pointerStart = null;
+  button.addEventListener('pointerdown', e => { pointerStart = { x: e.clientX, y: e.clientY }; });
+  button.addEventListener('pointercancel', () => { pointerStart = null; });
+  button.addEventListener('click', e => {
+    // Some map providers still deliver a DOM click after dragging an overlay.
+    // Let the map receive the drag, then discard only its trailing click.
+    if (pointerStart && e.detail && Math.hypot(e.clientX - pointerStart.x, e.clientY - pointerStart.y) > 6) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+    pointerStart = null;
+  }, { capture: true });
   return button;
 }
 

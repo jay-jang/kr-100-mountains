@@ -20,3 +20,8 @@ test('overlapping mountain picker excludes distant and missing coordinates',()=>
   const a={name_full:'A',lat:0,lon:0},b={name_full:'B',lat:20,lon:20},far={name_full:'C',lat:100,lon:0},missing={name_full:'D',lat:null};
   assert.deepEqual(nearbyMountains(view,[far,b,a,missing],a),[a,b]);
 });
+test('upper marker areas include vertically overlapping targets and rectangle corners',()=>{
+  const a={name_full:'A',lat:0,lon:0},b={name_full:'B',lat:0,lon:60},c={name_full:'C',lat:43,lon:70};
+  const far={name_full:'D',lat:0,lon:73},side={name_full:'E',lat:45,lon:0};
+  assert.deepEqual(nearbyMountains(view,[a,b,c,far,side],a),[a,b,c]);
+});

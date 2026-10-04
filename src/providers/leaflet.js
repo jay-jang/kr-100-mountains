@@ -30,9 +30,9 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
   applyBase('default');
   const markerGroup = L.layerGroup().addTo(map);
 
-  const pinIcon = (color, star, title) => L.divIcon({
-    className: 'kr-pin', html: markerButton(color, star, title),
-    iconSize: [44, 44], iconAnchor: [22, 22],
+  const pinIcon = (color, star, title, subtitle) => L.divIcon({
+    className: 'kr-pin', html: markerButton(color, star, title, subtitle),
+    iconSize: [44, 72], iconAnchor: [22, 50],
   });
 
   return {
@@ -46,10 +46,12 @@ export function createLeafletView(node, { center = [36.5, 127.9], zoom = 7 } = {
     project(point) { return map.latLngToContainerPoint(point); },
 
     clearMarkers() { map.closePopup(); markerGroup.clearLayers(); },
-    addMarker({ lat, lng, color, star = false, popupHTML, onClick, title }) {
-      const mk = L.marker([lat, lng], { icon: pinIcon(color, star, title), keyboard: false }).addTo(markerGroup);
+    addMarker({ lat, lng, color, star = false, popupHTML, onClick, title, subtitle }) {
+      const mk = L.marker([lat, lng], { icon: pinIcon(color, star, title, subtitle), keyboard: false, riseOnHover: true }).addTo(markerGroup);
       const openPopup = () => { if (popupHTML) L.popup({ offset: [0, -12] }).setLatLng([lat, lng]).setContent(popupHTML).openOn(map); };
-      if (title) mk.bindTooltip(title);
+      const button = mk.getElement().querySelector('button');
+      button.addEventListener('focusin', () => mk.setZIndexOffset(1000));
+      button.addEventListener('focusout', () => mk.setZIndexOffset(0));
       mk.on('click', () => onClick ? onClick() : openPopup());
       return { openPopup, remove() { markerGroup.removeLayer(mk); } };
     },

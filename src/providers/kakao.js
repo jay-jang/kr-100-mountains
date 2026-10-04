@@ -40,17 +40,20 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
 
   const managedMarkers = [];   // addMarker() overlays (cleared by clearMarkers)
   const clickHandlers = new Set();
-  const emitClick = e => clickHandlers.forEach(fn => fn([e.latLng.getLat(), e.latLng.getLng()]));
+  const emitClick = e => {
+    closePopup();
+    clickHandlers.forEach(fn => fn([e.latLng.getLat(), e.latLng.getLng()]));
+  };
   kakao.maps.event.addListener(map, 'click', emitClick);
   let openPopupOverlay = null;
 
   function closePopup() { if (openPopupOverlay) { openPopupOverlay.setMap(null); openPopupOverlay = null; } }
 
-  function pinOverlay(lat, lng, color, star, title) {
-    const el = title ? markerButton(color, star, title) : document.createElement('div');
+  function pinOverlay(lat, lng, color, star, title, subtitle) {
+    const el = title ? markerButton(color, star, title, subtitle) : document.createElement('div');
     if (!title) el.innerHTML = markerHTML(color, star);
     el.style.cursor = 'pointer';
-    const ov = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: el, xAnchor: 0.5, yAnchor: 0.5, zIndex: 3 });
+    const ov = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: el, xAnchor: 0.5, yAnchor: title ? 50 / 72 : 0.5, zIndex: 3 });
     ov.setMap(map);
     return { ov, el };
   }
@@ -63,9 +66,14 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
     project([lat, lng]) { return map.getProjection().containerPointFromCoords(ll(lat, lng)); },
 
     clearMarkers() { managedMarkers.forEach((m) => m.setMap(null)); managedMarkers.length = 0; closePopup(); },
-    addMarker({ lat, lng, color, star = false, popupHTML, onClick, title }) {
-      const { ov, el } = pinOverlay(lat, lng, color, star, title || '산 선택');
-      if (title) el.title = title;
+    addMarker({ lat, lng, color, star = false, popupHTML, onClick, title, subtitle }) {
+      const { ov, el } = pinOverlay(lat, lng, color, star, title || '산 선택', subtitle);
+      const raise = () => ov.setZIndex(5);
+      const lower = () => ov.setZIndex(el.matches(':hover, :focus-within') ? 5 : 3);
+      el.addEventListener('pointerenter', raise);
+      el.addEventListener('pointerleave', lower);
+      el.addEventListener('focusin', raise);
+      el.addEventListener('focusout', lower);
       managedMarkers.push(ov);
       const open = () => {
         if (!popupHTML) return;
@@ -73,7 +81,8 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
         const box = document.createElement('div');
         box.className = 'kakao-pop';
         box.innerHTML = popupHTML;
-        openPopupOverlay = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: box, xAnchor: 0.5, yAnchor: 1.4, zIndex: 6 });
+        box.addEventListener('click', e => { e.stopPropagation(); kakao.maps.event.preventMap(); });
+        openPopupOverlay = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: box, clickable: true, xAnchor: 0.5, yAnchor: 1.4, zIndex: 6 });
         openPopupOverlay.setMap(map);
       };
       el.addEventListener('click', e => { e.stopPropagation(); kakao.maps.event.preventMap(); if (onClick) onClick(); else open(); });

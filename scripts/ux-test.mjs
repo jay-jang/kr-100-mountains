@@ -232,7 +232,7 @@ try {
   for(const width of [320,390,1440]) {
     const context=await browser.newContext({viewport:{width,height:900}});
     const mapPage=await context.newPage();mapPage.on('pageerror',e=>errors.push(e.message));
-    const clustered=mountains.filter(m=>['seolaksan','bukhansan','hallasan'].includes(m.id)).map(m=>({...m,lat:m.id==='hallasan'?39:36.5,lon:m.id==='hallasan'?130:127.9}));
+    const clustered=mountains.filter(m=>['seolaksan','bukhansan','hanrasan'].includes(m.id)).map(m=>({...m,lat:m.id==='hanrasan'?m.lat:36.5,lon:m.id==='hanrasan'?m.lon:127.9}));
     await mapPage.route('**/data/mountains.json',r=>r.fulfill({json:{mountains:clustered}}));
     try {
       await mapPage.goto(base+'/#/map');await mapPage.waitForSelector('.map-ctrl',{state:'attached'});
@@ -242,7 +242,23 @@ try {
       const topPin=await mapPage.locator('#map .mountain-marker').evaluateAll(ns=>ns.filter(n=>['설악산','북한산'].includes(n.getAttribute('aria-label'))).at(-1).getAttribute('aria-label'));
       const target=mapPage.getByRole('button',{name:topPin,exact:true});
       check(`mountain touch target ${width}`,await target.evaluate(n=>{const b=n.getBoundingClientRect();return b.width>=44&&b.height>=44;}));
-      await target.click({position:{x:4,y:22}});
+      const originalBox=await target.boundingBox();
+      await target.hover({position:{x:22,y:8}});
+      const preview=target.locator('.mountain-marker-preview');
+      check(`hover above marker immediately shows mountain information ${width}`,await preview.isVisible()&&(await preview.innerText()).includes(topPin)&&(await preview.innerText()).includes('m'));
+      check(`hover preserves map position and avoids opening choices ${width}`,Math.abs((await target.boundingBox()).x-originalBox.x)<1&&Math.abs((await target.boundingBox()).y-originalBox.y)<1&&!await mapPage.locator('.mountain-map-picker').isVisible());
+      await preview.hover();
+      check(`hover preview stays open when pointer moves onto name ${width}`,await preview.isVisible());
+      await mapPage.mouse.move(originalBox.x+70,originalBox.y+85);
+      check(`hover preview closes when pointer leaves ${width}`,!await preview.isVisible());
+      await target.hover({position:{x:22,y:8}});
+      await preview.click();
+      check(`clicking hovered name opens all overlapping mountains ${width}`,await mapPage.locator('.mountain-map-picker').isVisible()&&await mapPage.locator('.map-mountain-choice').count()===2);
+      await mapPage.getByRole('button',{name:'산 선택 닫기',exact:true}).click();
+      await target.click({position:{x:22,y:8}});
+      check(`area above marker accepts selection ${width}`,await mapPage.locator('.mountain-map-picker').isVisible());
+      await mapPage.getByRole('button',{name:'산 선택 닫기',exact:true}).click();
+      await target.click({position:{x:4,y:50}});
       check(`marker edge opens overlapping mountain choices ${width}`,await mapPage.locator('.mountain-map-picker').isVisible()&&await mapPage.locator('.map-mountain-choice').count()===2);
       await mapPage.locator('.map-mountain-choice[data-id="seolaksan"]').click();
       check(`overlapping mountain can be chosen by name ${width}`,await mapPage.locator('.pop-link[href="#/m/seolaksan"]').isVisible());
@@ -252,14 +268,48 @@ try {
       await mapPage.locator('.map-mountain-choice[data-id="seolaksan"]').press('Enter');
       await target.focus();await target.press('Enter');
       await mapPage.getByRole('button',{name:'산 선택 닫기',exact:true}).click();
+      const mapBox=await mapPage.locator('#map').boundingBox();
+      await mapPage.locator('#map').click({position:{x:mapBox.width*.85,y:mapBox.height*.65}});
+      await mapPage.waitForTimeout(300); // Leaflet fades the dismissed popup out.
+      check(`clicking empty map dismisses mountain popup ${width}`,!await mapPage.locator('.pop-link').isVisible());
+      const beforeDrag=await target.boundingBox();
+      await mapPage.mouse.move(beforeDrag.x+22,beforeDrag.y+8);await mapPage.mouse.down();
+      await mapPage.mouse.move(beforeDrag.x+62,beforeDrag.y+68,{steps:12});await mapPage.mouse.up();await mapPage.waitForTimeout(400);
+      const afterDrag=await target.boundingBox();
+      check(`dragging from marker upper area pans without selecting ${width}`,Math.abs(afterDrag.y-beforeDrag.y)>20&&!await mapPage.locator('.mountain-map-picker').isVisible());
       await mapPage.getByRole('button',{name:'전체화면',exact:true}).click();await mapPage.waitForFunction(()=>document.fullscreenElement!==null);
       await mapPage.waitForTimeout(250);
-      await target.click({position:{x:4,y:22}});
+      await target.hover({position:{x:22,y:8}});
+      check(`hover preview works in fullscreen ${width}`,await preview.isVisible());
+      await target.click({position:{x:4,y:50}});
       check(`mountain choices work in fullscreen ${width}`,await mapPage.locator('.mountain-map-picker').isVisible());
       await mapPage.locator('.map-mountain-choice[data-id="seolaksan"]').click();
       await mapPage.locator('.pop-link[href="#/m/seolaksan"]').click();await mapPage.waitForSelector('.hero h2');
       check(`chosen mountain opens correct detail ${width}`,(await mapPage.locator('.hero h2').textContent())==='설악산');
+      await mapPage.goto(base+'/#/map?q='+encodeURIComponent('한라산'));await mapPage.waitForSelector('.map-ctrl',{state:'attached'});
+      if(width<860) await mapPage.getByRole('button',{name:'지도 보기',exact:true}).click();
+      const single=mapPage.getByRole('button',{name:'한라산',exact:true});
+      await single.waitFor();await mapPage.waitForTimeout(900);
+      await single.hover({position:{x:22,y:8}});
+      check(`single mountain hover shows its own name ${width}`,await single.locator('.mountain-marker-preview').isVisible()&&(await single.locator('.mountain-marker-preview').innerText()).includes('한라산'));
+      await single.locator('.mountain-marker-preview').click();
+      check(`single mountain preview opens correct details without chooser ${width}`,await mapPage.locator('.pop-link[href="#/m/hanrasan"]').isVisible()&&!await mapPage.locator('.mountain-map-picker').isVisible());
     } finally {await context.close();}
   }
+  const touchContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,colorScheme:'dark'});
+  try {
+    const touchPage=await touchContext.newPage();touchPage.on('pageerror',e=>errors.push(e.message));
+    const pair=mountains.filter(m=>['seolaksan','bukhansan'].includes(m.id)).map(m=>({...m,lat:36.5,lon:127.9}));
+    await touchPage.route('**/data/mountains.json',r=>r.fulfill({json:{mountains:pair}}));
+    await touchPage.goto(base+'/#/map');await touchPage.waitForSelector('.map-ctrl',{state:'attached'});
+    await touchPage.getByRole('button',{name:'지도 보기',exact:true}).click();await touchPage.waitForTimeout(250);
+    const name=await touchPage.locator('#map .mountain-marker').evaluateAll(ns=>ns.at(-1).getAttribute('aria-label'));
+    const pin=touchPage.getByRole('button',{name,exact:true}),pinBox=await pin.boundingBox();
+    check('touch devices do not show sticky hover labels',!await pin.locator('.mountain-marker-preview').isVisible());
+    await touchPage.touchscreen.tap(pinBox.x+22,pinBox.y+8);
+    check('touch tap above marker opens overlapping choices',await touchPage.locator('.mountain-map-picker').isVisible()&&await touchPage.locator('.map-mountain-choice').count()===2);
+    await touchPage.locator('.map-mountain-choice[data-id="seolaksan"]').tap();
+    check('touch selection opens correct mountain in dark theme',await touchPage.locator('.pop-link[href="#/m/seolaksan"]').isVisible()&&!await pin.locator('.mountain-marker-preview').isVisible());
+  } finally {await touchContext.close();}
   check('no runtime errors',errors.length===0);console.log(`${count} UX checks passed`);
 } finally {await browser.close();await new Promise(r=>server.close(r));}
