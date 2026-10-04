@@ -369,6 +369,27 @@ button:disabled { cursor: default; }
 .detail-map-wrap:has(.planner-map-tools:not([hidden])) .map-tools { display: none; }
 .planner-map-tools span { flex: 1 1 260px; font-size: 13px; line-height: 1.6; }
 .route-list { max-height: 520px; overflow-y: auto; }
+.mountain-marker { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; touch-action: manipulation; }
+.mountain-marker .map-pin.dot { width: 20px; height: 20px; }
+.mountain-marker:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; background: var(--bg-elev); }
+.mountain-marker:hover .map-pin { transform: scale(1.2); }
+.map-choice-panel { position: absolute; z-index: 480; background: var(--bg-elev); color: var(--text); border: 1px solid var(--border-strong); border-radius: 3px; box-shadow: var(--shadow); padding: 10px; }
+.map-choice-panel[hidden], .route-map-status[hidden] { display: none; }
+.map-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.map-choice-head button { min-height: 44px; padding: 8px; border: 0; background: transparent; color: var(--text-soft); cursor: pointer; }
+.map-choice-list { overflow-y: auto; max-height: min(220px, 28svh); }
+.map-choice-list > button { width: 100%; min-height: 44px; padding: 10px 8px; border: 0; border-top: 1px solid var(--border); background: transparent; color: var(--text); display: flex; align-items: center; gap: 8px; text-align: left; cursor: pointer; }
+.map-choice-list > button > span:not(.route-swatch) { flex: 1; overflow-wrap: anywhere; }
+.map-route-choice strong { flex: none; font-size: 11px; color: var(--text-faint); }
+.map-route-choice[aria-pressed=true] strong { color: var(--accent-ink); }
+.route-map-picker { bottom: 32px; left: 10px; right: 48px; max-width: 460px; }
+.detail-map-wrap:has(.route-map-picker:not([hidden])) .map-tools { display: none; }
+.detail-map-wrap:has(.planner-map-tools:not([hidden])) .route-map-picker { display: none; }
+.route-map-status { position: absolute; left: 12px; top: 68px; right: 52px; width: fit-content; z-index: 450; padding: 6px 10px; border-radius: 3px; background: var(--bg-elev); color: var(--text-soft); font-size: 11px; pointer-events: none; }
+.mountain-map-picker { top: 68px; left: 12px; right: 52px; max-width: 330px; }
+.map-wrap.fs-on .mountain-map-picker, .detail-map-wrap.fs-on .route-map-status { top: 120px; }
+.map-mountain-choice { flex-wrap: wrap; }
+.map-mountain-choice span { color: var(--text-faint); font-size: 12px; }
 /* Mountain details begin with a large map and compact mountain identity. */
 .detail-page { max-width: 1280px; padding-top: 12px; }
 .detail-page .crumb { margin-bottom: 6px; }

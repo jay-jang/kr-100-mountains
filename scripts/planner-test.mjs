@@ -52,6 +52,8 @@ async function openPlanner(page){await page.waitForSelector('.map-ctrl');await p
 async function loaded(page){await openPlanner(page);await page.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled);}
 async function add(page,label){const select=page.getByLabel('경로 위 지점 선택',{exact:true});const value=await select.locator('option').evaluateAll((options,label)=>options.find(o=>o.textContent===label)?.value,label);assert.ok(value,label);await select.selectOption(value);await page.getByRole('button',{name:'지점 추가',exact:true}).click();}
 async function exportPlan(page){const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).click()]);return readFile(await download.path(),'utf8');}
+function routeLine(page,color){const rgb=`rgb(${[1,3,5].map(i=>parseInt(color.slice(i,i+2),16)).join(', ')})`;return page.locator(`#detail-map path[stroke="${color}"], #detail-map path[style*="stroke: ${rgb}"]`);}
+async function routeOpacity(page,color){return routeLine(page,color).first().evaluate(p=>Number(getComputedStyle(p).strokeOpacity));}
 try{
   const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();const requests=await configure(page);
   await page.goto(base+'/#/m/seolaksan');await loaded(page);
@@ -59,6 +61,17 @@ try{
   check('GPX files load concurrently with bounded requests',requests.maxActive>=3&&requests.maxActive<=6);
   check('loads all six OSM ways instead of the old four-path limit',await page.locator('.route-item').count()===9&&requests.overpassCount===1);
   check('partial failure leaves available routes and explains retry',(await page.locator('.planner-status').textContent()).includes('1개 불러오기 실패'));
+  await page.locator('.detail-map-wrap').scrollIntoViewIfNeeded();
+  const westPoint=await routeLine(page,'#7048e8').first().evaluate(p=>{const xy=p.getPointAtLength(p.getTotalLength()*.35).matrixTransform(p.getScreenCTM());return {x:xy.x,y:xy.y};});
+  await page.mouse.click(westPoint.x,westPoint.y);
+  check('clicking overlapping map routes opens individual choices',await page.locator('.route-map-picker').isVisible()&&await page.locator('.map-route-choice').count()>=2);
+  const choice=page.locator('.map-route-choice').filter({hasText:'서쪽 중복 코스'});
+  await choice.click();
+  check('map can deselect a route and retain its faint geometry',await choice.getAttribute('aria-pressed')==='false'&&await routeOpacity(page,'#7048e8')===.25);
+  check('map selection is synchronized with the route list',await page.locator('.route-item').filter({hasText:'서쪽 중복 코스'}).locator('.route-eye').getAttribute('aria-pressed')==='false');
+  await choice.click();
+  check('faint map route can be selected again',await choice.getAttribute('aria-pressed')==='true'&&await routeOpacity(page,'#7048e8')===.85);
+  await page.getByRole('button',{name:'경로 선택 닫기',exact:true}).click();
   await page.getByRole('button',{name:'누락된 경로 다시 불러오기',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled);
   check('retry loads only missing files and reuses OSM network',await page.locator('.route-item').count()===10&&requests.counts.get('routes/seolaksan/retry.gpx')===2&&requests.counts.get('routes/seolaksan/west.gpx')===1&&requests.overpassCount===1);
   await add(page,'서쪽 중복 코스 · 시작 지점');await add(page,'순환 도보길 · 끝 지점');await add(page,'동쪽 코스 · 끝 지점');
@@ -73,6 +86,12 @@ try{
   await page.reload();await openPlanner(page);await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled&&document.querySelector('.planner-summary')?.textContent.includes('총'));
   check('plan persists and recalculates after reload',await page.locator('.planner-waypoints li').count()===3);
   await page.getByRole('button',{name:'등산로 목록에 추가',exact:true}).click();check('calculated plan can join the comparison list',await page.locator('.route-item').filter({hasText:'나의 계획'}).count()===1);
+  await page.getByRole('button',{name:'등산로별 고도',exact:true}).click();
+  const plannedChoice=page.locator('.route-item').filter({hasText:'나의 계획'}).locator('.route-eye');
+  await plannedChoice.click();
+  check('deselecting a planned route dims its line without a bright duplicate',await routeLine(page,'#e37722').evaluateAll(ns=>ns.length>0&&ns.every(p=>Number(getComputedStyle(p).strokeOpacity)===.25)));
+  await plannedChoice.click();
+  check('planned route can be selected again',await routeOpacity(page,'#e37722')===.85);
   await page.getByRole('button',{name:'등산로 목록에 추가',exact:true}).click();check('adding an edited plan replaces its previous copy',await page.locator('.route-item').filter({hasText:'나의 계획'}).count()===1);
   await page.getByRole('button',{name:'계획 초기화',exact:true}).click();
   check('reset clears waypoints and disables stale GPX export',await page.locator('.planner-waypoints li').count()===0&&!await page.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());
@@ -96,6 +115,15 @@ try{
   ]);
   await page.waitForFunction(()=>document.querySelector('.planner-count').textContent.startsWith('12개'));
   check('multiple uploaded GPX files are added together',(await page.locator('.detail-map-wrap').locator('..').textContent()).includes('2개 GPX를 함께'));
+  await page.locator('.detail-map-wrap').scrollIntoViewIfNeeded();
+  const soloPoint=await routeLine(page,'#d1495b').first().evaluate(p=>{const xy=p.getPointAtLength(p.getTotalLength()*.35).matrixTransform(p.getScreenCTM());return {x:xy.x,y:xy.y};});
+  await page.mouse.click(soloPoint.x,soloPoint.y);
+  check('a single map route toggles off directly',await page.locator('.route-item').filter({hasText:'GPX: 분리 경로'}).locator('.route-eye').getAttribute('aria-pressed')==='false');
+  check('deselected map route stays faint and clickable',await routeLine(page,'#d1495b').evaluateAll(ns=>ns.filter(p=>Number(getComputedStyle(p).strokeOpacity)===.25).length>=2));
+  await page.getByRole('button',{name:'경로 선택 닫기',exact:true}).click();
+  await page.mouse.click(soloPoint.x,soloPoint.y);
+  check('clicking the faint line restores selection',await page.locator('.route-item').filter({hasText:'GPX: 분리 경로'}).locator('.route-eye').getAttribute('aria-pressed')==='true');
+  await page.getByRole('button',{name:'경로 선택 닫기',exact:true}).click();
   await add(page,'GPX: 분리 경로 · 시작 지점 (1)');await add(page,'GPX: 분리 경로 · 끝 지점 (2)');
   check('disconnected GPX segments reject planning without exporting a bridge',(await page.locator('.planner-status').textContent()).includes('잇는 경로가 없습니다')&&!await page.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());
   await mkdir('/tmp/mountain-planner',{recursive:true});
@@ -105,8 +133,16 @@ try{
     await page.locator('.route-planner').scrollIntoViewIfNeeded();await page.screenshot({path:`/tmp/mountain-planner/${theme}-${width}.png`});
   }}
   await context.close();
-  const offline=await browser.newPage({viewport:{width:390,height:844}});await configure(offline,{failOSM:true});await offline.goto(base+'/#/m/seolaksan');await loaded(offline);
+  const offline=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});await configure(offline,{failOSM:true});await offline.goto(base+'/#/m/seolaksan');await loaded(offline);
   check('OSM failure still permits planning from stored GPX',(await offline.locator('.planner-status').textContent()).includes('주변 등산로:')&&await offline.locator('.route-item').count()===3);
+  await offline.locator('.detail-map-wrap').scrollIntoViewIfNeeded();
+  const touchPoint=await routeLine(offline,'#7048e8').first().evaluate(p=>{const xy=p.getPointAtLength(p.getTotalLength()*.35).matrixTransform(p.getScreenCTM());return {x:xy.x,y:xy.y};});
+  await offline.touchscreen.tap(touchPoint.x,touchPoint.y);
+  check('touch can deselect a map route',await offline.locator('.route-item').filter({hasText:'서쪽 중복 코스'}).locator('.route-eye').getAttribute('aria-pressed')==='false');
+  await offline.getByRole('button',{name:'경로 선택 닫기',exact:true}).click();
+  await offline.touchscreen.tap(touchPoint.x,touchPoint.y);
+  check('touch can select a faint route again',await offline.locator('.route-item').filter({hasText:'서쪽 중복 코스'}).locator('.route-eye').getAttribute('aria-pressed')==='true');
+  await offline.getByRole('button',{name:'경로 선택 닫기',exact:true}).click();
   await add(offline,'서쪽 중복 코스 · 시작 지점');await add(offline,'동쪽 코스 · 끝 지점');check('GPX-only connected route is exportable',await offline.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());
   await offline.getByRole('button',{name:'경로 표시 선택',exact:true}).click();const west=offline.locator('.route-item').filter({hasText:'서쪽 중복 코스'});
   await west.locator('.route-eye').click();check('hiding a source excludes it from planning',!await offline.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());

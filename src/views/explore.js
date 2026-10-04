@@ -1,5 +1,6 @@
 import { loadData, filterMountains, REGION_COLORS, regionColor, LIST_KEYS, LIST_META, representativeCourse } from '../data.js';
 import { createMapView, popupContent } from '../map.js';
+import { nearbyMountains } from '../mapselection.js';
 import { mapControls } from '../mapcontrols.js';
 import { isHiked, onChange } from '../store.js';
 import { watchPosition, fmtDistFine } from '../geo.js';
@@ -150,6 +151,12 @@ export async function renderExplore(root) {
   const locateBtn = el('button', { disabled: true, class: 'locate-btn', type: 'button', title: '내 위치 표시', 'aria-label': '내 위치 표시' }, '◎');
 
   const mapWrap = el('div', { class: 'map-wrap' }, mapNode, legend, locateBtn);
+  const mountainChoices = el('div', { class: 'map-choice-list' });
+  const mountainPicker = el('div', { class: 'map-choice-panel mountain-map-picker', hidden: true, 'aria-label': '가까이 있는 산 선택' },
+    el('div', { class: 'map-choice-head' }, el('strong', {}, '가까이 있는 산'),
+      el('button', { type: 'button', 'aria-label': '산 선택 닫기', onClick: () => { mountainPicker.hidden = true; } }, '닫기')),
+    mountainChoices);
+  mapWrap.append(mountainPicker);
   const homeEl = el('div', { class: 'home', dataset: { view: 'list' } }, panel, mapWrap);
   const viewToggle = el('div', { class: 'explore-view-toggle', role: 'group', 'aria-label': '탐색 화면' });
   function setMode(mode) {
@@ -321,6 +328,7 @@ export async function renderExplore(root) {
   }
 
   function focus(m, { pan = true, scroll = true, zoom = null } = {}) {
+    mountainPicker.hidden = true;
     state.activeId = m.id;
     [...listEl.querySelectorAll('.mtn-item')].forEach(n => {
       const active = n.dataset.id === m.id;
@@ -338,13 +346,24 @@ export async function renderExplore(root) {
 
   function renderMarkers(list) {
     if (!view) return;
+    mountainPicker.hidden = true;
     view.clearMarkers();
     markers.clear();
     list.forEach((m) => {
       if (m.lat == null) return;
       const mk = view.addMarker({
         lat: m.lat, lng: m.lon, color: regionColor(m.region), star: isHiked(m.id),
-        popupHTML: popupContent(m), onClick: () => focus(m, { pan: false }),
+        title: m.name_full,
+        popupHTML: popupContent(m), onClick: () => {
+          const nearby = nearbyMountains(view, list, m);
+          if (nearby.length === 1) { mountainPicker.hidden = true; focus(m, { pan: false }); return; }
+          clear(mountainChoices);
+          nearby.forEach(candidate => mountainChoices.append(el('button', { type: 'button', class: 'map-mountain-choice', dataset: { id: candidate.id },
+            onClick: () => { mountainPicker.hidden = true; focus(candidate, { pan: false }); } },
+            el('strong', {}, candidate.name_full), el('span', {}, `${candidate.region} · ${Math.round(candidate.elevation_m)}m`))));
+          mountainPicker.hidden = false;
+          mountainChoices.querySelector('button')?.focus({ preventScroll: true });
+        },
       });
       markers.set(m.id, mk);
     });
@@ -469,6 +488,7 @@ export async function renderExplore(root) {
     if (view.ready !== false) {
       controls = mapControls(view, mapWrap, {
         search: { mountains: data.mountains, getPos: () => pos, onPick: m => gotoMountain(m) },
+        onFullscreenChange: () => { mountainPicker.hidden = true; },
       });
       mapWrap.append(controls);
       locateBtn.disabled = false;

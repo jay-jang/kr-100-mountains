@@ -13,6 +13,7 @@ import { reviewSection } from '../reviews.js';
 import { editHike } from '../hikerecord.js';
 import { el, esc, clear } from '../dom.js';
 import { famousCourseRow } from '../famouscourses.js';
+import { nearbyRoutes } from '../mapselection.js';
 
 export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const data = await loadData();
@@ -103,6 +104,13 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const tools = el('div', { class: 'map-tools' }, locateBtn, dirBtn, fileBtn, followBtn, fileInput);
   const navPanel = el('div', { class: 'nav-panel', hidden: true });
   const mapWrap = el('div', { class: 'detail-map-wrap' }, mapNode, tools, dirMenu);
+  const routeMapStatus = el('div', { class: 'route-map-status', hidden: true, role: 'status' });
+  const routeMapChoices = el('div', { class: 'map-choice-list' });
+  const routeMapPicker = el('div', { class: 'map-choice-panel route-map-picker', hidden: true, 'aria-label': '지도 경로 선택' },
+    el('div', { class: 'map-choice-head' }, el('strong', {}, '이 위치의 경로'),
+      el('button', { type: 'button', 'aria-label': '경로 선택 닫기', onClick: () => { routeMapPicker.hidden = true; } }, '닫기')),
+    routeMapChoices);
+  mapWrap.append(routeMapStatus, routeMapPicker);
   const gpxNote = el('div', { class: 'conf-note' });
   const planner = routePlanner(m, {
     loadAll: loadPlanningRoutes,
@@ -130,7 +138,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const routeList = el('div', { class: 'route-list' });
   const loadTrailsBtn = el('button', { class: 'btn', type: 'button' }, '실제 등산로 불러오기');
   const showOnMapChk = el('input', { type: 'checkbox', id: 'route-showmap', checked: true });
-  const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 지도에 겹쳐 표시');
+  const showOnMapLabel = el('label', { class: 'route-showmap', for: 'route-showmap' }, showOnMapChk, ' 선택 경로 강조');
   const routeLoading = el('div', { class: 'route-loading', hidden: true },
     el('span', { class: 'spinner', 'aria-hidden': 'true' }),
     el('span', {}, '실제 등산로와 고도를 불러오는 중… (최대 수십 초 걸릴 수 있어요)'));
@@ -139,8 +147,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   page.append(el('div', { class: 'section' },
     el('h3', {}, '등산로별 고도'),
     el('p', { class: 'conf-note', style: 'margin:-4px 0 10px' },
-      '등산로를 고르면 아래에 고도 단면이 나타납니다. 각 항목의 “지도”를 켜면 여러 경로를 지도에 '
-      + '겹쳐 볼 수 있습니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반이며, '
+      '지도에서 경로를 누르거나 목록의 선택 버튼으로 경로를 선택·해제하세요. 해제한 경로는 흐리게 남으며 계획에서 제외됩니다. '
+      + '등산로 이름을 고르면 고도 단면을 볼 수 있습니다. GPX 파일 또는 OpenStreetMap 실제 등산로(고도: open-meteo 지형데이터) 기반이며, '
       + '“계산” 표시가 붙은 것은 실측 기록이 아니라 등산로망 위에서 계산한 경로입니다.'),
     el('div', { class: 'route-actions' }, loadTrailsBtn, showOnMapLabel),
     routeLoading, routeList, elevChartBox, elevNote));
@@ -163,8 +171,27 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   let routeSeq = 0;
   let activeId = null;                   // 고도 단면을 보여 주는 경로
   // 여러 경로를 동시에 지도에 올릴 수 있다 — 수집한 GPX를 주요 등산로와 나란히 겹쳐 보기 위해서다.
-  const shown = new Set();               // 지도에 올라간 rid
+  const shown = new Set();               // 지도에서 강조하고 계획에 사용할 rid
   const layersById = new Map();          // rid → 지도 레이어 토큰
+  let mapChoiceIds = [];
+
+  function paintMapChoices() {
+    const focusedRid = routeMapChoices.contains(document.activeElement) ? document.activeElement.dataset.rid : null;
+    mapChoiceIds = mapChoiceIds.filter(rid => byRid.has(rid));
+    if (!mapChoiceIds.length) routeMapPicker.hidden = true;
+    routeMapStatus.hidden = routes.length === 0;
+    routeMapStatus.textContent = `${shown.size}/${routes.length}개 경로 선택 · 선을 눌러 선택·해제`;
+    clear(routeMapChoices);
+    for (const rid of mapChoiceIds) {
+      const r = byRid.get(rid); if (!r) continue;
+      const selected = shown.has(rid);
+      routeMapChoices.append(el('button', { type: 'button', class: 'map-route-choice', 'aria-pressed': String(selected), dataset: { rid },
+        onClick: () => toggleShown(rid, { focus: true }) },
+      el('span', { class: 'route-swatch', style: `background:${r.color}` }),
+      el('span', {}, r.label), el('strong', {}, selected ? '선택됨' : '해제 · 흐리게')));
+    }
+    if (focusedRid) routeMapChoices.querySelector(`[data-rid="${focusedRid}"]`)?.focus({ preventScroll: true });
+  }
 
   // 색은 만들 때 한 번 정해 둔다(인덱스로 계산하면 목록이 줄어들 때 색이 바뀐다).
   const colorSeq = { collected: 0, other: 0 };
@@ -188,8 +215,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       const eye = el('button', {
         class: 'route-eye' + (on ? ' on' : ''), type: 'button',
         'aria-pressed': on ? 'true' : 'false',
-        title: on ? '지도에서 숨기기' : '지도에 표시',
-      }, on ? '표시중' : '지도');
+        title: on ? '선택 해제 · 지도에서 흐리게 표시' : '경로 선택 · 지도에서 강조',
+      }, on ? '선택됨' : '흐리게');
       eye.addEventListener('click', () => toggleShown(r.rid));
       routeList.append(el('div', { class: 'route-item' + (r.rid === activeId ? ' active' : '') }, pick, eye));
     }
@@ -200,13 +227,14 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     for (const tokens of layersById.values()) view.removeLayer(tokens);
     layersById.clear();
     const all = [];
-    for (const rid of shown) {
-      const r = byRid.get(rid);
+    // Draw dim routes first so selected routes remain clear at intersections.
+    for (const r of [...routes].sort((a, b) => Number(shown.has(a.rid)) - Number(shown.has(b.rid)))) {
+      const rid = r.rid, selected = shown.has(rid);
       if (!r?.latlngs?.length) continue;
       // 겹쳐 그리므로 여기서는 화면을 맞추지 않는다(아래에서 전체 기준으로 한 번만).
-      const layers = [...drawTrack(view, r.track || { latlngs: r.latlngs }, r.color, { fit: false, endpoints: r.kind !== 'osm' || rid === activeId, weight: r.kind === 'planned' ? 6 : 3, opacity: 0.75 })];
+      const layers = [...drawTrack(view, r.track || { latlngs: r.latlngs }, r.color, { fit: false, endpoints: selected && (r.kind !== 'osm' || rid === activeId), weight: selected ? (r.kind === 'planned' ? 6 : 4) : 2.5, opacity: selected ? 0.85 : 0.25 })];
       // 지점 이름 라벨은 지금 보고 있는 경로에만 — 여러 개를 켜면 라벨이 지도를 덮는다.
-      if (rid === activeId) {
+      if (selected && rid === activeId) {
         if (r.trailheadName && r.latlngs[0]) layers.push(view.addLabel({ lat: r.latlngs[0][0], lng: r.latlngs[0][1], text: r.trailheadName, kind: 'trailhead' }));
         if (r.peaks) for (const pk of r.peaks.slice(0, 8)) {
           if (haversine(pk.lat, pk.lon, m.lat, m.lon) < 200) continue; // 정상 라벨과 겹치는 봉우리는 생략
@@ -219,16 +247,21 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     if (refit && all.length) view.fitBounds(all, 0.15);
     planner.refresh(routes.filter(r => shown.has(r.rid)));
     planner.redraw();
+    paintMapChoices();
   }
 
   // 전체 스위치와 개별 토글의 상태가 어긋나지 않게 맞춘다(프로그램적 변경은 change를 쏘지 않는다).
-  const syncMasterSwitch = () => { showOnMapChk.checked = shown.size > 0; };
+  const syncMasterSwitch = () => {
+    showOnMapChk.checked = shown.size > 0;
+    showOnMapChk.indeterminate = shown.size > 0 && shown.size < routes.length;
+  };
 
-  function toggleShown(rid) {
+  function toggleShown(rid, { focus = false } = {}) {
     if (shown.has(rid)) shown.delete(rid); else shown.add(rid);
     syncMasterSwitch();
-    renderRouteList();
-    drawShownRoutes({ refit: shown.has(rid) });
+    if (!shown.has(rid) && activeId === rid) { activeId = null; setNavTrack(null); }
+    if (focus && shown.has(rid)) selectRoute(rid, { show: false });
+    else { renderRouteList(); drawShownRoutes(); }
   }
 
   function showProfile(r) {
@@ -259,18 +292,20 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     }
   }
 
-  // 체크박스는 전체 표시/숨김 스위치. 껐다 켜면 겹쳐 두었던 선택을 그대로 되살린다
+  // 체크박스는 전체 강조/흐림 스위치. 껐다 켜면 이전 선택을 그대로 되살린다
   // (rid로 담아 두므로 그 사이 목록이 바뀌어도 엉뚱한 경로가 복원되지 않는다).
   let stashedShown = null;
   showOnMapChk.addEventListener('change', () => {
     if (showOnMapChk.checked) {
       for (const rid of stashedShown || []) if (byRid.has(rid)) shown.add(rid);
-      if (!shown.size && activeId != null && byRid.has(activeId)) shown.add(activeId);
+      if (!shown.size) routes.forEach(r => shown.add(r.rid));
       stashedShown = null;
     } else {
       stashedShown = [...shown];
       shown.clear();
+      setNavTrack(null);
     }
+    syncMasterSwitch();
     renderRouteList();
     drawShownRoutes({ refit: showOnMapChk.checked });
   });
@@ -466,7 +501,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   });
   renderRouteList();
 
-  let view, controls, navTrack = null, locLayer = null;
+  let view, controls, offRouteClick, navTrack = null, locLayer = null;
   let stopWatch = null, locateOn = false, following = false, firstFix = false, lastPos = null;
 
   // ---- trails (난이도·시간: 웹 조사 + 복수 자료 교차검증) ----
@@ -511,7 +546,10 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     contents.nextSibling);
   }
 
-  function setNavTrack(track) { navTrack = track; followBtn.disabled = !track; }
+  function setNavTrack(track) {
+    if (!track && following) toggleFollow();
+    navTrack = track; followBtn.disabled = !track;
+  }
 
   function onPos(p) {
     lastPos = p;
@@ -621,6 +659,15 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
       view.addLabel({ lat: m.lat, lng: m.lon, text: `${m.name} 정상`, kind: 'summit' }); // 주요 지점 이름(정상)
       locLayer = view.locate();
       planner.attach(view);
+      offRouteClick = view.onClick(point => {
+        if (disposed || planner.picking) { routeMapPicker.hidden = true; return; }
+        const hits = nearbyRoutes(view, routes, point);
+        mapChoiceIds = hits.map(r => r.rid);
+        routeMapPicker.hidden = hits.length === 0;
+        if (hits.length === 1) toggleShown(hits[0].rid, { focus: true });
+        else paintMapChoices();
+        if (hits.length) routeMapChoices.querySelector('button')?.focus({ preventScroll: true });
+      });
       drawShownRoutes();
       if (m.coord_confidence && m.coord_confidence !== 'high')
         gpxNote.textContent = `※ 정상 좌표는 근사값일 수 있습니다 (신뢰도: ${m.coord_confidence}).`;
@@ -676,6 +723,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     // 늦게 도착하는 fetch가 파괴된 지도를 건드리지 않도록 표식을 먼저 세우고 참조를 끊는다.
     disposed = true;
     routeAbort.abort(); planner.destroy();
+    offRouteClick?.();
     if (stopWatch) stopWatch();
     off();
     window.removeEventListener('kr100:theme', onTheme);

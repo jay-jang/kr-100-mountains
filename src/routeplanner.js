@@ -8,6 +8,7 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
   let plan = null, picking = false, disposed = false, generation = 0, layers = [], loading = false;
   let saved = false;
   let signature = '';
+  let registeredPlan = '';
   try {
     const value = JSON.parse(localStorage.getItem(storageKey));
     if (value?.version === 1 && Array.isArray(value.waypoints)) {
@@ -45,6 +46,7 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
   } }, '계획 GPX 내려받기');
   const useBtn = el('button', { class: 'btn', type: 'button', disabled: true, onClick: () => {
     if (!plan) return;
+    registeredPlan = JSON.stringify(plan.latlngs);
     onPlan(plan); status.textContent = '계획 경로를 등산로 목록에 추가했습니다. 지도에서 경로를 비교할 수 있습니다.';
   } }, '등산로 목록에 추가');
   const reverseBtn = el('button', { class: 'btn', type: 'button', disabled: true, onClick: () => { waypoints.reverse(); changed(); } }, '진행 방향 뒤집기');
@@ -90,7 +92,8 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
   function draw() {
     removeLayers();
     if (!view || view.ready === false) return;
-    if (plan) layers.push(view.addPolyline(plan.latlngs, { color: '#e37722', weight: 7, opacity: 1, outline: true }));
+    // Once added to the route list, that route's selected/dim style owns the line.
+    if (plan && JSON.stringify(plan.latlngs) !== registeredPlan) layers.push(view.addPolyline(plan.latlngs, { color: '#e37722', weight: 7, opacity: 1, outline: true }));
     waypoints.forEach((waypoint, i) => {
       const p = plan?.snaps[i]?.point || waypoint.point;
       const label = i === 0 ? '출발' : i === waypoints.length - 1 ? '도착' : `경유 ${i}`;
@@ -176,7 +179,7 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
     if (signature === nextSignature) return;
     signature = nextSignature;
     network = buildTrailNetwork(routes);
-    count.textContent = `${routes.length}개 경로 · ${network.edges.length.toLocaleString('ko')}개 연결 구간을 계획에 사용합니다. 경로별 표시를 끄면 계획에서 제외됩니다.`;
+    count.textContent = `${routes.length}개 경로 · ${network.edges.length.toLocaleString('ko')}개 연결 구간을 계획에 사용합니다. 선택을 해제한 흐린 경로는 계획에서 제외됩니다.`;
     const previous = choose.value; clear(choose).append(el('option', { value: '' }, '추가할 지점을 선택하세요'));
     const addOption = (id, label, point) => choose.append(el('option', { value: id, dataset: { point: JSON.stringify(point) } }, label));
     if (mountain.lat != null) addOption('summit', `${mountain.name} 정상 부근`, [mountain.lat, mountain.lon]);
@@ -195,7 +198,7 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
   }
   paintWaypoints();
   if (saved) status.textContent = '이 산에 저장한 계획이 있습니다. 경로를 불러와 이어서 편집하세요.';
-  return { root, mapTools, refresh, get editing() { return picking || waypoints.length > 0; },
+  return { root, mapTools, refresh, get picking() { return picking; }, get editing() { return picking || waypoints.length > 0; },
     attach(map) {
       view = map; loadBtn.disabled = map.ready === false;
       offClick = map.onClick(point => { if (picking) addPoint(point); }); draw();

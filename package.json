@@ -15,6 +15,7 @@
     "reviews": "node scripts/collect-reviews.mjs",
     "test:ux": "node scripts/ux-test.mjs",
     "test:routing": "node --test scripts/trailnetwork.test.mjs",
+    "test:selection": "node --test scripts/mapselection.test.mjs",
     "test:planner": "node scripts/planner-test.mjs",
     "test:courses": "node scripts/courses-test.mjs"
   },

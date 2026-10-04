@@ -6,6 +6,7 @@
 //   addDot({lat,lng,color,title}) -> {remove()}
 //   addPolyline(latlngs,style) -> {remove()} · addPolylines(lines,style) -> {remove()}
 //   removeLayer(token|token[]) · fitBounds(latlngs,pad) · refreshTheme() · destroy()
+//   project([lat,lng]) -> {x,y} container pixels · onClick(fn) -> unsubscribe
 import { el, clear } from './dom.js';
 
 export const KAKAO_KEY = import.meta.env.VITE_KAKAO_KEY || '';
@@ -53,6 +54,7 @@ function deadMapView(node) {
     removeLayer: noop, fitBounds: noop, setBaseType: noop, relayout: noop,
     refreshTheme: noop, destroy: noop,
     onClick: () => noop,
+    project: () => ({ x: NaN, y: NaN }),
   };
 }
 
@@ -61,6 +63,12 @@ export function markerHTML(color, star) {
   return star
     ? `<div class="map-pin star"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20l1.3-6.7-5-4.6 6.8-.8z" fill="${color}" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div>`
     : `<div class="map-pin dot" style="background:${color}"></div>`;
+}
+
+export function markerButton(color, star, title) {
+  const button = el('button', { class: 'mountain-marker', type: 'button', title, 'aria-label': title || '산 선택' });
+  button.innerHTML = markerHTML(color, star);
+  return button;
 }
 
 export function popupContent(m) {
