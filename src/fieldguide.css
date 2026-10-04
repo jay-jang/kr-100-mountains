@@ -379,8 +379,10 @@ button:disabled { cursor: default; }
 .planning-section > .map-section-heading { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .planning-section > .detail-map-wrap { height: clamp(400px, 60svh, 720px); border-radius: 3px; box-shadow: none; scroll-margin-top: 100px; }
 .planning-section > .detail-map-wrap:fullscreen { height: 100%; border: 0; border-radius: 0; }
-.planning-section .map-tools { top: auto; bottom: 12px; left: 12px; right: 56px; display: flex; flex-wrap: wrap; gap: 6px; }
-.planning-section .dir-menu { top: auto; bottom: 64px; }
+/* Keep the provider logo and attribution visible below the tools. */
+.planning-section .map-tools { top: auto; bottom: 32px; left: 12px; right: 56px; display: flex; flex-wrap: wrap; gap: 6px; }
+.planning-section .planner-map-tools { bottom: 32px; }
+.planning-section .dir-menu { top: auto; bottom: 88px; }
 .planning-section > .conf-note:empty { display: none; }
 .planner-disclosure { margin-top: 12px; border: 1px solid var(--border-strong); }
 .planner-disclosure > summary { padding: 12px 16px; min-height: 48px; cursor: pointer; font-size: 14px; font-weight: 600; }
@@ -395,9 +397,9 @@ button:disabled { cursor: default; }
   .detail-page .hero .sub { margin-top: 4px; font-size: 12px; gap: 2px 10px; }
   .detail-page .hike-btn { width: auto; min-height: 44px; padding: 8px 10px; font-size: 12px; }
   .planning-section > .detail-map-wrap { height: clamp(320px, 52svh, 560px); min-height: 0; scroll-margin-top: 90px; }
-  .planning-section .map-tools { bottom: 8px; left: 8px; right: 48px; }
+  .planning-section .map-tools { left: 8px; right: 48px; }
   .planning-section .map-tools button { font-size: 11px; padding: 7px 9px; }
-  .planning-section .dir-menu { bottom: 112px; }
+  .planning-section .dir-menu { bottom: 136px; }
   .planner-disclosure > summary small { display: block; margin: 4px 0 0 16px; }
 }
 @media (max-width: 760px) {
