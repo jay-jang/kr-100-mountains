@@ -369,12 +369,36 @@ button:disabled { cursor: default; }
 .detail-map-wrap:has(.planner-map-tools:not([hidden])) .map-tools { display: none; }
 .planner-map-tools span { flex: 1 1 260px; font-size: 13px; line-height: 1.6; }
 .route-list { max-height: 520px; overflow-y: auto; }
-@media (min-width: 1024px) {
-  .planning-section { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr); gap: 20px; align-items: start; }
-  .planning-section > h3 { grid-column: 1 / -1; margin-bottom: 0; }
-  .planning-section > .detail-map-wrap { position: sticky; top: 104px; height: 540px; }
-  .planning-section > .nav-panel, .planning-section > .conf-note { grid-column: 1 / -1; }
-  .planning-section .planner-point-tools > button, .planning-section .planner-point-tools label { flex-basis: 100%; }
+/* Mountain details begin with a large map and compact mountain identity. */
+.detail-page { max-width: 1280px; padding-top: 12px; }
+.detail-page .crumb { margin-bottom: 6px; }
+.detail-page .hero { align-items: center; justify-content: space-between; padding: 0 0 16px; gap: 12px; border: 0; }
+.detail-page .hero h2 { font-size: 34px; }
+.detail-page .hero .sub { margin-top: 4px; font-size: 13px; line-height: 1.6; }
+.detail-page .planning-section { margin-top: 0; }
+.planning-section > .map-section-heading { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.planning-section > .detail-map-wrap { height: clamp(400px, 60svh, 720px); border-radius: 3px; box-shadow: none; scroll-margin-top: 100px; }
+.planning-section > .detail-map-wrap:fullscreen { height: 100%; border: 0; border-radius: 0; }
+.planning-section .map-tools { top: auto; bottom: 12px; left: 12px; right: 56px; display: flex; flex-wrap: wrap; gap: 6px; }
+.planning-section .dir-menu { top: auto; bottom: 64px; }
+.planning-section > .conf-note:empty { display: none; }
+.planner-disclosure { margin-top: 12px; border: 1px solid var(--border-strong); }
+.planner-disclosure > summary { padding: 12px 16px; min-height: 48px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.planner-disclosure > summary small { margin-left: 12px; color: var(--text-faint); font-size: 12px; font-weight: 400; }
+.planner-disclosure .route-planner { margin: 0; border: 0; border-top: 1px solid var(--border); }
+@media (max-width: 760px) {
+  .detail-page { padding: 8px 16px 90px; }
+  .detail-page .crumb { font-size: 11px; margin-bottom: 6px; }
+  .detail-page .hero { padding-bottom: 12px; gap: 8px; }
+  .detail-page .hero > div { flex: 1; min-width: 0; }
+  .detail-page .hero h2 { font-size: 28px; }
+  .detail-page .hero .sub { margin-top: 4px; font-size: 12px; gap: 2px 10px; }
+  .detail-page .hike-btn { width: auto; min-height: 44px; padding: 8px 10px; font-size: 12px; }
+  .planning-section > .detail-map-wrap { height: clamp(320px, 52svh, 560px); min-height: 0; scroll-margin-top: 90px; }
+  .planning-section .map-tools { bottom: 8px; left: 8px; right: 48px; }
+  .planning-section .map-tools button { font-size: 11px; padding: 7px 9px; }
+  .planning-section .dir-menu { bottom: 112px; }
+  .planner-disclosure > summary small { display: block; margin: 4px 0 0 16px; }
 }
 @media (max-width: 760px) {
   .route-planner { padding: 16px; }

@@ -55,19 +55,19 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const myDist = m.lat != null ? distanceTo(myPos, m.lat, m.lon) : Infinity;
 
   const sub = el('div', { class: 'sub' },
-    el('span', {}, `${m.region} · ${m.location}`),
+    el('span', {}, m.region),
     el('span', { class: 'elev' }, `해발 ${m.elevation_m}m`),
     Number.isFinite(myDist)
       ? el('span', { class: 'sub-dist', title: '현재 위치에서의 직선거리' }, `현 위치에서 ${bearingLabel(myPos, m.lat, m.lon)}쪽 ${fmtDistFine(myDist)}`)
-      : null,
-    m.best_season ? el('span', {}, `${m.best_season}`) : null);
+      : null);
+
+  const badges = el('div', { class: 'hero-badges' },
+    ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => listPill(k, m)));
 
   page.append(el('div', { class: 'hero' },
     el('div', {},
       el('h2', {}, m.name, m.disambig ? el('span', { class: 'han' }, `(${m.disambig})`) : null),
       sub),
-    el('div', { class: 'hero-badges' },
-      ...LIST_KEYS.filter((k) => m.lists[k]).map((k) => listPill(k, m))),
     hikeBtn));
 
   const contents = el('nav', { class: 'detail-contents', 'aria-label': '산 정보 목차' });
@@ -76,6 +76,8 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   // ---- summary ----
   page.append(el('div', { class: 'section' },
     el('h3', {}, '개요'),
+    badges,
+    el('p', { class: 'conf-note' }, m.location, m.best_season ? ` · 추천 계절: ${m.best_season}` : ''),
     m.summary
       ? el('p', { class: 'prose' }, m.summary)
       : el('p', { class: 'prose muted' }, '개요 정보를 준비 중입니다.')));
@@ -105,6 +107,7 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
   const planner = routePlanner(m, {
     loadAll: loadPlanningRoutes,
     showRoutes: () => scrollToRoutes(),
+    showMap: () => { mapWrap.scrollIntoView({ block: 'center', behavior: 'instant' }); view?.relayout(); },
     onPlan: plan => {
       removeRoutes(r => r.kind === 'planned');
       const track = { ...plan, name: `${m.name} 산행 계획`, hasEle: plan.points.every(p => Number.isFinite(p.ele)), segments: [plan.points] };
@@ -113,7 +116,12 @@ export async function renderDetail(root, id, { returnTo = '#/map' } = {}) {
     },
   });
   mapWrap.append(planner.mapTools);
-  page.append(el('div', { class: 'section planning-section' }, el('h3', {}, '위치 · 경로 · 내비게이션'), planner.root, mapWrap, navPanel, gpxNote));
+  const plannerDisclosure = el('details', { class: 'planner-disclosure' },
+    el('summary', {}, el('span', {}, '경로 계획'), el('small', {}, '여러 등산로를 조합해 나의 코스 만들기')),
+    planner.root);
+  // 지도는 모든 설명·코스보다 먼저, 계획 도구는 필요할 때 펼친다.
+  page.insertBefore(el('section', { class: 'section planning-section', 'aria-label': '산행 지도' },
+    el('h3', { class: 'map-section-heading' }, '산행 지도'), mapWrap, navPanel, gpxNote, plannerDisclosure), contents);
 
   // ---- 등산로별 고도 (등산로 선택 → 그 경로만 지도 표시 + 고도 프로파일) ----
   const OSM_COLORS = ['#1a73e8', '#e2872a', '#8e44ad', '#16a085', '#c0392b'];

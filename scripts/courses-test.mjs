@@ -54,7 +54,7 @@ try {
   check('route link opens the specific course in mountain detail', (await page.locator('.selected-course h4').textContent()).includes('공룡능선'));
   check('selected route is focused', await page.locator('.selected-course').evaluate(n => n === document.activeElement));
   check('detail contains both shortlist and full trail catalogue', await page.locator('.famous-section .famous-course').count() === byId.get('seolaksan').famous_courses.length && await page.locator('.trail-card').count() === byId.get('seolaksan').trails.length);
-  check('shortlist precedes full trails and planning', await page.evaluate(() => document.querySelector('.famous-section').offsetTop < document.querySelector('.course-section').offsetTop && document.querySelector('.course-section').offsetTop < document.querySelector('.planning-section').offsetTop));
+  check('map precedes shortlist and full trails', await page.evaluate(() => document.querySelector('.planning-section').offsetTop < document.querySelector('.famous-section').offsetTop && document.querySelector('.famous-section').offsetTop < document.querySelector('.course-section').offsetTop));
   check('off-summit famous routes do not get a fake summit map button', await page.locator('.famous-section .course-route-btn').count() === 0);
   check('detail return preserves catalogue filters', await page.locator('.detail-return').getAttribute('href') === catalogHash);
   await page.locator('.detail-return').click(); await page.waitForSelector('.famous-mountain');

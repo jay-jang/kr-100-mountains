@@ -90,7 +90,15 @@ try {
   await page.getByRole('button',{name:'지도 보기',exact:true}).click();check('map mode visible',await page.locator('#map').isVisible()&&!await page.locator('.panel').isVisible());
   await page.getByRole('button',{name:'목록 보기',exact:true}).click();check('list mode returns',await page.locator('.panel').isVisible());
   await go('/m/seolaksan');
-  check('courses precede map and GPX',await page.evaluate(()=>document.querySelector('.course-section').offsetTop<document.querySelector('.detail-map-wrap').offsetTop));
+  check('map precedes contents, courses and overview',await page.evaluate(()=>{
+    const map=document.querySelector('.detail-map-wrap');
+    return [...document.querySelectorAll('.detail-contents, .detail-page > .section:not(.planning-section)')].every(n=>map.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING);
+  }));
+  check('map dominates the initial mobile screen',await page.locator('#detail-map').evaluate(n=>{const b=n.getBoundingClientRect();return scrollY===0&&b.top<innerHeight*.4&&b.height>=innerHeight*.45&&b.width>=innerWidth*.85;}));
+  check('route planner starts collapsed beneath map',await page.locator('.planner-disclosure').evaluate(n=>!n.open));
+  await page.locator('.planner-disclosure > summary').click();
+  check('route planner can be opened',await page.locator('.route-planner').isVisible());
+  await page.locator('.planner-disclosure > summary').click();
   check('advanced sections collapsed',await page.locator('.info-disclosure').evaluateAll(ns=>ns.length>=4&&ns.every(n=>!n.open)));
   await page.locator('.course-directions summary').first().click();
   const road=await page.getByRole('link',{name:'자동차 경로 검색',exact:true}).getAttribute('href');
@@ -169,7 +177,7 @@ try {
   const hallasan=mountains.find(m=>m.name==='한라산');
   check('restored map responds to a new search',Math.abs(searchMap.center[0]-hallasan.lat)<0.5 && Math.abs(searchMap.center[1]-hallasan.lon)<0.5);
   await mkdir('/tmp/ux-complete',{recursive:true});
-  for(const theme of ['light','dark']) {await page.emulateMedia({colorScheme:theme});for(const width of [320,390,768,1440]) {await page.setViewportSize({width,height:900});for(const path of ['/','/map','/m/seolaksan','/track']) {await go(path);check(`layout ${theme} ${width} ${path}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(width===390||width===1440) await page.screenshot({path:`/tmp/ux-complete/${theme}-${width}-${path.replaceAll('/','_')}.png`});}}}
+  for(const theme of ['light','dark']) {await page.emulateMedia({colorScheme:theme});for(const width of [320,390,768,1440]) {await page.setViewportSize({width,height:900});for(const path of ['/','/map','/m/seolaksan','/track']) {await go(path);check(`layout ${theme} ${width} ${path}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(path.startsWith('/m/')) check(`map first screen ${theme} ${width}`,await page.locator('#detail-map').evaluate(n=>{const b=n.getBoundingClientRect();return scrollY===0&&b.top<innerHeight*.4&&b.height>=innerHeight*.45&&b.width>=innerWidth*.8;}));if(width===390||width===1440) await page.screenshot({path:`/tmp/ux-complete/${theme}-${width}-${path.replaceAll('/','_')}.png`});}}}
   // Late map initialization must not replace the route the user has moved to.
   const slowContext = await browser.newContext({viewport:{width:390,height:844}});
   const slow = await slowContext.newPage(); slow.on('pageerror',e=>errors.push(e.message));

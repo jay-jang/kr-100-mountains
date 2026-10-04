@@ -48,7 +48,8 @@ async function configure(page,{failOSM=false,block=null,blockOSM=null}={}) {
   await page.route('https://api.open-meteo.com/**',r=>{const u=new URL(r.request().url());return r.fulfill({json:{elevation:u.searchParams.get('latitude').split(',').map(()=>100)}});});
   return {counts,get maxActive(){return maxActive;},get overpassCount(){return overpassCount;}};
 }
-async function loaded(page){await page.waitForSelector('.map-ctrl');await page.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled);}
+async function openPlanner(page){await page.waitForSelector('.map-ctrl');await page.locator('.planner-disclosure > summary').click();}
+async function loaded(page){await openPlanner(page);await page.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled);}
 async function add(page,label){const select=page.getByLabel('경로 위 지점 선택',{exact:true});const value=await select.locator('option').evaluateAll((options,label)=>options.find(o=>o.textContent===label)?.value,label);assert.ok(value,label);await select.selectOption(value);await page.getByRole('button',{name:'지점 추가',exact:true}).click();}
 async function exportPlan(page){const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).click()]);return readFile(await download.path(),'utf8');}
 try{
@@ -69,7 +70,7 @@ try{
   await page.getByRole('button',{name:'4번 지점 삭제',exact:true}).click();await page.getByRole('button',{name:'진행 방향 뒤집기',exact:true}).click();
   check('reverse changes start without losing waypoint geometry',(await page.locator('.planner-waypoints li').first().textContent()).includes('동쪽 코스'));
   await page.getByRole('button',{name:'2번 지점 앞으로',exact:true}).click();check('waypoints can be reordered',(await page.locator('.planner-waypoints li').first().textContent()).includes('순환 도보길'));
-  await page.reload();await page.waitForSelector('.map-ctrl');await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled&&document.querySelector('.planner-summary')?.textContent.includes('총'));
+  await page.reload();await openPlanner(page);await page.waitForFunction(()=>!document.querySelector('.planner-head button').disabled&&document.querySelector('.planner-summary')?.textContent.includes('총'));
   check('plan persists and recalculates after reload',await page.locator('.planner-waypoints li').count()===3);
   await page.getByRole('button',{name:'등산로 목록에 추가',exact:true}).click();check('calculated plan can join the comparison list',await page.locator('.route-item').filter({hasText:'나의 계획'}).count()===1);
   await page.getByRole('button',{name:'등산로 목록에 추가',exact:true}).click();check('adding an edited plan replaces its previous copy',await page.locator('.route-item').filter({hasText:'나의 계획'}).count()===1);
@@ -111,14 +112,14 @@ try{
   await west.locator('.route-eye').click();check('hiding a source excludes it from planning',!await offline.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());
   await west.locator('.route-eye').click();check('restoring a source recalculates the plan',await offline.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());await offline.close();
   const slow=await browser.newPage({viewport:{width:390,height:844}});let releaseOSM;const osmGate=new Promise(r=>releaseOSM=r);await configure(slow,{blockOSM:osmGate});
-  await slow.goto(base+'/#/m/seolaksan');await slow.waitForSelector('.map-ctrl');await slow.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();
+  await slow.goto(base+'/#/m/seolaksan');await openPlanner(slow);await slow.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();
   await slow.waitForFunction(()=>document.querySelectorAll('.route-item').length===3);
   await add(slow,'서쪽 중복 코스 · 시작 지점');await add(slow,'동쪽 코스 · 끝 지점');
   check('a slow OSM request does not block GPX planning',await slow.locator('.planner-head button').isDisabled()&&await slow.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());
   releaseOSM();await slow.waitForFunction(()=>!document.querySelector('.planner-head button').disabled);
   check('late network data preserves selected waypoints',await slow.locator('.planner-waypoints li').count()===2&&await slow.getByRole('button',{name:'계획 GPX 내려받기',exact:true}).isEnabled());await slow.close();
   const late=await browser.newPage();let release;const gate=new Promise(r=>release=r);await configure(late,{block:gate});
-  await late.goto(base+'/#/m/seolaksan');await late.waitForSelector('.map-ctrl');await late.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();
+  await late.goto(base+'/#/m/seolaksan');await openPlanner(late);await late.getByRole('button',{name:'경로 모두 불러오기',exact:true}).click();
   await late.locator('.nav [data-route="track"]').click();await late.waitForSelector('.stat-card');release();await late.waitForTimeout(300);
   check('leaving during batch loading cannot mount the old planner',await late.locator('.route-planner').count()===0&&await late.locator('.stat-card').count()===5);await late.close();
   check('no runtime errors',errors.length===0);console.log(`${checks} planner checks passed`);

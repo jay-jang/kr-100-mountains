@@ -2,7 +2,7 @@ import { el, clear } from './dom.js';
 import { buildTrailNetwork, snapToTrail, planTrailRoute, plannedRouteGPX } from './trailnetwork.js';
 import { buildProfile, elevationChart, profileStats, fetchElevations, resample } from './elevation.js';
 
-export function routePlanner(mountain, { loadAll, onPlan, showRoutes }) {
+export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap }) {
   const storageKey = `kr100:plan:${mountain.id}`;
   let waypoints = [], network = buildTrailNetwork([]), routes = [], view = null, offClick = null;
   let plan = null, picking = false, disposed = false, generation = 0, layers = [], loading = false;
@@ -24,7 +24,7 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes }) {
     picking = !picking; paintPicking();
     if (picking) {
       status.textContent = '지도에서 표시된 길을 차례로 누르세요. 첫 지점은 출발, 마지막 지점은 도착입니다.';
-      root.nextElementSibling?.scrollIntoView({ block: 'center', behavior: 'instant' }); view?.relayout();
+      showMap?.();
     }
   } }, '지도에서 지점 추가');
   const choose = el('select', { 'aria-label': '경로 위 지점 선택', disabled: true });
