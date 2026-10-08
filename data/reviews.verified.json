@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T19:12:35.473Z",
+  "generated_at": "2026-10-08T19:17:54.359Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,7 +16,7 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 1336,
+    "notes": 1366,
     "verified": 471
   },
   "mountains": [
@@ -3182,7 +3182,7 @@
     {
       "id": "cheonggyesan-seoul",
       "name": "청계산(서울)",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -3190,49 +3190,13 @@
           "scope": "mountain",
           "route": null,
           "topic": "통제·예약",
-          "text": "청계산 최고봉인 망경대(618m) 정상부에는 군사시설과 통신부대가 자리잡고 있어 민간인 출입이 상시 통제되며, 등산객은 석기봉·이수봉 방면 우회로를 이용해야 한다.",
+          "text": "청계산 최고봉인 망경대(618m) 정상부에는 군부대와 통신시설이 있어 일반인 출입이 상시 통제되며, 등산객은 석기봉·이수봉 방향 우회로를 이용해야 한다.",
           "sentiment": "caution",
-          "as_of": "2014-06",
+          "as_of": "2022-07",
           "sources": [
-            "https://lblok2001.tistory.com/5474896",
-            "https://nj790405.tistory.com/2759",
-            "https://baegdu.tistory.com/entry/%EC%B2%AD%EA%B3%84%EC%82%B0-%EA%B2%A8%EC%9A%B8%EC%82%B0%ED%96%89%EC%9B%90%ED%84%B0%EA%B3%A8-%EB%A7%A4%EB%B4%89-%EB%A7%8C%EA%B2%BD%EB%8C%80-%EC%98%9B%EA%B3%A8"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "원터골-매봉 코스",
-          "topic": "주차·교통",
-          "text": "2026년 7월 코스 안내에는 청계산입구역 주변 공영주차장이 주말에 자주 만차가 된다고 기재되어 있다.",
-          "sentiment": "caution",
-          "as_of": "2026-07",
-          "sources": [
-            "https://www.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop",
-            "https://m.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "2026년 7월 안내에 따르면 최고봉 망경대에는 군부대가 있어 일반인이 정상에 오를 수 없다.",
-          "sentiment": "caution",
-          "as_of": "2026-07",
-          "sources": [
-            "https://www.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop",
-            "https://m.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop"
+            "https://jungwa686.tistory.com/15973315",
+            "https://ssvg.tistory.com/105",
+            "https://tks042.tistory.com/12362699"
           ],
           "verify": {
             "level": "single",
@@ -3245,11 +3209,28 @@
           "scope": "route",
           "route": "원터골-매봉 코스",
           "topic": "위험구간",
-          "text": "2026년 3월 초 매봉에서 원터골로 내려오는 길에 잔설·얼음·진창이 섞여 매우 미끄러웠다는 후기가 있다. 작성자는 첫 하산 후 아이젠을 구입해 두 번째 산행에 사용했다.",
+          "text": "2025년 2월 원터골~매봉 후기에서는 아이젠 없이 하산하던 사람들이 많이 미끄러지는 모습을 기록하며 아이젠 준비를 강조했다.",
           "sentiment": "caution",
-          "as_of": "2026-03",
+          "as_of": "2025-02",
           "sources": [
-            "https://onemorethink.tistory.com/entry/cheonggyesan-two-laps-hiking-review"
+            "https://spygogo.tistory.com/837"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "2024년 9월 산행을 담은 후기에서는 망경대가 군부대 안에 있어 근처까지만 접근하고 석기봉 방향으로 진행해야 한다고 안내했다.",
+          "sentiment": "caution",
+          "as_of": "2024-09",
+          "sources": [
+            "https://ssinzigu.tistory.com/3"
           ],
           "verify": {
             "level": "single",
@@ -3261,32 +3242,13 @@
         {
           "scope": "route",
           "route": "원터골-매봉 코스",
-          "topic": "조망·볼거리",
-          "text": "나무로 둘러싸여 시야가 다소 좁은 매봉 정상에 비해 정상 직전의 매바위가 강남 도심과 롯데월드타워까지 탁 트인 파노라마 조망을 제공해 실질적인 최고의 전망 포인트로 꼽힌다.",
-          "sentiment": "good",
-          "as_of": "2024-06",
-          "sources": [
-            "https://ckaqhd2295.tistory.com/857",
-            "https://sinuku.tistory.com/8469213",
-            "https://ggobuk11.tistory.com/28"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "원터골-매봉 코스",
-          "topic": "주차·교통",
-          "text": "신분당선 청계산입구역 2번 출구에서 원터골 입구까지 도보 약 10분으로 안내된다.",
+          "topic": "편의시설",
+          "text": "청계산근린광장 공영주차장에서 원터골 굴다리로 이동하는 길에 화장실이 있다고 후기에서 확인된다.",
           "sentiment": "neutral",
-          "as_of": "2026-07",
+          "as_of": "2022-11",
           "sources": [
-            "https://www.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop",
-            "https://m.everytrail.co.kr/guides/cheonggyesan-beginner-wonteogol-loop"
+            "https://review-doyoung.tistory.com/465",
+            "https://bettertime.tistory.com/entry/%EC%B2%AD%EA%B3%84%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B3%A4%EB%93%9C%EB%A0%88%EB%82%98%EB%AC%BC%EB%B0%A5%EC%A7%91"
           ],
           "verify": {
             "level": "single",
@@ -3299,11 +3261,45 @@
           "scope": "route",
           "route": "원터골-매봉 코스",
           "topic": "난이도",
-          "text": "원터골 첫 갈림길에서 왼쪽 매봉 방향으로 바로 오르는 길은 헬기장까지 꾸준한 오르막이 이어진다. 2026년 8월 산행자는 상승고도 521m를 기록하며 예상보다 힘든 코스였다고 평가했다.",
+          "text": "원터골~매봉은 계단이 많은 코스로 기록돼 있다. 2024년 8월 25일 후기에서는 휴식을 포함한 왕복 산행에 약 3시간이 걸렸다.",
           "sentiment": "neutral",
-          "as_of": "2026-08",
+          "as_of": "2024-08",
           "sources": [
-            "https://opennote46.tistory.com/792"
+            "https://ssinzigu.tistory.com/3"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "원터골-매봉 코스",
+          "topic": "혼잡",
+          "text": "2025년 6월 15일 산행에서는 매봉 정상석 앞에 인증 사진을 찍으려는 줄이 생겨, 방문자가 정상석 측면에서 사진을 남겼다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-06",
+          "sources": [
+            "https://ckc12190.tistory.com/584"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "원터골-매봉 코스",
+          "topic": "주차·교통",
+          "text": "신분당선 청계산입구역 2번 출구에서 원터골 굴다리를 지나 만남의광장으로 접근하는 동선이 실제 산행기에 기록돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-06",
+          "sources": [
+            "https://ckc12190.tistory.com/584"
           ],
           "verify": {
             "level": "single",
@@ -3317,19 +3313,19 @@
     {
       "id": "cheonghwasan-sangju",
       "name": "청화산(상주)",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "늘재-청화산 정상 원점회귀",
-          "topic": "위험구간",
-          "text": "늘재에서 청화산 정상으로 오르는 길에는 밧줄이나 바위를 손으로 잡고 올라야 하는 구간이 여러 차례 나온다는 산행 기록이 있다.",
+          "topic": "난이도",
+          "text": "정국기원단~원적사 갈림길은 밧줄과 바위 오르막이 반복되는 힘든 구간으로 기록돼 있다. 2025년 7월 후기에서는 이 구간 0.8km를 이동하는 데 조망 감상을 포함해 46분이 걸렸다.",
           "sentiment": "caution",
-          "as_of": "2023-01",
+          "as_of": "2025-07",
           "sources": [
-            "https://landyplay.com/%EC%9A%B0%EB%B3%B5%EB%8F%99%EC%B2%9C%EC%9D%B4-%EC%9E%90%EB%A6%AC%ED%95%9C-%EC%B2%AD%ED%99%94%EC%82%B0-%EC%A1%B0%ED%95%AD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://esanjsan.co.kr/%EC%B2%AD%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8A%98%EC%9E%AC-%EC%B6%9C%EB%B0%9C-100%EB%8C%80-%EB%AA%85%EC%82%B0-%EC%82%B0%ED%96%89%EA%B8%B0-7"
           ],
           "verify": {
             "level": "single",
@@ -3342,28 +3338,10 @@
           "scope": "route",
           "route": "청화산-조항산 종주",
           "topic": "위험구간",
-          "text": "2023년 1월 산행에서는 조항산 정상 약 100m 전 바위 하강 구간의 발 디딜 곳에 얼음이 얼고 그 위로 눈이 덮여 있었다. 작성자는 이 지점을 종주 중 가장 위험한 곳으로 꼽았다.",
+          "text": "2024년 2월 18일 후기에서는 청화산 정상 이후 조항산 방향 북사면에 잔설이 많이 남아, 아이젠을 착용한 채 암벽과 급경사를 내려갔다고 기록했다.",
           "sentiment": "caution",
-          "as_of": "2023-01",
-          "sources": [
-            "https://landyplay.com/%EC%9A%B0%EB%B3%B5%EB%8F%99%EC%B2%9C%EC%9D%B4-%EC%9E%90%EB%A6%AC%ED%95%9C-%EC%B2%AD%ED%99%94%EC%82%B0-%EC%A1%B0%ED%95%AD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "늘재-청화산 정상 원점회귀",
-          "topic": "난이도",
-          "text": "늘재에서 청화산 정상까지 왕복 거리는 약 5.2~5.6km로 짧지만, 정국기원단 이후부터 정상 헬기장까지 가파른 된비알과 칼등바위, 로프 암릉 구간이 집중되어 약 600m의 고도차에 따른 체력 소모가 크다.",
-          "sentiment": "neutral",
           "as_of": "2024-02",
           "sources": [
-            "https://lblok2001.tistory.com/5475142",
             "https://4000nom.tistory.com/1250"
           ],
           "verify": {
@@ -3375,14 +3353,15 @@
         },
         {
           "scope": "route",
-          "route": "늘재-청화산-시루봉-쌍룡계곡 회란석 종주",
-          "topic": "조망·볼거리",
-          "text": "청화산 동남쪽 끝자락의 시루봉(876m)은 3개의 암봉으로 이루어져 사방이 절벽으로 트여 있으며, 조항산·대야산·희양산과 백두대간 마루금을 한눈에 조망할 수 있는 최고의 천연 전망대다.",
-          "sentiment": "good",
-          "as_of": "2017-01",
+          "route": "늘재-청화산 정상 원점회귀",
+          "topic": "난이도",
+          "text": "늘재(고도 약 380m)에서 청화산 정상(984m)까지 왕복 거리는 약 5.2km로 짧으나, 600m에 달하는 고도차의 가파른 된비알과 칼등바위·암릉 로프 구간이 집중되어 체력 소모가 크다.",
+          "sentiment": "neutral",
+          "as_of": "2021-01",
           "sources": [
-            "https://duga.tistory.com/4423",
-            "http://san.chosun.com/news/articleView.html?idxno=9868"
+            "https://koreahike.com/cheonghwasan-hiking-guide",
+            "https://dchoidy.tistory.com/12861091",
+            "https://lblok2001.tistory.com/5475142"
           ],
           "verify": {
             "level": "single",
@@ -3394,12 +3373,13 @@
         {
           "scope": "route",
           "route": "늘재-청화산 정상 원점회귀",
-          "topic": "계절·시기",
-          "text": "2023년 1월 19일 산행에서는 청화산 정상 직전 헬기장 일대에 상고대가 관찰됐다.",
-          "sentiment": "neutral",
-          "as_of": "2023-01",
+          "topic": "조망·볼거리",
+          "text": "정국기원단과 정상으로 오르는 중간 조망터에서 바라보는 속리산 능선이 여러 산행기에서 좋은 전망으로 언급된다.",
+          "sentiment": "good",
+          "as_of": "2025-07",
           "sources": [
-            "https://landyplay.com/%EC%9A%B0%EB%B3%B5%EB%8F%99%EC%B2%9C%EC%9D%B4-%EC%9E%90%EB%A6%AC%ED%95%9C-%EC%B2%AD%ED%99%94%EC%82%B0-%EC%A1%B0%ED%95%AD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://esanjsan.co.kr/%EC%B2%AD%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8A%98%EC%9E%AC-%EC%B6%9C%EB%B0%9C-100%EB%8C%80-%EB%AA%85%EC%82%B0-%EC%82%B0%ED%96%89%EA%B8%B0-7",
+            "https://4000nom.tistory.com/1250"
           ],
           "verify": {
             "level": "single",
@@ -3410,13 +3390,47 @@
         },
         {
           "scope": "route",
-          "route": "청화산-조항산 종주",
-          "topic": "난이도",
-          "text": "조항산을 지나 의상저수지로 내려가는 능선은 낙엽과 작은 돌이 많아 하산 속도를 내기 어려웠다는 후기가 있다.",
+          "route": "늘재-청화산 정상 원점회귀",
+          "topic": "주차·교통",
+          "text": "2025년 7월 후기에서는 늘재에 별도 주차장이 없으며, 인근 청화산농원휴게소에 주차할 수 있다고 안내했다.",
           "sentiment": "neutral",
-          "as_of": "2023-01",
+          "as_of": "2025-07",
           "sources": [
-            "https://landyplay.com/%EC%9A%B0%EB%B3%B5%EB%8F%99%EC%B2%9C%EC%9D%B4-%EC%9E%90%EB%A6%AC%ED%95%9C-%EC%B2%AD%ED%99%94%EC%82%B0-%EC%A1%B0%ED%95%AD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://esanjsan.co.kr/%EC%B2%AD%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8A%98%EC%9E%AC-%EC%B6%9C%EB%B0%9C-100%EB%8C%80-%EB%AA%85%EC%82%B0-%EC%82%B0%ED%96%89%EA%B8%B0-7"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "늘재-청화산 정상 원점회귀",
+          "topic": "편의시설",
+          "text": "2025년 7월 산행기에서는 늘재 들머리 주변에 편의시설이 없다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-07",
+          "sources": [
+            "https://esanjsan.co.kr/%EC%B2%AD%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8A%98%EC%9E%AC-%EC%B6%9C%EB%B0%9C-100%EB%8C%80-%EB%AA%85%EC%82%B0-%EC%82%B0%ED%96%89%EA%B8%B0-7"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "2024년 2월 18일 일요일 산행에서는 오전 11시 45분경 청화산 정상에 도착했을 때 인증 사진 대기 줄이 길었다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-02",
+          "sources": [
+            "https://4000nom.tistory.com/1250"
           ],
           "verify": {
             "level": "single",
@@ -3430,7 +3444,7 @@
     {
       "id": "cheongryangsan",
       "name": "청량산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -3438,11 +3452,30 @@
           "scope": "route",
           "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
           "topic": "위험구간",
-          "text": "자소봉에 오르는 마지막 구간은 가파른 철계단이며, 봉우리를 둘러본 뒤 같은 계단으로 내려와 장인봉 방향으로 진행한다.",
+          "text": "자소봉으로 올라가는 마지막 접근 구간에는 가파른 철계단이 있으며, 2021년과 2025년 산행기에서 모두 확인된다.",
           "sentiment": "caution",
-          "as_of": "2021-09",
+          "as_of": "2025-10",
           "sources": [
-            "https://dchoidy.tistory.com/12861135"
+            "https://dchoidy.tistory.com/12861135",
+            "https://bormgol.tistory.com/164",
+            "https://khcbohome.tistory.com/11807547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
+          "topic": "난이도",
+          "text": "하늘다리에서 장인봉으로 가는 구간은 급격히 내려간 뒤 다시 급경사를 올라야 한다고 2026년 8월 14일 산행기에 기록돼 있다.",
+          "sentiment": "caution",
+          "as_of": "2026-08",
+          "sources": [
+            "https://www.ramblr.com/web/mymap/trip/1347807/10930396"
           ],
           "verify": {
             "level": "single",
@@ -3455,13 +3488,48 @@
           "scope": "route",
           "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
           "topic": "조망·볼거리",
-          "text": "응진전 부근 어풍대에서 12개 암봉이 연꽃잎처럼 둘러싼 청량사 전경을 한눈에 굽어볼 수 있으며, 해발 800m 자란봉과 선학봉을 잇는 90m 하늘다리(현수교)에서 아찔한 협곡 절경을 즐길 수 있다.",
+          "text": "응진전 인근 어풍대에서 내려다보는 청량사와 주변 암봉 풍경이 여러 산행기에서 인상적인 조망으로 소개된다.",
           "sentiment": "good",
-          "as_of": "2021-10",
+          "as_of": "2025-10",
           "sources": [
-            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20211111.22012003341",
-            "https://dchoidy.tistory.com/12861135",
-            "http://san.chosun.com/news/articleView.html?idxno=8355"
+            "https://bormgol.tistory.com/164",
+            "https://khcbohome.tistory.com/11807547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입석-청량사-장인봉 코스",
+          "topic": "조망·볼거리",
+          "text": "장인봉에서 금강대 방향으로 약 50m 내려간 전망대에서는 굽이치는 낙동강과 산비탈 마을을 내려다볼 수 있다. 이 전망대의 낙동강 조망은 여러 산행기에서 확인된다.",
+          "sentiment": "good",
+          "as_of": "2025-10",
+          "sources": [
+            "https://bormgol.tistory.com/164",
+            "https://khcbohome.tistory.com/11807547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
+          "topic": "계절·시기",
+          "text": "2025년 10월 30일 산행기에서는 자소봉과 하늘다리 주변에서 물든 단풍을 관찰했고, 하늘다리를 건너 장인봉으로 가는 구간의 단풍이 특히 아름다웠다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-10",
+          "sources": [
+            "https://khcbohome.tistory.com/m/11807547",
+            "https://khcbohome.tistory.com/11807547"
           ],
           "verify": {
             "level": "single",
@@ -3473,13 +3541,48 @@
         {
           "scope": "mountain",
           "route": null,
-          "topic": "편의시설",
-          "text": "청량사 경내에는 찻집(안심당)과 식수 보충 시설, 화장실이 마련되어 있어 장인봉 왕복 산행 중 휴식과 에너지 보충을 하기에 좋다.",
+          "topic": "혼잡",
+          "text": "2025년 10월 30일 평일 산행에서는 오전 11시경 도착한 청량산 주차장이 한산했다고 기록했다.",
           "sentiment": "neutral",
-          "as_of": "2022-11",
+          "as_of": "2025-10",
           "sources": [
-            "https://leeke2000.tistory.com/16510520",
-            "https://pepper-papa.tistory.com/entry/%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC100%EB%8C%80%EB%AA%85%EC%82%B0-%EC%B2%AD%EB%9F%89-%EA%B7%B8-%EC%9E%A1%EC%B1%84-%EC%B2%AD%EB%9F%89%EC%82%B0-%EB%8F%84%EB%A6%BD%EA%B3%B5%EC%9B%90-%EC%9E%85%EC%84%9D-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4",
+            "https://khcbohome.tistory.com/m/11807547",
+            "https://khcbohome.tistory.com/11807547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "2025년 10월 산행기에서는 대형버스가 선학정까지 올라갈 수 있다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-10",
+          "sources": [
+            "https://khcbohome.tistory.com/m/11807547",
+            "https://khcbohome.tistory.com/11807547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
+          "topic": "조망·볼거리",
+          "text": "금탑봉 절벽 아래 응진전 부근 어풍대에서는 12개 암봉이 연꽃잎처럼 둘러싼 청량사 전경이 한눈에 들어오며, 해발 800m 자란봉과 선학봉을 잇는 폭 1.2m, 길이 90m 하늘다리(현수교)에서는 아찔한 협곡 절경을 즐길 수 있다.",
+          "sentiment": "good",
+          "as_of": "2021-09",
+          "sources": [
+            "https://leemh88.tistory.com/14634665",
             "https://dchoidy.tistory.com/12861135"
           ],
           "verify": {
@@ -3493,11 +3596,47 @@
           "scope": "route",
           "route": "입석-청량사-장인봉 코스",
           "topic": "난이도",
-          "text": "청량사와 뒷실고개 사이 약 0.8km는 짧지만 경사가 급한 구간으로, 실제 산행기에서도 오르막 부담이 큰 길로 설명된다.",
+          "text": "청량사에서 뒷실고개로 바로 오르는 약 0.8km 구간은 짧지만 매우 가파른 급경사 계단길로, 실제 탐방객들 사이에서 가장 힘든 오르막 중 하나로 꼽힌다.",
           "sentiment": "neutral",
           "as_of": "2021-09",
           "sources": [
+            "https://hameen2.tistory.com/8228682",
             "https://dchoidy.tistory.com/12861135"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "청량사 경내에는 찻집(안심당)과 식수대, 화장실이 마련되어 있어 장인봉 왕복 산행 중 휴식과 수분 보충을 하기에 좋다.",
+          "sentiment": "neutral",
+          "as_of": "2021-09",
+          "sources": [
+            "https://cjc5060.tistory.com/8648837",
+            "https://dchoidy.tistory.com/12861135"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입석-청량사-장인봉 코스",
+          "topic": "편의시설",
+          "text": "2026년 8월 14일 산행기에서는 화장실 위치를 입석주차장과 청량사 해우소로 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-08",
+          "sources": [
+            "https://www.ramblr.com/web/mymap/trip/1347807/10930396"
           ],
           "verify": {
             "level": "single",
@@ -3510,24 +3649,7 @@
           "scope": "route",
           "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
           "topic": "난이도",
-          "text": "하늘다리를 건너면 장인봉 갈림길까지 가파르게 내려간 뒤, 정상까지 남은 300m를 다시 철계단으로 올라야 한다.",
-          "sentiment": "neutral",
-          "as_of": "2021-09",
-          "sources": [
-            "https://dchoidy.tistory.com/12861135"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "입석-응진전-김생굴-자소봉-하늘다리-장인봉",
-          "topic": "혼잡",
-          "text": "2021년 9월 16일 목요일 산행에서는 입석에서 자소봉을 거치는 동안 다른 산행객을 만나지 않았지만, 하늘다리와 정상 부근에서는 단체 산행객을 만났다고 기록했다.",
+          "text": "하늘다리를 건넌 후 안부로 가파르게 내려섰다가 장인봉 갈림길에서 정상까지 남은 약 300m 구간을 가파른 철계단으로 치고 올라가야 해 체력 소모가 크다.",
           "sentiment": "neutral",
           "as_of": "2021-09",
           "sources": [
@@ -3545,56 +3667,19 @@
     {
       "id": "cheongwansan",
       "name": "천관산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "암봉과 암릉이 돌출된 바위산 특성상 능선과 너덜지대에서 미끄러짐 위험이 있으며, 환희대~연대봉 주능선 평원은 사방이 트여 기상 악화 시 강풍에 대비한 방풍 의류를 챙겨야 한다.",
-          "sentiment": "caution",
-          "as_of": "2023-10",
-          "sources": [
-            "https://www.hiking-beginner.com/trail/cheongwansan-jeongsang",
-            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20231012.22014003147"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "탑산사-구룡봉-연대봉 코스",
-          "topic": "주차·교통",
-          "text": "2026년 2월 28일 오전 9시 산행을 시작한 탐방자는 당시 탑산사 주차장에 차량이 가득했다고 기록했다.",
-          "sentiment": "caution",
-          "as_of": "2026-02",
-          "sources": [
-            "https://ohiking.today/story/view/8397"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
           "scope": "route",
           "route": "탑산사-구룡봉-연대봉 코스",
           "topic": "난이도",
-          "text": "대덕읍 탑산사 주차장에서 출발해 구룡봉과 환희대를 거쳐 연대봉을 왕복하는 코스는 도립공원 메인 주차장 기점보다 고도 부담이 적어 약 3시간 내외로 정상부 억새와 암릉을 효율적으로 산행할 수 있다.",
-          "sentiment": "neutral",
-          "as_of": "2020-08",
+          "text": "탑산사에서 구룡봉까지는 거리가 짧아도 가파른 계단이 연속되는 구간으로, 2024년 10월 30일 후기에서 확인된다.",
+          "sentiment": "caution",
+          "as_of": "2024-10",
           "sources": [
-            "https://ohiking.today/story/view/8397",
-            "https://lyj1749.tistory.com/200",
-            "https://wg57.tistory.com/m/7751"
+            "https://kingcima.tistory.com/219"
           ],
           "verify": {
             "level": "single",
@@ -3604,15 +3689,15 @@
           }
         },
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "10월 중순부터 11월 초순까지 환희대에서 연대봉에 이르는 약 1km의 주능선 평원이 은빛 억새 군락으로 뒤덮이며 남해 다도해 풍광과 어우러진 억새 산행객으로 크게 붐빈다.",
+          "scope": "route",
+          "route": "금강굴 코스",
+          "topic": "조망·볼거리",
+          "text": "장천재에서 금강굴과 석선봉 등 기암괴석 바위군을 거쳐 환희대로 오르는 코스는 다도해 바다와 거대한 바위 암릉미를 동시에 감상할 수 있는 대표 암릉 코스다.",
           "sentiment": "good",
-          "as_of": "2023-10",
+          "as_of": "2020-10",
           "sources": [
-            "https://v.daum.net/v/inrTTKF3WS",
-            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20231012.22014003147",
+            "https://zznz.co.kr/archives/15428",
+            "https://bormgol.tistory.com/146",
             "https://smileolleh.tistory.com/193"
           ],
           "verify": {
@@ -3626,9 +3711,45 @@
           "scope": "route",
           "route": "탑산사-구룡봉-연대봉 코스",
           "topic": "조망·볼거리",
-          "text": "연대봉 주변 억새능선에서 억새와 바다를 함께 보는 풍경이 여러 산행기에서 좋은 조망으로 꼽힌다.",
+          "text": "환희대~연대봉 능선은 사방이 열리는 전망과 억새밭을 함께 감상하는 지점으로 여러 후기에 소개된다. 정상부 능선에서 바다를 내려다보는 풍경도 반복해서 언급된다.",
           "sentiment": "good",
-          "as_of": null,
+          "as_of": "2024-10",
+          "sources": [
+            "https://kingcima.tistory.com/219",
+            "https://security-song.tistory.com/220"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "구룡봉 코스",
+          "topic": "조망·볼거리",
+          "text": "구룡봉은 오랜 풍화와 침식으로 거대한 암반 위에 수많은 웅덩이(돌구멍)가 형성된 기이한 암봉으로, 득량만과 남해 바다가 한눈에 내려다보이는 전망 명소다.",
+          "sentiment": "good",
+          "as_of": "2020-09",
+          "sources": [
+            "https://lyj1749.tistory.com/200",
+            "https://smileolleh.tistory.com/193"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "탑산사-구룡봉-연대봉 코스",
+          "topic": "편의시설",
+          "text": "탑산사 주차장 해우소 옆 돌탑 부근에 등산로 입구가 위치하며, 주차장에 화장실이 구비되어 있다.",
+          "sentiment": "neutral",
+          "as_of": "2022-11",
           "sources": [
             "https://security-song.tistory.com/220",
             "https://pepper-papa.tistory.com/entry/%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC100%EB%8C%80%EB%AA%85%EC%82%B0-%EC%96%B5%EC%83%88%EA%B0%80-%EC%82%B0%EB%93%A4%EC%82%B0%EB%93%A4-%EC%B2%9C%EA%B4%80%EC%82%B0-%EB%93%B1%EC%82%B0-%ED%83%91%EC%82%B0%EC%82%AC-%EC%9B%90%EC%A0%90-%EC%BD%94%EC%8A%A4"
@@ -3644,7 +3765,24 @@
           "scope": "route",
           "route": "탑산사-구룡봉-연대봉 코스",
           "topic": "주차·교통",
-          "text": "2022년 7월 게시된 현장 후기에서는 탑산사 주차장의 수용 규모를 승용차 약 10~15대로 소개했다.",
+          "text": "2024년 10월 30일 후기에서는 탑산사 주차장에 차량 약 10대만 주차할 수 있다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-10",
+          "sources": [
+            "https://kingcima.tistory.com/219"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "탑산사-구룡봉-연대봉 코스",
+          "topic": "편의시설",
+          "text": "2022년 7월 공개된 후기에서는 탑산사 주차장 옆에 해우소가 있다고 확인했다.",
           "sentiment": "neutral",
           "as_of": "2022-07",
           "sources": [
@@ -3659,13 +3797,47 @@
         },
         {
           "scope": "route",
-          "route": "탑산사-구룡봉-연대봉 코스",
-          "topic": "편의시설",
-          "text": "탑산사 주차장에는 해우소가 있으며, 해우소 옆 큰 돌탑 부근에 등산로 입구가 있다는 현장 기록이 있다.",
+          "route": "금강굴 코스",
+          "topic": "난이도",
+          "text": "2025년 10월 후기에서는 양근암·금수굴·금강굴 세 코스의 거리와 난이도 차이가 크지는 않지만, 금강굴 코스가 조금 더 길고 어렵다고 비교했다.",
           "sentiment": "neutral",
-          "as_of": "2022-02",
+          "as_of": "2025-10",
           "sources": [
-            "https://pepper-papa.tistory.com/entry/%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC100%EB%8C%80%EB%AA%85%EC%82%B0-%EC%96%B5%EC%83%88%EA%B0%80-%EC%82%B0%EB%93%A4%EC%82%B0%EB%93%A4-%EC%B2%9C%EA%B4%80%EC%82%B0-%EB%93%B1%EC%82%B0-%ED%83%91%EC%82%B0%EC%82%AC-%EC%9B%90%EC%A0%90-%EC%BD%94%EC%8A%A4"
+            "https://kingcima.tistory.com/288"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "탑산사-구룡봉-연대봉 코스",
+          "topic": "계절·시기",
+          "text": "2024년 10월 30일 후기에서는 환희대~연대봉 억새밭을 만개 이후 지고 있는 상태로 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-10",
+          "sources": [
+            "https://kingcima.tistory.com/219"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "2025년 10월 19일 후기에서는 연대봉~환희대 억새밭이 과거 방문 때보다 빈약했다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-10",
+          "sources": [
+            "https://kingcima.tistory.com/288"
           ],
           "verify": {
             "level": "single",
@@ -3679,7 +3851,7 @@
     {
       "id": "cheonhwangsan",
       "name": "천황산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -3691,8 +3863,9 @@
           "sentiment": "caution",
           "as_of": "2024-09",
           "sources": [
-            "https://mango-storage.tistory.com/entry/%EB%B0%80%EC%96%91-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C%EA%B3%B3-%EC%BD%94%EC%8A%A4-%EC%B6%94%EC%B2%9C-%EA%B2%A8%EC%9A%B8%EC%9D%98-%EB%A7%A4%EB%A0%A5%EC%9D%84-%EB%8B%B4%EC%9D%80-%EB%B0%80%EC%96%91-%EC%97%AC%ED%96%89%EC%A7%80?category=1109242",
-            "http://icevalleycablecar.com/sub/sub02_01.php"
+            "https://www.mindlenews.com/news/articleView.html?idxno=6890",
+            "http://icevalleycablecar.com/sub/sub02_01.php",
+            "https://mango-storage.tistory.com/entry/%EB%B0%80%EC%96%91-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C%EA%B3%B3-%EC%BD%94%EC%8A%A4-%EC%B6%94%EC%B2%9C-%EA%B2%A8%EC%9A%B8%EC%9D%98-%EB%A7%A4%EB%A0%A5%EC%9D%84-%EB%8B%B4%EC%9D%80-%EB%B0%80%EC%96%91-%EC%97%AC%ED%96%89%EC%A7%80?category=1109242"
           ],
           "verify": {
             "level": "single",
@@ -3709,8 +3882,9 @@
           "sentiment": "caution",
           "as_of": "2025-03",
           "sources": [
-            "https://dandi0.tistory.com/132",
-            "https://roadon.tistory.com/entry/%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4-%EC%B2%9C%ED%99%A9%EC%82%B0"
+            "https://sungonkim.tistory.com/18002905",
+            "https://roadon.tistory.com/entry/%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4-%EC%B2%9C%ED%99%A9%EC%82%B0",
+            "https://dandi0.tistory.com/132"
           ],
           "verify": {
             "level": "single",
@@ -3727,8 +3901,43 @@
           "sentiment": "caution",
           "as_of": "2023-04",
           "sources": [
-            "https://duga.tistory.com/4705",
-            "https://smileolleh.tistory.com/352"
+            "https://dolpak0415.tistory.com/11762893",
+            "https://smileolleh.tistory.com/352",
+            "https://duga.tistory.com/4705"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "표충사 코스",
+          "topic": "위험구간",
+          "text": "한계암에서 천황산으로 오르는 중간에는 넓은 너덜지대 한가운데를 통과하는 구간이 있다. 2026년 10월 산행기는 이 구간에서 균형을 잃지 않도록 주의할 필요가 있음을 보여준다.",
+          "sentiment": "caution",
+          "as_of": "2026-10",
+          "sources": [
+            "https://kingcima.tistory.com/343"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "표충사-천황산-천황재-재약산-표충사",
+          "topic": "위험구간",
+          "text": "층층폭포를 지나 표충사로 내려가는 계곡길은 노면이 험하고, 하산 방향 왼쪽에 가파른 절벽이 있다고 기록됐다.",
+          "sentiment": "caution",
+          "as_of": "2026-10",
+          "sources": [
+            "https://kingcima.tistory.com/343"
           ],
           "verify": {
             "level": "single",
@@ -3756,12 +3965,32 @@
         },
         {
           "scope": "route",
+          "route": "표충사-천황산-천황재-재약산-표충사",
+          "topic": "조망·볼거리",
+          "text": "천황산에서 천황재로 내려가는 데크길의 산군 조망은 여러 산행기에서 좋은 풍경으로 평가된다. 간월산·신불산·영축산 방향 능선과 천황재·재약산을 바라볼 수 있다고 기록됐다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://dolpak0415.tistory.com/11762893",
+            "https://econography.tistory.com/5",
+            "https://dolpak0415.tistory.com/m/11762893"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
           "route": "표충사 코스",
           "topic": "주차·교통",
           "text": "표충사 문화재관람료(입장료)는 무료이나 차량 이용 시 일반 승용차 기준 1대당 4,000원의 주차요금이 부과된다.",
           "sentiment": "neutral",
           "as_of": "2025-07",
           "sources": [
+            "https://suiisfam.tistory.com/127",
             "https://trovia.kr/%EB%B0%80%EC%96%91-%ED%91%9C%EC%B6%A9%EC%82%AC",
             "https://shipbest.tistory.com/411744"
           ],
@@ -3773,15 +4002,100 @@
           }
         },
         {
-          "scope": "route",
-          "route": "표충사-천황산-천황재-재약산-표충사",
-          "topic": "조망·볼거리",
-          "text": "천황산과 재약산 사이 안부인 천황재는 은빛 억새밭과 드넓은 목재 데크 쉼터가 조성되어 있어 영남알프스 능선 조망을 즐기며 휴식하기에 가장 좋은 명소이다.",
-          "sentiment": "good",
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "2023년 4월 8일 토요일 산행기에는 천황산 정상석에서 영남알프스 인증사진을 찍으려는 긴 대기 줄이 있었다고 기록돼 있다.",
+          "sentiment": "neutral",
           "as_of": "2023-04",
           "sources": [
-            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=15b4dbde-d67d-4296-b8f7-20b7b8094dc4",
-            "https://smileolleh.tistory.com/352"
+            "https://dolpak0415.tistory.com/11762893",
+            "https://dolpak0415.tistory.com/m/11762893"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "표충사 코스",
+          "topic": "난이도",
+          "text": "2026년 10월 산행기에서는 한계암 이후 천황산 능선까지 길고 가파른 오르막이 이어져 허벅지에 부담이 컸다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-10",
+          "sources": [
+            "https://kingcima.tistory.com/343"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "표충사-천황산-천황재-재약산-표충사",
+          "topic": "난이도",
+          "text": "재약산에서 사자평 방향으로 내려가는 긴 계단 구간은 중간에 쉴 공간이 부족해 계단 위에 앉아 쉬는 탐방객들이 있었다고 기록됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-10",
+          "sources": [
+            "https://kingcima.tistory.com/343"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "표충사 코스",
+          "topic": "주차·교통",
+          "text": "2026년 10월 후기에서는 아래쪽 표충사관광지 공영주차장은 무료이고, 매표소를 통과하는 표충사주차장은 4,000원이라고 구분했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-10",
+          "sources": [
+            "https://kingcima.tistory.com/343"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "얼음골 케이블카 코스",
+          "topic": "주차·교통",
+          "text": "2022년 2월 23일 평일 산행 후기에서는 얼음골 케이블카 주차장에 오전 11시 도착했을 때 주차할 자리가 거의 없었다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2022-02",
+          "sources": [
+            "https://econography.tistory.com/5"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "얼음골 케이블카 코스",
+          "topic": "편의시설",
+          "text": "2022년 1월 안내에는 케이블카 상부·하부 승강장에 화장실이 있고, 샘물상회에는 간이화장실이 있다고 기록돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2022-01",
+          "sources": [
+            "https://jin-gu.tistory.com/79"
           ],
           "verify": {
             "level": "single",
@@ -3795,20 +4109,56 @@
     {
       "id": "cheonjusan",
       "name": "천주산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
           "route": "달천계곡 원점회귀 코스",
-          "topic": "혼잡",
-          "text": "4월 초 진달래 개화 절정기 주말에는 이른 아침부터 달천계곡 진입 도로변까지 주차 행렬이 길게 이어져 조기 만차되며 정상 용지봉 표지석 인증 줄도 길게 늘어선다.",
+          "topic": "난이도",
+          "text": "달천계곡에서 출발하는 코스는 전반적으로 완만한 임도와 숲길 위주이나, 만남의 광장에서 정상 진달래 군락지로 향하는 직통 계단길은 경사가 가파르고 숨이 찬다.",
           "sentiment": "caution",
-          "as_of": "2024-04",
+          "as_of": "2025-04",
           "sources": [
-            "https://www.ramblr.com/web/mymap/trip/1404972/10319551",
-            "https://gyeongyeon.tistory.com/entry/%EC%B0%BD%EC%9B%90-%EC%B2%9C%EC%A3%BC%EC%82%B0%EC%B2%9C%EC%A3%BC%EB%B4%89%EC%9A%A9%EC%A7%80%EB%B4%89-2024-4-7"
+            "https://m.knnews.co.kr/mView.php?gubun=&idxno=1466315",
+            "https://gorong2023.tistory.com/entry/%EB%B6%84%ED%99%8D%EB%B9%9B-%ED%99%94%EC%9B%90-%EC%B0%BD%EC%9B%90-%EC%B2%9C%EC%A3%BC%EC%82%B0-%EC%A7%84%EB%8B%AC%EB%9E%98-%EB%93%B1%EC%82%B0%ED%9B%84%EA%B8%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B0%9C%ED%99%94%EC%83%81%ED%99%A9",
+            "https://okgolf0820.tistory.com/5465816"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "굴현고개-용지봉 코스",
+          "topic": "위험구간",
+          "text": "굴현고개 들머리는 도로가 좁고 차량 통행이 많아 산행 준비와 등산로 진입 때 교통안전에 주의해야 한다고 기록됐다.",
+          "sentiment": "caution",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "2022년 4월 10일 일요일 현장 취재에서는 진달래 전망대에 인파가 몰렸고, 용지봉 정상석 인증사진을 찍으려는 대기 줄도 길었다.",
+          "sentiment": "neutral",
+          "as_of": "2022-04",
+          "sources": [
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20220414.22013003647",
+            "https://v.daum.net/v/20220413221216609"
           ],
           "verify": {
             "level": "single",
@@ -3820,13 +4170,13 @@
         {
           "scope": "route",
           "route": "달천계곡 원점회귀 코스",
-          "topic": "난이도",
-          "text": "달천계곡에서 출발하는 코스는 전반적으로 완만한 임도와 숲길 위주이나, 만남의 광장에서 정상 진달래 군락지로 향하는 직통 계단길은 경사가 가파르고 숨이 찬다.",
-          "sentiment": "caution",
-          "as_of": "2025-04",
+          "topic": "조망·볼거리",
+          "text": "2022년 4월 취재에서는 612m봉을 돌아 만나는 첫 전망 덱과 정상 북쪽 사면의 진달래 군락을 특히 아름다운 지점으로 반복 평가했다.",
+          "sentiment": "good",
+          "as_of": "2022-04",
           "sources": [
-            "https://okgolf0820.tistory.com/5465816",
-            "https://gorong2023.tistory.com/entry/%EB%B6%84%ED%99%8D%EB%B9%9B-%ED%99%94%EC%9B%90-%EC%B0%BD%EC%9B%90-%EC%B2%9C%EC%A3%BC%EC%82%B0-%EC%A7%84%EB%8B%AC%EB%9E%98-%EB%93%B1%EC%82%B0%ED%9B%84%EA%B8%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B0%9C%ED%99%94%EC%83%81%ED%99%A9"
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20220414.22013003647",
+            "https://v.daum.net/v/20220413221216609"
           ],
           "verify": {
             "level": "single",
@@ -3857,27 +4207,11 @@
           "scope": "mountain",
           "route": null,
           "topic": "계절·시기",
-          "text": "2022년 4월 10일 답사에서는 천주산 진달래가 절정이었고, 아직 피지 않은 꽃봉우리도 관찰됐다.",
-          "sentiment": "neutral",
+          "text": "천주산의 진달래는 4월 초순에서 중순 사이에 절정을 이루며, 산등성이 전체가 분홍빛으로 물드는 만개 시기에 맞춰 전국에서 탐방객이 집중된다.",
+          "sentiment": "good",
           "as_of": "2022-04",
           "sources": [
-            "https://yahoe.tistory.com/3573"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "혼잡",
-          "text": "2022년 4월 10일 진달래 절정기 산행에서는 용지봉 정상 인증사진을 찍으려는 대기 줄이 길게 이어졌다고 기록됐다.",
-          "sentiment": "neutral",
-          "as_of": "2022-04",
-          "sources": [
+            "https://koreasan.tistory.com/15607590",
             "https://yahoe.tistory.com/3573"
           ],
           "verify": {
@@ -3891,10 +4225,11 @@
           "scope": "route",
           "route": "달천계곡 원점회귀 코스",
           "topic": "난이도",
-          "text": "만남의 광장에서 정상 방향으로 조금 진행하면 능선을 직접 오르는 계단길과 잣나무 숲을 지나는 누리길 3구간으로 갈라지며, 두 길 모두 정상 방향으로 이어진다.",
+          "text": "만남의 광장에서 정상 방향으로 조금 진행하면 능선을 직접 오르는 가파른 계단길과 잣나무 숲을 완만하게 우회하는 누리길 3구간으로 갈라진다.",
           "sentiment": "neutral",
           "as_of": "2022-04",
           "sources": [
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20220414.22013003647",
             "https://yahoe.tistory.com/3573"
           ],
           "verify": {
@@ -3908,11 +4243,97 @@
           "scope": "route",
           "route": "달천계곡 원점회귀 코스",
           "topic": "주차·교통",
-          "text": "달천계곡 산행 출발 주차장의 주소는 경남 창원시 의창구 북면 달천길 145로 안내돼 있다.",
+          "text": "달천계곡 방면 자차 이용 시 내비게이션 목적지로 경남 창원시 의창구 북면 달천길 145(달천계곡 주차장)를 설정하면 된다.",
           "sentiment": "neutral",
           "as_of": "2022-04",
           "sources": [
+            "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20220414.22013003647",
             "https://yahoe.tistory.com/3573"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "굴현고개-용지봉 코스",
+          "topic": "난이도",
+          "text": "2024년 3월 산행기는 굴현고개에서 천주봉까지 계속 급경사를 올라야 한다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "굴현고개-용지봉 코스",
+          "topic": "편의시설",
+          "text": "2024년 3월 후기에서는 굴현고개 들머리에 화장실이 없고, 천주봉을 지나 만남의 광장까지 가면 화장실이 있다고 안내했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "달천계곡 원점회귀 코스",
+          "topic": "편의시설",
+          "text": "달천계곡 주차장에는 공용화장실이 있다고 2024년 3월 산행 후기에 기록돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "달천계곡 원점회귀 코스",
+          "topic": "주차·교통",
+          "text": "2024년 3월 후기에서는 달천계곡 주차장에 대형버스를 세울 공간이 없어, 산악회 버스가 아래쪽 고속도로 교각 부근에서 기다렸다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "계절·시기",
+          "text": "2024년 3월 30일 산행에서는 아래쪽에 진달래가 피었지만 정상 부근 군락지는 아직 개화하지 않았다고 기록됐다.",
+          "sentiment": "neutral",
+          "as_of": "2024-03",
+          "sources": [
+            "https://jblee508.tistory.com/1093"
           ],
           "verify": {
             "level": "single",
@@ -3943,7 +4364,7 @@
     {
       "id": "cheonmasan",
       "name": "천마산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -3969,11 +4390,11 @@
           "scope": "route",
           "route": "천마산관리소-깔딱고개-뾰족봉-천마산 정상",
           "topic": "위험구간",
-          "text": "2022년 5월 후기는 정상에 가까워질수록 큰 돌이 많아 하산할 때 다리에 부담이 컸다고 기록했다.",
+          "text": "정상 약 140m 전 호평동 갈림길 이후에는 암릉을 지나며, 산행기는 이 구간이 한겨울에 매우 미끄럽다고 경고했다.",
           "sentiment": "caution",
-          "as_of": "2022-05",
+          "as_of": "2021-03",
           "sources": [
-            "https://sodasada.tistory.com/2042"
+            "https://w55ri5.tistory.com/1547"
           ],
           "verify": {
             "level": "single",
@@ -3984,14 +4405,32 @@
         },
         {
           "scope": "route",
-          "route": "천마산관리소-깔딱고개-뾰족봉-천마산 정상",
-          "topic": "난이도",
-          "text": "2022년 6월 후기는 깔딱고개를 가장 힘들지만 짧은 구간으로 평가한 반면, 같은 해 5월 후기는 가파른 길과 긴 계단 때문에 초보자에게 쉽지 않았다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2022-06",
+          "route": "천마의집 코스",
+          "topic": "위험구간",
+          "text": "2020년 12월 정상에서 천마의집·수진사 방향으로 내려간 후기에는 전망대 아래 급한 계단과 임꺽정바위 부근의 로프 구간이 기록돼 있다.",
+          "sentiment": "caution",
+          "as_of": "2020-12",
           "sources": [
-            "https://security-song.tistory.com/154",
-            "https://sodasada.tistory.com/2042"
+            "https://nybog001.tistory.com/15731407"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "수진사 코스",
+          "topic": "조망·볼거리",
+          "text": "호평동 방향 정상 아래 전망대는 여러 산행기에서 조망이 좋은 곳으로 꼽힌다. 맑은 날 북한산·도봉산과 오남저수지 방향을 바라볼 수 있다고 기록됐다.",
+          "sentiment": "good",
+          "as_of": null,
+          "sources": [
+            "https://w55ri5.tistory.com/1547",
+            "https://yb1004kwon.tistory.com/581",
+            "https://nybog001.tistory.com/15731407"
           ],
           "verify": {
             "level": "single",
@@ -4008,6 +4447,7 @@
           "sentiment": "good",
           "as_of": "2022-04",
           "sources": [
+            "https://www.ramblr.com/web/mymap/trip/1094785/11079957",
             "https://kwnahm.tistory.com/605",
             "https://126sd.tistory.com/945"
           ],
@@ -4026,6 +4466,7 @@
           "sentiment": "neutral",
           "as_of": "2023-10",
           "sources": [
+            "https://highmt.tistory.com/16153827?category=616727",
             "https://highmt.tistory.com/16153827",
             "https://serentiy-v10.tistory.com/9"
           ],
@@ -4040,10 +4481,11 @@
           "scope": "route",
           "route": "관리사무소 코스",
           "topic": "주차·교통",
-          "text": "2025년 12월 산행 후기에서 관리사무소 주차장을 무료로 이용할 수 있다고 안내했다.",
+          "text": "천마산군립공원 관리사무소 앞에 위치한 공영주차장은 무료로 개방되어 운영되고 있다.",
           "sentiment": "neutral",
           "as_of": "2025-12",
           "sources": [
+            "https://security-song.tistory.com/154",
             "https://yb1004kwon.tistory.com/960"
           ],
           "verify": {
@@ -4057,10 +4499,11 @@
           "scope": "route",
           "route": "관리사무소 코스",
           "topic": "혼잡",
-          "text": "2022년 5월 주말 방문 후기에서는 관리사무소 앞 주차장이 거의 만차였으며, 빈자리가 조금씩 나는 상황이었다고 기록했다.",
+          "text": "관리사무소 코스 앞 무료 주차장은 주말이면 등산객 차량으로 거의 만차를 이룬다.",
           "sentiment": "neutral",
           "as_of": "2022-05",
           "sources": [
+            "https://www.manjong1004.com/2025/11/1-2025-best-5.html",
             "https://sodasada.tistory.com/2042"
           ],
           "verify": {
@@ -4074,11 +4517,97 @@
           "scope": "route",
           "route": "관리사무소 코스",
           "topic": "편의시설",
-          "text": "2025년 12월 후기에는 관리사무소 코스의 주차장과 등산로에 화장실이 총 3곳 있다고 기록돼 있다.",
+          "text": "관리사무소 코스는 주차장 및 등산로를 포함해 총 3곳의 화장실이 설치되어 있다.",
           "sentiment": "neutral",
           "as_of": "2025-12",
           "sources": [
+            "https://security-song.tistory.com/154",
             "https://yb1004kwon.tistory.com/960"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "천마산관리소-깔딱고개-뾰족봉-천마산 정상",
+          "topic": "난이도",
+          "text": "2021년 3월 후기에서는 정상까지 약 3km인 짧은 접근로여도 깔딱샘 위 급경사 계단과 뾰족봉 방향의 가파른 오르막 때문에 쉽게 볼 코스가 아니라고 평가했다.",
+          "sentiment": "neutral",
+          "as_of": "2021-03",
+          "sources": [
+            "https://w55ri5.tistory.com/1547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관리사무소 코스",
+          "topic": "주차·교통",
+          "text": "2020년 12월 27일 일요일 후기에서는 오전 9시 26분 관리사무소 앞에 빈자리가 없을 정도로 차량이 많았다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2020-12",
+          "sources": [
+            "https://nybog001.tistory.com/15731407"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "2021년 3월 13일 토요일 산행 기록에는 오전 10시 30분 정상석 앞에서 줄을 선 뒤 10시 34분 인증사진을 찍었다고 나와 있다.",
+          "sentiment": "neutral",
+          "as_of": "2021-03",
+          "sources": [
+            "https://w55ri5.tistory.com/1547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관리사무소 코스",
+          "topic": "편의시설",
+          "text": "2021년 3월 후기에서는 관리사무소에서 올라가는 약수터쉼터에 화장실과 쉼터 정자가 있다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2021-03",
+          "sources": [
+            "https://w55ri5.tistory.com/1547"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "수진사 코스",
+          "topic": "주차·교통",
+          "text": "2022년 12월 산행기는 평내호평역 1번 출구에서 165번 버스를 타고 약 14분 이동해 수진사입구에서 하차하는 접근 방법을 소개했다.",
+          "sentiment": "neutral",
+          "as_of": "2022-12",
+          "sources": [
+            "https://kwnahm.tistory.com/605"
           ],
           "verify": {
             "level": "single",
@@ -11483,38 +12012,21 @@
     {
       "id": "hanrasan",
       "name": "한라산",
-      "collected_at": "2026-09-17",
+      "collected_at": "2026-10-08",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "영실 코스",
-          "topic": "통제·예약",
-          "text": "영실은 윗세오름과 남벽분기점으로 이어지는 탐방로이며, 이 코스로 백록담 정상까지 올라갈 수는 없다.",
+          "route": "성판악 코스",
+          "topic": "난이도",
+          "text": "성판악 코스는 왕복 19.2km로 경사는 완만한 편이나 긴 현무암 돌길로 발목 피로가 크며, 진달래밭 대피소부터 백록담까지는 가파른 급경사 계단이다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2024-07",
           "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60&mid=EN010101"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "영실 코스",
-          "topic": "위험구간",
-          "text": "영실 병풍바위 정상 부근에서 탐방로를 벗어나면 낙석과 실족 위험이 있어 지정된 탐방로를 따라야 한다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60&mid=EN010101"
+            "https://chemic27.tistory.com/51",
+            "https://silverline94.tistory.com/126",
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
           ],
           "verify": {
             "level": "single",
@@ -11531,8 +12043,63 @@
           "sentiment": "caution",
           "as_of": null,
           "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60&mid=EN010101"
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=60",
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=60&mid=EN010101",
+            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관음사 코스",
+          "topic": "통제·예약",
+          "text": "관음사 코스의 삼각봉↔백록담 구간은 탐방예약 대상이다.",
+          "sentiment": "caution",
+          "as_of": "2025-05",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice&seq=1284",
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice_en&seq=1285"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "영실 코스",
+          "topic": "통제·예약",
+          "text": "영실에서는 남벽분기점 방향으로 탐방할 수 있지만, 백록담 정상까지 이어지는 구간은 안전상 통제돼 정상에 오를 수 없다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=60",
+            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000019973&menuId=DOM_000001718001000000"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "백록담 정상에 오를 수 있는 성판악과 관음사 코스는 사전 예약제로 운영되며, 예약 취소 없이 미탐방 시 1회 3개월, 2회 1년간 예약이 제한되는 페널티가 적용된다.",
+          "sentiment": "caution",
+          "as_of": "2023-02",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/board.do?bbsId=faq",
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=49"
           ],
           "verify": {
             "level": "single",
@@ -11561,82 +12128,13 @@
         },
         {
           "scope": "route",
-          "route": "성판악 코스",
-          "topic": "난이도",
-          "text": "성판악 코스는 편도 9.6km로 경사는 완만한 편이나 긴 현무암 돌길로 발목 피로가 크며, 진달래밭 대피소부터 백록담까지는 가파른 A등급 급경사 계단이다.",
-          "sentiment": "caution",
-          "as_of": "2024-07",
-          "sources": [
-            "https://silverline94.tistory.com/126",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "관음사 코스",
           "topic": "통제·예약",
           "text": "관음사 코스는 삼각봉 대피소에서 정상 방향으로의 탐방이 계절별 통제 시각(하절기 12:30, 동절기 11:30) 이후 엄격히 제한된다.",
           "sentiment": "caution",
           "as_of": "2024-07",
           "sources": [
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=49",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=62"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "관음사 코스",
-          "topic": "통제·예약",
-          "text": "제주도는 낙석방지시설 보수와 위험구간 데크 교체를 위해 2026년 8월 1일부터 9월 30일까지 관음사 탐방로 삼각봉~정상 구간을 통제한다고 공지했다.",
-          "sentiment": "caution",
-          "as_of": "2026-06",
-          "sources": [
-            "https://jeju.go.kr/lifecycle/notice/allnews.htm?act=view&seq=2022051"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "성판악 코스",
-          "topic": "난이도",
-          "text": "공식 안내는 성판악 코스의 경사가 대체로 완만하더라도 왕복 19.2km를 걸어야 하므로 체력 안배가 필요하다고 설명한다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "백록담 정상에 오를 수 있는 성판악과 관음사 코스는 사전 예약제로 운영되며, 예약 취소 없이 미탐방 시 1회 3개월, 2회 1년간 예약이 제한되는 페널티가 적용된다.",
-          "sentiment": "caution",
-          "as_of": "2023-02",
-          "sources": [
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=62",
             "https://visithalla.jeju.go.kr/contents/contents.do?id=49"
           ],
           "verify": {
@@ -11648,14 +12146,30 @@
         },
         {
           "scope": "route",
-          "route": "영실 코스",
-          "topic": "난이도",
-          "text": "공식 안내는 영실 분화구 능선의 해발 1,300~1,550m 구간을 비교적 가파른 구간으로 설명한다.",
-          "sentiment": "neutral",
-          "as_of": null,
+          "route": "성판악 코스",
+          "topic": "통제·예약",
+          "text": "2025년 5월 공식 공지는 성판악 탐방예약 적용 구간을 진달래밭↔백록담으로 안내하며, 예약 탐방객은 개인별 QR코드와 신분증을 제시해야 한다고 명시한다.",
+          "sentiment": "caution",
+          "as_of": "2025-05",
           "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60&mid=EN010101"
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice_en&seq=1285"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "2025년 5월 공식 공지는 산 안에 매점이 없으므로 음식과 물을 미리 준비해야 한다고 안내한다.",
+          "sentiment": "caution",
+          "as_of": "2025-05",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice_en&seq=1285"
           ],
           "verify": {
             "level": "single",
@@ -11666,14 +12180,14 @@
         },
         {
           "scope": "route",
-          "route": "성판악 코스",
-          "topic": "조망·볼거리",
-          "text": "탐방로 5.8km 지점에서 사라오름 방향으로 600m를 올라가면 신비로운 분화구 산정호수와 서귀포 일대 오름 군락을 조망할 수 있는 전망대가 있다.",
+          "route": "영실 코스",
+          "topic": "계절·시기",
+          "text": "비짓제주에 공개된 2023년 12월 후기들에서는 영실의 설경과 병풍바위·윗세오름 풍경이 아름다웠다는 평가가 반복된다.",
           "sentiment": "good",
-          "as_of": "2024-07",
+          "as_of": "2023-12",
           "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course07.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
+            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000019973&menuId=DOM_000001917001000000",
+            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000019973&menuId=DOM_000001718001000000"
           ],
           "verify": {
             "level": "single",
@@ -11690,8 +12204,8 @@
           "sentiment": "neutral",
           "as_of": "2024-07",
           "sources": [
-            "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500685&menuId=DOM_200000000011000",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60"
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=60",
+            "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500685&menuId=DOM_200000000011000"
           ],
           "verify": {
             "level": "single",
@@ -11708,8 +12222,8 @@
           "sentiment": "good",
           "as_of": "2024-07",
           "sources": [
-            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm",
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=60"
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=60",
+            "https://www.jeju.go.kr/hallasan/info/info/realtime/course02.htm"
           ],
           "verify": {
             "level": "single",
@@ -11721,12 +12235,30 @@
         {
           "scope": "route",
           "route": "성판악 코스",
-          "topic": "난이도",
-          "text": "진달래밭대피소에서 백록담 정상까지의 구간은 공식 탐방로 등급에서 A등급인 ‘어려움’으로 분류된다.",
-          "sentiment": "neutral",
-          "as_of": null,
+          "topic": "조망·볼거리",
+          "text": "탐방로 5.8km 지점에서 사라오름 방향으로 600m를 올라가면 신비로운 분화구 산정호수와 서귀포 일대 오름 군락을 조망할 수 있는 전망대가 있다.",
+          "sentiment": "good",
+          "as_of": "2024-07",
           "sources": [
-            "https://visithalla.jeju.go.kr/contents/contents.do?id=61"
+            "https://visithalla.jeju.go.kr/contents/contents.do?id=61",
+            "https://www.jeju.go.kr/hallasan/info/info/realtime/course07.htm"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "관음사 코스",
+          "topic": "통제·예약",
+          "text": "공사로 통제됐던 삼각봉↔백록담 정상 구간은 2026년 9월 24일 오전 5시부터 재개방한다고 공식 공지됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-09",
+          "sources": [
+            "https://visithalla.jeju.go.kr/board/boardView.do?bbsId=notice&seq=1300"
           ],
           "verify": {
             "level": "single",
