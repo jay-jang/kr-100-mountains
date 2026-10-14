@@ -1,8 +1,11 @@
+import { icon } from './icons.js';
 import { el, clear } from './dom.js';
 import { buildTrailNetwork, snapToTrail, planTrailRoute, plannedRouteGPX } from './trailnetwork.js';
 import { buildProfile, elevationChart, profileStats, fetchElevations, resample } from './elevation.js';
 
-export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap }) {
+// showRoutes: [경로 표시 선택] — 지도와 목록이 함께 보이는 높이로. showMap: 지도에서 지점을 고르는 동안 시트를 낮춘다.
+// showPlanner: [지점 선택 완료] 뒤 계획 도구가 다시 보이는 높이로(없으면 showRoutes).
+export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap, showPlanner }) {
   const storageKey = `kr100:plan:${mountain.id}`;
   let waypoints = [], network = buildTrailNetwork([]), routes = [], view = null, offClick = null;
   let plan = null, picking = false, disposed = false, generation = 0, layers = [], loading = false;
@@ -59,7 +62,15 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
   const undoBtn = el('button', { class: 'btn', type: 'button', disabled: true, onClick: () => { waypoints.pop(); changed(); } }, '마지막 지점 취소');
   const mapTools = el('div', { class: 'planner-map-tools', hidden: true }, mapStatus, undoBtn,
     el('button', { class: 'btn primary', type: 'button', onClick: () => {
-      picking = false; paintPicking(); root.scrollIntoView({ block: 'start', behavior: 'instant' }); download.focus({ preventScroll: true });
+      picking = false; paintPicking();
+      // 고르는 동안 시트를 낮춰 두었다(showMap) — 휴대폰에서 그대로 두면 계획 도구가 접힌 본문 안에 숨는다.
+      (showPlanner || showRoutes)?.();
+      requestAnimationFrame(() => {
+        if (disposed || !root.isConnected) return;
+        root.scrollIntoView({ block: 'start', behavior: 'instant' });
+        // 지점이 하나뿐이면 내려받기가 꺼져 있다 — 꺼진 버튼에는 포커스가 가지 않으니 지점 추가 버튼으로.
+        (download.disabled ? pickBtn : download).focus({ preventScroll: true });
+      });
     } }, '지점 선택 완료'));
   const root = el('section', { class: 'route-planner', 'aria-label': '새 등산 경로 계획' },
     el('div', { class: 'planner-head' }, el('h4', {}, '새 등산 경로 계획'), loadBtn),
@@ -112,8 +123,8 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
       waypointList.append(el('li', {}, el('div', {}, el('strong', {}, label), el('span', {}, waypoint.label),
         el('small', {}, waypoint.point.map(n => n.toFixed(5)).join(', '))),
         el('div', { class: 'planner-row-actions' },
-          el('button', { class: 'btn', type: 'button', disabled: i === 0, 'aria-label': `${i + 1}번 지점 앞으로`, onClick: () => move(-1) }, '↑'),
-          el('button', { class: 'btn', type: 'button', disabled: i === waypoints.length - 1, 'aria-label': `${i + 1}번 지점 뒤로`, onClick: () => move(1) }, '↓'),
+          el('button', { class: 'btn', type: 'button', disabled: i === 0, 'aria-label': `${i + 1}번 지점 앞으로`, onClick: () => move(-1), html: icon('up', { size: 16 }) }),
+          el('button', { class: 'btn', type: 'button', disabled: i === waypoints.length - 1, 'aria-label': `${i + 1}번 지점 뒤로`, onClick: () => move(1), html: icon('down', { size: 16 }) }),
           el('button', { class: 'btn', type: 'button', 'aria-label': `${i + 1}번 지점 삭제`, onClick: () => {
             waypoints.splice(i, 1); changed(); (waypointList.children[Math.min(i, waypoints.length - 1)]?.querySelector('button') || choose).focus();
           } }, '삭제'))));
@@ -179,7 +190,8 @@ export function routePlanner(mountain, { loadAll, onPlan, showRoutes, showMap })
     if (signature === nextSignature) return;
     signature = nextSignature;
     network = buildTrailNetwork(routes);
-    count.textContent = `${routes.length}개 경로 · ${network.edges.length.toLocaleString('ko')}개 연결 구간을 계획에 사용합니다. 선택을 해제한 흐린 경로는 계획에서 제외됩니다.`;
+    // 경로별 표시·해제 상자는 지도 우선 화면에서 없어졌다 — 없는 조작을 안내하지 않는다.
+    count.textContent = `${routes.length}개 경로 · ${network.edges.length.toLocaleString('ko')}개 연결 구간을 계획에 사용합니다.`;
     const previous = choose.value; clear(choose).append(el('option', { value: '' }, '추가할 지점을 선택하세요'));
     const addOption = (id, label, point) => choose.append(el('option', { value: id, dataset: { point: JSON.stringify(point) } }, label));
     if (mountain.lat != null) addOption('summit', `${mountain.name} 정상 부근`, [mountain.lat, mountain.lon]);

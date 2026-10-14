@@ -17,15 +17,21 @@ function loadSDK() {
   return sdkPromise;
 }
 
-// OSM zoom (7=국가 … 13=산 상세) → Kakao level (level↓ = 확대), 대략적 대응
-const toLevel = (z) => Math.max(1, Math.min(14, Math.round(13 - (z - 7) * 1.333)));
+// OSM zoom (7=국가 … 13=산 상세) → Kakao level (level↓ = 확대).
+// 둘 다 한 단계마다 축척이 두 배라 기울기는 1이다(zoom 7 ≈ level 13: 남한 전체). 예전 기울기 1.333은
+// 산 상세(z12~15)를 level 2~6으로 보내 Leaflet보다 2단계 이상 더 확대했고, maxZoom 상한도 뜻이 없었다.
+const toLevel = (z) => Math.max(1, Math.min(14, Math.round(20 - z)));
+const toZoom = (level) => 20 - level;
+// 동작 줄이기 설정 — 부를 때마다 읽는다(설정을 바꾸면 바로 따르게). Leaflet 공급자와 같은 기준.
+const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const STROKE = { dash: 'shortdash', dot: 'shortdot' };
 
 export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 } = {}) {
   await loadSDK();
   const kakao = window.kakao;
   const ll = (lat, lng) => new kakao.maps.LatLng(lat, lng);
   const map = new kakao.maps.Map(node, { center: ll(center[0], center[1]), level: toLevel(zoom) });
-  map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
+  // 확대 버튼은 앱이 직접 그린다(오른쪽 컨트롤 묶음). 카카오 기본 컨트롤은 붙이지 않는다.
 
   // base type: 'default'(일반) / 'terrain'(지형도 오버레이) / 'satellite'(스카이뷰+라벨)
   let baseType = 'default';
@@ -58,18 +64,59 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
     return { ov, el };
   }
 
+  // 시트·상단 바에 가리는 부분을 뺀 "보이는 영역"의 가운데에 점이 오도록 지도 중심을 옮긴다.
+  function paddedCenter(pos, pad) {
+    if (!pad) return pos;
+    const dx = ((pad.right || 0) - (pad.left || 0)) / 2;
+    const dy = ((pad.bottom || 0) - (pad.top || 0)) / 2;
+    if (!dx && !dy) return pos;
+    const proj = map.getProjection();
+    const p = proj.pointFromCoords(pos);
+    return proj.coordsFromPoint(new kakao.maps.Point(p.x + dx, p.y + dy));
+  }
+
+  function setView([lat, lng], z, { padding } = {}) {
+    if (z != null) map.setLevel(toLevel(z));
+    map.setCenter(paddedCenter(ll(lat, lng), padding));
+  }
+
   return {
-    setView([lat, lng], z) { map.setCenter(ll(lat, lng)); if (z != null) map.setLevel(toLevel(z)); },
-    panTo([lat, lng]) { map.panTo(ll(lat, lng)); },
-    flyTo([lat, lng], z) { map.panTo(ll(lat, lng)); if (z != null) map.setLevel(toLevel(z), { anchor: ll(lat, lng) }); },
+    provider: 'kakao',
+    setView,
+    panTo([lat, lng], { padding } = {}) {
+      if (reduceMotion()) { map.setCenter(paddedCenter(ll(lat, lng), padding)); return; }
+      map.panTo(paddedCenter(ll(lat, lng), padding));
+    },
+    flyTo(pt, z, opts = {}) {
+      // 카카오의 panTo는 스크립트로 프레임마다 옮겨서 CSS의 동작 줄이기 규칙이 닿지 않는다 — 여기서 직접 끈다.
+      if (reduceMotion()) { setView(pt, z, opts); return; }
+      const [lat, lng] = pt;
+      if (z != null) map.setLevel(toLevel(z), { anchor: ll(lat, lng) });
+      map.panTo(paddedCenter(ll(lat, lng), opts.padding));
+    },
+    zoomBy(delta) { map.setLevel(Math.max(1, Math.min(14, map.getLevel() - Math.sign(delta))), { animate: !reduceMotion() }); },
+    getZoom() { return toZoom(map.getLevel()); },
+    getBounds() { const b = map.getBounds(); const sw = b.getSouthWest(), ne = b.getNorthEast(); return { south: sw.getLat(), west: sw.getLng(), north: ne.getLat(), east: ne.getLng() }; },
+    onMove(fn) {
+      const handler = () => fn();
+      kakao.maps.event.addListener(map, 'idle', handler);
+      return () => kakao.maps.event.removeListener(map, 'idle', handler);
+    },
     onClick(fn) { clickHandlers.add(fn); return () => clickHandlers.delete(fn); },
     project([lat, lng]) { return map.getProjection().containerPointFromCoords(ll(lat, lng)); },
 
     clearMarkers() { managedMarkers.forEach((m) => m.setMap(null)); managedMarkers.length = 0; closePopup(); },
-    addMarker({ lat, lng, color, star = false, popupHTML, onClick, title, subtitle }) {
-      const { ov, el } = pinOverlay(lat, lng, color, star, title || '산 선택', subtitle);
-      const raise = () => ov.setZIndex(5);
-      const lower = () => ov.setZIndex(el.matches(':hover, :focus-within') ? 5 : 3);
+    addMarker({ lat, lng, node, size = [44, 44], anchor, color, star = false, popupHTML, onClick, title, subtitle, zIndex = 0 }) {
+      let ov, el;
+      if (node) {
+        el = node;
+        const [w, h] = size, [ax, ay] = anchor || [w / 2, h / 2];
+        ov = new kakao.maps.CustomOverlay({ position: ll(lat, lng), content: el, xAnchor: ax / w, yAnchor: ay / h, zIndex: 3 + zIndex, clickable: true });
+        ov.setMap(map);
+      } else ({ ov, el } = pinOverlay(lat, lng, color, star, title || '산 선택', subtitle));
+      const baseZ = 3 + zIndex;
+      const raise = () => ov.setZIndex(baseZ + 20);
+      const lower = () => ov.setZIndex(el.matches(':hover, :focus-within') ? baseZ + 20 : baseZ);
       el.addEventListener('pointerenter', raise);
       el.addEventListener('pointerleave', lower);
       el.addEventListener('focusin', raise);
@@ -88,6 +135,8 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
       el.addEventListener('click', e => { e.stopPropagation(); kakao.maps.event.preventMap(); if (onClick) onClick(); else open(); });
       return {
         openPopup: open,
+        setZIndex(z) { ov.setZIndex(3 + z); },
+        element: () => el,
         remove() { ov.setMap(null); const i = managedMarkers.indexOf(ov); if (i >= 0) managedMarkers.splice(i, 1); },
       };
     },
@@ -122,25 +171,35 @@ export async function createKakaoView(node, { center = [36.5, 127.9], zoom = 7 }
       ov.setMap(map);
       return { remove() { ov.setMap(null); } };
     },
-    addPolyline(latlngs, { color = '#d1495b', weight = 4, opacity = 0.95, outline = false } = {}) {
+    addPolyline(latlngs, { color = '#b4432b', weight = 4, opacity = 0.95, outline = false, dash = null } = {}) {
       const path = latlngs.map(([a, b]) => ll(a, b));
       const lines = [];
       if (outline) lines.push(new kakao.maps.Polyline({ map, path, strokeWeight: weight + 3, strokeColor: '#ffffff', strokeOpacity: opacity * 0.85, strokeStyle: 'solid' }));
-      lines.push(new kakao.maps.Polyline({ map, path, strokeWeight: weight, strokeColor: color, strokeOpacity: opacity, strokeStyle: 'solid' }));
+      lines.push(new kakao.maps.Polyline({ map, path, strokeWeight: weight, strokeColor: color, strokeOpacity: opacity, strokeStyle: STROKE[dash] || 'solid' }));
       lines.forEach(line => kakao.maps.event.addListener(line, 'click', e => { kakao.maps.event.preventMap(); emitClick(e); }));
       return { remove() { lines.forEach((l) => l.setMap(null)); } };
     },
-    addPolylines(lines, { color = '#e2872a', weight = 2.2, opacity = 0.8 } = {}) {
+    addPolylines(lines, { color = '#1f7a74', weight = 2.2, opacity = 0.8, dash = null } = {}) {
       const objs = lines.map((line) => new kakao.maps.Polyline({
-        map, path: line.map(([a, b]) => ll(a, b)), strokeWeight: weight, strokeColor: color, strokeOpacity: opacity, strokeStyle: 'solid',
+        map, path: line.map(([a, b]) => ll(a, b)), strokeWeight: weight, strokeColor: color, strokeOpacity: opacity, strokeStyle: STROKE[dash] || 'solid',
       }));
       return { remove() { objs.forEach((o) => o.setMap(null)); } };
     },
     removeLayer(token) { (Array.isArray(token) ? token : [token]).forEach((t) => t?.remove?.()); },
-    fitBounds(latlngs, pad = 0.15) {
+    /** maxZoom: 이보다 더 확대하지 않는다(Leaflet과 같은 계약). 짧은 코스·가까운 두 점이 골목 축척으로 열리지 않게. */
+    fitBounds(latlngs, pad = 0.15, { padding, maxZoom = 15 } = {}) {
+      if (!latlngs?.length) return;
       const b = new kakao.maps.LatLngBounds();
       latlngs.forEach(([a, c]) => b.extend(ll(a, c)));
-      map.setBounds(b);
+      if (padding) map.setBounds(b, padding.top || 0, padding.right || 0, padding.bottom || 0, padding.left || 0);
+      else map.setBounds(b);
+      const minLevel = toLevel(maxZoom);
+      if (map.getLevel() < minLevel) {
+        // 상한까지 물러난 뒤 범위 가운데를 "보이는 영역"(여백을 뺀 곳)의 가운데에 둔다.
+        map.setLevel(minLevel);
+        const sw = b.getSouthWest(), ne = b.getNorthEast();
+        map.setCenter(paddedCenter(ll((sw.getLat() + ne.getLat()) / 2, (sw.getLng() + ne.getLng()) / 2), padding));
+      }
     },
     setBaseType(type) { if (type !== baseType) applyBase(type); },
     snapshot() { const c = map.getCenter(), b = map.getBounds(); return { center: [c.getLat(), c.getLng()], level: map.getLevel(), span: [b.getNorthEast().getLat() - b.getSouthWest().getLat(), b.getNorthEast().getLng() - b.getSouthWest().getLng()] }; },

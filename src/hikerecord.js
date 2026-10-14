@@ -1,3 +1,4 @@
+import './css/pages.css';
 import { el } from './dom.js';
 import { hikedMap, setHikedDate, toggleHiked } from './store.js';
 
@@ -17,6 +18,9 @@ export function removeHikeWithUndo(id, name) {
     el('button', { class: 'btn', 'aria-label': '알림 닫기', onClick: () => toast.remove() }, '닫기'));
   activeToast = toast;
   document.body.append(toast);
+  // 실행 취소할 시간을 넉넉히 준 뒤 스스로 닫는다(포커스가 알림 안에 있으면 기다린다).
+  const hide = () => { if (!toast.isConnected) return; if (toast.contains(document.activeElement)) { setTimeout(hide, 3000); return; } toast.remove(); };
+  setTimeout(hide, 8000);
 }
 export function editHike(m) {
   activeDialog?.close();
@@ -46,6 +50,9 @@ export function editHike(m) {
     el('button', { type: 'button', class: 'btn', onClick: close }, '취소'),
     el('button', { type: 'submit', class: 'btn primary' }, '기록 저장')));
   dialog.append(form);
+  // 이 대화상자는 modal.js를 거치지 않는다 — Esc가 문서까지 올라가면 지도 셸이 뒤의 산 시트까지 닫는다.
+  // 대화상자 안에서 멈추게 한다(기본 동작인 대화상자 닫기는 그대로 일어난다).
+  dialog.addEventListener('keydown', (e) => { if (e.key === 'Escape') e.stopPropagation(); });
   document.body.append(dialog);
   activeDialog = dialog;
   window.addEventListener('hashchange', close);

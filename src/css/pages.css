@@ -1,0 +1,242 @@
+/* 전체 페이지(내 기록 · 설정 · 대표 코스 모음) + 등정 기록 대화상자·알림.
+   이 파일은 산 시트에서도(hikerecord.js) 불러온다 — 선택자는 모두 접두어로 묶어 지도 화면에 새지 않게 한다. */
+
+/* ---- 페이지 골격 ---- */
+.pg { --pg-w: 720px; min-height: 100dvh; background: var(--bg); color: var(--text); word-break: keep-all; overflow-wrap: break-word; }
+.pg-settings { --pg-w: 640px; }
+.pg-courses { --pg-w: 880px; }
+.pg-bar {
+  position: sticky; top: 0; z-index: 30;
+  padding-top: env(safe-area-inset-top);
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.pg-bar-in {
+  max-width: var(--pg-w); height: 52px; margin: 0 auto; padding: 0 4px;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 4px;
+}
+.pg-back, .pg-bar-link {
+  display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
+  border-radius: var(--r); color: var(--accent-ink); font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap;
+}
+.pg-back { justify-self: start; gap: 2px; padding: 0 12px 0 4px; }
+.pg-bar-link { padding: 0 12px; justify-content: center; }
+.pg-back:hover, .pg-bar-link:hover { background: var(--surface-2); }
+.pg-title { margin: 0; min-width: 0; font-size: 17px; font-weight: 600; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pg-bar-end { justify-self: end; display: flex; }
+
+.pg-main { max-width: var(--pg-w); margin: 0 auto; padding: 4px 16px calc(96px + env(safe-area-inset-bottom)); }
+.pg-h2 { margin: 28px 0 6px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.pg-main p.set-note { margin: 0; }
+
+/* 글자 버튼(행 안의 보조 동작) — 누르는 영역 44px */
+.pg-text-btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px;
+  padding: 0 10px; border: 0; border-radius: var(--r); background: transparent;
+  color: var(--accent-ink); font-size: 15px; font-weight: 600; white-space: nowrap;
+}
+.pg-text-btn:hover { background: var(--surface-2); }
+.pg-danger { color: var(--danger); }
+.btn.pg-danger-fill { background: var(--danger); border-color: var(--danger); color: var(--surface); }
+
+/* 접는 구역 */
+.pg-folds { margin-top: 32px; border-top: 1px solid var(--line); }
+.pg-fold { border-bottom: 1px solid var(--line); }
+.pg-fold-sum {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px;
+  list-style: none; cursor: pointer; font-size: 16px; font-weight: 600;
+}
+.pg-fold-sum::-webkit-details-marker { display: none; }
+.pg-fold-sum:focus-visible { outline-offset: -2px; }
+.pg-fold-ic { flex: none; display: flex; color: var(--text-3); transition: transform .15s; }
+.pg-fold[open] > .pg-fold-sum .pg-fold-ic { transform: rotate(180deg); }
+.pg-fold-body { display: grid; gap: 10px; padding: 0 0 16px; }
+.pg-fold-body > .rp-list { margin-top: 0; }
+.pg-fold-quiet { margin-top: 4px; border-top: 1px solid var(--line); }
+.pg-fold-quiet .pg-fold-sum { font-size: 15px; font-weight: 400; color: var(--text-2); }
+
+.pg-ext { display: inline-flex; align-items: center; gap: 2px; color: var(--accent-ink); }
+.pg-ext .ic, .set-row-link .ic { flex: none; }
+
+.pg-foot-link {
+  display: inline-flex; align-items: center; gap: 2px; min-height: 44px; margin-top: 16px;
+  color: var(--accent-ink); font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.pg-foot-link:hover { text-decoration: underline; }
+
+/* ---- 설정 ---- */
+.set-rows { border-top: 1px solid var(--line); }
+.set-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.set-row.switch-row { cursor: pointer; }
+.set-row-stack { flex-direction: column; align-items: stretch; gap: 10px; }
+.set-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.set-label-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; }
+.set-label { font-size: 16px; color: var(--text); }
+.set-note { font-size: 13px; line-height: 1.5; color: var(--text-2); }
+.set-changed { font-size: 12px; font-weight: 600; color: var(--accent-ink); }
+.set-lead { margin: 0; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--text-2); }
+.set-act { flex: none; }
+.set-seg { width: 100%; }
+.set-row-link { color: var(--text); text-decoration: none; }
+.set-row-link .ic { color: var(--text-3); }
+.set-row-link:hover .set-label { text-decoration: underline; }
+.set-info { gap: 6px; }
+.set-info > .set-label { font-weight: 600; }
+.set-para { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text); }
+.set-sources { margin: 0; }
+.set-sources dt { margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.set-sources dt:first-child { margin-top: 0; }
+.set-sources dd { margin: 2px 0 0; font-size: 15px; line-height: 1.6; }
+
+/* ---- 내 기록 ---- */
+.rec-summary { padding: 20px 0 4px; }
+.rec-big { margin: 0; line-height: 1.2; }
+/* 앱에서 세리프를 쓰는 유일한 곳 */
+.rec-num {
+  font-family: Georgia, "Noto Serif KR", "Nanum Myeongjo", AppleMyungjo, Batang, serif;
+  font-size: 28px; font-weight: 400; font-variant-numeric: tabular-nums lining-nums; color: var(--text);
+}
+.rec-cap { margin: 4px 0 0; font-size: 13px; color: var(--text-2); }
+
+/* 목록·권역 진행 — 이름 · 숫자 · 얇은 막대 */
+.rp-list { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.rp-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name num" "bar bar";
+  align-items: center; gap: 6px 12px; padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.rp-name { grid-area: name; min-width: 0; font-size: 15px; }
+.rp-num { grid-area: num; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; text-align: right; }
+.rp-bar { grid-area: bar; display: block; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.rp-bar > span { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+@media (min-width: 560px) {
+  .rp-row { grid-template-columns: 210px minmax(0, 1fr) 80px; grid-template-areas: "name bar num"; min-height: 44px; }
+}
+
+.rec-add { margin-top: 20px; }
+.rec-empty-line { margin: 0 0 10px; font-size: 15px; color: var(--text-2); }
+.rec-add-btn { width: 100%; white-space: normal; text-align: center; }
+.rec-add-box { display: grid; gap: 8px; }
+.rec-add-row { display: flex; gap: 8px; align-items: flex-start; }
+.rec-add-close { flex: none; }
+.rec-pick { position: relative; flex: 1; min-width: 0; }
+.rec-suggest {
+  position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 20;
+  list-style: none; margin: 0; padding: 0; max-height: min(50dvh, 380px); overflow: auto; overscroll-behavior: contain;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 4px 14px rgb(0 0 0 / .14);
+}
+.rec-suggest-item { display: flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 6px 12px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.rec-suggest-item:last-child { border-bottom: 0; }
+.rec-suggest-item.active, .rec-suggest-item:hover { background: var(--surface-2); }
+.rec-suggest-empty { padding: 14px 12px; font-size: 15px; color: var(--text-2); }
+.rec-had { color: var(--accent-ink); }
+
+.rec-list-h { margin-top: 28px; }
+.rec-list-h:focus { outline: none; }
+.rec-tools { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-bottom: 8px; }
+.rec-sort { min-height: 44px; font-size: 16px; }
+.rec-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rec-row { display: flex; align-items: center; gap: 4px; border-bottom: 1px solid var(--line); }
+.rec-link { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 8px 0; color: var(--text); text-decoration: none; }
+.rec-link:hover .rec-name { text-decoration: underline; }
+.rec-link:focus-visible { outline-offset: -2px; }
+.rec-name { font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+.rec-meta { display: block; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.pg-dot { color: var(--text-3); }
+.rec-acts { flex: none; display: flex; gap: 8px; }
+.rec-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.rec-actions .btn { flex: 1 1 140px; }
+.rec-feedback:empty { display: none; }
+.rec-feedback p { margin: 0; font-size: 15px; }
+.rec-feedback .pg-text-btn { vertical-align: middle; }
+.pg-track .pg-fold-body > .pg-text-btn { justify-self: start; margin-left: -10px; }
+
+.auth-box { display: grid; gap: 10px; }
+.auth-label { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.auth-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.auth-row .input { flex: 1 1 180px; width: auto; min-width: 0; }
+.auth-state { margin: 0; font-size: 15px; }
+.auth-box > .btn { justify-self: start; }
+
+/* ---- 대표 코스 모음 ---- */
+.crs-filters { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; margin-top: 16px; }
+.crs-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.crs-field-label { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.crs-select { min-height: 44px; min-width: 96px; font-size: 16px; }
+.crs-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; margin-top: 6px; }
+.crs-count { margin: 0; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.crs-status .pg-text-btn { margin-right: -10px; }
+.crs-list { border-bottom: 1px solid var(--line-strong); }
+.crs-m { padding: 6px 0 4px; border-top: 1px solid var(--line-strong); }
+.crs-m-h { margin: 0; font-size: 17px; font-weight: 600; }
+.crs-m-h:focus { outline: none; }
+.crs-m-h:focus-visible a { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.crs-m-h a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text); text-decoration: none; }
+.crs-m-h a:hover { text-decoration: underline; }
+.crs-m-meta { margin: -6px 0 6px; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.crs-rows { list-style: none; margin: 0; padding: 0; }
+.crs-row { display: flex; flex-direction: column; gap: 2px; min-height: 60px; padding: 10px 0; border-top: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.crs-row:hover .crs-name { text-decoration: underline; }
+.crs-row:focus-visible { outline-offset: -2px; }
+.crs-name { font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+.crs-via { font-size: 13px; color: var(--text-2); overflow-wrap: anywhere; }
+.crs-meta { display: block; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.crs-ev { color: var(--text-3); }
+.crs-ev.ok { color: var(--accent-ink); }
+.crs-more { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 0 8px; }
+.crs-more-note { margin: 0; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.crs-more-btn { min-width: 200px; }
+@media (min-width: 800px) {
+  .crs-m { display: grid; grid-template-columns: 220px minmax(0, 1fr); grid-template-rows: auto 1fr; grid-template-areas: "h rows" "meta rows"; column-gap: 24px; padding: 12px 0; }
+  .crs-m-h { grid-area: h; }
+  .crs-m-meta { grid-area: meta; margin: 0; align-self: start; }
+  .crs-rows { grid-area: rows; }
+  .crs-rows > li:first-child .crs-row { border-top: 0; padding-top: 6px; }
+}
+
+/* ---- 확인 대화상자 ---- */
+.pg-confirm-msg { margin: 12px 0 4px; font-size: 15px; line-height: 1.6; }
+
+/* ---- 등정 기록 대화상자(hikerecord.js) — 모달 시트와 같은 모양 ---- */
+dialog.record-dialog {
+  margin: auto auto 0; padding: 0; width: 100%; max-width: 560px; max-height: 88dvh;
+  border: 0; border-top: 1px solid var(--line); border-radius: 12px 12px 0 0;
+  background: var(--surface); color: var(--text);
+}
+dialog.record-dialog::backdrop { background: rgb(10 16 12 / .38); }
+.record-dialog form, .record-toast { word-break: keep-all; overflow-wrap: break-word; }
+.record-dialog form { display: flex; flex-direction: column; padding: 20px 16px calc(16px + env(safe-area-inset-bottom)); }
+.record-dialog h2 { margin: 0 0 2px; font-size: 17px; font-weight: 600; line-height: 1.3; }
+.record-dialog h2 + p { margin: 0 0 16px; font-size: 13px; color: var(--text-2); }
+.record-dialog label { margin-bottom: 4px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.record-dialog input[type="date"] {
+  display: block; width: 100%; min-height: 44px; padding: 0 12px;
+  border: 1px solid var(--control); border-radius: var(--r); background: var(--bg); color: var(--text);   /* 입력 테두리는 3:1 대비 토큰 */
+  font-size: 16px; font-variant-numeric: tabular-nums; color-scheme: light dark;
+}
+.record-dialog input[type="date"]:focus-visible { outline-offset: 1px; }
+.record-dialog .record-error { margin: 6px 0 0; font-size: 13px; color: var(--danger); }
+.record-dialog .record-error:empty { margin: 0; }
+.record-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+/* [기록 삭제][취소][기록 저장] — 삭제는 왼쪽 글자 버튼으로 무게를 낮춘다 */
+.record-actions > .btn:first-child:nth-last-child(3) { margin-right: auto; padding: 0 10px; border-color: transparent; background: transparent; color: var(--danger); }
+.record-actions > .btn:first-child:nth-last-child(3):hover { background: var(--surface-2); }
+@media (min-width: 640px) {
+  dialog.record-dialog { margin: auto; max-width: 420px; border: 1px solid var(--line-strong); border-radius: 12px; }
+  .record-dialog form { padding: 20px; }
+}
+
+/* ---- 기록 알림(hikerecord.js) · 설정 변경 알림(settings.js) — 같은 모양 ---- */
+.record-toast, .set-toast {
+  position: fixed; z-index: 1000; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  width: max-content; max-width: calc(100vw - 32px);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; padding: 4px 4px 4px 16px;
+  border-radius: 8px; background: var(--text); color: var(--bg); font-size: 15px; line-height: 1.4;
+  box-shadow: 0 2px 8px rgb(0 0 0 / .18);
+}
+.record-toast .btn, .set-toast .btn {
+  min-height: 44px; padding: 0 10px; border: 0; background: transparent; color: var(--bg);
+  font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
+}
+.record-toast .btn:hover, .set-toast .btn:hover { background: rgb(127 127 127 / .2); }
+.record-toast .btn:focus-visible, .set-toast .btn:focus-visible { outline-color: var(--bg); }
+.set-toast { word-break: keep-all; overflow-wrap: break-word; }
+.set-toast-text { padding: 10px 0; }

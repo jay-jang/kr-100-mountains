@@ -1,0 +1,252 @@
+/* 산 시트 · 경로 시트 (src/views/mountain.js, src/mountain/*).
+   행 + 구분선, 글자 12·13·15·17, 굵기 400·600, 숫자 tabular. 카드·그라데이션·큰 그림자 없음. */
+
+/* ---------- 공통 ---------- */
+.mt-fine { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: var(--text-2); }
+.mt-fine-inline { font-size: 13px; color: var(--text-2); }
+.mt-pad { padding: 0 16px; }
+.mt-prose { margin: 6px 0 0; font-size: 15px; line-height: 1.6; }
+.mt-loading { margin: 0; padding: 20px 16px; font-size: 14px; color: var(--text-2); }
+.mt-ext { display: inline-flex; vertical-align: -2px; margin-left: 4px; color: var(--text-3); }
+
+/* ---------- 산 시트 머리 ---------- */
+.mt-head .sheet-headline { align-items: flex-start; }
+.mt-head .sheet-titles { flex: 1; padding-top: 4px; }
+.mt-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; }
+.mt-name { min-width: 0; }
+.mt-dis { font-size: 13px; font-weight: 400; color: var(--text-3); }
+.mt-elev { font-size: 15px; font-weight: 400; color: var(--text-2); }
+.mt-sub { display: flex; flex-wrap: wrap; gap: 0 6px; }
+.mt-sub > span + span::before { content: '·'; margin-right: 6px; color: var(--text-3); }
+.mt-dist { color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.mt-head-actions { display: flex; align-items: center; gap: 4px; flex: none; }
+.mt-hike { min-height: 44px; }
+.mt-hike.done { border-color: var(--accent); color: var(--accent-ink); }
+.mt-hike-ic { display: inline-flex; }
+
+/* "선택한 경로" 줄 — 머리(peek)의 맨 아래 띠. 머리 좌우 여백(16)과 아래 여백(10)을 덮어 본문 윗선에 붙인다. */
+.mt-selbar { display: flex; align-items: center; gap: 8px; margin: 8px -16px -10px; padding: 0 4px 0 16px; border-top: 1px solid var(--line); background: var(--accent-soft); }
+
+/* ---------- 본문 위 고정 줄(탭) ---------- */
+.mt-sticky { position: sticky; top: 0; z-index: 3; background: var(--surface); border-bottom: 1px solid var(--line); }
+.mt-selbar-text { flex: 1; min-width: 0; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mt-selbar-text strong { font-weight: 600; }
+.mt-selbar .btn.small { min-height: 44px; }
+.mt-tabs { display: flex; padding: 0 8px; }
+.mt-tab { position: relative; flex: 1; min-height: 46px; padding: 0 8px; border: 0; background: none; color: var(--text-2); font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.mt-tab[aria-selected="true"] { color: var(--text); }
+.mt-tab[aria-selected="true"]::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 0; height: 3px; border-radius: 2px 2px 0 0; background: var(--accent); }
+.mt-tab:hover { color: var(--text); }
+.mt-tab:focus-visible { outline-offset: -4px; }
+.mt-tab-n { font-size: 13px; font-weight: 400; color: var(--text-3); }
+.mt-tab-n:empty { display: none; }
+.mt-warnline { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 12px 0 16px; border: 0; border-bottom: 1px solid var(--line); background: var(--warn-soft); color: var(--text); font-size: 14px; text-align: left; }
+.mt-warn-k { font-weight: 600; color: var(--warn); }
+.mt-warn-go { margin-left: auto; display: inline-flex; color: var(--text-3); }
+.mt-panel { padding-bottom: 24px; }
+
+/* ---------- 코스 탭 ---------- */
+.mt-crow { display: flex; align-items: stretch; border-bottom: 1px solid var(--line); }
+.mt-crow .row { flex: 1; min-width: 0; border-bottom: 0; }
+.mt-crow.selected { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--course); }
+.mt-crow .row-title { white-space: normal; }
+.mt-crow-alt { margin-top: 2px; font-size: 13px; color: var(--text-2); }
+.mt-crow .row-meta { align-items: center; }
+.mt-crow-honesty { font-size: 12px; color: var(--text-3); }
+/* 고른 행의 옅은 배경(--accent-soft) 위에서는 --text-3이 다크에서 4.5:1에 못 미친다 — 한 단계 진하게. */
+.mt-crow.selected .row-tag, .mt-crow.selected .mt-crow-honesty { color: var(--text-2); }
+.mt-crow-honesty > span + span::before { color: var(--line-strong); }
+.mt-via { color: var(--text-2); }
+.mt-verify.ok { color: var(--accent-ink); }
+.mt-verify.mixed { color: var(--warn); }
+.mt-review { color: var(--warn); font-weight: 600; }
+.mt-line-none { color: var(--text-3); }
+.mt-diff { display: inline-flex; align-items: center; gap: 4px; color: var(--text); }
+.mt-diff-mark { flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--c); box-shadow: 0 0 0 1px rgb(0 0 0 / .12); }
+:root[data-theme="dark"] .mt-diff-mark { box-shadow: 0 0 0 1px var(--line-strong); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mt-diff-mark { box-shadow: 0 0 0 1px var(--line-strong); } }
+.mt-cmp { flex: none; width: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer; }
+.mt-cmp input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); }
+.mt-cmp-sw { width: 18px; height: 4px; border-radius: 2px; background: var(--c, transparent); }
+.mt-tools { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 16px 2px; }
+.mt-settings-hint { margin-top: 6px; font-weight: 400; }
+
+/* ---------- 주변 길 탭 ---------- */
+.mt-walks-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.mt-walks-label { font-size: 13px; color: var(--text-2); }
+.mt-radius { display: flex; gap: 8px; }
+.mt-walk .row-title { white-space: normal; }
+.mt-walk .row-main { align-items: center; }
+.mt-walks .empty .mt-fine { margin-top: 0; }
+.mt-walks > .mt-fine { margin-top: 12px; }
+
+/* ---------- 정보 탭 ---------- */
+.mt-info { padding: 4px 16px 0; }
+.mt-sec { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.mt-sec-h { margin: 0; font-size: 15px; font-weight: 600; }
+.mt-sec-desc { margin-top: 2px; }
+.mt-facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 10px 0 0; font-size: 14px; }
+.mt-facts dt { color: var(--text-2); }
+.mt-facts dd { margin: 0; }
+.mt-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.mt-details { border-bottom: 1px solid var(--line); }
+.mt-details > summary { display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; }
+.mt-details > summary::-webkit-details-marker { display: none; }
+.mt-details > summary::after { content: ''; margin-left: auto; width: 8px; height: 8px; border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3); transform: rotate(45deg) translateY(-3px); }
+.mt-details[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.mt-details-body { padding-bottom: 14px; }
+.mt-list { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+.mt-sources a { overflow-wrap: anywhere; }
+.mt-notes { list-style: none; margin: 10px 0 0; padding: 0; }
+.mt-note { padding: 10px 0 10px 12px; border-left: 3px solid var(--line-strong); }
+.mt-note + .mt-note { margin-top: 8px; }
+.mt-note.alert { border-left-color: var(--warn); }
+.mt-note-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13px; }
+.mt-note-topic { font-weight: 600; }
+.mt-note.alert .mt-note-topic { color: var(--warn); }
+.mt-note-route { color: var(--text-2); }
+.mt-note-level { color: var(--text-3); }
+.mt-note-level.ok { color: var(--accent-ink); }
+.mt-note-date { color: var(--text-3); font-variant-numeric: tabular-nums; }
+.mt-note-stale { font-weight: 600; color: var(--text-2); }
+.mt-note-text { margin: 4px 0 0; font-size: 15px; line-height: 1.6; }
+.mt-note-src { margin: 4px 0 0; font-size: 12px; color: var(--text-3); }
+.mt-note-src a { color: var(--text-2); overflow-wrap: anywhere; }
+
+/* ---------- 경로 시트 머리 ---------- */
+.rt-top { display: flex; align-items: flex-start; gap: 4px; min-height: 44px; }
+.rt-back { flex: none; max-width: 38%; min-height: 44px; display: inline-flex; align-items: center; gap: 0; margin-left: -10px; padding: 0 6px 0 2px; border: 0; border-radius: var(--r); background: none; color: var(--accent-ink); font-size: 14px; font-weight: 600; }
+.rt-back:hover { background: var(--surface-2); }
+.rt-back-ic { display: inline-flex; flex: none; }
+.rt-back-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rt-title { flex: 1; min-width: 0; padding-top: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rt-top .icon-btn { margin-right: -10px; }
+.rt-alt { margin: 0; font-size: 13px; color: var(--text-2); }
+.rt-nums { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; margin-top: 4px; color: var(--text); font-size: 14px; }
+.rt-nums > span + span::before { content: '·'; margin-right: 6px; color: var(--text-3); }
+.rt-prov { display: flex; flex-wrap: wrap; gap: 0 6px; margin: 2px 0 0; font-size: 13px; color: var(--text-2); }
+.rt-prov > span + span::before { content: '·'; margin-right: 6px; color: var(--text-3); }
+.rt-prov-tag { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--text); }
+.rt-prov-tag::before { content: ''; width: 18px; height: 0; border-top: 3px solid var(--sw, var(--course)); }
+/* 견본 선 색 = 지도에 그린 고른 선 색(mountain.js selectedStyle) — 생성 방식마다 */
+.rt-prov-tag.p-osm-relation { --sw: #3f7d3a; }
+.rt-prov-tag.p-user-file { --sw: #6d3fc0; }
+.rt-prov-tag.p-planned { --sw: #e37722; }
+:root[data-theme="dark"] .rt-prov-tag.p-osm-relation { --sw: #8cc47f; }
+:root[data-theme="dark"] .rt-prov-tag.p-user-file { --sw: #b79be0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .rt-prov-tag.p-osm-relation { --sw: #8cc47f; }
+  :root:not([data-theme="light"]) .rt-prov-tag.p-user-file { --sw: #b79be0; }
+}
+.rt-prov-tag.dash::before { border-top-style: dashed; }
+.rt-prov-tag.none { color: var(--text-2); }
+.rt-prov-tag.none::before { width: 8px; height: 8px; border: 0; border-radius: 50%; background: var(--sw, var(--course)); }
+.rt-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.rt-actions .btn.small { min-height: 44px; }
+.rt-nav { margin-top: 10px; padding: 8px 0 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--text-2); }
+.rt-nav-row { display: flex; gap: 16px; }
+.rt-nav-row > span { display: flex; flex-direction: column; font-size: 12px; color: var(--text-2); }
+.rt-nav-row b { font-size: 17px; font-weight: 600; color: var(--text); }
+.rt-nav-off { margin: 6px 0 0; font-size: 14px; font-weight: 600; color: var(--accent-ink); }
+.rt-nav-off.warn { color: var(--danger); }
+.rt-maptools:empty { display: none; }
+
+/* ---------- 경로 시트 본문 ---------- */
+.rt-body { padding: 4px 16px 24px; }
+.rt-chart { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.rt-chart .mt-sec-h { margin-bottom: 6px; }
+.rt-variants { margin-top: 14px; }
+.rt-variants .seg-btn { height: 40px; padding: 0 14px; }
+.rt-details { padding: 6px 0 4px; }
+.rt-details > p { margin: 8px 0 0; font-size: 14px; line-height: 1.6; }
+.rt-k { display: inline-block; min-width: 56px; margin-right: 8px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.rt-sources a { overflow-wrap: anywhere; }
+.rt-provnote { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-2); }
+.rt-warn { color: var(--warn); }
+.rt-notes { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.rt-toolrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.rt-planner { margin-top: 14px; }
+
+/* ---------- 고도 단면 ---------- */
+.pc { margin-top: 2px; border-radius: var(--r); }
+.pc:focus-visible { outline-offset: 2px; }
+/* 세로 몸짓은 시트 본문 스크롤에 넘긴다(pan-y) — 가로로 끌 때만 단면을 훑는다. 세로로 바뀌면 브라우저가 pointercancel을 보내 훑기를 끝낸다. */
+.pc-svg { width: 100%; height: 120px; touch-action: pan-y; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.pc-svg svg { display: block; }
+.pc-area { fill: var(--accent-soft); }
+.pc-line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.pc-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+.pc-axis { fill: var(--text-3); font-size: 12px; font-family: var(--font); font-variant-numeric: tabular-nums; }
+.pc-cursor-line { stroke: var(--text-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.pc-cursor-dot { fill: var(--text); stroke: var(--surface); stroke-width: 1.5; }
+.pc-readout { margin: 4px 0 0; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.rt-chart .elev-stats, .route-planner .elev-stats { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; }
+.elev-stat { display: flex; align-items: baseline; gap: 6px; }
+.elev-stat b { order: 2; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.elev-stat span { order: 1; font-size: 13px; color: var(--text-2); }
+
+/* 경로 계획 도구가 쓰는 예전 고도 차트(elevation.js elevationChart) */
+.elev-chart { margin-top: 8px; }
+.elev-svg { width: 100%; height: auto; display: block; touch-action: none; }
+.elev-area { fill: var(--accent-soft); }
+.elev-line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.elev-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+.elev-axis { fill: var(--text-3); font-size: 18px; }
+.elev-cursor-line { stroke: var(--text-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.elev-cursor-dot { fill: var(--text); stroke: var(--surface); stroke-width: 1.5; }
+.elev-readout { margin-top: 4px; font-size: 13px; color: var(--text-2); }
+
+/* ---------- 들머리 길찾기(모달) ---------- */
+.mt-dir { padding-top: 6px; }
+.mt-dir > .mt-fine:first-child { margin: 4px 0 8px; }
+.mt-linkrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.mt-linkrow:hover { background: var(--surface-2); }
+.mt-linkrow strong { display: block; font-size: 15px; font-weight: 600; }
+.mt-linkrow small { display: block; font-size: 13px; color: var(--text-2); }
+
+/* ---------- 경로 계획(routeplanner.js) — 시트 안에 맞춘다 ---------- */
+.route-planner { padding: 12px 0 0; border-top: 1px solid var(--line); }
+.planner-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.planner-head h4 { margin: 0; font-size: 15px; font-weight: 600; }
+.route-planner .conf-note, .planner-count, .planner-status { margin: 8px 0 0; font-size: 13px; line-height: 1.6; color: var(--text-2); overflow-wrap: anywhere; }
+.route-planner > .btn { margin-top: 8px; }
+.planner-point-tools { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.planner-point-tools label { display: grid; gap: 4px; flex: 1 1 220px; min-width: 0; font-size: 13px; color: var(--text-2); }
+.planner-point-tools select { width: 100%; min-height: 44px; }
+.planner-point-tools button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.planner-waypoints { margin: 12px 0; padding-left: 22px; }
+.planner-waypoints:empty { display: none; }
+.planner-waypoints li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.planner-waypoints li > div:first-child { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 14px; }
+.planner-waypoints small { width: 100%; font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.planner-row-actions, .planner-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.planner-row-actions .btn { min-width: 44px; padding: 0 10px; }
+.planner-summary { margin: 12px 0; padding: 10px 12px; border-left: 3px solid #e37722; background: var(--surface-2); font-size: 14px; line-height: 1.6; }
+.planner-summary:empty { display: none; }
+.planner-summary > strong { font-size: 17px; font-weight: 600; }
+.planner-summary p { margin: 4px 0 0; }
+.planner-map-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; padding: 10px 12px; border: 1px solid #e37722; border-radius: var(--r); background: var(--surface-2); }
+.planner-map-tools span { flex: 1 1 200px; font-size: 13px; line-height: 1.5; }
+.map-label.planned-point span, .leaflet-tooltip.map-label.planned-point { background: #e37722; color: #fff; }
+
+/* 등정 기록 대화상자·알림(hikerecord.js)은 pages.css 한 곳에서만 꾸민다 — 두 파일에 있으면 불러오는 순서에 따라 모양이 바뀐다. */
+
+/* ---------- 보정 ---------- */
+/* 시트 제목은 내용이 바뀔 때 스크린리더 기준점으로 포커스만 받는다(누르는 대상이 아니다). */
+.mt-title:focus, .rt-title:focus { outline: none; }
+.mt-sub { display: block; }
+/* 공용 .row-meta는 한 줄 말줄임이다 — 코스·걷기길 행은 사실을 자르지 않고 줄바꿈한다. */
+.mt-crow .row-meta, .mt-walk .row-meta { flex-wrap: wrap; }
+.mt-crow .row-meta > span, .mt-walk .row-meta > span { white-space: normal; }
+.mt-crow .row-meta > span:last-child, .mt-walk .row-meta > span:last-child { overflow: visible; }
+.mt-crow .row-meta > .mt-via { flex: 1 1 100%; }
+.rt-kv { display: grid; grid-template-columns: 76px 1fr; gap: 8px; margin-top: 8px; font-size: 14px; line-height: 1.55; }
+.rt-kv .rt-k { min-width: 0; margin: 0; }
+.rt-v { min-width: 0; overflow-wrap: anywhere; }
+.mt-dots { display: block; }
+.mt-dots > span { white-space: nowrap; }
+.row-meta.mt-dots > span + span::before, .mt-dots > span + span::before { content: none; }
+.mt-dots > .mt-via { white-space: normal; }
+.rt-nums.mt-dots, .rt-prov.mt-dots { display: block; }
+.rt-prov-tag { display: inline-flex; }
+.rt-body button.text-link, .mt-info button.text-link { padding: 0; border: 0; background: none; cursor: pointer; }

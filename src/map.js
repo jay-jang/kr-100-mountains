@@ -1,12 +1,15 @@
 // Provider-agnostic map facade.
 // Picks Kakao Maps when VITE_KAKAO_KEY is set at build time, otherwise Leaflet + OSM.
 // Both providers implement the same MapView contract (see providers/*.js):
-//   setView([lat,lng],zoom) · panTo([lat,lng]) · clearMarkers()
-//   addMarker({lat,lng,color,star,popupHTML,onClick,title,subtitle}) -> {openPopup(),remove()}
-//   addDot({lat,lng,color,title}) -> {remove()}
-//   addPolyline(latlngs,style) -> {remove()} · addPolylines(lines,style) -> {remove()}
-//   removeLayer(token|token[]) · fitBounds(latlngs,pad) · refreshTheme() · destroy()
-//   project([lat,lng]) -> {x,y} container pixels · onClick(fn) -> unsubscribe
+//   setView([lat,lng],zoom,{padding}) · panTo · flyTo — padding {top,right,bottom,left}px는
+//     시트·상단 바에 가리는 부분이다. 점이 "보이는 영역"의 가운데에 오게 한다.
+//   zoomBy(±1) · getZoom() (OSM 기준 축척) · getBounds() -> {south,west,north,east} · onMove(fn) -> unsubscribe
+//   clearMarkers() · addMarker({lat,lng,node,size,anchor,onClick,zIndex}) -> {setZIndex,element,remove}
+//   addDot({lat,lng,color,title}) -> {remove()} · addLabel({lat,lng,text,kind})
+//   addPolyline(latlngs,{color,weight,opacity,outline,dash:'dash'|'dot'}) · addPolylines(lines,style)
+//   removeLayer(token|token[]) · fitBounds(latlngs,pad,{padding,maxZoom=15}) — maxZoom보다 더 확대하지 않는다
+//   setBaseType · refreshTheme() · destroy() · snapshot()/restore(s) — 목록으로 돌아올 때 보던 범위 되돌리기
+//   project([lat,lng]) -> {x,y} container pixels · onClick(fn) -> unsubscribe · relayout()
 import { el, clear } from './dom.js';
 
 export const KAKAO_KEY = import.meta.env.VITE_KAKAO_KEY || '';
@@ -23,12 +26,12 @@ export async function createMapView(node, opts = {}) {
     if (MAP_PROVIDER === 'kakao') {
       const { createKakaoView } = await import('./providers/kakao.js');
       const view = await createKakaoView(node, opts);
-      node.querySelector('.explore-loading')?.remove();
+      node.querySelector('.map-loading, .explore-loading')?.remove();
       return view;
     }
     const { createLeafletView } = await import('./providers/leaflet.js');
     const view = createLeafletView(node, opts);
-    node.querySelector('.explore-loading')?.remove();
+    node.querySelector('.map-loading, .explore-loading')?.remove();
     return view;
   } catch (e) {
     // Map failure must never break the rest of the page — return a no-op stub.
@@ -46,8 +49,10 @@ function deadMapView(node) {
   const token = { remove: noop };
   return {
     ready: false,
-    setView: noop, panTo: noop, flyTo: noop, clearMarkers: noop,
-    addMarker: () => ({ openPopup: noop, remove: noop }),
+    provider: 'none',
+    setView: noop, panTo: noop, flyTo: noop, clearMarkers: noop, zoomBy: noop,
+    getZoom: () => 7, getBounds: () => ({ south: 33, west: 124.5, north: 38.7, east: 131 }), onMove: () => noop,
+    addMarker: () => ({ openPopup: noop, remove: noop, setZIndex: noop, element: () => null }),
     addDot: () => token, addPolyline: () => token, addPolylines: () => token,
     addLabel: () => token,
     locate: () => ({ set: noop, remove: noop }),
@@ -72,6 +77,13 @@ export function markerButton(color, star, title, subtitle) {
   // preserve hover and allow the same pointer/keyboard selection action.
   button.append(el('span', { class: 'mountain-marker-preview', 'aria-hidden': 'true' },
     el('strong', {}, title || '산 선택'), subtitle && el('span', {}, subtitle)));
+  guardDragClick(button);
+  return button;
+}
+
+
+/** 지도를 끌다가 마커 위에서 손을 떼면 일부 공급자가 마커 click을 보낸다 — 그 click만 버린다. */
+export function guardDragClick(button) {
   let pointerStart = null;
   button.addEventListener('pointerdown', e => { pointerStart = { x: e.clientX, y: e.clientY }; });
   button.addEventListener('pointercancel', () => { pointerStart = null; });
@@ -84,23 +96,4 @@ export function markerButton(color, star, title, subtitle) {
     }
     pointerStart = null;
   }, { capture: true });
-  return button;
-}
-
-export function popupContent(m) {
-  const badges = [m.lists.sanlim && '산림청', m.lists.bac && 'BAC', m.lists.hansanha && '한국의산하', m.lists.wolgansan && '월간산']
-    .filter(Boolean).join(' · ');
-  return `<div class="pop-title">${m.name_full}</div>
-    <div class="pop-meta">${m.region} · ${m.province} · ${Math.round(m.elevation_m)}m${badges ? '<br>' + badges : ''}</div>
-    <a class="pop-link" href="#/m/${m.id}">자세히 보기 →</a>`;
-}
-
-// Overpass hiking-path overlay (real OSM data) — returns array of [ [lat,lng], ... ] lines
-export async function fetchTrails(lat, lon, radius = 3000) {
-  const { overpassFetch } = await import('./osm.js');
-  const q = `[out:json][timeout:25];(way["highway"~"path|footway|track|steps"](around:${radius},${lat},${lon}););out geom;`;
-  const json = await overpassFetch(q);
-  return (json.elements || [])
-    .filter((e) => e.geometry?.length)
-    .map((e) => e.geometry.map((g) => [g.lat, g.lon]));
 }

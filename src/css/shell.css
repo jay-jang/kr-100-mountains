@@ -1,0 +1,177 @@
+/* 지도 셸: 화면 전체 지도 + 위 검색 바 + 오른쪽 컨트롤 + 아래 시트.
+   지도 컨테이너는 시트 peek의 윗변에서 끝난다(저작권 표시가 늘 보이게). */
+body:not(.page-mode) { overflow: hidden; overscroll-behavior: none; }
+.map-app { position: fixed; inset: 0; }
+.shell { position: absolute; inset: 0; overflow: hidden; --sheet-h: 96px; --map-bottom: 96px; --tb-h: 108px; }
+.map-host { position: absolute; z-index: 0; top: 0; left: 0; right: 0; bottom: var(--map-bottom); }   /* z-index: 지도 내부 레이어(400~1000)가 시트·상단 바 위로 올라오지 않게 */
+.map { width: 100%; height: 100%; background: var(--surface-2); }
+.map-loading { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; color: var(--text-2); font-size: 14px; }
+.map-error { position: absolute; inset: 0; display: grid; place-content: center; gap: 8px; padding: 24px; text-align: center; color: var(--text-2); }
+
+/* ---- 상단 바 ---- */
+.tb { position: absolute; top: 0; left: 0; right: 0; z-index: 800; padding: calc(8px + env(safe-area-inset-top)) 12px 0; pointer-events: none; }
+.tb > * { pointer-events: auto; }
+.tb-row { display: flex; align-items: center; gap: 8px; }
+.tb-brand { display: none; }
+.tb-search { position: relative; flex: 1; min-width: 0; height: 48px; display: flex; align-items: center; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.tb-search:focus-within { border-color: var(--accent); }
+.tb-search-ic { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); display: flex; color: var(--text-3); pointer-events: none; }
+.tb-input { flex: 1; min-width: 0; height: 100%; padding: 0 10px 0 38px; border: 0; background: transparent; font-size: 16px; outline: none; }
+.tb-input::placeholder { color: var(--text-3); }
+.tb-input::-webkit-search-cancel-button { cursor: pointer; }
+.tb-btn { flex: none; min-width: 48px; height: 48px; padding: 0 12px; display: inline-grid; place-items: center; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; color: var(--text); font-size: 15px; font-weight: 600; text-decoration: none; box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.tb-btn.icon { padding: 0; }
+.tb-btn:hover { background: var(--surface-2); }
+/* 가로 스크롤 상자는 세로로도 넘친 부분을 잘라 칩의 누르는 영역(::before 위아래 4~5px)까지 잘린다 — 위아래 안쪽 여백으로 비워 둔다 */
+.tb-chips { display: flex; align-items: center; gap: 8px; margin-top: 4px; padding: 4px 0; overflow-x: auto; scrollbar-width: none; }
+.tb-chips::-webkit-scrollbar { display: none; }
+.tb-chips .chip, .tb-chips .seg { box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.shell[data-detent="full"] .tb-chips { visibility: hidden; }
+
+/* 검색 제안 */
+.suggest { position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 10; max-height: min(60dvh, 440px); overflow: auto; overscroll-behavior: contain; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 4px 14px rgb(0 0 0 / .14); }
+.suggest-group { padding: 10px 12px 4px; font-size: 12px; font-weight: 600; color: var(--text-3); }
+.suggest-item { display: flex; flex-direction: column; justify-content: center; min-height: 48px; padding: 6px 12px; cursor: pointer; }
+.suggest-item.active, .suggest-item:hover { background: var(--surface-2); }
+.si-name { font-size: 15px; font-weight: 600; }
+.si-tag { margin-left: 4px; font-size: 12px; font-weight: 400; color: var(--text-3); }
+.si-meta { font-size: 12px; color: var(--text-2); }
+.suggest-empty { margin: 0; padding: 14px 12px; font-size: 14px; color: var(--text-2); }
+
+/* ---- 오른쪽 컨트롤 ---- */
+.ctl { position: absolute; right: 12px; bottom: calc(var(--sheet-h) + 12px); z-index: 650; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; transition: bottom .24s cubic-bezier(.2, .8, .2, 1); }
+.shell.no-anim .ctl, .shell.sheet-dragging .ctl { transition: none; }
+.shell[data-detent="full"] .ctl { display: none; }
+.ctl-btn { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; color: var(--text); box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.ctl-btn:hover { background: var(--surface-2); }
+.ctl-btn.active { color: #1a73e8; }
+.ctl-btn.busy { opacity: .6; }
+.ctl-group { display: flex; flex-direction: column; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.ctl-group .ctl-btn { border: 0; border-radius: 0; box-shadow: none; }
+.ctl-group .ctl-btn + .ctl-btn { border-top: 1px solid var(--line); }
+.ctl-locate { display: flex; align-items: center; gap: 8px; }
+.ctl-text { height: 44px; padding: 0 12px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .1); }
+.ctl-text[aria-pressed="true"] { background: #1a73e8; border-color: #1a73e8; color: #fff; }
+
+.map-toast { position: absolute; left: 50%; top: calc(var(--tb-h) + 8px); transform: translateX(-50%); z-index: 760; max-width: calc(100% - 32px); padding: 8px 12px; border-radius: var(--r); background: var(--text); color: var(--bg); font-size: 14px; }
+
+/* 겹친 산 선택 */
+.chooser { position: absolute; left: 12px; top: calc(var(--tb-h) + 8px); z-index: 750; width: min(340px, calc(100% - 24px)); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 4px 14px rgb(0 0 0 / .16); }
+.chooser-head { display: flex; align-items: center; justify-content: space-between; padding-left: 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.chooser-list { max-height: 50dvh; overflow: auto; }
+.chooser-item { display: flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 6px 12px; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.chooser-item:hover { background: var(--surface-2); }
+.chooser-item span { font-size: 12px; color: var(--text-2); }
+
+/* ---- 산 기호 ---- */
+.leaflet-div-icon.kr-pin, .kr-pin { background: transparent; border: 0; }
+.mk { position: relative; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; background: none; color: var(--map-ink); cursor: pointer; }
+.mk .summit-sym { filter: drop-shadow(0 0 1px var(--map-halo)) drop-shadow(0 0 1px var(--map-halo)); transition: transform .12s; }
+.mk:hover .summit-sym, .mk.hover .summit-sym { transform: scale(1.18); }
+.mk-name { display: none; position: absolute; left: 31px; top: 50%; transform: translateY(-50%); white-space: nowrap; pointer-events: none; font-size: 12px; font-weight: 600; color: var(--map-ink); text-shadow: 0 0 2px var(--map-halo), 0 0 2px var(--map-halo), 0 0 3px var(--map-halo), 0 0 4px var(--map-halo); }
+.shell.names .mk-name, .mk.selected .mk-name, .mk:hover .mk-name, .mk.hover .mk-name, .mk:focus-visible .mk-name { display: block; }
+.mk.selected .mk-name { left: 34px; font-size: 14px; font-weight: 700; }
+.mk:focus-visible { outline: 2px solid var(--focus); outline-offset: -6px; border-radius: 50%; }
+/* 숫자 묶음도 산 기호다 — 걷기길 모드에서 묶음만 진하게 남으면 걷기길보다 앞에 보인다 */
+.dim-mountains .mk:not(.selected), .dim-mountains .mk-cluster { opacity: .35; }
+/* 카카오 지도는 어두운 바탕이 없으므로 기호를 늘 잉크색으로 */
+.shell[data-provider="kakao"] { --map-ink: #23332b; --map-halo: #fffef9; --map-symbol-fill: #fffef9; }
+
+/* 지도 위 라벨(정상·들머리·봉우리) */
+.map-label { pointer-events: none; }
+.map-label span, .leaflet-tooltip.map-label { display: inline-block; padding: 2px 6px; border: 0; border-radius: 4px; box-shadow: 0 0 0 1px rgb(0 0 0 / .12); background: var(--surface); color: var(--text); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.leaflet-tooltip.map-label::before { display: none; }
+.map-label.summit span, .leaflet-tooltip.map-label.summit { background: var(--map-ink); color: var(--map-halo); }
+.map-label.trailhead span, .leaflet-tooltip.map-label.trailhead { background: #1a5fb4; color: #fff; }
+.map-label.peak span, .leaflet-tooltip.map-label.peak { font-size: 11px; font-weight: 500; }
+.geo-dot { position: relative; width: 16px; height: 16px; border-radius: 50%; background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 3px rgb(0 0 0 / .4); }
+.geo-dot::after { content: ''; position: absolute; inset: -9px; border-radius: 50%; border: 2px solid rgb(26 115 232 / .55); animation: geopulse 1.8s ease-out infinite; }
+@keyframes geopulse { 0% { transform: scale(.35); opacity: .85; } 100% { transform: scale(1.25); opacity: 0; } }
+.map.leaflet-container { font-family: var(--font); background: var(--surface-2); }   /* .map을 붙여야 늦게 오는 leaflet.css보다 우선한다 */
+.leaflet-control-attribution { font-size: 11px; background: rgb(255 254 249 / .82) !important; color: #3d4a43; }
+.leaflet-control-attribution a { color: #2a5039; }
+
+/* ---- 시트 ---- */
+.sheet {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 700; height: 96px;
+  display: flex; flex-direction: column; overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--surface); border-top: 1px solid var(--line); border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 8px rgb(0 0 0 / .08);
+  transition: height .24s cubic-bezier(.2, .8, .2, 1);
+}
+.sheet.no-anim, .sheet.dragging { transition: none; }
+.sheet.dragging { user-select: none; -webkit-user-select: none; }
+.sheet-grabber { flex: none; display: grid; place-items: center; width: 100%; height: 44px; padding: 0; border: 0; background: transparent; cursor: grab; touch-action: none; }   /* 누르는 영역 44px(min에서는 이것만 남는다) */
+.sheet-grabber-bar { width: 36px; height: 4px; border-radius: 2px; background: var(--line-strong); }
+.sheet-grabber:focus-visible { outline-offset: -4px; }
+.sheet-head { flex: none; padding: 0 16px 10px; touch-action: none; }
+.sheet-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--line); }
+.sheet[data-detent="min"] .sheet-head, .sheet[data-detent="min"] .sheet-body { visibility: hidden; }
+.sheet-headline { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
+.sheet-titles { min-width: 0; }
+.sheet-title { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3; }
+.sheet-sub { margin: 2px 0 0; font-size: 13px; color: var(--text-2); }
+.sheet-sub-link { color: var(--text-2); text-decoration: none; }
+.sheet-sub-link:hover { text-decoration: underline; }
+.sheet-note { margin: 6px 0 0; font-size: 13px; color: var(--text-2); }
+.sheet-extra { padding: 8px 0 16px; }
+.sheet-extra .sheet-note { padding: 0 16px; }
+.sheet .rows > .btn { margin: 10px 16px; }
+
+/* ---- 태블릿: 시트를 왼쪽에 띄운다 ---- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .sheet { left: 16px; right: auto; width: min(560px, calc(100% - 32px)); border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+  .tb-row, .tb-chips { max-width: 560px; }
+}
+
+/* ---- 데스크톱: 왼쪽 400px 패널 + 오른쪽 지도 ---- */
+@media (min-width: 1024px) {
+  .map-host { left: 400px; bottom: 0; }
+  .tb { right: auto; width: 400px; padding: 12px 16px 10px; background: var(--surface); border-right: 1px solid var(--line); }
+  .tb-row { flex-wrap: wrap; }
+  .tb-brand { display: block; order: 0; flex: 1; font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+  .tb-row .tb-btn { order: 1; height: 40px; min-width: 44px; box-shadow: none; }
+  .tb-search { order: 3; flex-basis: 100%; height: 44px; box-shadow: none; }
+  .tb-chips .chip, .tb-chips .seg { box-shadow: none; }
+  .sheet { top: var(--tb-h); left: 0; width: 400px; height: auto !important; border-radius: 0; border-top: 1px solid var(--line); border-right: 1px solid var(--line); box-shadow: none; transition: none; }
+  .sheet-grabber { display: none; }
+  .sheet-head { padding-top: 12px; touch-action: auto; }
+  .ctl { bottom: 24px; right: 16px; }
+  .shell[data-detent="full"] .ctl { display: flex; }
+  .chooser { left: 416px; top: 16px; }
+  .map-toast { left: calc(400px + (100% - 400px) / 2); top: 16px; }
+}
+
+/* 시트 헤더 안의 칩 줄은 한 줄 가로 스크롤(peek 높이를 지킨다) */
+.sheet-head .chips-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 6px -16px 0; padding: 6px 16px; }   /* 위아래 6px: 작은 칩의 누르는 영역이 잘리지 않게 */
+.sheet-head .chips-row::-webkit-scrollbar { display: none; }
+
+/* 다크 모드 OSM 타일: 반전 + 색상 되돌림 — 키 없는 어두운 배경지도 */
+.tiles-dark { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.86) saturate(.55); }
+/* 밝은 배경지도(지형도·카카오) 위에서는 산 기호를 늘 잉크색으로 */
+.map[data-basetype="default"], .map[data-basetype="terrain"] { --map-ink: #23332b; --map-halo: #fffef9; --map-symbol-fill: #fffef9; }
+.map[data-basetype="dark"], .map[data-basetype="satellite"] { --map-ink: #f1f3ea; --map-halo: #10140f; --map-symbol-fill: #1e2e25; }
+
+/* 넓은 축척의 산 묶음 — 숫자만, 한 가지 색. 누르면 그 범위로 확대 */
+.mk-cluster { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--map-halo); position: relative; }
+.mk-cluster::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: var(--map-ink); box-shadow: 0 0 0 2px var(--map-halo); z-index: -1; }
+.mk-cluster:hover::before { inset: 6px; }
+.mk-cluster:focus-visible { outline: 2px solid var(--focus); outline-offset: -4px; border-radius: 50%; }
+
+/* 지도 위 가운데 동작 버튼(이 지역 다시 찾기 등) */
+.map-action { position: absolute; left: 50%; top: calc(var(--tb-h) + 8px); transform: translateX(-50%); z-index: 760; min-height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--text); font-size: 14px; font-weight: 600; box-shadow: 0 1px 3px rgb(0 0 0 / .14); white-space: nowrap; }
+.shell[data-detent="full"] .map-action { display: none; }
+@media (min-width: 1024px) { .map-action { left: calc(400px + (100% - 400px) / 2); top: 16px; } }
+
+/* 지도 출처: 시트가 올라오면 함께 올라가 가려지지 않게(Leaflet). */
+.map-host .leaflet-bottom.leaflet-left { bottom: clamp(0px, calc(var(--sheet-h) - var(--map-bottom)), 70vh); transition: bottom .24s cubic-bezier(.2, .8, .2, 1); }
+.shell.sheet-dragging .map-host .leaflet-bottom.leaflet-left, .shell.sheet-dragging .map-attr { transition: none; }
+@media (min-width: 1024px) { .map-host .leaflet-bottom.leaflet-left { bottom: 0; } }
+/* 카카오 바탕지도: 카카오 로고(왼쪽 아래, 옮길 수 없음) 위에 OpenStreetMap 출처 — 그 위에 그리는 걷기길·계산 경로 선의 출처(ODbL).
+   z-index는 .map-host(z-index 0)의 쌓임 맥락 안이라 시트를 덮지 않는다. */
+.map-attr { position: absolute; left: 4px; bottom: calc(clamp(0px, calc(var(--sheet-h) - var(--map-bottom)), 70vh) + 24px); z-index: 1000; padding: 0 4px; font-size: 11px; line-height: 16px; background: rgb(255 254 249 / .82); color: #2a5039; text-decoration: none; transition: bottom .24s cubic-bezier(.2, .8, .2, 1); }
+.map-attr:hover { text-decoration: underline; }
+@media (min-width: 1024px) { .map-attr { bottom: 24px; } }
+
+.catalog-link { margin-left: 8px; color: var(--accent-ink); font-weight: 600; }
