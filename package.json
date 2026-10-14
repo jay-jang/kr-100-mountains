@@ -13,11 +13,14 @@
     "test": "node scripts/smoke-test.mjs",
     "routes": "node scripts/collect-routes.mjs",
     "reviews": "node scripts/collect-reviews.mjs",
+    "trekking": "node scripts/collect-trekking.mjs",
+    "walks": "node scripts/build-walks.mjs",
     "test:ux": "node scripts/ux-test.mjs",
     "test:routing": "node --test scripts/trailnetwork.test.mjs",
     "test:selection": "node --test scripts/mapselection.test.mjs",
     "test:planner": "node scripts/planner-test.mjs",
-    "test:courses": "node scripts/courses-test.mjs"
+    "test:courses": "node scripts/courses-test.mjs",
+    "test:trekking": "node --test scripts/trekking.test.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1",

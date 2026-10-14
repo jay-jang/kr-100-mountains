@@ -3,8 +3,14 @@
 // (호출측이 순차 실행하므로 여기서는 요청 간 최소 간격만 강제한다.)
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net';
 
-const ENDPOINTS = [
+// Node fetch는 IPv4/IPv6를 번갈아 시도하며 주소당 250ms만 기다린다(happy eyeballs 기본값).
+// 유럽 미러까지 왕복이 그보다 긴 망에서는 IPv4 연결이 맺어지기 전에 IPv6(도달 불가)로 넘어가
+// 전 미러가 `fetch failed / ETIMEDOUT`으로 실패한다(2026-10-13 확인 — curl은 정상).
+setDefaultAutoSelectFamilyAttemptTimeout(2500);
+
+export const ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
@@ -27,8 +33,9 @@ async function throttle() {
 /**
  * Overpass 질의. cacheFile이 주어지면 성공 응답을 그대로 저장하고,
  * 다음 실행에서는 네트워크를 건너뛴다(재개 가능성).
+ * endpoints: 시도 순서대로 돌릴 미러 목록(기본 ENDPOINTS). 느리거나 막힌 미러를 빼고 싶을 때 넘긴다.
  */
-export async function overpass(query, { cacheFile = null, tries = 4, timeoutMs = 180000, log = () => {} } = {}) {
+export async function overpass(query, { cacheFile = null, tries = 4, timeoutMs = 180000, log = () => {}, endpoints = ENDPOINTS } = {}) {
   if (cacheFile && existsSync(cacheFile)) {
     try { return JSON.parse(readFileSync(cacheFile, 'utf8')); }
     catch { log(`  캐시 손상 — 다시 받습니다: ${cacheFile}`); }
@@ -36,7 +43,7 @@ export async function overpass(query, { cacheFile = null, tries = 4, timeoutMs =
 
   let lastErr;
   for (let attempt = 0; attempt < tries; attempt++) {
-    const url = ENDPOINTS[attempt % ENDPOINTS.length];
+    const url = endpoints[attempt % endpoints.length];
     await throttle();
     const ctrl = new AbortController();
     const to = setTimeout(() => ctrl.abort(), timeoutMs);
