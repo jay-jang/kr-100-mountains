@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 청도군, 경상남도 밀양시"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [35.6317, 128.9628]
-coord_confidence: medium
+coordinates: [35.61551, 128.959663]
+coord_confidence: high
 features: ["영남알프스", "암릉", "계곡", "단풍", "사리암", "능선조망"]
 best_season: "가을(10~11월) 단풍"
 ---

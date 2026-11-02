@@ -7,7 +7,7 @@ region: 경상
 province: 경북
 location: "경상북도 구미시·칠곡군·김천시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.0219, 128.1606]
+coordinates: [36.091736, 128.300198]
 coord_confidence: high
 features: ["도립공원", "케이블카", "폭포", "암릉", "단풍", "일출"]
 best_season: "가을(10~11월) 단풍"

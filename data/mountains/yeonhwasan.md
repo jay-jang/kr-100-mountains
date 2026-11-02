@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 고성군"
 lists: [sanlim, wolgansan]
-coordinates: [35.0783, 128.2739]
-coord_confidence: medium
+coordinates: [35.071034, 128.265036]
+coord_confidence: high
 features: ["도립공원", "옥천사", "사찰", "단풍", "가족산행"]
 best_season: "가을(10~11월) 단풍"
 ---

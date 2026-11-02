@@ -42,6 +42,12 @@ best_season: "사계절(가을 단풍·정상 일출 명소)"
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/토함산)
 - [기존 산별 참고자료](https://en.wikipedia.org/wiki/Tohamsan)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **불국사 코스** — 경주국립공원 · 10.5km · 4시간 · 난이도 하 · 정상 경유<br>구간: 불국사 ∼ 추령 갈림길 ∼ 토함산 정상 ∼ 탑골 갈림길 ∼ 시부거리 갈림길 ∼ 보불로 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V001&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

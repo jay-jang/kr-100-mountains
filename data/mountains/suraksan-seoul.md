@@ -7,8 +7,8 @@ region: 수도권
 province: 서울
 location: "서울특별시 노원구, 경기도 의정부시·남양주시"
 lists: [bac, hansanha, wolgansan]
-coordinates: [37.6875, 127.0817]
-coord_confidence: medium
+coordinates: [37.699264, 127.08134]
+coord_confidence: high
 features: ["암릉", "기암괴석", "폭포", "수도권 근교", "100대 명산", "지하철 접근"]
 best_season: "가을(10~11월) 단풍, 봄철 진달래"
 ---

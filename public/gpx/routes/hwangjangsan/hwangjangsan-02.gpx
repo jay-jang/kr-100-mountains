@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>황장산 · 황장재-정상 능선 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-10-14T15:32:12.682Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>hwangjangsan</k100:mountain_id>
+      <k100:mountain_name>황장산</k100:mountain_name>
+      <k100:route_id>hwangjangsan-c63c3b4a</k100:route_id>
+      <k100:route_index>2</k100:route_index>
+      <k100:route_name>황장재-정상 능선 코스</k100:route_name>
+      <k100:variant>0</k100:variant>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:snap_trailhead_m>204</k100:snap_trailhead_m>
+      <k100:snap_summit_m>5</k100:snap_summit_m>
+      <k100:validation_score>69</k100:validation_score>
+      <k100:validation_status>review</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>황장산 · 황장재-정상 능선 코스 (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.805716" lon="128.280889"><ele>963.0</ele></trkpt>
+      <trkpt lat="36.805947" lon="128.279951"><ele>934.2</ele></trkpt>
+      <trkpt lat="36.806239" lon="128.279329"><ele>930.9</ele></trkpt>
+      <trkpt lat="36.806405" lon="128.278668"><ele>926.4</ele></trkpt>
+      <trkpt lat="36.807277" lon="128.278098"><ele>964.0</ele></trkpt>
+      <trkpt lat="36.807688" lon="128.277996"><ele>976.5</ele></trkpt>
+      <trkpt lat="36.807755" lon="128.277790"><ele>988.1</ele></trkpt>
+      <trkpt lat="36.807686" lon="128.277463"><ele>997.0</ele></trkpt>
+      <trkpt lat="36.807769" lon="128.277231"><ele>1003.3</ele></trkpt>
+      <trkpt lat="36.807870" lon="128.277099"><ele>1004.2</ele></trkpt>
+      <trkpt lat="36.807999" lon="128.277069"><ele>1008.9</ele></trkpt>
+      <trkpt lat="36.808043" lon="128.276941"><ele>1011.3</ele></trkpt>
+      <trkpt lat="36.808196" lon="128.276876"><ele>1012.7</ele></trkpt>
+      <trkpt lat="36.808503" lon="128.276964"><ele>1017.7</ele></trkpt>
+      <trkpt lat="36.808763" lon="128.276962"><ele>1014.3</ele></trkpt>
+      <trkpt lat="36.809010" lon="128.277443"><ele>1018.1</ele></trkpt>
+      <trkpt lat="36.809366" lon="128.277574"><ele>1014.1</ele></trkpt>
+      <trkpt lat="36.809647" lon="128.277549"><ele>1011.4</ele></trkpt>
+      <trkpt lat="36.810276" lon="128.277809"><ele>1005.6</ele></trkpt>
+      <trkpt lat="36.811077" lon="128.277782"><ele>1011.9</ele></trkpt>
+      <trkpt lat="36.811512" lon="128.277513"><ele>1026.3</ele></trkpt>
+      <trkpt lat="36.811864" lon="128.277529"><ele>1039.4</ele></trkpt>
+      <trkpt lat="36.812484" lon="128.278124"><ele>1057.9</ele></trkpt>
+      <trkpt lat="36.812715" lon="128.278137"><ele>1059.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

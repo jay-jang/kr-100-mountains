@@ -7,7 +7,7 @@ region: 경상
 province: 경북
 location: "경상북도 청송군·영덕군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.4003, 129.1486]
+coordinates: [36.389355, 129.162386]
 coord_confidence: high
 features: ["국립공원", "세계지질공원", "암릉", "기암", "폭포", "단풍", "계곡"]
 best_season: "가을(10~11월) 단풍, 늦가을 주산지 물안개"
@@ -42,6 +42,18 @@ best_season: "가을(10~11월) 단풍, 늦가을 주산지 물안개"
 - 특징: 계곡의 기암과 세 폭포를 연결하는 경관 탐방 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 주왕계곡코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121000&vcursId=121000V002) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **주봉코스** — 주왕산국립공원 · 10.1km · 4시간 40분 · 난이도 중 · 정상 경유<br>구간: 상의주차장~대전사~주왕산~칼등고개~후리메기~용추폭포~상의주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V003&parkNavGb=guide))
+- **주왕계곡코스** — 주왕산국립공원 · 10.6km · 4시간 20분 · 난이도 하 · 정상 미경유<br>구간: 상의주차장~대전사~용추폭포~용연폭포~내원동~상의주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V002&parkNavGb=guide))
+- **장군봉~금은광이코스** — 주왕산국립공원 · 11.8km · 5시간 25분 · 난이도 중 · 정상 미경유<br>구간: 상의주차장~대전사~장군봉~금은광이~용연폭포~용추폭포~상의주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V005&parkNavGb=guide))
+- **가메봉코스** — 주왕산국립공원 · 15.2km · 7시간 · 난이도 상 · 정상 미경유<br>구간: 상의주차장~용추폭포~후리메기~가메봉~용연폭포~절구폭포~상의주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V001&parkNavGb=guide))
+- **절골코스** — 주왕산국립공원 · 13.5km · 7시간 5분 · 난이도 중 · 정상 미경유<br>구간: 절골분소~대문다리~가메봉~용연폭포~용추폭포~상의주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V004&parkNavGb=guide))
+- **갓바위코스** — 주왕산국립공원 · 13.3km · 6시간 45분 · 난이도 상 · 정상 미경유<br>구간: 갓바위탐방지원센터-갓바위-대궐령-왕거암-내원마을-대전사 ※주차장에서 갓바위탐방지원센터(1.7km)도보이동 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V008&parkNavGb=guide))
+- **월외코스** — 주왕산국립공원 · 13km · 4시간 35분 · 난이도 중 · 정상 미경유<br>구간: 월외탐방지원센터~달기폭포~너구마을~금은광이삼거리~장군봉~상의매표소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V006&parkNavGb=guide))
 
 ## 주요 등산로
 

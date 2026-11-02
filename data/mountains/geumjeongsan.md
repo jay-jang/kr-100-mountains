@@ -7,8 +7,8 @@ region: 경상
 province: 부산
 location: "부산광역시 금정구·북구, 경상남도 양산시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.2836, 129.0447]
-coord_confidence: medium
+coordinates: [35.28015, 129.050617]
+coord_confidence: high
 features: ["금정산성", "범어사", "케이블코스", "도심근교", "능선조망", "일출"]
 best_season: "봄(4~5월)·가을(10~11월)"
 ---
@@ -41,6 +41,12 @@ best_season: "봄(4~5월)·가을(10~11월)"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/금정산)
 - [기존 산별 참고자료](https://busan.grandculture.net/Contents?contents_id=GC042P02744)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **범어사 코스** — 금정산국립공원 · 2.5km · 1시간 30분 · 난이도 중 · 정상 경유<br>구간: 범어사 ~ 북문 ~ 고당봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122800&vcursId=122800V001&parkNavGb=guide))
 
 ## 주요 등산로
 

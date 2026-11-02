@@ -7,7 +7,7 @@ region: 경상
 province: 경북
 location: "경상북도 문경시, 충청북도 괴산군"
 lists: [bac, hansanha, wolgansan]
-coordinates: [36.76667, 128.05]
+coordinates: [36.771422, 128.044294]
 coord_confidence: high
 features: ["백두대간", "암릉", "단풍", "문경새재", "일출"]
 best_season: "가을(10~11월) 단풍, 봄 신록"

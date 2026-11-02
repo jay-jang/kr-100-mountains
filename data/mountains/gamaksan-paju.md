@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 파주시·양주시·연천군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.9436, 126.9636]
-coord_confidence: medium
+coordinates: [37.941156, 126.970076]
+coord_confidence: high
 features: ["경기5악", "출렁다리", "암릉", "일출", "역사유적"]
 best_season: "가을(10~11월) 단풍, 봄"
 ---

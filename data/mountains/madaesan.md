@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 영월군, 충청북도 단양군"
 lists: [wolgansan]
-coordinates: [37.0517, 128.4772]
-coord_confidence: medium
+coordinates: [37.08777, 128.574119]
+coord_confidence: high
 features: ["김삿갓유적지", "단풍", "소나무숲", "문학탐방", "계곡"]
 best_season: "가을(10~11월) 단풍"
 ---

@@ -1,0 +1,4252 @@
+{
+ "meta": {
+  "generated_at": "2026-10-14T15:45:51.830Z",
+  "generator": "scripts/fix-summits.mjs",
+  "rules": {
+   "osm+wikidata": "OpenStreetMap 정상 노드가 같은 이름의 위키데이터 좌표와 600m 안에서 일치",
+   "osm-name-ele": "OpenStreetMap 정상 노드의 이름이 산·주봉 이름과 맞고 고도가 등록 고도와 2m 안",
+   "osm-name-dem": "이름이 맞고, SRTM 지형으로 본 새 자리가 등록 고도 30m 안이며 옛 자리보다 50m 넘게 높음",
+   "wikidata+osm-ele": "같은 이름의 위키데이터 좌표 150m 안에 등록 고도와 5m 안인 OSM 정상 노드(노드 이름은 다를 수 있음)",
+   "terrain_check": "모든 보정은 새 자리 주변 60m의 SRTM 최고 고도가 등록 고도 −45m 이상일 때만 채택"
+  },
+  "sources": [
+   {
+    "name": "OpenStreetMap",
+    "license": "ODbL 1.0",
+    "attribution": "© OpenStreetMap contributors"
+   },
+   {
+    "name": "Wikidata",
+    "license": "CC0"
+   },
+   {
+    "name": "SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles",
+    "role": "지형 고도 확인(osm-name-dem 규칙·모든 보정의 지형 검사)",
+    "license": "public domain"
+   }
+  ]
+ },
+ "corrections": [
+  {
+   "id": "chukryeongsan-jangseong",
+   "name": "축령산",
+   "elevation_m": 621,
+   "from": [
+    35.4283,
+    126.8742
+   ],
+   "to": [
+    35.370972,
+    126.726066
+   ],
+   "moved_m": 14863,
+   "osm": {
+    "node": 6226714925,
+    "name": "축령산",
+    "ele": 622.6
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 610,
+    "old_max_m": 210
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "geumosan",
+   "name": "금오산",
+   "elevation_m": 976.5,
+   "from": [
+    36.0219,
+    128.1606
+   ],
+   "to": [
+    36.091736,
+    128.300198
+   ],
+   "moved_m": 14757,
+   "osm": {
+    "node": 6212374418,
+    "name": "금오산(현월봉)",
+    "ele": 977
+   },
+   "wikidata": {
+    "qid": "Q27279491",
+    "label": "금오산",
+    "dist_m": 87
+   },
+   "srtm": {
+    "new_max_m": 970,
+    "old_max_m": 399
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "unaksan",
+   "name": "운악산",
+   "elevation_m": 934.7,
+   "from": [
+    37.9857,
+    127.3489
+   ],
+   "to": [
+    37.87869,
+    127.32288
+   ],
+   "moved_m": 12116,
+   "osm": {
+    "node": 10253010745,
+    "name": "운악산",
+    "ele": 935
+   },
+   "wikidata": {
+    "qid": "Q8528375",
+    "label": "운악산",
+    "dist_m": 199
+   },
+   "srtm": {
+    "new_max_m": 922,
+    "old_max_m": 172
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "eungbongsan",
+   "name": "응봉산",
+   "elevation_m": 999.7,
+   "from": [
+    37.0454,
+    129.3477
+   ],
+   "to": [
+    37.076579,
+    129.230519
+   ],
+   "moved_m": 10961,
+   "osm": {
+    "node": 3878806510,
+    "name": "응봉산",
+    "ele": 999.7
+   },
+   "wikidata": {
+    "qid": "Q5409714",
+    "label": "응봉산",
+    "dist_m": 35
+   },
+   "srtm": {
+    "new_max_m": 989,
+    "old_max_m": 113
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "taehwasan",
+   "name": "태화산",
+   "elevation_m": 1027.5,
+   "from": [
+    37.0836,
+    128.3819
+   ],
+   "to": [
+    37.117585,
+    128.485378
+   ],
+   "moved_m": 9925,
+   "osm": {
+    "node": 5395089718,
+    "name": "태화산",
+    "ele": 1027.5
+   },
+   "wikidata": {
+    "qid": "Q7674755",
+    "label": "태화산",
+    "dist_m": 83
+   },
+   "srtm": {
+    "new_max_m": 1016,
+    "old_max_m": 426
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "madaesan",
+   "name": "마대산",
+   "elevation_m": 1052,
+   "from": [
+    37.0517,
+    128.4772
+   ],
+   "to": [
+    37.08777,
+    128.574119
+   ],
+   "moved_m": 9488,
+   "osm": {
+    "node": 8120396326,
+    "name": "마대산",
+    "ele": 1052
+   },
+   "wikidata": {
+    "qid": "Q27304279",
+    "label": "마대산",
+    "dist_m": 20
+   },
+   "srtm": {
+    "new_max_m": 1036,
+    "old_max_m": 386
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "cheontaesan",
+   "name": "천태산",
+   "elevation_m": 715.2,
+   "from": [
+    36.185,
+    127.7
+   ],
+   "to": [
+    36.15913,
+    127.599952
+   ],
+   "moved_m": 9430,
+   "osm": {
+    "node": 5381320862,
+    "name": "천태산",
+    "ele": 715.2
+   },
+   "wikidata": {
+    "qid": "Q27279447",
+    "label": "천태산",
+    "dist_m": 23
+   },
+   "srtm": {
+    "new_max_m": 700,
+    "old_max_m": 181
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "naeyeonsan",
+   "name": "내연산",
+   "elevation_m": 711.3,
+   "from": [
+    36.1975,
+    129.2836
+   ],
+   "to": [
+    36.278676,
+    129.289906
+   ],
+   "moved_m": 9044,
+   "osm": {
+    "node": 5369653604,
+    "name": "내연산(삼지봉)",
+    "ele": 711.3
+   },
+   "wikidata": {
+    "qid": "Q6958140",
+    "label": "내연산",
+    "dist_m": 2957
+   },
+   "srtm": {
+    "new_max_m": 709,
+    "old_max_m": 320
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "baekdeoksan",
+   "name": "백덕산",
+   "elevation_m": 1350.1,
+   "from": [
+    37.3372,
+    128.3436
+   ],
+   "to": [
+    37.396474,
+    128.293524
+   ],
+   "moved_m": 7939,
+   "osm": {
+    "node": 4943372823,
+    "name": "백덕산",
+    "ele": 1350.1
+   },
+   "wikidata": {
+    "qid": "Q27273159",
+    "label": "백덕산",
+    "dist_m": 19
+   },
+   "srtm": {
+    "new_max_m": 1321,
+    "old_max_m": 434
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "palyeongsan",
+   "name": "팔영산",
+   "elevation_m": 606.9,
+   "from": [
+    34.6258,
+    127.3528
+   ],
+   "to": [
+    34.617153,
+    127.436444
+   ],
+   "moved_m": 7714,
+   "osm": {
+    "node": 7972724265,
+    "name": "팔영산 깃대봉",
+    "ele": 606.8
+   },
+   "wikidata": {
+    "qid": "Q8533837",
+    "label": "팔영산",
+    "dist_m": 138
+   },
+   "srtm": {
+    "new_max_m": 596,
+    "old_max_m": 234
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "cheonghwasan-sangju",
+   "name": "청화산",
+   "elevation_m": 984,
+   "from": [
+    36.5719,
+    127.9836
+   ],
+   "to": [
+    36.603764,
+    127.920433
+   ],
+   "moved_m": 6660,
+   "osm": {
+    "node": 1862839213,
+    "name": "청화산",
+    "ele": 984
+   },
+   "wikidata": {
+    "qid": "Q5091640",
+    "label": "청화산",
+    "dist_m": 2403
+   },
+   "srtm": {
+    "new_max_m": 977,
+    "old_max_m": 243
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "seodaesan",
+   "name": "서대산",
+   "elevation_m": 904.1,
+   "from": [
+    36.2789,
+    127.5539
+   ],
+   "to": [
+    36.22066,
+    127.53837
+   ],
+   "moved_m": 6624,
+   "osm": {
+    "node": 5371870467,
+    "name": "서대산",
+    "ele": 904.1
+   },
+   "wikidata": {
+    "qid": "Q7451509",
+    "label": "서대산",
+    "dist_m": 91
+   },
+   "srtm": {
+    "new_max_m": 887,
+    "old_max_m": 257
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "yumyeongsan",
+   "name": "유명산",
+   "elevation_m": 864,
+   "from": [
+    37.6294,
+    127.4783
+   ],
+   "to": [
+    37.575336,
+    127.486706
+   ],
+   "moved_m": 6057,
+   "osm": {
+    "node": 5388363536,
+    "name": "유명산",
+    "ele": 864
+   },
+   "wikidata": {
+    "qid": "Q626674",
+    "label": "유명산",
+    "dist_m": 7
+   },
+   "srtm": {
+    "new_max_m": 853,
+    "old_max_m": 298
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "jangansan",
+   "name": "장안산",
+   "elevation_m": 1237.4,
+   "from": [
+    35.5837,
+    127.5619
+   ],
+   "to": [
+    35.629184,
+    127.595074
+   ],
+   "moved_m": 5880,
+   "osm": {
+    "node": 5750036142,
+    "name": "장안산",
+    "ele": 1237
+   },
+   "wikidata": {
+    "qid": "Q27288941",
+    "label": "장안산",
+    "dist_m": 32
+   },
+   "srtm": {
+    "new_max_m": 1226,
+    "old_max_m": 662
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gangcheonsan",
+   "name": "강천산",
+   "elevation_m": 583.7,
+   "from": [
+    35.352,
+    127.0555
+   ],
+   "to": [
+    35.40192,
+    127.04838
+   ],
+   "moved_m": 5588,
+   "osm": {
+    "node": 5368979882,
+    "name": "강천산",
+    "ele": 583
+   },
+   "wikidata": {
+    "qid": "Q5521102",
+    "label": "강천산",
+    "dist_m": 254
+   },
+   "srtm": {
+    "new_max_m": 574,
+    "old_max_m": 101
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "oseosan-boryeong",
+   "name": "오서산",
+   "elevation_m": 790.7,
+   "from": [
+    36.411,
+    126.677
+   ],
+   "to": [
+    36.458421,
+    126.65937
+   ],
+   "moved_m": 5504,
+   "osm": {
+    "node": 1910937899,
+    "name": "오서산",
+    "ele": 789.9
+   },
+   "wikidata": {
+    "qid": "Q27273092",
+    "label": "오서산",
+    "dist_m": 44
+   },
+   "srtm": {
+    "new_max_m": 774,
+    "old_max_m": 138
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "baraebong-jirisan",
+   "name": "바래봉",
+   "elevation_m": 1165,
+   "from": [
+    35.3742,
+    127.5589
+   ],
+   "to": [
+    35.421604,
+    127.576105
+   ],
+   "moved_m": 5497,
+   "osm": {
+    "node": 444256473,
+    "name": "바래봉",
+    "ele": 1187
+   },
+   "wikidata": {
+    "qid": "Q4858155",
+    "label": "바래봉",
+    "dist_m": 1732
+   },
+   "srtm": {
+    "new_max_m": 1173,
+    "old_max_m": 843
+   },
+   "rule": "osm-name-dem"
+  },
+  {
+   "id": "hwangjangsan",
+   "name": "황장산",
+   "elevation_m": 1078.9,
+   "from": [
+    36.7936,
+    128.2247
+   ],
+   "to": [
+    36.81274,
+    128.278182
+   ],
+   "moved_m": 5216,
+   "osm": {
+    "node": 1867179906,
+    "name": "황장산",
+    "ele": 1077.3
+   },
+   "wikidata": {
+    "qid": "Q8533914",
+    "label": "황장산",
+    "dist_m": 188
+   },
+   "srtm": {
+    "new_max_m": 1060,
+    "old_max_m": 659
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "chilbosan-goesan",
+   "name": "칠보산",
+   "elevation_m": 778,
+   "from": [
+    36.7,
+    127.955
+   ],
+   "to": [
+    36.740046,
+    127.927847
+   ],
+   "moved_m": 5068,
+   "osm": {
+    "node": 4923028621,
+    "name": "칠보산",
+    "ele": 779
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 751,
+    "old_max_m": 858
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "munamsan",
+   "name": "문암산",
+   "elevation_m": 1146,
+   "from": [
+    37.7986,
+    128.4283
+   ],
+   "to": [
+    37.782801,
+    128.377028
+   ],
+   "moved_m": 4836,
+   "osm": {
+    "node": 7972716214,
+    "name": "석화산",
+    "ele": 1149
+   },
+   "wikidata": {
+    "qid": "Q27311827",
+    "label": "문암산",
+    "dist_m": 34
+   },
+   "srtm": {
+    "new_max_m": 1132,
+    "old_max_m": 862
+   },
+   "note": "이름이 같은 OSM 노드 문암산(1165m)는 등록 고도와 맞지 않아 쓰지 않음",
+   "rule": "wikidata+osm-ele"
+  },
+  {
+   "id": "dalmasan-haenam",
+   "name": "달마산",
+   "elevation_m": 489,
+   "from": [
+    34.421,
+    126.602
+   ],
+   "to": [
+    34.382558,
+    126.585218
+   ],
+   "moved_m": 4543,
+   "osm": {
+    "node": 7972724258,
+    "name": "달마산",
+    "ele": 489
+   },
+   "wikidata": {
+    "qid": "Q27267200",
+    "label": "달마산",
+    "dist_m": 9
+   },
+   "srtm": {
+    "new_max_m": 483,
+    "old_max_m": 114
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gamaksan-wonju",
+   "name": "감악산",
+   "elevation_m": 930,
+   "from": [
+    37.1981,
+    128.1083
+   ],
+   "to": [
+    37.228342,
+    128.142527
+   ],
+   "moved_m": 4527,
+   "osm": {
+    "node": 7630864532,
+    "name": "감악산",
+    "ele": 954
+   },
+   "wikidata": {
+    "qid": "Q27303275",
+    "label": "감악산",
+    "dist_m": 52
+   },
+   "srtm": {
+    "new_max_m": 927,
+    "old_max_m": 482
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "sokrisan",
+   "name": "속리산",
+   "elevation_m": 1058.4,
+   "from": [
+    36.5419,
+    127.8206
+   ],
+   "to": [
+    36.543229,
+    127.870859
+   ],
+   "moved_m": 4492,
+   "osm": {
+    "node": 1862839218,
+    "name": "천왕봉",
+    "ele": 1058.4
+   },
+   "wikidata": {
+    "qid": "Q482720",
+    "label": "속리산",
+    "dist_m": 2826
+   },
+   "srtm": {
+    "new_max_m": 1035,
+    "old_max_m": 409
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "bangjangsan",
+   "name": "방장산",
+   "elevation_m": 733.6,
+   "from": [
+    35.4175,
+    126.7555
+   ],
+   "to": [
+    35.455717,
+    126.754361
+   ],
+   "moved_m": 4251,
+   "osm": {
+    "node": 7972724204,
+    "name": "방장산",
+    "ele": 743
+   },
+   "wikidata": {
+    "qid": "Q27273202",
+    "label": "방장산",
+    "dist_m": 37
+   },
+   "srtm": {
+    "new_max_m": 728,
+    "old_max_m": 412
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gwangdeoksan-cheonan",
+   "name": "광덕산",
+   "elevation_m": 699.3,
+   "from": [
+    36.7192,
+    127.0308
+   ],
+   "to": [
+    36.687558,
+    127.027576
+   ],
+   "moved_m": 3530,
+   "osm": {
+    "node": 1833324319,
+    "name": "광덕산",
+    "ele": 700
+   },
+   "wikidata": {
+    "qid": "Q27278307",
+    "label": "광덕산",
+    "dist_m": 49
+   },
+   "srtm": {
+    "new_max_m": 685,
+    "old_max_m": 330
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "bulgapsan-yeonggwang",
+   "name": "불갑산",
+   "elevation_m": 516,
+   "from": [
+    35.211,
+    126.594
+   ],
+   "to": [
+    35.190676,
+    126.564983
+   ],
+   "moved_m": 3473,
+   "osm": {
+    "node": 5468606330,
+    "name": "불갑산 연실봉",
+    "ele": 517.7
+   },
+   "wikidata": {
+    "qid": "Q27270450",
+    "label": "불갑산",
+    "dist_m": 50
+   },
+   "srtm": {
+    "new_max_m": 498,
+    "old_max_m": 114
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gongjaksan",
+   "name": "공작산",
+   "elevation_m": 887.4,
+   "from": [
+    37.7035,
+    127.9748
+   ],
+   "to": [
+    37.715958,
+    128.010665
+   ],
+   "moved_m": 3446,
+   "osm": {
+    "node": 5182674321,
+    "name": "공작산",
+    "ele": 887
+   },
+   "wikidata": {
+    "qid": "Q626966",
+    "label": "공작산",
+    "dist_m": 74
+   },
+   "srtm": {
+    "new_max_m": 853,
+    "old_max_m": 420
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "jeamsan",
+   "name": "제암산",
+   "elevation_m": 807,
+   "from": [
+    34.7386,
+    126.9906
+   ],
+   "to": [
+    34.709747,
+    126.977309
+   ],
+   "moved_m": 3431,
+   "osm": {
+    "node": 7800336947,
+    "name": "제암산",
+    "ele": 807
+   },
+   "wikidata": {
+    "qid": "Q27289014",
+    "label": "제암산",
+    "dist_m": 131
+   },
+   "srtm": {
+    "new_max_m": 776,
+    "old_max_m": 251
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "yongbongsan-hongseong",
+   "name": "용봉산",
+   "elevation_m": 381,
+   "from": [
+    36.6198,
+    126.6717
+   ],
+   "to": [
+    36.643704,
+    126.649277
+   ],
+   "moved_m": 3327,
+   "osm": {
+    "node": 7633973681,
+    "name": "용봉산",
+    "ele": 381
+   },
+   "wikidata": {
+    "qid": "Q27264548",
+    "label": "용봉산",
+    "dist_m": 36
+   },
+   "srtm": {
+    "new_max_m": 365,
+    "old_max_m": 42
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "goryeosan",
+   "name": "고려산",
+   "elevation_m": 436,
+   "from": [
+    37.7686,
+    126.4172
+   ],
+   "to": [
+    37.743973,
+    126.43721
+   ],
+   "moved_m": 3255,
+   "osm": {
+    "node": 4663856172,
+    "name": "고려산",
+    "ele": 436.3
+   },
+   "wikidata": {
+    "qid": "Q27280393",
+    "label": "고려산",
+    "dist_m": 27
+   },
+   "srtm": {
+    "new_max_m": 421,
+    "old_max_m": 15
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "noinbong-odaesan",
+   "name": "노인봉",
+   "elevation_m": 1338,
+   "from": [
+    37.7897,
+    128.6083
+   ],
+   "to": [
+    37.782627,
+    128.639816
+   ],
+   "moved_m": 2879,
+   "osm": {
+    "node": 1878890649,
+    "name": "노인봉",
+    "ele": 1338.1
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 1330,
+    "old_max_m": 975
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "deokhangsan",
+   "name": "덕항산",
+   "elevation_m": 1072.9,
+   "from": [
+    37.2833,
+    129.0167
+   ],
+   "to": [
+    37.308788,
+    129.012634
+   ],
+   "moved_m": 2857,
+   "osm": {
+    "node": 1873819543,
+    "name": "덕항산",
+    "ele": 1072.5
+   },
+   "wikidata": {
+    "qid": "Q27308251",
+    "label": "덕항산",
+    "dist_m": 86
+   },
+   "srtm": {
+    "new_max_m": 1066,
+    "old_max_m": 750
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "garisan",
+   "name": "가리산",
+   "elevation_m": 1050.9,
+   "from": [
+    37.8583,
+    127.9833
+   ],
+   "to": [
+    37.871383,
+    127.956469
+   ],
+   "moved_m": 2768,
+   "osm": {
+    "node": 7972724186,
+    "name": "가리산",
+    "ele": 1051
+   },
+   "wikidata": {
+    "qid": "Q626077",
+    "label": "가리산",
+    "dist_m": 7
+   },
+   "srtm": {
+    "new_max_m": 1012,
+    "old_max_m": 503
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gayasan-chungnam",
+   "name": "가야산",
+   "elevation_m": 678,
+   "from": [
+    36.6931,
+    126.6339
+   ],
+   "to": [
+    36.706621,
+    126.608324
+   ],
+   "moved_m": 2731,
+   "osm": {
+    "node": 7480263578,
+    "name": "가야산 가야봉",
+    "ele": 678
+   },
+   "wikidata": {
+    "qid": "Q27281103",
+    "label": "가야산",
+    "dist_m": 283
+   },
+   "srtm": {
+    "new_max_m": 655,
+    "old_max_m": 232
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "deokryongsan-gangjin",
+   "name": "덕룡산",
+   "elevation_m": 433,
+   "from": [
+    34.5622,
+    126.7042
+   ],
+   "to": [
+    34.538521,
+    126.699179
+   ],
+   "moved_m": 2673,
+   "osm": {
+    "node": 6226717123,
+    "name": "덕룡산",
+    "ele": 432.8
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 391,
+    "old_max_m": 139
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "yonghwasan",
+   "name": "용화산",
+   "elevation_m": 877.8,
+   "from": [
+    38.0225,
+    127.7685
+   ],
+   "to": [
+    38.038193,
+    127.747992
+   ],
+   "moved_m": 2504,
+   "osm": {
+    "node": 7972716191,
+    "name": "용화산",
+    "ele": 877.8
+   },
+   "wikidata": {
+    "qid": "Q8055011",
+    "label": "용화산",
+    "dist_m": 456
+   },
+   "srtm": {
+    "new_max_m": 861,
+    "old_max_m": 646
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "banyabong-jirisan",
+   "name": "반야봉",
+   "elevation_m": 1732,
+   "from": [
+    35.2989,
+    127.5556
+   ],
+   "to": [
+    35.316311,
+    127.56949
+   ],
+   "moved_m": 2310,
+   "osm": {
+    "node": 444313796,
+    "name": "반야봉",
+    "ele": 1732
+   },
+   "wikidata": {
+    "qid": "Q16219892",
+    "label": "반야봉",
+    "dist_m": 5237
+   },
+   "srtm": {
+    "new_max_m": 1719,
+    "old_max_m": 1277
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "bulamsan",
+   "name": "불암산",
+   "elevation_m": 508,
+   "from": [
+    37.6432,
+    127.0958
+   ],
+   "to": [
+    37.663648,
+    127.095245
+   ],
+   "moved_m": 2274,
+   "osm": {
+    "node": 7972716239,
+    "name": "불암산",
+    "ele": 508
+   },
+   "wikidata": {
+    "qid": "Q4998105",
+    "label": "불암산",
+    "dist_m": 10868
+   },
+   "srtm": {
+    "new_max_m": 467,
+    "old_max_m": 193
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "myeongseongsan",
+   "name": "명성산",
+   "elevation_m": 922,
+   "from": [
+    38.0883,
+    127.3222
+   ],
+   "to": [
+    38.1043,
+    127.338149
+   ],
+   "moved_m": 2261,
+   "osm": {
+    "node": 5392409440,
+    "name": "명성산",
+    "ele": 922
+   },
+   "wikidata": {
+    "qid": "Q6947377",
+    "label": "명성산",
+    "dist_m": 296
+   },
+   "srtm": {
+    "new_max_m": 907,
+    "old_max_m": 312
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "doraksan",
+   "name": "도락산",
+   "elevation_m": 965.3,
+   "from": [
+    36.8556,
+    128.2861
+   ],
+   "to": [
+    36.856264,
+    128.31128
+   ],
+   "moved_m": 2241,
+   "osm": {
+    "node": 1345461074,
+    "name": "도락산",
+    "ele": 959.7546
+   },
+   "wikidata": {
+    "qid": "Q5297499",
+    "label": "도락산",
+    "dist_m": 38
+   },
+   "srtm": {
+    "new_max_m": 947,
+    "old_max_m": 372
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "namhansan",
+   "name": "남한산",
+   "elevation_m": 522,
+   "from": [
+    37.471043,
+    127.182112
+   ],
+   "to": [
+    37.480594,
+    127.204081
+   ],
+   "moved_m": 2210,
+   "osm": {
+    "node": 5404330941,
+    "name": "남한산",
+    "ele": 522.1
+   },
+   "wikidata": {
+    "qid": "Q10856095",
+    "label": "남한산",
+    "dist_m": 2198
+   },
+   "srtm": {
+    "new_max_m": 518,
+    "old_max_m": 425
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "cheonseongsan",
+   "name": "천성산",
+   "elevation_m": 920.2,
+   "from": [
+    35.4203,
+    129.1122
+   ],
+   "to": [
+    35.401573,
+    129.106282
+   ],
+   "moved_m": 2150,
+   "osm": {
+    "node": 7972716269,
+    "name": "천성산(원효봉)",
+    "ele": 920.2
+   },
+   "wikidata": {
+    "qid": "Q5091685",
+    "label": "천성산",
+    "dist_m": 2148
+   },
+   "srtm": {
+    "new_max_m": 910,
+    "old_max_m": 436
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "dongaksan-gokseong",
+   "name": "동악산",
+   "elevation_m": 735,
+   "from": [
+    35.2985,
+    127.2635
+   ],
+   "to": [
+    35.281944,
+    127.252008
+   ],
+   "moved_m": 2116,
+   "osm": {
+    "node": 7972724200,
+    "name": "동악산시루봉",
+    "ele": 735
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 723,
+    "old_max_m": 385
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "mudeungsan",
+   "name": "무등산",
+   "elevation_m": 1186.8,
+   "from": [
+    35.1342,
+    126.9885
+   ],
+   "to": [
+    35.125039,
+    127.008573
+   ],
+   "moved_m": 2090,
+   "osm": {
+    "node": 5204274494,
+    "name": "무등산(천왕봉)",
+    "ele": 1186.8
+   },
+   "wikidata": {
+    "qid": "Q27275677",
+    "label": "무등산",
+    "dist_m": 85
+   },
+   "srtm": {
+    "new_max_m": 1174,
+    "old_max_m": 736
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "hwawangsan",
+   "name": "화왕산",
+   "elevation_m": 757.7,
+   "from": [
+    35.5286,
+    128.5303
+   ],
+   "to": [
+    35.547148,
+    128.531694
+   ],
+   "moved_m": 2066,
+   "osm": {
+    "node": 5382414737,
+    "name": "화왕산",
+    "ele": 757.7
+   },
+   "wikidata": {
+    "qid": "Q5952091",
+    "label": "화왕산",
+    "dist_m": 120
+   },
+   "srtm": {
+    "new_max_m": 734,
+    "old_max_m": 592
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "chuwolsan",
+   "name": "추월산",
+   "elevation_m": 731.2,
+   "from": [
+    35.4165,
+    126.9855
+   ],
+   "to": [
+    35.39993,
+    126.97604
+   ],
+   "moved_m": 2032,
+   "osm": {
+    "node": 7972724262,
+    "name": "추월산",
+    "ele": 731.2
+   },
+   "wikidata": {
+    "qid": "Q5118414",
+    "label": "추월산",
+    "dist_m": 96
+   },
+   "srtm": {
+    "new_max_m": 712,
+    "old_max_m": 263
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "chukryeongsan-namyangju",
+   "name": "축령산",
+   "elevation_m": 887.1,
+   "from": [
+    37.7697,
+    127.3336
+   ],
+   "to": [
+    37.752763,
+    127.333886
+   ],
+   "moved_m": 1883,
+   "osm": {
+    "node": 443204531,
+    "name": "축령산",
+    "ele": 879
+   },
+   "wikidata": {
+    "qid": "Q5116393",
+    "label": "축령산 (경기)",
+    "dist_m": 73
+   },
+   "srtm": {
+    "new_max_m": 869,
+    "old_max_m": 448
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "baekamsan",
+   "name": "백암산",
+   "elevation_m": 741.2,
+   "from": [
+    35.4736,
+    126.8547
+   ],
+   "to": [
+    35.46128,
+    126.868469
+   ],
+   "moved_m": 1852,
+   "osm": {
+    "node": 5382153299,
+    "name": "백암산(상왕봉)",
+    "ele": 741.2
+   },
+   "wikidata": {
+    "qid": "Q27292863",
+    "label": "백암산",
+    "dist_m": 66
+   },
+   "srtm": {
+    "new_max_m": 721,
+    "old_max_m": 499
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "duryunsan",
+   "name": "두륜산",
+   "elevation_m": 700,
+   "from": [
+    34.4736,
+    126.6178
+   ],
+   "to": [
+    34.471912,
+    126.637567
+   ],
+   "moved_m": 1822,
+   "osm": {
+    "node": 1479832159,
+    "name": "두륜산(가련봉)",
+    "ele": 703
+   },
+   "wikidata": {
+    "qid": "Q5316834",
+    "label": "두륜산",
+    "dist_m": 98
+   },
+   "srtm": {
+    "new_max_m": 666,
+    "old_max_m": 202
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "unmunsan",
+   "name": "운문산",
+   "elevation_m": 1195.1,
+   "from": [
+    35.6317,
+    128.9628
+   ],
+   "to": [
+    35.61551,
+    128.959663
+   ],
+   "moved_m": 1822,
+   "osm": {
+    "node": 6474733400,
+    "name": "운문산",
+    "ele": 1195.1
+   },
+   "wikidata": {
+    "qid": "Q7897128",
+    "label": "운문산",
+    "dist_m": 95
+   },
+   "srtm": {
+    "new_max_m": 1185,
+    "old_max_m": 505
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "juwangsan",
+   "name": "주왕산",
+   "elevation_m": 722.1,
+   "from": [
+    36.4003,
+    129.1486
+   ],
+   "to": [
+    36.389355,
+    129.162386
+   ],
+   "moved_m": 1733,
+   "osm": {
+    "node": 5750034489,
+    "name": "주왕산 주봉",
+    "ele": 721
+   },
+   "wikidata": {
+    "qid": "Q6319107",
+    "label": "주왕산",
+    "dist_m": 24
+   },
+   "srtm": {
+    "new_max_m": 712,
+    "old_max_m": 472
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "cheongwansan",
+   "name": "천관산",
+   "elevation_m": 724.3,
+   "from": [
+    34.528,
+    126.902
+   ],
+   "to": [
+    34.531727,
+    126.91966
+   ],
+   "moved_m": 1670,
+   "osm": {
+    "node": 3810195917,
+    "name": "천관산연대봉",
+    "ele": 723
+   },
+   "wikidata": {
+    "qid": "Q5091668",
+    "label": "천관산",
+    "dist_m": 355
+   },
+   "srtm": {
+    "new_max_m": 713,
+    "old_max_m": 427
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "seorisan",
+   "name": "서리산",
+   "elevation_m": 832,
+   "from": [
+    37.7539,
+    127.3128
+   ],
+   "to": [
+    37.76852,
+    127.316081
+   ],
+   "moved_m": 1651,
+   "osm": {
+    "node": 7972716233,
+    "name": "서리산",
+    "ele": 825
+   },
+   "wikidata": {
+    "qid": "Q27290834",
+    "label": "서리산",
+    "dist_m": 11
+   },
+   "srtm": {
+    "new_max_m": 823,
+    "old_max_m": 359
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "daedunsan",
+   "name": "대둔산",
+   "elevation_m": 878.9,
+   "from": [
+    36.1358,
+    127.3085
+   ],
+   "to": [
+    36.124594,
+    127.320477
+   ],
+   "moved_m": 1646,
+   "osm": {
+    "node": 3819433157,
+    "name": "대둔산",
+    "ele": 878.9
+   },
+   "wikidata": {
+    "qid": "Q5208179",
+    "label": "대둔산",
+    "dist_m": 572
+   },
+   "srtm": {
+    "new_max_m": 845,
+    "old_max_m": 435
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "mireuksan",
+   "name": "미륵산",
+   "elevation_m": 458.4,
+   "from": [
+    34.8231,
+    128.4258
+   ],
+   "to": [
+    34.810664,
+    128.416114
+   ],
+   "moved_m": 1641,
+   "osm": {
+    "node": 5376903442,
+    "name": "미륵산",
+    "ele": 458
+   },
+   "wikidata": {
+    "qid": "Q6873183",
+    "label": "미륵산 (경상남도)",
+    "dist_m": 84
+   },
+   "srtm": {
+    "new_max_m": 435,
+    "old_max_m": 77
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "chilgapsan",
+   "name": "칠갑산",
+   "elevation_m": 559.7,
+   "from": [
+    36.4275,
+    126.8858
+   ],
+   "to": [
+    36.413023,
+    126.884882
+   ],
+   "moved_m": 1612,
+   "osm": {
+    "node": 5377252847,
+    "name": "칠갑산",
+    "ele": 560
+   },
+   "wikidata": {
+    "qid": "Q5098908",
+    "label": "칠갑산",
+    "dist_m": 36
+   },
+   "srtm": {
+    "new_max_m": 542,
+    "old_max_m": 428
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "dutasan",
+   "name": "두타산",
+   "elevation_m": 1357,
+   "from": [
+    37.4372,
+    129.0169
+   ],
+   "to": [
+    37.426637,
+    129.004425
+   ],
+   "moved_m": 1610,
+   "osm": {
+    "node": 1873819548,
+    "name": "두타산",
+    "ele": 1352.7
+   },
+   "wikidata": {
+    "qid": "Q27266902",
+    "label": "두타산",
+    "dist_m": 48
+   },
+   "srtm": {
+    "new_max_m": 1353,
+    "old_max_m": 734
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "muhaksan",
+   "name": "무학산",
+   "elevation_m": 761.4,
+   "from": [
+    35.1961,
+    128.535
+   ],
+   "to": [
+    35.210107,
+    128.535514
+   ],
+   "moved_m": 1558,
+   "osm": {
+    "node": 1892296102,
+    "name": "무학산",
+    "ele": 761.1
+   },
+   "wikidata": {
+    "qid": "Q624473",
+    "label": "무학산",
+    "dist_m": 109
+   },
+   "srtm": {
+    "new_max_m": 746,
+    "old_max_m": 376
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "geumsan",
+   "name": "금산",
+   "elevation_m": 704.9,
+   "from": [
+    34.7407,
+    127.9836
+   ],
+   "to": [
+    34.753798,
+    127.982936
+   ],
+   "moved_m": 1458,
+   "osm": {
+    "node": 2608238467,
+    "name": "금산",
+    "ele": 705
+   },
+   "wikidata": {
+    "qid": "Q27279494",
+    "label": "금산",
+    "dist_m": 43
+   },
+   "srtm": {
+    "new_max_m": 691,
+    "old_max_m": 152
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "baekunsan-pocheon",
+   "name": "백운산",
+   "elevation_m": 903,
+   "from": [
+    38.0847,
+    127.4547
+   ],
+   "to": [
+    38.074935,
+    127.444531
+   ],
+   "moved_m": 1404,
+   "osm": {
+    "node": 5150951221,
+    "name": "백운산",
+    "ele": 903
+   },
+   "wikidata": {
+    "qid": "Q4841233",
+    "label": "백운산",
+    "dist_m": 40
+   },
+   "srtm": {
+    "new_max_m": 894,
+    "old_max_m": 717
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "surisan",
+   "name": "수리산",
+   "elevation_m": 475,
+   "from": [
+    37.3722,
+    126.9297
+   ],
+   "to": [
+    37.372888,
+    126.913944
+   ],
+   "moved_m": 1394,
+   "osm": {
+    "node": 7972716189,
+    "name": "태을봉",
+    "ele": 489
+   },
+   "wikidata": {
+    "qid": "Q16180387",
+    "label": "수리산",
+    "dist_m": 111
+   },
+   "srtm": {
+    "new_max_m": 477,
+    "old_max_m": 85
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "suraksan-seoul",
+   "name": "수락산",
+   "elevation_m": 638,
+   "from": [
+    37.6875,
+    127.0817
+   ],
+   "to": [
+    37.699264,
+    127.08134
+   ],
+   "moved_m": 1309,
+   "osm": {
+    "node": 3803846068,
+    "name": "수락산",
+    "ele": 638
+   },
+   "wikidata": {
+    "qid": "Q626151",
+    "label": "수락산",
+    "dist_m": 357
+   },
+   "srtm": {
+    "new_max_m": 608,
+    "old_max_m": 373
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "byeongpungsan",
+   "name": "병풍산",
+   "elevation_m": 822,
+   "from": [
+    35.316733,
+    126.895162
+   ],
+   "to": [
+    35.324716,
+    126.885702
+   ],
+   "moved_m": 1235,
+   "osm": {
+    "node": 7972716266,
+    "name": "병풍산",
+    "ele": 822
+   },
+   "wikidata": {
+    "qid": "Q27270509",
+    "label": "병풍산",
+    "dist_m": 49
+   },
+   "srtm": {
+    "new_max_m": 801,
+    "old_max_m": 259
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "yeonhwasan",
+   "name": "연화산",
+   "elevation_m": 524,
+   "from": [
+    35.0783,
+    128.2739
+   ],
+   "to": [
+    35.071034,
+    128.265036
+   ],
+   "moved_m": 1142,
+   "osm": {
+    "node": 5377096878,
+    "name": "연화산",
+    "ele": 524
+   },
+   "wikidata": {
+    "qid": "Q8052475",
+    "label": "연화산 (경남)",
+    "dist_m": 26
+   },
+   "srtm": {
+    "new_max_m": 517,
+    "old_max_m": 174
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "soyosan",
+   "name": "소요산",
+   "elevation_m": 587.5,
+   "from": [
+    37.9485,
+    127.0875
+   ],
+   "to": [
+    37.938516,
+    127.087934
+   ],
+   "moved_m": 1111,
+   "osm": {
+    "node": 5379626566,
+    "name": "소요산",
+    "ele": 587.5
+   },
+   "wikidata": {
+    "qid": "Q623938",
+    "label": "소요산",
+    "dist_m": 390
+   },
+   "srtm": {
+    "new_max_m": 563,
+    "old_max_m": 427
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "manisan",
+   "name": "마니산",
+   "elevation_m": 472.1,
+   "from": [
+    37.6114,
+    126.4405
+   ],
+   "to": [
+    37.615542,
+    126.429683
+   ],
+   "moved_m": 1058,
+   "osm": {
+    "node": 1943766210,
+    "name": "마니산",
+    "ele": 469
+   },
+   "wikidata": {
+    "qid": "Q624003",
+    "label": "마니산",
+    "dist_m": 345
+   },
+   "srtm": {
+    "new_max_m": 461,
+    "old_max_m": 374
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "hwangseoksan",
+   "name": "황석산",
+   "elevation_m": 1192.5,
+   "from": [
+    35.6558,
+    127.7669
+   ],
+   "to": [
+    35.655117,
+    127.755484
+   ],
+   "moved_m": 1034,
+   "osm": {
+    "node": 5403644213,
+    "name": "황석산",
+    "ele": 1192.5
+   },
+   "wikidata": {
+    "qid": "Q5952055",
+    "label": "황석산",
+    "dist_m": 251
+   },
+   "srtm": {
+    "new_max_m": 1156,
+    "old_max_m": 975
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "cheonggyesan-seoul",
+   "name": "청계산",
+   "elevation_m": 618,
+   "from": [
+    37.4177,
+    127.0533
+   ],
+   "to": [
+    37.421899,
+    127.043217
+   ],
+   "moved_m": 1005,
+   "osm": {
+    "node": 2668340883,
+    "name": "청계산",
+    "ele": 618
+   },
+   "wikidata": {
+    "qid": "Q5091636",
+    "label": "청계산",
+    "dist_m": 875
+   },
+   "srtm": {
+    "new_max_m": 615,
+    "old_max_m": 399
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "myeongjisan",
+   "name": "명지산",
+   "elevation_m": 1252.3,
+   "from": [
+    37.932903,
+    127.430799
+   ],
+   "to": [
+    37.94148,
+    127.432145
+   ],
+   "moved_m": 961,
+   "osm": {
+    "node": 7972724215,
+    "name": "명지산",
+    "ele": 1252.3
+   },
+   "wikidata": {
+    "qid": "Q8528363",
+    "label": "명지산",
+    "dist_m": 974
+   },
+   "srtm": {
+    "new_max_m": 1244,
+    "old_max_m": 1232
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "bukhansan",
+   "name": "북한산",
+   "elevation_m": 835.6,
+   "from": [
+    37.6588,
+    126.9877
+   ],
+   "to": [
+    37.65863,
+    126.978003
+   ],
+   "moved_m": 854,
+   "osm": {
+    "node": 5515194671,
+    "name": "북한산(백운대)",
+    "ele": 835.57
+   },
+   "wikidata": {
+    "qid": "Q494652",
+    "label": "북한산",
+    "dist_m": 1372
+   },
+   "srtm": {
+    "new_max_m": 810,
+    "old_max_m": 443
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "gyebangsan",
+   "name": "계방산",
+   "elevation_m": 1579.1,
+   "from": [
+    37.7315,
+    128.4571
+   ],
+   "to": [
+    37.728339,
+    128.465497
+   ],
+   "moved_m": 818,
+   "osm": {
+    "node": 7972724285,
+    "name": "계방산",
+    "ele": 1579.1
+   },
+   "wikidata": {
+    "qid": "Q623665",
+    "label": "계방산",
+    "dist_m": 5
+   },
+   "srtm": {
+    "new_max_m": 1569,
+    "old_max_m": 1490
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "geumsusan",
+   "name": "금수산",
+   "elevation_m": 1015.8,
+   "from": [
+    36.9808,
+    128.2492
+   ],
+   "to": [
+    36.984726,
+    128.256909
+   ],
+   "moved_m": 812,
+   "osm": {
+    "node": 7972716201,
+    "name": "금수산",
+    "ele": 1015.8
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 998,
+    "old_max_m": 602
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "gitdaebong",
+   "name": "깃대봉",
+   "elevation_m": 360.7,
+   "from": [
+    34.6897,
+    125.2016
+   ],
+   "to": [
+    34.696875,
+    125.203186
+   ],
+   "moved_m": 811,
+   "osm": {
+    "node": 5376883809,
+    "name": "깃대봉",
+    "ele": 368
+   },
+   "wikidata": {
+    "qid": "Q5565075",
+    "label": "깃대봉 (홍도)",
+    "dist_m": 237
+   },
+   "srtm": {
+    "new_max_m": 336,
+    "old_max_m": 243
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "jinaksan",
+   "name": "진악산",
+   "elevation_m": 732,
+   "from": [
+    36.081,
+    127.451
+   ],
+   "to": [
+    36.077708,
+    127.458569
+   ],
+   "moved_m": 772,
+   "osm": {
+    "node": 7972716241,
+    "name": "진악산",
+    "ele": 732
+   },
+   "wikidata": {
+    "qid": "Q27288654",
+    "label": "진악산",
+    "dist_m": 23
+   },
+   "srtm": {
+    "new_max_m": 716,
+    "old_max_m": 550
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "baekunsan-jeongseon",
+   "name": "백운산",
+   "elevation_m": 883.5,
+   "from": [
+    37.2835,
+    128.6035
+   ],
+   "to": [
+    37.27999,
+    128.59609
+   ],
+   "moved_m": 763,
+   "osm": {
+    "node": 5391069867,
+    "name": "백운산",
+    "ele": 883.5
+   },
+   "wikidata": {
+    "qid": "Q27304085",
+    "label": "백운산",
+    "dist_m": 23
+   },
+   "srtm": {
+    "new_max_m": 865,
+    "old_max_m": 565
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "chiaksan",
+   "name": "치악산",
+   "elevation_m": 1282,
+   "from": [
+    37.3717,
+    128.0531
+   ],
+   "to": [
+    37.365145,
+    128.055632
+   ],
+   "moved_m": 762,
+   "osm": {
+    "node": 3805445347,
+    "name": "치악산(비로봉)",
+    "ele": 1228
+   },
+   "wikidata": {
+    "qid": "Q5095160",
+    "label": "치악산",
+    "dist_m": 35
+   },
+   "srtm": {
+    "new_max_m": 1254,
+    "old_max_m": 1045
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "naejangsan",
+   "name": "내장산",
+   "elevation_m": 763.5,
+   "from": [
+    35.4833,
+    126.8833
+   ],
+   "to": [
+    35.478332,
+    126.888987
+   ],
+   "moved_m": 755,
+   "osm": {
+    "node": 5750036192,
+    "name": "내장산(신선봉)",
+    "ele": 763
+   },
+   "wikidata": {
+    "qid": "Q626648",
+    "label": "내장산",
+    "dist_m": 756
+   },
+   "srtm": {
+    "new_max_m": 753,
+    "old_max_m": 648
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "seonunsan",
+   "name": "선운산",
+   "elevation_m": 334.7,
+   "from": [
+    35.4998,
+    126.5772
+   ],
+   "to": [
+    35.49868,
+    126.56899
+   ],
+   "moved_m": 754,
+   "osm": {
+    "node": 5385294849,
+    "name": "선운산",
+    "ele": 334.7
+   },
+   "wikidata": {
+    "qid": "Q7451618",
+    "label": "선운산",
+    "dist_m": 1060
+   },
+   "srtm": {
+    "new_max_m": 317,
+    "old_max_m": 104
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "joryeongsan-mungyeong",
+   "name": "조령산",
+   "elevation_m": 1026,
+   "from": [
+    36.76667,
+    128.05
+   ],
+   "to": [
+    36.771422,
+    128.044294
+   ],
+   "moved_m": 733,
+   "osm": {
+    "node": 1865098591,
+    "name": "조령산",
+    "ele": 1025
+   },
+   "wikidata": {
+    "qid": "Q27286135",
+    "label": "조령산",
+    "dist_m": 32
+   },
+   "srtm": {
+    "new_max_m": 1008,
+    "old_max_m": 734
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gubongsan-jinan",
+   "name": "구봉산",
+   "elevation_m": 1002,
+   "from": [
+    35.9167,
+    127.4167
+   ],
+   "to": [
+    35.923064,
+    127.416646
+   ],
+   "moved_m": 708,
+   "osm": {
+    "node": 7663180068,
+    "name": "구봉산",
+    "ele": 1002
+   },
+   "wikidata": {
+    "qid": "Q12585452",
+    "label": "구봉산 (전라북도)",
+    "dist_m": 22
+   },
+   "srtm": {
+    "new_max_m": 984,
+    "old_max_m": 807
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "baekunsan-gwangyang",
+   "name": "백운산",
+   "elevation_m": 1222.2,
+   "from": [
+    35.1123,
+    127.6203
+   ],
+   "to": [
+    35.106378,
+    127.621325
+   ],
+   "moved_m": 665,
+   "osm": {
+    "node": 2017973660,
+    "name": "백운산",
+    "ele": 1222
+   },
+   "wikidata": {
+    "qid": "Q625808",
+    "label": "백운산",
+    "dist_m": 31
+   },
+   "srtm": {
+    "new_max_m": 1201,
+    "old_max_m": 948
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "geumjeongsan",
+   "name": "금정산",
+   "elevation_m": 800.8,
+   "from": [
+    35.2836,
+    129.0447
+   ],
+   "to": [
+    35.28015,
+    129.050617
+   ],
+   "moved_m": 660,
+   "osm": {
+    "node": 1431796378,
+    "name": "금정산(고당봉)",
+    "ele": 801.5
+   },
+   "wikidata": {
+    "qid": "Q27290061",
+    "label": "금정산",
+    "dist_m": 385
+   },
+   "srtm": {
+    "new_max_m": 774,
+    "old_max_m": 549
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gamaksan-paju",
+   "name": "감악산",
+   "elevation_m": 674.9,
+   "from": [
+    37.9436,
+    126.9636
+   ],
+   "to": [
+    37.941156,
+    126.970076
+   ],
+   "moved_m": 630,
+   "osm": {
+    "node": 4867285021,
+    "name": "감악산",
+    "ele": 674
+   },
+   "wikidata": {
+    "qid": "Q27290854",
+    "label": "감악산",
+    "dist_m": 115
+   },
+   "srtm": {
+    "new_max_m": 662,
+    "old_max_m": 516
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gyeryongsan",
+   "name": "계룡산",
+   "elevation_m": 846.5,
+   "from": [
+    36.342,
+    127.213
+   ],
+   "to": [
+    36.342362,
+    127.20604
+   ],
+   "moved_m": 625,
+   "osm": {
+    "node": 7609103069,
+    "name": "계룡산천황봉",
+    "ele": 846
+   },
+   "wikidata": {
+    "qid": "Q27278382",
+    "label": "계룡산",
+    "dist_m": 24
+   },
+   "srtm": {
+    "new_max_m": 828,
+    "old_max_m": 653
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gwanggyosan",
+   "name": "광교산",
+   "elevation_m": 582,
+   "from": [
+    37.343004,
+    127.028003
+   ],
+   "to": [
+    37.34494,
+    127.034443
+   ],
+   "moved_m": 609,
+   "osm": {
+    "node": 445993704,
+    "name": "광교산 시루봉",
+    "ele": 582
+   },
+   "wikidata": {
+    "qid": "Q27278313",
+    "label": "광교산",
+    "dist_m": 25
+   },
+   "srtm": {
+    "new_max_m": 565,
+    "old_max_m": 382
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "sinmusan",
+   "name": "신무산",
+   "elevation_m": 897,
+   "from": [
+    35.588,
+    127.483
+   ],
+   "to": [
+    35.592586,
+    127.486547
+   ],
+   "moved_m": 602,
+   "osm": {
+    "node": 10250399019,
+    "name": "신무산",
+    "ele": 897.6
+   },
+   "wikidata": {
+    "qid": "Q27312875",
+    "label": "신무산",
+    "dist_m": 14
+   },
+   "srtm": {
+    "new_max_m": 884,
+    "old_max_m": 736
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "seonginbong",
+   "name": "성인봉",
+   "elevation_m": 986.5,
+   "from": [
+    37.50333,
+    130.86611
+   ],
+   "to": [
+    37.498006,
+    130.867047
+   ],
+   "moved_m": 598,
+   "osm": {
+    "node": 6392077595,
+    "name": "성인봉",
+    "ele": 986
+   },
+   "wikidata": {
+    "qid": "Q7451593",
+    "label": "성인봉",
+    "dist_m": 468
+   },
+   "srtm": {
+    "new_max_m": 964,
+    "old_max_m": 718
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "cheongryangsan",
+   "name": "청량산",
+   "elevation_m": 869.7,
+   "from": [
+    36.7975,
+    128.9139
+   ],
+   "to": [
+    36.794438,
+    128.90882
+   ],
+   "moved_m": 566,
+   "osm": {
+    "node": 5389019143,
+    "name": "청량산 장인봉",
+    "ele": 869
+   },
+   "wikidata": {
+    "qid": "Q5091652",
+    "label": "청량산",
+    "dist_m": 1649
+   },
+   "srtm": {
+    "new_max_m": 857,
+    "old_max_m": 629
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "namsan-gyeongju",
+   "name": "남산",
+   "elevation_m": 495.1,
+   "from": [
+    35.7686,
+    129.2196
+   ],
+   "to": [
+    35.76756,
+    129.22529
+   ],
+   "moved_m": 526,
+   "osm": {
+    "node": 5376919634,
+    "name": "고위봉",
+    "ele": 495.1
+   },
+   "wikidata": {
+    "qid": "Q489229",
+    "label": "남산",
+    "dist_m": 60
+   },
+   "srtm": {
+    "new_max_m": 485,
+    "old_max_m": 342
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "daeamsan",
+   "name": "대암산",
+   "elevation_m": 1312.6,
+   "from": [
+    38.2083,
+    128.1303
+   ],
+   "to": [
+    38.211065,
+    128.134713
+   ],
+   "moved_m": 493,
+   "osm": {
+    "node": 5141269324,
+    "name": "대암산",
+    "ele": 1312.6
+   },
+   "wikidata": {
+    "qid": "Q5208144",
+    "label": "대암산 (강원)",
+    "dist_m": 26
+   },
+   "srtm": {
+    "new_max_m": 1286,
+    "old_max_m": 1137
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "jeombongsan",
+   "name": "점봉산",
+   "elevation_m": 1426,
+   "from": [
+    38.0447,
+    128.4236
+   ],
+   "to": [
+    38.04874,
+    128.425643
+   ],
+   "moved_m": 484,
+   "osm": {
+    "node": 1881933287,
+    "name": "점봉산",
+    "ele": 1424.2
+   },
+   "wikidata": {
+    "qid": "Q27287347",
+    "label": "점봉산",
+    "dist_m": 80
+   },
+   "srtm": {
+    "new_max_m": 1415,
+    "old_max_m": 1268
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "odaesan",
+   "name": "오대산",
+   "elevation_m": 1565.4,
+   "from": [
+    37.79806,
+    128.54306
+   ],
+   "to": [
+    37.793749,
+    128.542654
+   ],
+   "moved_m": 481,
+   "osm": {
+    "node": 1012069796,
+    "name": "비로봉",
+    "ele": 1566
+   },
+   "wikidata": {
+    "qid": "Q491028",
+    "label": "오대산",
+    "dist_m": 480
+   },
+   "srtm": {
+    "new_max_m": 1554,
+    "old_max_m": 1532
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "hwangaksan",
+   "name": "황악산",
+   "elevation_m": 1111.4,
+   "from": [
+    36.1194,
+    127.9714
+   ],
+   "to": [
+    36.118049,
+    127.966796
+   ],
+   "moved_m": 440,
+   "osm": {
+    "node": 1859787923,
+    "name": "황악산",
+    "ele": 1111
+   },
+   "wikidata": {
+    "qid": "Q5951990",
+    "label": "황악산",
+    "dist_m": 32
+   },
+   "srtm": {
+    "new_max_m": 1101,
+    "old_max_m": 1001
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "palgongsan",
+   "name": "팔공산",
+   "elevation_m": 1192.3,
+   "from": [
+    36.0151,
+    128.69977
+   ],
+   "to": [
+    36.016548,
+    128.695323
+   ],
+   "moved_m": 431,
+   "osm": {
+    "node": 5750035647,
+    "name": "팔공산비로봉",
+    "ele": 1193
+   },
+   "wikidata": {
+    "qid": "Q624313",
+    "label": "팔공산",
+    "dist_m": 44
+   },
+   "srtm": {
+    "new_max_m": 1178,
+    "old_max_m": 1044
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "gayasan-hapcheon",
+   "name": "가야산",
+   "elevation_m": 1432.6,
+   "from": [
+    35.8253,
+    128.1197
+   ],
+   "to": [
+    35.822564,
+    128.122943
+   ],
+   "moved_m": 422,
+   "osm": {
+    "node": 5750035918,
+    "name": "가야산칠불봉",
+    "ele": 1433
+   },
+   "wikidata": {
+    "qid": "Q27281101",
+    "label": "가야산",
+    "dist_m": 279
+   },
+   "srtm": {
+    "new_max_m": 1406,
+    "old_max_m": 1361
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "yeongchwisan",
+   "name": "영취산",
+   "elevation_m": 510,
+   "from": [
+    34.8261,
+    127.7183
+   ],
+   "to": [
+    34.829493,
+    127.716378
+   ],
+   "moved_m": 416,
+   "osm": {
+    "node": 12657966418,
+    "name": "영취산진례봉",
+    "ele": 509.6
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 494,
+    "old_max_m": 325
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "geomdansan",
+   "name": "검단산",
+   "elevation_m": 657,
+   "from": [
+    37.520891,
+    127.247086
+   ],
+   "to": [
+    37.517655,
+    127.249354
+   ],
+   "moved_m": 412,
+   "osm": {
+    "node": 446003587,
+    "name": "검단산",
+    "ele": 658
+   },
+   "wikidata": {
+    "qid": "Q5535460",
+    "label": "검단산",
+    "dist_m": 195
+   },
+   "srtm": {
+    "new_max_m": 648,
+    "old_max_m": 616
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "samaksan",
+   "name": "삼악산",
+   "elevation_m": 655.8,
+   "from": [
+    37.83861,
+    127.66389
+   ],
+   "to": [
+    37.839722,
+    127.660371
+   ],
+   "moved_m": 333,
+   "osm": {
+    "node": 5379905196,
+    "name": "삼악산",
+    "ele": 655.8
+   },
+   "wikidata": {
+    "qid": "Q7408508",
+    "label": "삼악산 (강원)",
+    "dist_m": 335
+   },
+   "srtm": {
+    "new_max_m": 638,
+    "old_max_m": 572
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "palbongsan",
+   "name": "팔봉산",
+   "elevation_m": 328.2,
+   "from": [
+    37.69834,
+    127.69922
+   ],
+   "to": [
+    37.695883,
+    127.697119
+   ],
+   "moved_m": 330,
+   "osm": {
+    "node": 7631245833,
+    "name": "팔봉산",
+    "ele": 328
+   },
+   "wikidata": {
+    "qid": "Q27307307",
+    "label": "팔봉산",
+    "dist_m": 40
+   },
+   "srtm": {
+    "new_max_m": 308,
+    "old_max_m": 152
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "taebaeksan",
+   "name": "태백산",
+   "elevation_m": 1566.7,
+   "from": [
+    37.09583,
+    128.91528
+   ],
+   "to": [
+    37.098562,
+    128.916152
+   ],
+   "moved_m": 313,
+   "osm": {
+    "node": 1871881184,
+    "name": "태백산 장군봉",
+    "ele": 1566.7
+   },
+   "wikidata": {
+    "qid": "Q27267526",
+    "label": "태백산",
+    "dist_m": 279
+   },
+   "srtm": {
+    "new_max_m": 1562,
+    "old_max_m": 1537
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "daeyasan",
+   "name": "대야산",
+   "elevation_m": 931,
+   "from": [
+    36.6706,
+    127.9325
+   ],
+   "to": [
+    36.669258,
+    127.929481
+   ],
+   "moved_m": 308,
+   "osm": {
+    "node": 1862839230,
+    "name": "대야산",
+    "ele": 930.7
+   },
+   "wikidata": {
+    "qid": "Q5208296",
+    "label": "대야산",
+    "dist_m": 305
+   },
+   "srtm": {
+    "new_max_m": 907,
+    "old_max_m": 783
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "biseulsan",
+   "name": "비슬산",
+   "elevation_m": 1083.4,
+   "from": [
+    35.7183,
+    128.5236
+   ],
+   "to": [
+    35.715597,
+    128.523184
+   ],
+   "moved_m": 303,
+   "osm": {
+    "node": 7592786296,
+    "name": "비슬산",
+    "ele": 1083
+   },
+   "wikidata": {
+    "qid": "Q4917297",
+    "label": "비슬산",
+    "dist_m": 165
+   },
+   "srtm": {
+    "new_max_m": 1074,
+    "old_max_m": 1043
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "mindungsan",
+   "name": "민둥산",
+   "elevation_m": 1119,
+   "from": [
+    37.27361,
+    128.775
+   ],
+   "to": [
+    37.270936,
+    128.774789
+   ],
+   "moved_m": 298,
+   "osm": {
+    "node": 7972724247,
+    "name": "민둥산",
+    "ele": 1119
+   },
+   "wikidata": {
+    "qid": "Q27304229",
+    "label": "민둥산",
+    "dist_m": 1801
+   },
+   "srtm": {
+    "new_max_m": 1115,
+    "old_max_m": 1065
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "deoksungsan",
+   "name": "덕숭산",
+   "elevation_m": 495.2,
+   "from": [
+    36.6742,
+    126.6231
+   ],
+   "to": [
+    36.671774,
+    126.624339
+   ],
+   "moved_m": 291,
+   "osm": {
+    "node": 5376946871,
+    "name": "덕숭산",
+    "ele": 495
+   },
+   "wikidata": {
+    "qid": "Q5259973",
+    "label": "덕숭산",
+    "dist_m": 560
+   },
+   "srtm": {
+    "new_max_m": 480,
+    "old_max_m": 417
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "hambaeksan-taebaek",
+   "name": "함백산",
+   "elevation_m": 1572.9,
+   "from": [
+    37.1602,
+    128.9147
+   ],
+   "to": [
+    37.161159,
+    128.917602
+   ],
+   "moved_m": 278,
+   "osm": {
+    "node": 1871881179,
+    "name": "함백산",
+    "ele": 1572.3
+   },
+   "wikidata": {
+    "qid": "Q27283639",
+    "label": "함백산",
+    "dist_m": 10
+   },
+   "srtm": {
+    "new_max_m": 1563,
+    "old_max_m": 1497
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "yongmunsan",
+   "name": "용문산",
+   "elevation_m": 1157.1,
+   "from": [
+    37.5622059,
+    127.5518564
+   ],
+   "to": [
+    37.561968,
+    127.549072
+   ],
+   "moved_m": 247,
+   "osm": {
+    "node": 10296666662,
+    "name": "용문산 가섭봉",
+    "ele": 1157.1
+   },
+   "wikidata": {
+    "qid": "Q8055033",
+    "label": "용문산 (경기)",
+    "dist_m": 259
+   },
+   "srtm": {
+    "new_max_m": 1147,
+    "old_max_m": 1056
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "hwangmaesan",
+   "name": "황매산",
+   "elevation_m": 1113.1,
+   "from": [
+    35.49638889,
+    127.97444444
+   ],
+   "to": [
+    35.494236,
+    127.974589
+   ],
+   "moved_m": 240,
+   "osm": {
+    "node": 3426219616,
+    "name": "황매산",
+    "ele": 1113
+   },
+   "wikidata": {
+    "qid": "Q5952045",
+    "label": "황매산",
+    "dist_m": 240
+   },
+   "srtm": {
+    "new_max_m": 1094,
+    "old_max_m": 1098
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "geumdaebong",
+   "name": "금대봉",
+   "elevation_m": 1418,
+   "from": [
+    37.2115,
+    128.9183
+   ],
+   "to": [
+    37.211818,
+    128.916
+   ],
+   "moved_m": 207,
+   "osm": {
+    "node": 7972716197,
+    "name": "금대봉",
+    "ele": 1418.1
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 1418,
+    "old_max_m": 1384
+   },
+   "rule": "osm-name-ele"
+  },
+  {
+   "id": "cheonmasan",
+   "name": "천마산",
+   "elevation_m": 810.3,
+   "from": [
+    37.6807,
+    127.2713
+   ],
+   "to": [
+    37.680211,
+    127.273346
+   ],
+   "moved_m": 188,
+   "osm": {
+    "node": 3169664778,
+    "name": "천마산",
+    "ele": 810.3
+   },
+   "wikidata": {
+    "qid": "Q5091679",
+    "label": "천마산 (남양주)",
+    "dist_m": 63
+   },
+   "srtm": {
+    "new_max_m": 789,
+    "old_max_m": 753
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "sinbulsan",
+   "name": "신불산",
+   "elevation_m": 1159.3,
+   "from": [
+    35.54,
+    129.056
+   ],
+   "to": [
+    35.539413,
+    129.054098
+   ],
+   "moved_m": 184,
+   "osm": {
+    "node": 1475996577,
+    "name": "신불산",
+    "ele": 1209
+   },
+   "wikidata": {
+    "qid": "Q7521890",
+    "label": "신불산",
+    "dist_m": 184
+   },
+   "srtm": {
+    "new_max_m": 1146,
+    "old_max_m": 1113
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "jeoksangsan",
+   "name": "적상산",
+   "elevation_m": 1030.6,
+   "from": [
+    35.9477263,
+    127.69115
+   ],
+   "to": [
+    35.94638,
+    127.69019
+   ],
+   "moved_m": 173,
+   "osm": {
+    "node": 5371885873,
+    "name": "적상산",
+    "ele": 1030
+   },
+   "wikidata": {
+    "qid": "Q8533740",
+    "label": "적상산",
+    "dist_m": 176
+   },
+   "srtm": {
+    "new_max_m": 1025,
+    "old_max_m": 1004
+   },
+   "rule": "osm+wikidata"
+  },
+  {
+   "id": "huiyangsan",
+   "name": "희양산",
+   "elevation_m": 996.4,
+   "from": [
+    36.716,
+    128.005
+   ],
+   "to": [
+    36.714641,
+    128.005065
+   ],
+   "moved_m": 151,
+   "osm": {
+    "node": 1863254729,
+    "name": "희양산",
+    "ele": 996.4
+   },
+   "wikidata": {
+    "qid": "Q5701198",
+    "label": "희양산",
+    "dist_m": 151
+   },
+   "srtm": {
+    "new_max_m": 972,
+    "old_max_m": 966
+   },
+   "rule": "osm+wikidata"
+  }
+ ],
+ "skipped": [
+  {
+   "id": "baekunsan-jangsu",
+   "name": "백운산",
+   "elevation_m": 1279,
+   "from": [
+    35.618333,
+    127.635066
+   ],
+   "to": [
+    35.618507,
+    127.635392
+   ],
+   "moved_m": 35,
+   "osm": {
+    "node": 1843153147,
+    "name": "백운산",
+    "ele": 1279
+   },
+   "wikidata": {
+    "qid": "Q27273123",
+    "label": "백운산",
+    "dist_m": 22
+   },
+   "srtm": {
+    "new_max_m": 1263,
+    "old_max_m": 1264
+   },
+   "reason": "이미 정상 35m 안"
+  },
+  {
+   "id": "bangtaesan",
+   "name": "방태산",
+   "elevation_m": 1445.7,
+   "from": [
+    37.888066,
+    128.389968
+   ],
+   "to": [
+    37.888255,
+    128.39018
+   ],
+   "moved_m": 28,
+   "osm": {
+    "node": 1881933251,
+    "name": "방태산",
+    "ele": 1445.7
+   },
+   "wikidata": {
+    "qid": "Q626912",
+    "label": "방태산",
+    "dist_m": 3122
+   },
+   "srtm": {
+    "new_max_m": 1431,
+    "old_max_m": 1432
+   },
+   "reason": "이미 정상 28m 안"
+  },
+  {
+   "id": "byeonsan",
+   "name": "변산",
+   "reason": "OSM에 이름이 맞는 정상 노드 없음",
+   "names": [
+    "변산"
+   ]
+  },
+  {
+   "id": "cheonhwangsan",
+   "name": "천황산",
+   "elevation_m": 1189,
+   "from": [
+    35.5579,
+    128.9722
+   ],
+   "to": [
+    35.557929,
+    128.972195
+   ],
+   "moved_m": 3,
+   "osm": {
+    "node": 6471732105,
+    "name": "천황산",
+    "ele": 1189
+   },
+   "wikidata": {
+    "qid": "Q27287433",
+    "label": "천황산",
+    "dist_m": 48
+   },
+   "srtm": {
+    "new_max_m": 1176,
+    "old_max_m": 1176
+   },
+   "reason": "이미 정상 3m 안"
+  },
+  {
+   "id": "cheonjusan",
+   "name": "천주산",
+   "elevation_m": 639,
+   "from": [
+    35.27152,
+    128.59124
+   ],
+   "to": [
+    35.271524,
+    128.59124
+   ],
+   "moved_m": 0,
+   "osm": {
+    "node": 1906091858,
+    "name": "천주산(용지봉)",
+    "ele": 639.6
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 625,
+    "old_max_m": 625
+   },
+   "reason": "이미 정상 0m 안"
+  },
+  {
+   "id": "cheonsangdemi",
+   "name": "천상데미",
+   "elevation_m": 1080,
+   "from": [
+    35.69,
+    127.45
+   ],
+   "to": [
+    35.65641,
+    127.47543
+   ],
+   "moved_m": 4385,
+   "osm": {
+    "node": 10250409059,
+    "name": "천상데미봉",
+    "ele": 1077.9
+   },
+   "wikidata": null,
+   "srtm": {
+    "new_max_m": 1069,
+    "old_max_m": 1067
+   },
+   "reason": "근거 부족(고도 차 2.1m, 위키데이터 없음, 지형 새 1069m/옛 1067m)"
+  },
+  {
+   "id": "deokyusan",
+   "name": "덕유산",
+   "elevation_m": 1614.2,
+   "from": [
+    35.85944,
+    127.74722
+   ],
+   "to": [
+    35.860013,
+    127.746518
+   ],
+   "moved_m": 90,
+   "osm": {
+    "node": 444235774,
+    "name": "덕유산 향적봉",
+    "ele": 1614
+   },
+   "wikidata": {
+    "qid": "Q27292844",
+    "label": "덕유산",
+    "dist_m": 49
+   },
+   "srtm": {
+    "new_max_m": 1603,
+    "old_max_m": 1601
+   },
+   "reason": "이미 정상 90m 안"
+  },
+  {
+   "id": "dobongsan",
+   "name": "도봉산",
+   "elevation_m": 740.2,
+   "from": [
+    37.6986,
+    127.0156
+   ],
+   "to": [
+    37.698842,
+    127.015459
+   ],
+   "moved_m": 30,
+   "osm": {
+    "node": 5515194666,
+    "name": "도봉산자운봉",
+    "ele": 740.2
+   },
+   "wikidata": {
+    "qid": "Q626000",
+    "label": "도봉산",
+    "dist_m": 191
+   },
+   "srtm": {
+    "new_max_m": 710,
+    "old_max_m": 714
+   },
+   "reason": "이미 정상 30m 안"
+  },
+  {
+   "id": "gajisan",
+   "name": "가지산",
+   "elevation_m": 1240.9,
+   "from": [
+    35.6203,
+    129.0029
+   ],
+   "to": [
+    35.620286,
+    129.002923
+   ],
+   "moved_m": 3,
+   "osm": {
+    "node": 1931784829,
+    "name": "가지산",
+    "ele": 1240.9
+   },
+   "wikidata": {
+    "qid": "Q5517618",
+    "label": "가지산",
+    "dist_m": 12
+   },
+   "srtm": {
+    "new_max_m": 1224,
+    "old_max_m": 1224
+   },
+   "reason": "이미 정상 3m 안"
+  },
+  {
+   "id": "gariwangsan",
+   "name": "가리왕산",
+   "elevation_m": 1561.9,
+   "from": [
+    37.461267,
+    128.56334
+   ],
+   "to": [
+    37.461434,
+    128.563388
+   ],
+   "moved_m": 19,
+   "osm": {
+    "node": 7972724271,
+    "name": "가리왕산",
+    "ele": 1561
+   },
+   "wikidata": {
+    "qid": "Q5523374",
+    "label": "가리왕산",
+    "dist_m": 7
+   },
+   "srtm": {
+    "new_max_m": 1553,
+    "old_max_m": 1553
+   },
+   "reason": "이미 정상 19m 안"
+  },
+  {
+   "id": "gubyeongsan",
+   "name": "구병산",
+   "elevation_m": 876.3,
+   "from": [
+    36.4703,
+    127.8631
+   ],
+   "to": [
+    36.469583,
+    127.861747
+   ],
+   "moved_m": 145,
+   "osm": {
+    "node": 5255224531,
+    "name": "구병산",
+    "ele": 876.2
+   },
+   "wikidata": {
+    "qid": "Q5614460",
+    "label": "구병산",
+    "dist_m": 17
+   },
+   "srtm": {
+    "new_max_m": 844,
+    "old_max_m": 844
+   },
+   "reason": "이미 정상 145m 안"
+  },
+  {
+   "id": "gwanaksan",
+   "name": "관악산",
+   "elevation_m": 632.2,
+   "from": [
+    37.4447,
+    126.9645
+   ],
+   "to": [
+    37.44514,
+    126.964238
+   ],
+   "moved_m": 54,
+   "osm": {
+    "node": 442878166,
+    "name": "관악산",
+    "ele": 632
+   },
+   "wikidata": {
+    "qid": "Q626275",
+    "label": "관악산",
+    "dist_m": 72
+   },
+   "srtm": {
+    "new_max_m": 616,
+    "old_max_m": 617
+   },
+   "reason": "이미 정상 54m 안"
+  },
+  {
+   "id": "gyeryongsan-geoje",
+   "name": "계룡산",
+   "elevation_m": 566,
+   "from": [
+    34.87109,
+    128.60759
+   ],
+   "to": [
+    34.871094,
+    128.60759
+   ],
+   "moved_m": 0,
+   "osm": {
+    "node": 4828298705,
+    "name": "계룡산",
+    "ele": 570
+   },
+   "wikidata": {
+    "qid": "Q13609916",
+    "label": "계룡산",
+    "dist_m": 44
+   },
+   "srtm": {
+    "new_max_m": 560,
+    "old_max_m": 560
+   },
+   "reason": "이미 정상 0m 안"
+  },
+  {
+   "id": "hanrasan",
+   "name": "한라산",
+   "elevation_m": 1947.3,
+   "from": [
+    33.36167,
+    126.52917
+   ],
+   "to": [
+    33.361754,
+    126.529198
+   ],
+   "moved_m": 10,
+   "osm": {
+    "node": 8334051398,
+    "name": "한라산",
+    "ele": 1947
+   },
+   "wikidata": {
+    "qid": "Q494645",
+    "label": "한라산",
+    "dist_m": 1750
+   },
+   "srtm": {
+    "new_max_m": 1933,
+    "old_max_m": 1934
+   },
+   "reason": "이미 정상 10m 안"
+  },
+  {
+   "id": "hwaaksan-gapyeong",
+   "name": "화악산",
+   "elevation_m": 1468.3,
+   "from": [
+    37.9950113,
+    127.5030992
+   ],
+   "to": [
+    37.99478,
+    127.50333
+   ],
+   "moved_m": 33,
+   "osm": {
+    "node": 5429893547,
+    "name": "화악산 상봉",
+    "ele": 1468.3
+   },
+   "wikidata": {
+    "qid": "Q626975",
+    "label": "화악산",
+    "dist_m": 27
+   },
+   "srtm": {
+    "new_max_m": 1460,
+    "old_max_m": 1460
+   },
+   "reason": "이미 정상 33m 안"
+  },
+  {
+   "id": "ilwolsan",
+   "name": "일월산",
+   "elevation_m": 1219,
+   "from": [
+    36.8033,
+    129.1029
+   ],
+   "to": [
+    36.803279,
+    129.102908
+   ],
+   "moved_m": 2,
+   "osm": {
+    "node": 7972724238,
+    "name": "일월산",
+    "ele": 1219
+   },
+   "wikidata": {
+    "qid": "Q27283894",
+    "label": "일월산",
+    "dist_m": 438
+   },
+   "srtm": {
+    "new_max_m": 1207,
+    "old_max_m": 1208
+   },
+   "reason": "이미 정상 2m 안"
+  },
+  {
+   "id": "jaeyaksan",
+   "name": "재약산",
+   "elevation_m": 1119.1,
+   "from": [
+    35.54666667,
+    128.98055556
+   ],
+   "to": [
+    35.545424,
+    128.980616
+   ],
+   "moved_m": 138,
+   "osm": {
+    "node": 7972724274,
+    "name": "재약산",
+    "ele": 1119
+   },
+   "wikidata": {
+    "qid": "Q6121735",
+    "label": "재약산",
+    "dist_m": 138
+   },
+   "srtm": {
+    "new_max_m": 1097,
+    "old_max_m": 1094
+   },
+   "reason": "이미 정상 138m 안"
+  },
+  {
+   "id": "jirisan",
+   "name": "지리산",
+   "elevation_m": 1915.4,
+   "from": [
+    35.33694,
+    127.73056
+   ],
+   "to": [
+    35.336954,
+    127.730591
+   ],
+   "moved_m": 3,
+   "osm": {
+    "node": 307955533,
+    "name": "천왕봉",
+    "ele": 1918
+   },
+   "wikidata": {
+    "qid": "Q483204",
+    "label": "지리산",
+    "dist_m": 3
+   },
+   "srtm": {
+    "new_max_m": 1898,
+    "old_max_m": 1898
+   },
+   "reason": "이미 정상 3m 안"
+  },
+  {
+   "id": "jirisan-tongyeong",
+   "name": "지리산",
+   "elevation_m": 399.3,
+   "from": [
+    34.8475,
+    128.2222
+   ],
+   "to": [
+    34.845933,
+    128.182163
+   ],
+   "moved_m": 3658,
+   "osm": {
+    "node": 5376906399,
+    "name": "지리산",
+    "ele": 368
+   },
+   "wikidata": {
+    "qid": "Q6203068",
+    "label": "지리산 (통영)",
+    "dist_m": 1492
+   },
+   "srtm": {
+    "new_max_m": 361,
+    "old_max_m": 140
+   },
+   "reason": "근거 부족(고도 차 31.3m, 위키데이터 1492m, 지형 새 361m/옛 140m)"
+  },
+  {
+   "id": "jogyesan",
+   "name": "조계산",
+   "elevation_m": 887.3,
+   "from": [
+    35.0025921,
+    127.3135542
+   ],
+   "to": [
+    35.001304,
+    127.313627
+   ],
+   "moved_m": 143,
+   "osm": {
+    "node": 2321410475,
+    "name": "조계산",
+    "ele": 884
+   },
+   "wikidata": {
+    "qid": "Q6214838",
+    "label": "조계산",
+    "dist_m": 133
+   },
+   "srtm": {
+    "new_max_m": 871,
+    "old_max_m": 860
+   },
+   "reason": "이미 정상 143m 안"
+  },
+  {
+   "id": "juheulsan",
+   "name": "주흘산",
+   "elevation_m": 1108.4,
+   "from": [
+    36.772,
+    128.086
+   ],
+   "to": [
+    36.778069,
+    128.105993
+   ],
+   "moved_m": 1904,
+   "osm": {
+    "node": 1865098592,
+    "name": "주흘산(주흘주봉)",
+    "ele": 1108.4
+   },
+   "wikidata": {
+    "qid": "Q6305114",
+    "label": "주흘산",
+    "dist_m": 1268
+   },
+   "srtm": {
+    "new_max_m": 1045,
+    "old_max_m": 644
+   },
+   "reason": "지형 불일치(새 자리 SRTM 최고 1045m < 등록 1108.4m − 45)"
+  },
+  {
+   "id": "maisan",
+   "name": "마이산",
+   "elevation_m": 687.4,
+   "from": [
+    35.7619,
+    127.4047
+   ],
+   "to": [
+    35.761146,
+    127.416249
+   ],
+   "moved_m": 1045,
+   "osm": {
+    "node": 10230534291,
+    "name": "숫마이산",
+    "ele": 681
+   },
+   "wikidata": {
+    "qid": "Q562938",
+    "label": "마이산",
+    "dist_m": 363
+   },
+   "srtm": {
+    "new_max_m": 555,
+    "old_max_m": 475
+   },
+   "reason": "지형 불일치(새 자리 SRTM 최고 555m < 등록 687.4m − 45)"
+  },
+  {
+   "id": "manhaengsan",
+   "name": "만행산",
+   "reason": "OSM에 이름이 맞는 정상 노드 없음",
+   "names": [
+    "만행산"
+   ]
+  },
+  {
+   "id": "minjujisan",
+   "name": "민주지산",
+   "elevation_m": 1241.7,
+   "from": [
+    36.04,
+    127.84917
+   ],
+   "to": [
+    36.039794,
+    127.849273
+   ],
+   "moved_m": 25,
+   "osm": {
+    "node": 6212374417,
+    "name": "민주지산",
+    "ele": 1242
+   },
+   "wikidata": {
+    "qid": "Q8533668",
+    "label": "민주지산",
+    "dist_m": 25
+   },
+   "srtm": {
+    "new_max_m": 1215,
+    "old_max_m": 1216
+   },
+   "reason": "이미 정상 25m 안"
+  },
+  {
+   "id": "moaksan",
+   "name": "모악산",
+   "elevation_m": 795.2,
+   "from": [
+    35.7292,
+    127.0853
+   ],
+   "to": [
+    35.728587,
+    127.085174
+   ],
+   "moved_m": 69,
+   "osm": {
+    "node": 5084170049,
+    "name": "모악산",
+    "ele": 793.5
+   },
+   "wikidata": {
+    "qid": "Q27290168",
+    "label": "모악산",
+    "dist_m": 16
+   },
+   "srtm": {
+    "new_max_m": 780,
+    "old_max_m": 775
+   },
+   "reason": "이미 정상 69m 안"
+  },
+  {
+   "id": "munsusan",
+   "name": "문수산",
+   "elevation_m": 1207,
+   "from": [
+    36.981,
+    128.8111
+   ],
+   "to": [
+    36.98099,
+    128.811089
+   ],
+   "moved_m": 1,
+   "osm": {
+    "node": 7972724218,
+    "name": "문수산",
+    "ele": 1205
+   },
+   "wikidata": {
+    "qid": "Q27275717",
+    "label": "문수산",
+    "dist_m": 54
+   },
+   "srtm": {
+    "new_max_m": 1192,
+    "old_max_m": 1192
+   },
+   "reason": "이미 정상 1m 안"
+  },
+  {
+   "id": "namdeokyusan",
+   "name": "남덕유산",
+   "elevation_m": 1507,
+   "from": [
+    35.7675,
+    127.6795
+   ],
+   "to": [
+    35.767536,
+    127.679522
+   ],
+   "moved_m": 4,
+   "osm": {
+    "node": 7972724191,
+    "name": "남덕유산",
+    "ele": 1513
+   },
+   "wikidata": {
+    "qid": "Q27267254",
+    "label": "남덕유산",
+    "dist_m": 18
+   },
+   "srtm": {
+    "new_max_m": 1484,
+    "old_max_m": 1484
+   },
+   "reason": "이미 정상 4m 안"
+  },
+  {
+   "id": "namsanjeilbong",
+   "name": "남산제일봉",
+   "elevation_m": 1054,
+   "from": [
+    35.77278,
+    128.09561
+   ],
+   "to": [
+    35.772782,
+    128.095614
+   ],
+   "moved_m": 0,
+   "osm": {
+    "node": 9220547984,
+    "name": "남산제일봉",
+    "ele": 1054
+   },
+   "wikidata": {
+    "qid": "Q27324987",
+    "label": "남산제일봉",
+    "dist_m": 44
+   },
+   "srtm": {
+    "new_max_m": 1032,
+    "old_max_m": 1032
+   },
+   "reason": "이미 정상 0m 안"
+  },
+  {
+   "id": "obongsan",
+   "name": "오봉산",
+   "elevation_m": 777.9,
+   "from": [
+    38.0008,
+    127.8061
+   ],
+   "to": [
+    38.00017,
+    127.80718
+   ],
+   "moved_m": 118,
+   "osm": {
+    "node": 7972716196,
+    "name": "오봉산",
+    "ele": 777.9
+   },
+   "wikidata": {
+    "qid": "Q7075287",
+    "label": "오봉산 (춘천)",
+    "dist_m": 119
+   },
+   "srtm": {
+    "new_max_m": 779,
+    "old_max_m": 775
+   },
+   "reason": "이미 정상 118m 안"
+  },
+  {
+   "id": "seolaksan",
+   "name": "설악산",
+   "elevation_m": 1708.1,
+   "from": [
+    38.119546,
+    128.465551
+   ],
+   "to": [
+    38.119172,
+    128.465308
+   ],
+   "moved_m": 47,
+   "osm": {
+    "node": 5739515162,
+    "name": "대청봉",
+    "ele": 1708
+   },
+   "wikidata": {
+    "qid": "Q482644",
+    "label": "설악산",
+    "dist_m": 37
+   },
+   "srtm": {
+    "new_max_m": 1701,
+    "old_max_m": 1699
+   },
+   "reason": "이미 정상 47m 안"
+  },
+  {
+   "id": "seonjaryeong",
+   "name": "선자령",
+   "reason": "OSM에 이름이 맞는 정상 노드 없음",
+   "names": [
+    "선자령"
+   ]
+  },
+  {
+   "id": "sobaeksan",
+   "name": "소백산",
+   "elevation_m": 1439.7,
+   "from": [
+    36.9578,
+    128.4859
+   ],
+   "to": [
+    36.957493,
+    128.484897
+   ],
+   "moved_m": 95,
+   "osm": {
+    "node": 444326662,
+    "name": "소백산 비로봉",
+    "ele": 1439.5
+   },
+   "wikidata": {
+    "qid": "Q625589",
+    "label": "소백산",
+    "dist_m": 279
+   },
+   "srtm": {
+    "new_max_m": 1429,
+    "old_max_m": 1422
+   },
+   "reason": "이미 정상 95m 안"
+  },
+  {
+   "id": "tohamsan",
+   "name": "토함산",
+   "elevation_m": 745,
+   "from": [
+    35.80177,
+    129.34521
+   ],
+   "to": [
+    35.801772,
+    129.345213
+   ],
+   "moved_m": 0,
+   "osm": {
+    "node": 1459592100,
+    "name": "토함산",
+    "ele": 745
+   },
+   "wikidata": {
+    "qid": "Q27267256",
+    "label": "토함산",
+    "dist_m": 250
+   },
+   "srtm": {
+    "new_max_m": 739,
+    "old_max_m": 739
+   },
+   "reason": "이미 정상 0m 안"
+  },
+  {
+   "id": "unjangsan",
+   "name": "운장산",
+   "elevation_m": 1125.8,
+   "from": [
+    35.9109537,
+    127.3572836
+   ],
+   "to": [
+    35.911345,
+    127.357652
+   ],
+   "moved_m": 55,
+   "osm": {
+    "node": 5397216642,
+    "name": "운장산",
+    "ele": 1125.8
+   },
+   "wikidata": {
+    "qid": "Q7896931",
+    "label": "운장산",
+    "dist_m": 84
+   },
+   "srtm": {
+    "new_max_m": 1107,
+    "old_max_m": 1107
+   },
+   "reason": "이미 정상 55m 안"
+  },
+  {
+   "id": "wolaksan",
+   "name": "월악산",
+   "elevation_m": 1095.3,
+   "from": [
+    36.8858,
+    128.106
+   ],
+   "to": [
+    36.886079,
+    128.105837
+   ],
+   "moved_m": 34,
+   "osm": {
+    "node": 7972716276,
+    "name": "월악산 영봉",
+    "ele": 1097
+   },
+   "wikidata": {
+    "qid": "Q482709",
+    "label": "월악산",
+    "dist_m": 2025
+   },
+   "srtm": {
+    "new_max_m": 1013,
+    "old_max_m": 1014
+   },
+   "reason": "이미 정상 34m 안"
+  },
+  {
+   "id": "wolchulsan",
+   "name": "월출산",
+   "elevation_m": 810.7,
+   "from": [
+    34.7678,
+    126.7044
+   ],
+   "to": [
+    34.766619,
+    126.704043
+   ],
+   "moved_m": 135,
+   "osm": {
+    "node": 7972724224,
+    "name": "월출산(천황봉)",
+    "ele": 816.04
+   },
+   "wikidata": {
+    "qid": "Q482741",
+    "label": "월출산",
+    "dist_m": 134
+   },
+   "srtm": {
+    "new_max_m": 773,
+    "old_max_m": 760
+   },
+   "reason": "이미 정상 135m 안"
+  },
+  {
+   "id": "yeoninsan-gapyeong",
+   "name": "연인산",
+   "elevation_m": 1068.2,
+   "from": [
+    37.8994444,
+    127.4144444
+   ],
+   "to": [
+    37.898766,
+    127.414391
+   ],
+   "moved_m": 76,
+   "osm": {
+    "node": 5404583035,
+    "name": "연인산",
+    "ele": 1068
+   },
+   "wikidata": {
+    "qid": "Q8052476",
+    "label": "연인산",
+    "dist_m": 76
+   },
+   "srtm": {
+    "new_max_m": 1064,
+    "old_max_m": 1065
+   },
+   "reason": "이미 정상 76m 안"
+  }
+ ]
+}

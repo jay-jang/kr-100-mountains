@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 철원군, 경기도 포천시"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [38.0883, 127.3222]
-coord_confidence: medium
+coordinates: [38.1043, 127.338149]
+coord_confidence: high
 features: ["억새", "폭포(등룡폭포)", "산정호수", "단풍", "화강암"]
 best_season: "가을(10월) 억새"
 ---

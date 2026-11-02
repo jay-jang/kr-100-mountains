@@ -7,8 +7,8 @@ region: 수도권
 province: 인천
 location: "인천광역시 강화군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.6114, 126.4405]
-coord_confidence: medium
+coordinates: [37.615542, 126.429683]
+coord_confidence: high
 features: ["참성단", "사적", "서해조망", "일출", "계단", "역사문화"]
 best_season: "봄(진달래)·가을(단풍) 및 개천절 전후"
 ---

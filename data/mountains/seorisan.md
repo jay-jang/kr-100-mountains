@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 남양주시·가평군"
 lists: [wolgansan]
-coordinates: [37.7539, 127.3128]
-coord_confidence: medium
+coordinates: [37.76852, 127.316081]
+coord_confidence: high
 features: ["철쭉", "100대 명산", "자연휴양림", "능선", "봄꽃"]
 best_season: "봄(5월) 철쭉 군락"
 ---

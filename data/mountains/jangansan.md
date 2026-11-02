@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 장수군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.5837, 127.5619]
-coord_confidence: medium
+coordinates: [35.629184, 127.595074]
+coord_confidence: high
 features: ["군립공원", "억새", "단풍", "능선", "금남호남정맥"]
 best_season: "가을(10~11월) 억새·단풍"
 ---

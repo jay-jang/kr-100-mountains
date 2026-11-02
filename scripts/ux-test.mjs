@@ -383,7 +383,11 @@ try {
     await page.goto(base + '/#/m/seolaksan?course=seolaksan-120400v016');
     await waitRoute(page);
     check('legacy: #/m/<id>?course=<대표 코스> → 경로 시트', (await page.locator('.rt-title').textContent()) === '공룡능선 종주' && hashOf(page) === '#/m/seolaksan?route=c:seolaksan-120400v016', hashOf(page));
-    check('legacy: 선 없는 대표 코스는 "지도 선 없음"·GPX 없음', (await page.locator('.rt-prov').textContent()).includes('지도 선 없음') && (await page.locator('.rt-actions a[download], .rt-actions button', { hasText: 'GPX' }).count()) === 0);
+    check('legacy: 공단 근거 대표 코스는 공식 코스 선·GPX', (await page.locator('.rt-prov').textContent()).includes('공식 코스 선') && (await page.locator('.rt-actions a[download]', { hasText: 'GPX' }).count()) === 1);
+    // 선 자료가 없는 대표 코스(한라산 — 국립공원공단 관할이 아니라 공식 선형 대조 대상이 없다)에는 가짜 선·GPX가 없다.
+    await page.goto(base + '/#/m/hanrasan?course=hanrasan-jeju-60');
+    await waitRoute(page);
+    check('legacy: 선 없는 대표 코스는 "지도 선 없음"·GPX 없음', hashOf(page) === '#/m/hanrasan?route=c:hanrasan-jeju-60' && (await page.locator('.rt-prov').textContent()).includes('지도 선 없음') && (await page.locator('.rt-actions a[download], .rt-actions button', { hasText: 'GPX' }).count()) === 0, hashOf(page));
     await page.goto(base + '/#/m/seolaksan?course=seolaksan-120400v012');
     await waitRoute(page);
     check('legacy: 등산로와 연결된 대표 코스 → 그 등산로 행(t:)', hashOf(page) === '#/m/seolaksan?route=t:0' && (await page.locator('.rt-title').textContent()) === '오색-대청봉 코스'

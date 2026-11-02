@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 천안시·아산시"
 lists: [bac]
-coordinates: [36.7192, 127.0308]
-coord_confidence: medium
+coordinates: [36.687558, 127.027576]
+coord_confidence: high
 features: ["광덕사", "계곡", "단풍", "능선종주", "호두나무"]
 best_season: "가을(10~11월) 단풍"
 ---

@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 경주시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.7686, 129.2196]
-coord_confidence: medium
+coordinates: [35.76756, 129.22529]
+coord_confidence: high
 features: ["국립공원", "세계유산", "불교유적", "마애불", "암릉", "역사탐방"]
 best_season: "가을(10~11월) 단풍과 답사"
 ---
@@ -42,6 +42,15 @@ best_season: "가을(10~11월) 단풍과 답사"
 - 특징: 용장사지의 불상과 석탑을 만나는 문화유적 탐방 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 용장골 코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121900&vcursId=121900V007) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **관음사 코스** — 경주국립공원 · 4km · 2시간 40분 · 난이도 하 · 정상 경유<br>구간: 관음사 ~ 열반재 ~ 고위봉 ~ 칠불암 ~ 염불사지 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V002&parkNavGb=guide))
+- **용장골 코스** — 경주국립공원 · 1.9km · 1시간 20분 · 난이도 하 · 정상 미경유<br>구간: 용장골 ~ 용장사곡 석조여래좌상→설잠교 ~ 남산진입도로 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V007&parkNavGb=guide))
+- **삼릉 코스** — 경주국립공원 · 2.1km · 1시간 30분 · 난이도 중 · 정상 미경유<br>구간: 삼릉 ~ 마애관음보살상 ~ 선각육존불 ~ 석조여래좌상 ~ 상선암 ~ 금오봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V005&parkNavGb=guide))
+- **삼불사 코스** — 경주국립공원 · 1.4km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 삼불사 ~ 선각여래입상 ~ 바둑바위 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V006&parkNavGb=guide))
 
 ## 주요 등산로
 

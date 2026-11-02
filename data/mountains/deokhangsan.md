@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 삼척시·태백시"
 lists: [sanlim, bac]
-coordinates: [37.2833, 129.0167]
-coord_confidence: medium
+coordinates: [37.308788, 129.012634]
+coord_confidence: high
 features: ["100대명산", "백두대간", "환선굴", "석회동굴", "고위평탄면", "암릉"]
 best_season: "가을(9~10월), 여름 동굴 연계 산행"
 ---

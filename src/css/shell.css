@@ -66,11 +66,12 @@ body:not(.page-mode) { overflow: hidden; overscroll-behavior: none; }
 /* ---- 산 기호 ---- */
 .leaflet-div-icon.kr-pin, .kr-pin { background: transparent; border: 0; }
 .mk { position: relative; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; background: none; color: var(--map-ink); cursor: pointer; }
-.mk .summit-sym { filter: drop-shadow(0 0 1px var(--map-halo)) drop-shadow(0 0 1px var(--map-halo)); transition: transform .12s; }
+.mk .summit-sym { box-sizing: content-box; padding: 4px; border-radius: 50%; background: var(--map-halo); box-shadow: 0 1px 4px rgb(0 0 0 / .3); transition: transform .12s; }
+.mk.selected .summit-sym { outline: 2px solid var(--map-ink); outline-offset: 2px; }
 .mk:hover .summit-sym, .mk.hover .summit-sym { transform: scale(1.18); }
-.mk-name { display: none; position: absolute; left: 31px; top: 50%; transform: translateY(-50%); white-space: nowrap; pointer-events: none; font-size: 12px; font-weight: 600; color: var(--map-ink); text-shadow: 0 0 2px var(--map-halo), 0 0 2px var(--map-halo), 0 0 3px var(--map-halo), 0 0 4px var(--map-halo); }
-.shell.names .mk-name, .mk.selected .mk-name, .mk:hover .mk-name, .mk.hover .mk-name, .mk:focus-visible .mk-name { display: block; }
-.mk.selected .mk-name { left: 34px; font-size: 14px; font-weight: 700; }
+.mk-name { display: none; position: absolute; left: 36px; top: 50%; transform: translateY(-50%); white-space: nowrap; pointer-events: none; padding: 2px 5px; border-radius: 3px; background: var(--map-halo); font-size: 12px; font-weight: 600; color: var(--map-ink); box-shadow: 0 1px 3px rgb(0 0 0 / .18); }
+.shell.names .mk.label-on .mk-name, .mk.selected .mk-name, .mk:hover .mk-name, .mk.hover .mk-name, .mk:focus-visible .mk-name { display: block; }
+.mk.selected .mk-name { left: 42px; font-size: 14px; font-weight: 700; }
 .mk:focus-visible { outline: 2px solid var(--focus); outline-offset: -6px; border-radius: 50%; }
 /* 숫자 묶음도 산 기호다 — 걷기길 모드에서 묶음만 진하게 남으면 걷기길보다 앞에 보인다 */
 .dim-mountains .mk:not(.selected), .dim-mountains .mk-cluster { opacity: .35; }
@@ -154,9 +155,9 @@ body:not(.page-mode) { overflow: hidden; overscroll-behavior: none; }
 .map[data-basetype="dark"], .map[data-basetype="satellite"] { --map-ink: #f1f3ea; --map-halo: #10140f; --map-symbol-fill: #1e2e25; }
 
 /* 넓은 축척의 산 묶음 — 숫자만, 한 가지 색. 누르면 그 범위로 확대 */
-.mk-cluster { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--map-halo); position: relative; }
-.mk-cluster::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: var(--map-ink); box-shadow: 0 0 0 2px var(--map-halo); z-index: -1; }
-.mk-cluster:hover::before { inset: 6px; }
+.mk-cluster { width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; padding: 0; border: 0; background: none; cursor: pointer; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--map-halo); position: relative; }
+.mk-cluster::before { content: ''; position: absolute; inset: 5px; border-radius: 50%; background: var(--map-ink); box-shadow: 0 0 0 2px var(--map-halo); z-index: -1; }
+.mk-cluster:hover::before { inset: 3px; }
 .mk-cluster:focus-visible { outline: 2px solid var(--focus); outline-offset: -4px; border-radius: 50%; }
 
 /* 지도 위 가운데 동작 버튼(이 지역 다시 찾기 등) */

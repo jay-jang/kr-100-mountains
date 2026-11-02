@@ -7,7 +7,7 @@ region: 경상
 province: 경남
 location: "경상남도 양산시"
 lists: [sanlim, bac, hansanha]
-coordinates: [35.4203, 129.1122]
+coordinates: [35.401573, 129.106282]
 coord_confidence: high
 features: ["낙동정맥", "억새", "고산습지", "폭포", "일출", "조망"]
 best_season: "가을(10월) 억새"

@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 봉화군·안동시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.7975, 128.9139]
-coord_confidence: medium
+coordinates: [36.794438, 128.90882]
+coord_confidence: high
 features: ["도립공원", "단풍", "암릉", "기암절벽", "낙동강 조망", "하늘다리", "사찰"]
 best_season: "가을(10월 말~11월 초) 단풍"
 ---

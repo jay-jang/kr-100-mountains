@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 강릉시·평창군"
 lists: [bac, wolgansan]
-coordinates: [37.7897, 128.6083]
-coord_confidence: medium
+coordinates: [37.782627, 128.639816]
+coord_confidence: high
 features: ["국립공원", "소금강", "단풍", "폭포", "명승", "조망"]
 best_season: "가을(10월) 단풍, 여름(7~8월) 계곡"
 ---
@@ -41,6 +41,14 @@ best_season: "가을(10월) 단풍, 여름(7~8월) 계곡"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](http://www.koreasanha.net/san/noinbong.htm)
 - [기존 산별 참고자료](https://alldaytrail.com/mountains/오대산)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **소금강산 코스** — 오대산국립공원 · 13.3km · 7시간 · 난이도 상 · 정상 경유<br>구간: 무릉계~십자소~연화담~식당암~구룡폭포~만물상~백운대~낙영폭포~노인봉~진고개 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V004&parkNavGb=guide))
+- **동대산 코스** — 오대산국립공원 · 4.4km · 2시간 10분 · 난이도 중 · 정상 미경유<br>구간: 진고개~동대산~동피골 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V002&parkNavGb=guide))
+- **두로봉 코스** — 오대산국립공원 · 10km · 4시간 40분 · 난이도 상 · 정상 미경유<br>구간: 진고개~동대산~두로봉~두로령 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V001&parkNavGb=guide))
 
 ## 주요 등산로
 

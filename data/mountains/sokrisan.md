@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 상주시, 충청북도 보은군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.5419, 127.8206]
-coord_confidence: medium
+coordinates: [36.543229, 127.870859]
+coord_confidence: high
 features: ["국립공원", "단풍", "암릉", "기암괴석", "사찰", "백두대간"]
 best_season: "가을(10~11월) 단풍"
 ---
@@ -40,6 +40,29 @@ best_season: "가을(10~11월) 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/속리산)
 - [기존 산별 참고자료](https://en.wikipedia.org/wiki/Songnisan)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **장각동코스** — 속리산국립공원 · 5.4km · 3시간 · 난이도 중 · 정상 경유<br>구간: 상오리~장각폭포~장각마을~천왕봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V007&parkNavGb=guide))
+- **도화리 ~ 천왕봉** — 속리산국립공원 · 6km · 5시간 · 난이도 중 · 정상 경유<br>구간: 천왕봉 주차장 ∼ 도화리 안부 ∼ 천왕봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V020&parkNavGb=guide))
+- **천왕봉2코스** — 속리산국립공원 · 12.9km · 7시간 · 난이도 상 · 정상 경유<br>구간: 화북탐방지원센터~문장대~신선대~천왕봉~세심정~속리산 체험학습관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V002&parkNavGb=guide))
+- **천왕봉1코스** — 속리산국립공원 · 16.1km · 8시간 · 난이도 상 · 정상 경유<br>구간: 속리산 체험학습관-세심정~문장대~천왕봉~세심정~속리산 체험학습관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V001&parkNavGb=guide))
+- **신선대1코스** — 속리산국립공원 · 13.2km · 6시간 15분 · 난이도 중 · 정상 미경유<br>구간: 속리산 체험학습관~세심정~문장대~신선대~세심정~속리산 체험학습관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V009&parkNavGb=guide))
+- **신선대2코스** — 속리산국립공원 · 9.7km · 5시간 15분 · 난이도 중 · 정상 미경유<br>구간: 화북탐방지원센터~문장대~신선대~세심정~속리산 체험학습관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V008&parkNavGb=guide))
+- **세조길코스** — 속리산국립공원 · 4km · 1시간 20분 · 난이도 하 · 정상 미경유<br>구간: 속리산 체험학습관 ∼ 저수지 ∼ 세심정 ∼ 복천암 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V018&parkNavGb=guide))
+- **문장대2코스** — 속리산국립공원 · 9.7km · 6시간 · 난이도 중 · 정상 미경유<br>구간: 화북탐방지원센터~오송폭포~문장대~세심정~속리산 체험학습관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V010&parkNavGb=guide))
+- **문장대코스** — 속리산국립공원 · 6.6km · 3시간 30분 · 난이도 중 · 정상 미경유<br>구간: 속리산 체험학습관~세심정~문장대(편도기준) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V012&parkNavGb=guide))
+- **문장대1코스** — 속리산국립공원 · 3.1km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 화북탐방지원센터~문장대(편도기준) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V011&parkNavGb=guide))
+- **법주사 ~ 수정봉** — 속리산국립공원 · 1.6km · 1시간 · 난이도 중 · 정상 미경유 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V021&parkNavGb=guide))
+- **불목이옛길** — 속리산국립공원 · 4.6km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 정이품송 ∼ 불목이재(정상) ∼ 비룡(삼가)저수지 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V019&parkNavGb=guide))
+- **묘봉코스** — 속리산국립공원 · 7.3km · 4시간 30분 · 난이도 중 · 정상 미경유<br>구간: 용화온천~상학봉~묘봉~북가치~미타사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V016&parkNavGb=guide))
+- **백악산코스** — 속리산국립공원 · 11.3km · 5시간 30분 · 난이도 상 · 정상 미경유<br>구간: 입석리~수안재~백악산~옥양폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V017&parkNavGb=guide))
+- **도명산2코스** — 속리산국립공원 · 8km · 4시간 30분 · 난이도 중 · 정상 미경유<br>구간: 화양탐방지원센터~첨성대~도명산~공림사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V005&parkNavGb=guide))
+- **도명산1코스** — 속리산국립공원 · 10.4km · 5시간 10분 · 난이도 중 · 정상 미경유<br>구간: 화양동탐방지원센터~첨성대~도명산~학소대~화양동탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V006&parkNavGb=guide))
+- **장성봉코스** — 속리산국립공원 · 12km · 7시간 · 난이도 상 · 정상 미경유<br>구간: 절말~장성봉~제수리재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V003&parkNavGb=guide))
+- **옥녀봉코스** — 속리산국립공원 · 10.4km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 연하협구름다리주차장~갈론계곡~선국암~옥녀봉~아가봉~갈론마을 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V015&parkNavGb=guide))
 
 ## 주요 등산로
 

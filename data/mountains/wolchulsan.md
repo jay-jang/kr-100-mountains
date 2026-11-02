@@ -51,6 +51,17 @@ best_season: "가을(10~11월) 단풍, 봄(4~5월) 진달래"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 종주코스,바람폭포 경유](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121700&vcursId=121700V002) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **경포대지구~천황지구** — 월출산국립공원 · 6.7km · 4시간 40분 · 난이도 중 · 정상 경유<br>구간: 경포대지구~천황지구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V003&parkNavGb=guide))
+- **종주코스,바람폭포 경유** — 월출산국립공원 · 9.5km · 5시간 40분 · 난이도 상 · 정상 경유<br>구간: 천황지구~도갑지구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V002&parkNavGb=guide))
+- **천황지구 순환코스** — 월출산국립공원 · 5.7km · 4시간 20분 · 난이도 상 · 정상 경유<br>구간: 천황지구~천황지구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V004&parkNavGb=guide))
+- **산성대주차장 ~ 광암터삼거리** — 월출산국립공원 · 2.7km · 1시간 45분 · 난이도 상 · 정상 미경유<br>구간: 산성대주차장~산성대~광암터삼거리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V006&parkNavGb=guide))
+- **구름다리** — 월출산국립공원 · 3.3km · 2시간 30분 · 난이도 하 · 정상 미경유<br>구간: 월출산국립공원탐방안내소~천황사~구름다리~바람폭포 삼거리~월출산국립공원탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V001&parkNavGb=guide))
+- **도갑지구~경포대지구** — 월출산국립공원 · 6.9km · 3시간 40분 · 난이도 중 · 정상 미경유<br>구간: 도갑지구~경포대지구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V005&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

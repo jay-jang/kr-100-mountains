@@ -67,6 +67,25 @@ best_season: "가을(10월 중순~하순) 단풍"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 대청봉코스(한계령)](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120400&vcursId=120400V014) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **공룡능선코스** — 설악산국립공원 · 19.1km · 14시간 40분 · 난이도 상 · 정상 경유<br>구간: 소공원-금강굴-마등령-공룡능선-희운각-대청봉-오색 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V016&parkNavGb=guide))
+- **대청봉코스(설악동)** — 설악산국립공원 · 16km · 10시간 40분 · 난이도 상 · 정상 경유<br>구간: 소공원-비선대-희운각-대청봉-설악폭포-오색 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V015&parkNavGb=guide))
+- **대청봉코스(오색)** — 설악산국립공원 · 5km · 4시간 · 난이도 상 · 정상 경유<br>구간: 오색-설악폭포-대청봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V012&parkNavGb=guide))
+- **대청봉코스(한계령)** — 설악산국립공원 · 19.3km · 12시간 · 난이도 상 · 정상 경유<br>구간: 한계령탐방지원센터-한계령갈림길-서북능선-대청봉-희운각-비선대-소공원 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V014&parkNavGb=guide))
+- **대청봉코스(백담)** — 설악산국립공원 · 23.9km · 20시간 50분 · 난이도 상 · 정상 경유<br>구간: 백담사-영시암-수렴동대피소-봉정암-소청봉-대청봉-희운각-비선대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V013&parkNavGb=guide))
+- **양폭코스** — 설악산국립공원 · 6.5km · 3시간 10분 · 난이도 하 · 정상 미경유<br>구간: 소공원-와선대-비선대-귀면암-양폭대피소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V007&parkNavGb=guide))
+- **용소폭포코스** — 설악산국립공원 · 3.2km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 약수터탐방지원센터-성국사-용소폭포-용소폭포탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V002&parkNavGb=guide))
+- **금강굴코스** — 설악산국립공원 · 3.6km · 2시간 · 난이도 하 · 정상 미경유<br>구간: 소공원-와선대-비선대-금강굴 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V006&parkNavGb=guide))
+- **수렴동코스** — 설악산국립공원 · 11.2km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 백담분소-백담사-영시암-수렴동대피소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V009&parkNavGb=guide))
+- **비룡폭포(토왕폭전망대)** — 설악산국립공원 · 2.8km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 소공원-육담폭포-비룡폭포-토왕성폭포전망대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V005&parkNavGb=guide))
+- **울산바위코스** — 설악산국립공원 · 3.8km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 소공원-신흥사-흔들바위,계조암-울산바위 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V003&parkNavGb=guide))
+- **백담사코스** — 설악산국립공원 · 6.5km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 백담분소-백담사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V008&parkNavGb=guide))
+- **남교리코스** — 설악산국립공원 · 11.3km · 6시간 30분 · 난이도 중 · 정상 미경유<br>구간: 남교리-복숭아탕-대승령-장수대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V010&parkNavGb=guide))
+- **대승폭포코스** — 설악산국립공원 · 0.9km · 40분 · 난이도 하 · 정상 미경유<br>구간: 한계산성분소-대승폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V011&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

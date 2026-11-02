@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 상주시·문경시, 충청북도 괴산군"
 lists: [bac]
-coordinates: [36.5719, 127.9836]
-coord_confidence: medium
+coordinates: [36.603764, 127.920433]
+coord_confidence: high
 features: ["백두대간", "100대명산", "능선조망", "단풍", "암릉"]
 best_season: "가을(10~11월) 단풍"
 ---
@@ -40,6 +40,12 @@ best_season: "가을(10~11월) 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://www.gagopatour.com/mountain/view.php?idx=313)
 - [기존 산별 참고자료](https://www.goesan.go.kr/tour/selectTourInfo.do?key=858&tourNo=571)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **백악산코스** — 속리산국립공원 · 11.3km · 5시간 30분 · 난이도 상 · 정상 미경유<br>구간: 입석리~수안재~백악산~옥양폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V017&parkNavGb=guide))
 
 ## 주요 등산로
 

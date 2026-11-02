@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 고흥군"
 lists: [sanlim, bac, hansanha]
-coordinates: [34.6258, 127.3528]
-coord_confidence: medium
+coordinates: [34.617153, 127.436444]
+coord_confidence: high
 features: ["국립공원", "다도해해상국립공원", "암릉", "일출", "다도해 조망", "사찰"]
 best_season: "가을(10~11월) 단풍·조망, 봄 진달래"
 ---
@@ -42,6 +42,14 @@ best_season: "가을(10~11월) 단풍·조망, 봄 진달래"
 - 특징: 휴양림에서 팔영산 능선 일대에 접근하는 탐방로.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 팔영산 휴양림코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121200&vcursId=121200V021) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **팔영산 야영장코스** — 다도해해상국립공원 · 6.7km · 4시간 · 난이도 상 · 정상 경유<br>구간: 팔영산야영장 ~ 유영봉 ~ 사자봉 ~ 질서봉 ~깃대봉 ~ 남포미술관 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V019&parkNavGb=guide))
+- **팔영산 휴양림코스** — 다도해해상국립공원 · 1.7km · 1시간 · 난이도 중 · 정상 미경유<br>구간: 팔영산자연휴양림 ~ 선녀봉 삼거리, 팔영산자연휴양림 ~ 헬기장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V021&parkNavGb=guide))
+- **팔영산 곡강코스** — 다도해해상국립공원 · 2.9km · 1시간 50분 · 난이도 상 · 정상 미경유<br>구간: 곡강 ~ 강산폭포 ~ 선녀봉 ~ 성주봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V020&parkNavGb=guide))
 
 ## 주요 등산로
 

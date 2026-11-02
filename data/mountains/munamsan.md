@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 인제군·홍천군"
 lists: [wolgansan]
-coordinates: [37.7986, 128.4283]
-coord_confidence: medium
+coordinates: [37.782801, 128.377028]
+coord_confidence: high
 features: ["100대명산", "암릉", "기암괴석", "단풍", "진달래", "야생화"]
 best_season: "가을(10~11월) 단풍, 봄(4~5월) 진달래"
 ---

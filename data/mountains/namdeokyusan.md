@@ -42,6 +42,15 @@ best_season: "겨울(12~2월) 상고대·설경, 봄(5~6월) 철쭉"
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/덕유산)
 - [기존 산별 참고자료](https://www.openstreetmap.org/node/7972724191)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **남덕유산코스** — 덕유산국립공원 · 3.6km · 2시간 30분 · 난이도 상 · 정상 경유<br>구간: 영각탐방지원센터~남덕유산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V001&parkNavGb=guide))
+- **종주코스** — 덕유산국립공원 · 26.9km · 14시간 · 난이도 중 · 정상 경유<br>구간: 삼공탐방지원센터~백련사~향적봉~중봉~동엽령~무룡산~삿갓재~남덕유산~영각탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V010&parkNavGb=guide))
+- **월성재코스** — 덕유산국립공원 · 3.6km · 2시간 50분 · 난이도 중 · 정상 미경유<br>구간: 월성~월성재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V006&parkNavGb=guide))
+- **삿갓재코스** — 덕유산국립공원 · 3.4km · 1시간 40분 · 난이도 중 · 정상 미경유<br>구간: 황점마을~삿갓재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V004&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

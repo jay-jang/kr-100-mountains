@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 문경시"
 lists: [sanlim]
-coordinates: [36.7936, 128.2247]
-coord_confidence: medium
+coordinates: [36.81274, 128.278182]
+coord_confidence: high
 features: ["국립공원", "백두대간", "암릉", "금강소나무", "맷등바위", "100대 명산"]
 best_season: "가을(10~11월) 단풍, 봄 신록"
 ---

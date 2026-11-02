@@ -7,7 +7,7 @@
   <metadata>
     <name>민둥산 · 증산초교-발구덕-정상 코스 (대안 1) (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-08-04T05:22:52.243Z</time>
+    <time>2026-10-14T15:31:52.745Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,15 +19,15 @@
       <k100:route_index>1</k100:route_index>
       <k100:route_name>증산초교-발구덕-정상 코스</k100:route_name>
       <k100:variant>1</k100:variant>
-      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
       <k100:snap_trailhead_m>29</k100:snap_trailhead_m>
-      <k100:snap_summit_m>63</k100:snap_summit_m>
-      <k100:validation_score>100</k100:validation_score>
+      <k100:snap_summit_m>1</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
       <k100:validation_status>accepted</k100:validation_status>
     </extensions>
   </metadata>
@@ -122,14 +122,19 @@
       <trkpt lat="37.269887" lon="128.777774"><ele>937.5</ele></trkpt>
       <trkpt lat="37.271381" lon="128.777842"><ele>970.1</ele></trkpt>
       <trkpt lat="37.272186" lon="128.777933"><ele>985.4</ele></trkpt>
-      <trkpt lat="37.272314" lon="128.777898"><ele>986.0</ele></trkpt>
-      <trkpt lat="37.272903" lon="128.777370"><ele>990.0</ele></trkpt>
-      <trkpt lat="37.273243" lon="128.776796"><ele>1011.5</ele></trkpt>
-      <trkpt lat="37.273610" lon="128.776299"><ele>1034.0</ele></trkpt>
-      <trkpt lat="37.273809" lon="128.776248"><ele>1036.9</ele></trkpt>
-      <trkpt lat="37.273847" lon="128.776119"><ele>1037.4</ele></trkpt>
-      <trkpt lat="37.273522" lon="128.775901"><ele>1036.6</ele></trkpt>
-      <trkpt lat="37.273317" lon="128.775609"><ele>1040.3</ele></trkpt>
+      <trkpt lat="37.272402" lon="128.777839"><ele>987.2</ele></trkpt>
+      <trkpt lat="37.272728" lon="128.777565"><ele>989.2</ele></trkpt>
+      <trkpt lat="37.273030" lon="128.777179"><ele>991.3</ele></trkpt>
+      <trkpt lat="37.273050" lon="128.776894"><ele>999.6</ele></trkpt>
+      <trkpt lat="37.272954" lon="128.776268"><ele>1021.9</ele></trkpt>
+      <trkpt lat="37.272628" lon="128.775628"><ele>1050.5</ele></trkpt>
+      <trkpt lat="37.272466" lon="128.775499"><ele>1059.2</ele></trkpt>
+      <trkpt lat="37.272347" lon="128.775470"><ele>1063.5</ele></trkpt>
+      <trkpt lat="37.272124" lon="128.775180"><ele>1069.3</ele></trkpt>
+      <trkpt lat="37.271944" lon="128.775183"><ele>1074.4</ele></trkpt>
+      <trkpt lat="37.271731" lon="128.775111"><ele>1083.2</ele></trkpt>
+      <trkpt lat="37.271183" lon="128.774803"><ele>1111.0</ele></trkpt>
+      <trkpt lat="37.270947" lon="128.774781"><ele>1112.3</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

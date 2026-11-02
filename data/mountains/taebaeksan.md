@@ -7,7 +7,7 @@ region: 강원
 province: 강원
 location: "강원특별자치도 태백시, 경상북도 봉화군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.09583, 128.91528]
+coordinates: [37.098562, 128.916152]
 coord_confidence: high
 features: ["국립공원", "일출", "눈꽃", "상고대", "주목군락", "철쭉", "천제단"]
 best_season: "겨울(12~2월) 눈꽃·상고대, 봄(5~6월) 철쭉"
@@ -42,6 +42,16 @@ best_season: "겨울(12~2월) 눈꽃·상고대, 봄(5~6월) 철쭉"
 - 특징: 당골계곡과 망경사를 거쳐 천제단에 오릅니다.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 당골코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=122200&vcursId=122200V007) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **유일사코스** — 태백산국립공원 · 7.5km · 4시간 · 난이도 중 · 정상 경유<br>구간: 유일사 ∼ 장군봉 ∼ 천제단 ∼ 당골광장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V001&parkNavGb=guide))
+- **당골코스** — 태백산국립공원 · 8km · 4시간 · 난이도 중 · 정상 경유<br>구간: 당골광장 ∼ 반재 ∼ 천제단 ∼ 반재 ∼ 당골광장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V007&parkNavGb=guide))
+- **문수봉코스** — 태백산국립공원 · 10.8km · 4시간 50분 · 난이도 중 · 정상 경유<br>구간: 산제당골 ~ (소문수봉/문수봉) 갈림길 ~ 소문수봉 ~ 문수봉　~ 천제단 ~ 당골광장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V002&parkNavGb=guide))
+- **검룡소코스** — 태백산국립공원 · 1.5km · 35분 · 난이도 하 · 정상 미경유<br>구간: 검룡소 주차장 ~ 세심탐방지원센터 ~ 검룡소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V003&parkNavGb=guide))
+- **백천계곡** — 태백산국립공원 · 5.1km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 백천계곡 ∼ 문수봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V005&parkNavGb=guide))
 
 ## 주요 등산로
 

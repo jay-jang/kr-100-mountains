@@ -7,7 +7,7 @@ region: 수도권
 province: 경기
 location: "경기도 양평군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.5622059, 127.5518564]
+coordinates: [37.561968, 127.549072]
 coord_confidence: high
 features: ["100대 명산", "암릉", "단풍", "용문사 은행나무", "조망"]
 best_season: "가을(10~11월) 단풍"

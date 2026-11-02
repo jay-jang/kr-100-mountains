@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 해남군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [34.4736, 126.6178]
-coord_confidence: medium
+coordinates: [34.471912, 126.637567]
+coord_confidence: high
 features: ["도립공원", "단풍", "암릉", "케이블카", "사찰", "다도해 조망", "상록활엽수림"]
 best_season: "가을(10~11월) 단풍"
 ---

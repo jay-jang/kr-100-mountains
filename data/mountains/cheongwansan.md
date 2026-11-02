@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 장흥군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [34.528, 126.902]
-coord_confidence: medium
+coordinates: [34.531727, 126.91966]
+coord_confidence: high
 features: ["도립공원", "억새", "기암괴석", "암릉", "일출", "다도해 조망", "호남 5대 명산"]
 best_season: "가을(10~11월) 억새"
 ---

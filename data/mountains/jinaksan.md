@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 금산군"
 lists: [wolgansan]
-coordinates: [36.081, 127.451]
-coord_confidence: medium
+coordinates: [36.077708, 127.458569]
+coord_confidence: high
 features: ["100대명산", "단풍", "보석사", "암릉", "조망"]
 best_season: "가을(10~11월) 단풍"
 ---

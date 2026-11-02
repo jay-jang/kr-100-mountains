@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 홍천군·평창군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.7315, 128.4571]
-coord_confidence: medium
+coordinates: [37.728339, 128.465497]
+coord_confidence: high
 features: ["주목군락", "철쭉", "눈꽃", "상고대", "고산조망", "원시림"]
 best_season: "겨울(1~2월) 눈꽃·상고대"
 ---
@@ -41,6 +41,13 @@ best_season: "겨울(1~2월) 눈꽃·상고대"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/계방산_(강원))
 - [기존 산별 참고자료](https://namu.wiki/w/계방산)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **계방산1코스** — 오대산국립공원 · 8.9km · 6시간 · 난이도 중 · 정상 경유<br>구간: 운두령~계방산정상~이승복 생가 입구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V007&parkNavGb=guide))
+- **계방산2코스** — 오대산국립공원 · 8.9km · 5시간 10분 · 난이도 중 · 정상 경유<br>구간: 운두령~계방산정상~계방산주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V008&parkNavGb=guide))
 
 ## 주요 등산로
 

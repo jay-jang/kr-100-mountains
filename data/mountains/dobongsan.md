@@ -51,6 +51,16 @@ best_season: "가을(10~11월) 단풍, 사계절"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 망월사,포대,회룡코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V006) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **신선대코스** — 북한산국립공원 · 3.3km · 1시간 40분 · 난이도 하 · 정상 경유<br>구간: 도봉탐방지원센터-금강암-도봉대피소-석굴암-신선대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V007&parkNavGb=guide))
+- **오봉코스** — 북한산국립공원 · 6.5km · 3시간 30분 · 난이도 하 · 정상 미경유<br>구간: 송추분소-송추폭포-오봉삼거리-오봉-여성봉-오봉탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V004&parkNavGb=guide))
+- **망월사,포대,회룡코스** — 북한산국립공원 · 5.5km · 2시간 20분 · 난이도 하 · 정상 미경유<br>구간: 원도봉탐방지원센터-덕제샘-망월사-포대능선-회룡사거리-회룡사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V006&parkNavGb=guide))
+- **우이암코스** — 북한산국립공원 · 3km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 도봉탐방지원센터-천진사-우이암 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V005&parkNavGb=guide))
+- **사패산코스** — 북한산국립공원 · 5.5km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 송추분소-(구)캡소대-회룡사거리-사패산-원각사-사패산입구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V003&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

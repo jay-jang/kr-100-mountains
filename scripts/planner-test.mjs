@@ -53,6 +53,8 @@ async function setup({ viewport = { width: 1440, height: 1000 }, mobile = false,
   });
   await ctx.addInitScript((p) => { try { localStorage.setItem('kr100:prefs', JSON.stringify(p)); } catch {} }, prefs);
   await ctx.route('**/gpx/routes/m/seolaksan.json', (r) => r.fulfill({ json: entry }));
+  // 공식 코스 선(gpx/courses/)은 이 시험의 고정 자료 밖이다 — 비워 두어 행·선 수가 고정 자료로만 정해지게 한다.
+  await ctx.route('**/gpx/courses/index.json', (r) => r.fulfill({ json: { mountains: {} } }));
   await ctx.route('**/data/trekking/index.json', (r) => r.fulfill({ json: { mountains: { seolaksan: { count: 1, kinds: { trail: 1 }, names: ['순환 도보길'] } } } }));
   await ctx.route('**/data/trekking/m/seolaksan.json', (r) => r.fulfill({ json: WALKS }));
   let retryFailed = !failRetry;

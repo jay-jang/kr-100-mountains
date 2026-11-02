@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 보성군·장흥군"
 lists: [wolgansan]
-coordinates: [34.7386, 126.9906]
-coord_confidence: medium
+coordinates: [34.709747, 126.977309]
+coord_confidence: high
 features: ["100대 명산", "철쭉", "호남정맥", "조망", "일출", "제암단"]
 best_season: "봄(5월) 철쭉"
 ---

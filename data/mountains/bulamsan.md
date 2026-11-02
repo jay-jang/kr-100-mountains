@@ -7,8 +7,8 @@ region: 수도권
 province: 서울
 location: "서울특별시 노원구, 경기도 남양주시"
 lists: [hansanha]
-coordinates: [37.6432, 127.0958]
-coord_confidence: medium
+coordinates: [37.663648, 127.095245]
+coord_confidence: high
 features: ["암릉", "암벽", "바위산", "도심근교", "일출", "야경"]
 best_season: "가을(10~11월) 조망·단풍, 봄철 진달래"
 ---

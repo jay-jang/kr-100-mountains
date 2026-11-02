@@ -23,6 +23,30 @@ if (existsSync(enrichPath)) {
 const byId = new Map(enrichment.results.map(r => [r.id, r]));
 const famous = JSON.parse(readFileSync(join(ROOT, 'data', 'famous-courses.json'), 'utf8'));
 const famousById = new Map(famous.mountains.map(m => [m.mountain_id, m.courses]));
+// 정상 좌표 보정(scripts/fix-summits.mjs) — OSM 정상 노드 + 위키데이터·지형으로 확인된 것만.
+const summitPath = join(ROOT, 'data', 'summit-corrections.json');
+const summitFix = new Map(existsSync(summitPath) ? JSON.parse(readFileSync(summitPath, 'utf8')).corrections.map((c) => [c.id, c]) : []);
+const RULE_TEXT = { 'osm+wikidata': '위키데이터 좌표와 일치', 'osm-name-ele': '이름·고도 일치', 'osm-name-dem': '이름 일치·지형 고도 확인', 'wikidata+osm-ele': '위키데이터 좌표 옆·고도 일치' };
+const mediaPath = join(ROOT, 'data', 'mountain-media.json');
+const media = existsSync(mediaPath) ? JSON.parse(readFileSync(mediaPath, 'utf8')).mountains : {};
+
+// 공식 탐방코스(국립공원공단 등) — scripts/build-course-routes.mjs가 만든 사실 정보. 지도 선은 public/gpx/courses/.
+const officialPath = join(ROOT, 'data', 'official-courses.json');
+const official = existsSync(officialPath) ? JSON.parse(readFileSync(officialPath, 'utf8')) : { courses: [] };
+const officialByMountain = new Map();
+{
+  const ids = new Set();
+  for (const c of official.courses) {
+    if (!c.id || ids.has(c.id) || !c.name || c.name.includes('\uFFFD') || (c.section || '').includes('\uFFFD')) throw new Error(`invalid official course ${c.id}`);
+    ids.add(c.id);
+    if (new URL(c.url).protocol !== 'https:') throw new Error(`${c.id}: official course url must be https`);
+    for (const mm of c.mountains || []) {
+      if (!registry.mountains.some((m) => m.id === mm.id)) throw new Error(`${c.id}: unknown mountain ${mm.id}`);
+      if (!officialByMountain.has(mm.id)) officialByMountain.set(mm.id, []);
+      officialByMountain.get(mm.id).push({ c, mm });
+    }
+  }
+}
 if (famousById.size !== registry.mountains.length || famous.mountains.length !== famousById.size) {
   throw new Error('Representative courses must cover every mountain exactly once');
 }
@@ -48,9 +72,24 @@ const mountains = registry.mountains.map(m => {
     out.best_season = e.best_season || null;
     out.sources = Array.isArray(e.sources) ? e.sources : [];
     out.coord_source = e.coord_source || null;
+    const fix = summitFix.get(m.id);
+    if (fix) {
+      if (Math.abs(fix.from[0] - out.lat) > 1e-6 || Math.abs(fix.from[1] - out.lon) > 1e-6) {
+        throw new Error(`${m.id}: summit correction was made from a different coordinate — rerun scripts/fix-summits.mjs`);
+      }
+      out.lat = fix.to[0]; out.lon = fix.to[1];
+      out.coord_confidence = 'high';
+      out.summit_name = fix.osm.name || out.name;
+      out.coord_source = `OpenStreetMap 정상 노드 ${fix.osm.node}(${fix.osm.name}${fix.osm.ele != null ? ` ${fix.osm.ele}m` : ''}) — ${RULE_TEXT[fix.rule] || fix.rule}. 이전 추정 좌표에서 ${fix.moved_m.toLocaleString('en-US')}m 보정`;
+    }
   } else {
     issues.push(`${m.id}: no enrichment`);
     out.coord_confidence = 'none';
+  }
+  if (media[m.id]) {
+    const image = media[m.id];
+    if (!existsSync(join(ROOT, 'public', image.file)) || !image.author || !image.license || !image.source) throw new Error(`${m.id}: invalid mountain image`);
+    out.image = image;
   }
   const courses = famousById.get(m.id);
   if (!courses?.length) throw new Error(`${m.id}: no representative courses`);
@@ -69,8 +108,33 @@ const mountains = registry.mountains.map(m => {
     }
     const trailIndex = c.trail_name ? out.trails.findIndex(t => t.name === c.trail_name) : -1;
     if (c.trail_name && trailIndex < 0) throw new Error(`${c.id}: missing referenced trail`);
-    return { ...c, ...(trailIndex >= 0 ? { trail_index: trailIndex } : {}) };
+    // 공단 코스 안내 링크(vcursId)가 같은 공식 코스가 있으면 잇는다 — 같은 코스를 두 행으로 보이지 않게.
+    const vcurs = c.sources?.map((s) => new URL(s.url).searchParams.get('vcursId')).find(Boolean);
+    const officialId = vcurs && (officialByMountain.get(m.id) || []).some(({ c: oc }) => oc.vcurs_id === vcurs) ? `knps-${vcurs.toLowerCase()}` : null;
+    return { ...c, ...(trailIndex >= 0 ? { trail_index: trailIndex } : {}), ...(officialId ? { official_id: officialId } : {}) };
   });
+  const linkedOfficial = new Set(out.famous_courses.map((c) => c.official_id).filter(Boolean));
+  // 등록 등산로와 같은 코스(들머리가 공식 선 위) — 그 등산로에 대표 코스의 공식 선이 아직 없을 때만 잇는다.
+  const trailsWithOfficial = new Set(out.famous_courses.filter((c) => c.official_id && c.trail_index != null).map((c) => c.trail_index));
+  out.official_courses = (officialByMountain.get(m.id) || [])
+    // 등산로 연결은 번호만 믿지 않고 이름까지 맞아야 한다 — 조사 자료의 등산로 순서가 바뀌면 다른 행에 붙는다.
+    .map(({ c, mm }) => {
+      let ti = !linkedOfficial.has(c.id) && mm.trail_index != null && !trailsWithOfficial.has(mm.trail_index) ? mm.trail_index : null;
+      if (ti != null && out.trails[ti]?.name !== mm.trail_name) {
+        issues.push(`${m.id}: official ${c.id} trail link #${ti} "${mm.trail_name}" no longer matches "${out.trails[ti]?.name}" — rerun scripts/build-course-routes.mjs`);
+        ti = null;
+      }
+      return { c, mm, ti };
+    })
+    .map(({ c, mm, ti }) => ({
+      id: c.id, source: c.source, name: c.name, park: c.park || null, section: c.section || null,
+      schedule: c.schedule || null, distance_km: c.distance_km ?? null, minutes: c.minutes ?? null,
+      difficulty: c.difficulty || null, level: c.level || null, starts: c.starts || [],
+      url: c.url, checked_at: c.checked_at, reaches_summit: !!mm.reaches_summit, summit_dist_m: mm.summit_dist_m,
+      has_line: !!c.line, ...(linkedOfficial.has(c.id) ? { famous_linked: true } : {}), ...(ti != null ? { trail_index: ti } : {}),
+    }))
+    // 정상 경유 → 선 있음 → 정상에서 가까운 순
+    .sort((a, b) => (b.reaches_summit - a.reaches_summit) || (b.has_line - a.has_line) || (a.summit_dist_m - b.summit_dist_m) || a.name.localeCompare(b.name, 'ko'));
   return out;
 });
 
@@ -89,6 +153,12 @@ const payload = {
       mountains: mountains.length,
       courses: mountains.reduce((n, m) => n + m.famous_courses.length, 0),
       official: mountains.reduce((n, m) => n + m.famous_courses.filter(c => c.evidence === 'official').length, 0),
+    },
+    official_courses: {
+      ...(official.meta ? { source: official.meta.source, note: official.meta.note } : {}),
+      courses: official.courses.length,
+      mountains: mountains.filter((m) => m.official_courses.length).length,
+      with_line: official.courses.filter((c) => c.line).length,
     },
   },
   mountains,
@@ -138,6 +208,14 @@ for (const m of mountains) {
     if (c.highlight) body.push(`- 특징: ${c.highlight}`);
     body.push(`- 근거: ${c.evidence === 'official' ? '공식 코스 안내 확인' : '기존 자료 선정 (산 단위 참고자료)'}`,
       ...c.sources.map(s => `- [${s.title}](${s.url})${s.checked_at ? ` (확인: ${s.checked_at})` : ''}`), '');
+  }
+  if (m.official_courses.length) {
+    body.push('## 공식 탐방코스', '', official.meta?.note || '', '');
+    for (const c of m.official_courses) {
+      const facts = [c.park && `${c.park}국립공원`, c.distance_km && `${c.distance_km}km`, c.minutes && `${Math.floor(c.minutes / 60) ? `${Math.floor(c.minutes / 60)}시간 ` : ''}${c.minutes % 60 ? `${c.minutes % 60}분` : ''}`.trim(), c.level && `난이도 ${c.level}`, c.reaches_summit ? '정상 경유' : '정상 미경유'].filter(Boolean);
+      body.push(`- **${c.name}** — ${facts.join(' · ')}${c.section ? `<br>구간: ${c.section}` : ''} ([공단 안내](${c.url}))`);
+    }
+    body.push('');
   }
   if (m.trails && m.trails.length) {
     const vmark = { verified: '교차검증 일치 ✓', mixed: '난이도 상이 ⚠', single: '단일 확인', unverified: '' };

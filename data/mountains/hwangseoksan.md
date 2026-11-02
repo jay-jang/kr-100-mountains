@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 함양군"
 lists: [sanlim, bac]
-coordinates: [35.6558, 127.7669]
-coord_confidence: medium
+coordinates: [35.655117, 127.755484]
+coord_confidence: high
 features: ["암릉", "황석산성", "마터호른", "단풍", "일출", "역사유적"]
 best_season: "가을(10~11월) 단풍·암릉"
 ---

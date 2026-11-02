@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 태백시·정선군"
 lists: [bac, wolgansan]
-coordinates: [37.1602, 128.9147]
-coord_confidence: medium
+coordinates: [37.161159, 128.917602]
+coord_confidence: high
 features: ["백두대간", "주목군락", "야생화", "눈꽃", "고원트레킹", "능선조망"]
 best_season: "여름(7~8월) 야생화·겨울(1~2월) 눈꽃"
 ---
@@ -41,6 +41,12 @@ best_season: "여름(7~8월) 야생화·겨울(1~2월) 눈꽃"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/함백산)
 - [기존 산별 참고자료](https://www.hiking-beginner.com/mountain/hambaeksan)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **함백산 코스** — 태백산국립공원 · 3.1km · 1시간 30분 · 난이도 하 · 정상 경유<br>구간: 만항재 ~ 함백산 코스 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V006&parkNavGb=guide))
 
 ## 주요 등산로
 

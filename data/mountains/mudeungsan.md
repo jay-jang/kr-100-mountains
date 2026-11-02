@@ -7,8 +7,8 @@ region: 전라
 province: 광주
 location: "광주광역시 동구, 전라남도 담양군·화순군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.1342, 126.9885]
-coord_confidence: medium
+coordinates: [35.125039, 127.008573]
+coord_confidence: high
 features: ["국립공원", "주상절리", "억새", "상고대", "일출", "천연기념물"]
 best_season: "가을(10~11월) 억새·단풍, 겨울 설경"
 ---
@@ -41,6 +41,19 @@ best_season: "가을(10~11월) 억새·단풍, 겨울 설경"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/무등산)
 - [기존 산별 참고자료](https://namu.wiki/w/무등산)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **새인봉 - 입석대 코스** — 무등산국립공원 · 6.8km · 3시간 30분 · 난이도 중 · 정상 미경유<br>구간: 증심사 입구 - 새인봉 - 서인봉 - 장불재 -서석대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V001&parkNavGb=guide))
+- **시무지기폭포 코스** — 무등산국립공원 · 15.2km · 5시간 35분 · 난이도 중 · 정상 미경유<br>구간: 증심교 - 토끼등 - 중머리재 - 장불재  - 규봉  - 시무지기폭포 - 인계리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V004&parkNavGb=guide))
+- **도원마을-규봉코스** — 무등산국립공원 · 7.5km · 4시간 30분 · 난이도 중 · 정상 미경유<br>구간: 도원마을 - 장불재 - 규봉 - 영신마을 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V007&parkNavGb=guide))
+- **당산나무 코스** — 무등산국립공원 · 4km · 1시간 35분 · 난이도 중 · 정상 미경유<br>구간: 증심사주차장 - 당산나무 - 중머리재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V003&parkNavGb=guide))
+- **교리~만연산코스** — 무등산국립공원 · 7.5km · 4시간 · 난이도 중 · 정상 미경유<br>구간: 교리- 수레바위산- 만연사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V008&parkNavGb=guide))
+- **너릿재-옛길코스** — 무등산국립공원 · 14.5km · 7시간 20분 · 난이도 중 · 정상 미경유<br>구간: 이십곡리-수레바위산-너와나목장-중머리재-장불재-원효사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V005&parkNavGb=guide))
+- **안양산-북산 코스** — 무등산국립공원 · 14.6km · 7시간 · 난이도 중 · 정상 미경유<br>구간: 안양산휴양림 - 안양산 - 장불재 - 규봉 -  북산 -  담양 경상리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V006&parkNavGb=guide))
+- **늦재 - 옛길코스** — 무등산국립공원 · 10.4km · 9시간 50분 · 난이도 중 · 정상 미경유<br>구간: 원효사입구 - 늦재- 동화사터- 용추삼거리-장불재-목교-원효사입구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V002&parkNavGb=guide))
 
 ## 주요 등산로
 

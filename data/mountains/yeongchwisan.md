@@ -7,7 +7,7 @@ region: 전라
 province: 전남
 location: "전라남도 여수시"
 lists: [wolgansan]
-coordinates: [34.8261, 127.7183]
+coordinates: [34.829493, 127.716378]
 coord_confidence: high
 features: ["진달래", "3대 진달래군락지", "축제", "조망", "여수산단 야경", "트레일레이스"]
 best_season: "봄(3월 말~4월 초) 진달래"

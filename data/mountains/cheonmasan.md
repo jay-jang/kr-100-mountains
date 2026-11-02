@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 남양주시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.6807, 127.2713]
-coord_confidence: medium
+coordinates: [37.680211, 127.273346]
+coord_confidence: high
 features: ["군립공원", "야생화", "암릉", "스키장", "일출"]
 best_season: "봄(4월) 야생화, 가을 단풍"
 ---

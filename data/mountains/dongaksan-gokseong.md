@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 곡성군"
 lists: [bac]
-coordinates: [35.2985, 127.2635]
-coord_confidence: medium
+coordinates: [35.281944, 127.252008]
+coord_confidence: high
 features: ["100대 명산", "도림사", "계곡", "섬진강 조망", "단풍", "암릉"]
 best_season: "가을(10~11월) 단풍, 여름 계곡 피서"
 ---

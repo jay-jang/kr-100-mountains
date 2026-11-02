@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 원주시, 충청북도 제천시"
 lists: [bac]
-coordinates: [37.1981, 128.1083]
-coord_confidence: medium
+coordinates: [37.228342, 128.142527]
+coord_confidence: high
 features: ["100대 명산", "암릉", "로프 구간", "사찰(백련사)", "단풍"]
 best_season: "가을(10~11월) 단풍"
 ---

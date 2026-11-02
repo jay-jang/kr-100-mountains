@@ -48,6 +48,18 @@ best_season: "봄(5~6월) 철쭉, 겨울(12~2월) 설경"
 - [기존 산별 참고자료](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/%EC%86%8C%EB%B0%B1%EC%82%B0)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **삼가동코스** — 소백산국립공원 · 5.5km · 2시간 40분 · 난이도 하 · 정상 경유<br>구간: 삼가탐방지원센터-달밭골입구-양반바위-비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V002&parkNavGb=guide))
+- **천동계곡코스** — 소백산국립공원 · 6.8km · 3시간 · 난이도 하 · 정상 경유<br>구간: 천동탐방지원센터-천동쉼터-고사목-비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V014&parkNavGb=guide))
+- **어의곡코스** — 소백산국립공원 · 5.1km · 2시간 40분 · 난이도 중 · 정상 경유<br>구간: 어의곡탐방지원센터-비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V013&parkNavGb=guide))
+- **초암사코스** — 소백산국립공원 · 7.8km · 3시간 40분 · 난이도 중 · 정상 미경유<br>구간: 배점주차장-초암사-봉두암-국망봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V001&parkNavGb=guide))
+- **죽령코스** — 소백산국립공원 · 7km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 죽령탐방지원센터-제2연화봉-연화봉(천문대) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V012&parkNavGb=guide))
+- **희방사코스** — 소백산국립공원 · 3.7km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 희방탐방지원센터-사무소-희방사주차장-희방폭포-희방사-깔딱고개정상-연화봉(천문대) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V010&parkNavGb=guide))
+- **도솔봉코스** — 소백산국립공원 · 8.6km · 4시간 30분 · 난이도 중 · 정상 미경유<br>구간: 묘적령-묘적봉-도솔봉-죽령 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V005&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

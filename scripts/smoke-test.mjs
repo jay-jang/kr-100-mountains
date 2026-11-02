@@ -147,7 +147,7 @@ try {
     const unlinked = s.famous_courses.filter((c) => c.trail_index == null).length;
     check('mountain: 등산로 행 + 연결 없는 대표 코스 행', rows === s.trails.length + unlinked, `${rows}행 (등산로 ${s.trails.length} + 대표 코스 ${unlinked})`);
     const honesty = await page.locator('#mt-panel-courses .mt-crow-honesty').first().textContent();
-    check('mountain: 행에 선 상태(계산 경로) 표시', /계산 경로|수록 경로|지도 선 없음/.test(honesty), honesty);
+    check('mountain: 행에 선 상태 표시', /공식 코스 선|계산 경로|수록 경로|지도 선 없음/.test(honesty), honesty);
     check('mountain: 정상 라벨이 지도에', /정상/.test(await page.locator('#map .map-label.summit').first().textContent().catch(() => '')));
     await page.getByRole('tab', { name: /정보/ }).click();
     const overview = await page.locator('#mt-panel-info .mt-sec').filter({ has: page.locator('h3', { hasText: /^개요$/ }) }).locator('.mt-prose').first().textContent();
@@ -170,9 +170,11 @@ try {
     const bold = await boldPaths(page);
     check('route: 지도에 선택 선이 그려짐(선 개수 증가)', bold > 0, `굵은 선 ${bold}개`);
     const dashed = await page.evaluate(() => [...document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]')].some((p) => p.getAttribute('stroke-dasharray')));
-    check('route: 계산 경로는 점선', dashed);
     const prov = await page.locator('.rt-prov').textContent();
-    check('route: 생성 방식 표시 "계산 경로"', prov.includes('계산 경로'), prov);
+    // 설악산 첫 등산로(오색-대청봉)는 공단 공식 코스와 이어져 "공식 코스 선"(실선)이 기본이다. 계산 경로면 점선.
+    const official = prov.includes('공식 코스 선');
+    check('route: 생성 방식 표시(공식 코스 선/계산 경로)', official || prov.includes('계산 경로'), prov);
+    check('route: 선 모양 = 생성 방식(공식 코스 선 실선 · 계산 경로 점선)', official ? !dashed : dashed, `${prov} · 점선 ${dashed}`);
     check('route: 실측 기록 아님 고지', (await page.locator('.rt-provnote').textContent()).includes('실측 기록 아님'));
     check('route: OpenStreetMap 출처 표기', (await page.locator('.rt-body').textContent()).includes('© OpenStreetMap contributors'));
     check('route: 들머리 라벨이 지도에', (await page.locator('#map .map-label.trailhead').count()) >= 1);
@@ -186,7 +188,8 @@ try {
     const href = await gpx.getAttribute('href');
     const body = await (await page.request.get(new URL(href, base + '/').toString())).text();
     check('route: GPX 링크가 실제 GPX 파일을 반환', body.startsWith('<?xml') && body.includes('<trkpt'), href);
-    check('route: GPX 파일에 실측 아님·생성 방식·출처 각인', body.includes('not_a_recorded_track') && body.includes('osm-routed') && body.includes('OpenStreetMap'));
+    check('route: GPX 파일에 실측 아님·생성 방식·출처 각인', body.includes('not_a_recorded_track') && body.includes(official ? 'osm-matched' : 'osm-routed') && body.includes('OpenStreetMap'));
+    if (official) check('route: 공식 코스 선 GPX에 공단 원본 좌표를 싣지 않았다는 표기·공단 출처', body.includes('no official coordinates included') && body.includes('국립공원공단'));
 
     // 들머리 길찾기: 좌표 신뢰도 high면 들머리 좌표, 정상으로 자동차 안내는 하지 않는다.
     await page.getByRole('button', { name: '들머리 길찾기', exact: true }).click();
@@ -371,6 +374,66 @@ try {
     check('reviews: 검증 수준 표시', /교차검증|단일 확인/.test(sec));
     const rel = await page.locator(`#mt-notes-${sample.id} .mt-note-src a`).evaluateAll((n) => n.map((a) => a.getAttribute('rel') || ''));
     check('reviews: 출처 링크가 noopener·nofollow', rel.length > 0 && rel.every((r) => /noopener/.test(r) && /nofollow/.test(r)), `${rel.length} links`);
+  });
+
+  // ---------- 국립공원 공식 탐방코스(공단 코스 경로를 OSM 길에 맞춘 선) ----------
+  await step('official courses', async () => {
+    const bh = byId.get('bukhansan');
+    const shown = bh.official_courses.filter((c) => !c.famous_linked && c.trail_index == null);
+    check('official: 북한산에 공식 탐방코스 자료', shown.length > 0 && bh.official_courses.every((c) => c.url.startsWith('https://www.knps.or.kr/')), `${shown.length}건`);
+    await page.goto(base + '/#/m/bukhansan');
+    await waitMountain(page, '북한산');
+    await page.waitForSelector('#mt-panel-courses .mt-crow');
+    const heads = await page.locator('#mt-panel-courses .rows-h').allTextContents();
+    check('official: 공원 공식 탐방코스 묶음 제목', heads.some((h) => h.includes('북한산국립공원 공식 탐방코스')), heads.join(' | '));
+    const offRows = await page.locator('#mt-panel-courses .mt-crow[data-key^="f:"]').count();
+    check('official: 대표 코스·등산로에 이어지지 않은 공식 코스가 모두 행으로', offRows === shown.length, `${offRows}행 / ${shown.length}`);
+    const notUp = shown.filter((c) => !c.reaches_summit).length;
+    const fold = page.locator('#mt-panel-courses details.mt-more');
+    check('official: 정상을 지나지 않는 코스는 묶음 하나로', !notUp || ((await fold.count()) === 1 && (await fold.locator('summary').textContent()).includes(`${notUp}개`)), `${notUp}건`);
+
+    const first = shown.find((c) => c.has_line) || shown[0];
+    await page.goto(base + `/#/m/bukhansan?route=f:${first.id}`);
+    await waitRoute(page);
+    check('official: 경로 시트 제목', (await page.locator('.rt-title').textContent()) === first.name, first.name);
+    const prov = await page.locator('.rt-prov').textContent();
+    check('official: 선 출처 "공식 코스 선"·"공단 안내 확인"', prov.includes(first.has_line ? '공식 코스 선' : '지도 선 없음') && prov.includes('공단 안내 확인'), prov);
+    check('official: 정상 미경유 코스는 그렇게 표시', first.reaches_summit || prov.includes('정상 미경유'), prov);
+    const det = await page.locator('.rt-details').textContent();
+    check('official: 구간·공단 안내 링크', det.includes('구간') && (await page.locator('.rt-details a[href^="https://www.knps.or.kr/"]').count()) === 1, det.slice(0, 120));
+    check('official: 출처 표기(OSM·공단 좌표 미포함)', (await page.locator('.rt-body').textContent()).includes('공단 좌표 미포함'));
+    if (first.has_line) {
+      await page.waitForFunction(() => document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]').length > 0, null, { timeout: 15000 }).catch(() => {});
+      const solid = await page.evaluate(() => [...document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]')].some((p) => !p.getAttribute('stroke-dasharray')));
+      check('official: 공식 코스 선은 실선', solid);
+      const href = await page.locator('.rt-actions a[download]').getAttribute('href');
+      const body = await (await page.request.get(new URL(href, base + '/').toString())).text();
+      check('official: GPX = OSM 선형(공단 좌표 없음)·실측 아님 각인', body.includes('<k100:provenance>osm-matched') && body.includes('no official coordinates included') && body.includes('not_a_recorded_track'), href);
+    }
+
+    // 검색으로도 공식 코스를 찾는다
+    await page.goto(base + '/#/map');
+    await waitList(page);
+    await page.locator('.tb-input').fill(first.name);
+    await page.waitForSelector('.suggest:not([hidden]) .suggest-item');
+    const item = page.locator('.suggest .suggest-item', { hasText: first.name }).first();
+    check('official: 검색 제안에 공식 코스', (await item.count()) === 1);
+    await item.click();
+    await waitRoute(page);
+    check('official: 검색에서 고르면 그 경로 시트', hashOf(page) === `#/m/bukhansan?route=f:${first.id}`, hashOf(page));
+
+    // 배포 자료: 공식 코스 선 매니페스트·파일
+    const idx = JSON.parse(await readFile(join(ROOT, 'public/gpx/courses/index.json'), 'utf8'));
+    check('official: 공식 코스 선 매니페스트(실측·공단 좌표 아님 명시)', /실측/.test(idx.what_this_is) && /공단 원본 좌표/.test(idx.what_this_is) && idx.sources.some((x) => /ODbL/.test(x.license || '')));
+    let missing = 0, bad = 0, n = 0;
+    for (const id of Object.keys(idx.mountains)) {
+      const f = join(ROOT, 'public/gpx/courses/m', `${id}.json`);
+      if (!existsSync(f)) { missing++; continue; }
+      for (const t of JSON.parse(await readFile(f, 'utf8')).courses) { n++; if (t.kind !== 'osm-matched' || !existsSync(join(ROOT, 'public/gpx', t.file))) bad++; }
+    }
+    check('official: 산별 공식 코스 선 파일이 모두 있음', missing === 0 && bad === 0 && n > 0, `산 ${Object.keys(idx.mountains).length} · 선 ${n} · 누락 ${missing} · 문제 ${bad}`);
+    const withLine = mountains.flatMap((m) => m.official_courses || []).filter((c) => c.has_line).length;
+    check('official: mountains.json의 선 있음 표시와 매니페스트가 맞음', withLine > 0 && withLine <= n, `${withLine} / ${n}`);
   });
 
   // ---------- 배포 자료 무결성(코스별 계산 경로) ----------

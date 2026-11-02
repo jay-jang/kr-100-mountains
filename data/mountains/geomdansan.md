@@ -7,7 +7,7 @@ region: 수도권
 province: 경기
 location: "경기도 하남시·광주시"
 lists: [hansanha]
-coordinates: [37.520891, 127.247086]
+coordinates: [37.517655, 127.249354]
 coord_confidence: high
 features: ["한강 조망", "팔당호", "일출", "수도권 근교", "단풍"]
 best_season: "가을(10~11월) 단풍, 겨울 해맞이"

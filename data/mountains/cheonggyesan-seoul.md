@@ -7,8 +7,8 @@ region: 수도권
 province: 서울
 location: "서울특별시 서초구, 경기도 과천시·성남시·의왕시"
 lists: [bac, hansanha, wolgansan]
-coordinates: [37.4177, 127.0533]
-coord_confidence: medium
+coordinates: [37.421899, 127.043217]
+coord_confidence: high
 features: ["흙산", "능선 산책", "진달래", "수도권 근교", "100대 명산", "지하철 접근"]
 best_season: "봄(4월) 진달래, 가을(10~11월) 단풍"
 ---

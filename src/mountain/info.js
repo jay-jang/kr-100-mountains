@@ -4,6 +4,7 @@ import { LIST_KEYS, LIST_META } from '../data.js';
 import { navigate } from '../router.js';
 import { icon } from '../icons.js';
 import { hostOf } from './format.js';
+import { savedListHash } from '../liststate.js';
 
 // 경고 톤은 sentiment가 아니라 topic으로만 정한다(reviews.js와 같은 기준).
 export const ALERT_TOPICS = ['위험구간', '통제·예약'];
@@ -61,7 +62,7 @@ function disclosure(title, ...children) {
  * @param {Promise<object|null>} reviewsPromise reviewsFor(m.id)
  * @returns {{root:HTMLElement, fieldNotes:HTMLElement}}
  */
-export function buildInfo(m, reviewsPromise) {
+export function buildInfo(m, reviewsPromise, { listHash = savedListHash } = {}) {
   const root = el('div', { class: 'mt-info' });
 
   // 교통·주차
@@ -97,7 +98,11 @@ export function buildInfo(m, reviewsPromise) {
   if (m.features?.length) root.append(section('특징',
     el('div', { class: 'mt-tags' }, ...m.features.map((f) => el('button', {
       type: 'button', class: 'chip small', 'aria-label': `‘${f}’로 산 찾기`,
-      onClick: () => navigate(`#/map?q=${encodeURIComponent(f)}`),
+      onClick: () => {
+        const p = new URLSearchParams(listHash().split('?')[1] || '');
+        p.delete('mode'); p.delete('walkkind'); p.set('q', f);
+        navigate(`#/map?${p}`);
+      },
     }, f)))));
 
   // 목록 근거(접힘)

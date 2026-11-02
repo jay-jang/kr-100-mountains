@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 양양군·인제군"
 lists: [sanlim, wolgansan]
-coordinates: [38.0447, 128.4236]
-coord_confidence: medium
+coordinates: [38.04874, 128.425643]
+coord_confidence: high
 features: ["산림유전자원보호구역", "생물권보전지역", "야생화", "곰배령", "원시림", "단풍"]
 best_season: "여름(6~8월) 야생화, 가을(10월) 단풍"
 ---
@@ -40,6 +40,12 @@ best_season: "여름(6~8월) 야생화, 가을(10월) 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/점봉산)
 - [기존 산별 참고자료](https://jbs.foresttrip.go.kr/)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **용소폭포코스** — 설악산국립공원 · 3.2km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 약수터탐방지원센터-성국사-용소폭포-용소폭포탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V002&parkNavGb=guide))
 
 ## 주요 등산로
 

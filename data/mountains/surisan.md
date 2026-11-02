@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 안양시·군포시·안산시"
 lists: [hansanha]
-coordinates: [37.3722, 126.9297]
-coord_confidence: medium
+coordinates: [37.372888, 126.913944]
+coord_confidence: high
 features: ["도립공원", "진달래", "능선종주", "병풍바위", "도심근교"]
 best_season: "봄(4월) 진달래, 가을(10~11월) 단풍"
 ---

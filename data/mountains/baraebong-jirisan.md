@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 남원시"
 lists: [bac, hansanha]
-coordinates: [35.3742, 127.5589]
-coord_confidence: medium
+coordinates: [35.421604, 127.576105]
+coord_confidence: high
 features: ["국립공원", "철쭉", "억새", "초원능선", "조망"]
 best_season: "봄(5월) 철쭉, 가을 억새"
 ---
@@ -41,6 +41,12 @@ best_season: "봄(5월) 철쭉, 가을 억새"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://namu.wiki/w/바래봉)
 - [기존 산별 참고자료](https://ohiking.today/mountain_course/75)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **정령치- 바래봉코스** — 지리산국립공원 · 12.8km · 6시간 10분 · 난이도 중 · 정상 미경유<br>구간: 정령치-고리봉-세걸산-세동치-부운치-팔랑치-바래봉삼거리-운봉아래(용산리) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V004&parkNavGb=guide))
 
 ## 주요 등산로
 

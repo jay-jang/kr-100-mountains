@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 태백시·정선군"
 lists: [wolgansan]
-coordinates: [37.2115, 128.9183]
-coord_confidence: medium
+coordinates: [37.211818, 128.916]
+coord_confidence: high
 features: ["백두대간", "야생화", "천상의화원", "생태보호구역", "한강발원지", "고산"]
 best_season: "여름(6~8월) 야생화, 가을(9~10월) 단풍"
 ---
@@ -34,6 +34,13 @@ best_season: "여름(6~8월) 야생화, 가을(9~10월) 단풍"
 - 특징: 야생화 군락을 만나는 고지대 탐방 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 금대봉코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=122200&vcursId=122200V004) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **금대봉코스** — 태백산국립공원 · 9.4km · 4시간 20분 · 난이도 하 · 정상 경유<br>구간: 두문동재 ~ 금대봉  ~ 분주령 ~ 대덕산 ~ 검룡소 주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V004&parkNavGb=guide))
+- **검룡소코스** — 태백산국립공원 · 1.5km · 35분 · 난이도 하 · 정상 미경유<br>구간: 검룡소 주차장 ~ 세심탐방지원센터 ~ 검룡소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V003&parkNavGb=guide))
 
 ## 주요 등산로
 

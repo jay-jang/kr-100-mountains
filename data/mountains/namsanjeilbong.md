@@ -43,6 +43,14 @@ best_season: "가을(10~11월) 단풍, 봄 신록"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 남산제일봉2코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120700&vcursId=120700V005) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **남산제일봉1코스** — 가야산국립공원 · 2.3km · 1시간 50분 · 난이도 중 · 정상 경유<br>구간: 청량동탐방지원센터~전망대~남산제일봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V003&parkNavGb=guide))
+- **남산제일봉2코스** — 가야산국립공원 · 2.6km · 1시간 30분 · 난이도 하 · 정상 경유<br>구간: 해인관광호텔~오봉산중턱~남산제일봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V005&parkNavGb=guide))
+- **가야산 소리길** — 가야산국립공원 · 6km · 2시간 30분 · 난이도 하 · 정상 미경유<br>구간: 대장경테마파크~농산정~영산교 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V001&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

@@ -20,9 +20,9 @@ import { navigate, currentRoute } from './router.js';
 import { openModal, modalOpen } from './modal.js';
 import { createWalkLayer } from './walklayer.js';
 import { kindStyle, loadWalkIndex } from './walkdata.js';
+import { savedListHash, rememberList } from './liststate.js';
 
 const KOREA = [36.3, 127.8];
-const NAME_MAX_KM = 150;      // 보이는 범위 폭이 이보다 좁으면 산 이름을 적는다
 const CLUSTER_KM = 200;       // 보이는 범위 폭이 이보다 넓으면 겹치는 산 기호를 숫자 묶음으로
 const CLUSTER_PX = 34;        // 묶음 반경(화면 px)
 const AIM_GRACE_MS = 1500;    // 코드가 지도를 옮긴 뒤 이 시간 안의 이동은 사용자 이동으로 세지 않는다
@@ -50,7 +50,7 @@ async function createShell(host) {
   });
   const recordBtn = el('a', { class: 'tb-btn', href: '#/track' }, '기록');
   const settingsBtn = el('a', { class: 'tb-btn icon', href: '#/settings', 'aria-label': '설정', title: '설정', html: icon('settings') });
-  const brand = el('a', { class: 'tb-brand', href: '#/map' }, '대한민국 100대 명산');
+  const brand = el('a', { class: 'tb-brand', href: savedListHash() }, '대한민국 100대 명산');
 
   const modeMtn = el('button', { type: 'button', class: 'seg-btn', 'aria-pressed': 'true' }, '명산');
   const modeWalk = el('button', { type: 'button', class: 'seg-btn', 'aria-pressed': 'false' }, '걷기길');
@@ -190,8 +190,8 @@ async function createShell(host) {
       'aria-label': `${m.name_full} ${Math.round(m.elevation_m).toLocaleString()}m${hiked ? ' 등정' : ''}`,
       dataset: { id: m.id },
     });
-    node.innerHTML = summitSymbol({ hiked, color, size: selected ? 22 : 16 });
-    node.append(el('span', { class: 'mk-name' }, m.name));
+    node.innerHTML = summitSymbol({ hiked, color, size: selected ? 26 : 20 });
+    node.append(el('span', { class: 'mk-name' }, m.name_full));
     guardDragClick(node);
     return node;
   }
@@ -216,13 +216,38 @@ async function createShell(host) {
       } else {
         const lat = g.reduce((a, m) => a + m.lat, 0) / g.length, lng = g.reduce((a, m) => a + m.lon, 0) / g.length;
         const hiked = g.filter((m) => isHiked(m.id)).length;
-        const node = el('button', { type: 'button', class: 'mk-cluster', 'aria-label': `산 ${g.length}곳${hiked ? `(등정 ${hiked})` : ''} — 눌러서 확대` }, String(g.length));
+        const node = el('button', { type: 'button', class: 'mk-cluster',
+          title: `${g.slice(0, 3).map(m => m.name_full).join(' · ')}${g.length > 3 ? ` 외 ${g.length - 3}곳` : ''}`,
+          'aria-label': `산 ${g.length}곳${hiked ? `(등정 ${hiked})` : ''} — 눌러서 확대` });
+        node.innerHTML = summitSymbol({ color: 'var(--map-halo)', hiked: true, size: 10 });
+        node.append(el('span', {}, String(g.length)));
         guardDragClick(node);
         view.addMarker({ lat, lng, node, size: [44, 44], anchor: [22, 22], zIndex: 100,
           onClick: () => aimed(() => { aimAt = Date.now(); view.fitBounds(g.map((m) => [m.lat, m.lon]), 0, { padding: padding(), maxZoom: 11 }); }) });
       }
     }
     root.classList.toggle('dim-mountains', !!markerOpts.dim);
+    layoutMarkerNames();
+  }
+  // 확대 전에도 이름을 읽을 수 있게 하되, 서로 겹치는 라벨은 우선순위대로 덜어 낸다.
+  // 기호·버튼 자체는 숨기지 않는다. 숨긴 이름은 호버·키보드 포커스로 읽을 수 있다.
+  function layoutMarkerNames() {
+    if (!view) return;
+    const occupied = [];
+    const ordered = [...markers].sort(([a], [b]) =>
+      Number(b === markerOpts.selectedId) - Number(a === markerOpts.selectedId) || a.localeCompare(b));
+    for (const [id, token] of ordered) {
+      const node = token.element?.()?.querySelector('.mk') || token.element?.();
+      if (!node) continue;
+      const label = node.querySelector('.mk-name');
+      if (!label) continue;
+      node.classList.add('label-on');
+      const m = data.byId.get(id), p = view.project([m.lat, m.lon]);
+      const box = { l: p.x - 16, r: p.x + 16 + label.offsetWidth + 7, t: p.y - 13, b: p.y + 13 };
+      const overlap = occupied.some(o => box.l < o.r && box.r > o.l && box.t < o.b && box.b > o.t);
+      node.classList.toggle('label-on', id === markerOpts.selectedId || !overlap);
+      if (id === markerOpts.selectedId || !overlap) occupied.push(box);
+    }
   }
   /** 화면 거리 기준 묶기. 선택한 산은 묶지 않는다(늘 그 자리에 보이게). */
   function clusterize(list, selectedId) {
@@ -281,7 +306,8 @@ async function createShell(host) {
     const w = boundsWidthKm();
     const z = view.getZoom();
     if (markersStale || z !== lastZoom) { const wasClustered = clustered; lastZoom = z; if (markersStale || wasClustered || w > CLUSTER_KM) renderMarkers(); }
-    root.classList.toggle('names', pref('mountainNames') && w <= NAME_MAX_KM);
+    root.classList.toggle('names', pref('mountainNames'));
+    layoutMarkerNames();
     const enabled = walkMode === 'all' || (walkMode === 'auto' && pref('walkLines'));
     walkLayer?.update({ bounds: view.getBounds(), widthKm: w, enabled, dark: isDarkTheme() });
     moveListeners.forEach((fn) => { try { fn(); } catch (e) { console.error(e); } });
@@ -362,8 +388,8 @@ async function createShell(host) {
     const legendRow = (style, label, dash) => el('div', { class: 'legend-row' },
       el('span', { class: 'legend-line' + (dash ? ' dash' : ''), style: `--c:${style.color};--w:${Math.min(style.weight, 5)}px` }), label);
     const legend = el('div', { class: 'legend' },
-      legendRow({ color: dark ? '#e07a5f' : '#b4432b', weight: 4 }, '정상 코스 · 수록 경로'),
-      legendRow({ color: dark ? '#e07a5f' : '#b4432b', weight: 4 }, '정상 코스 · 계산 경로', true),
+      legendRow({ color: dark ? '#e07a5f' : '#b4432b', weight: 4 }, '코스 · 공식 코스 선·수록 경로'),
+      legendRow({ color: dark ? '#e07a5f' : '#b4432b', weight: 4 }, '코스 · 계산 경로(최단경로 추정)', true),
       legendRow(kindStyle('dulle', { dark }), '둘레길·걷기길'),
       legendRow(kindStyle('dulle', { dark, long: true }), '장거리 걷기길'),
       legendRow(kindStyle('forest', { dark }), '숲길·산책로'),
@@ -383,7 +409,7 @@ async function createShell(host) {
   }
 
   // ---------- 칩(찾을 대상·필터·둘레길) ----------
-  let listParams = new URLSearchParams();
+  let listParams = new URLSearchParams(savedListHash().split('?')[1] || '');
   function listHash(mut) {
     const p = new URLSearchParams(listParams);
     mut?.(p);
@@ -416,6 +442,7 @@ async function createShell(host) {
     filterChip.classList.toggle('on', n > 0);
     filterChip.hidden = walk;
   }
+  paintChips();
 
   // ---------- 검색 ----------
   function pickSearchItem(item) {
@@ -477,7 +504,12 @@ async function createShell(host) {
       /** 지도 위 가운데 동작 버튼. null이면 숨김. */
       setMapAction(o) { mapActionFn = o?.onClick || null; mapAction.textContent = o?.label || ''; mapAction.hidden = !o; },
       setContent(o) { sheet.setContent(o); },
-      setListParams(p) { listParams = new URLSearchParams(p); paintChips(); },
+      setListParams(p) {
+        if (disposed) return;
+        listParams = new URLSearchParams(p);
+        brand.href = rememberList(listParams);
+        paintChips();
+      },
       /** 마지막 목록 화면 URL(#/map?…) — 산·걷기길 시트의 [×]가 돌아갈 곳. */
       listHash: () => listHash(),
       consumeFilterRequest() { const v = filterRequested; filterRequested = false; return v; },

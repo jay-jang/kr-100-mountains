@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 평창군·횡성군·영월군"
 lists: [sanlim, bac, wolgansan]
-coordinates: [37.3372, 128.3436]
-coord_confidence: medium
+coordinates: [37.396474, 128.293524]
+coord_confidence: high
 features: ["100대 명산", "단풍", "설경", "암릉", "조망"]
 best_season: "가을(10월) 단풍, 겨울(12~2월) 설경"
 ---

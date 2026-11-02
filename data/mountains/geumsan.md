@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 남해군"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [34.7407, 127.9836]
-coord_confidence: medium
+coordinates: [34.753798, 127.982936]
+coord_confidence: high
 features: ["국립공원", "한려해상", "기암", "일출", "보리암", "봉수대", "다도해조망"]
 best_season: "사철 좋음, 일출은 연중(특히 봄·가을), 가을 조망 최적"
 ---
@@ -49,6 +49,13 @@ best_season: "사철 좋음, 일출은 연중(특히 봄·가을), 가을 조망
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/보리암_(남해군))
 - [기존 산별 참고자료](https://koreahike.com/namhae-geumsan-hiking-guide/)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **금산 1코스** — 한려해상국립공원 · 2.2km · 1시간 30분 · 난이도 중 · 정상 경유<br>구간: 금산탐방지원센터~도선바위~쌍홍문~보리암~금산정상(망대) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V001&parkNavGb=guide))
+- **금산자연관찰로** — 한려해상국립공원 · 1.2km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 금산탐방지원센터-자연관찰로 입구- 계곡-자연관찰로 출구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V002&parkNavGb=guide))
 
 ## 주요 등산로
 

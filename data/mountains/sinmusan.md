@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 장수군"
 lists: [wolgansan]
-coordinates: [35.588, 127.483]
-coord_confidence: medium
+coordinates: [35.592586, 127.486547]
+coord_confidence: high
 features: ["금강 발원지", "뜬봉샘", "진달래", "자작나무숲", "고원지대", "걷기좋은숲길"]
 best_season: "봄(4월) 진달래, 가을 단풍"
 ---

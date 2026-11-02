@@ -7,8 +7,8 @@ region: 수도권
 province: 인천
 location: "인천광역시 강화군"
 lists: [wolgansan]
-coordinates: [37.7686, 126.4172]
-coord_confidence: medium
+coordinates: [37.743973, 126.43721]
+coord_confidence: high
 features: ["진달래", "봄꽃", "고인돌", "역사유적", "서해조망", "능선"]
 best_season: "봄(4월 중순) 진달래"
 ---

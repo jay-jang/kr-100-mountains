@@ -7,7 +7,7 @@
   <metadata>
     <name>황매산 · 모산재-황매산 종주 (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-08-04T05:40:42.235Z</time>
+    <time>2026-10-14T15:32:11.967Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,14 +19,14 @@
       <k100:route_index>3</k100:route_index>
       <k100:route_name>모산재-황매산 종주</k100:route_name>
       <k100:variant>0</k100:variant>
-      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
       <k100:snap_trailhead_m>149</k100:snap_trailhead_m>
-      <k100:snap_summit_m>53</k100:snap_summit_m>
+      <k100:snap_summit_m>2</k100:snap_summit_m>
       <k100:validation_score>84</k100:validation_score>
       <k100:validation_status>accepted</k100:validation_status>
     </extensions>
@@ -126,12 +126,12 @@
       <trkpt lat="35.481052" lon="127.983149"><ele>793.5</ele></trkpt>
       <trkpt lat="35.481106" lon="127.982904"><ele>795.6</ele></trkpt>
       <trkpt lat="35.481093" lon="127.982646"><ele>796.1</ele></trkpt>
-      <trkpt lat="35.481149" lon="127.982557"><ele>796.0</ele></trkpt>
+      <trkpt lat="35.481210" lon="127.982355"><ele>797.0</ele></trkpt>
       <trkpt lat="35.481231" lon="127.982198"><ele>798.3</ele></trkpt>
       <trkpt lat="35.481170" lon="127.982079"><ele>799.6</ele></trkpt>
       <trkpt lat="35.481373" lon="127.981823"><ele>802.8</ele></trkpt>
       <trkpt lat="35.481421" lon="127.981502"><ele>806.6</ele></trkpt>
-      <trkpt lat="35.481516" lon="127.981414"><ele>806.9</ele></trkpt>
+      <trkpt lat="35.481576" lon="127.981415"><ele>806.4</ele></trkpt>
       <trkpt lat="35.481770" lon="127.981519"><ele>805.8</ele></trkpt>
       <trkpt lat="35.482005" lon="127.981359"><ele>809.0</ele></trkpt>
       <trkpt lat="35.482096" lon="127.980801"><ele>816.8</ele></trkpt>
@@ -170,8 +170,7 @@
       <trkpt lat="35.491083" lon="127.974828"><ele>1029.5</ele></trkpt>
       <trkpt lat="35.491189" lon="127.974907"><ele>1036.5</ele></trkpt>
       <trkpt lat="35.491351" lon="127.974830"><ele>1042.6</ele></trkpt>
-      <trkpt lat="35.491601" lon="127.974973"><ele>1041.0</ele></trkpt>
-      <trkpt lat="35.491725" lon="127.974983"><ele>1039.2</ele></trkpt>
+      <trkpt lat="35.491641" lon="127.974989"><ele>1040.4</ele></trkpt>
       <trkpt lat="35.492466" lon="127.974732"><ele>1050.2</ele></trkpt>
       <trkpt lat="35.492628" lon="127.974731"><ele>1056.1</ele></trkpt>
       <trkpt lat="35.492731" lon="127.974793"><ele>1059.3</ele></trkpt>
@@ -179,13 +178,7 @@
       <trkpt lat="35.493528" lon="127.974686"><ele>1070.9</ele></trkpt>
       <trkpt lat="35.493942" lon="127.974615"><ele>1075.7</ele></trkpt>
       <trkpt lat="35.494238" lon="127.974656"><ele>1077.4</ele></trkpt>
-      <trkpt lat="35.494308" lon="127.974545"><ele>1078.0</ele></trkpt>
-      <trkpt lat="35.494437" lon="127.974589"><ele>1078.4</ele></trkpt>
-      <trkpt lat="35.494492" lon="127.974498"><ele>1080.8</ele></trkpt>
-      <trkpt lat="35.494930" lon="127.974295"><ele>1095.3</ele></trkpt>
-      <trkpt lat="35.495406" lon="127.974529"><ele>1097.5</ele></trkpt>
-      <trkpt lat="35.495887" lon="127.974666"><ele>1095.3</ele></trkpt>
-      <trkpt lat="35.495992" lon="127.974766"><ele>1092.2</ele></trkpt>
+      <trkpt lat="35.494236" lon="127.974608"><ele>1077.4</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

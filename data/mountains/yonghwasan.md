@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 화천군·춘천시"
 lists: [sanlim, bac]
-coordinates: [38.0225, 127.7685]
-coord_confidence: medium
+coordinates: [38.038193, 127.747992]
+coord_confidence: high
 features: ["100대 명산", "화강암", "암릉", "기암괴석", "산성", "조망"]
 best_season: "가을(10~11월) 단풍과 암릉 산행"
 ---

@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 홍천군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.69834, 127.69922]
-coord_confidence: medium
+coordinates: [37.695883, 127.697119]
+coord_confidence: high
 features: ["암릉", "홍천강", "밧줄구간", "100대명산", "강변"]
 best_season: "봄(4~5월) 신록, 가을(10월) 단풍"
 ---

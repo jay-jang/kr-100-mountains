@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 진안군"
 lists: [bac]
-coordinates: [35.9167, 127.4167]
-coord_confidence: medium
+coordinates: [35.923064, 127.416646]
+coord_confidence: high
 features: ["100대 명산", "암릉", "출렁다리", "기암", "조망", "단풍"]
 best_season: "가을(10~11월) 단풍, 봄 신록"
 ---

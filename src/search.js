@@ -26,19 +26,32 @@ function seasonKeywords(month = new Date().getMonth()) {
   return ['설경', '상고대', '일출'];
 }
 
-/** 코스 색인: 등산로(trail)와 대표 코스(famous course)를 한 목록으로. */
+/** 코스 색인: 등산로(trail)·대표 코스(famous course)·공식 탐방코스를 한 목록으로. */
 function buildCourseIndex(mountains) {
   const out = [];
   for (const m of mountains) {
+    const officials = m.official_courses || [];
+    const officialById = new Map(officials.map((c) => [c.id, c]));
+    const officialText = (oc) => (oc ? ` ${oc.name} ${oc.section || ''}` : '');
+    // 등산로에 이어진 공식 코스(이름·구간으로도 찾게 그 행의 글자에 더한다)
+    const officialForTrail = new Map(officials.filter((c) => c.trail_index != null).map((c) => [c.trail_index, c]));
     const linked = new Set();
     (m.famous_courses || []).forEach((c) => {
       if (c.trail_index != null) linked.add(c.trail_index);
+      const extra = officialText(officialById.get(c.official_id)) + (c.trail_index != null ? officialText(officialForTrail.get(c.trail_index)) : '');
       out.push({ type: 'course', m, key: c.trail_index != null ? `t:${c.trail_index}` : `c:${c.id}`, name: c.name,
-        text: `${c.name} ${(c.via || []).join(' ')} ${m.name}`.toLowerCase() });
+        text: `${c.name} ${(c.via || []).join(' ')}${extra} ${m.name}`.toLowerCase() });
     });
     (m.trails || []).forEach((t, i) => {
       if (linked.has(i)) return;     // 대표 코스와 같은 행이므로 한 번만
-      out.push({ type: 'course', m, key: `t:${i}`, name: t.name || '주요 코스', text: `${t.name || ''} ${t.start || ''} ${m.name}`.toLowerCase() });
+      out.push({ type: 'course', m, key: `t:${i}`, name: t.name || '주요 코스',
+        text: `${t.name || ''} ${t.start || ''}${officialText(officialForTrail.get(i))} ${m.name}`.toLowerCase() });
+    });
+    // 공식 탐방코스 — 대표 코스·등산로 행에 이어진 것은 그 행으로 이미 들어 있다.
+    officials.forEach((c) => {
+      if (c.famous_linked || c.trail_index != null) return;
+      out.push({ type: 'course', m, key: `f:${c.id}`, name: c.name,
+        text: `${c.name} ${c.section || ''} ${(c.starts || []).join(' ')} ${c.park || ''} ${m.name}`.toLowerCase() });
     });
   }
   return out;

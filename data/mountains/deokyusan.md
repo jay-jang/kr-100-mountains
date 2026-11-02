@@ -43,6 +43,22 @@ best_season: "겨울(12~2월) 눈꽃·상고대, 가을(10월) 단풍"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 향적봉 2코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120800&vcursId=120800V002) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **향적봉 2코스** — 덕유산국립공원 · 8.5km · 3시간 · 난이도 중 · 정상 경유<br>구간: 구천동탐방지원센터~인월담~백련사~향적봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V002&parkNavGb=guide))
+- **종주코스** — 덕유산국립공원 · 26.9km · 14시간 · 난이도 중 · 정상 경유<br>구간: 삼공탐방지원센터~백련사~향적봉~중봉~동엽령~무룡산~삿갓재~남덕유산~영각탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V010&parkNavGb=guide))
+- **향적봉 1코스** — 덕유산국립공원 · 0.6km · 20분 · 난이도 중 · 정상 경유<br>구간: 설천봉~향적봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V003&parkNavGb=guide))
+- **오수자굴코스** — 덕유산국립공원 · 4.2km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 백련사~오수자굴~중봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V007&parkNavGb=guide))
+- **횡경재코스** — 덕유산국립공원 · 6.5km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 송계탐방지원센터-횡경재- 송계삼거리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V009&parkNavGb=guide))
+- **구천동 어사길 코스** — 덕유산국립공원 · 3.3km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 덕유대자연학습장(구천동자연관찰로) ~ 안심대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V013&parkNavGb=guide))
+- **신풍령코스** — 덕유산국립공원 · 7.8km · 4시간 · 난이도 중 · 정상 미경유<br>구간: 신풍령~횡경재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V012&parkNavGb=guide))
+- **동엽령코스** — 덕유산국립공원 · 4.5km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 안성탐방지원센터~칠연폭포삼거리~동엽령 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V008&parkNavGb=guide))
+- **삿갓재코스** — 덕유산국립공원 · 3.4km · 1시간 40분 · 난이도 중 · 정상 미경유<br>구간: 황점마을~삿갓재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V004&parkNavGb=guide))
+- **치목코스** — 덕유산국립공원 · 3.7km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 치목~송대폭포~안국사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V011&parkNavGb=guide))
+- **월성재코스** — 덕유산국립공원 · 3.6km · 2시간 50분 · 난이도 중 · 정상 미경유<br>구간: 월성~월성재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V006&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

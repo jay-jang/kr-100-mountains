@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>북한산 · 보국문코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <time>2026-10-13T00:00:00Z</time>
+    <link href="https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754"><text>코스 정보: 국립공원공단 탐방로 통합검색</text></link>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-matched</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:course_id>knps-121500v011</k100:course_id>
+      <k100:course_source>KNPS</k100:course_source>
+      <k100:course_name>보국문코스</k100:course_name>
+      <k100:park>북한산</k100:park>
+      <k100:mountain_ids>bukhansan</k100:mountain_ids>
+      <k100:geometry>OpenStreetMap ways matched to the official course path; no official coordinates included; short connectors (&lt;=30 m) only where OSM way ends do not meet and the official course passes</k100:geometry>
+      <k100:match_coverage>1</k100:match_coverage>
+      <k100:match_precision>1</k100:match_precision>
+      <k100:segments>1</k100:segments>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>북한산 · 보국문코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.618939" lon="126.996638"><ele>130.6</ele></trkpt>
+      <trkpt lat="37.619278" lon="126.996290"><ele>132.2</ele></trkpt>
+      <trkpt lat="37.619568" lon="126.995763"><ele>144.5</ele></trkpt>
+      <trkpt lat="37.620131" lon="126.995449"><ele>143.2</ele></trkpt>
+      <trkpt lat="37.620200" lon="126.995173"><ele>147.3</ele></trkpt>
+      <trkpt lat="37.620419" lon="126.994893"><ele>150.4</ele></trkpt>
+      <trkpt lat="37.620488" lon="126.994685"><ele>151.2</ele></trkpt>
+      <trkpt lat="37.620520" lon="126.994186"><ele>152.2</ele></trkpt>
+      <trkpt lat="37.620574" lon="126.994006"><ele>153.1</ele></trkpt>
+      <trkpt lat="37.620942" lon="126.993552"><ele>156.0</ele></trkpt>
+      <trkpt lat="37.621759" lon="126.993264"><ele>167.4</ele></trkpt>
+      <trkpt lat="37.621860" lon="126.993197"><ele>168.6</ele></trkpt>
+      <trkpt lat="37.621939" lon="126.993025"><ele>168.5</ele></trkpt>
+      <trkpt lat="37.622930" lon="126.992488"><ele>180.2</ele></trkpt>
+      <trkpt lat="37.623220" lon="126.991964"><ele>190.5</ele></trkpt>
+      <trkpt lat="37.623658" lon="126.991629"><ele>197.4</ele></trkpt>
+      <trkpt lat="37.623969" lon="126.990808"><ele>207.7</ele></trkpt>
+      <trkpt lat="37.624243" lon="126.990550"><ele>210.2</ele></trkpt>
+      <trkpt lat="37.624823" lon="126.990096"><ele>227.4</ele></trkpt>
+      <trkpt lat="37.625120" lon="126.990133"><ele>231.4</ele></trkpt>
+      <trkpt lat="37.625505" lon="126.989947"><ele>241.8</ele></trkpt>
+      <trkpt lat="37.625935" lon="126.989498"><ele>268.2</ele></trkpt>
+      <trkpt lat="37.626130" lon="126.989483"><ele>272.7</ele></trkpt>
+      <trkpt lat="37.626276" lon="126.989572"><ele>271.1</ele></trkpt>
+      <trkpt lat="37.626464" lon="126.989453"><ele>275.3</ele></trkpt>
+      <trkpt lat="37.626873" lon="126.989364"><ele>280.6</ele></trkpt>
+      <trkpt lat="37.626981" lon="126.989460"><ele>277.1</ele></trkpt>
+      <trkpt lat="37.627147" lon="126.989396"><ele>278.3</ele></trkpt>
+      <trkpt lat="37.627554" lon="126.989372"><ele>274.9</ele></trkpt>
+      <trkpt lat="37.627910" lon="126.989048"><ele>275.7</ele></trkpt>
+      <trkpt lat="37.628146" lon="126.988935"><ele>275.9</ele></trkpt>
+      <trkpt lat="37.628302" lon="126.988793"><ele>279.2</ele></trkpt>
+      <trkpt lat="37.628470" lon="126.988741"><ele>280.0</ele></trkpt>
+      <trkpt lat="37.628675" lon="126.988548"><ele>284.0</ele></trkpt>
+      <trkpt lat="37.628826" lon="126.987906"><ele>297.6</ele></trkpt>
+      <trkpt lat="37.628784" lon="126.987657"><ele>301.1</ele></trkpt>
+      <trkpt lat="37.629009" lon="126.987145"><ele>304.9</ele></trkpt>
+      <trkpt lat="37.629132" lon="126.987116"><ele>307.2</ele></trkpt>
+      <trkpt lat="37.629398" lon="126.986902"><ele>313.5</ele></trkpt>
+      <trkpt lat="37.629706" lon="126.986763"><ele>319.7</ele></trkpt>
+      <trkpt lat="37.630093" lon="126.986499"><ele>330.7</ele></trkpt>
+      <trkpt lat="37.630455" lon="126.985906"><ele>336.9</ele></trkpt>
+      <trkpt lat="37.631080" lon="126.985527"><ele>351.1</ele></trkpt>
+      <trkpt lat="37.631428" lon="126.985440"><ele>361.6</ele></trkpt>
+      <trkpt lat="37.631718" lon="126.985248"><ele>372.6</ele></trkpt>
+      <trkpt lat="37.631871" lon="126.985034"><ele>382.4</ele></trkpt>
+      <trkpt lat="37.632379" lon="126.984673"><ele>401.7</ele></trkpt>
+      <trkpt lat="37.632809" lon="126.984250"><ele>420.8</ele></trkpt>
+      <trkpt lat="37.633419" lon="126.983862"><ele>444.8</ele></trkpt>
+      <trkpt lat="37.633666" lon="126.983815"><ele>453.2</ele></trkpt>
+      <trkpt lat="37.634399" lon="126.984189"><ele>475.0</ele></trkpt>
+      <trkpt lat="37.634550" lon="126.984216"><ele>481.0</ele></trkpt>
+      <trkpt lat="37.634800" lon="126.984124"><ele>492.3</ele></trkpt>
+      <trkpt lat="37.635269" lon="126.983795"><ele>515.0</ele></trkpt>
+      <trkpt lat="37.635711" lon="126.983272"><ele>548.0</ele></trkpt>
+      <trkpt lat="37.635865" lon="126.983004"><ele>560.9</ele></trkpt>
+      <trkpt lat="37.636019" lon="126.982891"><ele>565.1</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

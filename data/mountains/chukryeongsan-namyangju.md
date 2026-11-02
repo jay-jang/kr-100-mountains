@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 남양주시·가평군"
 lists: [sanlim, hansanha]
-coordinates: [37.7697, 127.3336]
-coord_confidence: medium
+coordinates: [37.752763, 127.333886]
+coord_confidence: high
 features: ["잣나무숲", "자연휴양림", "삼림욕", "철쭉", "단풍", "암릉"]
 best_season: "봄(5월 서리산 철쭉)·가을(10월) 단풍"
 ---

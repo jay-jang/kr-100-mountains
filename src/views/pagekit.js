@@ -4,18 +4,19 @@ import { el } from '../dom.js';
 import { icon } from '../icons.js';
 import { goUp } from '../router.js';
 import { openModal } from '../modal.js';
+import { savedListHash } from '../liststate.js';
 
 /**
  * 52px 상단 바: [‹ 지도] · 제목 · (오른쪽 링크).
  * 뒤로는 앱 안 기록이 있으면 뒤로가기(router goUp — 이중 탭에 두 번 가지 않게 막혀 있다), 링크로 바로 들어왔으면 지도로 교체.
  */
 export function pageBar({ title, end = null, titleId = 'page-title' }) {
-  const back = el('a', { class: 'pg-back', href: '#/map', html: icon('back') });
+  const back = el('a', { class: 'pg-back', href: savedListHash(), html: icon('back') });
   back.append(document.createTextNode('지도'));
   back.addEventListener('click', (e) => {
     if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    goUp('#/map');
+    goUp(savedListHash());
   });
   return el('header', { class: 'pg-bar' },
     el('div', { class: 'pg-bar-in' },

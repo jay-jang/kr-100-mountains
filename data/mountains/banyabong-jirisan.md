@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 남원시, 전라남도 구례군"
 lists: [bac]
-coordinates: [35.2989, 127.5556]
-coord_confidence: medium
+coordinates: [35.316311, 127.56949]
+coord_confidence: high
 features: ["국립공원", "낙조", "능선", "조망", "지리산 제2봉"]
 best_season: "가을(10월) 단풍·낙조, 여름 피서"
 ---
@@ -41,6 +41,17 @@ best_season: "가을(10월) 단풍·낙조, 여름 피서"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/반야봉)
 - [기존 산별 참고자료](https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=49a7e082-0bac-4ccf-b50f-2a5fc7dc2e1a)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **반야봉코스** — 지리산국립공원 · 5.5km · 3시간 30분 · 난이도 중 · 정상 경유<br>구간: 노고단고개~임걸령~노루목~반야봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V008&parkNavGb=guide))
+- **뱀사골계곡코스** — 지리산국립공원 · 9.2km · 4시간 20분 · 난이도 중 · 정상 미경유<br>구간: 반선-뱀사골탐방안내소-요룡대-병소-간장소-뱀사골탐방지원센터-화개재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V003&parkNavGb=guide))
+- **피아골코스** — 지리산국립공원 · 8.8km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 연곡사~직전마을~표고막터~피아골 대피소~ 피아골 삼거리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V007&parkNavGb=guide))
+- **노고단코스** — 지리산국립공원 · 4.7km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 성삼재주차장~무넹기~노고단대피소~노고단고개 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V016&parkNavGb=guide))
+- **만복대코스** — 지리산국립공원 · 5.4km · 3시간 · 난이도 중 · 정상 미경유<br>구간: 성삼재 탐방로 입구~당치고개~고리봉~묘봉치~만복대정상 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V005&parkNavGb=guide))
+- **화엄계곡코스** — 지리산국립공원 · 7km · 4시간 · 난이도 상 · 정상 미경유<br>구간: 화엄사~연기암~무넹기 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V006&parkNavGb=guide))
 
 ## 주요 등산로
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>월악산 · 만수계곡자연관찰로</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <time>2026-10-13T00:00:00Z</time>
+    <link href="https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754"><text>코스 정보: 국립공원공단 탐방로 통합검색</text></link>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-matched</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:course_id>knps-121400v008</k100:course_id>
+      <k100:course_source>KNPS</k100:course_source>
+      <k100:course_name>만수계곡자연관찰로</k100:course_name>
+      <k100:park>월악산</k100:park>
+      <k100:mountain_ids>wolaksan</k100:mountain_ids>
+      <k100:geometry>OpenStreetMap ways matched to the official course path; no official coordinates included; short connectors (&lt;=30 m) only where OSM way ends do not meet and the official course passes</k100:geometry>
+      <k100:match_coverage>1</k100:match_coverage>
+      <k100:match_precision>1</k100:match_precision>
+      <k100:segments>1</k100:segments>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>월악산 · 만수계곡자연관찰로</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.833462" lon="128.101029"><ele>355.5</ele></trkpt>
+      <trkpt lat="36.833461" lon="128.100819"><ele>350.4</ele></trkpt>
+      <trkpt lat="36.833532" lon="128.100683"><ele>350.8</ele></trkpt>
+      <trkpt lat="36.833584" lon="128.100342"><ele>348.1</ele></trkpt>
+      <trkpt lat="36.834029" lon="128.099102"><ele>338.1</ele></trkpt>
+      <trkpt lat="36.833904" lon="128.098864"><ele>331.1</ele></trkpt>
+      <trkpt lat="36.833858" lon="128.098673"><ele>329.8</ele></trkpt>
+      <trkpt lat="36.833869" lon="128.098487"><ele>328.7</ele></trkpt>
+      <trkpt lat="36.833919" lon="128.098320"><ele>328.1</ele></trkpt>
+      <trkpt lat="36.834181" lon="128.097995"><ele>327.7</ele></trkpt>
+      <trkpt lat="36.834213" lon="128.097874"><ele>327.1</ele></trkpt>
+      <trkpt lat="36.834114" lon="128.097676"><ele>324.8</ele></trkpt>
+      <trkpt lat="36.833852" lon="128.097644"><ele>325.2</ele></trkpt>
+      <trkpt lat="36.833833" lon="128.097501"><ele>325.2</ele></trkpt>
+      <trkpt lat="36.833891" lon="128.097354"><ele>324.0</ele></trkpt>
+      <trkpt lat="36.834042" lon="128.097215"><ele>322.3</ele></trkpt>
+      <trkpt lat="36.834153" lon="128.096994"><ele>319.7</ele></trkpt>
+      <trkpt lat="36.834246" lon="128.096974"><ele>318.4</ele></trkpt>
+      <trkpt lat="36.834287" lon="128.096780"><ele>318.1</ele></trkpt>
+      <trkpt lat="36.834472" lon="128.096437"><ele>315.4</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

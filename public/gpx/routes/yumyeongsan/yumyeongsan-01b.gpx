@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>유명산 · 유명계곡-정상 원점회귀 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <time>2026-10-14T15:31:35.432Z</time>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-routed</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:mountain_id>yumyeongsan</k100:mountain_id>
+      <k100:mountain_name>유명산</k100:mountain_name>
+      <k100:route_id>yumyeongsan-bf85a917</k100:route_id>
+      <k100:route_index>1</k100:route_index>
+      <k100:route_name>유명계곡-정상 원점회귀</k100:route_name>
+      <k100:variant>1</k100:variant>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:snap_trailhead_m>115</k100:snap_trailhead_m>
+      <k100:snap_summit_m>3</k100:snap_summit_m>
+      <k100:validation_score>100</k100:validation_score>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>유명산 · 유명계곡-정상 원점회귀 (대안 1) (OSM 계산 경로)</name>
+    <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.590762" lon="127.480567"><ele>391.2</ele></trkpt>
+      <trkpt lat="37.590338" lon="127.480249"><ele>393.7</ele></trkpt>
+      <trkpt lat="37.589864" lon="127.479434"><ele>392.2</ele></trkpt>
+      <trkpt lat="37.589664" lon="127.478972"><ele>393.4</ele></trkpt>
+      <trkpt lat="37.589010" lon="127.478746"><ele>401.3</ele></trkpt>
+      <trkpt lat="37.588584" lon="127.478680"><ele>412.3</ele></trkpt>
+      <trkpt lat="37.588527" lon="127.478780"><ele>409.7</ele></trkpt>
+      <trkpt lat="37.588056" lon="127.478633"><ele>422.9</ele></trkpt>
+      <trkpt lat="37.587130" lon="127.478460"><ele>437.3</ele></trkpt>
+      <trkpt lat="37.587090" lon="127.478712"><ele>443.2</ele></trkpt>
+      <trkpt lat="37.587273" lon="127.479275"><ele>454.1</ele></trkpt>
+      <trkpt lat="37.587496" lon="127.479686"><ele>452.4</ele></trkpt>
+      <trkpt lat="37.587491" lon="127.480259"><ele>462.2</ele></trkpt>
+      <trkpt lat="37.587417" lon="127.480372"><ele>466.8</ele></trkpt>
+      <trkpt lat="37.587356" lon="127.480294"><ele>469.8</ele></trkpt>
+      <trkpt lat="37.587153" lon="127.480227"><ele>479.6</ele></trkpt>
+      <trkpt lat="37.586863" lon="127.480269"><ele>491.6</ele></trkpt>
+      <trkpt lat="37.586766" lon="127.480393"><ele>493.2</ele></trkpt>
+      <trkpt lat="37.586360" lon="127.480241"><ele>503.2</ele></trkpt>
+      <trkpt lat="37.585771" lon="127.480214"><ele>513.8</ele></trkpt>
+      <trkpt lat="37.585488" lon="127.480121"><ele>520.5</ele></trkpt>
+      <trkpt lat="37.584255" lon="127.480196"><ele>525.1</ele></trkpt>
+      <trkpt lat="37.583722" lon="127.480137"><ele>535.0</ele></trkpt>
+      <trkpt lat="37.583497" lon="127.480202"><ele>542.1</ele></trkpt>
+      <trkpt lat="37.583253" lon="127.480484"><ele>546.4</ele></trkpt>
+      <trkpt lat="37.583056" lon="127.480559"><ele>546.9</ele></trkpt>
+      <trkpt lat="37.582553" lon="127.480414"><ele>563.9</ele></trkpt>
+      <trkpt lat="37.582321" lon="127.480289"><ele>570.3</ele></trkpt>
+      <trkpt lat="37.582061" lon="127.480283"><ele>572.4</ele></trkpt>
+      <trkpt lat="37.581069" lon="127.479769"><ele>595.2</ele></trkpt>
+      <trkpt lat="37.580484" lon="127.479295"><ele>605.9</ele></trkpt>
+      <trkpt lat="37.580316" lon="127.479261"><ele>610.0</ele></trkpt>
+      <trkpt lat="37.580017" lon="127.479343"><ele>620.7</ele></trkpt>
+      <trkpt lat="37.579691" lon="127.479244"><ele>633.4</ele></trkpt>
+      <trkpt lat="37.579169" lon="127.478757"><ele>652.8</ele></trkpt>
+      <trkpt lat="37.578912" lon="127.478432"><ele>663.1</ele></trkpt>
+      <trkpt lat="37.578469" lon="127.478290"><ele>674.6</ele></trkpt>
+      <trkpt lat="37.578189" lon="127.478109"><ele>684.0</ele></trkpt>
+      <trkpt lat="37.577824" lon="127.478179"><ele>700.0</ele></trkpt>
+      <trkpt lat="37.577207" lon="127.478087"><ele>722.1</ele></trkpt>
+      <trkpt lat="37.576898" lon="127.478258"><ele>715.1</ele></trkpt>
+      <trkpt lat="37.576779" lon="127.478456"><ele>712.6</ele></trkpt>
+      <trkpt lat="37.576723" lon="127.478987"><ele>726.0</ele></trkpt>
+      <trkpt lat="37.576780" lon="127.479399"><ele>728.9</ele></trkpt>
+      <trkpt lat="37.576447" lon="127.480151"><ele>734.6</ele></trkpt>
+      <trkpt lat="37.576381" lon="127.480647"><ele>736.0</ele></trkpt>
+      <trkpt lat="37.576226" lon="127.480913"><ele>739.2</ele></trkpt>
+      <trkpt lat="37.576137" lon="127.481272"><ele>745.1</ele></trkpt>
+      <trkpt lat="37.576065" lon="127.481403"><ele>747.3</ele></trkpt>
+      <trkpt lat="37.575835" lon="127.481567"><ele>751.2</ele></trkpt>
+      <trkpt lat="37.575453" lon="127.482098"><ele>765.7</ele></trkpt>
+      <trkpt lat="37.575365" lon="127.482932"><ele>784.2</ele></trkpt>
+      <trkpt lat="37.575341" lon="127.483657"><ele>804.9</ele></trkpt>
+      <trkpt lat="37.575182" lon="127.484131"><ele>815.9</ele></trkpt>
+      <trkpt lat="37.575029" lon="127.484413"><ele>821.1</ele></trkpt>
+      <trkpt lat="37.574984" lon="127.484706"><ele>827.8</ele></trkpt>
+      <trkpt lat="37.575216" lon="127.485250"><ele>838.5</ele></trkpt>
+      <trkpt lat="37.575279" lon="127.485626"><ele>845.0</ele></trkpt>
+      <trkpt lat="37.575230" lon="127.486351"><ele>851.3</ele></trkpt>
+      <trkpt lat="37.575249" lon="127.486504"><ele>852.1</ele></trkpt>
+      <trkpt lat="37.575344" lon="127.486679"><ele>852.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

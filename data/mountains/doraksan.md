@@ -7,8 +7,8 @@ region: 충청
 province: 충북
 location: "충청북도 단양군"
 lists: [sanlim, bac, hansanha]
-coordinates: [36.8556, 128.2861]
-coord_confidence: medium
+coordinates: [36.856264, 128.31128]
+coord_confidence: high
 features: ["국립공원", "월악산국립공원", "암릉", "기암괴석", "단풍", "단양팔경"]
 best_season: "가을(10~11월) 단풍과 암릉"
 ---
@@ -42,6 +42,14 @@ best_season: "가을(10~11월) 단풍과 암릉"
 - 특징: 채운봉을 거쳐 도락산 정상에 오르는 암릉 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 도락산코스(채운봉)](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121400&vcursId=121400V020) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **도락산코스(내궁기)** — 월악산국립공원 · 1.7km · 2시간 · 난이도 중 · 정상 경유<br>구간: 내궁기~신선봉~도락산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V021&parkNavGb=guide))
+- **도락산코스(제봉)** — 월악산국립공원 · 3.3km · 3시간 10분 · 난이도 상 · 정상 경유<br>구간: 상선암마을~제봉~삼거리~신선봉~도락산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V019&parkNavGb=guide))
+- **도락산코스(채운봉)** — 월악산국립공원 · 3.5km · 3시간 10분 · 난이도 상 · 정상 경유<br>구간: 상선암마을~채운봉~삼거리~신선봉~도락산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V020&parkNavGb=guide))
 
 ## 주요 등산로
 

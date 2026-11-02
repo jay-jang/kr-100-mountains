@@ -7,7 +7,7 @@ region: 경상
 province: 경남
 location: "경상남도 합천군·산청군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.49638889, 127.97444444]
+coordinates: [35.494236, 127.974589]
 coord_confidence: high
 features: ["철쭉", "억새", "군립공원", "일출", "야간 별관측", "암릉"]
 best_season: "봄(5월 초·중순) 철쭉, 가을(10~11월) 억새"

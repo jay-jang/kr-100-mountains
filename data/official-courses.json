@@ -1,0 +1,6554 @@
+{
+ "meta": {
+  "generated_at": "2026-10-14T16:03:53.273Z",
+  "generator": "scripts/build-course-routes.mjs",
+  "source": {
+   "name": "국립공원공단 탐방로 통합검색",
+   "url": "https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754",
+   "fetched_at": "2026-10-14T14:50:44.852Z"
+  },
+  "note": "코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다."
+ },
+ "courses": [
+  {
+   "id": "knps-120100v001",
+   "source": "knps",
+   "vcurs_id": "120100V001",
+   "park": "지리산",
+   "name": "구룡계곡코스",
+   "section": "구룡삼곡(구룡탐방지원센터)-유선대-비폭동-구룡폭포",
+   "schedule": "당일",
+   "distance_km": 3.1,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "구룡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 23310,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v002",
+   "source": "knps",
+   "vcurs_id": "120100V002",
+   "park": "지리산",
+   "name": "삼신봉코스",
+   "section": "청학동탐방지원센터~삼신봉~상불재~삼성궁",
+   "schedule": "당일",
+   "distance_km": 8.3,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "청학동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 8415,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.997,
+    "precision": 0.992
+   }
+  },
+  {
+   "id": "knps-120100v003",
+   "source": "knps",
+   "vcurs_id": "120100V003",
+   "park": "지리산",
+   "name": "뱀사골계곡코스",
+   "section": "반선-뱀사골탐방안내소-요룡대-병소-간장소-뱀사골탐방지원센터-화개재",
+   "schedule": "당일",
+   "distance_km": 9.2,
+   "minutes": 260,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "반선(뱀사골분소)"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 1339,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 12879,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v004",
+   "source": "knps",
+   "vcurs_id": "120100V004",
+   "park": "지리산",
+   "name": "정령치- 바래봉코스",
+   "section": "정령치-고리봉-세걸산-세동치-부운치-팔랑치-바래봉삼거리-운봉아래(용산리)",
+   "schedule": "당일",
+   "distance_km": 12.8,
+   "minutes": 370,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "정령치"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baraebong-jirisan",
+     "summit_dist_m": 442,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 16697,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v005",
+   "source": "knps",
+   "vcurs_id": "120100V005",
+   "park": "지리산",
+   "name": "만복대코스",
+   "section": "성삼재 탐방로 입구~당치고개~고리봉~묘봉치~만복대정상",
+   "schedule": "당일",
+   "distance_km": 5.4,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "성삼재주차장",
+    "정령치 하늘전망대",
+    "당동마을",
+    "상위마을"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 4924,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 19422,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v006",
+   "source": "knps",
+   "vcurs_id": "120100V006",
+   "park": "지리산",
+   "name": "화엄계곡코스",
+   "section": "화엄사~연기암~무넹기",
+   "schedule": "당일",
+   "distance_km": 7,
+   "minutes": 240,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "화엄사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 5015,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 19641,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v007",
+   "source": "knps",
+   "vcurs_id": "120100V007",
+   "park": "지리산",
+   "name": "피아골코스",
+   "section": "연곡사~직전마을~표고막터~피아골 대피소~ 피아골 삼거리",
+   "schedule": "당일",
+   "distance_km": 8.8,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "직전마을"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 2082,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 15488,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v008",
+   "source": "knps",
+   "vcurs_id": "120100V008",
+   "park": "지리산",
+   "name": "반야봉코스",
+   "section": "노고단고개~임걸령~노루목~반야봉",
+   "schedule": "당일",
+   "distance_km": 5.5,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "성삼재주차장",
+    "화엄사",
+    "직전마을",
+    "반선"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 729,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v009",
+   "source": "knps",
+   "vcurs_id": "120100V009",
+   "park": "지리산",
+   "name": "불일폭포코스",
+   "section": "쌍계사탐방지원센터~불일폭포~쌍계사탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 4.8,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "쌍계사 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 12618,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v010",
+   "source": "knps",
+   "vcurs_id": "120100V010",
+   "park": "지리산",
+   "name": "중산리(장터목)코스",
+   "section": "중산리탐방안내소~장터목대피소~천왕봉~로타리대피소~중산리",
+   "schedule": "1박2일",
+   "distance_km": 12.4,
+   "minutes": 540,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "중산리탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v011",
+   "source": "knps",
+   "vcurs_id": "120100V011",
+   "park": "지리산",
+   "name": "중산리(칼바위)코스",
+   "section": "중산리탐방안내소~칼바위~로타리대피소~천왕봉~중산리탐방안내소",
+   "schedule": "당일",
+   "distance_km": 10.8,
+   "minutes": 480,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "중산리탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.991,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v012",
+   "source": "knps",
+   "vcurs_id": "120100V012",
+   "park": "지리산",
+   "name": "백무동~중산리코스",
+   "section": "백무동탐방지원센터~장터목대피소~천왕봉~로타리대피소~중산리탐방안내소",
+   "schedule": "1박2일",
+   "distance_km": 12.9,
+   "minutes": 540,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백무동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v013",
+   "source": "knps",
+   "vcurs_id": "120100V013",
+   "park": "지리산",
+   "name": "백무동코스",
+   "section": "백무동탐방지원세터~장터목대피소~천왕봉~장터목대피소~백무동탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 15,
+   "minutes": 660,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백무동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120100v014",
+   "source": "knps",
+   "vcurs_id": "120100V014",
+   "park": "지리산",
+   "name": "거림코스",
+   "section": "거림공원지킴터~세석대피소~장터목대피소~천왕봉~로타리대피소~중산리 탐방안내소",
+   "schedule": "1박2일",
+   "distance_km": 18.9,
+   "minutes": 690,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "거림탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V014&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.999
+   }
+  },
+  {
+   "id": "knps-120100v015",
+   "source": "knps",
+   "vcurs_id": "120100V015",
+   "park": "지리산",
+   "name": "유평(대원사)코스",
+   "section": "유평탐방지원센터~유평청소년수련원(밤밭골)~치밭목대피소~천왕봉~로타리대피소~중산리 탐방안내소",
+   "schedule": "1박2일",
+   "distance_km": 21.5,
+   "minutes": 750,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "유평탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V015&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jirisan",
+     "summit_dist_m": 34,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.997,
+    "precision": 0.986
+   }
+  },
+  {
+   "id": "knps-120100v016",
+   "source": "knps",
+   "vcurs_id": "120100V016",
+   "park": "지리산",
+   "name": "노고단코스",
+   "section": "성삼재주차장~무넹기~노고단대피소~노고단고개",
+   "schedule": "당일",
+   "distance_km": 4.7,
+   "minutes": 60,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "성삼재주차장",
+    "화엄사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V016&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "banyabong-jirisan",
+     "summit_dist_m": 4235,
+     "reaches_summit": false
+    },
+    {
+     "id": "jirisan",
+     "summit_dist_m": 18802,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v001",
+   "source": "knps",
+   "vcurs_id": "120200V001",
+   "park": "계룡산",
+   "name": "신원사2코스",
+   "section": "신원사주차장~신원사~고왕암~연천봉고개~연천봉~관음봉~삼불봉~남매탑~동학사~동학사주차장",
+   "schedule": "당일",
+   "distance_km": 9.9,
+   "minutes": 300,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "신원사 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 911,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v002",
+   "source": "knps",
+   "vcurs_id": "120200V002",
+   "park": "계룡산",
+   "name": "동학사2코스",
+   "section": "동학사주차장~동학사~은선폭포~관음봉고개~연천봉~관음봉~삼불봉~남매탑~동학사~동학사주차장",
+   "schedule": "당일",
+   "distance_km": 11.8,
+   "minutes": 360,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "동학사주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 1061,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v003",
+   "source": "knps",
+   "vcurs_id": "120200V003",
+   "park": "계룡산",
+   "name": "수통골2코스",
+   "section": "수통골탐방안내소~도덕봉~자티고개~금수봉~빈계산~주차장",
+   "schedule": "당일",
+   "distance_km": 9,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "수통골탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 5483,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v004",
+   "source": "knps",
+   "vcurs_id": "120200V004",
+   "park": "계룡산",
+   "name": "수통골1코스(편도)",
+   "section": "수통골주차장~수통골탐방안내소~수통폭포~금수봉",
+   "schedule": "당일",
+   "distance_km": 3.2,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "수통골탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 6320,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v005",
+   "source": "knps",
+   "vcurs_id": "120200V005",
+   "park": "계룡산",
+   "name": "동학사1코스(편도)",
+   "section": "동학사주차장~동학사~은선폭포~관음봉",
+   "schedule": "당일",
+   "distance_km": 4.4,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "동학사주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 1061,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v006",
+   "source": "knps",
+   "vcurs_id": "120200V006",
+   "park": "계룡산",
+   "name": "갑사1코스(편도)",
+   "section": "갑사주차장~갑사~금잔디고개~삼불봉",
+   "schedule": "당일",
+   "distance_km": 3.8,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "갑사주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 2210,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v007",
+   "source": "knps",
+   "vcurs_id": "120200V007",
+   "park": "계룡산",
+   "name": "신원사1코스(편도)",
+   "section": "신원사주차장~신원사~고왕암~연천봉",
+   "schedule": "당일",
+   "distance_km": 3.2,
+   "minutes": 290,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "신원사 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 911,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v008",
+   "source": "knps",
+   "vcurs_id": "120200V008",
+   "park": "계룡산",
+   "name": "갑사2코스",
+   "section": "갑사주차장~갑사~원효대입구~연천봉~관음봉고개~관음봉~삼불봉~남매탑~동학사~동학사주차장",
+   "schedule": "당일",
+   "distance_km": 10.2,
+   "minutes": 300,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "갑사주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 1099,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120200v009",
+   "source": "knps",
+   "vcurs_id": "120200V009",
+   "park": "계룡산",
+   "name": "천정코스",
+   "section": "천정탐방지원센터 - 문골삼거리 - 큰배재 - 남매탑 - 탐방안내소",
+   "schedule": "당일",
+   "distance_km": 5.8,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "천정탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyeryongsan",
+     "summit_dist_m": 1823,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120300v001",
+   "source": "knps",
+   "vcurs_id": "120300V001",
+   "park": "한려해상",
+   "name": "금산 1코스",
+   "section": "금산탐방지원센터~도선바위~쌍홍문~보리암~금산정상(망대)",
+   "schedule": "당일",
+   "distance_km": 2.2,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "금산탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumsan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120300v002",
+   "source": "knps",
+   "vcurs_id": "120300V002",
+   "park": "한려해상",
+   "name": "금산자연관찰로",
+   "section": "금산탐방지원센터-자연관찰로 입구- 계곡-자연관찰로 출구",
+   "schedule": "당일",
+   "distance_km": 1.2,
+   "minutes": 60,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "금산탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumsan",
+     "summit_dist_m": 1153,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-120300v007",
+   "source": "knps",
+   "vcurs_id": "120300V007",
+   "park": "한려해상",
+   "name": "한산도 코스",
+   "section": "진두~망산~덮을개",
+   "schedule": "당일",
+   "distance_km": 7.2,
+   "minutes": 210,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "통영항여객선터미널"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mireuksan",
+     "summit_dist_m": 5466,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.999
+   }
+  },
+  {
+   "id": "knps-120400v002",
+   "source": "knps",
+   "vcurs_id": "120400V002",
+   "park": "설악산",
+   "name": "용소폭포코스",
+   "section": "약수터탐방지원센터-성국사-용소폭포-용소폭포탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 3.2,
+   "minutes": 60,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "주전골 입구",
+    "용소폭포 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jeombongsan",
+     "summit_dist_m": 3279,
+     "reaches_summit": false
+    },
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 4706,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v003",
+   "source": "knps",
+   "vcurs_id": "120400V003",
+   "park": "설악산",
+   "name": "울산바위코스",
+   "section": "소공원-신흥사-흔들바위,계조암-울산바위",
+   "schedule": "당일",
+   "distance_km": 3.8,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 6137,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.849,
+    "precision": 0.989
+   }
+  },
+  {
+   "id": "knps-120400v005",
+   "source": "knps",
+   "vcurs_id": "120400V005",
+   "park": "설악산",
+   "name": "비룡폭포(토왕폭전망대)",
+   "section": "소공원-육담폭포-비룡폭포-토왕성폭포전망대",
+   "schedule": "당일",
+   "distance_km": 2.8,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 5722,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v006",
+   "source": "knps",
+   "vcurs_id": "120400V006",
+   "park": "설악산",
+   "name": "금강굴코스",
+   "section": "소공원-와선대-비선대-금강굴",
+   "schedule": "당일",
+   "distance_km": 3.6,
+   "minutes": 120,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 4820,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v007",
+   "source": "knps",
+   "vcurs_id": "120400V007",
+   "park": "설악산",
+   "name": "양폭코스",
+   "section": "소공원-와선대-비선대-귀면암-양폭대피소",
+   "schedule": "당일",
+   "distance_km": 6.5,
+   "minutes": 190,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 2403,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.995,
+    "precision": 0.97
+   }
+  },
+  {
+   "id": "knps-120400v008",
+   "source": "knps",
+   "vcurs_id": "120400V008",
+   "park": "설악산",
+   "name": "백담사코스",
+   "section": "백담분소-백담사",
+   "schedule": "당일",
+   "distance_km": 6.5,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "백담 진입도로 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 9242,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v009",
+   "source": "knps",
+   "vcurs_id": "120400V009",
+   "park": "설악산",
+   "name": "수렴동코스",
+   "section": "백담분소-백담사-영시암-수렴동대피소",
+   "schedule": "당일",
+   "distance_km": 11.2,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "백담 진입도로 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 5363,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.998,
+    "precision": 0.997
+   }
+  },
+  {
+   "id": "knps-120400v010",
+   "source": "knps",
+   "vcurs_id": "120400V010",
+   "park": "설악산",
+   "name": "남교리코스",
+   "section": "남교리-복숭아탕-대승령-장수대",
+   "schedule": "당일",
+   "distance_km": 11.3,
+   "minutes": 390,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "남교리 입구",
+    "한계산성분소 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 10527,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v011",
+   "source": "knps",
+   "vcurs_id": "120400V011",
+   "park": "설악산",
+   "name": "대승폭포코스",
+   "section": "한계산성분소-대승폭포",
+   "schedule": "당일",
+   "distance_km": 0.9,
+   "minutes": 40,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "한계산성분소 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 10527,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v012",
+   "source": "knps",
+   "vcurs_id": "120400V012",
+   "park": "설악산",
+   "name": "대청봉코스(오색)",
+   "section": "오색-설악폭포-대청봉",
+   "schedule": "당일",
+   "distance_km": 5,
+   "minutes": 240,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "남설악탐방지원센터 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 111,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120400v013",
+   "source": "knps",
+   "vcurs_id": "120400V013",
+   "park": "설악산",
+   "name": "대청봉코스(백담)",
+   "section": "백담사-영시암-수렴동대피소-봉정암-소청봉-대청봉-희운각-비선대",
+   "schedule": "1박2일",
+   "distance_km": 23.9,
+   "minutes": 1250,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "백담 진입도로 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 1026,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.997,
+    "precision": 0.99
+   }
+  },
+  {
+   "id": "knps-120400v014",
+   "source": "knps",
+   "vcurs_id": "120400V014",
+   "park": "설악산",
+   "name": "대청봉코스(한계령)",
+   "section": "한계령탐방지원센터-한계령갈림길-서북능선-대청봉-희운각-비선대-소공원",
+   "schedule": "1박2일",
+   "distance_km": 19.3,
+   "minutes": 720,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "한계령탐방지원센터 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V014&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 578,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.998,
+    "precision": 0.987
+   }
+  },
+  {
+   "id": "knps-120400v015",
+   "source": "knps",
+   "vcurs_id": "120400V015",
+   "park": "설악산",
+   "name": "대청봉코스(설악동)",
+   "section": "소공원-비선대-희운각-대청봉-설악폭포-오색",
+   "schedule": "1박2일",
+   "distance_km": 16,
+   "minutes": 640,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V015&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 41,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.998,
+    "precision": 0.986
+   }
+  },
+  {
+   "id": "knps-120400v016",
+   "source": "knps",
+   "vcurs_id": "120400V016",
+   "park": "설악산",
+   "name": "공룡능선코스",
+   "section": "소공원-금강굴-마등령-공룡능선-희운각-대청봉-오색",
+   "schedule": "1박2일",
+   "distance_km": 19.1,
+   "minutes": 880,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "소공원 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120400&vcursId=120400V016&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "seolaksan",
+     "summit_dist_m": 40,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v001",
+   "source": "knps",
+   "vcurs_id": "120500V001",
+   "park": "속리산",
+   "name": "천왕봉1코스",
+   "section": "속리산 체험학습관-세심정~문장대~천왕봉~세심정~속리산 체험학습관",
+   "schedule": "당일",
+   "distance_km": 16.1,
+   "minutes": 480,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "속리산 체험학습관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 293,
+     "reaches_summit": true,
+     "trail_index": 0,
+     "trail_name": "법주사-문장대-천왕봉 원점회귀",
+     "trailhead_dist_m": 126
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.993,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v002",
+   "source": "knps",
+   "vcurs_id": "120500V002",
+   "park": "속리산",
+   "name": "천왕봉2코스",
+   "section": "화북탐방지원센터~문장대~신선대~천왕봉~세심정~속리산 체험학습관",
+   "schedule": "당일",
+   "distance_km": 12.9,
+   "minutes": 420,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "화북탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 292,
+     "reaches_summit": true,
+     "trail_index": 1,
+     "trail_name": "화북-문장대-천왕봉 종주",
+     "trailhead_dist_m": 2324
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v003",
+   "source": "knps",
+   "vcurs_id": "120500V003",
+   "park": "속리산",
+   "name": "장성봉코스",
+   "section": "절말~장성봉~제수리재",
+   "schedule": "당일",
+   "distance_km": 12,
+   "minutes": 420,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "제수리재",
+    "쌍곡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chilbosan-goesan",
+     "summit_dist_m": 1452,
+     "reaches_summit": false
+    },
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 18536,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v004",
+   "source": "knps",
+   "vcurs_id": "120500V004",
+   "park": "속리산",
+   "name": "칠보산코스",
+   "section": "떡바위~칠보산~절말",
+   "schedule": "당일",
+   "distance_km": 7,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "떡바위",
+    "쌍곡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chilbosan-goesan",
+     "summit_dist_m": 3,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v005",
+   "source": "knps",
+   "vcurs_id": "120500V005",
+   "park": "속리산",
+   "name": "도명산2코스",
+   "section": "화양탐방지원센터~첨성대~도명산~공림사",
+   "schedule": "당일",
+   "distance_km": 8,
+   "minutes": 270,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "공림사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 11007,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v006",
+   "source": "knps",
+   "vcurs_id": "120500V006",
+   "park": "속리산",
+   "name": "도명산1코스",
+   "section": "화양동탐방지원센터~첨성대~도명산~학소대~화양동탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 10.4,
+   "minutes": 310,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "화양동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 13064,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v007",
+   "source": "knps",
+   "vcurs_id": "120500V007",
+   "park": "속리산",
+   "name": "장각동코스",
+   "section": "상오리~장각폭포~장각마을~천왕봉",
+   "schedule": "당일",
+   "distance_km": 5.4,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "상오리1리 마을회관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v008",
+   "source": "knps",
+   "vcurs_id": "120500V008",
+   "park": "속리산",
+   "name": "신선대2코스",
+   "section": "화북탐방지원센터~문장대~신선대~세심정~속리산 체험학습관",
+   "schedule": "당일",
+   "distance_km": 9.7,
+   "minutes": 315,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "속리산 체험학습관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1449,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v009",
+   "source": "knps",
+   "vcurs_id": "120500V009",
+   "park": "속리산",
+   "name": "신선대1코스",
+   "section": "속리산 체험학습관~세심정~문장대~신선대~세심정~속리산 체험학습관",
+   "schedule": "당일",
+   "distance_km": 13.2,
+   "minutes": 375,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "속리산 체험학습관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1449,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.994,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v010",
+   "source": "knps",
+   "vcurs_id": "120500V010",
+   "park": "속리산",
+   "name": "문장대2코스",
+   "section": "화북탐방지원센터~오송폭포~문장대~세심정~속리산 체험학습관",
+   "schedule": "당일",
+   "distance_km": 9.7,
+   "minutes": 360,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "화북탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1664,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.994,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v011",
+   "source": "knps",
+   "vcurs_id": "120500V011",
+   "park": "속리산",
+   "name": "문장대1코스",
+   "section": "화북탐방지원센터~문장대(편도기준)",
+   "schedule": "당일",
+   "distance_km": 3.1,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "화북탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 2647,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v012",
+   "source": "knps",
+   "vcurs_id": "120500V012",
+   "park": "속리산",
+   "name": "문장대코스",
+   "section": "속리산 체험학습관~세심정~문장대(편도기준)",
+   "schedule": "당일",
+   "distance_km": 6.6,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "속리산 체험학습관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1664,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.987,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v014",
+   "source": "knps",
+   "vcurs_id": "120500V014",
+   "park": "속리산",
+   "name": "대야산코스",
+   "section": "용추계곡소형주차장~월영대~밀재~대야산 정상~피아골~월영대",
+   "schedule": "당일",
+   "distance_km": 9.8,
+   "minutes": 350,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "월영대"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V014&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "daeyasan",
+     "summit_dist_m": 15,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v015",
+   "source": "knps",
+   "vcurs_id": "120500V015",
+   "park": "속리산",
+   "name": "옥녀봉코스",
+   "section": "연하협구름다리주차장~갈론계곡~선국암~옥녀봉~아가봉~갈론마을",
+   "schedule": "당일",
+   "distance_km": 10.4,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "갈론지킴터",
+    "사은리"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V015&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chilbosan-goesan",
+     "summit_dist_m": 5927,
+     "reaches_summit": false
+    },
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 19063,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.993,
+    "precision": 0.989
+   }
+  },
+  {
+   "id": "knps-120500v016",
+   "source": "knps",
+   "vcurs_id": "120500V016",
+   "park": "속리산",
+   "name": "묘봉코스",
+   "section": "용화온천~상학봉~묘봉~북가치~미타사",
+   "schedule": "당일",
+   "distance_km": 7.3,
+   "minutes": 270,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "운흥1리 마을회관",
+    "용화보건소(미타사)"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V016&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 5026,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.989,
+    "precision": 0.987
+   }
+  },
+  {
+   "id": "knps-120500v017",
+   "source": "knps",
+   "vcurs_id": "120500V017",
+   "park": "속리산",
+   "name": "백악산코스",
+   "section": "입석리~수안재~백악산~옥양폭포",
+   "schedule": "당일",
+   "distance_km": 11.3,
+   "minutes": 330,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "입석초등학교",
+    "옥량폭포 진입로"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V017&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "cheonghwasan-sangju",
+     "summit_dist_m": 3890,
+     "reaches_summit": false
+    },
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 7659,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v018",
+   "source": "knps",
+   "vcurs_id": "120500V018",
+   "park": "속리산",
+   "name": "세조길코스",
+   "section": "속리산 체험학습관 ∼ 저수지 ∼ 세심정 ∼ 복천암",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 80,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "속리산 체험학습관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V018&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 1629,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.922,
+    "precision": 0.965
+   }
+  },
+  {
+   "id": "knps-120500v019",
+   "source": "knps",
+   "vcurs_id": "120500V019",
+   "park": "속리산",
+   "name": "불목이옛길",
+   "section": "정이품송 ∼ 불목이재(정상) ∼ 비룡(삼가)저수지",
+   "schedule": "당일",
+   "distance_km": 4.6,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "법주사탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V019&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gubyeongsan",
+     "summit_dist_m": 3345,
+     "reaches_summit": false
+    },
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 4991,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 0.998
+   }
+  },
+  {
+   "id": "knps-120500v020",
+   "source": "knps",
+   "vcurs_id": "120500V020",
+   "park": "속리산",
+   "name": "도화리 ~ 천왕봉",
+   "section": "천왕봉 주차장 ∼ 도화리 안부 ∼ 천왕봉",
+   "schedule": "당일",
+   "distance_km": 6,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "천왕봉 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V020&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 3,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120500v021",
+   "source": "knps",
+   "vcurs_id": "120500V021",
+   "park": "속리산",
+   "name": "법주사 ~ 수정봉",
+   "section": null,
+   "schedule": "당일",
+   "distance_km": 1.6,
+   "minutes": 60,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "법주사 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V021&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sokrisan",
+     "summit_dist_m": 3438,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v001",
+   "source": "knps",
+   "vcurs_id": "120600V001",
+   "park": "내장산",
+   "name": "자연관찰로코스",
+   "section": "일주문~벽련암~원적암~내장사~일주문",
+   "schedule": "당일",
+   "distance_km": 3.9,
+   "minutes": 80,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 1733,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v002",
+   "source": "knps",
+   "vcurs_id": "120600V002",
+   "park": "내장산",
+   "name": "서래봉코스",
+   "section": "일주문~벽련암~서래봉~불출봉~원적암~내장사~일주문",
+   "schedule": "당일",
+   "distance_km": 5.9,
+   "minutes": 240,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "내장사 일주문/탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 1733,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.981,
+    "precision": 0.994
+   }
+  },
+  {
+   "id": "knps-120600v003",
+   "source": "knps",
+   "vcurs_id": "120600V003",
+   "park": "내장산",
+   "name": "백양사종주코스",
+   "section": "백양사~약사암~백학봉~상왕봉~사자봉~가인마을",
+   "schedule": "당일",
+   "distance_km": 8.1,
+   "minutes": 330,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내장산백암탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baekamsan",
+     "summit_dist_m": 0,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v004",
+   "source": "knps",
+   "vcurs_id": "120600V004",
+   "park": "내장산",
+   "name": "전망대코스",
+   "section": "탐방안내소~케이블카~전망대~내장사~탐방안내소",
+   "schedule": "당일",
+   "distance_km": 1.81,
+   "minutes": 50,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 1346,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v005",
+   "source": "knps",
+   "vcurs_id": "120600V005",
+   "park": "내장산",
+   "name": "장성새재코스",
+   "section": "전남대수련원~새재갈림길~새재~입암 공원지킴터",
+   "schedule": "당일",
+   "distance_km": 4.5,
+   "minutes": 120,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "남창탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baekamsan",
+     "summit_dist_m": 2630,
+     "reaches_summit": false
+    },
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 4206,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v006",
+   "source": "knps",
+   "vcurs_id": "120600V006",
+   "park": "내장산",
+   "name": "신선봉코스",
+   "section": "일주문~내장사~금선계곡~신선봉~까치봉~내장사~일주문",
+   "schedule": "당일",
+   "distance_km": 7.4,
+   "minutes": 300,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내장사 일주문/탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 11,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v007",
+   "source": "knps",
+   "vcurs_id": "120600V007",
+   "park": "내장산",
+   "name": "몽계폭포~백양사코스",
+   "section": "전남대수련원~몽계폭포~능선사거리~운문암~백양사",
+   "schedule": "당일",
+   "distance_km": 6.3,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "남창탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baekamsan",
+     "summit_dist_m": 434,
+     "reaches_summit": false
+    },
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 3061,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.993
+   }
+  },
+  {
+   "id": "knps-120600v008",
+   "source": "knps",
+   "vcurs_id": "120600V008",
+   "park": "내장산",
+   "name": "백양사~내장사종주코스",
+   "section": "백양사~약사암~백학봉~상왕봉~순창새재~소둥근재~까치봉~내장사",
+   "schedule": "당일",
+   "distance_km": 12,
+   "minutes": 420,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "내장산백암탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baekamsan",
+     "summit_dist_m": 21,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120600v009",
+   "source": "knps",
+   "vcurs_id": "120600V009",
+   "park": "내장산",
+   "name": "입암산코스",
+   "section": "전남대수련원~은선동계곡~갓바위(정상)~북문~남문~산성골계곡~새재갈림길~전남대수련원",
+   "schedule": "당일",
+   "distance_km": 10.3,
+   "minutes": 270,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "남창탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "baekamsan",
+     "summit_dist_m": 2631,
+     "reaches_summit": false
+    },
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 4822,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.997,
+    "precision": 0.998
+   }
+  },
+  {
+   "id": "knps-120600v010",
+   "source": "knps",
+   "vcurs_id": "120600V010",
+   "park": "내장산",
+   "name": "능선일주코스",
+   "section": "일주문~서래봉~불출봉~망해봉~연지봉~까치봉~신선봉~연자봉~장군봉~동구리",
+   "schedule": "당일",
+   "distance_km": 11.7,
+   "minutes": 420,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내장사 일주문/탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "naejangsan",
+     "summit_dist_m": 11,
+     "reaches_summit": true,
+     "trail_index": 5,
+     "trail_name": "내장산 능선 일주 코스",
+     "trailhead_dist_m": 1150
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.991,
+    "precision": 0.997
+   }
+  },
+  {
+   "id": "knps-120700v001",
+   "source": "knps",
+   "vcurs_id": "120700V001",
+   "park": "가야산",
+   "name": "가야산 소리길",
+   "section": "대장경테마파크~농산정~영산교",
+   "schedule": "당일",
+   "distance_km": 6,
+   "minutes": 150,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "소리길입구",
+    "소리길탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsanjeilbong",
+     "summit_dist_m": 1605,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120700v002",
+   "source": "knps",
+   "vcurs_id": "120700V002",
+   "park": "가야산",
+   "name": "가야산1코스",
+   "section": "해인사입구~토신골~가야산(상왕봉) 정상",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "토신골탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gayasan-hapcheon",
+     "summit_dist_m": 244,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.988
+   }
+  },
+  {
+   "id": "knps-120700v003",
+   "source": "knps",
+   "vcurs_id": "120700V003",
+   "park": "가야산",
+   "name": "남산제일봉1코스",
+   "section": "청량동탐방지원센터~전망대~남산제일봉",
+   "schedule": "당일",
+   "distance_km": 2.3,
+   "minutes": 110,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "청량동매표소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsanjeilbong",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120700v004",
+   "source": "knps",
+   "vcurs_id": "120700V004",
+   "park": "가야산",
+   "name": "만물상코스",
+   "section": "백운동탐방지원센터~서성재",
+   "schedule": "당일",
+   "distance_km": 2.8,
+   "minutes": 140,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "백운동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gayasan-hapcheon",
+     "summit_dist_m": 837,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120700v005",
+   "source": "knps",
+   "vcurs_id": "120700V005",
+   "park": "가야산",
+   "name": "남산제일봉2코스",
+   "section": "해인관광호텔~오봉산중턱~남산제일봉",
+   "schedule": "당일",
+   "distance_km": 2.6,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "돼지골탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsanjeilbong",
+     "summit_dist_m": 7,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120700v006",
+   "source": "knps",
+   "vcurs_id": "120700V006",
+   "park": "가야산",
+   "name": "가야산2코스",
+   "section": "백운동탐방지원센터~서성재~칠불봉~가야산(상왕봉)정상",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 160,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백운동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gayasan-hapcheon",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.978,
+    "precision": 0.962
+   }
+  },
+  {
+   "id": "knps-120700v007",
+   "source": "knps",
+   "vcurs_id": "120700V007",
+   "park": "가야산",
+   "name": "칠불능선",
+   "section": "칠불능선 탐방로 입구 ~ 칠불능선",
+   "schedule": "당일",
+   "distance_km": 2.8,
+   "minutes": 150,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "법전탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gayasan-hapcheon",
+     "summit_dist_m": 150,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.986,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v001",
+   "source": "knps",
+   "vcurs_id": "120800V001",
+   "park": "덕유산",
+   "name": "남덕유산코스",
+   "section": "영각탐방지원센터~남덕유산",
+   "schedule": "당일",
+   "distance_km": 3.6,
+   "minutes": 150,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namdeokyusan",
+     "summit_dist_m": 0,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v002",
+   "source": "knps",
+   "vcurs_id": "120800V002",
+   "park": "덕유산",
+   "name": "향적봉 2코스",
+   "section": "구천동탐방지원센터~인월담~백련사~향적봉",
+   "schedule": "당일",
+   "distance_km": 8.5,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "구천동탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 29,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v003",
+   "source": "knps",
+   "vcurs_id": "120800V003",
+   "park": "덕유산",
+   "name": "향적봉 1코스",
+   "section": "설천봉~향적봉",
+   "schedule": "당일",
+   "distance_km": 0.6,
+   "minutes": 20,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "설천봉"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 95,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v004",
+   "source": "knps",
+   "vcurs_id": "120800V004",
+   "park": "덕유산",
+   "name": "삿갓재코스",
+   "section": "황점마을~삿갓재",
+   "schedule": "당일",
+   "distance_km": 3.4,
+   "minutes": 100,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "황점마을입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namdeokyusan",
+     "summit_dist_m": 3265,
+     "reaches_summit": false
+    },
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 8516,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v005",
+   "source": "knps",
+   "vcurs_id": "120800V005",
+   "park": "덕유산",
+   "name": "서창코스",
+   "section": "서창공원지킴터~삼거리~안국사",
+   "schedule": "당일",
+   "distance_km": 3.8,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "서창공원지킴터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jeoksangsan",
+     "summit_dist_m": 44,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v006",
+   "source": "knps",
+   "vcurs_id": "120800V006",
+   "park": "덕유산",
+   "name": "월성재코스",
+   "section": "월성~월성재",
+   "schedule": "당일",
+   "distance_km": 3.6,
+   "minutes": 170,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "월성"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namdeokyusan",
+     "summit_dist_m": 1152,
+     "reaches_summit": false
+    },
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 10205,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v007",
+   "source": "knps",
+   "vcurs_id": "120800V007",
+   "park": "덕유산",
+   "name": "오수자굴코스",
+   "section": "백련사~오수자굴~중봉",
+   "schedule": "당일",
+   "distance_km": 4.2,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백련사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 887,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v008",
+   "source": "knps",
+   "vcurs_id": "120800V008",
+   "park": "덕유산",
+   "name": "동엽령코스",
+   "section": "안성탐방지원센터~칠연폭포삼거리~동엽령",
+   "schedule": "당일",
+   "distance_km": 4.5,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "안성탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 3487,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v009",
+   "source": "knps",
+   "vcurs_id": "120800V009",
+   "park": "덕유산",
+   "name": "횡경재코스",
+   "section": "송계탐방지원센터-횡경재- 송계삼거리",
+   "schedule": "당일",
+   "distance_km": 6.5,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "송계탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 1739,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v010",
+   "source": "knps",
+   "vcurs_id": "120800V010",
+   "park": "덕유산",
+   "name": "종주코스",
+   "section": "삼공탐방지원센터~백련사~향적봉~중봉~동엽령~무룡산~삿갓재~남덕유산~영각탐방지원센터",
+   "schedule": "1박2일",
+   "distance_km": 26.9,
+   "minutes": 840,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "삼공탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namdeokyusan",
+     "summit_dist_m": 1,
+     "reaches_summit": true
+    },
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 59,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v011",
+   "source": "knps",
+   "vcurs_id": "120800V011",
+   "park": "덕유산",
+   "name": "치목코스",
+   "section": "치목~송대폭포~안국사",
+   "schedule": "당일",
+   "distance_km": 3.7,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "치목"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "jeoksangsan",
+     "summit_dist_m": 170,
+     "reaches_summit": false
+    },
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 8793,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v012",
+   "source": "knps",
+   "vcurs_id": "120800V012",
+   "park": "덕유산",
+   "name": "신풍령코스",
+   "section": "신풍령~횡경재",
+   "schedule": "당일",
+   "distance_km": 7.8,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "신풍령"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 3164,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120800v013",
+   "source": "knps",
+   "vcurs_id": "120800V013",
+   "park": "덕유산",
+   "name": "구천동 어사길 코스",
+   "section": "덕유대자연학습장(구천동자연관찰로) ~ 안심대",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "덕유대자연학습장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "deokyusan",
+     "summit_dist_m": 2489,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.989,
+    "precision": 0.922
+   }
+  },
+  {
+   "id": "knps-120900v001",
+   "source": "knps",
+   "vcurs_id": "120900V001",
+   "park": "오대산",
+   "name": "두로봉 코스",
+   "section": "진고개~동대산~두로봉~두로령",
+   "schedule": "당일",
+   "distance_km": 10,
+   "minutes": 280,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "진고개"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "noinbong-odaesan",
+     "summit_dist_m": 3118,
+     "reaches_summit": false
+    },
+    {
+     "id": "odaesan",
+     "summit_dist_m": 3237,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v002",
+   "source": "knps",
+   "vcurs_id": "120900V002",
+   "park": "오대산",
+   "name": "동대산 코스",
+   "section": "진고개~동대산~동피골",
+   "schedule": "당일",
+   "distance_km": 4.4,
+   "minutes": 130,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "진고개",
+    "동피골"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "noinbong-odaesan",
+     "summit_dist_m": 3118,
+     "reaches_summit": false
+    },
+    {
+     "id": "odaesan",
+     "summit_dist_m": 3970,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v003",
+   "source": "knps",
+   "vcurs_id": "120900V003",
+   "park": "오대산",
+   "name": "상왕봉 코스",
+   "section": "상원사~비로봉~상왕봉~두로령~북대사~상원사",
+   "schedule": "당일",
+   "distance_km": 14.1,
+   "minutes": 330,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "상원사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "odaesan",
+     "summit_dist_m": 128,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v004",
+   "source": "knps",
+   "vcurs_id": "120900V004",
+   "park": "오대산",
+   "name": "소금강산 코스",
+   "section": "무릉계~십자소~연화담~식당암~구룡폭포~만물상~백운대~낙영폭포~노인봉~진고개",
+   "schedule": "당일",
+   "distance_km": 13.3,
+   "minutes": 420,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "무릉계",
+    "진고개"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "noinbong-odaesan",
+     "summit_dist_m": 89,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.993
+   }
+  },
+  {
+   "id": "knps-120900v005",
+   "source": "knps",
+   "vcurs_id": "120900V005",
+   "park": "오대산",
+   "name": "비로봉 코스",
+   "section": "상원사~중대사~적멸보궁~비로봉",
+   "schedule": "당일",
+   "distance_km": 3.4,
+   "minutes": 100,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "상원사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "odaesan",
+     "summit_dist_m": 128,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v006",
+   "source": "knps",
+   "vcurs_id": "120900V006",
+   "park": "오대산",
+   "name": "선재길코스",
+   "section": "월정사~동피골~상원사",
+   "schedule": "당일",
+   "distance_km": 9,
+   "minutes": 210,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "월정사",
+    "상원사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "odaesan",
+     "summit_dist_m": 2281,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v007",
+   "source": "knps",
+   "vcurs_id": "120900V007",
+   "park": "오대산",
+   "name": "계방산1코스",
+   "section": "운두령~계방산정상~이승복 생가 입구",
+   "schedule": "당일",
+   "distance_km": 8.9,
+   "minutes": 360,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "운두령",
+    "이승복 생가 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyebangsan",
+     "summit_dist_m": 6,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v008",
+   "source": "knps",
+   "vcurs_id": "120900V008",
+   "park": "오대산",
+   "name": "계방산2코스",
+   "section": "운두령~계방산정상~계방산주차장",
+   "schedule": "당일",
+   "distance_km": 8.9,
+   "minutes": 310,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "운두령",
+    "아랫삼거리"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "gyebangsan",
+     "summit_dist_m": 12,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v009",
+   "source": "knps",
+   "vcurs_id": "120900V009",
+   "park": "오대산",
+   "name": "나옹선사 수행길",
+   "section": "신성암 ∼ 북대 미륵암",
+   "schedule": "당일",
+   "distance_km": 4.2,
+   "minutes": 140,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "신성암"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "odaesan",
+     "summit_dist_m": 2365,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-120900v010",
+   "source": "knps",
+   "vcurs_id": "120900V010",
+   "park": "오대산",
+   "name": "내면 코스",
+   "section": "내면탐방지원센터~두로령",
+   "schedule": "당일",
+   "distance_km": 6.3,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내면탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "odaesan",
+     "summit_dist_m": 3230,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.825,
+    "precision": 0.991
+   }
+  },
+  {
+   "id": "knps-121000v001",
+   "source": "knps",
+   "vcurs_id": "121000V001",
+   "park": "주왕산",
+   "name": "가메봉코스",
+   "section": "상의주차장~용추폭포~후리메기~가메봉~용연폭포~절구폭포~상의주차장",
+   "schedule": "당일",
+   "distance_km": 15.2,
+   "minutes": 420,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "대전사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 940,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v002",
+   "source": "knps",
+   "vcurs_id": "121000V002",
+   "park": "주왕산",
+   "name": "주왕계곡코스",
+   "section": "상의주차장~대전사~용추폭포~용연폭포~내원동~상의주차장",
+   "schedule": "당일",
+   "distance_km": 10.6,
+   "minutes": 260,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "대전사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 738,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.996,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v003",
+   "source": "knps",
+   "vcurs_id": "121000V003",
+   "park": "주왕산",
+   "name": "주봉코스",
+   "section": "상의주차장~대전사~주왕산~칼등고개~후리메기~용추폭포~상의주차장",
+   "schedule": "당일",
+   "distance_km": 10.1,
+   "minutes": 280,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "대전사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v004",
+   "source": "knps",
+   "vcurs_id": "121000V004",
+   "park": "주왕산",
+   "name": "절골코스",
+   "section": "절골분소~대문다리~가메봉~용연폭포~용추폭포~상의주차장",
+   "schedule": "당일",
+   "distance_km": 13.5,
+   "minutes": 425,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "절골분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 940,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v005",
+   "source": "knps",
+   "vcurs_id": "121000V005",
+   "park": "주왕산",
+   "name": "장군봉~금은광이코스",
+   "section": "상의주차장~대전사~장군봉~금은광이~용연폭포~용추폭포~상의주차장",
+   "schedule": "당일",
+   "distance_km": 11.8,
+   "minutes": 325,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "대전사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 938,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v006",
+   "source": "knps",
+   "vcurs_id": "121000V006",
+   "park": "주왕산",
+   "name": "월외코스",
+   "section": "월외탐방지원센터~달기폭포~너구마을~금은광이삼거리~장군봉~상의매표소",
+   "schedule": "당일",
+   "distance_km": 13,
+   "minutes": 275,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "월외탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 1599,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121000v008",
+   "source": "knps",
+   "vcurs_id": "121000V008",
+   "park": "주왕산",
+   "name": "갓바위코스",
+   "section": "갓바위탐방지원센터-갓바위-대궐령-왕거암-내원마을-대전사 ※주차장에서 갓바위탐방지원센터(1.7km)도보이동",
+   "schedule": "당일",
+   "distance_km": 13.3,
+   "minutes": 405,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "갓바위탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121000&vcursId=121000V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juwangsan",
+     "summit_dist_m": 943,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121200v019",
+   "source": "knps",
+   "vcurs_id": "121200V019",
+   "park": "다도해해상",
+   "name": "팔영산 야영장코스",
+   "section": "팔영산야영장 ~ 유영봉 ~ 사자봉 ~ 질서봉 ~깃대봉 ~ 남포미술관",
+   "schedule": "당일",
+   "distance_km": 6.7,
+   "minutes": 240,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "팔영산야영장",
+    "남포미술관"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V019&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palyeongsan",
+     "summit_dist_m": 3,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121200v020",
+   "source": "knps",
+   "vcurs_id": "121200V020",
+   "park": "다도해해상",
+   "name": "팔영산 곡강코스",
+   "section": "곡강 ~ 강산폭포 ~ 선녀봉 ~ 성주봉",
+   "schedule": "당일",
+   "distance_km": 2.9,
+   "minutes": 110,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "곡강"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V020&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palyeongsan",
+     "summit_dist_m": 1137,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121200v021",
+   "source": "knps",
+   "vcurs_id": "121200V021",
+   "park": "다도해해상",
+   "name": "팔영산 휴양림코스",
+   "section": "팔영산자연휴양림 ~ 선녀봉 삼거리, 팔영산자연휴양림 ~ 헬기장",
+   "schedule": "당일",
+   "distance_km": 1.7,
+   "minutes": 60,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "휴양림"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121200&vcursId=121200V021&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palyeongsan",
+     "summit_dist_m": 225,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.973
+   }
+  },
+  {
+   "id": "knps-121300v001",
+   "source": "knps",
+   "vcurs_id": "121300V001",
+   "park": "치악산",
+   "name": "금대~남대봉",
+   "section": "금대분소(탐방지원센터)~영원사~남대봉",
+   "schedule": "당일",
+   "distance_km": 5.4,
+   "minutes": 160,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "금대분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 6343,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.99
+   }
+  },
+  {
+   "id": "knps-121300v002",
+   "source": "knps",
+   "vcurs_id": "121300V002",
+   "park": "치악산",
+   "name": "행구동~향로봉",
+   "section": "행구동탐방지원센터~보문사~향로봉",
+   "schedule": "당일",
+   "distance_km": 2.5,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "행구탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 4061,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.988
+   }
+  },
+  {
+   "id": "knps-121300v003",
+   "source": "knps",
+   "vcurs_id": "121300V003",
+   "park": "치악산",
+   "name": "성남~남대봉",
+   "section": "성남탐방지원센터~상원사~남대봉",
+   "schedule": "당일",
+   "distance_km": 5.9,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "성남탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 5839,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.998,
+    "precision": 0.996
+   }
+  },
+  {
+   "id": "knps-121300v004",
+   "source": "knps",
+   "vcurs_id": "121300V004",
+   "park": "치악산",
+   "name": "부곡~곧은재~비로봉",
+   "section": "부곡탐방지원센터~곧은재~비로봉",
+   "schedule": "당일",
+   "distance_km": 8.9,
+   "minutes": 180,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "부곡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 0,
+     "reaches_summit": true,
+     "trail_index": 2,
+     "trail_name": "부곡탐방지원센터-곧은재-비로봉",
+     "trailhead_dist_m": 41
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121300v005",
+   "source": "knps",
+   "vcurs_id": "121300V005",
+   "park": "치악산",
+   "name": "구룡~세렴폭포",
+   "section": "구룡탐방지원센터~구룡사~대곡안전센터~세렴폭포",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "구룡탐방지원센터",
+    "신흥동주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 2091,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.995
+   }
+  },
+  {
+   "id": "knps-121300v006",
+   "source": "knps",
+   "vcurs_id": "121300V006",
+   "park": "치악산",
+   "name": "구룡~비로봉",
+   "section": "구룡문화재매표소~구룡사~대곡안전센터~세렴폭포~사다리병창~비로봉",
+   "schedule": "당일",
+   "distance_km": 6,
+   "minutes": 210,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "구룡문화재매표소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.998
+   }
+  },
+  {
+   "id": "knps-121300v007",
+   "source": "knps",
+   "vcurs_id": "121300V007",
+   "park": "치악산",
+   "name": "치악산 종주코스",
+   "section": "구룡탐방지원센터~비로봉~향로봉~남대봉~성남탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 21.8,
+   "minutes": 600,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "구룡탐방지원센터",
+    "신흥동주차장",
+    "성남탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 0,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.998
+   }
+  },
+  {
+   "id": "knps-121300v008",
+   "source": "knps",
+   "vcurs_id": "121300V008",
+   "park": "치악산",
+   "name": "황골~비로봉",
+   "section": "황골탐방지원센터~입석사~비로봉",
+   "schedule": "당일",
+   "distance_km": 4.1,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "황골탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 179,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121300v009",
+   "source": "knps",
+   "vcurs_id": "121300V009",
+   "park": "치악산",
+   "name": "부곡~곧은재",
+   "section": "부곡~곧은재",
+   "schedule": "당일",
+   "distance_km": 4.1,
+   "minutes": 60,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "부곡탐방지원센터",
+    "곧은재탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 2723,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121300v010",
+   "source": "knps",
+   "vcurs_id": "121300V010",
+   "park": "치악산",
+   "name": "금대~영원산성~남대봉",
+   "section": "금대~영원산성~남대봉",
+   "schedule": "당일",
+   "distance_km": 5.6,
+   "minutes": 180,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "금대분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 5837,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.995,
+    "precision": 0.99
+   }
+  },
+  {
+   "id": "knps-121300v011",
+   "source": "knps",
+   "vcurs_id": "121300V011",
+   "park": "치악산",
+   "name": "부곡~큰무레골~비로봉",
+   "section": "부곡~큰무레골~비로봉",
+   "schedule": "당일",
+   "distance_km": 4.5,
+   "minutes": 150,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "부곡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "chiaksan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v001",
+   "source": "knps",
+   "vcurs_id": "121400V001",
+   "park": "월악산",
+   "name": "영봉코스 (덕주사)",
+   "section": "덕주골~덕주사~마애불~960고지~송계삼거리~영봉",
+   "schedule": "당일",
+   "distance_km": 6,
+   "minutes": 220,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "덕주탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 26,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v002",
+   "source": "knps",
+   "vcurs_id": "121400V002",
+   "park": "월악산",
+   "name": "영봉코스 (동창교)",
+   "section": "동창교(월악산휴게소)~송계삼거리~영봉",
+   "schedule": "당일",
+   "distance_km": 4.3,
+   "minutes": 180,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "동창교"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 26,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v003",
+   "source": "knps",
+   "vcurs_id": "121400V003",
+   "park": "월악산",
+   "name": "영봉코스(신륵사)",
+   "section": "덕산공원지킴터~신륵사~신륵사삼거리~보덕암삼거리~영봉",
+   "schedule": "당일",
+   "distance_km": 3.6,
+   "minutes": 150,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "신륵사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 26,
+     "reaches_summit": true,
+     "trail_index": 3,
+     "trail_name": "신륵사-신륵사삼거리-영봉",
+     "trailhead_dist_m": 201
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v004",
+   "source": "knps",
+   "vcurs_id": "121400V004",
+   "park": "월악산",
+   "name": "영봉코스 (보덕암)",
+   "section": "수산리(쑥갓마을)~보덕암~하봉~중봉~보덕암삼거리~영봉",
+   "schedule": "당일",
+   "distance_km": 6.2,
+   "minutes": 210,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "보덕암"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 26,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.898,
+    "precision": 0.908
+   }
+  },
+  {
+   "id": "knps-121400v005",
+   "source": "knps",
+   "vcurs_id": "121400V005",
+   "park": "월악산",
+   "name": "북바위산코스 (물레방아)",
+   "section": "물레방아휴게소~북바위산",
+   "schedule": "당일",
+   "distance_km": 3,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "물레방아휴게소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 3777,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v006",
+   "source": "knps",
+   "vcurs_id": "121400V006",
+   "park": "월악산",
+   "name": "북바위산코스 (뫼악동)",
+   "section": "뫼악동~북바위산",
+   "schedule": "당일",
+   "distance_km": 1.9,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "뫼악동"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 6224,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v007",
+   "source": "knps",
+   "vcurs_id": "121400V007",
+   "park": "월악산",
+   "name": "만수봉 계곡코스",
+   "section": "만수교~만수봉삼거리(만수계곡방향)~만수봉",
+   "schedule": "당일",
+   "distance_km": 4.4,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "만수탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 4921,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v008",
+   "source": "knps",
+   "vcurs_id": "121400V008",
+   "park": "월악산",
+   "name": "만수계곡자연관찰로",
+   "section": "야생화단지~마의태자교~야생화단지",
+   "schedule": "당일",
+   "distance_km": 2,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "만수탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 5780,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v009",
+   "source": "knps",
+   "vcurs_id": "121400V009",
+   "park": "월악산",
+   "name": "하늘재역사관찰로",
+   "section": "미륵리사지 ~ 하늘재와 관찰로 갈림길 ~ 미륵리사지",
+   "schedule": "당일",
+   "distance_km": 2,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "미륵리사지"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juheulsan",
+     "summit_dist_m": 5230,
+     "reaches_summit": false
+    },
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 7128,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v010",
+   "source": "knps",
+   "vcurs_id": "121400V010",
+   "park": "월악산",
+   "name": "포암산코스",
+   "section": "포암산~마골치~만수봉삼거리~만수봉",
+   "schedule": "당일",
+   "distance_km": 6.4,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "하늘재"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 4921,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v011",
+   "source": "knps",
+   "vcurs_id": "121400V011",
+   "park": "월악산",
+   "name": "마패봉코스",
+   "section": "사문리탐방지원센터~마패봉",
+   "schedule": "당일",
+   "distance_km": 2.3,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "사문리탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 7122,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v012",
+   "source": "knps",
+   "vcurs_id": "121400V012",
+   "park": "월악산",
+   "name": "백두대간코스",
+   "section": "사문리~마패봉~부봉~하늘재",
+   "schedule": "당일",
+   "distance_km": 10.7,
+   "minutes": 480,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "사문리탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "juheulsan",
+     "summit_dist_m": 2873,
+     "reaches_summit": false
+    },
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 7122,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v013",
+   "source": "knps",
+   "vcurs_id": "121400V013",
+   "park": "월악산",
+   "name": "금수산코스 (상학)",
+   "section": "상학~절터(남근석공원)~금수산",
+   "schedule": "당일",
+   "distance_km": 2.7,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "상학주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumsusan",
+     "summit_dist_m": 15,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v014",
+   "source": "knps",
+   "vcurs_id": "121400V014",
+   "park": "월악산",
+   "name": "금수산코스 (상천)",
+   "section": "상천(백운동)~용담폭포삼거리~금수산",
+   "schedule": "당일",
+   "distance_km": 3.8,
+   "minutes": 150,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "상천주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V014&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumsusan",
+     "summit_dist_m": 15,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v015",
+   "source": "knps",
+   "vcurs_id": "121400V015",
+   "park": "월악산",
+   "name": "옥순봉코스",
+   "section": "계란재(옥순봉입구)~삼거리~옥순봉",
+   "schedule": "당일",
+   "distance_km": 2.3,
+   "minutes": 120,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "옥순봉·구담봉 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V015&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 12538,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v016",
+   "source": "knps",
+   "vcurs_id": "121400V016",
+   "park": "월악산",
+   "name": "구담봉코스",
+   "section": "계란재(옥순봉입구)~삼거리~구담봉",
+   "schedule": "당일",
+   "distance_km": 2,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "옥순봉·구담봉 주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V016&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 12538,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v017",
+   "source": "knps",
+   "vcurs_id": "121400V017",
+   "park": "월악산",
+   "name": "제비봉코스(얼음골)",
+   "section": "얼음골공원지킴터~제비봉",
+   "schedule": "당일",
+   "distance_km": 1.8,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "얼음골 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V017&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 15171,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v018",
+   "source": "knps",
+   "vcurs_id": "121400V018",
+   "park": "월악산",
+   "name": "제비봉코스(장회)",
+   "section": "제비봉공원지킴터~제비봉",
+   "schedule": "당일",
+   "distance_km": 2.3,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "제비봉공원지킴터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V018&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 14035,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v019",
+   "source": "knps",
+   "vcurs_id": "121400V019",
+   "park": "월악산",
+   "name": "도락산코스(제봉)",
+   "section": "상선암마을~제봉~삼거리~신선봉~도락산",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 190,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "단양탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V019&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "doraksan",
+     "summit_dist_m": 9,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.967
+   }
+  },
+  {
+   "id": "knps-121400v020",
+   "source": "knps",
+   "vcurs_id": "121400V020",
+   "park": "월악산",
+   "name": "도락산코스(채운봉)",
+   "section": "상선암마을~채운봉~삼거리~신선봉~도락산",
+   "schedule": "당일",
+   "distance_km": 3.5,
+   "minutes": 190,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "단양탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V020&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "doraksan",
+     "summit_dist_m": 9,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.971
+   }
+  },
+  {
+   "id": "knps-121400v021",
+   "source": "knps",
+   "vcurs_id": "121400V021",
+   "park": "월악산",
+   "name": "도락산코스(내궁기)",
+   "section": "내궁기~신선봉~도락산",
+   "schedule": "당일",
+   "distance_km": 1.7,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내궁기 입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V021&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "doraksan",
+     "summit_dist_m": 9,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121400v022",
+   "source": "knps",
+   "vcurs_id": "121400V022",
+   "park": "월악산",
+   "name": "만수봉 능선코스",
+   "section": "만수봉~야생화단지~892고지(하단부 경유)~만수봉 구간",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "만수탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V022&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolaksan",
+     "summit_dist_m": 4921,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v001",
+   "source": "knps",
+   "vcurs_id": "121500V001",
+   "park": "북한산",
+   "name": "북한산성코스",
+   "section": "북한산성탐방지원센터~대서문~보리사~백운대",
+   "schedule": "당일",
+   "distance_km": 3.4,
+   "minutes": 160,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "북한산성탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v002",
+   "source": "knps",
+   "vcurs_id": "121500V002",
+   "park": "북한산",
+   "name": "대남문코스",
+   "section": "북한산성탐방지원센터~대서문~중성문~대남문",
+   "schedule": "당일",
+   "distance_km": 5.8,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "북한산성탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 1234,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v003",
+   "source": "knps",
+   "vcurs_id": "121500V003",
+   "park": "북한산",
+   "name": "사패산코스",
+   "section": "송추분소-(구)캡소대-회룡사거리-사패산-원각사-사패산입구",
+   "schedule": "당일",
+   "distance_km": 5.5,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "안골입구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "dobongsan",
+     "summit_dist_m": 1592,
+     "reaches_summit": false
+    },
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 6004,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v004",
+   "source": "knps",
+   "vcurs_id": "121500V004",
+   "park": "북한산",
+   "name": "오봉코스",
+   "section": "송추분소-송추폭포-오봉삼거리-오봉-여성봉-오봉탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 6.5,
+   "minutes": 210,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "오봉탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "dobongsan",
+     "summit_dist_m": 625,
+     "reaches_summit": false
+    },
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 4798,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.987
+   }
+  },
+  {
+   "id": "knps-121500v005",
+   "source": "knps",
+   "vcurs_id": "121500V005",
+   "park": "북한산",
+   "name": "우이암코스",
+   "section": "도봉탐방지원센터-천진사-우이암",
+   "schedule": "당일",
+   "distance_km": 3,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "무수골지킴터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "dobongsan",
+     "summit_dist_m": 1382,
+     "reaches_summit": false
+    },
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 3884,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v006",
+   "source": "knps",
+   "vcurs_id": "121500V006",
+   "park": "북한산",
+   "name": "망월사,포대,회룡코스",
+   "section": "원도봉탐방지원센터-덕제샘-망월사-포대능선-회룡사거리-회룡사",
+   "schedule": "당일",
+   "distance_km": 5.5,
+   "minutes": 140,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "북한산국립공원 도봉사무소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "dobongsan",
+     "summit_dist_m": 812,
+     "reaches_summit": false
+    },
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 6335,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.998
+   }
+  },
+  {
+   "id": "knps-121500v007",
+   "source": "knps",
+   "vcurs_id": "121500V007",
+   "park": "북한산",
+   "name": "신선대코스",
+   "section": "도봉탐방지원센터-금강암-도봉대피소-석굴암-신선대",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 100,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "도봉탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "dobongsan",
+     "summit_dist_m": 17,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v008",
+   "source": "knps",
+   "vcurs_id": "121500V008",
+   "park": "북한산",
+   "name": "백운대코스",
+   "section": "백운대탐방지원센터~하루재~백운대피소~백운대",
+   "schedule": "당일",
+   "distance_km": 1.9,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백운탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.987,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v009",
+   "source": "knps",
+   "vcurs_id": "121500V009",
+   "park": "북한산",
+   "name": "사모바위코스",
+   "section": "구기탐방지원센터~대남문~청수동암문~사모바위",
+   "schedule": "당일",
+   "distance_km": 4.3,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "구기탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 2897,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v010",
+   "source": "knps",
+   "vcurs_id": "121500V010",
+   "park": "북한산",
+   "name": "비봉코스",
+   "section": "비봉탐방지원센터~금선사~비봉",
+   "schedule": "당일",
+   "distance_km": 2,
+   "minutes": 60,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "비봉탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 4206,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v011",
+   "source": "knps",
+   "vcurs_id": "121500V011",
+   "park": "북한산",
+   "name": "보국문코스",
+   "section": "정릉탐방지원센터~넓적바위~깔딱고개~보국문",
+   "schedule": "당일",
+   "distance_km": 2.4,
+   "minutes": 80,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "정릉탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V011&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 2553,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v012",
+   "source": "knps",
+   "vcurs_id": "121500V012",
+   "park": "북한산",
+   "name": "대동문코스",
+   "section": "백련공원지킴터~백련사~진달래능선~대동문",
+   "schedule": "당일",
+   "distance_km": 2.7,
+   "minutes": 70,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "백련공원지킴터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 1866,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.981,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121500v013",
+   "source": "knps",
+   "vcurs_id": "121500V013",
+   "park": "북한산",
+   "name": "소귀천코스",
+   "section": "소귀천공원지킴터~소귀천계곡~대동문~동장대~용암문~도선사",
+   "schedule": "당일",
+   "distance_km": 5.1,
+   "minutes": 190,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "소귀천공원지킴터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "bukhansan",
+     "summit_dist_m": 907,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121600v001",
+   "source": "knps",
+   "vcurs_id": "121600V001",
+   "park": "소백산",
+   "name": "초암사코스",
+   "section": "배점주차장-초암사-봉두암-국망봉",
+   "schedule": "당일",
+   "distance_km": 7.8,
+   "minutes": 220,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "(승용)초암탐방지원센터",
+    "(버스)배점주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 1980,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.999,
+    "precision": 0.979
+   }
+  },
+  {
+   "id": "knps-121600v002",
+   "source": "knps",
+   "vcurs_id": "121600V002",
+   "park": "소백산",
+   "name": "삼가동코스",
+   "section": "삼가탐방지원센터-달밭골입구-양반바위-비로봉",
+   "schedule": "당일",
+   "distance_km": 5.5,
+   "minutes": 160,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "삼가탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 68,
+     "reaches_summit": true,
+     "trail_index": 2,
+     "trail_name": "삼가-비로봉",
+     "trailhead_dist_m": 39
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121600v005",
+   "source": "knps",
+   "vcurs_id": "121600V005",
+   "park": "소백산",
+   "name": "도솔봉코스",
+   "section": "묘적령-묘적봉-도솔봉-죽령",
+   "schedule": "당일",
+   "distance_km": 8.6,
+   "minutes": 270,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "죽령휴게소",
+    "묘적령"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 7934,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121600v010",
+   "source": "knps",
+   "vcurs_id": "121600V010",
+   "park": "소백산",
+   "name": "희방사코스",
+   "section": "희방탐방지원센터-사무소-희방사주차장-희방폭포-희방사-깔딱고개정상-연화봉(천문대)",
+   "schedule": "당일",
+   "distance_km": 3.7,
+   "minutes": 120,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "(버스)희방탐방지원센터",
+    "(승용)희방제2주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 3459,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.987
+   }
+  },
+  {
+   "id": "knps-121600v012",
+   "source": "knps",
+   "vcurs_id": "121600V012",
+   "park": "소백산",
+   "name": "죽령코스",
+   "section": "죽령탐방지원센터-제2연화봉-연화봉(천문대)",
+   "schedule": "당일",
+   "distance_km": 7,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "죽령탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V012&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 3459,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121600v013",
+   "source": "knps",
+   "vcurs_id": "121600V013",
+   "park": "소백산",
+   "name": "어의곡코스",
+   "section": "어의곡탐방지원센터-비로봉",
+   "schedule": "당일",
+   "distance_km": 5.1,
+   "minutes": 160,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "어의곡탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V013&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 395,
+     "reaches_summit": true,
+     "trail_index": 0,
+     "trail_name": "어의곡-비로봉",
+     "trailhead_dist_m": 1138
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121600v014",
+   "source": "knps",
+   "vcurs_id": "121600V014",
+   "park": "소백산",
+   "name": "천동계곡코스",
+   "section": "천동탐방지원센터-천동쉼터-고사목-비로봉",
+   "schedule": "당일",
+   "distance_km": 6.8,
+   "minutes": 180,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "천동탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121600&vcursId=121600V014&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "sobaeksan",
+     "summit_dist_m": 95,
+     "reaches_summit": true,
+     "trail_index": 1,
+     "trail_name": "천동계곡-비로봉",
+     "trailhead_dist_m": 607
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v001",
+   "source": "knps",
+   "vcurs_id": "121700V001",
+   "park": "월출산",
+   "name": "구름다리",
+   "section": "월출산국립공원탐방안내소~천황사~구름다리~바람폭포 삼거리~월출산국립공원탐방안내소",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 150,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "월출산국립공원탐방안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 668,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v002",
+   "source": "knps",
+   "vcurs_id": "121700V002",
+   "park": "월출산",
+   "name": "종주코스,바람폭포 경유",
+   "section": "천황지구~도갑지구",
+   "schedule": "당일",
+   "distance_km": 9.5,
+   "minutes": 340,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "천황지구",
+    "도갑지구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 62,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v003",
+   "source": "knps",
+   "vcurs_id": "121700V003",
+   "park": "월출산",
+   "name": "경포대지구~천황지구",
+   "section": "경포대지구~천황지구",
+   "schedule": "당일",
+   "distance_km": 6.7,
+   "minutes": 280,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "경포대지구",
+    "천황지구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 62,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v004",
+   "source": "knps",
+   "vcurs_id": "121700V004",
+   "park": "월출산",
+   "name": "천황지구 순환코스",
+   "section": "천황지구~천황지구",
+   "schedule": "당일",
+   "distance_km": 5.7,
+   "minutes": 260,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "천황지구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 64,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v005",
+   "source": "knps",
+   "vcurs_id": "121700V005",
+   "park": "월출산",
+   "name": "도갑지구~경포대지구",
+   "section": "도갑지구~경포대지구",
+   "schedule": "당일",
+   "distance_km": 6.9,
+   "minutes": 220,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "도갑지구",
+    "경포대지구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 959,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121700v006",
+   "source": "knps",
+   "vcurs_id": "121700V006",
+   "park": "월출산",
+   "name": "산성대주차장 ~ 광암터삼거리",
+   "section": "산성대주차장~산성대~광암터삼거리",
+   "schedule": "당일",
+   "distance_km": 2.7,
+   "minutes": 105,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "산성대지구"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121700&vcursId=121700V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "wolchulsan",
+     "summit_dist_m": 272,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.997
+   }
+  },
+  {
+   "id": "knps-121800v001",
+   "source": "knps",
+   "vcurs_id": "121800V001",
+   "park": "변산반도",
+   "name": "우금암코스",
+   "section": "개암사 ~ 우금암 ~ 월정약수터 ~ 만석동 ~ 감불",
+   "schedule": "당일",
+   "distance_km": 10.2,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "개암사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 9099,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121800v002",
+   "source": "knps",
+   "vcurs_id": "121800V002",
+   "park": "변산반도",
+   "name": "쇠뿔바위 코스",
+   "section": "어수대 -  쇠뿔바위 -  중계교부근",
+   "schedule": "당일",
+   "distance_km": 7.7,
+   "minutes": 250,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "어수대"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 5931,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 0.996
+   }
+  },
+  {
+   "id": "knps-121800v003",
+   "source": "knps",
+   "vcurs_id": "121800V003",
+   "park": "변산반도",
+   "name": "내소사원암코스",
+   "section": "내소사~관음봉삼거리~재백이고개~원암마을",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내소사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 2876,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121800v004",
+   "source": "knps",
+   "vcurs_id": "121800V004",
+   "park": "변산반도",
+   "name": "내소사코스",
+   "section": "내소사~관음봉삼거리~세봉삼거리~내소사",
+   "schedule": "당일",
+   "distance_km": 5.2,
+   "minutes": 180,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "내소사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 3219,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.988,
+    "precision": 0.966
+   }
+  },
+  {
+   "id": "knps-121800v005",
+   "source": "knps",
+   "vcurs_id": "121800V005",
+   "park": "변산반도",
+   "name": "격포코스",
+   "section": "바람모퉁이~격포(승용차를 이용한 해안탐방)",
+   "schedule": "당일",
+   "distance_km": 17,
+   "minutes": 0,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "바람모퉁이"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 5019,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-121800v006",
+   "source": "knps",
+   "vcurs_id": "121800V006",
+   "park": "변산반도",
+   "name": "내변산남여치코스",
+   "section": "내변산~봉래곡삼거리~월명암~남여치",
+   "schedule": "당일",
+   "distance_km": 5.6,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내변산분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 2002,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121800v007",
+   "source": "knps",
+   "vcurs_id": "121800V007",
+   "park": "변산반도",
+   "name": "내변산내소사코스",
+   "section": "내변산~직소폭포~재백이고개~관음봉삼거리~내소사",
+   "schedule": "당일",
+   "distance_km": 5.9,
+   "minutes": 165,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "내변산분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 2128,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121800v008",
+   "source": "knps",
+   "vcurs_id": "121800V008",
+   "park": "변산반도",
+   "name": "원암남여치코스",
+   "section": "원암~재백이고개~직소폭포~월명암~남여치",
+   "schedule": "당일",
+   "distance_km": 7.8,
+   "minutes": 470,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "원암"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 2003,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121800v009",
+   "source": "knps",
+   "vcurs_id": "121800V009",
+   "park": "변산반도",
+   "name": "직소폭포코스",
+   "section": "내변산~자연보호헌장탑~직소폭포",
+   "schedule": "당일",
+   "distance_km": 2.3,
+   "minutes": 50,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "내변산분소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "byeonsan",
+     "summit_dist_m": 2361,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121900v001",
+   "source": "knps",
+   "vcurs_id": "121900V001",
+   "park": "경주",
+   "name": "불국사 코스",
+   "section": "불국사 ∼ 추령 갈림길 ∼ 토함산 정상 ∼ 탑골 갈림길 ∼ 시부거리 갈림길 ∼ 보불로",
+   "schedule": "당일",
+   "distance_km": 10.5,
+   "minutes": 240,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "토함산탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "tohamsan",
+     "summit_dist_m": 0,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121900v002",
+   "source": "knps",
+   "vcurs_id": "121900V002",
+   "park": "경주",
+   "name": "관음사 코스",
+   "section": "관음사 ~ 열반재 ~ 고위봉 ~ 칠불암 ~ 염불사지",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 160,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "관음사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsan-gyeongju",
+     "summit_dist_m": 4,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121900v005",
+   "source": "knps",
+   "vcurs_id": "121900V005",
+   "park": "경주",
+   "name": "삼릉 코스",
+   "section": "삼릉 ~ 마애관음보살상 ~ 선각육존불 ~ 석조여래좌상 ~ 상선암 ~ 금오봉",
+   "schedule": "당일",
+   "distance_km": 2.1,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "삼릉"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsan-gyeongju",
+     "summit_dist_m": 2380,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121900v006",
+   "source": "knps",
+   "vcurs_id": "121900V006",
+   "park": "경주",
+   "name": "삼불사 코스",
+   "section": "삼불사 ~ 선각여래입상 ~ 바둑바위",
+   "schedule": "당일",
+   "distance_km": 1.4,
+   "minutes": 60,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "삼불사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsan-gyeongju",
+     "summit_dist_m": 3160,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-121900v007",
+   "source": "knps",
+   "vcurs_id": "121900V007",
+   "park": "경주",
+   "name": "용장골 코스",
+   "section": "용장골 ~ 용장사곡 석조여래좌상→설잠교 ~ 남산진입도로",
+   "schedule": "당일",
+   "distance_km": 1.9,
+   "minutes": 80,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "용장골"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121900&vcursId=121900V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "namsan-gyeongju",
+     "summit_dist_m": 1129,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122000v001",
+   "source": "knps",
+   "vcurs_id": "122000V001",
+   "park": "무등산",
+   "name": "새인봉 - 입석대 코스",
+   "section": "증심사 입구 - 새인봉 - 서인봉 - 장불재 -서석대",
+   "schedule": "당일",
+   "distance_km": 6.8,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "증심사 버스종점"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 784,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.903,
+    "precision": 0.958
+   }
+  },
+  {
+   "id": "knps-122000v002",
+   "source": "knps",
+   "vcurs_id": "122000V002",
+   "park": "무등산",
+   "name": "늦재 - 옛길코스",
+   "section": "원효사입구 - 늦재- 동화사터- 용추삼거리-장불재-목교-원효사입구",
+   "schedule": "당일",
+   "distance_km": 10.4,
+   "minutes": 590,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "원효사 후문"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 923,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-122000v003",
+   "source": "knps",
+   "vcurs_id": "122000V003",
+   "park": "무등산",
+   "name": "당산나무 코스",
+   "section": "증심사주차장 - 당산나무 - 중머리재",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 95,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "증심탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 2266,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.99,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122000v004",
+   "source": "knps",
+   "vcurs_id": "122000V004",
+   "park": "무등산",
+   "name": "시무지기폭포 코스",
+   "section": "증심교 - 토끼등 - 중머리재 - 장불재  - 규봉  - 시무지기폭포 - 인계리",
+   "schedule": "당일",
+   "distance_km": 15.2,
+   "minutes": 335,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "증심탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 870,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.753,
+    "precision": 0.914
+   }
+  },
+  {
+   "id": "knps-122000v005",
+   "source": "knps",
+   "vcurs_id": "122000V005",
+   "park": "무등산",
+   "name": "너릿재-옛길코스",
+   "section": "이십곡리-수레바위산-너와나목장-중머리재-장불재-원효사",
+   "schedule": "당일",
+   "distance_km": 14.5,
+   "minutes": 440,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "너릿재 체육쉼터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 679,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-122000v006",
+   "source": "knps",
+   "vcurs_id": "122000V006",
+   "park": "무등산",
+   "name": "안양산-북산 코스",
+   "section": "안양산휴양림 - 안양산 - 장불재 - 규봉 -  북산 -  담양 경상리",
+   "schedule": "당일",
+   "distance_km": 14.6,
+   "minutes": 420,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "무등산편백자연휴양림"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 870,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-122000v007",
+   "source": "knps",
+   "vcurs_id": "122000V007",
+   "park": "무등산",
+   "name": "도원마을-규봉코스",
+   "section": "도원마을 - 장불재 - 규봉 - 영신마을",
+   "schedule": "당일",
+   "distance_km": 7.5,
+   "minutes": 270,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "도원탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 886,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.895,
+    "precision": 0.946
+   }
+  },
+  {
+   "id": "knps-122000v008",
+   "source": "knps",
+   "vcurs_id": "122000V008",
+   "park": "무등산",
+   "name": "교리~만연산코스",
+   "section": "교리- 수레바위산- 만연사",
+   "schedule": "당일",
+   "distance_km": 7.5,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "교리터널"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122000&vcursId=122000V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "mudeungsan",
+     "summit_dist_m": 3801,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.993,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122200v001",
+   "source": "knps",
+   "vcurs_id": "122200V001",
+   "park": "태백산",
+   "name": "유일사코스",
+   "section": "유일사 ∼ 장군봉 ∼ 천제단 ∼ 당골광장",
+   "schedule": "당일",
+   "distance_km": 7.5,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "taebaeksan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.939,
+    "precision": 0.973
+   }
+  },
+  {
+   "id": "knps-122200v002",
+   "source": "knps",
+   "vcurs_id": "122200V002",
+   "park": "태백산",
+   "name": "문수봉코스",
+   "section": "산제당골 ~ (소문수봉/문수봉) 갈림길 ~ 소문수봉 ~ 문수봉　~ 천제단 ~ 당골광장",
+   "schedule": "당일",
+   "distance_km": 10.8,
+   "minutes": 290,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "taebaeksan",
+     "summit_dist_m": 254,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.971,
+    "precision": 0.972
+   }
+  },
+  {
+   "id": "knps-122200v003",
+   "source": "knps",
+   "vcurs_id": "122200V003",
+   "park": "태백산",
+   "name": "검룡소코스",
+   "section": "검룡소 주차장 ~ 세심탐방지원센터 ~ 검룡소",
+   "schedule": "당일",
+   "distance_km": 1.5,
+   "minutes": 35,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumdaebong",
+     "summit_dist_m": 1802,
+     "reaches_summit": false
+    },
+    {
+     "id": "taebaeksan",
+     "summit_dist_m": 14281,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.984,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122200v004",
+   "source": "knps",
+   "vcurs_id": "122200V004",
+   "park": "태백산",
+   "name": "금대봉코스",
+   "section": "두문동재 ~ 금대봉  ~ 분주령 ~ 대덕산 ~ 검룡소 주차장",
+   "schedule": "당일",
+   "distance_km": 9.4,
+   "minutes": 260,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumdaebong",
+     "summit_dist_m": 8,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.948,
+    "precision": 0.974
+   }
+  },
+  {
+   "id": "knps-122200v005",
+   "source": "knps",
+   "vcurs_id": "122200V005",
+   "park": "태백산",
+   "name": "백천계곡",
+   "section": "백천계곡 ∼ 문수봉",
+   "schedule": "당일",
+   "distance_km": 5.1,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "백천 탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "taebaeksan",
+     "summit_dist_m": 1991,
+     "reaches_summit": false
+    }
+   ],
+   "line": null
+  },
+  {
+   "id": "knps-122200v006",
+   "source": "knps",
+   "vcurs_id": "122200V006",
+   "park": "태백산",
+   "name": "함백산 코스",
+   "section": "만항재 ~ 함백산 코스",
+   "schedule": "당일",
+   "distance_km": 3.1,
+   "minutes": 90,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [
+    "만항재야생화쉼터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "hambaeksan-taebaek",
+     "summit_dist_m": 5,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.934,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122200v007",
+   "source": "knps",
+   "vcurs_id": "122200V007",
+   "park": "태백산",
+   "name": "당골코스",
+   "section": "당골광장 ∼ 반재 ∼ 천제단 ∼ 반재 ∼ 당골광장",
+   "schedule": "당일",
+   "distance_km": 8,
+   "minutes": 240,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "당골광장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122200&vcursId=122200V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "taebaeksan",
+     "summit_dist_m": 252,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v001",
+   "source": "knps",
+   "vcurs_id": "122400V001",
+   "park": "팔공산",
+   "name": "수태골∼동봉",
+   "section": "수태골탐방지원센터-수릉봉산계표석-암벽장-수태골폭포-철탑삼거리-동봉",
+   "schedule": "당일",
+   "distance_km": 3.85,
+   "minutes": 115,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "수태골탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 264,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v002",
+   "source": "knps",
+   "vcurs_id": "122400V002",
+   "park": "팔공산",
+   "name": "진남문∼가산봉",
+   "section": "진남문(해원정사) - 천주사터 - 가산봉",
+   "schedule": "당일",
+   "distance_km": 4.7,
+   "minutes": 155,
+   "level": "하",
+   "difficulty": "쉬움",
+   "starts": [],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V002&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 9122,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 0.99,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v003",
+   "source": "knps",
+   "vcurs_id": "122400V003",
+   "park": "팔공산",
+   "name": "치산지∼동봉",
+   "section": "치산지-수도사-동봉",
+   "schedule": "당일",
+   "distance_km": 5.6,
+   "minutes": 190,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "수도사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V003&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 261,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v004",
+   "source": "knps",
+   "vcurs_id": "122400V004",
+   "park": "팔공산",
+   "name": "신일지∼은해봉",
+   "section": "신일지-백흥암-은해봉",
+   "schedule": "당일",
+   "distance_km": 6.3,
+   "minutes": 210,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "신일지"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V004&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 4454,
+     "reaches_summit": false,
+     "by": "park"
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v005",
+   "source": "knps",
+   "vcurs_id": "122400V005",
+   "park": "팔공산",
+   "name": "부인사∼서봉",
+   "section": "부인사-이말재-마당재-톱날능선-서봉-삼성암터-부인사",
+   "schedule": "당일",
+   "distance_km": 8.4,
+   "minutes": 320,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "부인사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V005&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 794,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v006",
+   "source": "knps",
+   "vcurs_id": "122400V006",
+   "park": "팔공산",
+   "name": "오도암∼비로봉",
+   "section": "동산탐방지원센터-오도암-원효굴-하늘정원-비로봉",
+   "schedule": "당일",
+   "distance_km": 3.3,
+   "minutes": 150,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "동산탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V006&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 3,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v007",
+   "source": "knps",
+   "vcurs_id": "122400V007",
+   "park": "팔공산",
+   "name": "탑골∼동봉",
+   "section": "탑골안내소-깔딱고개-케이블카 상부정류장(신림봉)-낙타봉-철탑삼거리-동봉",
+   "schedule": "당일",
+   "distance_km": 3.25,
+   "minutes": 125,
+   "level": "상",
+   "difficulty": "어려움",
+   "starts": [
+    "탑골안내소"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V007&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 255,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v008",
+   "source": "knps",
+   "vcurs_id": "122400V008",
+   "park": "팔공산",
+   "name": "파계사∼파계재",
+   "section": "파계사-파계재-한티갈림길-도각봉-파계탐방지원센터",
+   "schedule": "당일",
+   "distance_km": 5.2,
+   "minutes": 175,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "파계사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V008&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 4542,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122400v009",
+   "source": "knps",
+   "vcurs_id": "122400V009",
+   "park": "팔공산",
+   "name": "관암사(대구)∼관봉",
+   "section": "갓바위탐방지원센터-관암사-관봉-선본재-유스호스텔",
+   "schedule": "당일",
+   "distance_km": 4,
+   "minutes": 170,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "갓바위탐방지원센터"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V009&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 5030,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "review",
+    "coverage": 0.867,
+    "precision": 0.982
+   }
+  },
+  {
+   "id": "knps-122400v010",
+   "source": "knps",
+   "vcurs_id": "122400V010",
+   "park": "팔공산",
+   "name": "선본사(경산)~갓바위(관봉)",
+   "section": "대한주차장~선본사(하단) ~선본사(중단)~갓바위(관봉)",
+   "schedule": "당일",
+   "distance_km": 1.6,
+   "minutes": 60,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "대한주차장"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V010&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "palgongsan",
+     "summit_dist_m": 5161,
+     "reaches_summit": false
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  },
+  {
+   "id": "knps-122800v001",
+   "source": "knps",
+   "vcurs_id": "122800V001",
+   "park": "금정산",
+   "name": "범어사 코스",
+   "section": "범어사 ~ 북문 ~ 고당봉",
+   "schedule": "당일",
+   "distance_km": 2.5,
+   "minutes": 90,
+   "level": "중",
+   "difficulty": "보통",
+   "starts": [
+    "범어사"
+   ],
+   "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122800&vcursId=122800V001&parkNavGb=guide",
+   "checked_at": "2026-10-14",
+   "mountains": [
+    {
+     "id": "geumjeongsan",
+     "summit_dist_m": 2,
+     "reaches_summit": true
+    }
+   ],
+   "line": {
+    "status": "accepted",
+    "coverage": 1,
+    "precision": 1
+   }
+  }
+ ]
+}

@@ -24,6 +24,28 @@
 .mt-hike.done { border-color: var(--accent); color: var(--accent-ink); }
 .mt-hike-ic { display: inline-flex; }
 
+/* 대표 풍경과 정상 위치. 도식은 실제 정상석 사진을 대신했다고 표시하지 않는다. */
+.mt-media { display: grid; grid-template-columns: 112px minmax(0, 1fr); border-bottom: 1px solid var(--line); }
+.mt-photo { display: contents; }
+.mt-photo-open { grid-column: 1; grid-row: 1; padding: 0; border: 0; background: var(--surface-2); }
+.mt-photo img { display: block; width: 112px; height: 96px; object-fit: cover; }
+.mt-photo .mt-photo-credit { grid-column: 1 / -1; grid-row: 2; margin: 0; }
+.mt-media:has(.mt-photo[hidden]) .mt-summit-place { grid-column: 1 / -1; }
+.mt-media:has(.mt-photo:not([hidden])) .mt-summit-stone { display: none; }
+.mt-photo-modal figure { margin: 0; }
+.mt-photo-modal img { display: block; max-width: 100%; max-height: 65dvh; margin: auto; object-fit: contain; }
+.mt-photo-credit { padding: 5px 16px; font-size: 11px; line-height: 1.45; color: var(--text-2); overflow-wrap: anywhere; }
+.mt-photo-credit a { color: inherit; }
+.mt-summit-place { grid-column: 2; grid-row: 1; display: flex; align-items: center; flex-wrap: wrap; gap: 0 10px; width: 100%; min-height: 66px; padding: 8px 16px; border: 0; background: var(--surface); color: var(--text); text-align: left; }
+.mt-summit-place:hover { background: var(--surface-2); }
+.mt-summit-stone { display: flex; flex: none; color: var(--accent-ink); }
+.mt-summit-text { display: flex; flex: 1; flex-direction: column; min-width: 0; font-size: 14px; }
+.mt-summit-text strong { overflow-wrap: anywhere; }
+.mt-summit-text strong span { font-weight: 400; }
+.mt-summit-coord { font-size: 12px; color: var(--text-2); }
+.mt-summit-go { flex: none; font-size: 12px; color: var(--accent-ink); }
+.mt-photo-missing { grid-column: 1 / -1; margin: 0; padding: 0 16px 10px; font-size: 12px; color: var(--text-2); }
+
 /* "선택한 경로" 줄 — 머리(peek)의 맨 아래 띠. 머리 좌우 여백(16)과 아래 여백(10)을 덮어 본문 윗선에 붙인다. */
 .mt-selbar { display: flex; align-items: center; gap: 8px; margin: 8px -16px -10px; padding: 0 4px 0 16px; border-top: 1px solid var(--line); background: var(--accent-soft); }
 
@@ -95,6 +117,10 @@
 .mt-details > summary::after { content: ''; margin-left: auto; width: 8px; height: 8px; border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3); transform: rotate(45deg) translateY(-3px); }
 .mt-details[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
 .mt-details-body { padding-bottom: 14px; }
+/* 코스 탭 "정상을 지나지 않는 공원 코스" 접기 — 머리만 목록 여백에 맞춘다(펼친 행은 목록과 같은 폭). */
+.mt-more { border-bottom: 0; }
+.mt-more > summary { padding: 0 16px; font-size: 14px; color: var(--text-2); }
+.mt-more > summary::after { margin-right: 4px; }
 .mt-list { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
 .mt-sources a { overflow-wrap: anywhere; }
 .mt-notes { list-style: none; margin: 10px 0 0; padding: 0; }

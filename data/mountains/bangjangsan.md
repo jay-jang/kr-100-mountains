@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 장성군, 전북특별자치도 고창군·정읍시"
 lists: [sanlim, bac]
-coordinates: [35.4175, 126.7555]
-coord_confidence: medium
+coordinates: [35.455717, 126.754361]
+coord_confidence: high
 features: ["호남 삼신산", "자연휴양림", "봉수대", "억새", "능선 종주", "패러글라이딩"]
 best_season: "가을(10~11월) 억새·단풍, 봄 철쭉"
 ---

@@ -51,6 +51,28 @@ best_season: "가을(10~11월) 단풍"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 영봉코스 (동창교)](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121400&vcursId=121400V002) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **영봉코스 (덕주사)** — 월악산국립공원 · 6km · 3시간 40분 · 난이도 상 · 정상 경유<br>구간: 덕주골~덕주사~마애불~960고지~송계삼거리~영봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V001&parkNavGb=guide))
+- **영봉코스 (동창교)** — 월악산국립공원 · 4.3km · 3시간 · 난이도 상 · 정상 경유<br>구간: 동창교(월악산휴게소)~송계삼거리~영봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V002&parkNavGb=guide))
+- **영봉코스 (보덕암)** — 월악산국립공원 · 6.2km · 3시간 30분 · 난이도 상 · 정상 경유<br>구간: 수산리(쑥갓마을)~보덕암~하봉~중봉~보덕암삼거리~영봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V004&parkNavGb=guide))
+- **영봉코스(신륵사)** — 월악산국립공원 · 3.6km · 2시간 30분 · 난이도 상 · 정상 경유<br>구간: 덕산공원지킴터~신륵사~신륵사삼거리~보덕암삼거리~영봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V003&parkNavGb=guide))
+- **북바위산코스 (물레방아)** — 월악산국립공원 · 3km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 물레방아휴게소~북바위산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V005&parkNavGb=guide))
+- **만수봉 계곡코스** — 월악산국립공원 · 4.4km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 만수교~만수봉삼거리(만수계곡방향)~만수봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V007&parkNavGb=guide))
+- **만수봉 능선코스** — 월악산국립공원 · 3.3km · 1시간 30분 · 난이도 중 · 정상 미경유<br>구간: 만수봉~야생화단지~892고지(하단부 경유)~만수봉 구간 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V022&parkNavGb=guide))
+- **포암산코스** — 월악산국립공원 · 6.4km · 3시간 30분 · 난이도 중 · 정상 미경유<br>구간: 포암산~마골치~만수봉삼거리~만수봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V010&parkNavGb=guide))
+- **만수계곡자연관찰로** — 월악산국립공원 · 2km · 1시간 30분 · 난이도 중 · 정상 미경유<br>구간: 야생화단지~마의태자교~야생화단지 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V008&parkNavGb=guide))
+- **북바위산코스 (뫼악동)** — 월악산국립공원 · 1.9km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 뫼악동~북바위산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V006&parkNavGb=guide))
+- **마패봉코스** — 월악산국립공원 · 2.3km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 사문리탐방지원센터~마패봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V011&parkNavGb=guide))
+- **백두대간코스** — 월악산국립공원 · 10.7km · 8시간 · 난이도 상 · 정상 미경유<br>구간: 사문리~마패봉~부봉~하늘재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V012&parkNavGb=guide))
+- **하늘재역사관찰로** — 월악산국립공원 · 2km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 미륵리사지 ~ 하늘재와 관찰로 갈림길 ~ 미륵리사지 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V009&parkNavGb=guide))
+- **구담봉코스** — 월악산국립공원 · 2km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 계란재(옥순봉입구)~삼거리~구담봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V016&parkNavGb=guide))
+- **옥순봉코스** — 월악산국립공원 · 2.3km · 2시간 · 난이도 하 · 정상 미경유<br>구간: 계란재(옥순봉입구)~삼거리~옥순봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V015&parkNavGb=guide))
+- **제비봉코스(장회)** — 월악산국립공원 · 2.3km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 제비봉공원지킴터~제비봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V018&parkNavGb=guide))
+- **제비봉코스(얼음골)** — 월악산국립공원 · 1.8km · 1시간 30분 · 난이도 중 · 정상 미경유<br>구간: 얼음골공원지킴터~제비봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V017&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

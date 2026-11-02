@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 강진군"
 lists: [bac]
-coordinates: [34.5622, 126.7042]
-coord_confidence: low
+coordinates: [34.538521, 126.699179]
+coord_confidence: high
 features: ["암릉", "진달래", "종주", "능선", "조망"]
 best_season: "봄(4월) 진달래, 가을(10~11월) 단풍"
 ---

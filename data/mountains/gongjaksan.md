@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 홍천군"
 lists: [sanlim]
-coordinates: [37.7035, 127.9748]
-coord_confidence: medium
+coordinates: [37.715958, 128.010665]
+coord_confidence: high
 features: ["100대 명산", "화강암", "암릉", "단풍", "사찰(수타사)", "둘레길"]
 best_season: "가을(10~11월) 단풍"
 ---

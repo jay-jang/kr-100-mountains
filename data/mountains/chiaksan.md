@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 원주시·횡성군·영월군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.3717, 128.0531]
-coord_confidence: medium
+coordinates: [37.365145, 128.055632]
+coord_confidence: high
 features: ["국립공원", "단풍", "암릉", "폭포", "사다리병창", "금강소나무"]
 best_season: "가을(10월 중순~11월 초) 단풍"
 ---
@@ -42,6 +42,22 @@ best_season: "가을(10월 중순~11월 초) 단풍"
 - 특징: 입석대와 입석사에서 비로봉으로 이어지는 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 황골~비로봉](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121300&vcursId=121300V008) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **부곡~곧은재~비로봉** — 치악산국립공원 · 8.9km · 3시간 · 난이도 중 · 정상 경유<br>구간: 부곡탐방지원센터~곧은재~비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V004&parkNavGb=guide))
+- **치악산 종주코스** — 치악산국립공원 · 21.8km · 10시간 · 난이도 상 · 정상 경유<br>구간: 구룡탐방지원센터~비로봉~향로봉~남대봉~성남탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V007&parkNavGb=guide))
+- **구룡~비로봉** — 치악산국립공원 · 6km · 3시간 30분 · 난이도 상 · 정상 경유<br>구간: 구룡문화재매표소~구룡사~대곡안전센터~세렴폭포~사다리병창~비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V006&parkNavGb=guide))
+- **부곡~큰무레골~비로봉** — 치악산국립공원 · 4.5km · 2시간 30분 · 난이도 상 · 정상 경유<br>구간: 부곡~큰무레골~비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V011&parkNavGb=guide))
+- **황골~비로봉** — 치악산국립공원 · 4.1km · 2시간 30분 · 난이도 중 · 정상 경유<br>구간: 황골탐방지원센터~입석사~비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V008&parkNavGb=guide))
+- **구룡~세렴폭포** — 치악산국립공원 · 3.3km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 구룡탐방지원센터~구룡사~대곡안전센터~세렴폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V005&parkNavGb=guide))
+- **부곡~곧은재** — 치악산국립공원 · 4.1km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 부곡~곧은재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V009&parkNavGb=guide))
+- **행구동~향로봉** — 치악산국립공원 · 2.5km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 행구동탐방지원센터~보문사~향로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V002&parkNavGb=guide))
+- **금대~영원산성~남대봉** — 치악산국립공원 · 5.6km · 3시간 · 난이도 상 · 정상 미경유<br>구간: 금대~영원산성~남대봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V010&parkNavGb=guide))
+- **성남~남대봉** — 치악산국립공원 · 5.9km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 성남탐방지원센터~상원사~남대봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V003&parkNavGb=guide))
+- **금대~남대봉** — 치악산국립공원 · 5.4km · 2시간 40분 · 난이도 상 · 정상 미경유<br>구간: 금대분소(탐방지원센터)~영원사~남대봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121300&vcursId=121300V001&parkNavGb=guide))
 
 ## 주요 등산로
 

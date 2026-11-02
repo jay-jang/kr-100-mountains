@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 가평군·포천시"
 lists: [sanlim, bac, hansanha]
-coordinates: [37.9857, 127.3489]
-coord_confidence: medium
+coordinates: [37.87869, 127.32288]
+coord_confidence: high
 features: ["암릉", "단풍", "출렁다리", "현등사", "기암괴석", "경기5악"]
 best_season: "가을(10~11월) 단풍"
 ---

@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 해남군"
 lists: [bac, hansanha]
-coordinates: [34.421, 126.602]
-coord_confidence: medium
+coordinates: [34.382558, 126.585218]
+coord_confidence: high
 features: ["암릉", "기암괴석", "일출", "다도해 조망", "미황사", "달마고도", "억새"]
 best_season: "가을(10~11월) 단풍·억새, 사계절"
 ---

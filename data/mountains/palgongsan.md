@@ -7,7 +7,7 @@ region: 경상
 province: 대구
 location: "대구광역시 군위군·동구, 경상북도 영천시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.0151, 128.69977]
+coordinates: [36.016548, 128.695323]
 coord_confidence: high
 features: ["국립공원", "단풍", "암릉", "사찰", "케이블카", "일출", "설경"]
 best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
@@ -49,6 +49,21 @@ best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/팔공산)
 - [기존 산별 참고자료](https://www.knps.or.kr/)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **오도암∼비로봉** — 팔공산국립공원 · 3.3km · 2시간 30분 · 난이도 중 · 정상 경유<br>구간: 동산탐방지원센터-오도암-원효굴-하늘정원-비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V006&parkNavGb=guide))
+- **탑골∼동봉** — 팔공산국립공원 · 3.25km · 2시간 5분 · 난이도 상 · 정상 미경유<br>구간: 탑골안내소-깔딱고개-케이블카 상부정류장(신림봉)-낙타봉-철탑삼거리-동봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V007&parkNavGb=guide))
+- **치산지∼동봉** — 팔공산국립공원 · 5.6km · 3시간 10분 · 난이도 중 · 정상 미경유<br>구간: 치산지-수도사-동봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V003&parkNavGb=guide))
+- **수태골∼동봉** — 팔공산국립공원 · 3.85km · 1시간 55분 · 난이도 중 · 정상 미경유<br>구간: 수태골탐방지원센터-수릉봉산계표석-암벽장-수태골폭포-철탑삼거리-동봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V001&parkNavGb=guide))
+- **부인사∼서봉** — 팔공산국립공원 · 8.4km · 5시간 20분 · 난이도 상 · 정상 미경유<br>구간: 부인사-이말재-마당재-톱날능선-서봉-삼성암터-부인사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V005&parkNavGb=guide))
+- **신일지∼은해봉** — 팔공산국립공원 · 6.3km · 3시간 30분 · 난이도 중 · 정상 미경유<br>구간: 신일지-백흥암-은해봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V004&parkNavGb=guide))
+- **파계사∼파계재** — 팔공산국립공원 · 5.2km · 2시간 55분 · 난이도 중 · 정상 미경유<br>구간: 파계사-파계재-한티갈림길-도각봉-파계탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V008&parkNavGb=guide))
+- **관암사(대구)∼관봉** — 팔공산국립공원 · 4km · 2시간 50분 · 난이도 중 · 정상 미경유<br>구간: 갓바위탐방지원센터-관암사-관봉-선본재-유스호스텔 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V009&parkNavGb=guide))
+- **선본사(경산)~갓바위(관봉)** — 팔공산국립공원 · 1.6km · 1시간 · 난이도 중 · 정상 미경유<br>구간: 대한주차장~선본사(하단) ~선본사(중단)~갓바위(관봉) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V010&parkNavGb=guide))
+- **진남문∼가산봉** — 팔공산국립공원 · 4.7km · 2시간 35분 · 난이도 하 · 정상 미경유<br>구간: 진남문(해원정사) - 천주사터 - 가산봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=122400&vcursId=122400V002&parkNavGb=guide))
 
 ## 주요 등산로
 

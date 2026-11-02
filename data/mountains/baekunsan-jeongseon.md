@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 정선군·평창군"
 lists: [sanlim, bac]
-coordinates: [37.2835, 128.6035]
-coord_confidence: low
+coordinates: [37.27999, 128.59609]
+coord_confidence: high
 features: ["100대 명산", "동강", "암릉", "칠족령", "조망", "단풍"]
 best_season: "가을(10~11월) 단풍과 동강 조망"
 ---

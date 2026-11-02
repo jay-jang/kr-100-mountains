@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 광양시·구례군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.1123, 127.6203]
-coord_confidence: medium
+coordinates: [35.106378, 127.621325]
+coord_confidence: high
 features: ["호남정맥 최고봉", "원시림", "고로쇠약수", "능선", "조망"]
 best_season: "가을(10~11월) 단풍, 봄 고로쇠"
 ---

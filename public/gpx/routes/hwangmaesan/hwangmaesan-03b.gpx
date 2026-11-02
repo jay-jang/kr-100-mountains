@@ -7,7 +7,7 @@
   <metadata>
     <name>황매산 · 모산재-황매산 종주 (대안 1) (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-08-04T05:40:42.236Z</time>
+    <time>2026-10-14T15:32:11.968Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,14 +19,14 @@
       <k100:route_index>3</k100:route_index>
       <k100:route_name>모산재-황매산 종주</k100:route_name>
       <k100:variant>1</k100:variant>
-      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
       <k100:snap_trailhead_m>149</k100:snap_trailhead_m>
-      <k100:snap_summit_m>53</k100:snap_summit_m>
+      <k100:snap_summit_m>2</k100:snap_summit_m>
       <k100:validation_score>100</k100:validation_score>
       <k100:validation_status>accepted</k100:validation_status>
     </extensions>
@@ -280,6 +280,13 @@
       <trkpt lat="35.496254" lon="127.975431"><ele>1075.6</ele></trkpt>
       <trkpt lat="35.496168" lon="127.975316"><ele>1078.8</ele></trkpt>
       <trkpt lat="35.495992" lon="127.974766"><ele>1092.2</ele></trkpt>
+      <trkpt lat="35.495887" lon="127.974666"><ele>1095.3</ele></trkpt>
+      <trkpt lat="35.495406" lon="127.974529"><ele>1097.5</ele></trkpt>
+      <trkpt lat="35.494930" lon="127.974295"><ele>1095.3</ele></trkpt>
+      <trkpt lat="35.494492" lon="127.974498"><ele>1080.8</ele></trkpt>
+      <trkpt lat="35.494437" lon="127.974589"><ele>1078.4</ele></trkpt>
+      <trkpt lat="35.494308" lon="127.974545"><ele>1078.0</ele></trkpt>
+      <trkpt lat="35.494236" lon="127.974608"><ele>1077.4</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

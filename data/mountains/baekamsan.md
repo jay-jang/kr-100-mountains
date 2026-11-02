@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 순창군, 전라남도 장성군"
 lists: [sanlim, bac]
-coordinates: [35.4736, 126.8547]
-coord_confidence: medium
+coordinates: [35.46128, 126.868469]
+coord_confidence: high
 features: ["국립공원", "단풍", "암릉", "백양사", "비자나무숲", "신록"]
 best_season: "봄(4~5월) 신록, 가을(11월) 단풍"
 ---
@@ -41,6 +41,16 @@ best_season: "봄(4~5월) 신록, 가을(11월) 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://sunchang.grandculture.net/sunchang/toc/GC05900098)
 - [기존 산별 참고자료](https://www.knps.or.kr)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **백양사종주코스** — 내장산국립공원 · 8.1km · 5시간 30분 · 난이도 중 · 정상 경유<br>구간: 백양사~약사암~백학봉~상왕봉~사자봉~가인마을 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V003&parkNavGb=guide))
+- **백양사~내장사종주코스** — 내장산국립공원 · 12km · 7시간 · 난이도 상 · 정상 경유<br>구간: 백양사~약사암~백학봉~상왕봉~순창새재~소둥근재~까치봉~내장사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V008&parkNavGb=guide))
+- **몽계폭포~백양사코스** — 내장산국립공원 · 6.3km · 3시간 30분 · 난이도 중 · 정상 미경유<br>구간: 전남대수련원~몽계폭포~능선사거리~운문암~백양사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V007&parkNavGb=guide))
+- **장성새재코스** — 내장산국립공원 · 4.5km · 2시간 · 난이도 하 · 정상 미경유<br>구간: 전남대수련원~새재갈림길~새재~입암 공원지킴터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V005&parkNavGb=guide))
+- **입암산코스** — 내장산국립공원 · 10.3km · 4시간 30분 · 난이도 중 · 정상 미경유<br>구간: 전남대수련원~은선동계곡~갓바위(정상)~북문~남문~산성골계곡~새재갈림길~전남대수련원 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120600&vcursId=120600V009&parkNavGb=guide))
 
 ## 주요 등산로
 

@@ -7,7 +7,7 @@ region: 경상
 province: 울산
 location: "울산광역시 울주군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.54, 129.056]
+coordinates: [35.539413, 129.054098]
 coord_confidence: high
 features: ["억새", "암릉", "영남알프스", "일출", "군립공원"]
 best_season: "가을(10~11월) 억새"

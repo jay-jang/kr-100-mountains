@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 고창군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.4998, 126.5772]
-coord_confidence: medium
+coordinates: [35.49868, 126.56899]
+coord_confidence: high
 features: ["도립공원", "단풍", "꽃무릇", "동백", "고찰", "낙조"]
 best_season: "가을(9월 꽃무릇, 10~11월 단풍), 봄 동백"
 ---

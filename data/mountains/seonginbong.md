@@ -7,7 +7,7 @@ region: 경상
 province: 경북
 location: "경상북도 울릉군"
 lists: [sanlim, wolgansan]
-coordinates: [37.50333, 130.86611]
+coordinates: [37.498006, 130.867047]
 coord_confidence: high
 features: ["원시림", "천연기념물", "일출", "일몰", "억새", "화산섬"]
 best_season: "여름·가을(6~10월), 봄 신록"

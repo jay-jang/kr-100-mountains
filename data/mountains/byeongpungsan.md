@@ -7,7 +7,7 @@ region: 전라
 province: 전남
 location: "전라남도 담양군·장성군"
 lists: [wolgansan]
-coordinates: [35.316733, 126.895162]
+coordinates: [35.324716, 126.885702]
 coord_confidence: high
 features: ["암릉", "기암괴석", "조망", "나주평야조망", "용구산"]
 best_season: "봄 신록, 가을(10~11월) 단풍"

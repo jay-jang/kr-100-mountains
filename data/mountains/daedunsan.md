@@ -7,7 +7,7 @@ region: 충청
 province: 충남
 location: "충청남도 논산시·금산군, 전북특별자치도 완주군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.1358, 127.3085]
+coordinates: [36.124594, 127.320477]
 coord_confidence: high
 features: ["도립공원", "케이블카", "구름다리", "삼선계단", "암릉", "단풍", "100대명산"]
 best_season: "가을(10~11월) 단풍, 겨울 설경"

@@ -7,7 +7,7 @@ region: 수도권
 province: 경기
 location: "경기도 광주시·성남시·하남시, 서울특별시 송파구"
 lists: [hansanha, wolgansan]
-coordinates: [37.471043, 127.182112]
+coordinates: [37.480594, 127.204081]
 coord_confidence: high
 features: ["세계문화유산", "남한산성", "역사", "일출", "성곽길"]
 best_season: "가을(10~11월) 단풍, 겨울 해맞이"

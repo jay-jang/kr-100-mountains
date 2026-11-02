@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 합천군·거창군, 경상북도 성주군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.8253, 128.1197]
-coord_confidence: medium
+coordinates: [35.822564, 128.122943]
+coord_confidence: high
 features: ["국립공원", "단풍", "암릉", "기암괴석", "해인사", "불교성지", "일출"]
 best_season: "가을(10~11월) 단풍"
 ---
@@ -50,6 +50,15 @@ best_season: "가을(10~11월) 단풍"
 - 특징: 해인사 방면에서 가야산 주봉에 오릅니다.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 가야산1코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120700&vcursId=120700V002) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **가야산2코스** — 가야산국립공원 · 4km · 2시간 40분 · 난이도 중 · 정상 경유<br>구간: 백운동탐방지원센터~서성재~칠불봉~가야산(상왕봉)정상 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V006&parkNavGb=guide))
+- **칠불능선** — 가야산국립공원 · 2.8km · 2시간 30분 · 난이도 상 · 정상 경유<br>구간: 칠불능선 탐방로 입구 ~ 칠불능선 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V007&parkNavGb=guide))
+- **가야산1코스** — 가야산국립공원 · 4km · 2시간 30분 · 난이도 중 · 정상 경유<br>구간: 해인사입구~토신골~가야산(상왕봉) 정상 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V002&parkNavGb=guide))
+- **만물상코스** — 가야산국립공원 · 2.8km · 2시간 20분 · 난이도 상 · 정상 미경유<br>구간: 백운동탐방지원센터~서성재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120700&vcursId=120700V004&parkNavGb=guide))
 
 ## 주요 등산로
 

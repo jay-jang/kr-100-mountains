@@ -7,7 +7,7 @@ region: 수도권
 province: 경기
 location: "경기도 가평군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.932903, 127.430799]
+coordinates: [37.94148, 127.432145]
 coord_confidence: high
 features: ["경기도립공원", "철쭉", "단풍", "계곡", "폭포", "능선종주"]
 best_season: "봄(5월) 철쭉, 가을(10월) 단풍"

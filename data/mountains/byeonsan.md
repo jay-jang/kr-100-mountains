@@ -43,6 +43,20 @@ best_season: "가을(10~11월) 단풍, 봄 신록"
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 내소사코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121800&vcursId=121800V004) (확인: 2026-10-03)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **내변산남여치코스** — 변산반도국립공원 · 5.6km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 내변산~봉래곡삼거리~월명암~남여치 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V006&parkNavGb=guide))
+- **원암남여치코스** — 변산반도국립공원 · 7.8km · 7시간 50분 · 난이도 중 · 정상 미경유<br>구간: 원암~재백이고개~직소폭포~월명암~남여치 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V008&parkNavGb=guide))
+- **내변산내소사코스** — 변산반도국립공원 · 5.9km · 2시간 45분 · 난이도 중 · 정상 미경유<br>구간: 내변산~직소폭포~재백이고개~관음봉삼거리~내소사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V007&parkNavGb=guide))
+- **직소폭포코스** — 변산반도국립공원 · 2.3km · 50분 · 난이도 하 · 정상 미경유<br>구간: 내변산~자연보호헌장탑~직소폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V009&parkNavGb=guide))
+- **내소사원암코스** — 변산반도국립공원 · 3.3km · 1시간 30분 · 난이도 중 · 정상 미경유<br>구간: 내소사~관음봉삼거리~재백이고개~원암마을 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V003&parkNavGb=guide))
+- **내소사코스** — 변산반도국립공원 · 5.2km · 3시간 · 난이도 상 · 정상 미경유<br>구간: 내소사~관음봉삼거리~세봉삼거리~내소사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V004&parkNavGb=guide))
+- **쇠뿔바위 코스** — 변산반도국립공원 · 7.7km · 4시간 10분 · 난이도 중 · 정상 미경유<br>구간: 어수대 -  쇠뿔바위 -  중계교부근 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V002&parkNavGb=guide))
+- **우금암코스** — 변산반도국립공원 · 10.2km · 4시간 · 난이도 중 · 정상 미경유<br>구간: 개암사 ~ 우금암 ~ 월정약수터 ~ 만석동 ~ 감불 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V001&parkNavGb=guide))
+- **격포코스** — 변산반도국립공원 · 17km · 난이도 하 · 정상 미경유<br>구간: 바람모퉁이~격포(승용차를 이용한 해안탐방) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121800&vcursId=121800V005&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

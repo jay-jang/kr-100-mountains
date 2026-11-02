@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 보령시·홍성군"
 lists: [bac, hansanha]
-coordinates: [36.411, 126.677]
-coord_confidence: medium
+coordinates: [36.458421, 126.65937]
+coord_confidence: high
 features: ["억새", "일몰", "서해조망", "100대명산", "금북정맥"]
 best_season: "가을(10~11월) 억새"
 ---

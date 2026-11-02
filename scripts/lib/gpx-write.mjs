@@ -15,13 +15,17 @@ const NS = 'https://github.com/jay-jang/kr-100-mountains/ns/1';
  * @param {object} o.meta        provenance 확장 필드 (평문 key/value)
  * @param {{href:string,text:string}[]} [o.links]
  * @param {string} o.time        ISO8601 생성 시각
+ * @param {{latlngs:[number,number][], eles?:(number|null)[]}[]} [o.segments]
+ *        끊긴 선(여러 <trkseg>). 주면 latlngs·eles 대신 쓴다 — 없는 길을 직선으로 잇지 않기 위해.
  */
-export function toGPX({ name, desc, latlngs, eles = [], meta = {}, links = [], time }) {
-  const pts = latlngs.map(([la, lo], i) => {
-    const e = eles[i];
+export function toGPX({ name, desc, latlngs = [], eles = [], segments = null, meta = {}, links = [], time }) {
+  const segPts = (ll, ee = []) => ll.map(([la, lo], i) => {
+    const e = ee[i];
     const ele = Number.isFinite(e) ? `<ele>${e.toFixed(1)}</ele>` : '';
     return `      <trkpt lat="${la.toFixed(6)}" lon="${lo.toFixed(6)}">${ele}</trkpt>`;
   }).join('\n');
+  const segs = segments?.length ? segments : [{ latlngs, eles }];
+  const trksegs = segs.map((sg) => `    <trkseg>\n${segPts(sg.latlngs, sg.eles)}\n    </trkseg>`).join('\n');
 
   const ext = Object.entries(meta)
     .filter(([, v]) => v !== null && v !== undefined && v !== '')
@@ -48,9 +52,7 @@ ${ext}
   <trk>
     <name>${esc(name)}</name>
     <desc>${esc(desc)}</desc>
-    <trkseg>
-${pts}
-    </trkseg>
+${trksegs}
   </trk>
 </gpx>
 `;

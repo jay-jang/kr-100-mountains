@@ -7,7 +7,7 @@ region: 수도권
 province: 경기
 location: "경기도 수원시·용인시"
 lists: [hansanha]
-coordinates: [37.343004, 127.028003]
+coordinates: [37.34494, 127.034443]
 coord_confidence: high
 features: ["수원 진산", "단풍", "계곡", "저수지", "도심 근교"]
 best_season: "가을(10~11월) 단풍"

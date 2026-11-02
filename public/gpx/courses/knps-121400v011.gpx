@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>월악산 · 마패봉코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <time>2026-10-13T00:00:00Z</time>
+    <link href="https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754"><text>코스 정보: 국립공원공단 탐방로 통합검색</text></link>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-matched</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:course_id>knps-121400v011</k100:course_id>
+      <k100:course_source>KNPS</k100:course_source>
+      <k100:course_name>마패봉코스</k100:course_name>
+      <k100:park>월악산</k100:park>
+      <k100:mountain_ids>wolaksan</k100:mountain_ids>
+      <k100:geometry>OpenStreetMap ways matched to the official course path; no official coordinates included; short connectors (&lt;=30 m) only where OSM way ends do not meet and the official course passes</k100:geometry>
+      <k100:match_coverage>1</k100:match_coverage>
+      <k100:match_precision>1</k100:match_precision>
+      <k100:segments>1</k100:segments>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>월악산 · 마패봉코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="36.829419" lon="128.067965"><ele>476.6</ele></trkpt>
+      <trkpt lat="36.829367" lon="128.068236"><ele>477.6</ele></trkpt>
+      <trkpt lat="36.829249" lon="128.068480"><ele>482.1</ele></trkpt>
+      <trkpt lat="36.829073" lon="128.068654"><ele>487.4</ele></trkpt>
+      <trkpt lat="36.828277" lon="128.069108"><ele>506.2</ele></trkpt>
+      <trkpt lat="36.827985" lon="128.069153"><ele>515.7</ele></trkpt>
+      <trkpt lat="36.827815" lon="128.069295"><ele>521.3</ele></trkpt>
+      <trkpt lat="36.826905" lon="128.069428"><ele>533.0</ele></trkpt>
+      <trkpt lat="36.826312" lon="128.069789"><ele>540.4</ele></trkpt>
+      <trkpt lat="36.825823" lon="128.069789"><ele>543.7</ele></trkpt>
+      <trkpt lat="36.825183" lon="128.069553"><ele>545.5</ele></trkpt>
+      <trkpt lat="36.824745" lon="128.069317"><ele>551.3</ele></trkpt>
+      <trkpt lat="36.824440" lon="128.069043"><ele>553.6</ele></trkpt>
+      <trkpt lat="36.823847" lon="128.068684"><ele>561.1</ele></trkpt>
+      <trkpt lat="36.823182" lon="128.067933"><ele>574.3</ele></trkpt>
+      <trkpt lat="36.822959" lon="128.067901"><ele>577.9</ele></trkpt>
+      <trkpt lat="36.822757" lon="128.067804"><ele>582.1</ele></trkpt>
+      <trkpt lat="36.822198" lon="128.067402"><ele>594.8</ele></trkpt>
+      <trkpt lat="36.821936" lon="128.067085"><ele>599.6</ele></trkpt>
+      <trkpt lat="36.821353" lon="128.066130"><ele>625.2</ele></trkpt>
+      <trkpt lat="36.821172" lon="128.066012"><ele>634.4</ele></trkpt>
+      <trkpt lat="36.821176" lon="128.065867"><ele>635.8</ele></trkpt>
+      <trkpt lat="36.820867" lon="128.065165"><ele>650.3</ele></trkpt>
+      <trkpt lat="36.820850" lon="128.065036"><ele>654.0</ele></trkpt>
+      <trkpt lat="36.820940" lon="128.064934"><ele>656.8</ele></trkpt>
+      <trkpt lat="36.821219" lon="128.065057"><ele>652.9</ele></trkpt>
+      <trkpt lat="36.821301" lon="128.064993"><ele>654.5</ele></trkpt>
+      <trkpt lat="36.821340" lon="128.064886"><ele>657.2</ele></trkpt>
+      <trkpt lat="36.821185" lon="128.064349"><ele>673.5</ele></trkpt>
+      <trkpt lat="36.821164" lon="128.064092"><ele>681.1</ele></trkpt>
+      <trkpt lat="36.820919" lon="128.063453"><ele>712.7</ele></trkpt>
+      <trkpt lat="36.820811" lon="128.062370"><ele>769.8</ele></trkpt>
+      <trkpt lat="36.820605" lon="128.061871"><ele>782.8</ele></trkpt>
+      <trkpt lat="36.820150" lon="128.061463"><ele>792.4</ele></trkpt>
+      <trkpt lat="36.819631" lon="128.060498"><ele>823.9</ele></trkpt>
+      <trkpt lat="36.819575" lon="128.060272"><ele>831.8</ele></trkpt>
+      <trkpt lat="36.818948" lon="128.059784"><ele>842.6</ele></trkpt>
+      <trkpt lat="36.818806" lon="128.059736"><ele>845.4</ele></trkpt>
+      <trkpt lat="36.818123" lon="128.059741"><ele>866.9</ele></trkpt>
+      <trkpt lat="36.817870" lon="128.059655"><ele>878.7</ele></trkpt>
+      <trkpt lat="36.817561" lon="128.059645"><ele>895.4</ele></trkpt>
+      <trkpt lat="36.817213" lon="128.059781"><ele>908.5</ele></trkpt>
+      <trkpt lat="36.817182" lon="128.059596"><ele>911.4</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

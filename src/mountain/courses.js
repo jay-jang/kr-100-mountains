@@ -4,7 +4,7 @@ import { el, clear } from '../dom.js';
 import { pref } from '../prefs.js';
 import { icon } from '../icons.js';
 import { lineStatus } from './model.js';
-import { fmtHours, fmtMin, fmtKm, diffMark, verifyInfo, evidenceLabel, PROVENANCE, dots } from './format.js';
+import { fmtHours, fmtMin, fmtKm, diffMark, verifyInfo, evidenceLabel, officialLabel, fmtSection, PROVENANCE, dots } from './format.js';
 
 const TOOL_KEYS = ['compareRoutes', 'gpxImport', 'routePlanner', 'followRoute', 'liveTrails'];
 
@@ -22,6 +22,7 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
   const root = el('div', { class: 'mt-courses' });
   const status = el('p', { class: 'mt-fine mt-pad', role: 'status', 'aria-live': 'polite' });
   let selectedKey = null;
+  let moreOpen = null;     // 사용자가 연 "정상을 지나지 않는 공원 코스" 묶음 상태 — 다시 그려도 유지(null = 아직 안 건드림)
 
   function hrefFor(key) { return `#/m/${encodeURIComponent(m.id)}?route=${encodeURIComponent(key)}`; }
 
@@ -29,6 +30,14 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
     const parts = [];
     if (row.kind === 'course' && row.course?.via?.length) {
       parts.push(el('span', { class: 'mt-via' }, row.course.via.join(' → ')));
+      return parts;
+    }
+    if (row.kind === 'official') {
+      if (row.official.section) parts.push(el('span', { class: 'mt-via' }, fmtSection(row.official.section)));
+      if (fmtKm(row.distanceKm)) parts.push(el('span', { class: 'tabular' }, fmtKm(row.distanceKm)));
+      if (row.official.schedule && row.official.schedule !== '당일') parts.push(el('span', {}, row.official.schedule));
+      if (row.guideMin) parts.push(el('span', { class: 'tabular' }, `안내 ${fmtMin(row.guideMin)}`));
+      if (row.difficulty) parts.push(diffMark(row.difficulty));
       return parts;
     }
     if (row.start) parts.push(el('span', {}, `들머리 ${row.start}`));
@@ -47,7 +56,9 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
       vi ? el('span', { class: `mt-verify ${vi.tone}`, title: vi.title }, vi.text) : null,
       el('span', { class: 'mt-line-' + ls.provenance }, PROVENANCE[ls.provenance].status),
       ls.review ? el('span', { class: 'mt-review' }, '검토 필요') : null,
-      row.course ? el('span', {}, evidenceLabel(row.course)) : null,
+      // 공식 코스와 이어진 행은 공단 확인이 더 강한 근거다 — 그것을 먼저 보인다.
+      row.official ? el('span', {}, officialLabel(row.official)) : row.course ? el('span', {}, evidenceLabel(row.course)) : null,
+      row.kind === 'official' && !row.reachesSummit ? el('span', {}, '정상 미경유') : null,
       row.kind === 'osm' ? el('span', {}, '운영 상태 미확인') : null,
     ].filter(Boolean);
   }
@@ -82,6 +93,24 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
     const main = el('div', { class: 'rows', role: 'list', 'aria-label': '코스' }, ...model.rows.map(rowNode));
     if (!model.rows.length) main.append(el('div', { class: 'empty' }, el('p', {}, '수록된 코스가 없습니다.')));
     root.append(main);
+    if (model.officialRows.length) {
+      const parks = [...new Set(model.officialRows.map((r) => r.official.park).filter(Boolean))];
+      const title = parks.length === 1 ? `${parks[0]}국립공원 공식 탐방코스` : '국립공원 공식 탐방코스';
+      const up = model.officialRows.filter((r) => r.reachesSummit);
+      const other = model.officialRows.filter((r) => !r.reachesSummit);
+      root.append(el('h3', { class: 'rows-h' }, title));
+      if (up.length) root.append(el('div', { class: 'rows', role: 'list', 'aria-label': `${title} · 정상 경유` }, ...up.map(rowNode)));
+      if (other.length) {
+        // 정상을 지나지 않는 공원 코스(계곡·둘레·다른 봉우리)는 접어 둔다 — 정상 코스 목록이 길어지지 않게.
+        // 고른 코스가 이 안에 있으면 펼친 채로 둔다.
+        const open = moreOpen ?? (other.some((r) => r.key === selectedKey) || !up.length);
+        const det = el('details', { class: 'mt-details mt-more', open: open || null },
+          el('summary', {}, `정상을 지나지 않는 공원 코스 ${other.length}개`),
+          el('div', { class: 'rows', role: 'list', 'aria-label': `${title} · 정상 미경유` }, ...other.map(rowNode)));
+        det.addEventListener('toggle', () => { moreOpen = det.open; });
+        root.append(det);
+      }
+    }
     if (model.osmRows.length) {
       root.append(el('h3', { class: 'rows-h' }, 'OpenStreetMap 등록 탐방로'),
         el('div', { class: 'rows', role: 'list', 'aria-label': 'OpenStreetMap 등록 탐방로' }, ...model.osmRows.map(rowNode)));
@@ -107,7 +136,7 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
     }
     if (tools.children.length) root.append(tools);
     root.append(status);
-    root.append(el('p', { class: 'mt-fine mt-pad' }, '난이도·시간은 자료마다 다를 수 있습니다. 계산 경로는 실측 기록이 아닙니다.'));
+    root.append(el('p', { class: 'mt-fine mt-pad' }, '난이도·시간은 자료마다 다를 수 있습니다. 공식 코스 선과 계산 경로는 실측 기록이 아닙니다.'));
     if (TOOL_KEYS.some((k) => !pref(k))) {
       root.append(el('a', { class: 'text-link block mt-settings-hint', href: '#/settings' }, 'GPX 열기·경로 계획·겹쳐 보기는 설정에서 켤 수 있습니다 ›'));
     }
@@ -120,6 +149,9 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
     setStatus(text) { status.textContent = text || ''; },
     setSelected(key) {
       selectedKey = key;
+      // 고른 코스가 접힌 묶음 안에 있으면 펼친다(돌아왔을 때 고른 행이 보이게).
+      const det = root.querySelector('details.mt-more');
+      if (det && key && det.querySelector(`.mt-crow[data-key="${CSS.escape(key)}"]`)) { det.open = true; moreOpen = true; }
       root.querySelectorAll('.mt-crow').forEach((n) => {
         const on = n.dataset.key === key;
         n.classList.toggle('selected', on);
@@ -127,6 +159,6 @@ export function createCoursesTab({ m, model, userRows, onOpen, compare, onFiles,
         if (on) n.querySelector('.mt-crow-link')?.setAttribute('aria-current', 'true');
       });
     },
-    count: () => model.rows.length + model.osmRows.length + userRows().length,
+    count: () => model.rows.length + model.officialRows.length + model.osmRows.length + userRows().length,
   };
 }

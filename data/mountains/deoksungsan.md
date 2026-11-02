@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 예산군"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [36.6742, 126.6231]
-coord_confidence: medium
+coordinates: [36.671774, 126.624339]
+coord_confidence: high
 features: ["도립공원", "수덕사", "사면석불", "돌계단", "온천"]
 best_season: "봄(4~5월)·가을(10~11월)"
 ---

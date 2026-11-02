@@ -7,7 +7,7 @@ region: 경상
 province: 경북
 location: "경상북도 문경시, 충청북도 괴산군"
 lists: [sanlim, bac, hansanha]
-coordinates: [36.6706, 127.9325]
+coordinates: [36.669258, 127.929481]
 coord_confidence: high
 features: ["국립공원", "백두대간", "계곡", "폭포", "암릉", "100대명산"]
 best_season: "여름 계곡 및 가을(10~11월) 단풍"
@@ -34,6 +34,12 @@ best_season: "여름 계곡 및 가을(10~11월) 단풍"
 - 특징: 밀재와 피아골을 잇는 대야산 정상 순환 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 대야산코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120500&vcursId=120500V014) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **대야산코스** — 속리산국립공원 · 9.8km · 5시간 50분 · 난이도 중 · 정상 경유<br>구간: 용추계곡소형주차장~월영대~밀재~대야산 정상~피아골~월영대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V014&parkNavGb=guide))
 
 ## 주요 등산로
 

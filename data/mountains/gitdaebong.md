@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 신안군 흑산면 홍도"
 lists: [sanlim]
-coordinates: [34.6897, 125.2016]
-coord_confidence: low
+coordinates: [34.696875, 125.203186]
+coord_confidence: high
 features: ["국립공원", "100대명산", "섬산행", "해안조망", "일몰", "억새"]
 best_season: "봄~가을(4~10월), 가을 억새"
 ---

@@ -20,7 +20,14 @@
     "test:selection": "node --test scripts/mapselection.test.mjs",
     "test:planner": "node scripts/planner-test.mjs",
     "test:courses": "node scripts/courses-test.mjs",
-    "test:trekking": "node --test scripts/trekking.test.mjs"
+    "test:trekking": "node --test scripts/trekking.test.mjs",
+    "test:course-match": "node --test scripts/course-match.test.mjs",
+    "test:improvements": "node scripts/mountain-improvements-test.mjs",
+    "knps": "node scripts/collect-knps-courses.mjs",
+    "courses:official": "node scripts/build-course-routes.mjs",
+    "osm:local": "node --max-old-space-size=7000 scripts/lib/osm-local.mjs",
+    "summits": "node scripts/fix-summits.mjs",
+    "media": "node scripts/collect-mountain-media.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1",

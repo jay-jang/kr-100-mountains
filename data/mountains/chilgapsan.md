@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 청양군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.4275, 126.8858]
-coord_confidence: medium
+coordinates: [36.413023, 126.884882]
+coord_confidence: high
 features: ["도립공원", "단풍", "장곡사", "출렁다리", "백제유적"]
 best_season: "가을(10~11월) 단풍"
 ---

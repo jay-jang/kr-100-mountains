@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="kr-100-mountains route-harvester"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:k100="https://github.com/jay-jang/kr-100-mountains/ns/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>태백산 · 검룡소코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <time>2026-10-13T00:00:00Z</time>
+    <link href="https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754"><text>코스 정보: 국립공원공단 탐방로 통합검색</text></link>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
+    <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
+    <extensions>
+      <k100:provenance>osm-matched</k100:provenance>
+      <k100:not_a_recorded_track>true</k100:not_a_recorded_track>
+      <k100:course_id>knps-122200v003</k100:course_id>
+      <k100:course_source>KNPS</k100:course_source>
+      <k100:course_name>검룡소코스</k100:course_name>
+      <k100:park>태백산</k100:park>
+      <k100:mountain_ids>geumdaebong,taebaeksan</k100:mountain_ids>
+      <k100:geometry>OpenStreetMap ways matched to the official course path; no official coordinates included; short connectors (&lt;=30 m) only where OSM way ends do not meet and the official course passes</k100:geometry>
+      <k100:match_coverage>0.984</k100:match_coverage>
+      <k100:match_precision>1</k100:match_precision>
+      <k100:segments>1</k100:segments>
+      <k100:license>ODbL-1.0</k100:license>
+      <k100:attribution>© OpenStreetMap contributors</k100:attribution>
+      <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:validation_status>accepted</k100:validation_status>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>태백산 · 검룡소코스</name>
+    <desc>국립공원공단 공식 탐방코스의 경로를 OpenStreetMap 등산로 선형 위에 다시 그린 선입니다. OSM 길 끝이 30m 안으로 맞붙지 않은 곳은 공단 코스 선이 지나는 경우에만 짧게 이었습니다. 공단 원본 좌표가 아니며 실제 GPS 기록도 아닙니다. 탐방로 통제·입산시간지정제는 산행 전 공단 안내를 확인하세요.</desc>
+    <trkseg>
+      <trkpt lat="37.227040" lon="128.924593"><ele>959.8</ele></trkpt>
+      <trkpt lat="37.227238" lon="128.924523"><ele>959.5</ele></trkpt>
+      <trkpt lat="37.227711" lon="128.924660"><ele>952.5</ele></trkpt>
+      <trkpt lat="37.228923" lon="128.925945"><ele>937.1</ele></trkpt>
+      <trkpt lat="37.229158" lon="128.926076"><ele>937.4</ele></trkpt>
+      <trkpt lat="37.229446" lon="128.926021"><ele>932.4</ele></trkpt>
+      <trkpt lat="37.229732" lon="128.926138"><ele>931.3</ele></trkpt>
+      <trkpt lat="37.230211" lon="128.926773"><ele>927.7</ele></trkpt>
+      <trkpt lat="37.230316" lon="128.926956"><ele>924.8</ele></trkpt>
+      <trkpt lat="37.230356" lon="128.927192"><ele>921.0</ele></trkpt>
+      <trkpt lat="37.230538" lon="128.927376"><ele>912.3</ele></trkpt>
+      <trkpt lat="37.230668" lon="128.927774"><ele>914.0</ele></trkpt>
+      <trkpt lat="37.230736" lon="128.928325"><ele>917.1</ele></trkpt>
+      <trkpt lat="37.231082" lon="128.928695"><ele>919.7</ele></trkpt>
+      <trkpt lat="37.231140" lon="128.928906"><ele>917.7</ele></trkpt>
+      <trkpt lat="37.231108" lon="128.929702"><ele>910.8</ele></trkpt>
+      <trkpt lat="37.231162" lon="128.929852"><ele>913.2</ele></trkpt>
+      <trkpt lat="37.231144" lon="128.930183"><ele>913.5</ele></trkpt>
+      <trkpt lat="37.231110" lon="128.930400"><ele>915.6</ele></trkpt>
+      <trkpt lat="37.230666" lon="128.931355"><ele>912.5</ele></trkpt>
+      <trkpt lat="37.230612" lon="128.931765"><ele>909.2</ele></trkpt>
+      <trkpt lat="37.230740" lon="128.932479"><ele>902.0</ele></trkpt>
+      <trkpt lat="37.230926" lon="128.932808"><ele>901.3</ele></trkpt>
+      <trkpt lat="37.230858" lon="128.933093"><ele>899.0</ele></trkpt>
+      <trkpt lat="37.230640" lon="128.933521"><ele>898.3</ele></trkpt>
+      <trkpt lat="37.230612" lon="128.933787"><ele>896.5</ele></trkpt>
+      <trkpt lat="37.230640" lon="128.934045"><ele>894.9</ele></trkpt>
+      <trkpt lat="37.230875" lon="128.934377"><ele>890.2</ele></trkpt>
+      <trkpt lat="37.230951" lon="128.934571"><ele>891.4</ele></trkpt>
+      <trkpt lat="37.230960" lon="128.934747"><ele>891.3</ele></trkpt>
+      <trkpt lat="37.230871" lon="128.934930"><ele>889.2</ele></trkpt>
+      <trkpt lat="37.230670" lon="128.935053"><ele>886.4</ele></trkpt>
+      <trkpt lat="37.230557" lon="128.935190"><ele>881.6</ele></trkpt>
+      <trkpt lat="37.230512" lon="128.935381"><ele>878.8</ele></trkpt>
+      <trkpt lat="37.230516" lon="128.935705"><ele>879.0</ele></trkpt>
+      <trkpt lat="37.230608" lon="128.935935"><ele>881.4</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -59,6 +59,26 @@ best_season: "가을(10~11월) 단풍, 여름(피서), 겨울 설경"
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/지리산)
 - [기존 산별 참고자료](https://reservation.knps.or.kr)
 
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **거림코스** — 지리산국립공원 · 18.9km · 11시간 30분 · 난이도 중 · 정상 경유<br>구간: 거림공원지킴터~세석대피소~장터목대피소~천왕봉~로타리대피소~중산리 탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V014&parkNavGb=guide))
+- **백무동~중산리코스** — 지리산국립공원 · 12.9km · 9시간 · 난이도 중 · 정상 경유<br>구간: 백무동탐방지원센터~장터목대피소~천왕봉~로타리대피소~중산리탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V012&parkNavGb=guide))
+- **백무동코스** — 지리산국립공원 · 15km · 11시간 · 난이도 중 · 정상 경유<br>구간: 백무동탐방지원세터~장터목대피소~천왕봉~장터목대피소~백무동탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V013&parkNavGb=guide))
+- **중산리(장터목)코스** — 지리산국립공원 · 12.4km · 9시간 · 난이도 중 · 정상 경유<br>구간: 중산리탐방안내소~장터목대피소~천왕봉~로타리대피소~중산리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V010&parkNavGb=guide))
+- **중산리(칼바위)코스** — 지리산국립공원 · 10.8km · 8시간 · 난이도 중 · 정상 경유<br>구간: 중산리탐방안내소~칼바위~로타리대피소~천왕봉~중산리탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V011&parkNavGb=guide))
+- **유평(대원사)코스** — 지리산국립공원 · 21.5km · 12시간 30분 · 난이도 상 · 정상 경유<br>구간: 유평탐방지원센터~유평청소년수련원(밤밭골)~치밭목대피소~천왕봉~로타리대피소~중산리 탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V015&parkNavGb=guide))
+- **삼신봉코스** — 지리산국립공원 · 8.3km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 청학동탐방지원센터~삼신봉~상불재~삼성궁 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V002&parkNavGb=guide))
+- **불일폭포코스** — 지리산국립공원 · 4.8km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 쌍계사탐방지원센터~불일폭포~쌍계사탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V009&parkNavGb=guide))
+- **뱀사골계곡코스** — 지리산국립공원 · 9.2km · 4시간 20분 · 난이도 중 · 정상 미경유<br>구간: 반선-뱀사골탐방안내소-요룡대-병소-간장소-뱀사골탐방지원센터-화개재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V003&parkNavGb=guide))
+- **피아골코스** — 지리산국립공원 · 8.8km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 연곡사~직전마을~표고막터~피아골 대피소~ 피아골 삼거리 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V007&parkNavGb=guide))
+- **정령치- 바래봉코스** — 지리산국립공원 · 12.8km · 6시간 10분 · 난이도 중 · 정상 미경유<br>구간: 정령치-고리봉-세걸산-세동치-부운치-팔랑치-바래봉삼거리-운봉아래(용산리) ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V004&parkNavGb=guide))
+- **노고단코스** — 지리산국립공원 · 4.7km · 1시간 · 난이도 하 · 정상 미경유<br>구간: 성삼재주차장~무넹기~노고단대피소~노고단고개 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V016&parkNavGb=guide))
+- **만복대코스** — 지리산국립공원 · 5.4km · 3시간 · 난이도 중 · 정상 미경유<br>구간: 성삼재 탐방로 입구~당치고개~고리봉~묘봉치~만복대정상 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V005&parkNavGb=guide))
+- **화엄계곡코스** — 지리산국립공원 · 7km · 4시간 · 난이도 상 · 정상 미경유<br>구간: 화엄사~연기암~무넹기 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V006&parkNavGb=guide))
+- **구룡계곡코스** — 지리산국립공원 · 3.1km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 구룡삼곡(구룡탐방지원센터)-유선대-비폭동-구룡폭포 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120100&vcursId=120100V001&parkNavGb=guide))
+
 ## 주요 등산로
 
 | 코스 | 거리 | 오름(편도) | 왕복 | 난이도 | 교차검증 |

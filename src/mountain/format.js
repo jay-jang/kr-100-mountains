@@ -48,6 +48,17 @@ export function verifyDetail(v) {
     .filter(Boolean).join(' · ');
 }
 
+/** 공식 구간 설명 "A~B-C∼D" → "A → B → C → D" (공단 표기는 ~·∼·-·→가 섞여 있다). 숫자 사이 '-'는 그대로. */
+export function fmtSection(s) {
+  return String(s || '').replace(/\s*[~∼→]\s*/g, ' → ').replace(/(?<=[^\d\s])\s*-\s*(?=[^\d\s])/g, ' → ').trim();
+}
+
+/** 공식 탐방코스 근거 글자. */
+export function officialLabel(oc) {
+  if (!oc) return '';
+  return oc.source === 'knps' ? '공단 안내 확인' : '공식 안내 확인';
+}
+
 /** 대표 코스 근거: 공단 안내 확인 / 공식 안내 확인(공단 외 기관) / 자료 선정. */
 export function evidenceLabel(course) {
   if (!course) return '';
@@ -60,6 +71,7 @@ export function evidenceLabel(course) {
 
 export const PROVENANCE = {
   recorded: { status: '수록 경로', note: '선 출처: 기증·실측 GPS 기록' },
+  'osm-matched': { status: '공식 코스 선', note: '선 출처: 공단 공식 코스의 경로를 OpenStreetMap 등산로 위에 맞춰 그림 · 실측 기록 아님' },
   'osm-routed': { status: '계산 경로', note: '선 출처: OpenStreetMap 등산로망 위 계산 · 실측 기록 아님' },
   'osm-relation': { status: 'OpenStreetMap 노선', note: '선 출처: OpenStreetMap 노선 · 운영 상태 미확인' },
   'user-file': { status: '내 파일', note: '선 출처: 내 GPX 파일 · 이 기기에서만 표시' },

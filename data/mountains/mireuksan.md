@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 통영시"
 lists: [sanlim, hansanha]
-coordinates: [34.8231, 128.4258]
-coord_confidence: medium
+coordinates: [34.810664, 128.416114]
+coord_confidence: high
 features: ["100대 명산", "한려해상국립공원", "케이블카", "바다조망", "일출", "섬"]
 best_season: "사계절(봄 신록·가을 조망, 겨울 일출)"
 ---
@@ -40,6 +40,12 @@ best_season: "사계절(봄 신록·가을 조망, 겨울 일출)"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/미륵산_(경남))
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/통영_케이블카)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **한산도 코스** — 한려해상국립공원 · 7.2km · 3시간 30분 · 난이도 하 · 정상 미경유<br>구간: 진두~망산~덮을개 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120300&vcursId=120300V007&parkNavGb=guide))
 
 ## 주요 등산로
 

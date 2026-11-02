@@ -24,7 +24,7 @@
 //   node scripts/collect-routes.mjs --force         # 캐시·완료 표시 무시하고 다시
 //   node scripts/collect-routes.mjs --no-elevation  # 고도 조회 생략(빠른 확인용)
 //   node scripts/collect-routes.mjs --publish-only  # 이미 받은 결과로 매니페스트만 재생성
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, renameSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, renameSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,6 +33,7 @@ import { overpass, cachePath } from './lib/overpass.mjs';
 import { buildGraph, findRoutes } from './lib/route-graph.mjs';
 import { ElevationDEM, elevationStats, ELEVATION_SOURCE, ELEVATION_LINK } from './lib/elevation.mjs';
 import { toGPX } from './lib/gpx-write.mjs';
+import { localMeta, localWays } from './lib/osm-local.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = cachePath(ROOT);                          // .cache/routes  (gitignore 대상)
@@ -70,6 +71,9 @@ const LIMIT = Number(opt('limit', '0')) || 0;
 const FORCE = flag('force');
 const NO_ELEV = flag('no-elevation');
 const PUBLISH_ONLY = flag('publish-only');
+// 로컬 OSM 추출본(scripts/lib/osm-local.mjs)이 있으면 Overpass 대신 쓴다(--overpass로 끌 수 있다).
+// 로컬 타일에는 길(way)만 있어 hiking 관계는 다시 만들지 않고 이전 결과의 관계 목록을 그대로 둔다.
+const LOCAL = flag('overpass') ? null : localMeta();
 
 // --force로 다시 굽는 동안 같은 관계 파일을 여러 산이 참조해도 한 번만 쓰도록.
 const relWritten = new Set();
@@ -121,6 +125,7 @@ function mountainBBox(m) {
 
 async function fetchMountainOSM(m) {
   const b = mountainBBox(m);
+  if (LOCAL) return localWays(b);
   const bbox = `${b.south.toFixed(5)},${b.west.toFixed(5)},${b.north.toFixed(5)},${b.east.toFixed(5)}`;
   const q = `[out:json][timeout:180];(`
     + `way["highway"~"^(${WAY_FILTER})$"](${bbox});`
@@ -233,6 +238,8 @@ function validate({ latlngs, dist_m, snapStart, snapGoal, trail, mountain }) {
 // ── 산 하나 처리 ──────────────────────────────────────────────────────
 async function processMountain(m, elev, relIndex) {
   const resultFile = join(RESULT_DIR, `${m.id}.json`);
+  let prevRelations = null;
+  try { if (existsSync(resultFile)) prevRelations = JSON.parse(readFileSync(resultFile, 'utf8')).relations || null; } catch { prevRelations = null; }
   if (!FORCE && existsSync(resultFile)) {
     // 쓰다가 끊겨 잘린 JSON이면 건너뛰지 말고 다시 처리한다(예외로 이 산을 영영 못 하게 되는 것 방지).
     try {
@@ -333,10 +340,10 @@ async function processMountain(m, elev, relIndex) {
           mountain_id: m.id, mountain_name: m.name_full || m.name,
           route_id: `${m.id}-${rk}`, route_index: idx + 1, route_name: trail.name || '',
           variant: r.variant,
-          source: 'OpenStreetMap via Overpass API',
+          source: LOCAL ? `OpenStreetMap (Geofabrik extract ${LOCAL.pbf})` : 'OpenStreetMap via Overpass API',
           license: 'ODbL-1.0', attribution: '© OpenStreetMap contributors',
           elevation_source: es.gain_m != null ? ELEVATION_SOURCE : '',
-          algorithm: ALGORITHM, osm_snapshot: TODAY,
+          algorithm: ALGORITHM, osm_snapshot: LOCAL?.snapshot || TODAY,
           snap_trailhead_m: r.snapStart, snap_summit_m: r.snapGoal,
           validation_score: v.score, validation_status: v.status,
         },
@@ -368,8 +375,27 @@ async function processMountain(m, elev, relIndex) {
   }
 
   // ── 이 산을 지나는 OSM hiking 관계 ──────────────────────────────────
+  // 로컬 타일에는 관계가 없다 — 이 산의 가장 최근 Overpass 캐시 응답에서 관계를 꺼내 **지금 정상 좌표로** 다시 고른다
+  // (정상 좌표를 고친 뒤 예전 선택·거리를 그대로 두면 3km 규칙이 옛 정상 기준으로 남는다).
+  // 캐시가 아예 없으면 이전 목록 중 지금 정상 3km 안의 것만 남긴다.
   const relations = [];
-  const rels = (json.elements || []).filter((e) => e.type === 'relation' && e.members?.length);
+  let rels = (json.elements || []).filter((e) => e.type === 'relation' && e.members?.length);
+  if (LOCAL) {
+    const cached = existsSync(OSM_DIR) ? readdirSync(OSM_DIR).filter((f) => new RegExp(`^${m.id}-[0-9a-f]{8}\\.json$`).test(f))
+      .map((f) => ({ f, t: statSync(join(OSM_DIR, f)).mtimeMs })).sort((a, b) => b.t - a.t)[0] : null;
+    if (cached) {
+      try { rels = (JSON.parse(readFileSync(join(OSM_DIR, cached.f), 'utf8')).elements || []).filter((e) => e.type === 'relation' && e.members?.length); }
+      catch { rels = []; }
+    } else {
+      for (const r of prevRelations || []) {
+        const fp = join(ROOT, 'public', 'gpx', r.file);
+        if (!existsSync(fp)) continue;
+        const pts = [...readFileSync(fp, 'utf8').matchAll(/lat="(-?[\d.]+)" lon="(-?[\d.]+)"/g)].map((x) => [+x[1], +x[2]]);
+        const d = pointToPolyline([m.lat, m.lon], pts);
+        if (d <= REL_SUMMIT_MAX_M) relations.push({ ...r, summit_dist_m: Math.round(d) });
+      }
+    }
+  }
   const cands = [];
   for (const rel of rels) {
     const line = stitchRelation(rel);
@@ -471,7 +497,7 @@ function publish({ quiet = false } = {}) {
     generator: 'scripts/collect-routes.mjs',
     what_this_is: 'OpenStreetMap 등산로 선형 위에서 계산한 산별·코스별 경로. 사람이 GPS로 기록한 실측 트랙이 아닙니다.',
     sources: [
-      { name: 'OpenStreetMap (Overpass API)', license: 'ODbL 1.0', url: 'https://www.openstreetmap.org/copyright', attribution: '© OpenStreetMap contributors' },
+      { name: 'OpenStreetMap (Overpass API · Geofabrik 추출본 — 트랙별 source·osm_snapshot 참고)', license: 'ODbL 1.0', url: 'https://www.openstreetmap.org/copyright', attribution: '© OpenStreetMap contributors' },
       { name: 'SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles', note: '고도값. 지형 DEM에서 읽은 추정 고도이며 기압·GPS 실측 고도가 아닙니다', url: 'https://registry.opendata.aws/terrain-tiles/' },
     ],
     kinds: {

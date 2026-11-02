@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 창녕군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [35.5286, 128.5303]
-coord_confidence: medium
+coordinates: [35.547148, 128.531694]
+coord_confidence: high
 features: ["군립공원", "억새", "진달래", "산성", "분화구", "가을단풍"]
 best_season: "가을(10~11월) 억새, 봄(4월) 진달래"
 ---

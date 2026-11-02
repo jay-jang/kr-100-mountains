@@ -7,8 +7,8 @@ region: 전라
 province: 전북
 location: "전북특별자치도 순창군, 전라남도 담양군"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [35.352, 127.0555]
-coord_confidence: medium
+coordinates: [35.40192, 127.04838]
+coord_confidence: high
 features: ["군립공원", "단풍", "계곡", "구름다리", "폭포", "호남정맥"]
 best_season: "가을(10월 하순~11월) 단풍"
 ---

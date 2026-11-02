@@ -7,7 +7,7 @@
   <metadata>
     <name>금정산 · 범어사-북문-고당봉 코스 (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-08-04T05:46:34.649Z</time>
+    <time>2026-10-14T15:32:15.671Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,15 +19,15 @@
       <k100:route_index>1</k100:route_index>
       <k100:route_name>범어사-북문-고당봉 코스</k100:route_name>
       <k100:variant>0</k100:variant>
-      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
       <k100:snap_trailhead_m>12</k100:snap_trailhead_m>
-      <k100:snap_summit_m>12</k100:snap_summit_m>
-      <k100:validation_score>100</k100:validation_score>
+      <k100:snap_summit_m>8</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
       <k100:validation_status>accepted</k100:validation_status>
     </extensions>
   </metadata>
@@ -45,7 +45,8 @@
       <trkpt lat="35.282605" lon="129.067900"><ele>349.6</ele></trkpt>
       <trkpt lat="35.281998" lon="129.067842"><ele>353.3</ele></trkpt>
       <trkpt lat="35.281446" lon="129.067116"><ele>370.2</ele></trkpt>
-      <trkpt lat="35.281124" lon="129.066495"><ele>388.7</ele></trkpt>
+      <trkpt lat="35.281199" lon="129.066685"><ele>382.9</ele></trkpt>
+      <trkpt lat="35.281050" lon="129.066256"><ele>395.9</ele></trkpt>
       <trkpt lat="35.280984" lon="129.065831"><ele>405.1</ele></trkpt>
       <trkpt lat="35.280733" lon="129.065445"><ele>422.1</ele></trkpt>
       <trkpt lat="35.280415" lon="129.064604"><ele>442.7</ele></trkpt>
@@ -58,11 +59,11 @@
       <trkpt lat="35.279377" lon="129.061879"><ele>505.7</ele></trkpt>
       <trkpt lat="35.279311" lon="129.061541"><ele>512.9</ele></trkpt>
       <trkpt lat="35.279339" lon="129.061452"><ele>514.3</ele></trkpt>
-      <trkpt lat="35.279771" lon="129.061090"><ele>518.0</ele></trkpt>
-      <trkpt lat="35.279795" lon="129.060894"><ele>525.7</ele></trkpt>
+      <trkpt lat="35.279692" lon="129.061182"><ele>515.7</ele></trkpt>
+      <trkpt lat="35.279797" lon="129.061013"><ele>521.1</ele></trkpt>
       <trkpt lat="35.279670" lon="129.060457"><ele>539.6</ele></trkpt>
       <trkpt lat="35.279736" lon="129.060286"><ele>544.0</ele></trkpt>
-      <trkpt lat="35.280310" lon="129.059355"><ele>571.0</ele></trkpt>
+      <trkpt lat="35.280496" lon="129.059100"><ele>582.5</ele></trkpt>
       <trkpt lat="35.280743" lon="129.058859"><ele>595.7</ele></trkpt>
       <trkpt lat="35.281150" lon="129.058633"><ele>611.0</ele></trkpt>
       <trkpt lat="35.281439" lon="129.058199"><ele>628.2</ele></trkpt>
@@ -78,31 +79,21 @@
       <trkpt lat="35.280936" lon="129.054877"><ele>698.2</ele></trkpt>
       <trkpt lat="35.280819" lon="129.054543"><ele>707.4</ele></trkpt>
       <trkpt lat="35.280654" lon="129.054450"><ele>707.9</ele></trkpt>
+      <trkpt lat="35.280620" lon="129.054192"><ele>713.9</ele></trkpt>
+      <trkpt lat="35.280657" lon="129.053950"><ele>717.3</ele></trkpt>
       <trkpt lat="35.280614" lon="129.053519"><ele>721.8</ele></trkpt>
       <trkpt lat="35.280834" lon="129.053294"><ele>728.7</ele></trkpt>
       <trkpt lat="35.280905" lon="129.053054"><ele>733.5</ele></trkpt>
       <trkpt lat="35.280845" lon="129.052685"><ele>738.3</ele></trkpt>
-      <trkpt lat="35.281253" lon="129.051343"><ele>734.4</ele></trkpt>
-      <trkpt lat="35.281301" lon="129.050989"><ele>729.8</ele></trkpt>
-      <trkpt lat="35.281411" lon="129.050796"><ele>726.8</ele></trkpt>
-      <trkpt lat="35.281732" lon="129.050400"><ele>729.9</ele></trkpt>
-      <trkpt lat="35.282076" lon="129.050110"><ele>734.9</ele></trkpt>
-      <trkpt lat="35.282452" lon="129.049946"><ele>738.3</ele></trkpt>
-      <trkpt lat="35.282547" lon="129.049854"><ele>737.1</ele></trkpt>
-      <trkpt lat="35.282826" lon="129.049762"><ele>736.0</ele></trkpt>
-      <trkpt lat="35.282809" lon="129.049628"><ele>732.1</ele></trkpt>
-      <trkpt lat="35.282549" lon="129.049348"><ele>722.2</ele></trkpt>
-      <trkpt lat="35.282593" lon="129.048941"><ele>709.6</ele></trkpt>
-      <trkpt lat="35.282891" lon="129.048286"><ele>676.1</ele></trkpt>
-      <trkpt lat="35.282742" lon="129.048179"><ele>672.6</ele></trkpt>
-      <trkpt lat="35.282566" lon="129.047718"><ele>648.3</ele></trkpt>
-      <trkpt lat="35.282680" lon="129.047610"><ele>638.7</ele></trkpt>
-      <trkpt lat="35.282549" lon="129.047063"><ele>614.4</ele></trkpt>
-      <trkpt lat="35.283092" lon="129.046849"><ele>607.4</ele></trkpt>
-      <trkpt lat="35.283630" lon="129.046032"><ele>576.3</ele></trkpt>
-      <trkpt lat="35.283560" lon="129.045431"><ele>551.7</ele></trkpt>
-      <trkpt lat="35.283384" lon="129.045056"><ele>532.1</ele></trkpt>
-      <trkpt lat="35.283673" lon="129.044605"><ele>507.4</ele></trkpt>
+      <trkpt lat="35.280901" lon="129.052436"><ele>740.7</ele></trkpt>
+      <trkpt lat="35.280749" lon="129.052293"><ele>744.0</ele></trkpt>
+      <trkpt lat="35.280769" lon="129.051960"><ele>750.8</ele></trkpt>
+      <trkpt lat="35.280501" lon="129.051605"><ele>759.8</ele></trkpt>
+      <trkpt lat="35.280558" lon="129.051528"><ele>760.4</ele></trkpt>
+      <trkpt lat="35.280539" lon="129.051273"><ele>761.2</ele></trkpt>
+      <trkpt lat="35.280448" lon="129.050975"><ele>765.2</ele></trkpt>
+      <trkpt lat="35.280339" lon="129.050931"><ele>769.5</ele></trkpt>
+      <trkpt lat="35.280187" lon="129.050691"><ele>773.8</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

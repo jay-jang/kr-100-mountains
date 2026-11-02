@@ -34,7 +34,7 @@
 //   RADIUS_KM=8 node scripts/collect-trekking.mjs             # 반경 변경(질의가 바뀌므로 새로 받는다)
 //   다음 단계: node scripts/build-walks.mjs                    # 전국 노선 목록·타일·상세(+ 산별 파일 보강)
 //   node scripts/collect-trekking.mjs --force                 # 캐시를 무시하고 다시 받기
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, renameSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, renameSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -67,6 +67,10 @@ const ONLY = (opt('only') || process.env.ONLY || '').split(',').map((s) => s.tri
 const LIMIT = Number(opt('limit') || process.env.LIMIT || 0) || 0;
 const RADIUS_KM = Number(opt('radius') || process.env.RADIUS_KM || 15) || 15;
 const FORCE = argv.includes('--force') || process.env.FORCE === '1';
+// --reanchor: 정상·들머리 좌표만 바뀌었을 때(scripts/fix-summits.mjs) Overpass를 다시 부르지 않고, 그 산의 가장 최근
+// 캐시 응답을 새 기준점으로 다시 해석한다(거리·정상 근접·자르기 원이 새 좌표 기준으로 바뀐다). 후보 노선은
+// 예전 원(정상+들머리 반경) 안에서 받은 것이라, 정상이 크게 옮겨 간 산은 나중에 Overpass로 다시 받는 편이 낫다.
+const REANCHOR = argv.includes('--reanchor');
 
 const R_M = Math.round(RADIUS_KM * 1000);
 const MIN_KM = 0.8;              // 반경 안 길이가 이보다 짧은 노선은 버린다
@@ -151,6 +155,12 @@ out tags geom;`;
 }
 
 async function fetchOSM(m, circles) {
+  if (REANCHOR) {
+    const prev = existsSync(OSM_DIR) ? readdirSync(OSM_DIR).filter((f) => new RegExp(`^${m.id}-[0-9a-f]{8}\\.json$`).test(f))   // gyeryongsan- 이 gyeryongsan-geoje- 와 섞이지 않게
+      .map((f) => ({ f, t: statSync(join(OSM_DIR, f)).mtimeMs })).sort((a, b) => b.t - a.t)[0] : null;
+    if (!prev) throw new Error('--reanchor: 이 산의 캐시 응답이 없습니다');
+    return { json: JSON.parse(readFileSync(join(OSM_DIR, prev.f), 'utf8')), cached: true };
+  }
   const q = buildQuery(circles);
   // 질의(반경·패턴)가 바뀌면 예전 캐시를 쓰면 안 되므로 파일명에 질의 해시를 넣는다.
   const qhash = createHash('sha1').update(q).digest('hex').slice(0, 8);

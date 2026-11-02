@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 홍천군·춘천시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.8583, 127.9833]
-coord_confidence: medium
+coordinates: [37.871383, 127.956469]
+coord_confidence: high
 features: ["100대명산", "암봉", "암릉", "자연휴양림", "조망", "소양호"]
 best_season: "가을(10~11월) 단풍, 봄 철쭉"
 ---

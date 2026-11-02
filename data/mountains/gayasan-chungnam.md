@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 예산군·서산시"
 lists: [bac, hansanha]
-coordinates: [36.6931, 126.6339]
-coord_confidence: medium
+coordinates: [36.706621, 126.608324]
+coord_confidence: high
 features: ["도립공원", "능선조망", "마애삼존불", "개심사", "암릉"]
 best_season: "가을(10~11월) 단풍·능선 조망"
 ---

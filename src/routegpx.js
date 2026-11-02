@@ -51,3 +51,29 @@ export function routePayloads(entry) {
     ...(entry?.relations || []).map(r => ({ ...r, label: r.name })),
   ].map(t => [t.file, t])).values()];
 }
+
+// 공식 탐방코스 선 목록(gpx/courses/) — 공단 공식 코스의 경로를 OSM 등산로 위에 맞춰 다시 그린 선.
+// 가벼운 목록 gpx/courses/index.json({ mountains: { <산id>: 건수 } }) → 산별 gpx/courses/m/<산id>.json.
+let _courseIndex;
+function courseIndex() {
+  if (!_courseIndex) _courseIndex = getJSON(`${import.meta.env.BASE_URL}gpx/courses/index.json`).catch(() => null)
+    .then((v) => { if (!v) _courseIndex = null; return v; });
+  return _courseIndex;
+}
+const _courseLines = new Map();
+/** 산의 공식 코스 선: Map(course_id → 선 항목). 목록에 없는 산은 요청하지 않는다(404 방지). */
+export function officialLinesFor(mountainId) {
+  if (!_courseLines.has(mountainId)) {
+    const job = courseIndex().then(async (idx) => {
+      // 목록을 못 받았으면 실패로 돌려 다음에 다시 시도하게 한다(빈 결과로 굳히지 않는다).
+      if (!idx) throw new Error('공식 코스 선 목록을 불러오지 못했습니다.');
+      if (!idx.mountains?.[mountainId]) return new Map();
+      const entry = await getJSON(`${import.meta.env.BASE_URL}gpx/courses/m/${mountainId}.json`);
+      if (!entry) throw new Error('공식 코스 선을 불러오지 못했습니다.');
+      return new Map((entry.courses || []).map((c) => [c.course_id, c]));
+    });
+    job.catch(() => _courseLines.delete(mountainId));
+    _courseLines.set(mountainId, job);
+  }
+  return _courseLines.get(mountainId);
+}

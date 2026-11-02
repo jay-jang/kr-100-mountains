@@ -7,7 +7,7 @@
   <metadata>
     <name>삼악산 · 상원사 코스 (대안 1) (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-08-04T05:26:37.322Z</time>
+    <time>2026-10-14T15:31:54.528Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,15 +19,15 @@
       <k100:route_index>2</k100:route_index>
       <k100:route_name>상원사 코스</k100:route_name>
       <k100:variant>1</k100:variant>
-      <k100:source>OpenStreetMap via Overpass API</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-08-04</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
       <k100:snap_trailhead_m>15</k100:snap_trailhead_m>
-      <k100:snap_summit_m>45</k100:snap_summit_m>
-      <k100:validation_score>84</k100:validation_score>
+      <k100:snap_summit_m>3</k100:snap_summit_m>
+      <k100:validation_score>93</k100:validation_score>
       <k100:validation_status>accepted</k100:validation_status>
     </extensions>
   </metadata>
@@ -95,8 +95,7 @@
       <trkpt lat="37.837296" lon="127.666545"><ele>490.7</ele></trkpt>
       <trkpt lat="37.837438" lon="127.666064"><ele>497.0</ele></trkpt>
       <trkpt lat="37.837445" lon="127.665858"><ele>497.2</ele></trkpt>
-      <trkpt lat="37.837493" lon="127.665790"><ele>498.6</ele></trkpt>
-      <trkpt lat="37.837510" lon="127.665631"><ele>498.2</ele></trkpt>
+      <trkpt lat="37.837559" lon="127.665517"><ele>497.6</ele></trkpt>
       <trkpt lat="37.837686" lon="127.665322"><ele>498.7</ele></trkpt>
       <trkpt lat="37.837835" lon="127.665206"><ele>501.5</ele></trkpt>
       <trkpt lat="37.837928" lon="127.665014"><ele>504.0</ele></trkpt>
@@ -106,6 +105,26 @@
       <trkpt lat="37.838938" lon="127.664555"><ele>551.6</ele></trkpt>
       <trkpt lat="37.839014" lon="127.664258"><ele>559.4</ele></trkpt>
       <trkpt lat="37.838996" lon="127.664048"><ele>561.8</ele></trkpt>
+      <trkpt lat="37.839102" lon="127.663937"><ele>568.5</ele></trkpt>
+      <trkpt lat="37.839122" lon="127.663777"><ele>570.2</ele></trkpt>
+      <trkpt lat="37.839250" lon="127.663619"><ele>576.5</ele></trkpt>
+      <trkpt lat="37.839265" lon="127.663478"><ele>577.5</ele></trkpt>
+      <trkpt lat="37.839501" lon="127.663273"><ele>591.2</ele></trkpt>
+      <trkpt lat="37.839551" lon="127.663152"><ele>594.8</ele></trkpt>
+      <trkpt lat="37.839713" lon="127.663136"><ele>604.3</ele></trkpt>
+      <trkpt lat="37.839786" lon="127.662969"><ele>609.5</ele></trkpt>
+      <trkpt lat="37.839838" lon="127.662946"><ele>612.4</ele></trkpt>
+      <trkpt lat="37.840057" lon="127.663007"><ele>620.0</ele></trkpt>
+      <trkpt lat="37.840100" lon="127.662951"><ele>621.8</ele></trkpt>
+      <trkpt lat="37.840153" lon="127.662782"><ele>626.0</ele></trkpt>
+      <trkpt lat="37.840092" lon="127.662569"><ele>625.4</ele></trkpt>
+      <trkpt lat="37.840187" lon="127.662285"><ele>623.1</ele></trkpt>
+      <trkpt lat="37.840209" lon="127.661778"><ele>619.9</ele></trkpt>
+      <trkpt lat="37.840051" lon="127.661300"><ele>626.2</ele></trkpt>
+      <trkpt lat="37.840053" lon="127.661178"><ele>628.6</ele></trkpt>
+      <trkpt lat="37.839810" lon="127.660763"><ele>630.9</ele></trkpt>
+      <trkpt lat="37.839714" lon="127.660481"><ele>634.7</ele></trkpt>
+      <trkpt lat="37.839746" lon="127.660370"><ele>636.1</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

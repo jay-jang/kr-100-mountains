@@ -11,7 +11,7 @@ const MAPTYPE_KEY = 'kr100:maptype';  // 기존 키 — 지도 종류도 그대�
 export const PREF_GROUPS = [
   { title: '지도', items: [
     { key: 'walkLines', label: '걷기길 선 표시', note: '지도를 확대하면 둘레길·숲길·마루금 선을 함께 그립니다.', def: true },
-    { key: 'mountainNames', label: '산 이름 표시', note: '확대하면 산 기호 옆에 이름을 적습니다.', def: true },
+    { key: 'mountainNames', label: '산 이름 표시', note: '산 기호 옆에 이름을 적습니다. 겹치는 이름은 확대하거나 기호를 가리키면 보입니다.', def: true },
     { key: 'regionColors', label: '권역별 색 구분', note: '산 기호를 권역 색(수도권·강원·충청·전라·경상·제주)으로 칠합니다.', def: false },
     { key: 'zoomButtons', label: '확대·축소 버튼', note: '두 손가락 확대가 어려울 때 쓰는 + − 버튼입니다.', def: true },
   ] },

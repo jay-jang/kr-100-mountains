@@ -7,8 +7,8 @@ region: 충청
 province: 충북
 location: "충청북도 제천시·단양군"
 lists: [sanlim, bac, hansanha]
-coordinates: [36.9808, 128.2492]
-coord_confidence: medium
+coordinates: [36.984726, 128.256909]
+coord_confidence: high
 features: ["국립공원", "월악산국립공원", "청풍호 조망", "암릉", "단풍", "얼음골"]
 best_season: "가을(10~11월) 단풍, 여름 얼음골"
 ---
@@ -42,6 +42,13 @@ best_season: "가을(10~11월) 단풍, 여름 얼음골"
 - 특징: 용담폭포를 거쳐 금수산에 오르는 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 금수산코스 (상천)](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121400&vcursId=121400V014) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **금수산코스 (상천)** — 월악산국립공원 · 3.8km · 2시간 30분 · 난이도 상 · 정상 경유<br>구간: 상천(백운동)~용담폭포삼거리~금수산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V014&parkNavGb=guide))
+- **금수산코스 (상학)** — 월악산국립공원 · 2.7km · 1시간 30분 · 난이도 중 · 정상 경유<br>구간: 상학~절터(남근석공원)~금수산 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121400&vcursId=121400V013&parkNavGb=guide))
 
 ## 주요 등산로
 

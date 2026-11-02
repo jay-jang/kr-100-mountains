@@ -1,4 +1,6 @@
-// 대표 코스 모음 #/courses?q=&region= — 산 20곳씩 "더 보기". 행을 누르면 그 산의 경로 시트로 간다.
+// 대표 코스 모음 #/courses?q=&region=&kind= — 산 20곳씩 "더 보기". 행을 누르면 그 산의 경로 시트로 간다.
+// kind: ''(전체) | 'famous'(대표 코스만) | 'official'(국립공원 공식 탐방코스만). 공식 탐방코스는 대표 코스·등산로와
+// 이어지지 않은 것만 따로 행으로 둔다(이어진 것은 그 대표 코스 행이 곧 그 코스다).
 // 설정('대표 코스 모음')은 입구만 숨긴다. 이 페이지는 링크로 언제든 열린다.
 import '../css/pages.css';
 import { loadData } from '../data.js';
@@ -7,9 +9,10 @@ import { courseMatches } from '../famouscourses.js';
 import { pageBar, fold, fmtM, dots } from './pagekit.js';
 // 근거 문구는 산·경로 시트와 같은 함수로 — 공식 출처가 국립공원공단이 아니면(예: 한라산은 제주특별자치도)
 // '공단 안내 확인'이 아니라 '공식 안내 확인'이다. 두 화면이 같은 코스를 다르게 부르지 않게 한다.
-import { evidenceLabel } from '../mountain/format.js';
+import { evidenceLabel, fmtSection } from '../mountain/format.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
+const KINDS = [['', '전체'], ['famous', '대표 코스'], ['official', '공단 공식 코스']];
 const PAGE = 20;
 const VERIFY = { verified: '교차검증 일치', mixed: '자료 간 이견', single: '단일 출처' };
 
@@ -25,6 +28,29 @@ export function courseRouteKey(c) {
   return c.trail_index != null ? `t:${c.trail_index}` : `c:${encodeURIComponent(c.id)}`;
 }
 
+/**
+ * 모음에 행으로 둘 공식 탐방코스.
+ *  · all(전체): 대표 코스 행이 이미 그 코스인 것(대표 코스가 근거로 든 것, 대표 코스와 같은 등산로에 이어진 것)은 뺀다 — 같은 경로 시트가 두 행이 되지 않게.
+ *  · official(공단 공식 코스만): 공식 코스 전부. 대표 코스와 이어진 것은 그 대표 코스 행의 경로 시트로 간다.
+ */
+export function listedOfficial(m, kind = '') {
+  const all = m.official_courses || [];
+  if (kind === 'official') return all;
+  const famousTrails = new Set((m.famous_courses || []).filter((c) => c.trail_index != null).map((c) => c.trail_index));
+  return all.filter((c) => !c.famous_linked && !(c.trail_index != null && famousTrails.has(c.trail_index)));
+}
+/** 공식 코스 행의 경로 시트 키 */
+function officialKey(m, c) {
+  if (c.famous_linked) {
+    const fc = (m.famous_courses || []).find((x) => x.official_id === c.id);
+    if (fc) return courseRouteKey(fc);
+  }
+  return c.trail_index != null ? `t:${c.trail_index}` : `f:${encodeURIComponent(c.id)}`;
+}
+/** 검색 대조용 — 대표 코스와 같은 함수(courseMatches)로 이름·구간·공원을 찾는다. */
+const officialAsCourse = (c) => ({ name: c.name, via: (c.section || '').split(/[~∼\-→/]/).map((x) => x.trim()).filter(Boolean),
+  selection_reason: '국립공원 공식 탐방코스', highlight: c.park ? `${c.park}국립공원` : '' });
+
 export async function renderCourses(root, route) {
   const data = await loadData();
   if (!root.isConnected) return () => {};
@@ -37,6 +63,8 @@ export async function renderCourses(root, route) {
   const region = el('select', { id: 'crs-region', class: 'crs-select' },
     el('option', { value: '' }, '전국'), ...REGIONS.map((r) => el('option', { value: r }, r)));
   region.value = REGIONS.includes(params.get('region')) ? params.get('region') : '';
+  const kind = el('select', { id: 'crs-kind', class: 'crs-select' }, ...KINDS.map(([v, t]) => el('option', { value: v }, t)));
+  kind.value = KINDS.some(([v]) => v && v === params.get('kind')) ? params.get('kind') : '';
   const count = el('p', { class: 'crs-count', role: 'status', 'aria-live': 'polite' });
   const resetBtn = el('button', { type: 'button', class: 'pg-text-btn', hidden: true }, '조건 초기화');
   const list = el('div', { class: 'crs-list' });
@@ -48,14 +76,16 @@ export async function renderCourses(root, route) {
     meta.policy ? el('p', { class: 'set-para' }, meta.policy) : null,
     el('p', { class: 'set-para' },
       `공식 코스 안내를 확인한 ${meta.official ?? ''}개 코스는 확인일과 함께 '공단 안내 확인'(국립공원공단) 또는 '공식 안내 확인'(지자체 등 그 밖의 기관)으로, 나머지는 '자료 선정'으로 적었습니다. ${meta.catalog_note || ''}`),
-    el('p', { class: 'set-para' }, '거리·왕복 시간·난이도는 같은 산의 수록 등산로와 연결된 코스에만 붙습니다.'));
+    el('p', { class: 'set-para' }, '거리·왕복 시간·난이도는 같은 산의 수록 등산로와 연결된 코스에만 붙습니다.'),
+    el('p', { class: 'set-para' }, '공단 공식 코스는 국립공원공단 탐방로 안내의 코스입니다. 거리·안내 시간·난이도는 공단 안내 값이고, 지도 선은 공단 안내 지도의 코스 경로를 OpenStreetMap 등산로 위에 다시 그린 것입니다.'));
   policy.classList.add('pg-fold-quiet');
 
   const main = el('div', { class: 'pg-main' },
     policy,
     el('div', { class: 'crs-filters', role: 'search', 'aria-label': '대표 코스 찾기' },
       el('label', { class: 'crs-field crs-field-q', for: 'crs-q' }, el('span', { class: 'crs-field-label' }, '산·코스 검색'), search),
-      el('label', { class: 'crs-field', for: 'crs-region' }, el('span', { class: 'crs-field-label' }, '권역'), region)),
+      el('label', { class: 'crs-field', for: 'crs-region' }, el('span', { class: 'crs-field-label' }, '권역'), region),
+      el('label', { class: 'crs-field', for: 'crs-kind' }, el('span', { class: 'crs-field-label' }, '코스 종류'), kind)),
     el('div', { class: 'crs-status' }, count, resetBtn),
     list, more);
   root.append(el('div', { class: 'pg pg-courses' }, pageBar({ title: '대표 코스 모음' }), main));
@@ -69,16 +99,33 @@ export async function renderCourses(root, route) {
   let restoreY = 0;
   if (saved && saved.hash === location.hash) { shown = Math.max(PAGE, saved.shown || PAGE); restoreY = saved.y || 0; }
 
-  let matches = [];   // [{ m, courses }]
+  let matches = [];   // [{ m, courses, officials }]
 
   function compute() {
     const q = search.value;
     matches = [];
     for (const m of mountains) {
       if (region.value && m.region !== region.value) continue;
-      const courses = (m.famous_courses || []).filter((c) => courseMatches(m, c, q));
-      if (courses.length) matches.push({ m, courses });
+      const courses = kind.value === 'official' ? [] : (m.famous_courses || []).filter((c) => courseMatches(m, c, q));
+      const officials = kind.value === 'famous' ? [] : listedOfficial(m, kind.value).filter((c) => courseMatches(m, officialAsCourse(c), q));
+      if (courses.length || officials.length) matches.push({ m, courses, officials });
     }
+  }
+
+  function officialRow(m, c) {
+    const facts = [
+      c.distance_km ? `${c.distance_km}km` : null,
+      c.minutes ? `안내 ${fmtHours(c.minutes / 60)}` : null,
+      c.difficulty || null,
+    ].filter(Boolean);
+    return el('li', { dataset: { officialId: c.id } },
+      el('a', { class: 'crs-row', href: `#/m/${m.id}?route=${officialKey(m, c)}` },
+        el('span', { class: 'crs-name' }, c.name),
+        c.section ? el('span', { class: 'crs-via' }, fmtSection(c.section)) : null,
+        el('span', { class: 'crs-meta' }, ...dots(
+          c.park ? `${c.park}국립공원` : null, c.reaches_summit ? null : '정상 미경유', ...facts,
+          c.has_line ? '공식 코스 선' : '지도 선 없음',
+          el('span', { class: 'crs-ev ok' }, `공단 안내 확인${c.checked_at ? ` ${c.checked_at}` : ''}`)))));
   }
 
   function courseRow(m, c) {
@@ -100,12 +147,16 @@ export async function renderCourses(root, route) {
             `${evidenceLabel(c)}${checked ? ` ${checked}` : ''}`)))));
   }
 
-  function mountainSection({ m, courses }) {
+  function mountainSection({ m, courses, officials }) {
     return el('section', { class: 'crs-m', 'aria-labelledby': `crs-h-${m.id}`, dataset: { mountainId: m.id } },
       el('h2', { class: 'crs-m-h', id: `crs-h-${m.id}`, tabindex: '-1' },
         el('a', { href: `#/m/${m.id}` }, m.name_full)),
-      el('p', { class: 'crs-m-meta' }, ...dots(m.region, m.province !== m.region ? m.province : null, fmtM(m.elevation_m), `코스 ${courses.length}`)),
-      el('ul', { class: 'crs-rows' }, ...courses.map((c) => courseRow(m, c))));
+      el('p', { class: 'crs-m-meta' }, ...dots(m.region, m.province !== m.region ? m.province : null, fmtM(m.elevation_m),
+        `코스 ${courses.length + officials.length}`, officials.length && courses.length ? `공단 공식 ${officials.length}` : null)),
+      el('div', { class: 'crs-body' },
+        courses.length ? el('ul', { class: 'crs-rows' }, ...courses.map((c) => courseRow(m, c))) : null,
+        officials.length ? el('h3', { class: 'crs-sub-h' }, '국립공원 공식 탐방코스') : null,
+        officials.length ? el('ul', { class: 'crs-rows crs-rows-official' }, ...officials.map((c) => officialRow(m, c))) : null));
   }
 
   function paintMore() {
@@ -117,9 +168,9 @@ export async function renderCourses(root, route) {
 
   function paint() {
     clear(list);
-    const courseCount = matches.reduce((n, x) => n + x.courses.length, 0);
+    const courseCount = matches.reduce((n, x) => n + x.courses.length + x.officials.length, 0);
     count.textContent = `${matches.length}개 산 · ${courseCount}개 코스`;
-    resetBtn.hidden = !(search.value.trim() || region.value);
+    resetBtn.hidden = !(search.value.trim() || region.value || kind.value);
     if (!matches.length) {
       list.append(el('div', { class: 'empty' },
         el('p', {}, '조건에 맞는 대표 코스가 없습니다.'),
@@ -133,6 +184,7 @@ export async function renderCourses(root, route) {
     const p = new URLSearchParams();
     if (search.value.trim()) p.set('q', search.value.trim());
     if (region.value) p.set('region', region.value);
+    if (kind.value) p.set('kind', kind.value);
     const hash = `#/courses${p.size ? '?' + p : ''}`;
     if (location.hash !== hash) history.replaceState(history.state, '', hash);
   }
@@ -142,7 +194,7 @@ export async function renderCourses(root, route) {
     compute(); paint(); writeURL();
   }
   function reset() {
-    search.value = ''; region.value = '';
+    search.value = ''; region.value = ''; kind.value = '';
     update();
     search.focus();
   }
@@ -158,6 +210,7 @@ export async function renderCourses(root, route) {
   });
   search.addEventListener('input', update);
   region.addEventListener('change', update);
+  kind.addEventListener('change', update);
   resetBtn.addEventListener('click', reset);
   search.addEventListener('keydown', (e) => {
     if (e.isComposing || e.keyCode === 229) return;

@@ -7,8 +7,8 @@ region: 충청
 province: 대전
 location: "대전광역시, 충청남도 공주시·논산시·계룡시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.342, 127.213]
-coord_confidence: medium
+coordinates: [36.342362, 127.20604]
+coord_confidence: high
 features: ["국립공원", "단풍", "벚꽃", "암릉", "사찰", "일출"]
 best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
 ---
@@ -42,6 +42,20 @@ best_season: "가을(10~11월) 단풍, 봄(4월) 벚꽃"
 - 특징: 갑사계곡과 삼불봉을 연결하는 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 갑사1코스(편도)](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120200&vcursId=120200V006) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **신원사1코스(편도)** — 계룡산국립공원 · 3.2km · 4시간 50분 · 난이도 중 · 정상 미경유<br>구간: 신원사주차장~신원사~고왕암~연천봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V007&parkNavGb=guide))
+- **신원사2코스** — 계룡산국립공원 · 9.9km · 5시간 · 난이도 상 · 정상 미경유<br>구간: 신원사주차장~신원사~고왕암~연천봉고개~연천봉~관음봉~삼불봉~남매탑~동학사~동학사주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V001&parkNavGb=guide))
+- **동학사1코스(편도)** — 계룡산국립공원 · 4.4km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 동학사주차장~동학사~은선폭포~관음봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V005&parkNavGb=guide))
+- **동학사2코스** — 계룡산국립공원 · 11.8km · 6시간 · 난이도 상 · 정상 미경유<br>구간: 동학사주차장~동학사~은선폭포~관음봉고개~연천봉~관음봉~삼불봉~남매탑~동학사~동학사주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V002&parkNavGb=guide))
+- **갑사2코스** — 계룡산국립공원 · 10.2km · 5시간 · 난이도 상 · 정상 미경유<br>구간: 갑사주차장~갑사~원효대입구~연천봉~관음봉고개~관음봉~삼불봉~남매탑~동학사~동학사주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V008&parkNavGb=guide))
+- **천정코스** — 계룡산국립공원 · 5.8km · 3시간 · 난이도 중 · 정상 미경유<br>구간: 천정탐방지원센터 - 문골삼거리 - 큰배재 - 남매탑 - 탐방안내소 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V009&parkNavGb=guide))
+- **갑사1코스(편도)** — 계룡산국립공원 · 3.8km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 갑사주차장~갑사~금잔디고개~삼불봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V006&parkNavGb=guide))
+- **수통골2코스** — 계룡산국립공원 · 9km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 수통골탐방안내소~도덕봉~자티고개~금수봉~빈계산~주차장 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V003&parkNavGb=guide))
+- **수통골1코스(편도)** — 계룡산국립공원 · 3.2km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 수통골주차장~수통골탐방안내소~수통폭포~금수봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120200&vcursId=120200V004&parkNavGb=guide))
 
 ## 주요 등산로
 

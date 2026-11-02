@@ -14,7 +14,7 @@ const hashOf = (page) => decodeURIComponent(new URL(page.url()).hash);
 const route = (page) => {
   const [path, query = ''] = new URL(page.url()).hash.slice(1).split('?');
   const p = new URLSearchParams(query);
-  return { path, q: p.get('q'), region: p.get('region'), keys: [...p.keys()].join(',') };
+  return { path, q: p.get('q'), region: p.get('region'), kind: p.get('kind'), keys: [...p.keys()].join(',') };
 };
 
 try {
@@ -27,6 +27,11 @@ try {
   const { mountains, meta } = await (await page.request.get(base + '/data/mountains.json')).json();
   const byId = new Map(mountains.map((m) => [m.id, m]));
   const courses = mountains.flatMap((m) => m.famous_courses || []);
+  // 모음에 따로 행으로 두는 공식 탐방코스(src/views/courses.js listedOfficial): 전체 보기에서는 대표 코스 행이 이미 그 코스인 것을 뺀다
+  const famousTrails = (m) => new Set((m.famous_courses || []).filter((c) => c.trail_index != null).map((c) => c.trail_index));
+  const officials = mountains.flatMap((m) => (m.official_courses || []).filter((c) => !c.famous_linked && !(c.trail_index != null && famousTrails(m).has(c.trail_index))));
+  const officialsAll = mountains.flatMap((m) => m.official_courses || []);
+  const rowsAll = courses.length + officials.length;
 
   // ---------- 자료 ----------
   await step('data', async () => {
@@ -48,7 +53,7 @@ try {
     await page.goto(base + '/#/courses');
     await page.waitForSelector('.pg-courses .crs-m');
     check('catalogue: 문서 제목', (await page.title()).startsWith('대표 코스 모음'), await page.title());
-    check('catalogue: 전체 개수 안내', (await page.locator('.crs-count').textContent()) === `${mountains.length}개 산 · ${courses.length}개 코스`, await page.locator('.crs-count').textContent());
+    check('catalogue: 전체 개수 안내(대표 코스 + 공단 공식 코스)', (await page.locator('.crs-count').textContent()) === `${mountains.length}개 산 · ${rowsAll}개 코스`, await page.locator('.crs-count').textContent());
     check('catalogue: 처음엔 20곳', (await page.locator('.crs-m').count()) === 20 && (await page.locator('.crs-more-note').textContent()) === `${mountains.length}곳 중 20곳 표시`);
     const more = page.locator('.crs-more-btn');
     check('catalogue: "20곳 더 보기"', (await more.textContent()) === '20곳 더 보기');
@@ -57,12 +62,30 @@ try {
     check('catalogue: 새로 붙은 첫 산 제목으로 포커스', await page.evaluate(() => document.activeElement?.classList.contains('crs-m-h')
       && document.activeElement === document.querySelectorAll('.crs-m')[20].querySelector('.crs-m-h')));
     while (await more.isVisible()) await more.click();
-    check('catalogue: 끝까지 펼치면 149곳·모든 코스', (await page.locator('.crs-m').count()) === mountains.length && (await page.locator('.crs-rows li').count()) === courses.length,
+    check('catalogue: 끝까지 펼치면 149곳·모든 코스', (await page.locator('.crs-m').count()) === mountains.length && (await page.locator('.crs-rows li').count()) === rowsAll,
       `${await page.locator('.crs-m').count()}곳 · ${await page.locator('.crs-rows li').count()}개`);
     await page.locator('.pg-fold summary', { hasText: '코스 선정 기준' }).click();
     const policy = await page.locator('.pg-fold', { hasText: '코스 선정 기준' }).innerText();
     check('catalogue: 선정 기준이 인기 순위가 아님을 밝힘', policy.includes('인기 순위는 아닙니다') && policy.includes('인기도를 별도로 검증하지 않았습니다'));
-    check('catalogue: 근거 표시(공단 안내 확인/자료 선정)', (await page.locator('.crs-ev.ok').count()) === courses.filter((c) => c.evidence === 'official').length);
+    check('catalogue: 근거 표시(공단 안내 확인/자료 선정)', (await page.locator('.crs-ev.ok').count()) === courses.filter((c) => c.evidence === 'official').length + officials.length);
+    check('catalogue: 공단 공식 코스 묶음', (await page.locator('.crs-rows-official li').count()) === officials.length && (await page.locator('.crs-sub-h').first().textContent()) === '국립공원 공식 탐방코스');
+  });
+
+  // ---------- 코스 종류: 대표 코스만 / 공단 공식 코스만 ----------
+  await step('kind', async () => {
+    await page.locator('#crs-kind').selectOption('famous');
+    check('kind: 대표 코스만', (await page.locator('.crs-count').textContent()) === `${mountains.length}개 산 · ${courses.length}개 코스` && route(page).kind === 'famous', await page.locator('.crs-count').textContent());
+    await page.locator('#crs-kind').selectOption('official');
+    const withOfficial = new Set(mountains.filter((m) => (m.official_courses || []).length).map((m) => m.id));
+    check('kind: 공단 공식 코스만(대표 코스와 이어진 것 포함 전부)', (await page.locator('.crs-count').textContent()) === `${withOfficial.size}개 산 · ${officialsAll.length}개 코스`, await page.locator('.crs-count').textContent());
+    while (await page.locator('.crs-more-btn').isVisible()) await page.locator('.crs-more-btn').click();   // 20곳씩 — 끝까지 펼친다
+    const hrefs = await page.locator('.crs-rows-official a.crs-row').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    check('kind: 공식 코스 행 → 그 산의 경로 시트 키(f:·t:·c:)', hrefs.length === officialsAll.length && hrefs.every((h) => /^#\/m\/[a-z0-9-]+\?route=(f:knps-|t:\d|c:)/.test(h)), hrefs.find((h) => !/route=(f:knps-|t:\d|c:)/.test(h)) || `${hrefs.length}개`);
+    // 대표 코스와 이어진 공식 코스(공룡능선코스)도 이 보기에서 찾을 수 있고, 그 대표 코스 행의 경로 시트로 간다
+    const dino = mountains.find((m) => m.id === 'seolaksan').official_courses.find((c) => c.famous_linked && c.name.includes('공룡'));
+    check('kind: 대표 코스와 이어진 공식 코스도 목록에', !dino || (await page.locator('.crs-rows-official li', { hasText: dino.name }).count()) === 1, dino?.name);
+    await page.locator('#crs-kind').selectOption('');
+    check('kind: 전체로 돌리면 주소에서 빠짐', route(page).kind == null, hashOf(page));
   });
 
   // ---------- 검색·권역: 주소와 동기화 ----------
@@ -90,9 +113,12 @@ try {
     await page.waitForTimeout(100);
     check('route: 경로 제목으로 포커스', await page.locator('.rt-title').evaluate((n) => n === document.activeElement));
     check('route: 경유지·근거 표시', (await page.locator('.rt-details').textContent()).includes(course.via[0]) && (await page.locator('.rt-details').textContent()).includes('공단 안내 확인'));
-    check('route: 정상 코스 선이 없는 대표 코스에 가짜 선·GPX 없음', (await page.locator('.rt-prov').textContent()).includes('지도 선 없음')
-      && (await page.locator('.rt-actions', { hasText: 'GPX' }).count()) === 0
-      && (await page.evaluate(() => document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]').length)) === 0);
+    // 공단 코스를 근거로 든 대표 코스는 공단 코스 경로를 OSM 길에 맞춘 "공식 코스 선"(실선)과 그 GPX를 갖는다.
+    await page.waitForFunction(() => document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]').length > 0, null, { timeout: 15000 }).catch(() => {});
+    check('route: 공단 근거 대표 코스는 공식 코스 선(실선)·GPX', (await page.locator('.rt-prov').textContent()).includes('공식 코스 선')
+      && (await page.locator('.rt-actions a[download]', { hasText: 'GPX' }).count()) === 1
+      && (await page.evaluate(() => [...document.querySelectorAll('#map .leaflet-overlay-pane path[stroke-width="5"]')].some((p) => !p.getAttribute('stroke-dasharray')))),
+      await page.locator('.rt-prov').textContent());
     await page.goBack();
     await page.waitForSelector('.pg-courses .crs-rows li');
     check('route: 뒤로 → 조건 그대로인 모음', route(page).path === '/courses' && route(page).q === '설악 공룡' && route(page).region === '강원' && (await page.locator('.crs-rows li').count()) === 1, hashOf(page));

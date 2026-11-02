@@ -7,8 +7,8 @@ region: 충청
 province: 충북
 location: "충청북도 괴산군"
 lists: [bac, hansanha]
-coordinates: [36.7, 127.955]
-coord_confidence: medium
+coordinates: [36.740046, 127.927847]
+coord_confidence: high
 features: ["국립공원", "암릉", "계곡", "단풍", "100대명산"]
 best_season: "여름(계곡), 가을(10월) 단풍"
 ---
@@ -41,6 +41,14 @@ best_season: "여름(계곡), 가을(10월) 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://namu.wiki/w/%EC%B9%A0%EB%B3%B4%EC%82%B0(%EC%B6%A9%EB%B6%81))
 - [기존 산별 참고자료](https://www.sanaktour.com/mobile/mountain_infor.asp?catid=03&mtn_code=83)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **칠보산코스** — 속리산국립공원 · 7km · 4시간 · 난이도 중 · 정상 경유<br>구간: 떡바위~칠보산~절말 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V004&parkNavGb=guide))
+- **장성봉코스** — 속리산국립공원 · 12km · 7시간 · 난이도 상 · 정상 미경유<br>구간: 절말~장성봉~제수리재 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V003&parkNavGb=guide))
+- **옥녀봉코스** — 속리산국립공원 · 10.4km · 5시간 · 난이도 중 · 정상 미경유<br>구간: 연하협구름다리주차장~갈론계곡~선국암~옥녀봉~아가봉~갈론마을 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120500&vcursId=120500V015&parkNavGb=guide))
 
 ## 주요 등산로
 

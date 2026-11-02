@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 동두천시·포천시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.9485, 127.0875]
-coord_confidence: medium
+coordinates: [37.938516, 127.087934]
+coord_confidence: high
 features: ["단풍", "국민관광지", "폭포", "자재암", "능선 종주", "100대 명산", "지하철 접근"]
 best_season: "가을(10월 하순~11월 초) 단풍"
 ---

@@ -7,8 +7,8 @@ region: 수도권
 province: 경기
 location: "경기도 포천시, 강원특별자치도 화천군"
 lists: [sanlim, hansanha]
-coordinates: [38.0847, 127.4547]
-coord_confidence: medium
+coordinates: [38.074935, 127.444531]
+coord_confidence: high
 features: ["100대 명산", "계곡", "단풍", "능선종주", "단애"]
 best_season: "여름(계곡)·가을(10월) 단풍"
 ---

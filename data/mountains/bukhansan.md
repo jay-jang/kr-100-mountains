@@ -7,7 +7,7 @@ region: 수도권
 province: 서울
 location: "서울특별시 강북구·성북구·종로구·은평구, 경기도 고양시·양주시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.6588, 126.9877]
+coordinates: [37.65863, 126.978003]
 coord_confidence: high
 features: ["국립공원", "암릉", "산성", "일출", "도심근교"]
 best_season: "가을(10~11월) 단풍, 사계절"
@@ -42,6 +42,23 @@ best_season: "가을(10~11월) 단풍, 사계절"
 - 특징: 하루재를 넘어 백운대로 오르는 정상 접근 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 백운대코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V008) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **백운대코스** — 북한산국립공원 · 1.9km · 1시간 30분 · 난이도 중 · 정상 경유<br>구간: 백운대탐방지원센터~하루재~백운대피소~백운대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V008&parkNavGb=guide))
+- **북한산성코스** — 북한산국립공원 · 3.4km · 2시간 40분 · 난이도 중 · 정상 경유<br>구간: 북한산성탐방지원센터~대서문~보리사~백운대 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V001&parkNavGb=guide))
+- **소귀천코스** — 북한산국립공원 · 5.1km · 3시간 10분 · 난이도 중 · 정상 미경유<br>구간: 소귀천공원지킴터~소귀천계곡~대동문~동장대~용암문~도선사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V013&parkNavGb=guide))
+- **대남문코스** — 북한산국립공원 · 5.8km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 북한산성탐방지원센터~대서문~중성문~대남문 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V002&parkNavGb=guide))
+- **대동문코스** — 북한산국립공원 · 2.7km · 1시간 10분 · 난이도 하 · 정상 미경유<br>구간: 백련공원지킴터~백련사~진달래능선~대동문 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V012&parkNavGb=guide))
+- **보국문코스** — 북한산국립공원 · 2.4km · 1시간 20분 · 난이도 하 · 정상 미경유<br>구간: 정릉탐방지원센터~넓적바위~깔딱고개~보국문 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V011&parkNavGb=guide))
+- **사모바위코스** — 북한산국립공원 · 4.3km · 2시간 30분 · 난이도 중 · 정상 미경유<br>구간: 구기탐방지원센터~대남문~청수동암문~사모바위 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V009&parkNavGb=guide))
+- **우이암코스** — 북한산국립공원 · 3km · 1시간 30분 · 난이도 하 · 정상 미경유<br>구간: 도봉탐방지원센터-천진사-우이암 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V005&parkNavGb=guide))
+- **비봉코스** — 북한산국립공원 · 2km · 1시간 · 난이도 중 · 정상 미경유<br>구간: 비봉탐방지원센터~금선사~비봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V010&parkNavGb=guide))
+- **오봉코스** — 북한산국립공원 · 6.5km · 3시간 30분 · 난이도 하 · 정상 미경유<br>구간: 송추분소-송추폭포-오봉삼거리-오봉-여성봉-오봉탐방지원센터 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V004&parkNavGb=guide))
+- **사패산코스** — 북한산국립공원 · 5.5km · 3시간 · 난이도 하 · 정상 미경유<br>구간: 송추분소-(구)캡소대-회룡사거리-사패산-원각사-사패산입구 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V003&parkNavGb=guide))
+- **망월사,포대,회룡코스** — 북한산국립공원 · 5.5km · 2시간 20분 · 난이도 하 · 정상 미경유<br>구간: 원도봉탐방지원센터-덕제샘-망월사-포대능선-회룡사거리-회룡사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=121500&vcursId=121500V006&parkNavGb=guide))
 
 ## 주요 등산로
 

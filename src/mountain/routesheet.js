@@ -14,8 +14,15 @@ import { routePlanner } from '../routeplanner.js';
 import { walkGpx } from '../walkdata.js';
 import { profileChart, pointAlong } from './chart.js';
 import { isLoop, trackFromLines } from './model.js';
-import { fmtHours, fmtMin, fmtKm, diffMark, verifyInfo, verifyDetail, evidenceLabel, PROVENANCE, dots } from './format.js';
+import { fmtHours, fmtMin, fmtKm, diffMark, verifyInfo, verifyDetail, evidenceLabel, officialLabel, fmtSection, PROVENANCE, dots } from './format.js';
 import { noteItem, sortNotes } from './info.js';
+
+const vcursOf = (url) => { try { return new URL(url).searchParams.get('vcursId'); } catch { return null; } };
+/** 대표 코스(c)의 근거와 공식 코스(oc) 안내가 같은 공단 코스인가 */
+function sameSource(c, oc) {
+  const v = vcursOf(oc?.url);
+  return !!v && (c?.sources || []).some((s) => vcursOf(s.url) === v);
+}
 
 /** 경로 시트 머리 숫자 줄: "5km · 오름 4시간 · 왕복 8시간 · 어려움". */
 function numbers(row) {
@@ -25,14 +32,21 @@ function numbers(row) {
   if (row.roundH) parts.push(el('span', {}, `왕복 ${fmtHours(row.roundH)}`));
   else if (row.duration && !row.ascentH) parts.push(el('span', {}, row.duration));
   if (row.walkingMin) parts.push(el('span', {}, `표지 시간 ${fmtMin(row.walkingMin)}`));
+  if (row.official?.schedule && row.official.schedule !== '당일' && row.kind === 'official') parts.push(el('span', {}, row.official.schedule));
+  if (row.guideMin) parts.push(el('span', {}, `안내 ${fmtMin(row.guideMin)}`));
   if (row.difficulty) parts.push(diffMark(row.difficulty));
+  if (!parts.length && row.official) {
+    if (fmtKm(row.official.distance_km)) parts.push(el('span', { class: 'tabular' }, fmtKm(row.official.distance_km)));
+    if (row.official.minutes) parts.push(el('span', {}, `안내 ${fmtMin(row.official.minutes)}`));
+    if (row.official.difficulty) parts.push(diffMark(row.official.difficulty));
+  }
   if (!parts.length && row.course?.via?.length) parts.push(el('span', {}, `경유 ${row.course.via.length}곳`), el('span', {}, '거리·시간 자료 없음'));
   return parts;
 }
 
 /** 들머리 길찾기 — 좌표 신뢰도 high만 좌표 목적지. 정상으로 자동차 안내는 하지 않는다. */
 export function openDirections(m, row) {
-  const label = row.start || row.course?.via?.[0] || row.name;
+  const label = row.start || row.course?.via?.[0] || row.official?.starts?.[0] || row.name;
   const placeName = `${m.name_full} ${label}`;
   const ext = el('span', { class: 'mt-ext', html: icon('external', { size: 16 }) });
   const link = (href, text, note) => el('a', { class: 'mt-linkrow', href, target: '_blank', rel: 'noopener' },
@@ -98,7 +112,8 @@ export function buildRouteSheet(env, row, lineIdx) {
     el('span', { class: `rt-prov-tag p-${row.kind === 'osm' && prov === 'none' ? 'osm-relation' : prov}` + (prov === 'osm-routed' || prov === 'live' ? ' dash' : prov === 'none' ? ' none' : '') }, PROVENANCE[prov].status),
     line?.review ? el('span', { class: 'mt-review' }, '검토 필요') : null,
     vi ? el('span', { class: `mt-verify ${vi.tone}`, title: vi.title }, vi.text) : null,
-    row.course ? el('span', {}, evidenceLabel(row.course)) : null,
+    row.official ? el('span', {}, officialLabel(row.official)) : row.course ? el('span', {}, evidenceLabel(row.course)) : null,
+    row.kind === 'official' && !row.reachesSummit ? el('span', {}, '정상 미경유') : null,
     row.kind === 'osm' ? el('span', {}, '운영 상태 미확인') : null]));
 
   const dirBtn = el('button', { type: 'button', class: 'btn small', onClick: () => openDirections(m, row) }, '들머리 길찾기');
@@ -141,12 +156,23 @@ export function buildRouteSheet(env, row, lineIdx) {
       onClick: () => { if (i !== lineIdx) env.setVariant(row, i); } }, l.label))) : null;
 
   const c = row.course;
+  const oc = row.official;
   const kv = (k, ...v) => el('div', { class: 'rt-kv' }, el('span', { class: 'rt-k' }, k), el('span', { class: 'rt-v' }, ...v));
+  const officialFacts = oc ? [
+    fmtKm(oc.distance_km), oc.minutes ? `안내 ${fmtMin(oc.minutes)}` : '', oc.level ? `공단 난이도 ${oc.level}` : '', oc.schedule && oc.schedule !== '당일' ? oc.schedule : '',
+  ].filter(Boolean).join(' · ') : '';
   const details = el('div', { class: 'rt-details' },
     c?.via?.length ? kv('경유', c.via.join(' → ')) : null,
+    oc?.section && !c?.via?.length ? kv('구간', fmtSection(oc.section)) : null,
+    // 공식 코스 행은 제목이 곧 코스 이름이므로 공원만, 등산로·대표 코스 행은 이어진 공식 코스 이름과 공단 수치까지.
+    oc && row.kind === 'official' && oc.park ? kv('공원', `${oc.park}국립공원`) : null,
+    oc && row.kind !== 'official' ? kv('공식 코스', `${oc.park ? `${oc.park}국립공원 · ` : ''}${oc.name}${officialFacts ? ` · ${officialFacts}` : ''}`) : null,
+    // 대표 코스가 이미 같은 공단 안내를 근거로 들었으면 한 번만 적는다.
+    oc && !sameSource(c, oc) ? kv('근거', el('a', { href: oc.url, target: '_blank', rel: 'noopener' }, oc.source === 'knps' ? '국립공원공단 탐방로 안내' : '공식 안내'), oc.checked_at ? ` · 확인 ${oc.checked_at}` : '') : null,
+    oc?.starts?.length && row.kind === 'official' ? kv('출발', oc.starts.join(', ')) : null,
     c ? kv('대표 코스', `${c.selection_reason || '대표 코스'} · ${evidenceLabel(c)}${c.evidence === 'official' && c.sources?.[0]?.checked_at ? ` ${c.sources[0].checked_at}` : ''}`) : null,
     c?.sources?.length ? kv('근거', ...c.sources.flatMap((s, i) => [i ? ' · ' : '', el('a', { href: s.url, target: '_blank', rel: 'noopener' }, s.title)])) : null,
-    row.start && row.kind !== 'course' ? kv('들머리', row.start, row.trailheadConf === 'high' ? '' : ' (좌표 미확정)') : null,
+    row.start && row.kind !== 'course' && row.kind !== 'official' ? kv('들머리', row.start, row.trailheadConf === 'high' ? '' : ' (좌표 미확정)') : null,
     row.verify && verifyDetail(row.verify) ? kv('난이도 자료', verifyDetail(row.verify)) : null,
     row.trail?.duration && (row.ascentH || row.roundH) ? kv('시간 자료', row.trail.duration) : null,
     c?.highlight ? el('p', { class: 'mt-prose' }, c.highlight) : null,
@@ -155,8 +181,8 @@ export function buildRouteSheet(env, row, lineIdx) {
   const provNote = el('p', { class: 'rt-provnote' }, PROVENANCE[prov].note,
     prov === 'none' && row.trailhead ? ' 들머리 위치만 지도에 표시합니다.' : '');
   const warn = line?.warnings?.length ? el('p', { class: 'mt-fine rt-warn' }, `${line.review ? '검토 필요: ' : '참고: '}${line.warnings.join(' / ')}`) : null;
-  const attribution = line && (prov === 'osm-routed' || prov === 'osm-relation' || prov === 'live')
-    ? el('p', { class: 'mt-fine' }, `선형 © OpenStreetMap contributors (ODbL)${prov === 'osm-routed' ? ' · 고도 SRTM 지형 추정값' : ''}`) : null;
+  const attribution = line && (prov === 'osm-routed' || prov === 'osm-relation' || prov === 'live' || prov === 'osm-matched')
+    ? el('p', { class: 'mt-fine' }, `선형 © OpenStreetMap contributors (ODbL)${prov === 'osm-matched' ? ' · 코스 경로 국립공원공단 안내 기준(공단 좌표 미포함)' : ''}${prov === 'osm-routed' || prov === 'osm-matched' ? ' · 고도 SRTM 지형 추정값' : ''}`) : null;
 
   const notesBox = el('div', { class: 'rt-notes', hidden: true });
   const toolsBox = el('div', { class: 'rt-tools' });

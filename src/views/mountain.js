@@ -25,6 +25,7 @@ import { kindStyle } from '../walkdata.js';
 import { loadCourseModel, resolveKey, legacyCourseKey, defaultLineIndex, resolveLine, trackLines } from '../mountain/model.js';
 import { listLine, fmtElev, shortLabel } from '../mountain/format.js';
 import { buildInfo, ALERT_TOPICS } from '../mountain/info.js';
+import { mountainMedia } from '../mountain/media.js';
 import { createWalksTab, RADII } from '../mountain/walks.js';
 import { createCoursesTab } from '../mountain/courses.js';
 import { buildRouteSheet } from '../mountain/routesheet.js';
@@ -41,7 +42,7 @@ const courseColor = () => cssVar('--course', isDarkTheme() ? '#e07a5f' : '#b4432
 
 /**
  * 고른 선의 모양 — 파일 위치가 아니라 생성 방식(provenance)으로 정한다(spec-final 8장).
- * 지도 범례(레이어 › 선 읽는 법)와 같은 약속이어야 한다: 적갈 실선 = 수록 경로, 적갈 점선 = 계산 경로,
+ * 지도 범례(레이어 › 선 읽는 법)와 같은 약속이어야 한다: 적갈 실선 = 경로가 확인된 선(공식 코스 선·수록 경로), 적갈 점선 = 계산 경로,
  * 녹색 = OpenStreetMap 탐방로. 그래서 OSM 노선을 골랐을 때 적갈 실선으로 그리면 실측 기록처럼 읽힌다.
  * 내 파일은 보라, 내 계획은 계획 도구와 같은 주황. 굵기는 고른 선끼리 같게 둔다(흐린 미리보기 선은 3).
  */
@@ -168,12 +169,17 @@ export async function renderMountain(ctx, route) {
   });
   const warnBtn = el('button', { type: 'button', class: 'mt-warnline', hidden: true, onClick: () => showNotes() });
   const mtnBody = el('div', { class: 'mt-body' },
+    mountainMedia(m, { showSummit: () => {
+      if (m.lat == null) return;
+      ctx.sheet.setDetent('peek');
+      ctx.whenMap(() => ctx.focusPoint([m.lat, m.lon], 15));
+    } }),
     el('div', { class: 'mt-sticky' }, tablist),
     warnBtn,
     ...panels.values());
 
   // 정보 탭(바로 만든다 — 자료는 들어오는 대로 채워진다)
-  const info = buildInfo(m, reviews);
+  const info = buildInfo(m, reviews, { listHash: ctx.listHash });
   panels.get('info').append(info.root);
   reviews.then((entry) => {
     const notes = entry?.notes || [];
@@ -331,7 +337,8 @@ export async function renderMountain(ctx, route) {
     });
   }
   async function loadPreviews() {
-    const rows = [...model.rows, ...model.osmRows, ...userRows].filter((r) => r.lines.length).slice(0, 14);
+    // 접혀 있는 "정상 미경유" 공원 코스는 흐린 미리보기 선에서 뺀다 — 14개 상한에 밀려 OSM 노선 선이 빠지지 않게.
+    const rows = [...model.rows, ...model.officialRows.filter((r) => r.reachesSummit), ...model.osmRows, ...userRows].filter((r) => r.lines.length).slice(0, 14);
     const out = await Promise.all(rows.map(async (row) => {
       const line = row.lines[defaultLineIndex(row)];
       try {
@@ -436,7 +443,7 @@ export async function renderMountain(ctx, route) {
 
   // ---------- 경로 계획용 선 모으기 ----------
   async function planningRoutes() {
-    const rows = [...model.rows, ...model.osmRows, ...userRows].filter((r) => r.lines.length);
+    const rows = [...model.rows, ...model.officialRows, ...model.osmRows, ...userRows].filter((r) => r.lines.length);
     const jobs = rows.flatMap((row) => row.lines.map((line, i) => ({ row, line, i })));
     const routes = [];
     let failed = 0, next = 0;
@@ -584,7 +591,7 @@ export async function renderMountain(ctx, route) {
   function drawSummit() {
     G.summit.clear();
     if (m.lat == null) return;
-    ctx.whenMap((view) => { G.summit.clear(); G.summit.add(view.addLabel({ lat: m.lat, lng: m.lon, text: `정상 ${fmtElev(m.elevation_m)}`, kind: 'summit' })); });
+    ctx.whenMap((view) => { G.summit.clear(); G.summit.add(view.addLabel({ lat: m.lat, lng: m.lon, text: `${m.summit_name || m.name} 정상 ${fmtElev(m.elevation_m)}${m.coord_confidence === 'high' ? '' : ' (추정)'}`, kind: 'summit' })); });
   }
   drawSummit();
   ctx.onMapClick((pt) => {

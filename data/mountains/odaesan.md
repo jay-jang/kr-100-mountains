@@ -7,7 +7,7 @@ region: 강원
 province: 강원
 location: "강원특별자치도 평창군·홍천군·강릉시"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [37.79806, 128.54306]
+coordinates: [37.793749, 128.542654]
 coord_confidence: high
 features: ["국립공원", "단풍", "설경", "전나무숲", "사찰", "원시림"]
 best_season: "가을(10월) 단풍, 겨울(12~2월) 설경"
@@ -42,6 +42,18 @@ best_season: "가을(10월) 단풍, 겨울(12~2월) 설경"
 - 특징: 비로봉에서 상왕봉으로 이어지는 능선과 사찰을 돌아보는 코스.
 - 근거: 공식 코스 안내 확인
 - [국립공원공단 · 상왕봉 코스](https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120900&vcursId=120900V003) (확인: 2026-10-03)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **비로봉 코스** — 오대산국립공원 · 3.4km · 1시간 40분 · 난이도 중 · 정상 경유<br>구간: 상원사~중대사~적멸보궁~비로봉 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V005&parkNavGb=guide))
+- **상왕봉 코스** — 오대산국립공원 · 14.1km · 5시간 30분 · 난이도 상 · 정상 경유<br>구간: 상원사~비로봉~상왕봉~두로령~북대사~상원사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V003&parkNavGb=guide))
+- **선재길코스** — 오대산국립공원 · 9km · 3시간 30분 · 난이도 하 · 정상 미경유<br>구간: 월정사~동피골~상원사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V006&parkNavGb=guide))
+- **나옹선사 수행길** — 오대산국립공원 · 4.2km · 2시간 20분 · 난이도 중 · 정상 미경유<br>구간: 신성암 ∼ 북대 미륵암 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V009&parkNavGb=guide))
+- **내면 코스** — 오대산국립공원 · 6.3km · 3시간 · 난이도 중 · 정상 미경유<br>구간: 내면탐방지원센터~두로령 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V010&parkNavGb=guide))
+- **두로봉 코스** — 오대산국립공원 · 10km · 4시간 40분 · 난이도 상 · 정상 미경유<br>구간: 진고개~동대산~두로봉~두로령 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V001&parkNavGb=guide))
+- **동대산 코스** — 오대산국립공원 · 4.4km · 2시간 10분 · 난이도 중 · 정상 미경유<br>구간: 진고개~동대산~동피골 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120900&vcursId=120900V002&parkNavGb=guide))
 
 ## 주요 등산로
 

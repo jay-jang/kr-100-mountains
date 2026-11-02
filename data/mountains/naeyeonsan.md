@@ -7,8 +7,8 @@ region: 경상
 province: 경북
 location: "경상북도 포항시·영덕군"
 lists: [sanlim, bac, hansanha, wolgansan]
-coordinates: [36.1975, 129.2836]
-coord_confidence: medium
+coordinates: [36.278676, 129.289906]
+coord_confidence: high
 features: ["군립공원", "국가지질공원", "폭포", "계곡", "단풍", "암벽"]
 best_season: "가을(10~11월) 단풍"
 ---

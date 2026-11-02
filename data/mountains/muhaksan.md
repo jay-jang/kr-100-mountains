@@ -7,8 +7,8 @@ region: 경상
 province: 경남
 location: "경상남도 창원시"
 lists: [sanlim]
-coordinates: [35.1961, 128.535]
-coord_confidence: medium
+coordinates: [35.210107, 128.535514]
+coord_confidence: high
 features: ["낙남정맥", "진달래", "억새", "남해 조망", "서마지기", "도심근교"]
 best_season: "봄(4월) 진달래·가을(10~11월) 억새"
 ---

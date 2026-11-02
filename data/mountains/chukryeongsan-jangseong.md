@@ -7,8 +7,8 @@ region: 전라
 province: 전남
 location: "전라남도 장성군, 전북특별자치도 고창군"
 lists: [bac]
-coordinates: [35.4283, 126.8742]
-coord_confidence: medium
+coordinates: [35.370972, 126.726066]
+coord_confidence: high
 features: ["편백숲", "치유의 숲", "삼림욕", "인공조림지", "치유 트레킹"]
 best_season: "여름(6~8월) 삼림욕, 사계절 편백숲"
 ---

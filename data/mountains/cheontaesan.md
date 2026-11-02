@@ -7,8 +7,8 @@ region: 충청
 province: 충북
 location: "충청북도 영동군, 충청남도 금산군"
 lists: [sanlim, bac, hansanha]
-coordinates: [36.185, 127.7]
-coord_confidence: medium
+coordinates: [36.15913, 127.599952]
+coord_confidence: high
 features: ["암릉", "사찰", "은행나무", "조망", "단풍"]
 best_season: "가을(10~11월) 단풍"
 ---

@@ -7,7 +7,7 @@ region: 강원
 province: 강원
 location: "강원특별자치도 정선군"
 lists: [hansanha, wolgansan]
-coordinates: [37.27361, 128.775]
+coordinates: [37.270936, 128.774789]
 coord_confidence: high
 features: ["억새", "5대억새군락지", "돌리네", "석회암", "억새꽃축제"]
 best_season: "가을(10월 초~11월 초) 억새"

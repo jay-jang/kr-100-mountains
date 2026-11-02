@@ -7,8 +7,8 @@ region: 충청
 province: 충남
 location: "충청남도 금산군, 충청북도 옥천군"
 lists: [sanlim, hansanha, wolgansan]
-coordinates: [36.2789, 127.5539]
-coord_confidence: medium
+coordinates: [36.22066, 127.53837]
+coord_confidence: high
 features: ["100대명산", "충남최고봉", "암릉", "기암괴석", "구름다리", "단풍"]
 best_season: "가을(10~11월) 단풍"
 ---

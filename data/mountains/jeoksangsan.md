@@ -7,7 +7,7 @@ region: 전라
 province: 전북
 location: "전북특별자치도 무주군"
 lists: [sanlim, wolgansan]
-coordinates: [35.9477263, 127.69115]
+coordinates: [35.94638, 127.69019]
 coord_confidence: high
 features: ["국립공원", "단풍", "적상산성", "사찰(안국사)", "기암", "적상호"]
 best_season: "가을(10월 하순~11월) 적상 단풍"
@@ -40,6 +40,13 @@ best_season: "가을(10월 하순~11월) 적상 단풍"
 - 근거: 기존 자료 선정 (산 단위 참고자료)
 - [기존 산별 참고자료](https://ko.wikipedia.org/wiki/적상산)
 - [기존 산별 참고자료](https://muju.grandculture.net/muju/toc/GC06500016)
+
+## 공식 탐방코스
+
+코스 이름·구간·거리·시간·난이도는 공단 안내를 옮긴 사실 정보입니다. 지도 선은 OpenStreetMap 등산로 위에 다시 그린 것이며 공단 원본 좌표는 싣지 않습니다.
+
+- **서창코스** — 덕유산국립공원 · 3.8km · 2시간 · 난이도 중 · 정상 경유<br>구간: 서창공원지킴터~삼거리~안국사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V005&parkNavGb=guide))
+- **치목코스** — 덕유산국립공원 · 3.7km · 2시간 · 난이도 중 · 정상 미경유<br>구간: 치목~송대폭포~안국사 ([공단 안내](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?parkId=120800&vcursId=120800V011&parkNavGb=guide))
 
 ## 주요 등산로
 

@@ -7,8 +7,8 @@ region: 강원
 province: 강원
 location: "강원특별자치도 영월군, 충청북도 단양군"
 lists: [sanlim, bac]
-coordinates: [37.0836, 128.3819]
-coord_confidence: medium
+coordinates: [37.117585, 128.485378]
+coord_confidence: high
 features: ["100대 명산", "단풍", "억새", "동굴(고씨동굴)", "남한강 조망", "삼각점"]
 best_season: "가을(10~11월) 단풍"
 ---
