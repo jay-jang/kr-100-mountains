@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T19:11:30.515Z",
+  "generated_at": "2026-11-14T19:11:26.121Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,8 +16,8 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 1492,
-    "verified": 44
+    "notes": 1509,
+    "verified": 52
   },
   "mountains": [
     {
@@ -27118,19 +27118,20 @@
     {
       "id": "yeoninsan-gapyeong",
       "name": "연인산(가평)",
-      "collected_at": "2026-10-24",
+      "collected_at": "2026-11-14",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "백둔리-소망능선-연인산 정상",
-          "topic": "위험구간",
-          "text": "2024년 3월 중순 산행에서는 중턱 이후 잔설이 남아 있었고, 눈이 녹은 구간은 진흙이 등산화에 달라붙고 미끄러웠다고 기록됐다.",
+          "route": "용추계곡-연인산 정상 코스",
+          "topic": "난이도",
+          "text": "용추계곡 초입 트레킹길은 완만하고 평탄하지만, 계곡 끝에서 연인산 정상(1,068m)까지 연결하는 등산로는 거리가 길어 왕복 시 많은 시간이 소요된다.",
           "sentiment": "caution",
-          "as_of": "2024-03",
+          "as_of": "2022-07",
           "sources": [
-            "https://newrunbusy.tistory.com/55"
+            "https://koreahike.com/yeoninsan-hiking-guide",
+            "https://www.gijn.kr/news/articleView.html?idxno=412747"
           ],
           "verify": {
             "level": "single",
@@ -27141,14 +27142,13 @@
         },
         {
           "scope": "route",
-          "route": "용추계곡-연인산 정상 코스",
-          "topic": "통제·예약",
-          "text": "2025년 7월 집중호우 피해로 이용이 중단됐던 용추계곡 소릿길·명품계곡길 9.2km 구간은 복구공사를 마쳤으며, 경기도는 2026년 9월 11일부터 전 구간 탐방을 허용한다고 발표했다.",
-          "sentiment": "neutral",
-          "as_of": "2026-09",
+          "route": "백둔리-소망능선-연인산 정상",
+          "topic": "위험구간",
+          "text": "2024년 3월 게시된 후기에서는 등산로 시작 지점부터 눈이 얼어 미끄러웠고, 출발과 동시에 아이젠을 착용했다고 기록했다.",
+          "sentiment": "caution",
+          "as_of": "2024-03",
           "sources": [
-            "https://www.mt.co.kr/index.php/policy/2026/09/08/2026090809510493503",
-            "https://www.kukinews.com/article/view/kuk202609080094"
+            "https://dahyesanta.tistory.com/12"
           ],
           "verify": {
             "level": "single",
@@ -27161,12 +27161,31 @@
           "scope": "route",
           "route": "용추계곡-연인산 정상 코스",
           "topic": "조망·볼거리",
-          "text": "용추계곡 명품계곡길에는 옛 화전민터와 숯가마터, 1962년 미군이 화전민 자녀들을 위해 지은 내곡분교터가 남아 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-05",
+          "text": "용추계곡은 산행기와 경기도 소개에서 계곡 경관이 좋은 구간으로 함께 언급된다. 상류 명품계곡길에는 징검다리 11개와 출렁다리가 있다.",
+          "sentiment": "good",
+          "as_of": "2026-08",
           "sources": [
-            "https://gnews.gg.go.kr/news/news_detail.do?number=202505291119318216C049&s_code=C049",
-            "https://v.daum.net/v/20250522093207709"
+            "https://www.gg.go.kr/contents/contents.do?ciIdx=987451&menuId=1534356",
+            "https://gnews.gg.go.kr/news/news_detail.do?SchMonth=&SchYear=&number=202608121323562759C049&page=1&s_code=C401",
+            "https://zznz.co.kr/archives/15580"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백둔리-소망능선-연인산 정상",
+          "topic": "조망·볼거리",
+          "text": "소망능선은 초중반 숲길 구간에서는 조망이 없으나 정상 부근에 다다르면 시야가 트여 명지산, 화악산, 북한산 등 시원한 산그리메 풍경을 조망할 수 있다.",
+          "sentiment": "good",
+          "as_of": "2025-10",
+          "sources": [
+            "https://www.ytn.co.kr/_ln/0126_202011051305222146",
+            "https://kai36.tistory.com/560"
           ],
           "verify": {
             "level": "single",
@@ -27179,11 +27198,28 @@
           "scope": "route",
           "route": "백둔리-소망능선-연인산 정상",
           "topic": "난이도",
-          "text": "2024년 3월 산행기는 소망능선을 편도 3km·안내시간 2시간 30분으로 소개하며, 출발부터 약 2.2km까지 오르막이 이어져 예상보다 힘들었다고 기록했다.",
+          "text": "소망능선은 초입 잣나무숲부터 경사가 가파르며, 동굴을 지난 뒤 능선 갈림길까지도 급경사가 계속된다는 산행 기록이 있다.",
           "sentiment": "neutral",
-          "as_of": "2024-03",
+          "as_of": "2021-07",
           "sources": [
-            "https://newrunbusy.tistory.com/55"
+            "https://zznz.co.kr/archives/15580"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용추계곡-연인산 정상 코스",
+          "topic": "난이도",
+          "text": "승안리 탐방안내소·용추계곡주차장에서 정상까지는 10km가 넘는 접근 구간과 정상 방향 약 2km의 가파른 연인능선이 부담으로 지적된다.",
+          "sentiment": "neutral",
+          "as_of": "2021-07",
+          "sources": [
+            "https://zznz.co.kr/archives/15580"
           ],
           "verify": {
             "level": "single",
@@ -27196,11 +27232,28 @@
           "scope": "route",
           "route": "백둔리-소망능선-연인산 정상",
           "topic": "주차·교통",
-          "text": "백둔리에는 아래쪽 제2주차장과 등산로 입구의 제1주차장이 있다. 2024년 3월 후기에서는 버스가 제2주차장까지만 진입하므로 그곳부터 걸어 올라와야 한다고 안내했다.",
+          "text": "백둔리 제2주차장과 제1주차장 사이 약 1.5km 도로는 폭이 좁아, 산행기에서는 버스는 아래쪽 제2주차장에 주차하고 승용차는 위쪽 제1주차장을 이용한다고 설명한다.",
+          "sentiment": "neutral",
+          "as_of": "2021-07",
+          "sources": [
+            "https://zznz.co.kr/archives/15580"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "백둔리-소망능선-연인산 정상",
+          "topic": "혼잡",
+          "text": "2024년 3월 게시된 소망능선 산행 후기에는 주말 낮 12시쯤 백둔리 주차장에 도착했을 때 차량이 꽤 많았다고 기록되어 있다.",
           "sentiment": "neutral",
           "as_of": "2024-03",
           "sources": [
-            "https://newrunbusy.tistory.com/55"
+            "https://dahyesanta.tistory.com/12"
           ],
           "verify": {
             "level": "single",
@@ -27213,11 +27266,11 @@
           "scope": "route",
           "route": "백둔리-소망능선-연인산 정상",
           "topic": "편의시설",
-          "text": "2024년 3월 후기에서 소망능선 제1주차장의 화장실과 등산화 먼지를 터는 에어건이 확인된다.",
+          "text": "백둔리 주차장 쪽 등산로 입구에 공중화장실이 있으며, 방문 후기는 화장실이 깔끔했다고 설명한다.",
           "sentiment": "neutral",
           "as_of": "2024-03",
           "sources": [
-            "https://newrunbusy.tistory.com/55"
+            "https://dahyesanta.tistory.com/12"
           ],
           "verify": {
             "level": "single",
@@ -27231,7 +27284,7 @@
     {
       "id": "yongbongsan-hongseong",
       "name": "용봉산(홍성)",
-      "collected_at": "2026-10-24",
+      "collected_at": "2026-11-14",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -27239,11 +27292,46 @@
           "scope": "route",
           "route": "용봉초등학교-정상-노적봉-악귀봉-병풍바위-구룡대",
           "topic": "위험구간",
-          "text": "2024년 10월 후기에서 노적봉에서 악귀봉으로 향하는 길의 ‘옆으로 자라는 소나무’ 주변 바위에 위험하므로 올라가지 말라는 안내가 확인된다.",
+          "text": "최고봉에서 노적봉으로 이동하는 길에는 경사가 심한 내리막과 바위 오르막이 이어진다.",
           "sentiment": "caution",
-          "as_of": "2024-10",
+          "as_of": "2024-06",
           "sources": [
-            "https://minzepie.tistory.com/45"
+            "https://wonhaeng.tistory.com/526"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용봉초등학교-정상-노적봉-악귀봉-병풍바위-구룡대",
+          "topic": "위험구간",
+          "text": "악귀봉 정상석은 계단을 더 올라간 바위 절벽 끝에 있어 정상석 주변에서 발디딤과 추락에 주의해야 한다.",
+          "sentiment": "caution",
+          "as_of": "2024-06",
+          "sources": [
+            "https://wonhaeng.tistory.com/526"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용봉초등학교-정상-노적봉-악귀봉-병풍바위-구룡대",
+          "topic": "조망·볼거리",
+          "text": "노적봉에서 악귀봉으로 가는 길의 바위틈에서 옆으로 자라는 소나무는 2024년과 2026년 산행 후기에서 모두 주요 볼거리로 소개된다.",
+          "sentiment": "good",
+          "as_of": "2026-02",
+          "sources": [
+            "https://ckc12190.tistory.com/621",
+            "https://wonhaeng.tistory.com/526"
           ],
           "verify": {
             "level": "single",
@@ -27255,14 +27343,13 @@
         {
           "scope": "mountain",
           "route": null,
-          "topic": "조망·볼거리",
-          "text": "2017년과 2024년 산행 후기에서 낮은 산에 이어지는 암릉 경치와 산세가 좋다는 평가가 확인된다. 노적봉·악귀봉 일대가 두 후기의 공통 탐방 구간이다.",
-          "sentiment": "good",
-          "as_of": "2024-10",
+          "topic": "통제·예약",
+          "text": "홍성군은 용봉산 자연휴양림 조례 전면 개정을 통해 용봉산 입장료를 전면 무료화로 전환하였다.",
+          "sentiment": "neutral",
+          "as_of": "2024-08",
           "sources": [
-            "https://ha0077.tistory.com/16342972",
-            "https://riogrande.tistory.com/358314",
-            "https://minzepie.tistory.com/45"
+            "https://www.ccnnews.co.kr/news/articleView.html?idxno=344052",
+            "https://www.dtnews24.com/news/articleView.html?idxno=776893"
           ],
           "verify": {
             "level": "single",
@@ -27275,28 +27362,12 @@
           "scope": "route",
           "route": "용봉초교-용봉산 정상 코스",
           "topic": "주차·교통",
-          "text": "2024년 5월 15일 산행기는 용봉초교 주차장에 주차한 뒤 학교 쪽 들머리에서 산행을 시작했다고 기록했다.",
+          "text": "들머리인 용봉초등학교 옆 옛 매표소 부근 공터에 주차가 가능하며, 포장도로를 따라 석불사 갈림길과 미륵불 방면으로 산행을 시작한다.",
           "sentiment": "neutral",
-          "as_of": "2024-05",
+          "as_of": "2025-04",
           "sources": [
-            "https://tks042.tistory.com/12362960"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "주차·교통",
-          "text": "2024년 10월 20일 후기에서는 오전 11시 무렵 자연휴양림 쪽 위쪽 주차장이 만차여서 아래쪽에 주차하고 걸어 올라갔다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
-          "sources": [
-            "https://minzepie.tistory.com/45"
+            "https://baweson-jincheon.tistory.com/m/174",
+            "https://baweson-jincheon.tistory.com/174"
           ],
           "verify": {
             "level": "single",
@@ -27307,13 +27378,49 @@
         },
         {
           "scope": "route",
-          "route": "용봉초등학교-정상-노적봉-악귀봉-병풍바위-구룡대",
-          "topic": "혼잡",
-          "text": "2024년 10월 20일 산행에서는 악귀봉 인근 행운바위 데크에 사람들이 밀려 있어 같은 길로 되돌아가기 어려웠다고 기록됐다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
+          "route": "용봉초교-용봉산 정상 코스",
+          "topic": "조망·볼거리",
+          "text": "용봉초등학교에서 투석봉으로 이어지는 첫 번째 넓은 조망 바위에 오르면 내포신도시와 백월산, 오서산 일대 풍경이 시원하게 조망된다.",
+          "sentiment": "good",
+          "as_of": "2025-04",
           "sources": [
-            "https://minzepie.tistory.com/45"
+            "https://baweson-jincheon.tistory.com/m/174",
+            "https://baweson-jincheon.tistory.com/174"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용봉사-병풍바위 코스",
+          "topic": "조망·볼거리",
+          "text": "병풍처럼 깎아지른 수직 절벽인 병풍바위와 용바위 일대에 서면 홍성 내포신도시와 주변 산그리메가 파노라마로 펼쳐진다.",
+          "sentiment": "good",
+          "as_of": "2024-08",
+          "sources": [
+            "https://ouo3405.tistory.com/998?category=594391",
+            "https://baweson-jincheon.tistory.com/111"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용봉초교-용봉산 정상 코스",
+          "topic": "주차·교통",
+          "text": "2026년 2월 산행기는 용봉초등학교 주차장을 출발점으로 이용했으며, 위치를 충남 홍성군 홍북읍 상하리 435-1로 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-02",
+          "sources": [
+            "https://ckc12190.tistory.com/621"
           ],
           "verify": {
             "level": "single",
@@ -27327,7 +27434,7 @@
     {
       "id": "yonghwasan",
       "name": "용화산",
-      "collected_at": "2026-10-24",
+      "collected_at": "2026-11-14",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -27335,11 +27442,12 @@
           "scope": "route",
           "route": "큰고개 최단코스",
           "topic": "위험구간",
-          "text": "만장봉을 지나 정상으로 향하는 능선에 계단식 바위와 철제 발판을 밟는 암릉 구간이 있다. 2025년 3월 산행자는 난간을 잡고 조심스럽게 올랐다고 기록했다.",
+          "text": "2024년 5월 산행 후기에는 정상으로 오르는 길에 밧줄을 잡는 구간과 낭떠러지가 있는 지점이 기록되어 있다.",
           "sentiment": "caution",
-          "as_of": "2025-03",
+          "as_of": "2024-05",
           "sources": [
-            "https://dreamsure.tistory.com/69"
+            "https://kimgyuchun.tistory.com/343",
+            "https://ssinsaimdang.tistory.com/54"
           ],
           "verify": {
             "level": "single",
@@ -27351,12 +27459,13 @@
         {
           "scope": "route",
           "route": "큰고개 최단코스",
-          "topic": "주차·교통",
-          "text": "2024년 1월 산행에서는 적설·도로 결빙으로 큰고개 주차장까지 차량이 올라가지 못했다. 산행자는 아래쪽에 주차한 뒤 주차장까지 약 1시간을 걸었다고 기록했다.",
+          "topic": "통제·예약",
+          "text": "2024년 2월에는 눈 때문에 큰고개 주차장 진입도로가 통제되어, 방문자가 통제 지점부터 주차장까지 약 1.07km를 걸어 접근했다.",
           "sentiment": "caution",
-          "as_of": "2024-01",
+          "as_of": "2024-02",
           "sources": [
-            "https://sandiary2323.tistory.com/6"
+            "https://martionkwak.tistory.com/27",
+            "https://martionkwak.tistory.com/27?category=1102727"
           ],
           "verify": {
             "level": "single",
@@ -27368,29 +27477,12 @@
         {
           "scope": "route",
           "route": "큰고개 최단코스",
-          "topic": "계절·시기",
-          "text": "2025년 3월 산행에서도 큰고개 주차장과 등산로 초입에 눈이 남아 있었으며, 초입에 미끄러운 구간이 많았다고 기록됐다.",
+          "topic": "위험구간",
+          "text": "큰고개에서 정상을 향해 오르는 초반에 거대한 수직 암벽인 하늘벽이 나타나며, 쇠줄과 바위에 박힌 ㄷ자형 발판을 딛고 신중하게 올라야 한다.",
           "sentiment": "caution",
-          "as_of": "2025-03",
+          "as_of": "2022-10",
           "sources": [
-            "https://dreamsure.tistory.com/69"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "큰고개 최단코스",
-          "topic": "주차·교통",
-          "text": "2022년 6월 후기에서 큰고개 주차장은 약 10~15대를 수용하며 주차비는 무료라고 안내했다.",
-          "sentiment": "neutral",
-          "as_of": "2022-06",
-          "sources": [
-            "https://security-song.tistory.com/156"
+            "https://koreahike.com/%EC%9A%A9%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -27403,11 +27495,28 @@
           "scope": "route",
           "route": "큰고개 최단코스",
           "topic": "편의시설",
-          "text": "큰고개 주차장에는 간이 화장실이 있으며, 등산로 입구는 주차장 길 건너편에 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-03",
+          "text": "큰고개 주차장 들머리에 화장실이 설치되어 있으나 재래식 간이 화장실로 관리가 미흡하여 미리 다른 곳에서 화장실을 이용하고 오는 것이 권장된다.",
+          "sentiment": "caution",
+          "as_of": "2022-06",
           "sources": [
-            "https://dreamsure.tistory.com/69"
+            "https://security-song.tistory.com/156"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "858봉 암릉 코스",
+          "topic": "난이도",
+          "text": "용화산 정상에서 득남바위를 거쳐 858봉으로 이어지는 능선 구간은 거친 급경사 암릉과 로프 구간이 연속으로 나타나는 상급 난이도 구간이다.",
+          "sentiment": "caution",
+          "as_of": "2022-10",
+          "sources": [
+            "https://koreahike.com/%EC%9A%A9%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -27420,11 +27529,29 @@
           "scope": "route",
           "route": "큰고개 최단코스",
           "topic": "난이도",
-          "text": "2022년 6월 산행기는 큰고개 들머리부터 가파른 오르막이 시작되고, 이후에도 암릉이 계속 이어진다고 기록했다.",
+          "text": "2024년 2월 산행 기록에서 큰고개 주차장부터 정상까지는 약 1.13km였지만, 이동 구간의 약 70%가 오르막이고 철제 발판·계단·난간이 반복된다고 설명한다.",
           "sentiment": "neutral",
-          "as_of": "2022-06",
+          "as_of": "2024-02",
           "sources": [
-            "https://security-song.tistory.com/156"
+            "https://martionkwak.tistory.com/27",
+            "https://martionkwak.tistory.com/27?category=1102727"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "용화산 정상 표지석 주변은 나무에 둘러싸여 조망이 가려져 있으나, 만장봉과 능선 암릉 지점에서는 파로호와 춘천호 등 호반 풍경이 막힘없이 펼쳐진다.",
+          "sentiment": "good",
+          "as_of": "2022-10",
+          "sources": [
+            "https://koreahike.com/%EC%9A%A9%ED%99%94%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
           ],
           "verify": {
             "level": "single",
@@ -27438,7 +27565,7 @@
     {
       "id": "yongmunsan",
       "name": "용문산",
-      "collected_at": "2026-10-24",
+      "collected_at": "2026-11-14",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -27446,11 +27573,12 @@
           "scope": "route",
           "route": "용문사-마당바위-가섭봉 코스",
           "topic": "위험구간",
-          "text": "2025년 12월 6일 산행에서는 마당바위 계곡 코스의 돌계단 일부가 얼어 있었다. 마당바위 위 깔딱고개는 밧줄을 잡고 오르는 가파른 구간으로, 결빙 시 미끄러움에 주의해야 한다고 기록됐다.",
+          "text": "마당바위를 지나 상원사 방향 길과 만나는 삼거리까지는 경사가 더욱 가팔라지고 거친 너덜길이 이어진다는 산행 기록이 있다.",
           "sentiment": "caution",
-          "as_of": "2025-12",
+          "as_of": "2024-11",
           "sources": [
-            "https://landyplay.com/%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%A7%88%EB%8B%B9%EB%B0%94%EC%9C%84-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://hj030303.tistory.com/87?category=995528",
+            "https://khcbohome.tistory.com/11807473"
           ],
           "verify": {
             "level": "single",
@@ -27463,11 +27591,64 @@
           "scope": "route",
           "route": "용문사-마당바위-가섭봉 코스",
           "topic": "난이도",
-          "text": "2025년 12월 산행기는 마당바위를 약 100m 지난 계곡 끝 표지목부터 급경사가 시작된다고 기록했다. 마당바위에서 능선 삼거리까지 0.7km를 오르는 데 37분이 걸렸다.",
-          "sentiment": "neutral",
-          "as_of": "2025-12",
+          "text": "용문사에서 마당바위를 지나 정상 가섭봉까지 완만하게 숨을 고를 구간이 거의 없이 가파른 오르막과 거친 돌밭 너덜길이 끊임없이 이어진다.",
+          "sentiment": "caution",
+          "as_of": "2022-06",
           "sources": [
-            "https://landyplay.com/%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%A7%88%EB%8B%B9%EB%B0%94%EC%9C%84-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://www.namu.moe/w/%EC%9A%A9%EB%AC%B8%EC%82%B0/%EC%BD%94%EC%8A%A4",
+            "https://k-trekking.tistory.com/entry/%EC%9A%95-%EB%82%98%EC%98%A4%EB%8A%94-%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-feat-%EB%8B%A4%EC%8B%9C%EB%8A%94-%EB%A7%88%EC%A3%BC%EC%B9%98%EC%A7%80-%EB%A7%90%EC%9E%90"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용문산-마당바위-용문봉 원점회귀",
+          "topic": "위험구간",
+          "text": "용문봉 구간은 안전 로프나 계단 등 편의 시설이 전혀 설치되어 있지 않은 자연 그대로의 험준한 암봉이므로 안전사고에 각별한 주의가 필요하다.",
+          "sentiment": "caution",
+          "as_of": "2019-04",
+          "sources": [
+            "https://www.namu.moe/w/%EC%9A%A9%EB%AC%B8%EC%82%B0/%EC%BD%94%EC%8A%A4",
+            "https://chosh1953.tistory.com/591"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상원사-장군봉-가섭봉 코스",
+          "topic": "위험구간",
+          "text": "장군봉에서 상원사로 내려간 방문자는 이 구간이 마당바위에서 가섭봉으로 오르는 길보다 더 거칠고 험했으며, 하산 속도를 내기 어려웠다고 기록했다.",
+          "sentiment": "caution",
+          "as_of": "2024-11",
+          "sources": [
+            "https://khcbohome.tistory.com/11807473"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상원사-장군봉-가섭봉 코스",
+          "topic": "난이도",
+          "text": "상원사 들머리에서 장군봉으로 오르는 구간은 초반부터 경사가 매우 가파르게 치고 올라가며, 바위길이 이어져 상당한 체력을 요한다.",
+          "sentiment": "caution",
+          "as_of": "2020-09",
+          "sources": [
+            "https://cerat1.tistory.com/21"
           ],
           "verify": {
             "level": "single",
@@ -27479,46 +27660,65 @@
         {
           "scope": "route",
           "route": "용문사-마당바위-가섭봉 코스",
+          "topic": "편의시설",
+          "text": "마당바위 위쪽에서 상원사 방향 길과 만나는 삼거리에는 쉬어 갈 수 있는 평상이 놓여 있었다.",
+          "sentiment": "neutral",
+          "as_of": "2024-11",
+          "sources": [
+            "https://byounghwanjin.tistory.com/13383625",
+            "https://khcbohome.tistory.com/11807473"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "2023년 5월부터 문화재보호법 개정에 따라 용문산 관광단지 및 용문사의 문화재관람료(입장료)가 전면 폐지되어 무료 입장이 가능하다.",
+          "sentiment": "neutral",
+          "as_of": "2023-05",
+          "sources": [
+            "https://mobile.newsis.com/view_amp.html?ar_id=NISX20230504_0002290954",
+            "https://www.ypsori.com/news/articleView.html?idxno=32806"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "용문사-마당바위-가섭봉 코스",
+          "topic": "계절·시기",
+          "text": "2024년 11월 4일 산행에서는 용문사 은행나무의 노란 단풍이 절정인 모습이 관찰되었다.",
+          "sentiment": "neutral",
+          "as_of": "2024-11",
+          "sources": [
+            "https://khcbohome.tistory.com/11807473"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상원사-장군봉-가섭봉 코스",
           "topic": "혼잡",
-          "text": "토요일이었던 2025년 12월 6일 후기에서는 가섭봉 직전 계단에 등산객이 많아 서로 지나가는 데 시간이 더 걸렸다고 기록했다.",
+          "text": "상원사 기점 능선길은 용문사 코스에 비해 등산객이 적어 한적하지만, 주말 가섭봉 정상석 부근에는 인증 사진을 찍으려는 인파로 대기 줄이 늘어선다.",
           "sentiment": "neutral",
-          "as_of": "2025-12",
+          "as_of": "2020-09",
           "sources": [
-            "https://landyplay.com/%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%A7%88%EB%8B%B9%EB%B0%94%EC%9C%84-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "용문사-마당바위-가섭봉 코스",
-          "topic": "편의시설",
-          "text": "2025년 12월 후기에서 가섭봉 바로 아래 정자와 정상에서 약 100m 내려간 지점의 평상이 확인된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-12",
-          "sources": [
-            "https://landyplay.com/%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%A7%88%EB%8B%B9%EB%B0%94%EC%9C%84-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "용문사-마당바위-가섭봉 코스",
-          "topic": "편의시설",
-          "text": "들머리인 용문산관광단지에는 화장실이 있다. 2025년 12월 산행기에서도 관광단지의 화장실 등 편의시설을 확인했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-12",
-          "sources": [
-            "https://landyplay.com/%EC%9A%A9%EB%AC%B8%EC%82%B0-%EB%A7%88%EB%8B%B9%EB%B0%94%EC%9C%84-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4"
+            "https://cerat1.tistory.com/21"
           ],
           "verify": {
             "level": "single",
@@ -27532,43 +27732,26 @@
     {
       "id": "yumyeongsan",
       "name": "유명산",
-      "collected_at": "2026-10-24",
-      "checked_by": 1,
-      "verified": 0,
+      "collected_at": "2026-11-14",
+      "checked_by": 2,
+      "verified": 8,
       "notes": [
         {
           "scope": "mountain",
           "route": null,
-          "topic": "통제·예약",
-          "text": "국립유명산자연휴양림 공식 안내에는 매주 화요일이 휴무일로 명시되어 있다.",
+          "topic": "혼잡",
+          "text": "블랙야크 100대 명산 인증지로 찾는 이가 많아 주말 및 공휴일 피크 시간대에는 유명산 정상석 주변이 단체 등산객들로 매우 붐비며 사진 촬영 대기줄이 형성된다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2025-08",
           "sources": [
-            "https://foresttrip.go.kr/indvz/main.do?hmpgId=0101",
-            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=0101"
+            "https://taeaav.tistory.com/760",
+            "https://maxcamp.tistory.com/168",
+            "https://5ckorea.tistory.com/118"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "국립유명산자연휴양림의 공식 일일 개장시간은 09:00~18:00이다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://foresttrip.go.kr/indvz/main.do?hmpgId=0101",
-            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=0101"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
             "found_by": 1
           }
         },
@@ -27576,85 +27759,17 @@
           "scope": "route",
           "route": "유명계곡-정상 원점회귀",
           "topic": "위험구간",
-          "text": "2020년 7월 산행기에서는 계곡 합류지점부터 휴양림까지 약 3.0km가 바위 너덜길로 이어지며 미끄러지기 쉽다고 기록했다.",
+          "text": "박쥐소에서 용소로 이어지는 계곡 탐방로는 오버행 절벽 바위 밑을 지나는 낙석 주의 구간과 미끄러운 바윗길이 이어지며, 계곡로 1.5km 지점 부근은 휴대전화 통화 및 데이터 통신이 끊기는 음영 구역이다.",
           "sentiment": "caution",
-          "as_of": "2020-07",
+          "as_of": "2025-08",
           "sources": [
-            "https://jks575363.tistory.com/392"
+            "https://maxcamp.tistory.com/168",
+            "http://san.chosun.com/news/articleView.html?idxno=14574"
           ],
           "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "농다치고개-소구니산-유명산 정상",
-          "topic": "계절·시기",
-          "text": "2026년 3월 중순 이후 산행에서도 소구니산·유명산으로 이어지는 길에 잔설이 남아 있었다. 농다치고개 초입에는 미끄러운 진흙이 있어 실제로 발이 밀렸다는 기록도 있다.",
-          "sentiment": "caution",
-          "as_of": "2026-03",
-          "sources": [
-            "https://trlt30.tistory.com/405"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "유명계곡-정상 원점회귀",
-          "topic": "조망·볼거리",
-          "text": "유명계곡은 여러 산행기에서 볼거리로 호평된다. 휴양림까지 이어지는 계곡의 소·담·폭포와 맑은 계곡물이 인상적이었다는 평가가 확인된다.",
-          "sentiment": "good",
-          "as_of": null,
-          "sources": [
-            "https://rbsol.tistory.com/154",
-            "https://jks575363.tistory.com/392"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "유명계곡-정상 원점회귀",
-          "topic": "난이도",
-          "text": "2022년 5월 후기에서는 출발 고도가 400m를 넘어 수월할 것으로 예상했지만, 실제로는 정상 이후 계곡 하산길이 길어 체력과 발바닥 부담이 컸다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2022-05",
-          "sources": [
-            "https://rbsol.tistory.com/154"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "농다치고개-소구니산-유명산 정상",
-          "topic": "난이도",
-          "text": "농다치고개 들머리는 가파른 계단으로 시작한다. 2026년 3월 후기에서는 소구니산까지 약 1시간 동안 경사 구간이 이어져 쉽지 않았다고 평가했다.",
-          "sentiment": "neutral",
-          "as_of": "2026-03",
-          "sources": [
-            "https://trlt30.tistory.com/405"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
             "found_by": 1
           }
         },
@@ -27662,16 +27777,211 @@
           "scope": "route",
           "route": "농다치고개-소구니산-유명산 정상",
           "topic": "주차·교통",
-          "text": "2026년 3월 후기에서는 양평시외버스터미널에서 08:30 출발하는 6-6번 버스를 타고 약 09:00에 중미산삼거리에 도착했다. 정류장에서 농다치고개 들머리까지는 왔던 방향으로 약 90m 되돌아가는 접근으로 설명했다.",
-          "sentiment": "neutral",
-          "as_of": "2026-03",
+          "text": "농다치고개 들머리는 37번 국도변에 위치해 버스 등 대중교통 배차가 매우 드물고 접근이 불편하며, 고갯마루 공터와 갓길의 주차 가능 대수도 극히 제한적이다.",
+          "sentiment": "caution",
+          "as_of": "2021-01",
           "sources": [
-            "https://trlt30.tistory.com/405"
+            "https://fil-mountain-haroo.tistory.com/46",
+            "http://san.chosun.com/news/articleView.html?idxno=14574"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "통제·예약",
+          "text": "국립유명산자연휴양림 공식 홈페이지는 휴무일을 매주 화요일로 안내한다.",
+          "sentiment": "caution",
+          "as_of": null,
+          "sources": [
+            "https://www.foresttrip.go.kr/indvz/main.do?hmpgId=0101"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "입구지계곡-대부산 연계 코스",
+          "topic": "조망·볼거리",
+          "text": "대부산 정상(743m)에서 유명산으로 이어지는 능선부에는 수만 평 규모의 억새밭과 패러글라이딩 활공장이 조성되어 있어 용문산 주봉과 백운봉, 남한강 일대가 시원하게 파노라마로 조망된다.",
+          "sentiment": "good",
+          "as_of": "2021-06",
+          "sources": [
+            "https://v.daum.net/v/20131031152016227",
+            "http://san.chosun.com/news/articleView.html?idxno=14574",
+            "https://khk9228.tistory.com/12885018"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "농다치고개-소구니산-유명산 정상",
+          "topic": "난이도",
+          "text": "2021년 7월 산행기에서는 농다치고개 출발 직후부터 선어치고개 합류점까지 오르막이 이어져 여러 차례 쉬었다고 기록했다. 해당 구간은 휴식을 포함해 09:54부터 10:54까지 1시간이 걸렸다.",
+          "sentiment": "neutral",
+          "as_of": "2021-07",
+          "sources": [
+            "https://w55ri5.tistory.com/1584"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "혼잡",
+          "text": "2021년 7월 17일 토요일 11:42에 유명산 정상에 도착한 산행자는 사람이 많아 한쪽에서 기다린 뒤 정상석 인증사진을 촬영했다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2021-07",
+          "sources": [
+            "https://w55ri5.tistory.com/1584"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "2021년 7월 산행기에는 유명산 정상 전망데크에서 용문산·백운봉 방향 능선과 남한강을 바라본 기록이 있다.",
+          "sentiment": "neutral",
+          "as_of": "2021-07",
+          "sources": [
+            "https://w55ri5.tistory.com/1584"
+          ],
+          "verify": {
+            "level": "verified",
+            "confirmed": 2,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "유명계곡-정상 원점회귀",
+          "topic": "위험구간",
+          "text": "2025년 8월 산행기에서는 계곡 합수지점부터 하산하는 바위길이 매우 미끄러웠다고 기록했다. 스틱 끝이 바위틈에 깊이 빠지는 경우도 있어 주의가 필요한 구간으로 언급했다.",
+          "sentiment": "caution",
+          "as_of": "2025-08",
+          "sources": [
+            "https://zzmz1.tistory.com/70",
+            "https://zzmz1.tistory.com/70?category=1241316"
           ],
           "verify": {
             "level": "single",
             "confirmed": 1,
-            "checked_by": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "유명계곡-정상 원점회귀",
+          "topic": "통제·예약",
+          "text": "2025년 8월 1일 산행기에서는 유명계곡 하산 중 만나는 용소에 수영금지 안내가 있었다고 기록했다.",
+          "sentiment": "caution",
+          "as_of": "2025-08",
+          "sources": [
+            "https://zzmz1.tistory.com/70",
+            "https://zzmz1.tistory.com/70?category=1241316"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "주차·교통",
+          "text": "국립유명산자연휴양림의 공식 일일 개장(입장) 시간은 오전 9시부터 오후 6시까지로, 매표소 개문 전인 이른 아침에는 차량 진입이 불가해 9시 이전 산행객은 입구 인근 상가나 사설 주차장, 마을 공터를 이용해야 한다.",
+          "sentiment": "caution",
+          "as_of": "2025-08",
+          "sources": [
+            "https://maxcamp.tistory.com/168",
+            "https://www.foresttrip.go.kr/pot/rm/ug/selectFcltUseGdncView.do?hmpgId=0101&menuId=004002008&ruleId=208"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "2025년 8월 산행기에는 출발 전 유명산자연휴양림 제2매표소 쪽 식당에서 생수를 구입한 기록이 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-08",
+          "sources": [
+            "https://zzmz1.tistory.com/70",
+            "https://zzmz1.tistory.com/70?category=1241316"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "유명계곡-정상 원점회귀",
+          "topic": "난이도",
+          "text": "휴양림 매표소에서 북릉을 타고 정상에 오르는 약 2km 오르막길은 완만하고 부드러운 흙길 위주이나, 정상에서 유명계곡으로 하산하는 약 4km 구간은 돌길과 너덜지대가 길게 이어져 발목 피로도가 훨씬 높다.",
+          "sentiment": "neutral",
+          "as_of": "2025-08",
+          "sources": [
+            "http://san.chosun.com/news/articleView.html?idxno=14574",
+            "https://maxcamp.tistory.com/168"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "농다치고개-소구니산-유명산 정상",
+          "topic": "주차·교통",
+          "text": "2026년 2월 21일 산행기에는 아신역에서 농다치고개까지 택시를 이용했고 요금은 15,500원이었다고 기록돼 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-02",
+          "sources": [
+            "https://kyc7088.tistory.com/11326499"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 2,
             "found_by": 1
           }
         }
