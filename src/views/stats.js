@@ -9,6 +9,7 @@ import { searchRank } from '../search.js';
 import { el, clear } from '../dom.js';
 import { icon } from '../icons.js';
 import { pageBar, fold, confirmAction, fmtM, dots } from './pagekit.js';
+import { listHashWith } from '../liststate.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 let seq = 0;
@@ -96,7 +97,7 @@ export async function renderStats(root) {
   const authBox = el('div', { class: 'auth-box' });
   const syncFold = CLOUD_ENABLED ? fold('기기 간 동기화', authBox) : null;
 
-  const foot = el('a', { class: 'pg-foot-link', href: '#/map?hiked=0' }, '지도에서 아직 안 간 산 보기');
+  const foot = el('a', { class: 'pg-foot-link', href: listHashWith({ mode: null, hiked: '0' }) }, '지도에서 아직 안 간 산 보기');
   foot.insertAdjacentHTML('beforeend', icon('next', { size: 16 }));
 
   main.append(summary, progress, addSec, listSec,

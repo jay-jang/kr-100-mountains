@@ -164,7 +164,7 @@ try {
 
   // ---------- 상단 검색: 키보드·빈 결과·한글 IME·Esc 2단계 ----------
   await step('search keyboard', async () => {
-    await page.goto(base + '/#/');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
     const input = page.getByRole('combobox', { name: '산·코스·걷기길 검색' });
     await input.fill('설악');
@@ -219,7 +219,7 @@ try {
 
   // ---------- 시트 단계: 그래버(클릭·Enter·화살표)·헤더 드래그 ----------
   await step('sheet detents', async () => {
-    await page.goto(base + '/#/');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
     await page.locator('.tb-input').blur();
     const grab = page.locator('.sheet-grabber');
@@ -280,7 +280,7 @@ try {
 
   // ---------- 필터 모달: 즉시 반영·개수·토큰·주소 ----------
   await step('filters', async () => {
-    await page.goto(base + '/#/');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
     await page.getByRole('button', { name: '필터', exact: true }).click();
     const dlg = page.locator('dialog.modal[open]');
@@ -336,7 +336,7 @@ try {
 
   // ---------- 레이어 모달: 지도 종류(일반/지형/위성)는 여기로 옮겨졌다 ----------
   await step('layers modal', async () => {
-    await page.goto(base + '/#/');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
     await page.getByRole('button', { name: '지도 레이어', exact: true }).click();
     const dlg = page.locator('dialog.modal[open]');
@@ -405,9 +405,10 @@ try {
 
   // ---------- 상세에서 돌아오면 목록 스크롤·지도 범위 복원 ----------
   await step('restore', async () => {
-    await page.goto(base + '/#/map');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
     await page.locator('.sheet-grabber').click(); await settle(page);
+    const savedDetent = await detent(page);
     await page.locator('.sheet-body').evaluate((n) => { n.scrollTop = 600; });
     await page.waitForTimeout(100);
     const scroll = await page.locator('.sheet-body').evaluate((n) => n.scrollTop);
@@ -420,11 +421,12 @@ try {
     await page.waitForTimeout(250);
     const back = await page.locator('.sheet-body').evaluate((n) => n.scrollTop);
     check('restore: 뒤로 오면 목록 스크롤 복원', Math.abs(back - scroll) < 5, `${scroll} → ${back}`);
-    check('restore: 뒤로 오면 시트 높이 복원', (await detent(page)) === 'half');
+    check('restore: 뒤로 오면 시트 높이 복원', (await detent(page)) === savedDetent);
 
     // 지도를 옮긴 뒤 산을 열었다 돌아오면 옮긴 범위로. (넓은 범위는 기호가 묶이므로 두 단계 확대한 뒤 옮긴다)
-    await page.goto(base + '/#/map');
+    await page.goto(base + '/#/map?');
     await waitForShell(page);
+    while (['full', 'half'].includes(await detent(page))) await page.locator('.sheet-grabber').press('ArrowDown');
     await page.waitForTimeout(600);
     for (let i = 0; i < 2; i++) { await page.getByRole('button', { name: '확대', exact: true }).click(); await page.waitForTimeout(450); }
     const map = await page.locator('#map').boundingBox();
@@ -691,16 +693,16 @@ try {
       await mk.page.locator('.chooser-item[href="#/m/seolaksan"]').click();
       await waitMountain(mk.page, '설악산');
       check(`markers ${width}: 고른 산의 시트가 열림`, hashOf(mk.page) === '#/m/seolaksan');
-      // 앞에서 확대한 범위가 목록 복원으로 되살아나지 않게 새로 연다(남한 전체 범위).
-      await mk.page.evaluate(() => sessionStorage.clear());
-      await mk.page.goto(base + '/#/map');
-      await mk.page.reload();
-      await waitForShell(mk.page);
-      await mk.page.waitForTimeout(400);
-      const single = await mk.page.locator('#map .mk[data-id="hanrasan"]').boundingBox();
-      await mk.page.mouse.click(single.x + 22, single.y + 22);
-      await waitMountain(mk.page, '한라산');
-      check(`markers ${width}: 혼자 있는 기호는 바로 산 시트`, hashOf(mk.page) === '#/m/hanrasan' && !(await mk.page.locator('.chooser').isVisible()));
+      // 재방문은 지도 범위도 복원하므로, 단독 기호 검사는 저장 기록 없는 새 방문에서 한다.
+      const singleVisit = await newPage({ viewport: { width, height: 900 } }, { label: `single-${width}` });
+      await singleVisit.page.route('**/data/mountains.json', (r) => r.fulfill({ json: { meta: { famous_courses: {} }, mountains: clustered } }));
+      await singleVisit.page.goto(base + '/#/map');
+      await waitForShell(singleVisit.page);
+      await singleVisit.page.waitForTimeout(400);
+      await singleVisit.page.locator('#map .mk[data-id="hanrasan"]').click();
+      await waitMountain(singleVisit.page, '한라산');
+      check(`markers ${width}: 혼자 있는 기호는 바로 산 시트`, hashOf(singleVisit.page) === '#/m/hanrasan' && !(await singleVisit.page.locator('.chooser').isVisible()));
+      await singleVisit.ctx.close();
       await mk.ctx.close();
     }
     const touch = await newPage({ isMobile: true, hasTouch: true, colorScheme: 'dark' }, { label: 'touch' });

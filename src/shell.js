@@ -421,7 +421,7 @@ async function createShell(host) {
     if (extra.openFilters) filterRequested = true;
     navigate(listHash(mut), { replace: onList });
   }
-  modeMtn.addEventListener('click', () => goList((p) => { p.delete('mode'); p.delete('walkkind'); }));
+  modeMtn.addEventListener('click', () => goList((p) => { p.delete('mode'); }));
   modeWalk.addEventListener('click', () => goList((p) => { p.set('mode', 'walk'); }));
   dulleChip.addEventListener('click', () => goList((p) => { p.delete('mode'); if (p.get('dulle') === '1') p.delete('dulle'); else p.set('dulle', '1'); }));
   let filterRequested = false;
@@ -454,7 +454,7 @@ async function createShell(host) {
     else if (item.type === 'walk') navigate(`#/walk/${encodeURIComponent(item.w.rid)}`);
   }
   function submitSearch(q) {
-    if (current?.name === 'list' && current.ctl?.onSearchSubmit) { current.ctl.onSearchSubmit(q); return; }
+    if (current?.name === 'list' && listParams.get('mode') !== 'walk' && current.ctl?.onSearchSubmit) { current.ctl.onSearchSubmit(q); return; }
     goList((p) => { p.delete('mode'); if (q) p.set('q', q); else p.delete('q'); });
   }
 
@@ -542,7 +542,10 @@ async function createShell(host) {
     const ctx = makeCtx();
     const slot = { name, key, ctx, ctl: null };
     current = slot;
-    const ctl = await factory(ctx, route);
+    // 목록은 즉시 컨트롤러를 연결한다. mode 전환 직후 같은 이벤트 묶음으로 들어온
+    // 검색·칩 입력도 새 컨트롤러가 받아야 한다(비동기 화면만 기다린다).
+    const result = factory(ctx, route);
+    const ctl = result && typeof result.then === 'function' ? await result : result;
     if (current !== slot) { try { ctl?.dispose?.(); } catch {} return; }
     slot.ctl = ctl;
     // 닫은 시트의 [×]·전체 페이지가 사라지면 포커스가 <body>로 떨어진다(화면 읽기 프로그램은 아무 말도 하지 않는다).

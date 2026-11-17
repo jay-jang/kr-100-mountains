@@ -169,16 +169,17 @@ try {
     check('entry: 설정 OFF면 목록에 모음 입구가 보이지 않음', (await page.locator('.sheet a[href="#/courses"]').filter({ visible: true }).count()) === 0);
     await page.goto(base + '/#/settings');
     await page.getByRole('switch', { name: '대표 코스 모음' }).click();
-    await page.goto(base + '/#/map');
+    await page.goto(base + '/#/map?');
     await page.waitForSelector('.sheet .rows a.row');
     const entry = page.locator('.sheet a[href="#/courses"]').filter({ visible: true });
     await page.waitForTimeout(200);
     if (!(await entry.count())) { await page.locator('.sheet-grabber').click(); await page.waitForTimeout(350); }
     check('entry: 설정 ON → 목록 시트에 "대표 코스 모음 ›"', (await entry.count()) === 1 && (await entry.textContent()).includes('대표 코스 모음'));
     await entry.scrollIntoViewIfNeeded();
+    const savedCourses = await page.evaluate(() => localStorage.getItem('kr100:last-courses'));
     await entry.click();
     await page.waitForSelector('.pg-courses');
-    check('entry: 입구를 누르면 모음', hashOf(page) === '#/courses');
+    check('entry: 입구를 누르면 이전 모음 조건 복원', hashOf(page) === decodeURIComponent(savedCourses || '#/courses'));
     await page.locator('.pg-back').click();
     await page.waitForSelector('.sheet .rows a.row');
     check('entry: [‹ 지도]로 돌아감', !hashOf(page).startsWith('#/courses'));
@@ -187,7 +188,7 @@ try {
 
   // ---------- 더 보기 상태는 뒤로 오면 복원 ----------
   await step('restore', async () => {
-    await page.goto(base + '/#/courses');
+    await page.goto(base + '/#/courses?');
     await page.waitForSelector('.crs-m');
     await page.locator('.crs-more-btn').click();
     const target = page.locator('.crs-m').nth(30).locator('a.crs-row').first();

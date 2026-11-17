@@ -35,7 +35,8 @@
 ### 주요 내용
 
 - **분류** — 4개 목록 다중 선택(합집합), `4개 목록 모두`, 6개 권역, 등정/미등정, 코스 조건(쉬움·보통, 왕복 시간, 코스 거리), 둘레길·걷기길 있는 산.
-- **조건 유지** — 산 선택·상세 새로고침·닫기·상단 제목으로 목록 복귀 시 검색어와 필터를 유지합니다. 마지막 목록 조건은 같은 탭의 `sessionStorage`에 저장하며, 조건 초기화는 그대로 반영합니다.
+- **조건 유지** — 산 선택·상세 새로고침·닫기·상단 제목으로 목록 복귀 시 검색어와 필터를 유지합니다. 마지막 목록·코스 모음 조건은 `localStorage`에도 저장해 브라우저를 닫은 뒤 재방문해도 복원합니다(이전 `sessionStorage` 기록 자동 이전). 목록 스크롤·시트 높이·지도 범위와 걷기길 종류도 보존합니다. 명시적 URL 조건이 저장된 값보다 우선하고, 조건 초기화도 저장합니다. 위치 권한이 없으면 가까운 순 선택을 보존하되 정렬을 켠 것처럼 표시하거나 자동으로 권한을 요청하지 않습니다.
+  조건 없는 홈·지도 링크는 현재 필터로 복귀합니다. ‘아직 안 간 산 보기’·특징 태그·오류 안내 복귀는 해당 동작의 조건만 바꾸며 나머지는 유지합니다. 빠른 연속 클릭이나 모드 전환 직후 검색도 즉시 새 화면 상태에 반영합니다. 전체 조건을 비우려면 화면의 **조건 초기화**를 사용합니다(`#/map?`도 명시적 빈 조건으로 처리).
 - **산 식별·정상 안내** — 지도 기호의 크기·대비를 높이고, 넓은 범위에서도 겹치지 않는 산 이름을 표시합니다. 상세에는 대표 사진(45개 산, 확대 가능)과 모든 산의 정상 좌표·지도 이동을 제공합니다. 사진이 없거나 로드에 실패하면 정상석 모양의 위치 도식과 실물 정보 미확인 안내를 표시합니다.
 - **확충한 GPX** — 149개 산의 계산 경로 1,074개(중복 제외 파일 838개), OSM 등록 노선 파일 42개와 공식 코스 선 205개를 제공합니다. 계산 경로 파일은 기존 681개에서 157개 늘었고, 보정된 정상 좌표를 바탕으로 다시 구성했습니다. 사람이 기록한 실측 GPX로 표시하지 않습니다.
 - **국립공원 공식 탐방코스** — 국립공원공단이 안내하는 공원별 탐방코스 211개를 43개 산에 붙였습니다(지도 선 205개). 코스 경로는 공단 안내 지도의 코스 선을 기준으로 OpenStreetMap 등산로 위에 다시 그렸고(GPX 받기 가능), 공단 원본 좌표는 싣지 않습니다.
@@ -130,9 +131,25 @@ Overpass 공용 서버가 붐빌 때(504)를 대비해, Geofabrik의 대한민�
 
 ```bash
 sudo apt-get install osmium-tool
+mkdir -p .cache/osm
 curl -L -o .cache/osm/south-korea-latest.osm.pbf https://download.geofabrik.de/asia/south-korea-latest.osm.pbf
 npm run osm:local      # → .cache/osm/tiles/hw/ (0.1° 격자, 길 약 178만 개)
 ```
+
+전국 도보 노선도 같은 추출본으로 새로 찾을 수 있습니다. `osmium-tool`과 Python 표준 라이브러리만 사용합니다.
+
+```bash
+python3 scripts/extract-osm-trekking.py .cache/osm/south-korea-latest.osm.pbf
+npm run trekking -- --local   # 149개 산의 정상·들머리 주변 등록 노선/이름 붙은 길 재탐색
+npm run walks -- --offline    # 같은 원본의 전국 도보 노선·지역 타일·상세 갱신
+npm run routes -- --force     # 149개 산 계산 GPX 재생성, 같은 좌표열은 파일 공유
+node scripts/collect-knps-courses.mjs --refresh # 공식 목록/코스 재확인, 같은 날 완료 자료는 재사용
+npm run courses:official
+npm run build
+node scripts/audit-routes.mjs --write=docs/route-update.json
+```
+
+`audit-routes.mjs`는 전체 산의 GPX 좌표·출처 시점·중복 파일 참조·등산로 연결·공식 코스 연결·도보 상세 파일을 검사하고 이전 Git 버전과 신규/변경/제거 노선을 비교합니다(`--baseline-ref=<커밋>`, 기본 현재 HEAD). [2026-11-11 갱신 보고서](docs/route-update-2026-11-11.json)는 149개 산, 계산 경로 1,075건(중복 공유 236건), 신규·변경 선형 121개, 산별 주변 노선 739건(추가 14·제외 2), 공식 코스 211건/지도 선 205개를 기록합니다. 주변 노선은 여러 산에 함께 포함될 수 있으며 정상 등정 코스와 구분합니다.
 
 ### 주변 걷기길 수집 — `npm run trekking` · `npm run walks`
 
@@ -242,6 +259,7 @@ SMOKE_DIST=/tmp/kr100-test npm run test:ux       # 320/390/768/1440 × 밝게/�
 SMOKE_DIST=/tmp/kr100-test npm run test:courses  # 대표 코스 데이터·모음 페이지·경로 시트 연결
 SMOKE_DIST=/tmp/kr100-test npm run test:planner  # 경로 계획(설정에서 켠 상태): 지점·순서·왕복·GPX·복원
 SMOKE_DIST=/tmp/kr100-test npm run test:improvements # 전체 GPX의 실제 좌표·사진 출처·이미지 실패·정상 안내·필터 복원
+SMOKE_DIST=/tmp/kr100-test npm run test:filters # 필터 교차 적용·브라우저 재방문·모드 전환·늦은 위치/색인 응답
 npm run test:routing                             # 등산로 연결망·최단 경로·분리 구간
 npm run test:trekking                            # 걷기길 분류·이어 붙이기·단순화
 npm run test:course-match                        # 공식 코스 지도 맞춤: 공식 선 따르기·왕복 유지·빈 구간 끊기·돌아간 부분 자르기

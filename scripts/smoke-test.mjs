@@ -412,7 +412,7 @@ try {
     }
 
     // 검색으로도 공식 코스를 찾는다
-    await page.goto(base + '/#/map');
+    await page.goto(base + '/#/map?');
     await waitList(page);
     await page.locator('.tb-input').fill(first.name);
     await page.waitForSelector('.suggest:not([hidden]) .suggest-item');

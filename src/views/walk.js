@@ -16,6 +16,7 @@ import { fetchElevations, resample, buildProfile, profileStats } from '../elevat
 import { profileChart, pointAlong } from '../mountain/chart.js';
 import { setOwnDrawnWalk } from '../walklayer.js';
 import { haversine } from '../gpx.js';
+import { listHashWith } from '../liststate.js';
 
 const kindShort = (w) => (w.kind === 'dulle' && w.long ? '장거리 걷기길' : KIND_SHORT[w.kind] || '걷기길');
 const fmtKm = (v) => {
@@ -377,6 +378,6 @@ function notFound(ctx, rid, back) {
     el('div', { class: 'sheet-titles' }, el('h2', { class: 'sheet-title', tabindex: '-1' }, '걷기길을 찾을 수 없습니다'),
       el('p', { class: 'sheet-sub' }, `‘${rid}’ 노선 자료가 없습니다. 자료가 갱신되며 바뀌었을 수 있습니다.`)),
     el('button', { type: 'button', class: 'icon-btn', 'aria-label': '닫기', html: icon('close'), onClick: back })));
-  ctx.setContent({ header, content: el('div', { class: 'empty' }, el('a', { class: 'btn', href: '#/map?mode=walk' }, '걷기길 지도 보기')), label: '걷기길을 찾을 수 없음', detent: 'peek' });
+  ctx.setContent({ header, content: el('div', { class: 'empty' }, el('a', { class: 'btn', href: listHashWith({ mode: 'walk' }, ctx.listHash()) }, '걷기길 지도 보기')), label: '걷기길을 찾을 수 없음', detent: 'peek' });
   return { onEscape: back };
 }

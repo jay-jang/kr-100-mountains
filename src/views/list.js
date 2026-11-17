@@ -23,7 +23,7 @@ function parse(params) {
     mode: params.get('mode') === 'walk' ? 'walk' : 'mountain',
     q: params.get('q') || '',
     regions: new Set(csv('region').filter((r) => REGIONS.includes(r))),
-    lists: new Set(csv('list').filter((k) => LIST_KEYS.includes(k))),
+    lists: new Set(params.get('all') === '4' ? [] : csv('list').filter((k) => LIST_KEYS.includes(k))),
     allFour: params.get('all') === '4',
     hiked: params.get('hiked') === '1' ? 'yes' : params.get('hiked') === '0' ? 'no' : '',
     sort: params.get('sort') === 'near' ? 'near' : 'default',
@@ -58,7 +58,7 @@ function fmtHours(h) {
   return hh ? `${hh}시간${mm ? ` ${mm}분` : ''}` : `${mm}분`;
 }
 
-export async function renderList(ctx, route) {
+export function renderList(ctx, route) {
   const { data, sheet } = ctx;
   const state = parse(route.params);
 
@@ -76,7 +76,9 @@ export async function renderList(ctx, route) {
   let nearNote = '';
   let lastFitQuery = state.q.trim() || null;
   let fitTimer = 0;
-  if (state.sort === 'near' && !pos) state.sort = 'default';
+  let refreshFilters = null;
+  let nearRequest = 0;
+  let nearPending = false;
 
   // ---------- 시트 골격 ----------
   const title = el('h2', { class: 'sheet-title', tabindex: '-1' });
@@ -102,7 +104,11 @@ export async function renderList(ctx, route) {
     kindChips.append(b);
   });
 
-  const saved = (() => { try { return JSON.parse(sessionStorage.getItem(listKey(serialize(state)))) || {}; } catch { return {}; } })();
+  const saved = (() => {
+    try { const v = JSON.parse(sessionStorage.getItem(listKey(serialize(state)))); if (v) return v; } catch {}
+    try { const v = JSON.parse(localStorage.getItem('kr100:list-view')); if (v?.query === serialize(state).toString()) return v; } catch {}
+    return {};
+  })();
   // 목록에 돌아오면 떠날 때의 높이로. 처음이면 앞 화면이 펼쳐 둔 full을 이어받지 않고 half로.
   ctx.setContent({ header, content, label: state.mode === 'walk' ? '걷기길 목록' : '명산 목록',
     detent: saved.detent || (sheet.detent === 'full' ? 'half' : undefined) });
@@ -128,7 +134,7 @@ export async function renderList(ctx, route) {
       hikedOnly: state.hiked === 'yes', isHiked, easy: state.easy, maxHours: state.maxHours, maxDistance: state.maxDistance,
     });
     if (state.hiked === 'no') list = list.filter((m) => !isHiked(m.id));
-    if (state.dulle && trekIndex) list = list.filter((m) => walkCount(m.id) > 0);
+    if (state.dulle) list = trekIndex ? list.filter((m) => walkCount(m.id) > 0) : [];
     if (state.sort === 'near' && pos) list = sortByDistance(list.filter((m) => m.lat != null), pos).map((x) => x.m);
     else if (state.q.trim()) {
       const q = state.q.trim().toLowerCase();
@@ -212,6 +218,7 @@ export async function renderList(ctx, route) {
     state.q = ''; ctx.search.setValue('');
     state.regions.clear(); state.lists.clear(); state.allFour = false; state.hiked = '';
     state.easy = false; state.maxHours = 0; state.maxDistance = 0; state.dulle = false;
+    state.sort = 'default'; nearNote = ''; nearRequest++; nearPending = false;
   }
 
   function updateMountains() {
@@ -222,12 +229,15 @@ export async function renderList(ctx, route) {
     hikedLink.textContent = hc ? ` · 등정 ${hc}` : '';
     hikedLink.hidden = !hc;
     nearBtn.hidden = false;
-    nearBtn.setAttribute('aria-pressed', String(state.sort === 'near'));
+    nearBtn.setAttribute('aria-pressed', String(state.sort === 'near' && (!!pos || nearPending)));
+    nearBtn.setAttribute('aria-busy', String(nearPending));
     note.hidden = !nearNote; note.textContent = nearNote;
     paintTokens();
     kindChips.hidden = true;
     clear(listEl); clear(extra);
-    if (!list.length) {
+    if (state.dulle && !trekIndex) {
+      listEl.append(el('p', { class: 'sheet-note', role: 'status' }, '걷기길이 있는 산을 확인하는 중…'));
+    } else if (!list.length) {
       // 누른 [조건 초기화]는 목록과 함께 사라진다 — 포커스를 시트 제목으로 옮겨 둔다.
       listEl.append(el('div', { class: 'empty' }, el('p', {}, '조건에 맞는 산이 없습니다.'),
         el('button', { type: 'button', class: 'btn', onClick: () => { resetAll(); update(); title.focus({ preventScroll: true }); } }, '조건 초기화')));
@@ -316,21 +326,27 @@ export async function renderList(ctx, route) {
     if (ctx.disposed()) return;
     writeURL();
     if (state.mode === 'walk') updateWalks(); else updateMountains();
+    refreshFilters?.();
   }
 
   // ---------- 가까운 순 ----------
   async function activateNear() {
     if (!geoAvailable()) { nearNote = '이 브라우저·연결에서는 위치를 쓸 수 없습니다.'; update(); return; }
+    const request = ++nearRequest;
+    state.sort = 'near';
     const cached = cachedPosition();
+    nearPending = !cached || Date.now() - cached.ts > FRESH_MS;
     if (cached) { pos = cached; state.sort = 'near'; nearNote = `${positionAgeText(cached.ts)} 측정한 위치 기준`; update(); fitNearest(); if (Date.now() - cached.ts <= FRESH_MS) return; }
     else { nearNote = '현재 위치를 확인하는 중…'; update(); }
     try {
       const p = await requestPosition({ maxAgeMs: cached ? 0 : FRESH_MS });
-      if (ctx.disposed()) return;
+      if (ctx.disposed() || request !== nearRequest || state.sort !== 'near') return;
+      nearPending = false;
       pos = p;
       if (state.sort === 'near' || !cached) { state.sort = 'near'; nearNote = `${positionAgeText(p.ts)} 측정한 위치 기준`; update(); if (!cached) fitNearest(); }
     } catch (err) {
-      if (ctx.disposed()) return;
+      if (ctx.disposed() || request !== nearRequest) return;
+      nearPending = false;
       nearNote = cached ? `${positionAgeText(cached.ts)} 측정한 위치 기준 · 새로 재지 못했습니다.` : err.message;
       if (!cached) state.sort = 'default';
       update();
@@ -341,8 +357,20 @@ export async function renderList(ctx, route) {
     const near = sortByDistance(filtered().filter((m) => m.lat != null), pos).slice(0, 5);
     ctx.whenMap(() => ctx.fit([[pos.lat, pos.lng], ...near.map(({ m }) => [m.lat, m.lon])], { maxZoom: 12 }));
   }
+  function restoreNearSort({ fit = false } = {}) {
+    if (state.sort !== 'near' || state.mode === 'walk') return;
+    if (pos) { nearNote = `${positionAgeText(pos.ts)} 측정한 위치 기준`; update(); if (fit) fitNearest(); }
+    else if (geoAvailable()) {
+      const request = nearRequest;
+      permissionState().then((s) => {
+        if (ctx.disposed() || state.sort !== 'near' || request !== nearRequest) return;
+        if (s === 'granted') activateNear();
+        else { nearNote = '‘가까운 순’을 누르면 현재 위치를 확인해 가까운 산부터 보여 줍니다.'; update(); }
+      });
+    }
+  }
   nearBtn.addEventListener('click', () => {
-    if (state.sort === 'near') { state.sort = 'default'; nearNote = ''; update(); }
+    if (state.sort === 'near' && (pos || nearPending)) { nearRequest++; nearPending = false; state.sort = 'default'; nearNote = ''; update(); }
     else activateNear();
   });
 
@@ -366,22 +394,23 @@ export async function renderList(ctx, route) {
     const toggle = (set, k) => () => { set.has(k) ? set.delete(k) : set.add(k); };
     const group = (t, ...nodes) => el('fieldset', { class: 'fgroup' }, el('legend', {}, t), el('div', { class: 'chips-row' }, ...nodes));
     const body = el('div', { class: 'filters' },
-      group('선정 목록', ...LIST_KEYS.map((k) => chip(LIST_META[k].chip, () => state.lists.has(k), toggle(state.lists, k))),
-        chip('4개 목록 모두', () => state.allFour, () => { state.allFour = !state.allFour; })),
+      group('선정 목록', ...LIST_KEYS.map((k) => chip(LIST_META[k].chip, () => state.lists.has(k), () => { state.allFour = false; toggle(state.lists, k)(); })),
+        chip('4개 목록 모두', () => state.allFour, () => { state.allFour = !state.allFour; state.lists.clear(); })),
       group('권역', ...REGIONS.map((r) => chip(r, () => state.regions.has(r), toggle(state.regions, r)))),
       group('등정', ...[['', '전체'], ['yes', '등정한 산'], ['no', '미등정']].map(([v, l]) => chip(l, () => state.hiked === v, () => { state.hiked = v; }))),
       group('코스', chip('쉬움·보통 코스', () => state.easy, () => { state.easy = !state.easy; }),
         select('왕복 시간', 'maxHours', [2, 4, 6, 8], '시간'), select('코스 거리', 'maxDistance', [5, 10, 15], 'km')),
       group('주변 길', chip('둘레길·걷기길 있는 산', () => state.dulle, () => { state.dulle = !state.dulle; })),
-      el('p', { class: 'fine' }, '코스 조건은 한 코스가 모든 조건을 함께 만족하는 산만 남깁니다. 시간·거리가 알려지지 않은 코스는 제외합니다.'));
+      el('p', { class: 'fine' }, '여러 권역·선정 목록은 그중 하나에 해당하면 포함합니다. “4개 목록 모두”는 네 목록의 공통 명산입니다. 서로 다른 필터와 코스 조건은 모두 함께 적용합니다. 시간·거리가 알려지지 않은 코스는 제한 조건에서 제외합니다.'));
     const showBtn = el('button', { type: 'button', class: 'btn primary' });
     const resetBtn = el('button', { type: 'button', class: 'btn' }, '초기화');
     function refresh() {
       syncs.forEach((f) => f());
-      showBtn.textContent = `${filtered().length}곳 보기`;
+      showBtn.textContent = state.dulle && !trekIndex ? '걷기길 확인 중…' : `${filtered().length}곳 보기`;
     }
     refresh();
-    const modal = openModal({ title: '필터', content: body, footer: el('div', { class: 'modal-actions' }, resetBtn, showBtn) });
+    const modal = openModal({ title: '필터', content: body, footer: el('div', { class: 'modal-actions' }, resetBtn, showBtn), onClose: () => { refreshFilters = null; } });
+    refreshFilters = refresh;
     resetBtn.addEventListener('click', () => { const q = state.q; resetAll(); state.q = q; ctx.search.setValue(q); refresh(); update(); });
     showBtn.addEventListener('click', () => modal.close());
   }
@@ -412,17 +441,17 @@ export async function renderList(ctx, route) {
   loadTrekIndex().then((idx) => { trekIndex = idx; if (state.dulle && !ctx.disposed()) update(); });
   update();
 
-  if (state.mode !== 'walk' && route.params.get('sort') === 'near') {
-    if (pos) { nearNote = `${positionAgeText(pos.ts)} 측정한 위치 기준`; update(); fitNearest(); }
-    else if (geoAvailable()) permissionState().then((s) => {
-      if (ctx.disposed()) return;
-      if (s === 'granted') activateNear();
-      else { nearNote = '‘가까운 순’을 누르면 현재 위치를 확인해 가까운 산부터 보여 줍니다.'; update(); }
-    });
-  }
+  restoreNearSort({ fit: !saved.viewport });
   if (ctx.consumeFilterRequest()) requestAnimationFrame(openFilters);
 
   let qBeforeTyping = null;
+  function saveView() {
+    const query = serialize(state).toString();
+    const value = JSON.stringify({ query, scroll: sheet.body.scrollTop, detent: sheet.detent, viewport: ctx.view?.snapshot?.() });
+    try { sessionStorage.setItem(listKey(serialize(state)), value); } catch {}
+    try { localStorage.setItem('kr100:list-view', value); } catch {}
+  }
+  window.addEventListener('pagehide', saveView);
   return {
     openFilters,
     onSearchInput(q) {
@@ -453,15 +482,20 @@ export async function renderList(ctx, route) {
       }
       qBeforeTyping = null;
       Object.assign(state, n);
-      if (state.sort === 'near' && !pos) state.sort = 'default';
+      nearRequest++;
+      nearPending = false;
+      if (state.sort !== 'near') nearNote = '';
       ctx.search.setValue(state.q);
       update();
+      restoreNearSort();
       return true;
     },
     dispose() {
       clearTimeout(fitTimer);
+      refreshFilters = null;
       offStore(); offPrefs(); offPos();
-      try { sessionStorage.setItem(listKey(serialize(state)), JSON.stringify({ scroll: sheet.body.scrollTop, detent: sheet.detent, viewport: ctx.view?.snapshot?.() })); } catch {}
+      window.removeEventListener('pagehide', saveView);
+      saveView();
     },
   };
 }

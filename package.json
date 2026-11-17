@@ -27,7 +27,9 @@
     "courses:official": "node scripts/build-course-routes.mjs",
     "osm:local": "node --max-old-space-size=7000 scripts/lib/osm-local.mjs",
     "summits": "node scripts/fix-summits.mjs",
-    "media": "node scripts/collect-mountain-media.mjs"
+    "media": "node scripts/collect-mountain-media.mjs",
+    "test:filters": "node scripts/filters-test.mjs && node scripts/filter-actions-test.mjs",
+    "test:route-data": "node scripts/audit-routes.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1",

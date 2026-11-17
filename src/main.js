@@ -6,6 +6,7 @@ import { getShell } from './shell.js';
 import { setRouteHandler, interceptLinks, currentRoute } from './router.js';
 import { initSync } from './sync.js';
 import { closeModal } from './modal.js';
+import { savedListHash, savedCoursesHash } from './liststate.js';
 
 applyTheme();
 initSync(); // 클라우드 동기화(설정된 경우) — 실패해도 앱은 로컬로 동작
@@ -32,6 +33,8 @@ const PAGES = {
 let pageCleanup = null;
 let routeVersion = 0;
 let shownPage = null;   // 지금 보이는 전체 페이지(track·settings·courses) — 지도로 돌아올 때 포커스를 돌려줄 곳을 고른다
+let shellInstance = null;
+const renderers = new Map();
 
 /** 본문으로 건너뛰기: 전체 페이지면 그 페이지, 지도 화면이면 시트 제목(상단 바·지도 컨트롤을 건너뛴다). */
 function skipToMain() {
@@ -55,6 +58,9 @@ function resolve(r) {
 
 async function route() {
   const version = ++routeVersion;
+  // 조건 없는 목록 링크는 복귀다. 명시적 ? 조건과 화면의 초기화는 그대로 적용한다.
+  if (!location.hash || location.hash === '#/' || location.hash === '#/map') history.replaceState(history.state, '', savedListHash());
+  if (location.hash === '#/courses') history.replaceState(history.state, '', savedCoursesHash());
   // 화면이 바뀌면(뒤로가기 포함) 열려 있던 필터·레이어 모달을 닫는다 — 남으면 다음 화면을 가린다.
   // 다른 모듈이 직접 연 <dialog>(등정 기록 등)도 같이 닫는다(replaceState 이동은 hashchange를 내지 않는다).
   closeModal();
@@ -70,20 +76,26 @@ async function route() {
       page.hidden = true; clear(page); shownPage = null;
       mapHost.hidden = false;
       document.body.classList.remove('page-mode');
-      const shell = await getShell(mapHost);
+      const shell = shellInstance || await getShell(mapHost);
       if (version !== routeVersion) return;
+      shellInstance = shell;
       // 다음 화면 모듈을 받는 동안(첫 방문은 네트워크) 이전 컨트롤러가 주소·지도를 건드리지 않게 먼저 끝낸다.
       shell.leave(target.name, target.key);
-      const factory = await MAP_ROUTES[target.name]();
+      // 이미 열린 화면의 필터 변경은 다음 이벤트 전에 반영한다. 매번 await하면 바로 뒤의
+      // 검색·칩 조작이 옛 컨트롤러를 바꾸고, 늦게 도착한 route가 그 조건을 덮어쓴다.
+      const factory = renderers.get(target.name) || await MAP_ROUTES[target.name]();
       if (version !== routeVersion) return;
+      renderers.set(target.name, factory);
       // 페이지에서 돌아오면 그 페이지로 가는 상단 바 버튼(기록·설정)으로, 없으면(대표 코스 모음) 시트 제목으로.
       const returnFocus = pageHadFocus ? (shell.root.querySelector(`.tb a[href="#/${fromPage}"]`) || true) : null;
       await shell.open(target.name, target.key, factory, { ...r, id: target.key }, { returnFocus });
+      if (version !== routeVersion) return;
       document.title = docTitle(target, r, shell);
     } else {
-      const shell = await getShell(mapHost).catch(() => null);
+      const shell = shellInstance || await getShell(mapHost).catch(() => null);
       // 셸을 기다리는 사이 더 새 이동(예: 뒤로가기로 지도)이 시작됐다 — 지도를 숨기거나 페이지를 띄우면 안 된다.
       if (version !== routeVersion) return;
+      shellInstance = shell;
       shell?.hide();
       mapHost.hidden = true;
       document.body.classList.add('page-mode');

@@ -100,7 +100,7 @@ export function buildInfo(m, reviewsPromise, { listHash = savedListHash } = {}) 
       type: 'button', class: 'chip small', 'aria-label': `‘${f}’로 산 찾기`,
       onClick: () => {
         const p = new URLSearchParams(listHash().split('?')[1] || '');
-        p.delete('mode'); p.delete('walkkind'); p.set('q', f);
+        p.delete('mode'); p.set('q', f);
         navigate(`#/map?${p}`);
       },
     }, f)))));

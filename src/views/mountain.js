@@ -665,6 +665,6 @@ function notFound(ctx, id) {
     el('div', { class: 'sheet-titles' }, el('h2', { class: 'sheet-title', tabindex: '-1' }, '산을 찾을 수 없습니다'),
       el('p', { class: 'sheet-sub' }, `‘${id}’에 해당하는 산이 목록에 없습니다.`)),
     el('button', { type: 'button', class: 'icon-btn', 'aria-label': '닫고 목록으로', title: '닫고 목록으로', html: icon('close'), onClick: () => goUp(ctx.listHash()) })));
-  ctx.setContent({ header, content: el('div', { class: 'empty' }, el('a', { class: 'btn', href: '#/map' }, '명산 목록 보기')), label: '산을 찾을 수 없음', detent: 'peek' });
+  ctx.setContent({ header, content: el('div', { class: 'empty' }, el('a', { class: 'btn', href: ctx.listHash() }, '명산 목록 보기')), label: '산을 찾을 수 없음', detent: 'peek' });
   return { onEscape: () => goUp(ctx.listHash()) };
 }

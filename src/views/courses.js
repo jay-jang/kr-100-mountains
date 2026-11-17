@@ -10,6 +10,7 @@ import { pageBar, fold, fmtM, dots } from './pagekit.js';
 // 근거 문구는 산·경로 시트와 같은 함수로 — 공식 출처가 국립공원공단이 아니면(예: 한라산은 제주특별자치도)
 // '공단 안내 확인'이 아니라 '공식 안내 확인'이다. 두 화면이 같은 코스를 다르게 부르지 않게 한다.
 import { evidenceLabel, fmtSection } from '../mountain/format.js';
+import { rememberCourses } from '../liststate.js';
 
 const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
 const KINDS = [['', '전체'], ['famous', '대표 코스'], ['official', '공단 공식 코스']];
@@ -185,7 +186,7 @@ export async function renderCourses(root, route) {
     if (search.value.trim()) p.set('q', search.value.trim());
     if (region.value) p.set('region', region.value);
     if (kind.value) p.set('kind', kind.value);
-    const hash = `#/courses${p.size ? '?' + p : ''}`;
+    const hash = rememberCourses(p);
     if (location.hash !== hash) history.replaceState(history.state, '', hash);
   }
 
@@ -224,7 +225,7 @@ export async function renderCourses(root, route) {
     } catch {}
   });
 
-  compute(); paint();
+  compute(); paint(); writeURL();
   if (restoreY) requestAnimationFrame(() => window.scrollTo(0, restoreY));
 
   const cleanup = () => {};

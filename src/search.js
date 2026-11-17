@@ -16,7 +16,7 @@ export function searchRank(m, q) {
   if (name === q || full === q) return 0;
   if (name.startsWith(q) || full.startsWith(q)) return 1;
   if (name.includes(q) || full.includes(q)) return 2;
-  return mountainSearchText(m).includes(q) ? 3 : -1;
+  return q.split(/\s+/).every(word => mountainSearchText(m).includes(word)) ? 3 : -1;
 }
 
 function seasonKeywords(month = new Date().getMonth()) {
