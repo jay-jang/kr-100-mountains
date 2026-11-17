@@ -19,6 +19,7 @@
 // 사용법
 //   node scripts/collect-knps-courses.mjs            # 받은 것은 건너뛰고 이어 받기
 //   node scripts/collect-knps-courses.mjs --force    # 목록부터 다시
+//   node scripts/collect-knps-courses.mjs --refresh  # 오늘 이전 자료 갱신(중단 후 이어 받기)
 import { readFileSync, writeFileSync, mkdirSync, existsSync, renameSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,6 +30,9 @@ const RAW = join(CACHE, 'raw');
 const BASE = 'https://www.knps.or.kr';
 const UA = 'Mozilla/5.0 (kr-100-mountains course index; +https://github.com/jay-jang/kr-100-mountains)';
 const FORCE = process.argv.includes('--force');
+const REFRESH = FORCE || process.argv.includes('--refresh');
+const TODAY_START = new Date().setUTCHours(0, 0, 0, 0);
+const stale = (file) => !existsSync(file) || FORCE || (REFRESH && statSync(file).mtimeMs < TODAY_START);
 const DELAY_MS = 500;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -91,7 +95,7 @@ function parseParks(html) {
 
 async function collectList() {
   const file = join(CACHE, 'list.json');
-  if (!FORCE && existsSync(file)) {
+  if (!REFRESH && existsSync(file)) {
     const cached = JSON.parse(readFileSync(file, 'utf8'));
     if (cached.parks) return cached;          // 공원별 목록까지 합친 판본만 재사용
   }
@@ -124,6 +128,7 @@ async function collectList() {
     await sleep(DELAY_MS);
   }
   log(`· 공원별 목록으로 ${added}건 추가 (공원 ${Object.keys(parks).length}곳)`);
+  if (!all.size || (total && all.size < total)) throw new Error(`공식 목록 불완전(${all.size}/${total ?? '?'}). 기존 캐시를 보존합니다.`);
   const list = { fetched_at: new Date().toISOString(), total, parks, courses: [...all.values()].sort((a, b) => a.vcursId.localeCompare(b.vcursId)) };
   writeAtomic(file, JSON.stringify(list, null, 1));
   return list;
@@ -134,12 +139,12 @@ async function collectCourse(c) {
   const cdnFile = join(RAW, `${c.vcursId}.cdn.json`);
   const trafficFile = join(RAW, `${c.vcursId}.traffic.json`);
   let fetched = false;
-  if (FORCE || !existsSync(cdnFile)) {
+  if (stale(cdnFile)) {
     const cdn = await post('/front/portal/visit/visitCourseCdn.do', { vcursId: c.vcursId }, { json: true });
     writeAtomic(cdnFile, JSON.stringify(cdn));
     fetched = true;
   }
-  if (FORCE || !existsSync(trafficFile)) {
+  if (stale(trafficFile)) {
     const tr = await post('/front/portal/visit/courseTrafficLink.do', { vcursId: c.vcursId }, { json: true });
     writeAtomic(trafficFile, JSON.stringify(tr));
     fetched = true;
@@ -193,22 +198,30 @@ function normalize(c, { cdn, traffic, fetched_at }) {
 // ── 실행 ─────────────────────────────────────────────────────────────
 const list = await collectList();
 log(`공식 탐방코스 ${list.courses.length}건`);
-const out = [];
-let n = 0;
-for (const c of list.courses) {
-  n++;
-  try {
-    const raw = await collectCourse(c);
-    const norm = normalize(c, raw);
-    out.push(norm);
-    if (raw.fetched) {
-      log(`  ${n}/${list.courses.length} ${c.vcursId} ${c.park} · ${norm.official_name} — 선형 ${norm.line.length}점, 출발점 ${norm.starts.length}`);
-      await sleep(DELAY_MS);
+const out = new Array(list.courses.length);
+const failed = [];
+let next = 0;
+// 공단 요청은 최대 4개. 같은 날 중단 후 --refresh로 이어 받으면 완료 자료는 재사용한다.
+async function worker() {
+  while (next < list.courses.length) {
+    const i = next++;
+    const c = list.courses[i];
+    try {
+      const raw = await collectCourse(c);
+      const norm = normalize(c, raw);
+      out[i] = norm;
+      if (raw.fetched) {
+        log(`  ${i + 1}/${list.courses.length} ${c.vcursId} ${c.park} · ${norm.official_name} — 선형 ${norm.line.length}점, 출발점 ${norm.starts.length}`);
+        await sleep(DELAY_MS);
+      }
+    } catch (e) {
+      failed.push(c.vcursId);
+      log(`  ✗ ${c.vcursId} ${c.name}: ${e.message}`);
     }
-  } catch (e) {
-    log(`  ✗ ${c.vcursId} ${c.name}: ${e.message}`);
   }
 }
+await Promise.all(Array.from({ length: 4 }, worker));
+if (failed.length) throw new Error(`공단 수집 ${failed.length}건 실패. 기존 courses.json 보존. --refresh로 재시도: ${failed.join(', ')}`);
 writeAtomic(join(CACHE, 'courses.json'), JSON.stringify({
   fetched_at: list.fetched_at, source: `${BASE}/front/portal/trails/search.do?menuNo=8000754`,
   license_note: 'KNPS 누리집 자료. 공공누리 표시 없음 → 재배포 금지, 로컬 기준 자료로만 사용',

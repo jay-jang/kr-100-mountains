@@ -47,6 +47,7 @@ import {
   nearestAnchor, loopFlag, isLongDistance,
 } from './lib/trekking.mjs';
 import { haversine } from './lib/geo.mjs';
+import { localTrekking, trekkingInCircles } from './lib/osm-trekking.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OSM_DIR = join(ROOT, '.cache', 'trekking', 'osm');          // gitignore 대상(.cache/)
@@ -71,6 +72,7 @@ const FORCE = argv.includes('--force') || process.env.FORCE === '1';
 // 캐시 응답을 새 기준점으로 다시 해석한다(거리·정상 근접·자르기 원이 새 좌표 기준으로 바뀐다). 후보 노선은
 // 예전 원(정상+들머리 반경) 안에서 받은 것이라, 정상이 크게 옮겨 간 산은 나중에 Overpass로 다시 받는 편이 낫다.
 const REANCHOR = argv.includes('--reanchor');
+const LOCAL = argv.includes('--local') ? localTrekking() : null;
 
 const R_M = Math.round(RADIUS_KM * 1000);
 const MIN_KM = 0.8;              // 반경 안 길이가 이보다 짧은 노선은 버린다
@@ -155,6 +157,7 @@ out tags geom;`;
 }
 
 async function fetchOSM(m, circles) {
+  if (LOCAL) return { json: trekkingInCircles(circles, NAME_RE), cached: false };
   if (REANCHOR) {
     const prev = existsSync(OSM_DIR) ? readdirSync(OSM_DIR).filter((f) => new RegExp(`^${m.id}-[0-9a-f]{8}\\.json$`).test(f))   // gyeryongsan- 이 gyeryongsan-geoje- 와 섞이지 않게
       .map((f) => ({ f, t: statSync(join(OSM_DIR, f)).mtimeMs })).sort((a, b) => b.t - a.t)[0] : null;
@@ -421,6 +424,7 @@ async function processMountain(m) {
     id: m.id,
     name: m.name_full || m.name,
     generated: TODAY,
+    ...(LOCAL ? { osm_snapshot: LOCAL.snapshot } : {}),
     radius_km: RADIUS_KM,
     anchors: geo.anchors.length,
     attribution: ATTRIBUTION,

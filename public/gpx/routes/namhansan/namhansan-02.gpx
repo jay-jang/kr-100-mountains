@@ -7,7 +7,7 @@
   <metadata>
     <name>남한산 · 마천역-서문 코스 (OSM 계산 경로)</name>
     <desc>실제 GPS 기록이 아닙니다. OpenStreetMap에 등록된 등산로 선형 위에서 계산한 경로이며, 현장 통제·훼손·출입 제한·계절 통제를 반영하지 않을 수 있습니다. 산행 전 공식 안내를 확인하세요.</desc>
-    <time>2026-10-14T15:31:45.569Z</time>
+    <time>2026-11-11T06:49:53.008Z</time>
     <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap contributors (ODbL 1.0)</text></link>
     <link href="https://registry.opendata.aws/terrain-tiles/"><text>Elevation: SRTM 1 arc-second (NASA/USGS) via AWS Terrain Tiles</text></link>
     <extensions>
@@ -19,12 +19,12 @@
       <k100:route_index>2</k100:route_index>
       <k100:route_name>마천역-서문 코스</k100:route_name>
       <k100:variant>0</k100:variant>
-      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261013.osm.pbf)</k100:source>
+      <k100:source>OpenStreetMap (Geofabrik extract south-korea-261109.osm.pbf)</k100:source>
       <k100:license>ODbL-1.0</k100:license>
       <k100:attribution>© OpenStreetMap contributors</k100:attribution>
       <k100:elevation_source>SRTM 1 arc-second (NASA/USGS) — AWS Terrain Tiles 배포본. 지형 DEM 추정 고도이며 실측 아님</k100:elevation_source>
       <k100:algorithm>dijkstra-grid-v1</k100:algorithm>
-      <k100:osm_snapshot>2026-10-13</k100:osm_snapshot>
+      <k100:osm_snapshot>2026-11-09</k100:osm_snapshot>
       <k100:snap_trailhead_m>41</k100:snap_trailhead_m>
       <k100:snap_summit_m>2</k100:snap_summit_m>
       <k100:validation_score>75</k100:validation_score>
@@ -55,9 +55,10 @@
       <trkpt lat="37.490193" lon="127.154058"><ele>66.9</ele></trkpt>
       <trkpt lat="37.490372" lon="127.154709"><ele>69.6</ele></trkpt>
       <trkpt lat="37.490825" lon="127.155517"><ele>68.9</ele></trkpt>
-      <trkpt lat="37.490985" lon="127.155898"><ele>67.8</ele></trkpt>
-      <trkpt lat="37.490959" lon="127.156300"><ele>67.2</ele></trkpt>
-      <trkpt lat="37.490749" lon="127.156598"><ele>68.1</ele></trkpt>
+      <trkpt lat="37.491002" lon="127.155983"><ele>67.6</ele></trkpt>
+      <trkpt lat="37.490787" lon="127.156342"><ele>68.2</ele></trkpt>
+      <trkpt lat="37.490647" lon="127.156481"><ele>68.4</ele></trkpt>
+      <trkpt lat="37.490684" lon="127.156799"><ele>68.0</ele></trkpt>
       <trkpt lat="37.490640" lon="127.157020"><ele>67.5</ele></trkpt>
       <trkpt lat="37.490140" lon="127.157690"><ele>68.5</ele></trkpt>
       <trkpt lat="37.489886" lon="127.158482"><ele>72.8</ele></trkpt>
@@ -99,9 +100,8 @@
       <trkpt lat="37.485522" lon="127.173269"><ele>337.5</ele></trkpt>
       <trkpt lat="37.485561" lon="127.173428"><ele>339.5</ele></trkpt>
       <trkpt lat="37.485130" lon="127.173848"><ele>363.5</ele></trkpt>
-      <trkpt lat="37.485060" lon="127.173990"><ele>370.2</ele></trkpt>
       <trkpt lat="37.484781" lon="127.174897"><ele>402.0</ele></trkpt>
-      <trkpt lat="37.484726" lon="127.175318"><ele>424.0</ele></trkpt>
+      <trkpt lat="37.484728" lon="127.175481"><ele>432.2</ele></trkpt>
       <trkpt lat="37.484794" lon="127.175696"><ele>442.7</ele></trkpt>
       <trkpt lat="37.484751" lon="127.175886"><ele>449.9</ele></trkpt>
       <trkpt lat="37.484551" lon="127.176254"><ele>455.3</ele></trkpt>
@@ -115,19 +115,17 @@
       <trkpt lat="37.484109" lon="127.180674"><ele>403.8</ele></trkpt>
       <trkpt lat="37.484009" lon="127.181017"><ele>404.5</ele></trkpt>
       <trkpt lat="37.483992" lon="127.181645"><ele>397.8</ele></trkpt>
-      <trkpt lat="37.483930" lon="127.181932"><ele>397.5</ele></trkpt>
       <trkpt lat="37.483657" lon="127.182930"><ele>397.1</ele></trkpt>
       <trkpt lat="37.483536" lon="127.183185"><ele>401.5</ele></trkpt>
       <trkpt lat="37.482844" lon="127.183826"><ele>397.9</ele></trkpt>
-      <trkpt lat="37.482585" lon="127.183826"><ele>393.6</ele></trkpt>
-      <trkpt lat="37.482255" lon="127.183734"><ele>387.8</ele></trkpt>
       <trkpt lat="37.482106" lon="127.183729"><ele>384.8</ele></trkpt>
       <trkpt lat="37.481985" lon="127.183791"><ele>382.8</ele></trkpt>
+      <trkpt lat="37.481846" lon="127.183952"><ele>381.0</ele></trkpt>
       <trkpt lat="37.481735" lon="127.184153"><ele>379.2</ele></trkpt>
       <trkpt lat="37.481555" lon="127.184655"><ele>370.9</ele></trkpt>
       <trkpt lat="37.481541" lon="127.184846"><ele>368.7</ele></trkpt>
       <trkpt lat="37.481429" lon="127.185094"><ele>368.1</ele></trkpt>
-      <trkpt lat="37.481052" lon="127.185441"><ele>377.0</ele></trkpt>
+      <trkpt lat="37.481136" lon="127.185335"><ele>375.2</ele></trkpt>
       <trkpt lat="37.480993" lon="127.185564"><ele>377.9</ele></trkpt>
       <trkpt lat="37.480974" lon="127.185878"><ele>377.3</ele></trkpt>
       <trkpt lat="37.480644" lon="127.186640"><ele>386.6</ele></trkpt>

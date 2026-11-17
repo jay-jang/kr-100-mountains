@@ -34,6 +34,7 @@ import { buildGraph, findRoutes } from './lib/route-graph.mjs';
 import { ElevationDEM, elevationStats, ELEVATION_SOURCE, ELEVATION_LINK } from './lib/elevation.mjs';
 import { toGPX } from './lib/gpx-write.mjs';
 import { localMeta, localWays } from './lib/osm-local.mjs';
+import { localTrekking } from './lib/osm-trekking.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = cachePath(ROOT);                          // .cache/routes  (gitignore 대상)
@@ -380,7 +381,12 @@ async function processMountain(m, elev, relIndex) {
   // 캐시가 아예 없으면 이전 목록 중 지금 정상 3km 안의 것만 남긴다.
   const relations = [];
   let rels = (json.elements || []).filter((e) => e.type === 'relation' && e.members?.length);
-  if (LOCAL) {
+  let currentRelations = null;
+  if (LOCAL) { try { currentRelations = localTrekking(); } catch {} }
+  if (currentRelations) {
+    rels = currentRelations.relations.filter((r) => r.tags?.route === 'hiking').map((r) => ({ ...r,
+      members: r.members.map((mm) => ({ ...mm, geometry: currentRelations.waysById.get(mm.ref)?.geometry })) }));
+  } else if (LOCAL) {
     const cached = existsSync(OSM_DIR) ? readdirSync(OSM_DIR).filter((f) => new RegExp(`^${m.id}-[0-9a-f]{8}\\.json$`).test(f))
       .map((f) => ({ f, t: statSync(join(OSM_DIR, f)).mtimeMs })).sort((a, b) => b.t - a.t)[0] : null;
     if (cached) {
@@ -425,9 +431,9 @@ async function processMountain(m, elev, relIndex) {
           provenance: 'osm-relation', not_a_recorded_track: 'true',
           osm_type: 'relation', osm_id: rel.id, osm_name: relName,
           network: rel.tags?.network || '', operator: rel.tags?.operator || '',
-          source: 'OpenStreetMap via Overpass API',
+          source: currentRelations ? `OpenStreetMap (Geofabrik extract ${currentRelations.pbf})` : 'OpenStreetMap via Overpass API',
           license: 'ODbL-1.0', attribution: '© OpenStreetMap contributors',
-          osm_snapshot: TODAY,
+          osm_snapshot: currentRelations?.snapshot || TODAY,
         },
       });
       const outPath = join(ROOT, 'public', 'gpx', file);
@@ -444,7 +450,7 @@ async function processMountain(m, elev, relIndex) {
   const result = {
     id: m.id, name: m.name_full || m.name,
     osm_walk_ways: walkWays.length, osm_major_road_ways: majorWays.length, graph_nodes: g.nodes.size,
-    collected_at: nowISO(), tracks, relations,
+    collected_at: nowISO(), osm_snapshot: LOCAL?.snapshot || TODAY, tracks, relations,
   };
   mkdirSync(RESULT_DIR, { recursive: true });
   writeAtomic(resultFile, JSON.stringify(result, null, 2));
@@ -482,6 +488,7 @@ function publish({ quiet = false } = {}) {
       mountain_id: r.id,
       mountain_name: byId.get(r.id).name_full || byId.get(r.id).name,
       collected_at: r.collected_at,
+      osm_snapshot: r.osm_snapshot || null,
       tracks: inheritStats(r.tracks.filter((t) => t.file)),
       relations: r.relations || [],
     }))
@@ -525,7 +532,7 @@ function publish({ quiet = false } = {}) {
     ...head,
     layout: { per_mountain: 'routes/m/<mountain_id>.json', full_catalog: 'routes/catalog.json' },
     mountains: entries.map((e) => ({
-      mountain_id: e.mountain_id, mountain_name: e.mountain_name, collected_at: e.collected_at,
+      mountain_id: e.mountain_id, mountain_name: e.mountain_name, collected_at: e.collected_at, osm_snapshot: e.osm_snapshot,
       tracks: e.tracks.length, relations: e.relations.length,
     })),
   };

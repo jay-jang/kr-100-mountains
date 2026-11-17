@@ -1,0 +1,1753 @@
+{
+  "checked_at": "2026-11-11T07:02:08.952Z",
+  "baseline_ref": "4f4b16e98b434aca1d4411b5197dac8292d658a3",
+  "osm_snapshot": "2026-11-09",
+  "sources": [
+    {
+      "name": "Geofabrik South Korea",
+      "url": "https://download.geofabrik.de/asia/south-korea-261109.osm.pbf",
+      "snapshot": "2026-11-09"
+    },
+    {
+      "name": "KNPS",
+      "url": "https://www.knps.or.kr/front/portal/trails/search.do?menuNo=8000754",
+      "checked_at": "2026-11-11T06:42:41.937Z"
+    }
+  ],
+  "stats": {
+    "mountains": 149,
+    "tracks": 1075,
+    "shared_tracks": 236,
+    "unique_calculated_files": 839,
+    "new_or_changed_geometries": 121,
+    "trekking_before": 727,
+    "trekking": 739,
+    "added_trekking": 14,
+    "removed_trekking": 2,
+    "national_walks": 307,
+    "official_courses": 211,
+    "official_lines": 205,
+    "checked_gpx_files": 1087
+  },
+  "mountains": [
+    {
+      "id": "hwaaksan-gapyeong",
+      "name": "화악산(가평)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "myeongjisan",
+      "name": "명지산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 3,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yongmunsan",
+      "name": "용문산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yeoninsan-gapyeong",
+      "name": "연인산(가평)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "unaksan",
+      "name": "운악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekunsan-pocheon",
+      "name": "백운산(포천)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chukryeongsan-namyangju",
+      "name": "축령산(남양주)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 8,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yumyeongsan",
+      "name": "유명산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "bukhansan",
+      "name": "북한산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 30,
+      "added_trekking": [
+        {
+          "id": "w1569046894",
+          "name": "백악산 남서측 탐방로"
+        }
+      ],
+      "removed_trekking": [
+        {
+          "id": "r10997594",
+          "name": "Seoul City Trail"
+        }
+      ]
+    },
+    {
+      "id": "seorisan",
+      "name": "서리산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 8,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonmasan",
+      "name": "천마산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 15,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "dobongsan",
+      "name": "도봉산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 10,
+      "trekking": 30,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gamaksan-paju",
+      "name": "감악산(파주)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 15,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 10,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "geomdansan",
+      "name": "검단산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 14,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "suraksan-seoul",
+      "name": "수락산(서울)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 30,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gwanaksan",
+      "name": "관악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 7,
+      "trekking": 30,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonggyesan-seoul",
+      "name": "청계산(서울)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 30,
+      "added_trekking": [
+        {
+          "id": "w1574127610",
+          "name": "남산하늘숲길"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "soyosan",
+      "name": "소요산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 7,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gwanggyosan",
+      "name": "광교산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 16,
+      "added_trekking": [
+        {
+          "id": "w1271443866",
+          "name": "서울둘레길"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "namhansan",
+      "name": "남한산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 2,
+      "trekking": 25,
+      "added_trekking": [
+        {
+          "id": "w1574127610",
+          "name": "남산하늘숲길"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "bulamsan",
+      "name": "불암산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 30,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "surisan",
+      "name": "수리산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 18,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 5,
+      "trekking": 20,
+      "added_trekking": [
+        {
+          "id": "r20318702",
+          "name": "길마중길"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "manisan",
+      "name": "마니산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "goryeosan",
+      "name": "고려산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "seolaksan",
+      "name": "설악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 5,
+      "trekking": 19,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gyebangsan",
+      "name": "계방산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hambaeksan-taebaek",
+      "name": "함백산(태백)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 4,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "taebaeksan",
+      "name": "태백산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 10,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "odaesan",
+      "name": "오대산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gariwangsan",
+      "name": "가리왕산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "bangtaesan",
+      "name": "방태산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 2,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jeombongsan",
+      "name": "점봉산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 15,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "geumdaebong",
+      "name": "금대봉",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "dutasan",
+      "name": "두타산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekdeoksan",
+      "name": "백덕산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "noinbong-odaesan",
+      "name": "노인봉(오대산)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 1,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "daeamsan",
+      "name": "대암산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chiaksan",
+      "name": "치악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "seonjaryeong",
+      "name": "선자령",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "munamsan",
+      "name": "문암산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "mindungsan",
+      "name": "민둥산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 5,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "deokhangsan",
+      "name": "덕항산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 3,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "madaesan",
+      "name": "마대산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "garisan",
+      "name": "가리산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [
+        {
+          "id": "w1056349437",
+          "name": "강원도자연환경연구공원 생태문화탐방로 구절산코스"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "taehwasan",
+      "name": "태화산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 2,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [
+        {
+          "id": "w383377451",
+          "name": "솔숲길"
+        },
+        {
+          "id": "r9439787",
+          "name": "백두대간"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "eungbongsan",
+      "name": "응봉산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gamaksan-wonju",
+      "name": "감악산(원주)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "myeongseongsan",
+      "name": "명성산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gongjaksan",
+      "name": "공작산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 4,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekunsan-jeongseon",
+      "name": "백운산(정선)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yonghwasan",
+      "name": "용화산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "obongsan",
+      "name": "오봉산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "samaksan",
+      "name": "삼악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "palbongsan",
+      "name": "팔봉산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "minjujisan",
+      "name": "민주지산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 16,
+      "shared_tracks": 12,
+      "new_or_changed_geometries": 2,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "wolaksan",
+      "name": "월악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "geumsusan",
+      "name": "금수산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "doraksan",
+      "name": "도락산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "seodaesan",
+      "name": "서대산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "daedunsan",
+      "name": "대둔산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gyeryongsan",
+      "name": "계룡산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 18,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "oseosan-boryeong",
+      "name": "오서산(보령)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chilbosan-goesan",
+      "name": "칠보산(괴산)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jinaksan",
+      "name": "진악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheontaesan",
+      "name": "천태산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gwangdeoksan-cheonan",
+      "name": "광덕산(천안)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gayasan-chungnam",
+      "name": "가야산(충남)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chilgapsan",
+      "name": "칠갑산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "deoksungsan",
+      "name": "덕숭산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yongbongsan-hongseong",
+      "name": "용봉산(홍성)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 1,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jirisan",
+      "name": "지리산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 3,
+      "trekking": 14,
+      "added_trekking": [
+        {
+          "id": "w99977584",
+          "name": "뱀사골 자연관찰로 (Jayeongwanchalro) 1.6Km 00:56"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "banyabong-jirisan",
+      "name": "반야봉(지리산)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 14,
+      "added_trekking": [
+        {
+          "id": "w99977584",
+          "name": "뱀사골 자연관찰로 (Jayeongwanchalro) 1.6Km 00:56"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "deokyusan",
+      "name": "덕유산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 6,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekunsan-jangsu",
+      "name": "백운산(장수)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 2,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 8,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jangansan",
+      "name": "장안산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 3,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekunsan-gwangyang",
+      "name": "백운산(광양)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 12,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "mudeungsan",
+      "name": "무등산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baraebong-jirisan",
+      "name": "바래봉(지리산)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 1,
+      "trekking": 11,
+      "added_trekking": [
+        {
+          "id": "w99977584",
+          "name": "뱀사골 자연관찰로 (Jayeongwanchalro) 1.6Km 00:56"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "unjangsan",
+      "name": "운장산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonsangdemi",
+      "name": "천상데미",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jeoksangsan",
+      "name": "적상산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gubongsan-jinan",
+      "name": "구봉산(진안)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 1,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "manhaengsan",
+      "name": "만행산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 2,
+      "trekking": 6,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "sinmusan",
+      "name": "신무산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jogyesan",
+      "name": "조계산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "byeongpungsan",
+      "name": "병풍산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "wolchulsan",
+      "name": "월출산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jeamsan",
+      "name": "제암산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "moaksan",
+      "name": "모악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 15,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "naejangsan",
+      "name": "내장산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 18,
+      "shared_tracks": 9,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "baekamsan",
+      "name": "백암산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "dongaksan-gokseong",
+      "name": "동악산(곡성)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "bangjangsan",
+      "name": "방장산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 10,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chuwolsan",
+      "name": "추월산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [
+        {
+          "id": "r11046025",
+          "name": "한국 트레킹 노선"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheongwansan",
+      "name": "천관산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "duryunsan",
+      "name": "두륜산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "maisan",
+      "name": "마이산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "chukryeongsan-jangseong",
+      "name": "축령산(장성)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "palyeongsan",
+      "name": "팔영산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gangcheonsan",
+      "name": "강천산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "bulgapsan-yeonggwang",
+      "name": "불갑산(영광)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 11,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yeongchwisan",
+      "name": "영취산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "dalmasan-haenam",
+      "name": "달마산(해남)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "byeonsan",
+      "name": "변산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 2,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "deokryongsan-gangjin",
+      "name": "덕룡산(강진)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 13,
+      "shared_tracks": 4,
+      "new_or_changed_geometries": 4,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gitdaebong",
+      "name": "깃대봉",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 2,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "seonunsan",
+      "name": "선운산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 1,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "namdeokyusan",
+      "name": "남덕유산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 6,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "sobaeksan",
+      "name": "소백산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gayasan-hapcheon",
+      "name": "가야산(합천)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 7,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gajisan",
+      "name": "가지산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "ilwolsan",
+      "name": "일월산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 3,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "munsusan",
+      "name": "문수산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "unmunsan",
+      "name": "운문산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hwangseoksan",
+      "name": "황석산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 12,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "palgongsan",
+      "name": "팔공산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 2,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonhwangsan",
+      "name": "천황산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "sinbulsan",
+      "name": "신불산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jaeyaksan",
+      "name": "재약산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 11,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 3,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hwangmaesan",
+      "name": "황매산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 4,
+      "new_or_changed_geometries": 3,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hwangaksan",
+      "name": "황악산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 1,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "juheulsan",
+      "name": "주흘산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "biseulsan",
+      "name": "비슬산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 5,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hwangjangsan",
+      "name": "황장산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 2,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "sokrisan",
+      "name": "속리산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 7,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 4,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "namsanjeilbong",
+      "name": "남산제일봉",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 9,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "joryeongsan-mungyeong",
+      "name": "조령산(문경)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "huiyangsan",
+      "name": "희양산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "seonginbong",
+      "name": "성인봉",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonghwasan-sangju",
+      "name": "청화산(상주)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 10,
+      "shared_tracks": 4,
+      "new_or_changed_geometries": 0,
+      "trekking": 6,
+      "added_trekking": [
+        {
+          "id": "w1089965013",
+          "name": "산막이옛길"
+        }
+      ],
+      "removed_trekking": [
+        {
+          "id": "w1089965017",
+          "name": "산막이옛길"
+        }
+      ]
+    },
+    {
+      "id": "geumosan",
+      "name": "금오산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 9,
+      "trekking": 1,
+      "added_trekking": [
+        {
+          "id": "w480193348",
+          "name": "금오산 올레길"
+        }
+      ],
+      "removed_trekking": []
+    },
+    {
+      "id": "daeyasan",
+      "name": "대야산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonseongsan",
+      "name": "천성산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 7,
+      "trekking": 5,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gubyeongsan",
+      "name": "구병산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheongryangsan",
+      "name": "청량산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "geumjeongsan",
+      "name": "금정산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 1,
+      "trekking": 12,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "muhaksan",
+      "name": "무학산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 10,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hwawangsan",
+      "name": "화왕산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 5,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "tohamsan",
+      "name": "토함산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "juwangsan",
+      "name": "주왕산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 12,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 3,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "naeyeonsan",
+      "name": "내연산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 6,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "geumsan",
+      "name": "금산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "cheonjusan",
+      "name": "천주산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 3,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 11,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "gyeryongsan-geoje",
+      "name": "계룡산(거제)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 9,
+      "shared_tracks": 3,
+      "new_or_changed_geometries": 0,
+      "trekking": 2,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "yeonhwasan",
+      "name": "연화산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 10,
+      "shared_tracks": 4,
+      "new_or_changed_geometries": 1,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "namsan-gyeongju",
+      "name": "남산(경주)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 6,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "mireuksan",
+      "name": "미륵산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 8,
+      "shared_tracks": 1,
+      "new_or_changed_geometries": 0,
+      "trekking": 0,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "jirisan-tongyeong",
+      "name": "지리산(통영)",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 0,
+      "trekking": 1,
+      "added_trekking": [],
+      "removed_trekking": []
+    },
+    {
+      "id": "hanrasan",
+      "name": "한라산",
+      "osm_snapshot": "2026-11-09",
+      "tracks": 4,
+      "shared_tracks": 0,
+      "new_or_changed_geometries": 1,
+      "trekking": 18,
+      "added_trekking": [],
+      "removed_trekking": []
+    }
+  ],
+  "note": "신규·변경은 이전 공개 데이터와의 차이입니다. 계산 경로와 OSM 등록 선형이며 실측 GPS 기록이 아닙니다. 제외된 주변 길은 최신 원본·중복 제거·거리/길이·표시 상한 기준 재적용 결과입니다."
+}
