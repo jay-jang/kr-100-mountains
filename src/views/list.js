@@ -1,7 +1,7 @@
 // 목록 시트 — 명산 모드(필터·가까운 순·검색) / 걷기길 모드(지도 범위 안 노선).
 // URL(#/map?…)이 상태의 원본이다. 바꿀 때마다 replaceState로 쓰고 셸의 칩에도 알린다.
 import { el, clear } from '../dom.js';
-import { filterMountains, representativeCourse, LIST_KEYS, LIST_META } from '../data.js';
+import { representativeCourse, LIST_KEYS, LIST_META } from '../data.js';
 import { isHiked, hikedCount, onChange as onStore } from '../store.js';
 import { pref, onPrefs } from '../prefs.js';
 import { cachedPosition, requestPosition, permissionState, geoAvailable, onPositionChange,
@@ -13,28 +13,8 @@ import { navigate } from '../router.js';
 import { loadTrekIndex, loadWalkIndex, kindLabel, kindStyle, KIND_SHORT } from '../walkdata.js';
 import { WALK_MAX_KM } from '../walklayer.js';
 import { isDarkTheme } from '../prefs.js';
+import { REGIONS, WALK_KINDS, parseListParams as parse, filterListMountains } from '../listfilters.js';
 
-const REGIONS = ['수도권', '강원', '충청', '전라', '경상', '제주'];
-const WALK_KINDS = [['', '전체'], ['dulle', '둘레길'], ['long', '장거리'], ['ridge', '마루금'], ['forest', '숲길'], ['trail', '탐방로']];
-
-function parse(params) {
-  const csv = (k) => (params.get(k) ? params.get(k).split(',').map((s) => s.trim()).filter(Boolean) : []);
-  return {
-    mode: params.get('mode') === 'walk' ? 'walk' : 'mountain',
-    q: params.get('q') || '',
-    regions: new Set(csv('region').filter((r) => REGIONS.includes(r))),
-    lists: new Set(params.get('all') === '4' ? [] : csv('list').filter((k) => LIST_KEYS.includes(k))),
-    allFour: params.get('all') === '4',
-    hiked: params.get('hiked') === '1' ? 'yes' : params.get('hiked') === '0' ? 'no' : '',
-    sort: params.get('sort') === 'near' ? 'near' : 'default',
-    easy: params.get('easy') === '1',
-    maxHours: [2, 4, 6, 8].includes(Number(params.get('hours'))) ? Number(params.get('hours')) : 0,
-    maxDistance: [5, 10, 15].includes(Number(params.get('distance'))) ? Number(params.get('distance')) : 0,
-    dulle: params.get('dulle') === '1',
-    walkKind: WALK_KINDS.some(([k]) => k === params.get('walkkind')) ? params.get('walkkind') : '',
-    focus: params.get('focus') || null,
-  };
-}
 function serialize(s) {
   const p = new URLSearchParams();
   if (s.mode === 'walk') p.set('mode', 'walk');
@@ -129,24 +109,13 @@ export function renderList(ctx, route) {
 
   // ---------- 명산 모드 ----------
   function filtered() {
-    let list = filterMountains(data.mountains, {
-      q: state.q, regions: state.regions, lists: state.lists, allFour: state.allFour,
-      hikedOnly: state.hiked === 'yes', isHiked, easy: state.easy, maxHours: state.maxHours, maxDistance: state.maxDistance,
-    });
-    if (state.hiked === 'no') list = list.filter((m) => !isHiked(m.id));
-    if (state.dulle) list = trekIndex ? list.filter((m) => walkCount(m.id) > 0) : [];
+    let list = filterListMountains(data.mountains, state, { isHiked, trekIndex });
     if (state.sort === 'near' && pos) list = sortByDistance(list.filter((m) => m.lat != null), pos).map((x) => x.m);
     else if (state.q.trim()) {
       const q = state.q.trim().toLowerCase();
       list.sort((a, b) => searchRank(a, q) - searchRank(b, q) || a.name.localeCompare(b.name, 'ko'));
     }
     return list;
-  }
-  function walkCount(id) {
-    const e = trekIndex?.[id];
-    if (!e) return 0;
-    const k = e.kinds || {};
-    return (k.dulle || 0) + (k.forest || 0) + (k.ridge || 0) + (k.other || 0);
   }
 
   function mountainRow(m, i) {
@@ -435,7 +404,7 @@ export function renderList(ctx, route) {
   ctx.search.setValue(state.q);
   if (state.mode === 'walk') {
     ctx.setWalkLayerMode('all');
-    ctx.setMarkers({ dim: true });
+    ctx.setMarkers({ ids: null, dim: true });
     loadWalkIndex().then((w) => { walks = w; if (!ctx.disposed()) ctx.whenMap((v) => { walkBounds = v.getBounds(); update(); }); update(); });
   }
   loadTrekIndex().then((idx) => { trekIndex = idx; if (state.dulle && !ctx.disposed()) update(); });

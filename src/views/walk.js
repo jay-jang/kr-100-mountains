@@ -351,7 +351,7 @@ export async function renderWalk(ctx, route) {
   const a = document.activeElement;
   if (!(a && a.matches?.('input, textarea, select'))) requestAnimationFrame(() => title.focus({ preventScroll: true }));
 
-  ctx.setMarkers({ dim: true, selectedId: null });
+  ctx.setMarkers({ ids: null, dim: true, selectedId: null });
   markNear();
   ctx.onMove(markNear);
   setOwnDrawnWalk(w.rid);          // 이 노선은 아래 draw()가 상세 선으로 그린다

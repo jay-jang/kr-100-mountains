@@ -19,8 +19,9 @@ import { watchPosition } from './geo.js';
 import { navigate, currentRoute } from './router.js';
 import { openModal, modalOpen } from './modal.js';
 import { createWalkLayer } from './walklayer.js';
-import { kindStyle, loadWalkIndex } from './walkdata.js';
+import { kindStyle, loadWalkIndex, loadTrekIndex } from './walkdata.js';
 import { savedListHash, rememberList } from './liststate.js';
+import { parseListParams, filterListMountains } from './listfilters.js';
 
 const KOREA = [36.3, 127.8];
 const CLUSTER_KM = 200;       // 보이는 범위 폭이 이보다 넓으면 겹치는 산 기호를 숫자 묶음으로
@@ -35,6 +36,14 @@ export function getShell(host) {
 
 async function createShell(host) {
   const data = await loadData();
+  const initialRoute = currentRoute();
+  let listParams = new URLSearchParams(initialRoute.parts[0] === 'map'
+    ? initialRoute.params : savedListHash().split('?')[1] || '');
+  let trekIndex = null;
+  let listMarkerIds = matchingMarkerIds();
+  function matchingMarkerIds() {
+    return new Set(filterListMountains(data.mountains, parseListParams(listParams), { isHiked, trekIndex }).map(m => m.id));
+  }
 
   // ---------- DOM ----------
   const mapNode = el('div', { class: 'map', id: 'map', role: 'region', 'aria-label': '명산 지도' },
@@ -180,7 +189,8 @@ async function createShell(host) {
   });
 
   // ---------- 산 기호(마커) ----------
-  let markerOpts = { ids: null, selectedId: null, dim: false };
+  let markerOpts = { ids: listMarkerIds, selectedId: null, dim: false };
+  let markerScope = 'filtered';
   const markers = new Map();
   function markerNode(m, { selected }) {
     const hiked = isHiked(m.id);
@@ -268,7 +278,14 @@ async function createShell(host) {
     return out;
   }
   function setMarkers(opts) {
-    markerOpts = { ids: null, selectedId: null, dim: false, ...opts };
+    // 선택 강조는 목록의 필터 범위를 바꾸지 않는다. ids:null은 걷기길 화면의 명시적 전체 보기다.
+    markerScope = opts.ids === null ? 'all' : 'filtered';
+    markerOpts = { ids: listMarkerIds, selectedId: null, dim: false, ...opts };
+    renderMarkers();
+  }
+  function refreshListMarkers() {
+    listMarkerIds = matchingMarkerIds();
+    if (markerScope === 'filtered') markerOpts.ids = listMarkerIds;
     renderMarkers();
   }
   function highlightMarker(id, on) {
@@ -409,7 +426,6 @@ async function createShell(host) {
   }
 
   // ---------- 칩(찾을 대상·필터·둘레길) ----------
-  let listParams = new URLSearchParams(savedListHash().split('?')[1] || '');
   function listHash(mut) {
     const p = new URLSearchParams(listParams);
     mut?.(p);
@@ -493,7 +509,7 @@ async function createShell(host) {
       },
       onMapClick(fn) { clickHandlers.add(fn); offs.push(() => clickHandlers.delete(fn)); },
       onMove(fn) { moveListeners.add(fn); offs.push(() => moveListeners.delete(fn)); },
-      setMarkers, highlightMarker, padding,
+      setMarkers(opts) { if (!disposed) setMarkers(opts); }, highlightMarker, padding,
       // 떠난 화면이 늦게 부른 맞춤은 무시한다 — 미뤄 둔 맞춤도 실행 직전에 다시 확인한다.
       fit(latlngs, opts) { if (!disposed) fit(latlngs, opts, () => !disposed); },
       focusPoint(pt, zoom, opts) { if (!disposed) focusPoint(pt, zoom, opts, () => !disposed); },
@@ -509,6 +525,7 @@ async function createShell(host) {
         listParams = new URLSearchParams(p);
         brand.href = rememberList(listParams);
         paintChips();
+        refreshListMarkers();
       },
       /** 마지막 목록 화면 URL(#/map?…) — 산·걷기길 시트의 [×]가 돌아갈 곳. */
       listHash: () => listHash(),
@@ -619,7 +636,9 @@ async function createShell(host) {
   // 검색에서 걷기길을 바로 찾을 수 있도록 전국 걷기길 목록을 한가할 때 미리 받아 둔다.
   (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(() => { loadWalkIndex().catch(() => {}); });
   window.addEventListener('kr100:theme', () => { view?.refreshTheme(); renderMarkers(); onMove(); });
-  onStore(() => renderMarkers());
+  onStore(refreshListMarkers);
+  // 상세 화면을 바로 열거나 새로고침해도 비동기 걷기길 조건까지 같은 범위로 복원한다.
+  loadTrekIndex().then((index) => { trekIndex = index; refreshListMarkers(); });
   onPrefs((key) => {
     if (key === 'zoomButtons' || key == null) applyZoomPref();
     if (key === 'regionColors' || key == null) renderMarkers();
