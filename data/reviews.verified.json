@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T18:45:12.282Z",
+  "generated_at": "2026-11-22T18:47:52.614Z",
   "generator": "scripts/collect-reviews.mjs",
   "what_this_is": "공개된 산행기·후기·공지에서 확인된 현장 정보를 항목별로 정리한 요약입니다. 원문 후기를 그대로 옮긴 것이 아니며, 항목마다 출처 URL을 달아 두었습니다.",
   "method": "서로 독립적인 두 조사가 같은 질문에 각자 답한 뒤, 모인 주장 목록을 두 조사 모두에게 다시 돌려 웹 근거로 확인·반박·판단불가를 판정합니다. 반박이 하나라도 나온 항목은 싣지 않고, 확인 2표는 교차검증(verified), 1표는 단일확인(single)으로 표시합니다. 출처 URL이 없는 항목은 애초에 저장하지 않습니다.",
@@ -16,7 +16,7 @@
   ],
   "stats": {
     "mountains": 149,
-    "notes": 1471,
+    "notes": 1444,
     "verified": 8
   },
   "mountains": [
@@ -5477,7 +5477,7 @@
     {
       "id": "deokyusan",
       "name": "덕유산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -5485,13 +5485,12 @@
           "scope": "route",
           "route": "삼공리-백련사-향적봉 코스",
           "topic": "위험구간",
-          "text": "향적봉에서 백련사까지 내려가는 약 2.5km 구간은 경사가 매우 가파르고 겨울철 눈이 많이 쌓여 아이젠을 착용해도 미끄러지기 쉬우므로 주의해야 한다.",
+          "text": "2026년 2월 게시된 산행기에서는 향적봉에서 백련사로 내려가는 길에 녹지 않은 눈이 남아 미끄러웠으며, 아이젠을 착용하고 천천히 하산했다고 기록했다.",
           "sentiment": "caution",
-          "as_of": "2025-01",
+          "as_of": "2026-02",
           "sources": [
-            "https://v.daum.net/v/KgTAXNphtH",
-            "https://jangcheon.tistory.com/72",
-            "https://sanijoen.tistory.com/18151350"
+            "https://smileolleh.tistory.com/621",
+            "https://smileolleh.tistory.com/621?category=1020916"
           ],
           "verify": {
             "level": "single",
@@ -5502,32 +5501,14 @@
         },
         {
           "scope": "route",
-          "route": "설천봉(곤돌라)-향적봉 코스",
-          "topic": "위험구간",
-          "text": "설천봉에서 향적봉으로 오르는 길은 비교적 쉬운 길로 소개되지만, 코스 안내에서는 겨울철 아이젠 착용을 별도로 당부한다.",
+          "route": "향적봉-중봉-동엽령 능선",
+          "topic": "계절·시기",
+          "text": "2026년 3월 현장 기사는 향적봉에서 중봉으로 이어지는 구간이 봄철 산불방지 통제 대상이며, 중봉 탐방은 5월부터 가능하다고 안내했다.",
           "sentiment": "caution",
-          "as_of": null,
+          "as_of": "2026-03",
           "sources": [
-            "https://www.ohiking.today/course/view/358",
-            "https://ohiking.today/course/view/358"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "설천봉(곤돌라)-향적봉 코스",
-          "topic": "통제·예약",
-          "text": "관광곤돌라는 주말·공휴일 기준으로 10~11월에는 사전예약 후 잔여석만 현장 발권하고, 12월~이듬해 2월에는 전면 사전예약제로 운영한다고 공식 예약 페이지에 안내되어 있다.",
-          "sentiment": "caution",
-          "as_of": null,
-          "sources": [
-            "https://www.mdysresort.com/gondora/20011525_reserve_gondora1.asp",
-            "https://m.mdysresort.com/gondola/reservation.asp"
+            "https://gonggam.korea.kr/newsContentView.es?mid=a10219000000&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79&section_id=",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79"
           ],
           "verify": {
             "level": "single",
@@ -5540,12 +5521,67 @@
           "scope": "route",
           "route": "설천봉(곤돌라)-향적봉 코스",
           "topic": "통제·예약",
-          "text": "무주 덕유산 관광곤돌라는 매년 10월부터 이듬해 2월까지 주말 및 공휴일에 사전 예약제로 운영되며, 탑승일 포함 2주 전 오후 5시부터 예약이 열린다.",
+          "text": "관광곤돌라는 10월부터 이듬해 2월까지 주말·공휴일에 사전예약제로 운영한다. 예약은 탑승일을 포함해 2주 전 17시부터 가능하다.",
           "sentiment": "caution",
-          "as_of": "2026-08",
+          "as_of": null,
           "sources": [
-            "https://www.mdysresort.com/gondora/20011525_reserve_gondora1.asp",
-            "https://www.ardentnews.co.kr/news/articleView.html?idxno=18140"
+            "https://mdysresort.com/gondora/20011525_reserve_gondora1.asp",
+            "https://www.mdysresort.com/gondora/intro_gon.asp"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "향적봉에서 겹겹이 이어지는 주변 산 능선을 내려다보는 조망은 겨울 산행기와 현장 기사에서 공통으로 호평한 볼거리다.",
+          "sentiment": "good",
+          "as_of": "2026-03",
+          "sources": [
+            "https://runflower.tistory.com/51",
+            "https://onecblog.tistory.com/26",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "구천동탐방지원센터-백련사-향적봉",
+          "topic": "난이도",
+          "text": "구천동에서 백련사까지 약 6km는 완만하지만, 백련사와 향적봉 사이는 급경사 계단이 이어져 체력 부담이 커진다.",
+          "sentiment": "neutral",
+          "as_of": "2026-03",
+          "sources": [
+            "https://gonggam.korea.kr/newsContentView.es?mid=a10219000000&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79&section_id=",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "mountain",
+          "route": null,
+          "topic": "편의시설",
+          "text": "2026년 3월 현장 기사에 따르면 향적봉 정상에서 약 150m 떨어진 향적봉대피소에서 물을 구입할 수 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-03",
+          "sources": [
+            "https://gonggam.korea.kr/newsContentView.es?mid=a10219000000&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79&section_id=",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=0a25e140-a01b-4c22-a884-b0e9494f8e79"
           ],
           "verify": {
             "level": "single",
@@ -5558,84 +5594,11 @@
           "scope": "mountain",
           "route": null,
           "topic": "혼잡",
-          "text": "겨울 주말에는 설천봉까지 곤돌라를 타고 올라온 탐방객이 몰려 향적봉 정상석 인증사진 대기 줄이 30분 이상 이어지고, 바로 아래 향적봉대피소도 앉거나 서 있을 자리가 없을 만큼 북적인다.",
-          "sentiment": "caution",
-          "as_of": "2024-01",
-          "sources": [
-            "https://kingcima.tistory.com/177",
-            "https://jangcheon.tistory.com/72"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "안성탐방지원센터-동엽령-중봉-향적봉",
-          "topic": "위험구간",
-          "text": "안성탐방지원센터에서 칠연폭포 삼거리까지는 완만한 비포장 임도에 가깝지만, 동엽령에 올라선 뒤 백암봉·중봉·향적봉으로 이어지는 능선 구간은 겨울철 매서운 강풍으로 체감온도가 급격히 떨어지므로 방풍·보온 장비가 필수다.",
-          "sentiment": "caution",
-          "as_of": "2024-01",
-          "sources": [
-            "https://kingcima.tistory.com/177"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "향적봉-중봉-동엽령 능선",
-          "topic": "조망·볼거리",
-          "text": "백암봉에서 중봉으로 이어지는 덕유평전 능선 구간은 겨울 상고대와 눈꽃, 봄 야생화가 빼어나고 남덕유산과 지리산, 가야산까지 시야가 탁 트여 산행의 하이라이트로 꼽힌다.",
-          "sentiment": "good",
-          "as_of": "2025-01",
-          "sources": [
-            "https://www.fnnews.com/news/202202110902456534",
-            "https://sanijoen.tistory.com/18151350",
-            "https://kingcima.tistory.com/177"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "삼공리-백련사-향적봉 코스",
-          "topic": "난이도",
-          "text": "백련사에서 삼공리(구천동) 주차장까지 이어지는 약 6km 구간은 완만하고 평탄한 길이 길게 계속되어 하산 시 지루하게 느껴질 수 있다.",
+          "text": "2024년 2월 공개된 겨울 산행기에는 향적봉 정상석에서 인증사진을 찍기 위해 약 30분 기다린 사례가 기록돼 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-01",
+          "as_of": "2024-02",
           "sources": [
-            "https://sane8253.tistory.com/2327",
-            "https://sanijoen.tistory.com/18151350"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "향적봉 정상에서 약 100m 아래에 자리한 향적봉대피소에 화장실이 마련되어 있다.",
-          "sentiment": "neutral",
-          "as_of": "2023-12",
-          "sources": [
-            "https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=120800&vcursId=120800V002",
-            "https://jangcheon.tistory.com/72"
+            "https://onecblog.tistory.com/26"
           ],
           "verify": {
             "level": "single",
@@ -5647,63 +5610,12 @@
         {
           "scope": "route",
           "route": "구천동탐방지원센터-백련사-향적봉",
-          "topic": "난이도",
-          "text": "구천동에서 백련사까지는 완만한 계곡길이지만, 백련사에서 향적봉으로 바로 오르는 구간은 가파른 오르막으로 바뀐다는 후기가 있다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
-          "sources": [
-            "https://kimfix.com/2045"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "구천동탐방지원센터-백련사-향적봉",
-          "topic": "편의시설",
-          "text": "백련사에서 화장실을 이용할 수 있다는 산행 후기가 있다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
-          "sources": [
-            "https://kimfix.com/2045"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "무주군 관광 안내는 덕유산 정상 일대의 겨울철 볼거리로 상고대를 소개한다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://tour.muju.go.kr/tour/selectTourCntntsDetail.do?key=723&tourNo=243"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "삼공리-백련사-향적봉 코스",
           "topic": "주차·교통",
-          "text": "무주군 관광 안내에 따르면 무주읍내에서 구천동 관광단지까지는 버스로 약 40분이 걸린다.",
+          "text": "2024년 2월 공개된 산행기에서는 구천동 쪽 삼공주차장을 무료로 이용했다고 기록했다.",
           "sentiment": "neutral",
-          "as_of": null,
+          "as_of": "2024-02",
           "sources": [
-            "https://tour.muju.go.kr/tour/selectTourCntntsDetail.do?key=723&tourNo=243"
+            "https://onecblog.tistory.com/26"
           ],
           "verify": {
             "level": "single",
@@ -5717,7 +5629,7 @@
     {
       "id": "dobongsan",
       "name": "도봉산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -5725,89 +5637,12 @@
           "scope": "route",
           "route": "원도봉탐방지원센터-망월사-포대능선-신선대",
           "topic": "통제·예약",
-          "text": "포대능선과 신선대 사이 Y계곡은 주말·공휴일에 포대능선에서 신선대 방향으로만 일방통행한다고 산행 후기에서 안내한다.",
+          "text": "Y계곡은 주말·공휴일에 포대능선에서 신선대 방향으로만 통행할 수 있다.",
           "sentiment": "caution",
-          "as_of": "2026-10",
+          "as_of": "2026-11",
           "sources": [
-            "https://ckc12190.tistory.com/660",
-            "https://memo5694.tistory.com/147",
-            "https://stone1058.tistory.com/8126956"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "통제·예약",
-          "text": "포대정상과 신선대 사이의 약 200m 암릉 구간인 Y계곡은 주말 및 공휴일에 포대능선에서 신선대 방향으로만 진행하는 일방통행제가 운영되므로, 반대 방향 이동 시나 초보자는 우회로를 이용해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2026-10",
-          "sources": [
-            "https://www.joongang.co.kr/article/3320017",
-            "https://www.everytrail.co.kr/hiking/dobongsan",
-            "https://nanayeongcho.tistory.com/291"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "오봉 코스",
-          "topic": "위험구간",
-          "text": "여성봉에서 오봉탐방지원센터 방향 약 200m 철제로프 급경사 구간은 미끄럼 주의 지점이며, 송추폭포 구간은 볕이 들지 않아 겨울 내내 얼어 있으므로 겨울철에는 아이젠을 반드시 챙겨야 한다.",
-          "sentiment": "caution",
-          "as_of": "2026-10",
-          "sources": [
-            "https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V004",
-            "https://www.everytrail.co.kr/hiking/dobongsan"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도봉탐방지원센터-신선대 코스",
-          "topic": "조망·볼거리",
-          "text": "신선대에서 가까이 마주하는 자운봉·만장봉의 화강암 암벽 조망이 여러 산행 후기에서 좋은 볼거리로 언급된다.",
-          "sentiment": "good",
-          "as_of": "2026-10",
-          "sources": [
-            "https://kdk4876.tistory.com/18172161",
-            "https://eensuh.tistory.com/800",
-            "https://memo5694.tistory.com/147",
-            "https://stone1058.tistory.com/8126956"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도봉탐방지원센터-신선대 코스",
-          "topic": "주차·교통",
-          "text": "지하철 1·7호선 도봉산역 1번 출구에서 도봉탐방지원센터까지 도보 접근 시간은 자료에 따라 약 15~20분으로 안내된다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://unisquads.io/w/%EB%8F%84%EB%B4%89%ED%83%90%EB%B0%A9%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0",
-            "https://ohiking.today/course/view/16",
-            "https://memo5694.tistory.com/147"
+            "https://gonggam.korea.kr/newsContentView.es?code_cd=&content=&mid=a12502000000&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de&section_id=NCCD_CULTURE",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de"
           ],
           "verify": {
             "level": "single",
@@ -5819,14 +5654,30 @@
         {
           "scope": "route",
           "route": "송추분소-여성봉-오봉",
-          "topic": "조망·볼거리",
-          "text": "오봉탐방지원센터에서 울대습지를 지나 약 2km 오르막만 오르면 닿는 여성봉(504m)과 다섯 개의 바위 봉우리가 늘어선 오봉(660m)은 코스가 험하지 않으면서도 사패산, 북한산, 도봉산 주능선 조망이 뛰어나다.",
-          "sentiment": "good",
-          "as_of": "2026-05",
+          "topic": "위험구간",
+          "text": "여성봉에서 오봉탐방지원센터 방향으로 내려가는 초반 약 200m에는 급경사와 철제로프 구간이 많다. 공단은 겨울철 미끄럼에 대비해 아이젠 착용을 안내한다.",
+          "sentiment": "caution",
+          "as_of": null,
           "sources": [
-            "https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V004",
-            "https://landyplay.com/%EB%8F%84%EB%B4%89%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EC%97%AC%EC%84%B1%EB%B4%89-%EC%98%A4%EB%B4%89-%EC%9A%B0%EC%9D%B4%EC%95%94",
-            "https://jinsungdiary.tistory.com/entry/%EB%8F%84%EB%B4%89%EC%82%B0-%EC%86%A1%EC%B6%94%EA%B3%84%EA%B3%A1-%EC%B6%9C%EB%B0%9C-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EC%97%AC%EC%84%B1%EB%B4%89-%EC%98%A4%EB%B4%89%EA%B1%B0%EC%B3%90-%EC%8B%A0%EC%84%A0%EB%8C%80-Y%EA%B3%84%EA%B3%A1%EA%B9%8C%EC%A7%80"
+            "https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V004"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "도봉탐방지원센터-신선대 코스",
+          "topic": "난이도",
+          "text": "2026년 11월 현장 기사는 마당바위를 거치는 신선대 왕복길에 가파른 바윗길이 많아, 최단 코스라는 이유로 쉽게 생각하기 어렵다고 설명했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-11",
+          "sources": [
+            "https://gonggam.korea.kr/newsContentView.es?code_cd=&content=&mid=a12502000000&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de&section_id=NCCD_CULTURE",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de"
           ],
           "verify": {
             "level": "single",
@@ -5838,50 +5689,13 @@
         {
           "scope": "route",
           "route": "원도봉탐방지원센터-망월사-포대능선-신선대",
-          "topic": "계절·시기",
-          "text": "망월사역 3번 출구에서 원도봉탐방지원센터와 망월사를 거쳐 포대능선으로 오르는 코스는 가을 단풍이 아름답기로 유명하며, 포대능선 전망대에서 수락산·불암산과 선인봉·만장봉·자운봉을 조망하기 좋다.",
-          "sentiment": "good",
-          "as_of": "2022-11",
-          "sources": [
-            "https://devilzcough.tistory.com/122",
-            "https://lotus9217.tistory.com/52",
-            "https://www.everytrail.co.kr/hiking/dobongsan"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도봉탐방지원센터-신선대 코스",
           "topic": "혼잡",
-          "text": "2026년 10월 게시된 주말 산행 후기에는 신선대 정상 인증사진을 찍기 위해 약 30분을 기다렸다고 기록되어 있다.",
+          "text": "포대능선에서 신선대로 이어지는 Y계곡은 바윗길이 협소해 탐방객 정체가 자주 발생한다고 현장 기사가 설명한다.",
           "sentiment": "neutral",
-          "as_of": "2026-10",
+          "as_of": "2026-11",
           "sources": [
-            "https://www.ohiking.today/story/view/13048",
-            "https://memo5694.tistory.com/147"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도봉탐방지원센터-신선대 코스",
-          "topic": "편의시설",
-          "text": "도봉탐방지원센터 지점에 화장실이 있다고 코스 안내에 표시되어 있다.",
-          "sentiment": "neutral",
-          "as_of": null,
-          "sources": [
-            "https://ohiking.today/course/view/12",
-            "https://ohiking.today/course/view/16"
+            "https://gonggam.korea.kr/newsContentView.es?code_cd=&content=&mid=a12502000000&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de&section_id=NCCD_CULTURE",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de"
           ],
           "verify": {
             "level": "single",
@@ -5894,11 +5708,64 @@
           "scope": "route",
           "route": "도봉탐방지원센터-신선대 코스",
           "topic": "주차·교통",
-          "text": "지하철 1·7호선 도봉산역 1번 출구에서 들머리인 도봉탐방지원센터까지는 식당과 등산용품점이 늘어선 길을 따라 도보로 약 20분이 소요되며, 탐방지원센터 부근과 도봉대피소에 화장실이 갖춰져 있다.",
+          "text": "수도권 전철 1·7호선 도봉산역에서 도봉탐방지원센터까지는 도보 약 15분으로 안내돼 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-01",
+          "as_of": "2026-11",
           "sources": [
-            "https://dreamsure.tistory.com/60"
+            "https://gonggam.korea.kr/newsContentView.es?code_cd=&content=&mid=a12502000000&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de&section_id=NCCD_CULTURE",
+            "https://gonggam.korea.kr/newsContentView.es?mid=a12605000000&section_id=NCCD_CULTURE_TOTAL&news_id=1be79927-eeea-4e25-b91e-3fd95dc460de"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "오봉 코스",
+          "topic": "조망·볼거리",
+          "text": "오봉 전망대에서 다섯 바위봉우리를 바라보는 경관은 공단 코스 안내와 실제 산행기에서 공통으로 소개하는 볼거리다.",
+          "sentiment": "good",
+          "as_of": "2026-04",
+          "sources": [
+            "https://lifensook.tistory.com/529",
+            "https://www.knps.or.kr/front/portal/visit/visitCourseGuide.do?parkId=121500&vcursId=121500V004"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "송추분소-여성봉-오봉",
+          "topic": "주차·교통",
+          "text": "2026년 4월 게시된 산행기는 송추 제2주차장 하루 주차요금을 주중 4,000원, 주말·공휴일·성수기 5,000원으로 안내했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-04",
+          "sources": [
+            "https://lifensook.tistory.com/529"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "오봉 코스",
+          "topic": "편의시설",
+          "text": "2026년 4월 게시된 산행기에서 송추계곡 하단의 화장실을 하산 후 이용한 사실이 확인된다.",
+          "sentiment": "neutral",
+          "as_of": "2026-04",
+          "sources": [
+            "https://lifensook.tistory.com/529"
           ],
           "verify": {
             "level": "single",
@@ -5912,20 +5779,20 @@
     {
       "id": "dongaksan-gokseong",
       "name": "동악산(곡성)",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "도림사 코스",
+          "route": "도림사-형제봉-배넘어재-동악산 원점회귀",
           "topic": "위험구간",
-          "text": "신선바위는 위쪽이 넓은 암반이지만 가장자리 아래는 수직절벽을 이룬다는 현장 기록이 있어, 끝부분 접근에 주의가 필요하다.",
+          "text": "배넘어재에서 동악산 정상으로 접근할 때 마지막 약 500m는 계단 오르막이며, 산행기에서 데크계단의 경사가 매우 가파르다고 기록했다.",
           "sentiment": "caution",
-          "as_of": "2019-06",
+          "as_of": "2023-02",
           "sources": [
-            "https://landyplay.com/%EB%8F%99%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8F%8C%ED%83%91-%EA%B9%83%EB%8C%80%EB%B4%89-%EB%8C%80%EC%9E%A5%EB%B4%89-%EB%8F%99%EC%95%85%EC%82%B0-%EB%8F%84%EB%A6%BC%EC%82%AC",
-            "https://seawolf507.tistory.com/16867447"
+            "https://jangcheon.tistory.com/36",
+            "https://jangcheon.tistory.com/36?category=1058500"
           ],
           "verify": {
             "level": "single",
@@ -5937,87 +5804,14 @@
         {
           "scope": "route",
           "route": "도림사-형제봉-배넘어재-동악산 원점회귀",
-          "topic": "위험구간",
-          "text": "배넘어재 정자 쉼터에서 동악산 정상으로 이어지는 능선 구간은 이정표의 남은 거리 표시가 들쭉날쭉하여 혼란스러울 수 있으므로 거리 수치보다는 방향 위주로 참고해야 한다.",
-          "sentiment": "caution",
-          "as_of": "2022-12",
-          "sources": [
-            "https://hyungsik60.tistory.com/222",
-            "https://smileolleh.tistory.com/204"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도림사 코스",
-          "topic": "혼잡",
-          "text": "6~8월 여름철에는 계곡 피서객과 등산객이 몰려 하산 시간대에 매우 붐비며, 등산로 입구와 가까운 도림사 쪽 2·3번 주차장은 두 곳을 합쳐 약 20대 규모로 협소해 이른 아침에 방문하는 것이 유리하다.",
-          "sentiment": "caution",
-          "as_of": "2022-07",
-          "sources": [
-            "https://security-song.tistory.com/217"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "도림사 입구부터 이어지는 약 200m 길이의 청류동계곡은 너른 암반 위로 일곡부터 구곡까지 선현들의 글귀가 새겨져 있고 연중 맑은 물이 흘러 여름철 계곡 산행지로 인기가 높다.",
-          "sentiment": "good",
-          "as_of": "2026-10",
-          "sources": [
-            "https://ninesr.tistory.com/835",
-            "https://www.gokseong.go.kr/tour/tourist/9tour/dongak_mountain",
-            "https://security-song.tistory.com/217"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "청계동 코스",
-          "topic": "조망·볼거리",
-          "text": "산 북쪽 섬진강변의 청계동계곡(치유의 숲)을 들머리로 삼아 정상과 배넘어재를 거쳐 도림사로 하산하는 코스는 약 4시간이 소요되며, 깨끗한 계곡물과 너른 반석, 사수암골 능선 암릉의 경관을 즐길 수 있다.",
-          "sentiment": "good",
-          "as_of": "2024-12",
-          "sources": [
-            "https://www.gokseong.go.kr/tour/tourist/9tour/dongak_mountain",
-            "https://brightcw.tistory.com/655",
-            "https://mjs590721.tistory.com/17161916"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "계절·시기",
-          "text": "도림사 일대는 봄철 벚꽃이 화개 쌍계사보다 약 1주일 늦게 흐드러지게 피며, 산 내에는 단풍나무가 많지 않아 가을 단풍보다는 봄·여름 산행지로 더 적합하다.",
+          "topic": "편의시설",
+          "text": "배넘어재에는 쉬어갈 수 있는 정자가 있으며, 2023년 산행기와 2026년 6월 산행 기록에서 모두 확인된다.",
           "sentiment": "neutral",
-          "as_of": "2026-10",
+          "as_of": "2026-06",
           "sources": [
-            "https://www.khan.co.kr/article/201305121523192",
-            "https://www.gokseong.go.kr/tour/tourist/9tour/dongak_mountain",
-            "https://landyplay.com/%EB%8F%99%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8F%8C%ED%83%91-%EA%B9%83%EB%8C%80%EB%B4%89-%EB%8C%80%EC%9E%A5%EB%B4%89-%EB%8F%99%EC%95%85%EC%82%B0-%EB%8F%84%EB%A6%BC%EC%82%AC"
+            "https://jangcheon.tistory.com/36",
+            "https://jangcheon.tistory.com/36?category=1058500",
+            "https://lovemountains.tistory.com/entry/%EB%8F%99%EC%95%85%EC%82%B0%EA%B3%A1%EC%84%B1-%EB%8F%84%EB%A6%BC%EC%82%AC%EA%B3%84%EA%B3%A1-%EB%81%BC%EA%B3%A0-%ED%95%9C%EB%B0%94%ED%80%B4-%EB%8F%8C%EC%95%84%EB%B3%B4%EA%B8%B0"
           ],
           "verify": {
             "level": "single",
@@ -6030,48 +5824,32 @@
           "scope": "route",
           "route": "도림사 코스",
           "topic": "조망·볼거리",
-          "text": "도림사를 지나 오르는 계곡의 맑은 계류와 암반 풍경이 여러 산행 후기에서 볼거리로 언급된다.",
+          "text": "도림사로 이어지는 청류동계곡은 맑은 물과 계곡 경관이 여러 산행기에서 반복해서 호평된 구간이다.",
           "sentiment": "good",
           "as_of": "2025-08",
           "sources": [
+            "https://wg57.tistory.com/11829",
+            "https://jangcheon.tistory.com/36?category=1058500",
+            "https://ajw580701.tistory.com/1352"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "도림사 코스",
+          "topic": "조망·볼거리",
+          "text": "신선바위는 넓은 바위 위에서 주변 산줄기를 조망하며 쉬는 지점으로, 2025년과 2026년 산행기에서 공통으로 호평했다.",
+          "sentiment": "good",
+          "as_of": "2026-06",
+          "sources": [
+            "https://bibuius.tistory.com/4712658",
             "https://ajw580701.tistory.com/1352",
-            "https://seawolf507.tistory.com/16867447"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도림사-형제봉-배넘어재-동악산 원점회귀",
-          "topic": "편의시설",
-          "text": "배넘어재에 쉬어 갈 수 있는 정자가 있으며, 산행자가 이곳에서 휴식한 기록이 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-08",
-          "sources": [
-            "https://landyplay.com/%EB%8F%99%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8F%8C%ED%83%91-%EA%B9%83%EB%8C%80%EB%B4%89-%EB%8C%80%EC%9E%A5%EB%B4%89-%EB%8F%99%EC%95%85%EC%82%B0-%EB%8F%84%EB%A6%BC%EC%82%AC",
-            "https://ajw580701.tistory.com/1352"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도림사 코스",
-          "topic": "조망·볼거리",
-          "text": "동악산 정상(시루봉) 자체는 조망이 트이지 않지만, 정상 부근 갈림길에서 왕복 약 0.5km 거리인 신선바위나 정상 아래 데크 전망대에 서면 탁 트인 풍광을 감상할 수 있다.",
-          "sentiment": "good",
-          "as_of": "2022-07",
-          "sources": [
-            "https://security-song.tistory.com/217",
-            "https://landyplay.com/%EB%8F%99%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8F%8C%ED%83%91-%EA%B9%83%EB%8C%80%EB%B4%89-%EB%8C%80%EC%9E%A5%EB%B4%89-%EB%8F%99%EC%95%85%EC%82%B0-%EB%8F%84%EB%A6%BC%EC%82%AC"
+            "https://lovemountains.tistory.com/entry/%EB%8F%99%EC%95%85%EC%82%B0%EA%B3%A1%EC%84%B1-%EB%8F%84%EB%A6%BC%EC%82%AC%EA%B3%84%EA%B3%A1-%EB%81%BC%EA%B3%A0-%ED%95%9C%EB%B0%94%ED%80%B4-%EB%8F%8C%EC%95%84%EB%B3%B4%EA%B8%B0"
           ],
           "verify": {
             "level": "single",
@@ -6084,12 +5862,12 @@
           "scope": "route",
           "route": "도림사-형제봉-배넘어재-동악산 원점회귀",
           "topic": "난이도",
-          "text": "도림사 주차장에서 깃대봉·형제봉(성출봉)·대장봉·배넘어재·동악산 정상을 거쳐 도림사로 돌아오는 약 10.8~11.5km 환종주 코스는 약 4시간 30분이 소요되며, 초반 깃대봉·형제봉 오르막과 배넘어재 이후 정상 오르막 구간이 가파르다.",
+          "text": "2023년 2월 산행기에서는 도림사 국민관광지주차장에서 깃대봉을 거쳐 형제봉으로 오르는 2.7km에 쉬지 않고 약 1시간 30분이 걸렸으며, 전체 산행 중 가장 힘든 구간으로 평가했다.",
           "sentiment": "neutral",
-          "as_of": "2024-10",
+          "as_of": "2023-02",
           "sources": [
-            "https://landyplay.com/%EB%8F%99%EC%95%85%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EB%8F%8C%ED%83%91-%EA%B9%83%EB%8C%80%EB%B4%89-%EB%8C%80%EC%9E%A5%EB%B4%89-%EB%8F%99%EC%95%85%EC%82%B0-%EB%8F%84%EB%A6%BC%EC%82%AC",
-            "https://smileolleh.tistory.com/204"
+            "https://jangcheon.tistory.com/36",
+            "https://jangcheon.tistory.com/36?category=1058500"
           ],
           "verify": {
             "level": "single",
@@ -6101,29 +5879,12 @@
         {
           "scope": "route",
           "route": "도림사 코스",
-          "topic": "난이도",
-          "text": "배넘어재·동악산 갈림길에서 월봉리 방면 능선에 오르는 구간은 데크계단이 많이 이어져, 짧은 거리보다 힘들게 느껴졌다는 후기가 있다.",
+          "topic": "계절·시기",
+          "text": "2026년 6월 27일 산행 기록에서 배넘어재 아래로 도림사계곡 방향 하산길을 따라 수국 화원이 펼쳐진 모습이 확인된다.",
           "sentiment": "neutral",
-          "as_of": "2025-08",
+          "as_of": "2026-06",
           "sources": [
-            "https://ajw580701.tistory.com/1352"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "도림사 코스",
-          "topic": "편의시설",
-          "text": "도림사에서 주차장으로 내려가는 길에 화장실이 있으며, 산행자가 하산 후 이용한 기록이 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-08",
-          "sources": [
-            "https://ajw580701.tistory.com/1352"
+            "https://lovemountains.tistory.com/entry/%EB%8F%99%EC%95%85%EC%82%B0%EA%B3%A1%EC%84%B1-%EB%8F%84%EB%A6%BC%EC%82%AC%EA%B3%84%EA%B3%A1-%EB%81%BC%EA%B3%A0-%ED%95%9C%EB%B0%94%ED%80%B4-%EB%8F%8C%EC%95%84%EB%B3%B4%EA%B8%B0"
           ],
           "verify": {
             "level": "single",
@@ -6137,75 +5898,20 @@
     {
       "id": "doraksan",
       "name": "도락산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "상선암-채운봉-도락산-제봉 원점회귀",
-          "topic": "난이도",
-          "text": "상선암에서 제봉·신선봉·정상·채운봉을 돌아오는 원점회귀 코스는 총거리가 6.8~7.6km(약 4~5시간 30분 소요)로 아주 길지는 않으나, 가파른 철계단과 바위 암릉의 오르내림이 끊임없이 반복되어 체력 소모가 상당하다.",
-          "sentiment": "caution",
-          "as_of": "2025-05",
-          "sources": [
-            "https://ssvg.tistory.com/277",
-            "https://gilgeodnam.tistory.com/entry/%EB%8F%84%EB%9D%BD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B9%A8%EB%8B%AC%EC%9D%8C%EC%9D%84-%EC%96%BB%EA%B3%A0-%EC%8A%A4%EC%8A%A4%EB%A1%9C-%EC%A6%90%EA%B8%B8%EB%A7%8C%ED%95%9C-%EC%82%B0-56%EC%9B%94-%EC%B6%94%EC%B2%9C%EC%82%B0",
-            "https://sanvital.tistory.com/765"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "내궁기마을-신선봉삼거리-도락산",
           "topic": "위험구간",
-          "text": "내궁기마을 코스는 초입 숲길을 지나면 좁고 가파른 암릉과 안전봉·로프를 잡고 오르는 구간, 급경사 철계단이 연속되어 스틱보다는 미끄럼 방지 장갑이 필수적이다.",
+          "text": "내궁기 코스에는 안전봉을 잡고 오르는 암릉과 급경사 철계단이 이어진다. 실제 후기는 최단 코스여도 가파르고 험해 쉽지 않다고 평가했다.",
           "sentiment": "caution",
-          "as_of": "2022-08",
+          "as_of": "2026-04",
           "sources": [
             "https://maxcamp.tistory.com/280",
-            "https://security-song.tistory.com/248",
-            "https://sanvital.tistory.com/765"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "등산로 중에는 식수를 구할 수 있는 곳이 없으므로 출발 전 충분한 물을 미리 챙겨야 한다.",
-          "sentiment": "caution",
-          "as_of": "2025-05",
-          "sources": [
-            "https://outdoorradar.kr/mt-doraksan",
-            "https://gilgeodnam.tistory.com/entry/%EB%8F%84%EB%9D%BD%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4-%EA%B9%A8%EB%8B%AC%EC%9D%8C%EC%9D%84-%EC%96%BB%EA%B3%A0-%EC%8A%A4%EC%8A%A4%EB%A1%9C-%EC%A6%90%EA%B8%B8%EB%A7%8C%ED%95%9C-%EC%82%B0-56%EC%9B%94-%EC%B6%94%EC%B2%9C%EC%82%B0"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상선암-채운봉-도락산-제봉 원점회귀",
-          "topic": "위험구간",
-          "text": "채운봉 구간에는 경사가 심한 철계단이 이어져, 안전 난간을 잡고 천천히 통과해야 한다는 현장 후기가 있다.",
-          "sentiment": "caution",
-          "as_of": "2024-05",
-          "sources": [
-            "https://sanvital.tistory.com/765"
+            "https://sanvital.tistory.com/765?category=948231"
           ],
           "verify": {
             "level": "single",
@@ -6218,7 +5924,7 @@
           "scope": "route",
           "route": "내궁기마을-신선봉삼거리-도락산",
           "topic": "주차·교통",
-          "text": "내궁기 접근로는 시골 외길을 약 10분 올라가는 형태로, 마주 오는 차량과 교행할 때 주의해야 한다는 후기가 있다.",
+          "text": "내궁기 들머리 접근 과정에서 약 10분간 좁은 외길을 올라가며, 맞은편 차량과 교행할 때 주의해야 한다는 후기가 있다.",
           "sentiment": "caution",
           "as_of": "2026-04",
           "sources": [
@@ -6233,13 +5939,15 @@
         },
         {
           "scope": "route",
-          "route": "내궁기마을-신선봉삼거리-도락산",
-          "topic": "위험구간",
-          "text": "내궁기 코스에는 사다리에 가깝다고 표현된 급경사 철계단이 있으며, 정상부 능선에 오르기 전에도 절벽 위 계단을 통과한다.",
-          "sentiment": "caution",
-          "as_of": "2026-04",
+          "route": "상선암-신선봉-도락산 왕복",
+          "topic": "조망·볼거리",
+          "text": "신선봉의 넓은 바위 지대와 주변 능선 조망은 두 산행기에서 공통으로 호평한 지점이다.",
+          "sentiment": "good",
+          "as_of": "2024-05",
           "sources": [
-            "https://maxcamp.tistory.com/280"
+            "https://sanvital.tistory.com/765",
+            "https://sanvital.tistory.com/765?category=948231",
+            "https://ssvg.tistory.com/m/277"
           ],
           "verify": {
             "level": "single",
@@ -6252,64 +5960,13 @@
           "scope": "mountain",
           "route": null,
           "topic": "조망·볼거리",
-          "text": "도락산 정상석 주변은 시야가 가려 조망이 없다는 기록이 2024년 5월과 2026년 4월 후기에서 공통으로 확인된다.",
-          "sentiment": "neutral",
-          "as_of": "2026-04",
-          "sources": [
-            "https://sanvital.tistory.com/765",
-            "https://maxcamp.tistory.com/280"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "주차·교통",
-          "text": "상선암 주차장(월악산국립공원 단양탐방지원센터)은 약 100여 대를 수용할 수 있고 깨끗한 남녀 화장실을 갖추고 있으며, 주차 요금은 소형차 기준 평일 4,000원, 주말 5,000원으로 하이패스 및 신용카드 결제가 가능하다.",
+          "text": "도락산 정상석 주변은 나무에 둘러싸여 조망이 제한된다는 내용이 2024년 5월의 두 산행기에서 일치한다.",
           "sentiment": "neutral",
           "as_of": "2024-05",
           "sources": [
             "https://ssvg.tistory.com/277",
-            "https://sanvital.tistory.com/765"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상선암-채운봉-도락산-제봉 원점회귀",
-          "topic": "주차·교통",
-          "text": "2024년 5월 후기에서는 상선암탐방지원센터 주차장을 대형버스·소형차 등을 합쳐 약 100대 주차 가능한 규모로 소개한다.",
-          "sentiment": "neutral",
-          "as_of": "2024-05",
-          "sources": [
-            "https://sanvital.tistory.com/765"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "상선암-채운봉-도락산-제봉 원점회귀",
-          "topic": "편의시설",
-          "text": "상선암탐방지원센터 주차장에 남녀가 구분된 화장실이 있다는 현장 후기가 있다.",
-          "sentiment": "neutral",
-          "as_of": "2024-05",
-          "sources": [
-            "https://sanvital.tistory.com/765"
+            "https://sanvital.tistory.com/765?category=948231",
+            "https://ssvg.tistory.com/m/277"
           ],
           "verify": {
             "level": "single",
@@ -6322,11 +5979,30 @@
           "scope": "route",
           "route": "상선암-채운봉-도락산-제봉 원점회귀",
           "topic": "난이도",
-          "text": "제봉·채운봉을 잇는 원점회귀는 약 6.5km로 소개되지만, 여러 봉우리의 오르내림과 가파른 철계단·바위길이 반복되어 체력적으로 힘들었다는 후기가 있다.",
+          "text": "2024년 5월 후기는 약 6.5km 원점회귀에 약 5시간이 걸렸으며, 여러 봉우리를 오르내리는 반복 구간 때문에 거리보다 체력 부담이 컸다고 평가했다.",
           "sentiment": "neutral",
           "as_of": "2024-05",
           "sources": [
-            "https://sanvital.tistory.com/765"
+            "https://sanvital.tistory.com/765",
+            "https://sanvital.tistory.com/765?category=948231"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "상선암-채운봉-도락산-제봉 원점회귀",
+          "topic": "주차·교통",
+          "text": "2024년 5월 후기는 상선암탐방지원센터 주차장을 대형버스·소형차 등을 합해 약 100여 대 주차할 수 있는 규모로 소개했다.",
+          "sentiment": "neutral",
+          "as_of": "2024-05",
+          "sources": [
+            "https://sanvital.tistory.com/765",
+            "https://sanvital.tistory.com/765?category=948231"
           ],
           "verify": {
             "level": "single",
@@ -6339,7 +6015,24 @@
           "scope": "route",
           "route": "내궁기마을-신선봉삼거리-도락산",
           "topic": "주차·교통",
-          "text": "2026년 4월 후기에서는 내궁기 들머리의 주차 가능 규모를 대략 5~7대로 기록했다.",
+          "text": "2026년 4월 게시된 후기는 내궁기 들머리 주차공간을 약 5~7대 규모로 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-04",
+          "sources": [
+            "https://maxcamp.tistory.com/280"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "내궁기마을-신선봉삼거리-도락산",
+          "topic": "편의시설",
+          "text": "2026년 4월 게시된 후기에서 내궁기 주차공간 아래쪽에 재래식 화장실이 있는 것으로 확인된다.",
           "sentiment": "neutral",
           "as_of": "2026-04",
           "sources": [
@@ -6357,57 +6050,19 @@
     {
       "id": "duryunsan",
       "name": "두륜산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
           "scope": "route",
-          "route": "케이블카-고계봉 전망 코스",
-          "topic": "통제·예약",
-          "text": "두륜산 케이블카가 도착하는 고계봉은 도립공원 보호를 위한 등산로 폐쇄로 가련봉 등 다른 봉우리로 이어지는 등산로가 없어 왕복 탑승권만 현장 발매한다. 임산부 및 등산용 배낭, 피켈(등산용 지팡이), 음식물, 주류, 반려동물을 소지한 경우 탑승이 제한되며 초속 15m 이상 강풍 시 운행이 중단된다.",
-          "sentiment": "caution",
-          "as_of": "2026-05",
-          "sources": [
-            "https://carprism.tmhub.co.kr/articles/haenam-duryunsan-daeheungsa-cablecar-autumn-guide-2026.html",
-            "http://www.haenamcablecar.com/bbs/board.php?bo_table=sub",
-            "http://www.haenamcablecar.com/",
-            "https://koreahike.com/%EB%91%90%EB%A5%9C%EC%82%B0-%EC%82%B0%ED%96%89%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
           "route": "오소재-오심재-노승봉-가련봉",
           "topic": "위험구간",
-          "text": "노승봉 직전부터 암릉이 나타나며, 노승봉에서 가련봉까지는 계단과 암릉이 반복된다. 2025년 9월 후기에서도 특히 가련봉 주변 능선에서 주의가 필요하다고 언급했다.",
+          "text": "노승봉 기슭 헬기장부터 본격적인 암릉과 급경사 계단이 이어지며, 2025년 9월 산행기는 특히 가련봉 주변 능선에서 주의가 필요하다고 기록했다.",
           "sentiment": "caution",
           "as_of": "2025-09",
           "sources": [
-            "https://busormorme.tistory.com/616",
-            "https://security-song.tistory.com/223"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "케이블카-고계봉 전망 코스",
-          "topic": "통제·예약",
-          "text": "2025년 10월 현장 기사는 고계봉 일대를 입산금지 구역으로 소개하며, 케이블카로 접근해 데크길 안에서만 이동해야 한다고 안내했다.",
-          "sentiment": "caution",
-          "as_of": "2025-10",
-          "sources": [
-            "https://v.daum.net/v/7KUo2KWII8"
+            "https://busormorme.tistory.com/616"
           ],
           "verify": {
             "level": "single",
@@ -6420,47 +6075,11 @@
           "scope": "route",
           "route": "대흥사-노승봉-가련봉-두륜봉 순환코스",
           "topic": "위험구간",
-          "text": "2025년 9월 후기는 두륜봉에서 진불암 근처까지 내려가는 길이 급경사의 거친 바윗길이며, 비가 내린 뒤에는 시간을 들여 조심스럽게 내려와야 했다고 기록했다.",
+          "text": "두륜봉에서 진불암 근처로 내려가는 길은 경사가 급하고 바위가 많은 구간이다. 2025년 9월 산행기는 비가 내린 뒤 이 구간을 천천히 내려왔다고 기록했다.",
           "sentiment": "caution",
           "as_of": "2025-09",
           "sources": [
             "https://busormorme.tistory.com/616"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "오소재-오심재-노승봉-가련봉",
-          "topic": "위험구간",
-          "text": "오소재 고개에서 출발할 때 오소재약수터 들머리는 오심재로 바로 연결되지만, 오소재쉼터 들머리는 오심재와 노승봉 사이(노승봉 약 100m 아래)로 합류해 초입 등산로 2곳을 혼동하기 쉬우므로 주의가 필요하다.",
-          "sentiment": "caution",
-          "as_of": "2022-04",
-          "sources": [
-            "https://riogrande.tistory.com/358774"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "오소재-오심재-노승봉-가련봉",
-          "topic": "난이도",
-          "text": "오소재약수터에서 오심재까지 1.6km 구간은 고도차 약 200m(평균 경사 7도 안팎)의 완만한 흙길과 자갈 숲길이어서 약 30분이면 큰 체력 소모 없이 오를 수 있다. 반면 오심재에서 노승봉까지는 800m 거리에 고도차 340m(평균 경사 약 23도)를 극복해야 하는 급경사 오르막이 이어져 체감 난이도가 급격히 높아진다.",
-          "sentiment": "neutral",
-          "as_of": "2022-09",
-          "sources": [
-            "https://www.kric.go.kr/jsp/board/portal/sub05/res/themeEssayDetail.jsp?board_cd=M020204&board_seq=3653&pageNo=1&q_naGubun=&q_naGubunALL=all&q_name=all&q_orderby=&q_value=",
-            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=1ec7d858-1f79-429a-aa0e-5e2fc28d5112",
-            "https://smileolleh.tistory.com/124"
           ],
           "verify": {
             "level": "single",
@@ -6472,87 +6091,12 @@
         {
           "scope": "route",
           "route": "케이블카-고계봉 전망 코스",
-          "topic": "주차·교통",
-          "text": "두륜산 케이블카는 1.6km 선로를 편도 8분 동안 이동하며 평상시 10~20분 간격(정원 50명)으로 운행한다. 하부역사 도착 전 우측에 무료 주차장이 마련되어 있으며 주차 후 언덕길로 도보 2~3분 이동하면 탑승장에 닿는다.",
-          "sentiment": "neutral",
-          "as_of": "2026-05",
+          "topic": "통제·예약",
+          "text": "한국관광공사 안내에는 두륜산케이블카가 악천후에 운행하지 않는다고 명시되어 있다.",
+          "sentiment": "caution",
+          "as_of": null,
           "sources": [
-            "https://carprism.tmhub.co.kr/articles/haenam-duryunsan-daeheungsa-cablecar-autumn-guide-2026.html",
-            "http://www.haenamcablecar.com/bbs/board.php?bo_table=sub",
-            "https://koreahike.com/%EB%91%90%EB%A5%9C%EC%82%B0-%EC%82%B0%ED%96%89%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "노승봉과 가련봉 정상에 서면 서해안과 남해안의 다도해가 막힘없이 조망되고 맑은 날에는 제주도 한라산까지 볼 수 있으며, 두륜봉 바로 아래의 아치형 바위인 구름다리와 가을철 만일재 억새밭이 대표적인 볼거리로 꼽힌다.",
-          "sentiment": "good",
-          "as_of": "2026-05",
-          "sources": [
-            "https://www.news1.kr/life-culture/travel-leisure/4875101",
-            "https://smileolleh.tistory.com/124",
-            "https://koreahike.com/%EB%91%90%EB%A5%9C%EC%82%B0-%EC%82%B0%ED%96%89%EC%BD%94%EC%8A%A4"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "오소재-오심재-노승봉-가련봉",
-          "topic": "조망·볼거리",
-          "text": "노승봉으로 오르는 길의 흔들바위 전망대는 여러 산행기에서 조망이 좋은 지점으로 언급된다. 월간산 기사는 이곳에서 대흥사와 다도해를 함께 내려다볼 수 있다고 소개했다.",
-          "sentiment": "good",
-          "as_of": "2025-09",
-          "sources": [
-            "https://v.daum.net/v/20250723152042920",
-            "https://busormorme.tistory.com/616"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "주차·교통",
-          "text": "대흥사에서 두륜산 공원입구(상가) 주차장까지 약 2.7km 구간은 대형 버스 진입이 통제되어 도보로 이동해야 하며, 대중교통으로 오소재 들머리에 갈 때는 해남종합버스터미널 정류장에서 723·725·728·732번 농어촌버스를 타고 오심재 정류장에서 내려 약 300m를 걸어가면 된다.",
-          "sentiment": "neutral",
-          "as_of": "2022-04",
-          "sources": [
-            "https://riogrande.tistory.com/358774",
-            "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=1ec7d858-1f79-429a-aa0e-5e2fc28d5112"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "산행 중 식수를 보충할 수 있는 샘터는 오소재약수터와 하산 경로의 진불암, 대흥사 경내(표충사 입구 장군샘 등)에 있다.",
-          "sentiment": "neutral",
-          "as_of": "2022-04",
-          "sources": [
-            "https://riogrande.tistory.com/358774",
-            "https://lblok2001.tistory.com/5475320"
+            "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=80811"
           ],
           "verify": {
             "level": "single",
@@ -6565,10 +6109,29 @@
           "scope": "route",
           "route": "오소재-오심재-노승봉-가련봉",
           "topic": "난이도",
-          "text": "2025년 9월 산행기는 오소재에서 오심재까지는 비교적 걸을 만하지만, 오심재에서 흔들바위로 올라가면서 경사가 급해지고 돌길이 많아진다고 기록했다.",
+          "text": "오소재에서 오심재까지 약 1.6km는 완만하지만, 오심재에서 노승봉으로 오르는 구간부터 경사가 급해진다는 산행 후기가 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-09",
+          "as_of": "2026-09",
           "sources": [
+            "https://www.ramblr.com/web/mymap/trip/1126758/9456301",
+            "https://maxcamp.tistory.com/354"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "오소재-오심재-노승봉-가련봉",
+          "topic": "조망·볼거리",
+          "text": "노승봉 정상부와 가련봉 주변 암릉의 조망은 서로 다른 산행기에서 좋게 평가된다. 노승봉에서는 오심재 방향과 숲 속 대흥사를 내려다본 기록이 있다.",
+          "sentiment": "good",
+          "as_of": "2026-09",
+          "sources": [
+            "https://maxcamp.tistory.com/354",
             "https://busormorme.tistory.com/616"
           ],
           "verify": {
@@ -6582,11 +6145,11 @@
           "scope": "route",
           "route": "오소재-오심재-노승봉-가련봉",
           "topic": "주차·교통",
-          "text": "2022년 7월 산행 후기는 오소재쉼터 주차장을 무료로 이용했다고 안내했다.",
+          "text": "2026년 9월 12일 산행기에서 오소재쉼터 주차장은 무료로 이용한 것으로 기록되어 있다.",
           "sentiment": "neutral",
-          "as_of": "2022-07",
+          "as_of": "2026-09",
           "sources": [
-            "https://security-song.tistory.com/223"
+            "https://maxcamp.tistory.com/354"
           ],
           "verify": {
             "level": "single",
@@ -6599,11 +6162,28 @@
           "scope": "route",
           "route": "오소재-오심재-노승봉-가련봉",
           "topic": "편의시설",
-          "text": "2022년 7월 오소재쉼터 출발 후기는 들머리에 화장실이 있다고 기록했다.",
+          "text": "오소재 약수터에서 약 50m 안쪽에 화장실이 있으며, 해당 산행기는 출발 전 이 화장실을 이용했다고 기록했다.",
           "sentiment": "neutral",
-          "as_of": "2022-07",
+          "as_of": "2026-09",
           "sources": [
-            "https://security-song.tistory.com/223"
+            "https://maxcamp.tistory.com/354"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "케이블카-고계봉 전망 코스",
+          "topic": "계절·시기",
+          "text": "2025년 2월 6일 보도에서 고계봉 일대 상고대가 확인됐다. 기사에서는 기온이 오르는 낮에 상고대가 녹으므로 오전 방문이 유리하다고 안내했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-02",
+          "sources": [
+            "https://www.newsis.com/view/NISX20250206_0003055758"
           ],
           "verify": {
             "level": "single",
@@ -6617,184 +6197,21 @@
     {
       "id": "dutasan",
       "name": "두타산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "2024년 3월 2일에는 댓재에서 출발한 등산객이 정상 부근 하산 중 폭설로 등산로를 찾지 못해 헬기로 구조된 사례가 보도됐다.",
-          "sentiment": "caution",
-          "as_of": "2024-03",
-          "sources": [
-            "https://www.fnnews.com/news/202403021851276623",
-            "https://www.ajunews.com/view/20240302175335236"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "무릉계곡관리사무소-두타산성-두타산",
-          "topic": "위험구간",
-          "text": "2025년 12월 10일 산행기는 두타산 정상에서 천은사 갈림길로 내려가는 약 1.1km 구간이 급경사 바윗길이며, 눈이 쌓여 밧줄을 잡고도 내려가기 어려웠다고 기록했다.",
-          "sentiment": "caution",
-          "as_of": "2025-12",
-          "sources": [
-            "https://landyplay.com/%EB%91%90%ED%83%80%EC%82%B0-%EC%A2%85%EC%A3%BC%EC%BD%94%EC%8A%A4-%EB%8C%93%EC%9E%AC%EC%97%90%EC%84%9C-%EB%AC%B4%EB%A6%89%EA%B3%84%EA%B3%A1%EA%B9%8C%EC%A7%80-%EC%82%B0%ED%96%89%EA%B1%B0%EB%A6%AC"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "댓재-통골재-두타산",
-          "topic": "난이도",
-          "text": "해발 810m의 댓재에서 출발해 햇댓등과 통골재(통골목이, 958m)를 거쳐 두타산 정상까지 오르는 약 6.1km 구간은 무릉계곡 출발 코스에 비해 누적 고도차가 낮고 완만한 육산 숲길로 이어져 비교적 수월하게 산행할 수 있다.",
-          "sentiment": "neutral",
-          "as_of": "2025-07",
-          "sources": [
-            "https://duga.tistory.com/2604",
-            "https://lyj1749.tistory.com/731",
-            "https://security-song.tistory.com/147",
-            "https://dk-choi.tistory.com/7079962"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "주차·교통",
-          "text": "무릉계곡 입구에는 제1~3주차장 등 대형 주차장이 마련되어 있으며 1일 주차 요금은 소형 2,000원(대형 5,000원), 무릉계곡 입장료는 성인 4,000원(청소년·65세 이상 1,500원, 어린이 700원)이다. 대중교통은 동해시내에서 동해종합버스터미널과 KTX 동해역 입구를 경유하는 111번 버스가 무릉계곡까지 40분 간격으로 운행한다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
-          "sources": [
-            "https://www.ktriptips.com/kor/tourspot/125673",
-            "http://san.chosun.com/news/articleView.html?idxno=24051",
-            "https://wonhaeng.tistory.com/355207",
-            "https://security-song.tistory.com/147"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
           "scope": "route",
           "route": "무릉계곡-두타산 코스",
           "topic": "조망·볼거리",
-          "text": "2021년 전 구간 개방된 해발 550m의 베틀바위 전망대와 해발 470m 절벽에 잔도 데크길로 조성된 두타산 협곡 마천루는 뾰족한 기암괴석과 용추폭포·쌍폭포가 어우러져 '한국의 장가계'라 불릴 만큼 수려한 경관을 자랑한다.",
+          "text": "무릉계곡의 쌍폭포·용추폭포는 산행 후기에서 핵심 볼거리로 꼽힌다. 동해시시설관리공단도 관리사무소에서 옥류동과 선녀탕을 거쳐 두 폭포를 찾는 관광코스를 안내한다.",
           "sentiment": "good",
-          "as_of": "2024-10",
+          "as_of": null,
           "sources": [
-            "https://taxmba2864.tistory.com/1124",
-            "https://126sd.tistory.com/865",
-            "https://wonhaeng.tistory.com/355207"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "편의시설",
-          "text": "무릉계곡 주차장과 매표소 초입에는 화장실과 편의점(CU), 식당가가 잘 갖춰져 있으나 산행로 중간과 정상에는 화장실이 없으며, 수도골 석간수는 수질 부적합으로 음용할 수 없어 식수를 미리 넉넉히 챙겨야 한다.",
-          "sentiment": "neutral",
-          "as_of": "2024-10",
-          "sources": [
-            "https://wonhaeng.tistory.com/355207",
-            "http://san.chosun.com/news/articleView.html?idxno=24051",
-            "https://security-song.tistory.com/147"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "댓재-통골재-두타산",
-          "topic": "난이도",
-          "text": "통골재 이후 안전로프가 설치된 오르막 약 700m가 가장 힘든 구간으로 반복 언급된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-12",
-          "sources": [
-            "https://landyplay.com/%EB%91%90%ED%83%80%EC%82%B0-%EC%A2%85%EC%A3%BC%EC%BD%94%EC%8A%A4-%EB%8C%93%EC%9E%AC%EC%97%90%EC%84%9C-%EB%AC%B4%EB%A6%89%EA%B3%84%EA%B3%A1%EA%B9%8C%EC%A7%80-%EC%82%B0%ED%96%89%EA%B1%B0%EB%A6%AC",
-            "https://maxcamp.tistory.com/191"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "댓재-통골재-두타산",
-          "topic": "난이도",
-          "text": "2025년 10월 후기는 댓재와 정상의 고도 차만 보면 약 500m지만, 중간 봉우리를 반복해서 넘기 때문에 왕복 12km 산행의 누적 상승고도가 1,016m였다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-10",
-          "sources": [
-            "https://maxcamp.tistory.com/191"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "댓재-통골재-두타산",
-          "topic": "주차·교통",
-          "text": "2025년 10월 산행 후기는 댓재공원 주차장을 무료로 이용했다고 안내했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-10",
-          "sources": [
-            "https://maxcamp.tistory.com/191"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "댓재-통골재-두타산",
-          "topic": "편의시설",
-          "text": "2025년 10월 후기는 댓재 등산로 우측 진입로에 간이화장실이 있다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-10",
-          "sources": [
-            "https://maxcamp.tistory.com/191"
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701823163",
+            "https://dajulkkoyam.tistory.com/323?category=772610",
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701855774"
           ],
           "verify": {
             "level": "single",
@@ -6807,11 +6224,98 @@
           "scope": "route",
           "route": "무릉계곡-두타산 코스",
           "topic": "주차·교통",
-          "text": "2025년 12월 산행기는 무릉계곡 주차장 버스정류장에서 111번 버스가 40분 간격으로 운행한다고 안내했다.",
+          "text": "동해시시설관리공단 시설현황에는 무릉계곡 주차장이 4개소, 총 648대 규모로 안내되어 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-12",
+          "as_of": null,
           "sources": [
-            "https://landyplay.com/%EB%91%90%ED%83%80%EC%82%B0-%EC%A2%85%EC%A3%BC%EC%BD%94%EC%8A%A4-%EB%8C%93%EC%9E%AC%EC%97%90%EC%84%9C-%EB%AC%B4%EB%A6%89%EA%B3%84%EA%B3%A1%EA%B9%8C%EC%A7%80-%EC%82%B0%ED%96%89%EA%B1%B0%EB%A6%AC"
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701823163",
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701855774"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "무릉계곡-두타산 코스",
+          "topic": "편의시설",
+          "text": "동해시시설관리공단은 무릉계곡 공중화장실을 총 6개소로 안내하며, 수세식 5개소와 간이화장실 1개소로 구분한다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701823163",
+            "https://www.dhsisul.org/pages/sub.htm?mv_data=aWR4PTI3JnR5cGU9dG91cg%3D%3D%7C%7C&nav_code=new1701855774"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "댓재-통골재-두타산",
+          "topic": "난이도",
+          "text": "댓재는 출발 고도가 약 810m지만 능선의 오르내림이 반복되어 체감 부담이 크다는 후기가 있다. 같은 길로 돌아오는 하산에서도 여러 차례 오르막을 다시 만났다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://hike88.tistory.com/30"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "댓재-통골재-두타산",
+          "topic": "난이도",
+          "text": "통골재 이후 약 700m의 급경사가 실제 산행에서 가장 힘든 구간으로 지목됐다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://hike88.tistory.com/30"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "댓재-통골재-두타산",
+          "topic": "혼잡",
+          "text": "2026년 7월 게시된 산행기에는 새벽 5시부터 댓재에 백두대간 종주팀 관광버스들이 도착했다고 기록되어 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://hike88.tistory.com/30"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "댓재-통골재-두타산",
+          "topic": "주차·교통",
+          "text": "2026년 7월 게시된 산행기는 댓재주차장을 무료로 안내했다.",
+          "sentiment": "neutral",
+          "as_of": "2026-07",
+          "sources": [
+            "https://hike88.tistory.com/30"
           ],
           "verify": {
             "level": "single",
@@ -6825,38 +6329,19 @@
     {
       "id": "eungbongsan",
       "name": "응봉산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
         {
-          "scope": "mountain",
-          "route": null,
-          "topic": "위험구간",
-          "text": "정상석 뒤편에서 삼척시 가곡면 방향의 덕풍계곡(용소골)으로 이어지는 코스는 협곡이 많고 산길이 매우 험하며, 비가 내리면 계곡물이 금방 차올라 위험하므로 계곡 산행 장비와 각별한 주의가 필요하다.",
-          "sentiment": "caution",
-          "as_of": "2016-08",
-          "sources": [
-            "https://bh-mt.tistory.com/2517?category=1309236",
-            "https://kdk4876.tistory.com/18171771",
-            "https://dychoi9692.tistory.com/230"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
           "scope": "route",
           "route": "덕구계곡·원탕 코스",
           "topic": "위험구간",
-          "text": "정상과 원탕 사이에는 급경사와 높은 계단이 이어지는 구간이 있다. 2025년 1월 후기는 이 구간을 내려갈 때 팔다리에 부담이 클 정도였다고 기록했다.",
+          "text": "정상에서 원탕 방향으로 하산할 때 18번 지점 이후 급한 내리막이 나타난다. 2026년 3월 산행기는 이 구간의 마사토 흙길에서 미끄러짐을 주의하라고 기록했다.",
           "sentiment": "caution",
-          "as_of": "2025-01",
+          "as_of": "2026-03",
           "sources": [
-            "https://jucadrive.tistory.com/entry/%EB%93%B1%EC%82%B0-%EC%83%88%ED%95%B4-%EC%B2%AB-%EB%93%B1%EC%82%B0-%EA%B2%BD%EB%B6%81-%EC%9A%B8%EC%A7%84-%EC%9D%91%EB%B4%89%EC%82%B0-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4-%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC-100%EB%8C%80-%EB%AA%85%EC%82%B0"
+            "https://maxcamp.tistory.com/278"
           ],
           "verify": {
             "level": "single",
@@ -6867,33 +6352,13 @@
         },
         {
           "scope": "route",
-          "route": "덕구온천·옛재능선-응봉산 정상",
+          "route": "능선 코스",
           "topic": "계절·시기",
-          "text": "2025년 7월 6일 산행기는 옛재능선에서 바람 없는 무더위로 일행이 크게 지쳤으며, 당시 울진군 북면 기온이 36도였다고 기록했다.",
+          "text": "2026년 3월 22일 산행에서는 14번 지점부터 정상까지 눈과 얼음이 많이 남아 있어 아이젠을 착용했다.",
           "sentiment": "caution",
-          "as_of": "2025-07",
+          "as_of": "2026-03",
           "sources": [
-            "https://sane8253.tistory.com/2156"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "mountain",
-          "route": null,
-          "topic": "조망·볼거리",
-          "text": "응봉산 정상에서 바라보는 동해 조망은 신문 기사와 산행 후기에서 반복해서 좋은 풍경으로 언급된다.",
-          "sentiment": "good",
-          "as_of": "2025-07",
-          "sources": [
-            "https://v.daum.net/v/BnIrdsA8HE",
-            "https://v.daum.net/v/20250304000518516",
-            "https://sane8253.tistory.com/2156",
-            "https://jucadrive.tistory.com/entry/%EB%93%B1%EC%82%B0-%EC%83%88%ED%95%B4-%EC%B2%AB-%EB%93%B1%EC%82%B0-%EA%B2%BD%EB%B6%81-%EC%9A%B8%EC%A7%84-%EC%9D%91%EB%B4%89%EC%82%B0-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4-%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC-100%EB%8C%80-%EB%AA%85%EC%82%B0"
+            "https://maxcamp.tistory.com/278"
           ],
           "verify": {
             "level": "single",
@@ -6904,71 +6369,14 @@
         },
         {
           "scope": "route",
-          "route": "덕구계곡·원탕 코스",
-          "topic": "편의시설",
-          "text": "등산안내소에서 4km 지점인 덕구계곡 원탕에는 42.4℃의 자연용출 온천수가 치솟는 용출구 옆에 무료 야외 족욕장(발마사지용 탕)과 쉼터가 마련되어 있어, 산행 중 등산화를 벗고 따뜻한 온천수에 발을 담그며 피로를 풀 수 있다.",
-          "sentiment": "good",
-          "as_of": "2016-05",
-          "sources": [
-            "https://sungonkim.tistory.com/18001660",
-            "http://san.chosun.com/news/articleView.html?idxno=6710",
-            "https://dychoi9692.tistory.com/230",
-            "https://www.dukgu.com/dg/hotnspa/spa_info"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "덕구계곡·원탕 코스",
-          "topic": "조망·볼거리",
-          "text": "덕구계곡 등산로를 따라 금문교, 서강대교, 노르망디교, 하버교, 트리니티교, 도모에가와교, 백운교·청운교, 취향교, 포스교 등 세계 유명 교량을 본뜬 13개의 미니어처 다리가 계곡을 가로지르며, 코스를 따라 선녀탕과 용소폭포의 암반 계곡 절경을 감상할 수 있다.",
-          "sentiment": "good",
-          "as_of": "2023-07",
-          "sources": [
-            "https://giwb.kr/reserve/list/1937",
-            "http://san.chosun.com/news/articleView.html?idxno=6710",
-            "https://dychoi9692.tistory.com/230",
-            "https://smileolleh.tistory.com/438"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "덕구계곡·원탕 코스",
-          "topic": "편의시설",
-          "text": "원탕에는 온천수로 발을 담글 수 있는 족탕 시설이 있으며, 2025년 1월과 7월 산행 후기에서 모두 확인된다.",
-          "sentiment": "neutral",
-          "as_of": "2025-07",
-          "sources": [
-            "https://sane8253.tistory.com/2156",
-            "https://jucadrive.tistory.com/entry/%EB%93%B1%EC%82%B0-%EC%83%88%ED%95%B4-%EC%B2%AB-%EB%93%B1%EC%82%B0-%EA%B2%BD%EB%B6%81-%EC%9A%B8%EC%A7%84-%EC%9D%91%EB%B4%89%EC%82%B0-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4-%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC-100%EB%8C%80-%EB%AA%85%EC%82%B0"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "덕구온천·옛재능선-응봉산 정상",
+          "route": "능선 코스",
           "topic": "난이도",
-          "text": "2025년 1월 후기는 모랫재까지는 완만하지만 제1헬기장에서 제2헬기장으로 올라가는 구간부터 경사가 급해지고 길도 거칠어진다고 기록했다.",
+          "text": "덕구온천에서 모랫재와 헬기장을 지나는 능선은 초반 흙길이 비교적 편하지만, 제2헬기장 이후에는 돌계단과 바위 구간이 늘어난다는 후기가 있다.",
           "sentiment": "neutral",
-          "as_of": "2025-01",
+          "as_of": "2026-08",
           "sources": [
-            "https://jucadrive.tistory.com/entry/%EB%93%B1%EC%82%B0-%EC%83%88%ED%95%B4-%EC%B2%AB-%EB%93%B1%EC%82%B0-%EA%B2%BD%EB%B6%81-%EC%9A%B8%EC%A7%84-%EC%9D%91%EB%B4%89%EC%82%B0-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4-%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC-100%EB%8C%80-%EB%AA%85%EC%82%B0"
+            "https://hike88.tistory.com/45",
+            "https://hike88.tistory.com/47"
           ],
           "verify": {
             "level": "single",
@@ -6979,13 +6387,83 @@
         },
         {
           "scope": "route",
-          "route": "덕구온천·옛재능선-응봉산 정상",
-          "topic": "편의시설",
-          "text": "2025년 1월 후기는 덕구온천리조트 위쪽 공터의 등산로 입구에 화장실이 있다고 기록했다.",
+          "route": "능선 코스",
+          "topic": "주차·교통",
+          "text": "2026년 8월 게시된 능선 산행 후기는 덕구온천 공영주차장을 무료로 안내했다.",
           "sentiment": "neutral",
-          "as_of": "2025-01",
+          "as_of": "2026-08",
           "sources": [
-            "https://jucadrive.tistory.com/entry/%EB%93%B1%EC%82%B0-%EC%83%88%ED%95%B4-%EC%B2%AB-%EB%93%B1%EC%82%B0-%EA%B2%BD%EB%B6%81-%EC%9A%B8%EC%A7%84-%EC%9D%91%EB%B4%89%EC%82%B0-%EC%B5%9C%EB%8B%A8%EC%BD%94%EC%8A%A4-%EB%B8%94%EB%9E%99%EC%95%BC%ED%81%AC-100%EB%8C%80-%EB%AA%85%EC%82%B0"
+            "https://hike88.tistory.com/45",
+            "https://hike88.tistory.com/47"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "덕구계곡·원탕 코스",
+          "topic": "조망·볼거리",
+          "text": "덕구계곡에는 금문교·하버교·노르망디교 등 세계 유명 교량을 축소한 12개 다리가 놓여 있다. 관광공사 안내와 현장 취재 기사 모두 원탕까지 걸으며 만나는 볼거리로 소개한다.",
+          "sentiment": "good",
+          "as_of": "2024-10",
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8e973bb0-9322-4494-9ce5-11fd8fe10e9f",
+            "https://v.daum.net/v/20241031000943649"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "능선 코스",
+          "topic": "편의시설",
+          "text": "덕구온천 쪽 최상단 주차장 안쪽에 능선 등산로 입구와 화장실이 있다는 현장 기록이 있다.",
+          "sentiment": "neutral",
+          "as_of": "2026-03",
+          "sources": [
+            "https://maxcamp.tistory.com/278"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "덕구계곡·원탕 코스",
+          "topic": "편의시설",
+          "text": "한국관광공사 안내에는 원탕 옆에 노천 족욕탕이 있다고 명시되어 있다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8e973bb0-9322-4494-9ce5-11fd8fe10e9f"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "덕구계곡·원탕 코스",
+          "topic": "난이도",
+          "text": "정상에 오르지 않고 덕구온천콘도 옆에서 원탕까지만 왕복하는 트레킹도 총 8km다. 한국관광공사는 이 구간 소요시간을 약 2시간 30분으로 안내한다.",
+          "sentiment": "neutral",
+          "as_of": null,
+          "sources": [
+            "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8e973bb0-9322-4494-9ce5-11fd8fe10e9f"
           ],
           "verify": {
             "level": "single",
@@ -6999,7 +6477,7 @@
     {
       "id": "gajisan",
       "name": "가지산",
-      "collected_at": "2026-11-01",
+      "collected_at": "2026-11-22",
       "checked_by": 1,
       "verified": 0,
       "notes": [
@@ -7007,7 +6485,7 @@
           "scope": "route",
           "route": "석남터널-중봉-가지산 정상",
           "topic": "위험구간",
-          "text": "석남터널 양쪽 입구에서 올라온 길이 합류하므로 하산 때 주차한 쪽 갈림길을 확인해야 한다. 2025년 3월 후기는 반대편으로 잘못 내려가 터널 안을 걸어 돌아오는 등산객들을 목격했다고 기록했다.",
+          "text": "석남터널 양쪽에서 올라온 길이 합류하므로 하산 때 주차한 쪽 분기를 확인해야 한다. 산행기에는 반대편으로 내려간 등산객들이 터널 안을 걸어 차량으로 돌아가는 모습을 봤다는 기록이 있다.",
           "sentiment": "caution",
           "as_of": "2025-03",
           "sources": [
@@ -7021,14 +6499,15 @@
           }
         },
         {
-          "scope": "route",
-          "route": "운문령-가지산 최단 코스",
-          "topic": "주차·교통",
-          "text": "2024년 2월 24일 토요일 오전 산행 후기는 운문령 정상부가 이미 만차였고 도로 양쪽에 차량이 늘어서 교행에 지장을 주는 상태였다고 기록했다.",
-          "sentiment": "caution",
-          "as_of": "2024-02",
+          "scope": "mountain",
+          "route": null,
+          "topic": "조망·볼거리",
+          "text": "가지산 정상의 탁 트인 능선 조망은 석남터널 코스와 운문령 코스로 오른 서로 다른 산행기에서 모두 좋게 평가된다.",
+          "sentiment": "good",
+          "as_of": "2025-05",
           "sources": [
-            "https://mkhur1004.tistory.com/3073"
+            "https://bobin4010.tistory.com/643",
+            "https://kylina.tistory.com/617"
           ],
           "verify": {
             "level": "single",
@@ -7041,42 +6520,7 @@
           "scope": "route",
           "route": "석남터널-중봉-가지산 정상",
           "topic": "난이도",
-          "text": "해발 약 600~650m의 석남터널에서 출발해 정상까지 편도 약 3.4km(약 1시간 36분~1시간 40분 소요)를 오르는 최단 코스이지만, 초입부터 석남고개까지 가파른 데크계단이 이어지고 중봉(1,167m) 오름길에도 588계단과 급경사 바윗길이 나타나 체력 소모가 만만치 않다.",
-          "sentiment": "neutral",
-          "as_of": "2026-05",
-          "sources": [
-            "https://koreahike.com/%EA%B0%80%EC%A7%80%EC%82%B0-%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4",
-            "https://mountaintraveler.tistory.com/95"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "석남터널-중봉-가지산 정상",
-          "topic": "난이도",
-          "text": "2025년 3월 후기는 초반 접근로는 완만하지만, 나무 데크 계단 이후 중봉을 오르는 구간이 산행 중 가장 힘들었다고 기록했다.",
-          "sentiment": "neutral",
-          "as_of": "2025-03",
-          "sources": [
-            "https://bobin4010.tistory.com/643"
-          ],
-          "verify": {
-            "level": "single",
-            "confirmed": 1,
-            "checked_by": 1,
-            "found_by": 1
-          }
-        },
-        {
-          "scope": "route",
-          "route": "석남터널-중봉-가지산 정상",
-          "topic": "계절·시기",
-          "text": "2025년 3월 산행 후기는 정상으로 가는 길에 남아 있던 눈이 녹아 일부 구간이 질퍽했다고 기록했다.",
+          "text": "2025년 3월 산행기는 석남터널 쪽 초반보다 중봉으로 오르는 구간을 가장 힘든 곳으로 꼽았다. 파란 천막 옆 나무계단 이후 본격적인 중봉 오르막이 시작된다고 기록했다.",
           "sentiment": "neutral",
           "as_of": "2025-03",
           "sources": [
@@ -7093,7 +6537,7 @@
           "scope": "mountain",
           "route": null,
           "topic": "혼잡",
-          "text": "2025년 3월 영남알프스 인증 산행 후기에는 가지산 정상석 앞에서 인증사진 촬영 순서를 기다렸다는 기록이 있다.",
+          "text": "2025년 3월 산행기는 오전 11시 24분 정상에 도착한 뒤 정상석 인증사진 촬영 차례를 기다렸다고 기록했다.",
           "sentiment": "neutral",
           "as_of": "2025-03",
           "sources": [
@@ -7109,12 +6553,63 @@
         {
           "scope": "route",
           "route": "운문령-가지산 최단 코스",
+          "topic": "주차·교통",
+          "text": "2025년 5월 5일 오전 11시경 운문령에 도착한 산행기는 주차할 공간이 거의 없었고, 등산객들이 갓길에 주차하고 있었다고 기록했다.",
+          "sentiment": "neutral",
+          "as_of": "2025-05",
+          "sources": [
+            "https://kylina.tistory.com/617"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "운문령-가지산 최단 코스",
+          "topic": "난이도",
+          "text": "운문령에서 쌀바위대피소까지는 정비된 임도를 따라가지만, 대피소 이후 정상에 가까워질수록 바위와 침목계단이 많아진다는 산행 기록이 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-05",
+          "sources": [
+            "https://kylina.tistory.com/617"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "운문령-가지산 최단 코스",
           "topic": "계절·시기",
-          "text": "2024년 2월 24일 후기는 운문령에서 쌀바위로 이어지는 작전도로에서 눈길과 두껍게 형성된 상고대를 관찰했다고 기록했다.",
+          "text": "2024년 2월 24일 산행기에는 운문령 초입부터 눈길이었으며, 쌀바위로 이어지는 임도와 쌀바위 주변에서 상고대를 관찰한 기록이 있다.",
           "sentiment": "neutral",
           "as_of": "2024-02",
           "sources": [
             "https://mkhur1004.tistory.com/3073"
+          ],
+          "verify": {
+            "level": "single",
+            "confirmed": 1,
+            "checked_by": 1,
+            "found_by": 1
+          }
+        },
+        {
+          "scope": "route",
+          "route": "운문령-가지산 최단 코스",
+          "topic": "편의시설",
+          "text": "2025년 5월 5일 산행기는 하산 중 쌀바위대피소에서 라면을 주문해 먹었다고 기록해, 당시 음식 판매가 운영되고 있었음을 확인할 수 있다.",
+          "sentiment": "neutral",
+          "as_of": "2025-05",
+          "sources": [
+            "https://kylina.tistory.com/617"
           ],
           "verify": {
             "level": "single",
